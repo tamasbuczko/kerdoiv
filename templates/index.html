@@ -4,8 +4,82 @@
         <title>TODO supply a title</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width">
+        <link rel="stylesheet" type="text/css" href="style.css" />
     </head>
     <body>
+        <!--
         <div>{tartalom}</div>
+        -->
+        <div id="frame">
+            <div id="head">homeup.eu</div>
+            <div id="content">
+                
+                <div id="intro">
+                    <div id="languages">
+                        <h3>Nyelv választás</h3>
+                        <a href="#">magyar</a>
+                        <a href="#">angol</a>
+                        <a href="#">német</a>
+                    </div>
+                    <div id="survey_intro">
+                        <h1>Itt látható a kérdőív témája, főcíme</h1>
+                        <div>
+                            Ide jön a kérdőív rövid leírása... Ide jön a kérdőív rövid leírása... Ide jön a kérdőív rövid leírása...
+                            Ide jön a kérdőív rövid leírása... Ide jön a kérdőív rövid leírása... Ide jön a kérdőív rövid leírása...
+                        </div>
+                    </div>
+                </div>
+                
+                <div id="survey">
+                    
+                    <div class="survey_block">
+                        <div class="survey_question">Ön szerint...?</div>
+                        <div class="survey_answers">
+                            <select name="elso_radio">
+                                <option value="1">1.</option>
+                                <option value="2">2.</option>
+                                <option value="3">3.</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <div class="survey_block">
+                        <div class="survey_question">Ön szerint...?</div>
+                        <div class="survey_answers">
+                            <input type="checkbox" name="elso_checkbox" /><label>1.</label>
+                            <input type="checkbox" name="masodik_checkbox" /><label>2.</label>
+                            <input type="checkbox" name="harmadik_checkbox" /><label>3.</label>
+                        </div>
+                    </div>
+                    
+                    <div class="survey_block">
+                        <div class="survey_question">Ön szerint...?</div>
+                        <div class="survey_answers">
+                            <label>szöveg</label><input type="text" name="szoveg" />
+                        </div>
+                    </div>
+                    
+                    <div class="survey_block">
+                        <div class="survey_question">Ön szerint...?</div>
+                        <div class="survey_answers">
+                            <input type="radio" name="sex" value="male" />Male<br>
+                            <input type="radio" name="sex" value="female" />Female
+                        </div>
+                    </div>
+                    
+                    <div class="survey_block">
+                        <div class="survey_question">Ön szerint...?</div>
+                        <div class="survey_answers">
+                            <label>textarea</label><textarea name="szovegblokk"></textarea>
+                        </div>
+                    </div>
+                    
+                    <input type="submit" name="submit" />
+                </div>
+                
+            </div>
+            <div id="footer"></div>
+            <br style="clear: both;">
+        </div>
     </body>
 </html>
