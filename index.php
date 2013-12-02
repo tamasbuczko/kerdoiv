@@ -13,12 +13,14 @@ $adatkapcsolat = new data_connect;
 $adatkapcsolat->connect();
 
 //a megjelenített tartalom elágazásainak kezelése
-#require_once('public/tartalomvalasztas.php');
-$tartalom = "első tartalmunk";
+require_once('public/tartalomvalasztas.php');
 
 //a teljes oldaltemplate-et feltöltjük és kiiratjuk a böngészőnek(index.html)
 $array = array('tartalom' => $tartalom,
-		'alcim' => $alcim);
+                'kerdes_blokk'   => $kerdes_blokk,
+                'kerdoiv_cim'    => $kerdoiv_cim,
+                'kerdoiv_leiras' => $kerdoiv_leiras,
+		'alcim'          => $alcim);
 	 
 $index_html = new html_blokk;
 $index_html->load_template_file("templates/index.html",$array);

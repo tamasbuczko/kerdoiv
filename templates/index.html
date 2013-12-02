@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>TODO supply a title</title>
+        <title>Kérdőív</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width">
         <link rel="stylesheet" type="text/css" href="style.css" />
@@ -22,59 +22,65 @@
                         <a href="#">német</a>
                     </div>
                     <div id="survey_intro">
-                        <h1>Itt látható a kérdőív témája, főcíme</h1>
+                        <h1>{kerdoiv_cim}</h1>
                         <div>
-                            Ide jön a kérdőív rövid leírása... Ide jön a kérdőív rövid leírása... Ide jön a kérdőív rövid leírása...
-                            Ide jön a kérdőív rövid leírása... Ide jön a kérdőív rövid leírása... Ide jön a kérdőív rövid leírása...
+                            {kerdoiv_leiras}
                         </div>
                     </div>
                 </div>
                 
                 <div id="survey">
+                    <form action="" name="form_survey" method="post">
                     
+                    {kerdes_blokk}
+                    <!--
                     <div class="survey_block">
                         <div class="survey_question">Ön szerint...?</div>
                         <div class="survey_answers">
-                            <select name="elso_radio">
+                            <select name="elso_opcio">
                                 <option value="1">1.</option>
                                 <option value="2">2.</option>
                                 <option value="3">3.</option>
                             </select>
+                            <label class="label_v">Opciók</label>
                         </div>
                     </div>
                     
                     <div class="survey_block">
                         <div class="survey_question">Ön szerint...?</div>
                         <div class="survey_answers">
-                            <input type="checkbox" name="elso_checkbox" /><label>1.</label>
+                            <input type="checkbox" name="checkbox_1"  name="elso_checkbox" /><label>1.</label>
                             <input type="checkbox" name="masodik_checkbox" /><label>2.</label>
                             <input type="checkbox" name="harmadik_checkbox" /><label>3.</label>
+                            <p>Több válasz is lehetséges! sad asd a sda aer asd asadsdad</p>
                         </div>
                     </div>
                     
                     <div class="survey_block">
                         <div class="survey_question">Ön szerint...?</div>
                         <div class="survey_answers">
-                            <label>szöveg</label><input type="text" name="szoveg" />
+                            <input type="text" name="szoveg" />
                         </div>
                     </div>
                     
                     <div class="survey_block">
                         <div class="survey_question">Ön szerint...?</div>
                         <div class="survey_answers">
-                            <input type="radio" name="sex" value="male" />Male<br>
-                            <input type="radio" name="sex" value="female" />Female
+                            <input type="radio" name="sex" value="male" /><label>Male</label>
+                            <input type="radio" name="sex" value="female" /><label>Female</label>
                         </div>
                     </div>
                     
                     <div class="survey_block">
                         <div class="survey_question">Ön szerint...?</div>
                         <div class="survey_answers">
-                            <label>textarea</label><textarea name="szovegblokk"></textarea>
+                            <textarea name="szovegblokk"></textarea>
                         </div>
                     </div>
+                    -->
                     
                     <input type="submit" name="submit" />
+                    </form>
                 </div>
                 
             </div>
