@@ -16,7 +16,7 @@ $adatkapcsolat->connect();
 require_once('public/tartalomvalasztas.php');
 
 //a teljes oldaltemplate-et feltöltjük és kiiratjuk a böngészőnek(index.html)
-$array = array('tartalom' => $tartalom,
+$array = array( 'tartalom'       => $tartalom,
                 'kerdes_blokk'   => $kerdes_blokk,
                 'kerdoiv_cim'    => $kerdoiv_cim,
                 'kerdoiv_leiras' => $kerdoiv_leiras,

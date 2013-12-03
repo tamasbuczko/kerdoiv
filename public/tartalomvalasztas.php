@@ -25,18 +25,33 @@ $next_elementc = mysql_fetch_array ($resultc);
 $kerdoiv_cim=$next_elementc[cim];
 $kerdoiv_leiras=$next_elementc[leiras];
 
- $result = mysql_query("SELECT sorszam, kerdes, tipus, sorrend FROM kerdesek WHERE status = '1' AND kerdoiv_sorszam = '1' ORDER BY sorrend");
+$kerdes_darab = 0;
+$result = mysql_query("SELECT sorszam, kerdes, tipus, sorrend FROM kerdesek WHERE status = '1' AND kerdoiv_sorszam = '1' ORDER BY sorrend");
 while ($next_element = mysql_fetch_array($result)){
     
-    $resultx = mysql_query("SELECT sorszam, kerdes_valasz, valasz FROM valaszok WHERE status = '1' AND kerdes_valasz = '$next_element[sorszam]' ORDER BY sorrend");
+    $sorszam_kerdes = $next_element[sorszam];
+    
+    $resultx = mysql_query("SELECT sorszam, kerdes_valasz, valasz FROM valaszok WHERE status = '1' AND kerdes_valasz = '$sorszam_kerdes' ORDER BY sorrend");
     while ($next_elementv = mysql_fetch_array($resultx)){
         
+        $sorszam_valasz = $next_elementv[sorszam];
+        
         if ($next_element[tipus] == 'radio'){
-            $valaszok .= "\n".'<input type="radio" name="radio_'.$next_element[sorszam].'" value="radio_v_'.$next_elementv[sorszam].'" /><label>'.$next_elementv[valasz].'</label>';
+            $valaszok .= "\n".'<input type="radio" name="radio_'.$sorszam_kerdes.'" value="'.$next_elementv[sorszam].'" /><label>'.$next_elementv[valasz].'</label>';
+            
         }
         
         if ($next_element[tipus] == 'checkbox'){
             $valaszok .= "\n".'<input type="checkbox" name="checkbox_'.$next_elementv[sorszam].'" /><label>'.$next_elementv[valasz].'</label>';
+            
+            //kitöltött űrlap feldolgozása
+            $checkbox = $_REQUEST['checkbox_'.$sorszam_valasz];
+            if ($checkbox == 'on'){   
+                $sql = "INSERT INTO valaszadasok (kerdoiv_sorszam, kerdes_sorszam, valasz_sorszam, ertek) 
+                        VALUES ('1', '$next_element[sorszam]', '$next_elementv[sorszam]', '1')";
+                mysql_query($sql);
+            }
+            
         }
         
         if ($next_element[tipus] == 'select'){
@@ -45,10 +60,19 @@ while ($next_element = mysql_fetch_array($result)){
         
         //osztályozás típus generálása
         if ($next_element[tipus] == 'ranking'){
+            unset($valaszokx);
             for ($i=1; $i<6; $i++){
-                $valaszok .= "\n".'<input type="radio" name="rank_'.$next_elementx[sorszam].'" style="float: left; clear: none; margin-right: 6px; margin-left: 6px;" value="rank_v_'.$i.'" />';
+                $valaszokx .= "\n".'<input type="radio" name="rank_'.$next_elementv[sorszam].'" style="float: left; clear: none; margin-right: 6px; margin-left: 6px;" value="'.$i.'" />';
             }
-            $valaszok = '<label style="clear: both; float: left;">'.$next_elementv[valasz].'</label>'. $valaszok; 
+            $valaszok .= '<label style="clear: both; float: left;">'.$next_elementv[valasz].'</label><div style="float: left;">'. $valaszokx.'</div>'; 
+            
+            //kitöltött űrlap feldolgozása
+            $rank = $_REQUEST['rank_'.$next_elementv[sorszam]];
+            if ($rank){ 
+                 $sql = "INSERT INTO valaszadasok (kerdoiv_sorszam, kerdes_sorszam, valasz_sorszam, ertek) 
+                            VALUES ('1', '$next_element[sorszam]', '$next_elementv[sorszam]', '$rank')";
+                     mysql_query($sql);
+            }
         }
         
     }
@@ -58,14 +82,52 @@ while ($next_element = mysql_fetch_array($result)){
     //csak egy text generálódik a kérdéshez
     if ($next_element[tipus] == 'text'){
         $valaszok .= "\n".'<input type="text" name="text_'.$next_element[sorszam].'" />';
+        
+        if ($_REQUEST['text_'.$next_element[sorszam]]){
+            $szoveg = $_REQUEST['text_'.$next_element[sorszam]];
+            $sql = "INSERT INTO valaszadasok (kerdoiv_sorszam, kerdes_sorszam, valasz_sorszam, ertek, szoveg) 
+                       VALUES ('1', '$next_element[sorszam]', '', '1', '$szoveg')";
+                mysql_query($sql);
+        }
+        
     }
+    
+    //csak egy text generálódik a kérdéshez
+    if ($next_element[tipus] == 'textarea'){
+        $valaszok .= "\n".'<textarea name="textarea_'.$next_element[sorszam].'"></textarea>';
+        
+        if ($_REQUEST['textarea_'.$next_element[sorszam]]){
+            $szoveg = $_REQUEST['textarea_'.$next_element[sorszam]];
+            $sql = "INSERT INTO valaszadasok (kerdoiv_sorszam, kerdes_sorszam, valasz_sorszam, ertek, szoveg) 
+                       VALUES ('1', '$next_element[sorszam]', '', '1', '$szoveg')";
+                mysql_query($sql);
+        }
+    }
+    
+    //kitöltött űrlap feldolgozása
+       $radio = $_REQUEST['radio_'.$sorszam_kerdes];
+       if ($radio){ 
+            $sql = "INSERT INTO valaszadasok (kerdoiv_sorszam, kerdes_sorszam, valasz_sorszam, ertek) 
+                       VALUES ('1', '$next_element[sorszam]', '$radio', '1')";
+                mysql_query($sql);
+       }
     
     if ($next_element[tipus] == 'select'){
         $valaszok = '<select name="select_'.$next_element[sorszam].'">'.$valaszok.'</select>';
+        
+        //kitöltött űrlap feldolgozása
+            $select = $_REQUEST['select_'.$next_element[sorszam]];
+              
+            $sql = "INSERT INTO valaszadasok (kerdoiv_sorszam, kerdes_sorszam, valasz_sorszam, ertek) 
+                    VALUES ('1', '$next_element[sorszam]', '$select', '1')";
+                mysql_query($sql);
+            
     }
     
+    $kerdes_darab++;
+    
     $kerdes_blokk .= '<div class="survey_block">
-                        <div class="survey_question">'.$next_element[sorrend].'. '.$next_element[kerdes] .'</div>
+                        <div class="survey_question">'.$kerdes_darab.'. '.$next_element[kerdes] .'</div>
                         <div class="survey_answers">
                             '.$valaszok.'
                             <br style="clear:both" />

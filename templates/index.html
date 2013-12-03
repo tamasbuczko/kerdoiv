@@ -32,52 +32,29 @@
                 <div id="survey">
                     <form action="" name="form_survey" method="post">
                     
+                    <div id="szemelyes">
+                        <label>E-mail:</label>
+                        <input type="text" name="email" />
+                        <label>Életkor:</label>
+                        <select name="eletkora">
+                            <option value="<18"><18</option>
+                            <option value="18-25">18-25</option>
+                        </select>
+                        <label>Foglalkozás:</label>
+                        <input type="text" name="foglalkozas" />
+                        <label>Neme:</label>
+                        <select name="neme">
+                            <option value="férfi">férfi</option>
+                            <option value="nő">nő</option>
+                        </select>
+                        <label>Ország:</label>
+                        <select name="lakhely">
+                            <option value="Magyarország">Magyarország</option>
+                            <option value="Egyéb">Egyéb</option>
+                        </select>
+                    </div>
+                        
                     {kerdes_blokk}
-                    <!--
-                    <div class="survey_block">
-                        <div class="survey_question">Ön szerint...?</div>
-                        <div class="survey_answers">
-                            <select name="elso_opcio">
-                                <option value="1">1.</option>
-                                <option value="2">2.</option>
-                                <option value="3">3.</option>
-                            </select>
-                            <label class="label_v">Opciók</label>
-                        </div>
-                    </div>
-                    
-                    <div class="survey_block">
-                        <div class="survey_question">Ön szerint...?</div>
-                        <div class="survey_answers">
-                            <input type="checkbox" name="checkbox_1"  name="elso_checkbox" /><label>1.</label>
-                            <input type="checkbox" name="masodik_checkbox" /><label>2.</label>
-                            <input type="checkbox" name="harmadik_checkbox" /><label>3.</label>
-                            <p>Több válasz is lehetséges! sad asd a sda aer asd asadsdad</p>
-                        </div>
-                    </div>
-                    
-                    <div class="survey_block">
-                        <div class="survey_question">Ön szerint...?</div>
-                        <div class="survey_answers">
-                            <input type="text" name="szoveg" />
-                        </div>
-                    </div>
-                    
-                    <div class="survey_block">
-                        <div class="survey_question">Ön szerint...?</div>
-                        <div class="survey_answers">
-                            <input type="radio" name="sex" value="male" /><label>Male</label>
-                            <input type="radio" name="sex" value="female" /><label>Female</label>
-                        </div>
-                    </div>
-                    
-                    <div class="survey_block">
-                        <div class="survey_question">Ön szerint...?</div>
-                        <div class="survey_answers">
-                            <textarea name="szovegblokk"></textarea>
-                        </div>
-                    </div>
-                    -->
                     
                     <input type="submit" name="submit" />
                     </form>
