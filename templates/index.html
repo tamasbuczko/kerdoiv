@@ -30,6 +30,7 @@
                 </div>
                 
                 <div id="survey">
+                    {hibauzenet}
                     <form action="" name="form_survey" method="post">
                     
                     <div id="szemelyes">
@@ -37,6 +38,7 @@
                         <input type="text" name="email" />
                         <label>Életkor:</label>
                         <select name="eletkora">
+                            <option value="0">---</option>
                             <option value="<18"><18</option>
                             <option value="18-25">18-25</option>
                         </select>
@@ -44,13 +46,14 @@
                         <input type="text" name="foglalkozas" />
                         <label>Neme:</label>
                         <select name="neme">
+                            <option value="0">---</option>
                             <option value="férfi">férfi</option>
                             <option value="nő">nő</option>
                         </select>
                         <label>Ország:</label>
                         <select name="lakhely">
-                            <option value="Magyarország">Magyarország</option>
-                            <option value="Egyéb">Egyéb</option>
+                            <option value="0">---</option>
+                            {orszag_combo}
                         </select>
                     </div>
                         

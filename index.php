@@ -18,6 +18,8 @@ require_once('public/tartalomvalasztas.php');
 //a teljes oldaltemplate-et feltöltjük és kiiratjuk a böngészőnek(index.html)
 $array = array( 'tartalom'       => $tartalom,
                 'kerdes_blokk'   => $kerdes_blokk,
+                'hibauzenet'   => $hibauzenet,
+                'orszag_combo'   => $orszag_combo,
                 'kerdoiv_cim'    => $kerdoiv_cim,
                 'kerdoiv_leiras' => $kerdoiv_leiras,
 		'alcim'          => $alcim);
