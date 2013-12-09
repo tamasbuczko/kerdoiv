@@ -22,6 +22,9 @@ $array = array( 'tartalom'       => $tartalom,
                 'orszag_combo'   => $orszag_combo,
                 'kerdoiv_cim'    => $kerdoiv_cim,
                 'kerdoiv_leiras' => $kerdoiv_leiras,
+                'nyelv_valasztas' => $lang[nyelv_valasztas],
+                'magyar' => $lang[magyar],
+                'angol' => $lang[angol],
 		'alcim'          => $alcim);
 	 
 $index_html = new html_blokk;

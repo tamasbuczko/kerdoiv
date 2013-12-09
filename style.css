@@ -101,6 +101,22 @@ body{
     margin: 40px 0px 0px 0px;
 }
 
+.szemelyes{
+    margin-left: 125px;
+    margin-bottom: 25px;
+    width: 550px;
+}
+.szemelyes label{
+    margin: 5px 5px 5px 5px;
+    width: 100px;
+    float: left;
+}
+.szemelyes input, .szemelyes select{
+    margin: 5px 5px 5px 5px;
+    width: 250px;
+}
+
+
 .survey_question{
     background-color: #99aec3;
     height: auto;
@@ -119,7 +135,7 @@ body{
 
 .survey_answers label{
     display: block;
-    width: 500px;
+    width: 490px;
     float: left;
     text-align: left;
     
@@ -127,6 +143,21 @@ body{
 
 .label_v{
     margin-top: 4px !important;
+}
+
+.ranking{
+    width: 132px;
+    float: right;
+    height: 22px;
+}
+
+.ranking span{
+    display: block;
+    width: 13px;
+    height: 13px;
+    float: left;
+    margin: 0px 6px 0px 6px;
+    text-align: center;
 }
 
 .survey_answers input, .survey_answers select, .survey_answers textarea{
