@@ -17,6 +17,8 @@ require_once('public/tartalomvalasztas.php');
 
 //a teljes oldaltemplate-et feltöltjük és kiiratjuk a böngészőnek(index.html)
 $array = array( 'tartalom'       => $tartalom,
+			    'body_onload' => $body_onload,
+			    'popup_tartalom' => $popup_tartalom,
                 'kerdes_blokk'   => $kerdes_blokk,
                 'hibauzenet'   => $hibauzenet,
                 'orszag_combo'   => $orszag_combo,
