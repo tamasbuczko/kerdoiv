@@ -7,7 +7,12 @@ include('public/peldak.php');
 #országok beolvasása comboboxhoz
 $result = mysql_query("SELECT country_id, short_name, calling_code FROM dat_orszag ORDER BY short_name");
 while ($next_element = mysql_fetch_array($result)){
-	$orszag_combo .= '<option value="' . $next_element[country_id] . '">' . $next_element[short_name] . '</option>';
+        if ($_REQUEST[lakhely] == $next_element[country_id]){
+            $request_lakhely = 'selected="selected"';
+        } else {
+            $request_lakhely = '';
+        }
+	$orszag_combo .= '<option value="' . $next_element[country_id] . '" '.$request_lakhely.'>' . $next_element[short_name] . '</option>';
 }
 
 $resultc = mysql_query ("SELECT cim_hu, cim_en, cim_de, leiras_hu, leiras_en, leiras_de FROM kerdoivek WHERE status = '1' AND sorszam = '1' ");
@@ -16,6 +21,7 @@ $kerdoiv_cim=$next_elementc['cim_'.$_SESSION[lang]];
 $kerdoiv_leiras=$next_elementc['leiras_'.$_SESSION[lang]];
 
 $hiba = 0;
+$figyelmeztetes = 0;
 if ($_REQUEST[submit]){
     $email = mysql_real_escape_string($_REQUEST[email]);
     $foglalkozas = mysql_real_escape_string($_REQUEST[foglalkozas]);
@@ -48,6 +54,12 @@ if ($_REQUEST[submit]){
         $sql = mysql_query("SELECT MAX(sorszam) FROM kitoltok");
         $a = mysql_fetch_row($sql);
         $kitolto_sorszama = $a[0];
+    } else {
+        $request_eletkora_value = '<option value="'.$_REQUEST[eletkora].'" selected="selected">'.$_REQUEST[eletkora].'</option>';
+        $request_neme_value = '<option value="'.$_REQUEST[neme].'" selected="selected">'.$_REQUEST[neme].'</option>';
+        $request_foglalkozas_value = $_REQUEST[foglalkozas];
+        $request_email_value = $_REQUEST[email];
+        
     }
 }
 
@@ -78,8 +90,8 @@ while ($next_element = mysql_fetch_array($result)){
             if ($_REQUEST[submit]){
                     $checkbox = $_REQUEST['checkbox_'.$sorszam_valasz];
                     if ($checkbox == 'on'){
-                        $valaszok_data['checkbox'][$sorszam_valasz] = '1';
-						$check_request = 'checked="checked"';
+                        $valaszok_data['checkbox'][$sorszam_valasz] = $sorszam_kerdes;
+			$check_request = 'checked="checked"';
                     }
             }
 			
@@ -127,8 +139,8 @@ while ($next_element = mysql_fetch_array($result)){
         if ($_REQUEST[submit]){
                  if ($_REQUEST['text_'.$next_element[sorszam]]){
                      $szoveg = $_REQUEST['text_'.$next_element[sorszam]];
-					 $valaszok_data['text'][$sorszam_valasz] = $szoveg;
-					 $text_request = $szoveg;
+                     $valaszok_data['text'][$next_element[sorszam]] = $szoveg;
+                     $text_request = $szoveg;
                  }
             }
 		$valaszok .= "\n".'<input type="text" name="text_'.$next_element[sorszam].'" value="'.$text_request.'" />';
@@ -151,7 +163,7 @@ while ($next_element = mysql_fetch_array($result)){
     //kitöltött űrlap feldolgozása
        if ($_REQUEST[submit]){
                 $radio = $_REQUEST['radio_'.$sorszam_kerdes];
-				$valaszok_data['radio'][$sorszam_valasz] = $radio;
+		$valaszok_data['radio'][$sorszam_valasz] = $radio;
        }
        
     if ($next_element[tipus] == 'ranking'){ 
@@ -166,8 +178,16 @@ while ($next_element = mysql_fetch_array($result)){
         
         //kitöltött űrlap feldolgozása
         if ($_REQUEST[submit]){
-            $select = $_REQUEST['select_'.$next_element[sorszam]];
-			$valaszok_data['select'][$sorszam_valasz] = '1';
+            if ($_REQUEST['select_'.$next_element[sorszam]]){
+                $select = $_REQUEST['select_'.$next_element[sorszam]];
+            } else {
+                $select = '';
+                $figyelmeztetes++;
+                $figyelmeztetes_uzenetek[$figyelmeztetes] = $next_element[sorszam];
+            }
+            $valaszok_data['select'][$sorszam_valasz] = '1';
+            
+            
         }
     }
     
@@ -188,21 +208,28 @@ if ($hiba > 0){
     foreach($hiba_uzenetek as $key => $value){
         $hibauzenet .= '- '. $value. '<br />';
     }
-    $hibauzenet = 'A kérdőív az alábbi hibákat tartalmazza: <br />'.$hibauzenet;
+    $hibauzenet = '<h3>A kérdőív az alábbi hibák miatt nem feldolgozható: </h3>'.$hibauzenet;
+}
+
+if ($figyelmeztetes > 0){
+    foreach($figyelmeztetes_uzenetek as $key => $value){
+        $figy_uzenet .= $value.', ';
+    }
+    $figy_uzenet = '<h3><br />Az alábbi kérdésekre nem válaszoltál: </h3>'.$figy_uzenet;
 }
 
 if (($_REQUEST[submit]) AND ($hiba == '0')){
    
    if ($valaszok_data['checkbox']){
 	  foreach ($valaszok_data['checkbox'] as $key => $value){
-			  $sql = "INSERT INTO valaszadasok (kerdoiv_sorszam, kerdes_sorszam, valasz_sorszam, ertek, kitolto_sorszam) 
-                      VALUES ('1', '$next_element[sorszam]', '$next_elementv[sorszam]', '1', '$kitolto_sorszama')";
-              mysql_query($sql);
+            $sql = "INSERT INTO valaszadasok (kerdoiv_sorszam, kerdes_sorszam, valasz_sorszam, ertek, kitolto_sorszam) 
+            VALUES ('1', '$value', '$key', '1', '$kitolto_sorszama')";
+            mysql_query($sql);
 	  }
    }
    
    if ($valaszok_data['rank']){
-	  foreach ($valaszok_data['checkbox'] as $key => $value){
+	  foreach ($valaszok_data['rank'] as $key => $value){
 			  $sql = "INSERT INTO valaszadasok (kerdoiv_sorszam, kerdes_sorszam, valasz_sorszam, ertek, kitolto_sorszam) 
                       VALUES ('1', '$next_element[sorszam]', '$next_elementv[sorszam]', '$rank', '$kitolto_sorszama')";
               mysql_query($sql);
@@ -210,34 +237,34 @@ if (($_REQUEST[submit]) AND ($hiba == '0')){
    }
    
    if ($valaszok_data['text']){
-	  foreach ($valaszok_data['checkbox'] as $key => $value){
-			  $sql = "INSERT INTO valaszadasok (kerdoiv_sorszam, kerdes_sorszam, valasz_sorszam, ertek, szoveg, kitolto_sorszam) 
-                      VALUES ('1', '$next_element[sorszam]', '', '1', '$szoveg', '$kitolto_sorszama')";
+	  foreach ($valaszok_data['text'] as $key => $value){
+                $sql = "INSERT INTO valaszadasok (kerdoiv_sorszam, kerdes_sorszam, valasz_sorszam, ertek, szoveg, kitolto_sorszam) 
+                VALUES ('1', '$key', '', '1', '$valaszok_data[text][$key]', '$kitolto_sorszama')";
               mysql_query($sql);
 	  }
    }
    
    if ($valaszok_data['textarea']){
-	  foreach ($valaszok_data['checkbox'] as $key => $value){
+	  foreach ($valaszok_data['textarea'] as $key => $value){
 			  $sql = "INSERT INTO valaszadasok (kerdoiv_sorszam, kerdes_sorszam, valasz_sorszam, ertek, szoveg, kitolto_sorszam) 
-					  VALUES ('1', '$next_element[sorszam]', '', '1', '$szoveg', '$kitolto_sorszama')";
+                          VALUES ('1', '$key', '', '1', '$valaszok_data[textarea][$key]', '$kitolto_sorszama')";
 			  mysql_query($sql);
 	  }
    }
    
    if ($valaszok_data['radio']){
-	  foreach ($valaszok_data['checkbox'] as $key => $value){
-			  $sql = "INSERT INTO valaszadasok (kerdoiv_sorszam, kerdes_sorszam, valasz_sorszam, ertek, kitolto_sorszam) 
-					  VALUES ('1', '$next_element[sorszam]', '$radio', '1', '$kitolto_sorszama')";
+	  foreach ($valaszok_data['radio'] as $key => $value){
+            $sql = "INSERT INTO valaszadasok (kerdoiv_sorszam, kerdes_sorszam, valasz_sorszam, ertek, kitolto_sorszam) 
+              VALUES ('1', '$valaszok_data[radio][$key]', '$key', '1', '$kitolto_sorszama')";
               mysql_query($sql);
 	  }
    }
    
    if ($valaszok_data['select']){
-	  foreach ($valaszok_data['checkbox'] as $key => $value){
-			  $sql = "INSERT INTO valaszadasok (kerdoiv_sorszam, kerdes_sorszam, valasz_sorszam, ertek, kitolto_sorszam) 
-                      VALUES ('1', '$next_element[sorszam]', '$select', '1', '$kitolto_sorszama')";
-              mysql_query($sql);
+	  foreach ($valaszok_data['select'] as $key => $value){
+            $sql = "INSERT INTO valaszadasok (kerdoiv_sorszam, kerdes_sorszam, valasz_sorszam, ertek, kitolto_sorszam) 
+            VALUES ('1', '$key', '$valaszok_data[select][$key]', '1', '$kitolto_sorszama')";
+            mysql_query($sql);
 	  }
    }
     

@@ -36,17 +36,18 @@
                     <div class="szemelyes">                        
                         <label>Életkor:</label>
                         <select name="eletkora">
+                            {request_eletkora_value}
                             <option value="0">---</option>
                             <option value="<18"><18</option>
                             <option value="18-25">18-25</option>
                             <option value="25-35">25-35</option>
                             <option value="35-45">35-45</option>
                             <option value=">45">>45</option>
-
                         </select>
                         <br />
                         <label>Neme:</label>
                         <select name="neme">
+                            {request_neme_value}
                             <option value="0">---</option>
                             <option value="férfi">férfi</option>
                             <option value="nő">nő</option>
@@ -59,7 +60,7 @@
                         </select>
                         <br />
                         <label>Foglalkozás:</label>
-                        <input type="text" name="foglalkozas" />
+                        <input type="text" name="foglalkozas" value="{request_foglalkozas_value}" />
                         <br />
                     </div>
                         
@@ -69,7 +70,7 @@
                     <p>Kérjük, adja meg e-mail címét, ha szeretné megkapni a kérdőív eredményét leíró cikket. </p>
                     <div class="szemelyes">
                         <label>E-mail:</label>
-                        <input type="text" name="email" />
+                        <input type="text" name="email" value="{request_email_value}" />
                     </div>                      
                     <p><input type="submit" name="submit" /></p>
                     </form>
@@ -82,9 +83,10 @@
 		
 		 <div id="popup">
 			<div class="q_box">
-			   <div id="rendben_gomb"></div>
 			   {popup_tartalom}
 			   {hibauzenet}
+                           {figy_uzenet}
+                           <div id="rendben_gomb">OK</div>
 			 </div>
 		 </div>
 

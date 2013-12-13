@@ -214,7 +214,7 @@ body{
 	font-size: 12px;
 	font-weight: normal;
     border: 1px solid #aaaaaa;
-	padding: 5px 5px 5px 5px;
+	padding: 15px 15px 15px 15px;
 	background-color: #fefefe;
     color: #686868;}
 
@@ -224,14 +224,20 @@ body{
 }
 
 #rendben_gomb{
-    color: #ffffff !important;
-    font-family: 'WebFont2', Arial;
+    color: #111 !important;
     font-size: 12px;
-    width: 11px;
-    height: 11px;
+    width: 50px;
+    height: 18px;
     text-align: center;
+    font-weight: bold;
+    padding-top: 4px;
     clear: both;
     cursor: pointer;
     text-decoration: none;
-    float: right;
-    background-color: #aaa;}
+    margin: 30px auto 0px auto;
+    background-color: #99aec3;}
+
+.q_box h3{
+    font-size: 13px;
+    margin-top: 0px;
+}
