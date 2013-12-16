@@ -18,9 +18,9 @@
                 <div id="intro">
                     <div id="languages">
                         <h3>{nyelv_valasztas}</h3>
-                        <a href="?lang=hu">{magyar}</a>
-                        <a href="?lang=en">{angol}</a>
-                        <a href="?lang=de">német</a>
+                        <a href="?lang=hu"><img src="graphics/magyar_zaszlo.png" id="zaszlo" />{magyar}</a>
+                        <a href="?lang=en"><img src="graphics/angol_zaszlo.png" id="zaszlo" />{angol}</a>
+                        <a href="?lang=de"><img src="graphics/nemet_zaszlo.png" id="zaszlo" />{nemet}</a>
                     </div>
                     <div id="survey_intro">
                         <h1>{kerdoiv_cim}</h1>
@@ -34,7 +34,7 @@
                     <form action="" name="form_survey" method="post">
                     
                     <div class="szemelyes">                        
-                        <label>Életkor:</label>
+                        <label>{eletkor}</label>
                         <select name="eletkora">
                             {request_eletkora_value}
                             <option value="0">---</option>
@@ -45,7 +45,7 @@
                             <option value=">45">>45</option>
                         </select>
                         <br />
-                        <label>Neme:</label>
+                        <label>{neme}</label>
                         <select name="neme">
                             {request_neme_value}
                             <option value="0">---</option>
@@ -53,13 +53,13 @@
                             <option value="nő">nő</option>
                         </select>
                         <br />
-                        <label>Ország:</label>
+                        <label>{orszag}</label>
                         <select name="lakhely">
                             <option value="0">---</option>
                             {orszag_combo}
                         </select>
                         <br />
-                        <label>Foglalkozás:</label>
+                        <label>{foglalkozas}</label>
                         <input type="text" name="foglalkozas" value="{request_foglalkozas_value}" />
                         <br />
                     </div>
@@ -67,12 +67,14 @@
                     {kerdes_blokk}
                     
                     <br />
-                    <p>Kérjük, adja meg e-mail címét, ha szeretné megkapni a kérdőív eredményét leíró cikket. </p>
+                    <div id="e-mail"> <p>{email_bekeres}</p>
+                    </div>    
                     <div class="szemelyes">
                         <label>E-mail:</label>
                         <input type="text" name="email" value="{request_email_value}" />
                     </div>                      
-                    <p><input type="submit" name="submit" /></p>
+                        <div id="elkuld"><input type="submit" name="submit" value="{elkuldes}"/>
+                        <label> > > ></label><img src="graphics/postalada.png" id="posta" /></div>
                     </form>
                 </div>
                 
@@ -88,7 +90,7 @@
                            {figy_uzenet}
                            <div id="rendben_gomb">OK</div>
 			 </div>
-		 </div>
+		 </div
 
 		<script type="text/javascript" src="js/events.js"></script>
     </body>

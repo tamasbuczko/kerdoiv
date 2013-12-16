@@ -32,7 +32,14 @@ $array = array( 'tartalom'       => $tartalom,
                 'nyelv_valasztas' => $lang[nyelv_valasztas],
                 'magyar' => $lang[magyar],
                 'angol' => $lang[angol],
-		'alcim'          => $alcim);
+                'nemet' => $lang[nemet],
+                'eletkor' => $lang[eletkor],
+                'neme' => $lang[neme],
+                'orszag' => $lang[orszag],
+                'foglalkozas' => $lang[foglalkozas],
+                'elkuldes' => $lang[elkuldes],
+                'email_bekeres' => $lang[email_bekeres],
+    		'alcim' => $alcim);
 	 
 $index_html = new html_blokk;
 $index_html->load_template_file("templates/index.html",$array);
