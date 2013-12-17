@@ -40,4 +40,12 @@ class html_blokk{
 	}
 }
 
+class kerdes{
+   public $sorszam;
+   public $kerdes;
+   public $tipus;
+   public $leiras;
+   var $valaszok = array();
+}
+
 ?>
