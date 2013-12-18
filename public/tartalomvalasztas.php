@@ -46,21 +46,11 @@ if ($_REQUEST[submit]){
         $hiba_uzenetek[$hiba] = 'Nem adta meg a foglalkozását!';
     }
     
-    if ($hiba == 0){
-        $sql = "INSERT INTO kitoltok (email, neme, eletkora, lakhely, foglalkozas, nyelv) 
-                VALUES ('$email', '$_REQUEST[neme]', '$_REQUEST[eletkora]', '$_REQUEST[lakhely]', '$foglalkozas', '$_SESSION[lang]')";
-        mysql_query($sql);
-
-        $sql = mysql_query("SELECT MAX(sorszam) FROM kitoltok");
-        $a = mysql_fetch_row($sql);
-        $kitolto_sorszama = $a[0];
-    } 
+    $request_eletkora_value = '<option value="'.$_REQUEST[eletkora].'" selected="selected">'.$_REQUEST[eletkora].'</option>';
+    $request_neme_value = '<option value="'.$_REQUEST[neme].'" selected="selected">'.$_REQUEST[neme].'</option>';
+    $request_foglalkozas_value = $_REQUEST[foglalkozas];
+    $request_email_value = $_REQUEST[email];
 }
-
-$request_eletkora_value = '<option value="'.$_REQUEST[eletkora].'" selected="selected">'.$_REQUEST[eletkora].'</option>';
-$request_neme_value = '<option value="'.$_REQUEST[neme].'" selected="selected">'.$_REQUEST[neme].'</option>';
-$request_foglalkozas_value = $_REQUEST[foglalkozas];
-$request_email_value = $_REQUEST[email];
 
 $kerdes_darab = 0;
 $result = mysql_query("SELECT sorszam, kerdes_hu, kerdes_en, kerdes_de, tipus, sorrend FROM kerdesek WHERE status = '1' AND kerdoiv_sorszam = '1' ORDER BY sorrend");
@@ -157,7 +147,7 @@ while ($next_element = mysql_fetch_array($result)){
 					$textarea_request = $szoveg;
                 } 
         }
-		$valaszok .= "\n".'<textarea name="textarea_'.$next_element[sorszam].'">'.$textarea_request.'</textarea>';
+		$valaszok .= "\n".'<textarea cols="1" rows="1" name="textarea_'.$next_element[sorszam].'">'.$textarea_request.'</textarea>';
 		unset($textarea_request);
     }
     
@@ -220,8 +210,21 @@ if ($figyelmeztetes > 0){
 }
 
 if (($_REQUEST[submit]) AND ($hiba == '0')){
+    $mentes_gomb = '<div id="mentes_gomb" onclick="document.getElementById(\'form_survey\').submit()">'.$lang[mentes].'</div>';
+}
+
+if (($_REQUEST[submit]) AND ($hiba == '0') AND ($figyelmeztetes == '0')){
+    
+        $sql = "INSERT INTO kitoltok (email, neme, eletkora, lakhely, foglalkozas, nyelv) 
+                VALUES ('$email', '$_REQUEST[neme]', '$_REQUEST[eletkora]', '$_REQUEST[lakhely]', '$foglalkozas', '$_SESSION[lang]')";
+        mysql_query($sql);
+
+        $sql = mysql_query("SELECT MAX(sorszam) FROM kitoltok");
+        $a = mysql_fetch_row($sql);
+        $kitolto_sorszama = $a[0];
    
-	  foreach ($valaszok_data_checkbox as $key => $value){
+	  if ($valaszok_data_checkbox){
+          foreach ($valaszok_data_checkbox as $key => $value){
 		 if ($valaszok_data_checkbox[$key][checkbox]){
 			$kerdes_x = $valaszok_data_checkbox[$key][checkbox];
             $sql = "INSERT INTO valaszadasok (kerdoiv_sorszam, kerdes_sorszam, valasz_sorszam, ertek, kitolto_sorszam) 
@@ -229,7 +232,9 @@ if (($_REQUEST[submit]) AND ($hiba == '0')){
             mysql_query($sql);
 		 }
 	  }
+          }
 	  
+          if ($valaszok_data_select){
 	  foreach ($valaszok_data_select as $key => $value){
 		 if ($valaszok_data_select[$key][select]){
 			$valasz_x = $valaszok_data_select[$key][select];
@@ -238,7 +243,9 @@ if (($_REQUEST[submit]) AND ($hiba == '0')){
             mysql_query($sql);
 		 }
 	  }
+          }
 	  
+          if ($valaszok_data_textarea){
 	  foreach ($valaszok_data_textarea as $key => $value){
 		 if ($valaszok_data_textarea[$key][textarea]){
 			$szoveg_x = $valaszok_data_textarea[$key][textarea];
@@ -247,6 +254,7 @@ if (($_REQUEST[submit]) AND ($hiba == '0')){
 			  mysql_query($sql);
 		 }
 	  }
+          }
 	  
 	  if ($valaszok_data_text){
 	  foreach ($valaszok_data_text as $key => $value){
@@ -282,10 +290,10 @@ if (($_REQUEST[submit]) AND ($hiba == '0')){
 	  }
 	  }
     
-   #header("Location: /kerdoiv/index.php");
+   header("Location: /kerdoiv/index.php");
 }
    
-if ($hibauzenet){ 
+if (($hibauzenet) OR ($figy_uzenet)){ 
   $body_onload = ' onload="divdisp_on(\'popup\');"'; 
 }
 ?>

@@ -39,6 +39,8 @@ $array = array( 'tartalom'       => $tartalom,
                 'foglalkozas' => $lang[foglalkozas],
                 'elkuldes' => $lang[elkuldes],
                 'email_bekeres' => $lang[email_bekeres],
+                'session_lang' => $_SESSION["lang"],
+                'mentes_gomb' => $mentes_gomb,
     		'alcim' => $alcim);
 	 
 $index_html = new html_blokk;

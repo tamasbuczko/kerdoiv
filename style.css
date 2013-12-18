@@ -258,7 +258,7 @@ body{
    font-weight: bold;
 }
 
-#rendben_gomb{
+#rendben_gomb, #mentes_gomb{
     color: #111 !important;
     font-size: 12px;
     width: 50px;
@@ -271,6 +271,10 @@ body{
     text-decoration: none;
     margin: 30px auto 0px auto;
     background-color: #99aec3;}
+
+#mentes_gomb{
+    
+}
 
 .q_box h3{
     font-size: 13px;

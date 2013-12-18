@@ -1,10 +1,10 @@
-<!DOCTYPE html>
-<html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+ "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="{session_lang}" lang="{session_lang}">
     <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
         <title>Kérdőív</title>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width">
-		<script type="text/javascript" src="js/jscripts.js"></script>
+	<script type="text/javascript" src="js/jscripts.js"></script>
         <link rel="stylesheet" type="text/css" href="style.css" />
     </head>
     <body{body_onload}>
@@ -18,9 +18,11 @@
                 <div id="intro">
                     <div id="languages">
                         <h3>{nyelv_valasztas}</h3>
-                        <a href="?lang=hu"><img src="graphics/magyar_zaszlo.png" id="zaszlo" />{magyar}</a>
-                        <a href="?lang=en"><img src="graphics/angol_zaszlo.png" id="zaszlo" />{angol}</a>
-                        <a href="?lang=de"><img src="graphics/nemet_zaszlo.png" id="zaszlo" />{nemet}</a>
+                        <a href="?lang=hu"><img src="graphics/magyar_zaszlo.png" alt="{magyar}" />{magyar}</a>
+                        <a href="?lang=en"><img src="graphics/angol_zaszlo.png" alt="{angol}" />{angol}</a>
+                        <!--
+                        <a href="?lang=de"><img src="graphics/nemet_zaszlo.png" alt="{nemet}" />{nemet}</a>
+                        -->
                     </div>
                     <div id="survey_intro">
                         <h1>{kerdoiv_cim}</h1>
@@ -31,21 +33,21 @@
                 </div>
                 
                 <div id="survey">
-                    <form action="" name="form_survey" method="post">
+                    <form action="" name="form_survey" id="form_survey" method="post">
                     
                     <div class="szemelyes">                        
                         <label>{eletkor}</label>
                         <select name="eletkora">
                             {request_eletkora_value}
                             <option value="0">---</option>
-                            <option value="<18"><18</option>
+                            <option value="18">&lt;18</option>
                             <option value="18-25">18-25</option>
                             <option value="25-35">25-35</option>
                             <option value="35-45">35-45</option>
-                            <option value=">45">>45</option>
+                            <option value="45">45&lt;</option>
                         </select>
                         <br />
-                        <label>{neme}</label>
+                        <label>{neme} </label>
                         <select name="neme">
                             {request_neme_value}
                             <option value="0">---</option>
@@ -74,13 +76,13 @@
                         <input type="text" name="email" value="{request_email_value}" />
                     </div>                      
                         <div id="elkuld"><input type="submit" name="submit" value="{elkuldes}"/>
-                        <label> > > ></label><img src="graphics/postalada.png" id="posta" /></div>
+                        <label> &gt; &gt; &gt;</label><img src="graphics/postalada.png" id="posta" alt="" /></div>
                     </form>
                 </div>
                 
             </div>
             <div id="footer"></div>
-            <br style="clear: both;">
+            <br style="clear: both;" />
         </div>
 		
 		 <div id="popup">
@@ -89,8 +91,9 @@
 			   {hibauzenet}
                            {figy_uzenet}
                            <div id="rendben_gomb">OK</div>
+                           {mentes_gomb}
 			 </div>
-		 </div
+                 </div>
 
 		<script type="text/javascript" src="js/events.js"></script>
     </body>

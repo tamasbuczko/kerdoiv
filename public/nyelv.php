@@ -18,6 +18,7 @@ if ($_SESSION["lang"] == 'hu'){
     $lang[orszag] = 'Ország:';
     $lang[foglalkozas] = 'Foglalkozás:';
     $lang[elkuldes] = 'Elküldés';
+    $lang[mentes] = 'Mentés';
     $lang[email_bekeres] = 'Kérjük, adja meg e-mail címét, ha szeretné megkapni a kérdőív eredményét!';
     
 }
@@ -32,6 +33,7 @@ if ($_SESSION["lang"] == 'en'){
     $lang[orszag] = 'Country:';
     $lang[foglalkozas] = 'Occupation:';
     $lang[elkuldes] = 'Submit';
+    $lang[mentes] = 'Save';
     $lang[email_bekeres] = 'Please, give us your e-mail address if you want to know results of this survey!';
 }
 
@@ -45,6 +47,7 @@ if ($_SESSION["lang"] == 'de'){
     $lang[orszag] = 'Land:';
     $lang[foglalkozas] = 'Beruf:';
     $lang[elkuldes] = 'Sendung';
+    $lang[mentes] = 'Sendung';
     $lang[email_bekeres] = 'Bitte, geben Sie uns Ihre E-Mail-Adresse, wenn Sie Ergebnisse dieser Umfrage wissen wollen!';
 }
 
