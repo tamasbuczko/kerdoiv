@@ -35,7 +35,7 @@
                 <div id="survey">
                     <form action="" name="form_survey" id="form_survey" method="post">
                     
-                    <div class="szemelyes">                        
+                    <div class="szemelyes" style="{adat_off}">                        
                         <label>{eletkor}</label>
                         <select name="eletkora">
                             {request_eletkora_value}
@@ -69,6 +69,7 @@
                     {kerdes_blokk}
                     
                     <br />
+					<div style="{adat_off}">
                     <div id="e-mail"> <p>{email_bekeres}</p>
                     </div>    
                     <div class="szemelyes">
@@ -77,6 +78,7 @@
                     </div>                      
                         <div id="elkuld"><input type="submit" name="submit" value="{elkuldes}"/>
                         <label> &gt; &gt; &gt;</label><img src="graphics/postalada.png" id="posta" alt="" /></div>
+					</div>
                     </form>
                 </div>
                 
