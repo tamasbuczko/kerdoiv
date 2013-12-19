@@ -232,7 +232,12 @@ if ($figyelmeztetes > 0){
 	$figy_uzenet = substr($figy_uzenet, 0, -2);
     $figy_uzenet = '<h3><br />'.$lang['nem_valaszoltal'].'</h3>'.$figy_uzenet;
 }
-
+else {
+   $_REQUEST[b] == '1';
+}
+if (!$figy_uzenet){
+    $_REQUEST[b] == '1';
+}
 if (($_REQUEST[submit]) AND ($hiba == '0')){
     $mentes_gomb = '<div id="mentes_gomb">'.$lang[mentes].'</div>';
 }
@@ -243,7 +248,7 @@ if (($_REQUEST[submit]) AND ($hiba == '0') AND ($_REQUEST[b] == '1')){
    
    include('public/kerdoiv_mentes.php');
     
-   header("Location: /kerdoiv/index.php?ok=1");
+   header("Location: index.php?ok=1");
 }
 
 if ($_REQUEST[ok] == 1){
