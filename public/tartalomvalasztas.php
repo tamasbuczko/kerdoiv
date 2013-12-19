@@ -1,4 +1,6 @@
 <?php
+$kerdoiv_sorszam = 1;
+
 include('public/nyelv.php');
 
 //példák
@@ -15,7 +17,7 @@ while ($next_element = mysql_fetch_array($result)){
 	$orszag_combo .= '<option value="' . $next_element[country_id] . '" '.$request_lakhely.'>' . $next_element[short_name] . '</option>';
 }
 
-$resultc = mysql_query ("SELECT cim_hu, cim_en, cim_de, leiras_hu, leiras_en, leiras_de FROM kerdoivek WHERE status = '1' AND sorszam = '1' ");
+$resultc = mysql_query ("SELECT cim_hu, cim_en, cim_de, leiras_hu, leiras_en, leiras_de FROM kerdoivek WHERE status = '1' AND sorszam = '$kerdoiv_sorszam' ");
 $next_elementc = mysql_fetch_array ($resultc);
 $kerdoiv_cim=$next_elementc['cim_'.$_SESSION[lang]];
 $kerdoiv_leiras=$next_elementc['leiras_'.$_SESSION[lang]];
@@ -28,22 +30,22 @@ if ($_REQUEST[submit]){
     
     if ($_REQUEST[neme] == '0'){
         $hiba++;
-        $hiba_uzenetek[$hiba] = 'Nem adta meg a nemét!';
+        $hiba_uzenetek[$hiba] = $lang['nem_adta_meg_a_nemet'];
     }
     
     if ($_REQUEST[eletkora] == '0'){
         $hiba++;
-        $hiba_uzenetek[$hiba] = 'Nem adta meg a korát!';
+        $hiba_uzenetek[$hiba] = $lang['nem_adta_meg_a_korat'];
     }
     
     if ($_REQUEST[lakhely] == '0'){
         $hiba++;
-        $hiba_uzenetek[$hiba] = 'Nem adta meg a lakhelyét!';
+        $hiba_uzenetek[$hiba] = $lang['nem_adta_meg_a_lakhelyet'];
     }
     
     if ($_REQUEST[foglalkozas] == ''){
         $hiba++;
-        $hiba_uzenetek[$hiba] = 'Nem adta meg a foglalkozását!';
+        $hiba_uzenetek[$hiba] = $lang['nem_adta_meg_a_foglalkozasat'];
     }
     
     $request_eletkora_value = '<option value="'.$_REQUEST[eletkora].'" selected="selected">'.$_REQUEST[eletkora].'</option>';
@@ -53,7 +55,7 @@ if ($_REQUEST[submit]){
 }
 
 $kerdes_darab = 0;
-$result = mysql_query("SELECT sorszam, kerdes_hu, kerdes_en, kerdes_de, tipus, sorrend FROM kerdesek WHERE status = '1' AND kerdoiv_sorszam = '1' ORDER BY sorrend");
+$result = mysql_query("SELECT sorszam, kerdes_hu, kerdes_en, kerdes_de, tipus, sorrend FROM kerdesek WHERE status = '1' AND kerdoiv_sorszam = '$kerdoiv_sorszam' ORDER BY sorrend");
 while ($next_element = mysql_fetch_array($result)){
     
     $sorszam_kerdes = $next_element[sorszam];
@@ -207,14 +209,14 @@ while ($next_element = mysql_fetch_array($result)){
 
 if (($_REQUEST[submit]) AND (!$_REQUEST[email]) AND (!$_REQUEST[ok])){
    $figyelmeztetes++;
-   $figyelmeztetes_uzenetek[$figyelmeztetes] = '<br /><br />Email címed hiányzik';
+   $figyelmeztetes_uzenetek[$figyelmeztetes] = '<br /><br />'.$lang['email_cimed_hianyzik'];
 }
 
 if ($hiba > 0){
     foreach($hiba_uzenetek as $key => $value){
         $hibauzenet .= '- '. $value. '<br />';
     }
-    $hibauzenet = '<h3>A kérdőív az alábbi hibák miatt nem feldolgozható: </h3>'.$hibauzenet;
+    $hibauzenet = '<h3>'.$lang['nem_feldolgozhato'].'</h3>'.$hibauzenet;
 }
 
 if ($figyelmeztetes > 0){
@@ -222,7 +224,7 @@ if ($figyelmeztetes > 0){
         $figy_uzenet .= $value.', ';
     }
 	$figy_uzenet = substr($figy_uzenet, 0, -2);
-    $figy_uzenet = '<h3><br />Az alábbi kérdésekre nem válaszoltál: </h3>'.$figy_uzenet;
+    $figy_uzenet = '<h3><br />'.$lang['nem_valaszoltal'].'</h3>'.$figy_uzenet;
 }
 
 if (($_REQUEST[submit]) AND ($hiba == '0')){
@@ -244,6 +246,8 @@ if ($_REQUEST[ok] == 1){
 }
 
 if (($hibauzenet) OR ($figy_uzenet)){ 
-  $body_onload = ' onload="divdisp_on(\'popup\');"'; 
+   if (!$_REQUEST[lang]){
+	  $body_onload = ' onload="divdisp_on(\'popup\');"'; 
+   }
 }
 ?>

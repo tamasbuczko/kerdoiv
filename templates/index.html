@@ -18,10 +18,10 @@
                 <div id="intro">
                     <div id="languages">
                         <h3>{nyelv_valasztas}</h3>
-                        <a href="?lang=hu"><img src="graphics/magyar_zaszlo.png" alt="{magyar}" />{magyar}</a>
-                        <a href="?lang=en"><img src="graphics/angol_zaszlo.png" alt="{angol}" />{angol}</a>
+                        <span id="magyar_zaszlo"><img src="graphics/magyar_zaszlo.png" alt="{magyar}" />{magyar}</span>
+                        <span id="angol_zaszlo"><img src="graphics/angol_zaszlo.png" alt="{angol}" />{angol}</span>
                         <!--
-                        <a href="?lang=de"><img src="graphics/nemet_zaszlo.png" alt="{nemet}" />{nemet}</a>
+                        <span id="nemet_zaszlo"><img src="graphics/nemet_zaszlo.png" alt="{nemet}" />{nemet}</span>
                         -->
                     </div>
                     <div id="survey_intro">
@@ -33,7 +33,7 @@
                 </div>
                 
                 <div id="survey">
-                    <form action="" name="form_survey" id="form_survey" method="post">
+                    <form action="?" name="form_survey" id="form_survey" method="post">
                     
                     <div class="szemelyes" style="{adat_off}">                        
                         <label>{eletkor}</label>

@@ -13,7 +13,7 @@
 			if ($valaszok_data_checkbox[$key][checkbox]){
 			   $kerdes_x = $valaszok_data_checkbox[$key][checkbox];
 			   $sql = "INSERT INTO valaszadasok (kerdoiv_sorszam, kerdes_sorszam, valasz_sorszam, ertek, kitolto_sorszam) 
-			   VALUES ('1', '$kerdes_x', '$key', '1', '$kitolto_sorszama')";
+			   VALUES ('$kerdoiv_sorszam', '$kerdes_x', '$key', '1', '$kitolto_sorszama')";
 			   mysql_query($sql);
 			}
 		 }
@@ -24,7 +24,7 @@
 			if ($valaszok_data_select[$key][select]){
 			   $valasz_x = $valaszok_data_select[$key][select];
 			   $sql = "INSERT INTO valaszadasok (kerdoiv_sorszam, kerdes_sorszam, valasz_sorszam, ertek, kitolto_sorszam) 
-			   VALUES ('1', '$key', '$valasz_x', '1', '$kitolto_sorszama')";
+			   VALUES ('$kerdoiv_sorszam', '$key', '$valasz_x', '1', '$kitolto_sorszama')";
 			   mysql_query($sql);
 			}
 		 }
@@ -35,7 +35,7 @@
 			if ($valaszok_data_textarea[$key][textarea]){
 			   $szoveg_x = $valaszok_data_textarea[$key][textarea];
 			   $sql = "INSERT INTO valaszadasok (kerdoiv_sorszam, kerdes_sorszam, valasz_sorszam, ertek, szoveg, kitolto_sorszam) 
-					   VALUES ('1', '$key', '', '1', '$szoveg_x', '$kitolto_sorszama')";
+					   VALUES ('$kerdoiv_sorszam', '$key', '', '1', '$szoveg_x', '$kitolto_sorszama')";
 				 mysql_query($sql);
 			}
 		 }
@@ -46,7 +46,7 @@
 			if ($valaszok_data_text[$key][text]){
 			   $szoveg_x = $valaszok_data_text[$key][text];
 			   $sql = "INSERT INTO valaszadasok (kerdoiv_sorszam, kerdes_sorszam, valasz_sorszam, ertek, szoveg, kitolto_sorszam) 
-					   VALUES ('1', '$key', '', '1', '$szoveg_x', '$kitolto_sorszama')";
+					   VALUES ('$kerdoiv_sorszam', '$key', '', '1', '$szoveg_x', '$kitolto_sorszama')";
 				 mysql_query($sql);
 			}
 		 }
@@ -57,7 +57,7 @@
 			if ($valaszok_data_radio[$key][radio]){
 			   $valasz_x = $valaszok_data_radio[$key][radio];
 			   $sql = "INSERT INTO valaszadasok (kerdoiv_sorszam, kerdes_sorszam, valasz_sorszam, ertek, szoveg, kitolto_sorszam) 
-					   VALUES ('1', '$key', '$valasz_x', '1', '', '$kitolto_sorszama')";
+					   VALUES ('$kerdoiv_sorszam', '$key', '$valasz_x', '1', '', '$kitolto_sorszama')";
 				 mysql_query($sql);
 			}
 		 }
@@ -69,7 +69,7 @@
 			   $valasz_x = $valaszok_data_rank[$key][rank];
 			   $kerdes_x = $valaszok_data_rank[$key][kerdes];
 			   $sql = "INSERT INTO valaszadasok (kerdoiv_sorszam, kerdes_sorszam, valasz_sorszam, ertek, szoveg, kitolto_sorszam) 
-					   VALUES ('1', '$kerdes_x', '$key', '$valasz_x', '', '$kitolto_sorszama')";
+					   VALUES ('$kerdoiv_sorszam', '$kerdes_x', '$key', '$valasz_x', '', '$kitolto_sorszama')";
 				 mysql_query($sql);
 			}
 		 }

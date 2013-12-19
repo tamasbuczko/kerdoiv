@@ -34,7 +34,7 @@ body{
     float: left;
 }
 
-#languages a {
+#languages span {
     display: block;
     width: 190px;
     height: 33px;
@@ -45,6 +45,7 @@ body{
     font-weight: bold;
     padding-top: 13px;
     margin-top: 14px;
+	cursor: pointer;
     -moz-box-shadow:    4px 4px 6px #bdbcbc;
     -webkit-box-shadow: 4px 4px 6px #bdbcbc;
     box-shadow:         4px 4px 6px #bdbcbc;
@@ -56,11 +57,11 @@ body{
     margin: 0px 5px 0px 45px; 
 }
 
-#languages a:hover{
+#languages span:hover{
     font-size: 18px; 
 }
 
-#languages a:hover img{
+#languages span:hover img{
     float: left;    
     height: 25px;
     margin: 0px 5px 0px 45px; 
