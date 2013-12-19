@@ -1,5 +1,9 @@
 <?php
-$kerdoiv_sorszam = 1;
+if ($_REQUEST[kerdoiv]){
+    $kerdoiv_sorszam = $_REQUEST[kerdoiv];}
+else {
+    $kerdoiv_sorszam = 1;
+}
 
 include('public/nyelv.php');
 
@@ -31,11 +35,15 @@ if ($_REQUEST[submit]){
     if ($_REQUEST[neme] == '0'){
         $hiba++;
         $hiba_uzenetek[$hiba] = $lang['nem_adta_meg_a_nemet'];
+    } else {
+        $request_neme_value = '<option value="'.$_REQUEST[neme].'" selected="selected">'.$_REQUEST[neme].'</option>';
     }
     
     if ($_REQUEST[eletkora] == '0'){
         $hiba++;
         $hiba_uzenetek[$hiba] = $lang['nem_adta_meg_a_korat'];
+    } else {
+        $request_eletkora_value = '<option value="'.$_REQUEST[eletkora].'" selected="selected">'.$_REQUEST[eletkora].'</option>';
     }
     
     if ($_REQUEST[lakhely] == '0'){
@@ -47,9 +55,7 @@ if ($_REQUEST[submit]){
         $hiba++;
         $hiba_uzenetek[$hiba] = $lang['nem_adta_meg_a_foglalkozasat'];
     }
-    
-    $request_eletkora_value = '<option value="'.$_REQUEST[eletkora].'" selected="selected">'.$_REQUEST[eletkora].'</option>';
-    $request_neme_value = '<option value="'.$_REQUEST[neme].'" selected="selected">'.$_REQUEST[neme].'</option>';
+        
     $request_foglalkozas_value = $_REQUEST[foglalkozas];
     $request_email_value = $_REQUEST[email];
 }
@@ -128,7 +134,7 @@ while ($next_element = mysql_fetch_array($result)){
 	
 	if ($next_element[tipus] == 'radio'){
 	   if (!$radio_request){
-		 $valaszok .= "\n".'<input type="radio" name="radio_'.$sorszam_kerdes.'" checked="checked" value="0" style="display: none;" />';
+		 #$valaszok .= "\n".'<input type="radio" name="radio_'.$sorszam_kerdes.'" checked="checked" value="0" style="display: none;" />';
 	   }
 	}
     

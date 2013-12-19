@@ -15,11 +15,13 @@ if ($_SESSION["lang"] == 'hu'){
     $lang[nemet] = 'német';
     $lang[eletkor] = 'Életkor:';
     $lang[neme] = 'Neme:';
+    $lang[ferfi] = 'férfi';
+    $lang[no] = 'nő';
     $lang[orszag] = 'Ország:';
     $lang[foglalkozas] = 'Foglalkozás:';
     $lang[elkuldes] = 'Elküldés';
     $lang[mentes] = 'Mentés';
-	$lang[koszonjuk_valaszaid] = 'Köszönjük válaszaid!';
+    $lang[koszonjuk_valaszaid] = 'Köszönjük válaszaid!';
     $lang[email_bekeres] = 'Kérjük, adja meg e-mail címét, ha szeretné megkapni a kérdőív eredményét!';
     $lang[nem_valaszoltal] = 'Az alábbi kérdésekre nem válaszoltál: ';
 	$lang[nem_feldolgozhato] = 'A kérdőív az alábbi hibák miatt nem feldolgozható: ';
@@ -37,6 +39,8 @@ if ($_SESSION["lang"] == 'en'){
     $lang[nemet] = 'German';
     $lang[eletkor] = 'Age:';
     $lang[neme] = 'Sex:';
+    $lang[ferfi] = 'man';
+    $lang[no] = 'woman';
     $lang[orszag] = 'Country:';
     $lang[foglalkozas] = 'Occupation:';
     $lang[elkuldes] = 'Submit';
@@ -59,6 +63,8 @@ if ($_SESSION["lang"] == 'de'){
     $lang[nemet] = 'deutsch';
     $lang[eletkor] = 'Alter:';
     $lang[neme] = 'Sex:';
+    $lang[ferfi] = 'férfi';
+    $lang[no] = 'nő';
     $lang[orszag] = 'Land:';
     $lang[foglalkozas] = 'Beruf:';
     $lang[elkuldes] = 'Sendung';
