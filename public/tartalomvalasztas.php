@@ -120,6 +120,7 @@ while ($next_element = mysql_fetch_array($result)){
 				  $ranking_request = 'checked="checked"';
 			   } else {
 				  $ranking_request = '';
+				  $figyelmeztetes++;
 			   }
                $valaszokx .= "\n".'<input type="radio" name="rank_'.$next_elementv[sorszam].'" '.$ranking_request.' style="float: left; clear: none; margin-right: 6px; margin-left: 6px;" value="'.$i.'" />';
             }
@@ -247,8 +248,10 @@ if ($figyelmeztetes > 0){
 	   $figy_uzenet .= $key.', ';
 	   }
     }
-	$figy_uzenet = substr($figy_uzenet, 0, -2);
-    $figy_uzenet = '<h3><br />'.$lang['nem_valaszoltal'].'</h3>'.$figy_uzenet;
+	if ($figy_uzenet){
+	  $figy_uzenet = substr($figy_uzenet, 0, -2);
+	  $figy_uzenet = '<h3><br />'.$lang['nem_valaszoltal'].'</h3>'.$figy_uzenet;
+	}
 }
 else {
    $_REQUEST['b'] = '1';
