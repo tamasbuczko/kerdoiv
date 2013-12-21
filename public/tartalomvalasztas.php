@@ -65,6 +65,7 @@ $result = mysql_query("SELECT sorszam, kerdes_hu, kerdes_en, kerdes_de, tipus, s
 while ($next_element = mysql_fetch_array($result)){
     
     $sorszam_kerdes = $next_element[sorszam];
+	$kerdesek[$sorszam_kerdes] = '0';
     
     $resultx = mysql_query("SELECT sorszam, kerdes_valasz, valasz_hu, valasz_en, valasz_de FROM valaszok WHERE status = '1' AND kerdes_valasz = '$sorszam_kerdes' ORDER BY sorrend");
     while ($next_elementv = mysql_fetch_array($resultx)){
@@ -89,7 +90,11 @@ while ($next_element = mysql_fetch_array($result)){
                     if ($checkbox == 'on'){
                         $valaszok_data_checkbox[$sorszam_valasz][checkbox] = $sorszam_kerdes;
 						$check_request = 'checked="checked"';
-                    }
+						$kerdesek[$sorszam_kerdes] = '1';
+                    } else {
+					   // ha nem lett kiválasztva
+					   
+					}
             }
 			
 			$valaszok .= "\n".'<input type="checkbox" name="checkbox_'.$next_elementv[sorszam].'" '.$check_request.' /><label>'.$next_elementv['valasz_'.$_SESSION[lang]].'</label>';
@@ -145,6 +150,7 @@ while ($next_element = mysql_fetch_array($result)){
                      $szoveg = $_REQUEST['text_'.$next_element[sorszam]];
 					 $valaszok_data_text[$sorszam_kerdes][text] = $szoveg;
                      $text_request = $szoveg;
+					 $kerdesek[$sorszam_kerdes] = '1';
                  }
             }
 		$valaszok .= "\n".'<input type="text" name="text_'.$next_element[sorszam].'" value="'.$text_request.'" />';
@@ -159,7 +165,10 @@ while ($next_element = mysql_fetch_array($result)){
 					
 					$valaszok_data_textarea[$sorszam_kerdes][textarea] = $szoveg;
 					$textarea_request = $szoveg;
-                } 
+					$kerdesek[$sorszam_kerdes] = '1';
+                } else {
+				   
+				}
         }
 		$valaszok .= "\n".'<textarea cols="1" rows="1" name="textarea_'.$next_element[sorszam].'">'.$textarea_request.'</textarea>';
 		unset($textarea_request);
@@ -169,9 +178,9 @@ while ($next_element = mysql_fetch_array($result)){
        if ($_REQUEST[submit]){
                 $radio = $_REQUEST['radio_'.$sorszam_kerdes];
 			   $valaszok_data_radio[$sorszam_kerdes][radio] = $radio;
-			   if ($radio == '0'){
-				  $figyelmeztetes++;
-				  $figyelmeztetes_uzenetek[$figyelmeztetes] = $next_element[sorszam];
+			  
+			   if ($radio){
+				  $kerdesek[$sorszam_kerdes] = '1';
 			   }
        }
        
@@ -189,7 +198,11 @@ while ($next_element = mysql_fetch_array($result)){
         if ($_REQUEST[submit]){
             if ($_REQUEST['select_'.$next_element[sorszam]]){
                 $select = $_REQUEST['select_'.$next_element[sorszam]];
+				if ($select != '0'){
+				  $kerdesek[$sorszam_kerdes] = '1';
+			   }
             } else {
+			   
                 $select = '';
                 $figyelmeztetes++;
                 $figyelmeztetes_uzenetek[$figyelmeztetes] = $next_element[sorszam];
@@ -225,18 +238,22 @@ if ($hiba > 0){
     $hibauzenet = '<h3>'.$lang['nem_feldolgozhato'].'</h3>'.$hibauzenet;
 }
 
+//nem lett kijelölve
+
 if ($figyelmeztetes > 0){
-    foreach($figyelmeztetes_uzenetek as $key => $value){
-        $figy_uzenet .= $value.', ';
+    foreach($kerdesek as $key => $value){
+       if ($kerdesek[$key] == '0'){ 
+	   $figy_uzenet .= $key.', ';
+	   }
     }
 	$figy_uzenet = substr($figy_uzenet, 0, -2);
     $figy_uzenet = '<h3><br />'.$lang['nem_valaszoltal'].'</h3>'.$figy_uzenet;
 }
 else {
-   $_REQUEST[b] == '1';
+   $_REQUEST['b'] = '1';
 }
 if (!$figy_uzenet){
-    $_REQUEST[b] == '1';
+    $_REQUEST['b'] = '1';
 }
 if (($_REQUEST[submit]) AND ($hiba == '0')){
     $mentes_gomb = '<div id="mentes_gomb">'.$lang[mentes].'</div>';
