@@ -131,6 +131,7 @@ while ($next_element = mysql_fetch_array($result)){
                 if ($rank){ 
 				  $valaszok_data_rank[$sorszam_valasz][rank] = $rank;
 				  $valaszok_data_rank[$sorszam_valasz][kerdes] = $sorszam_kerdes;
+				  $kerdesek[$sorszam_kerdes] = '1';
                 }
             }
         }
