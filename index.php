@@ -12,6 +12,9 @@ require_once('class/class.php');
 $adatkapcsolat = new data_connect;
 $adatkapcsolat->connect();
 
+//nyelvi változatok kezelése
+include('public/nyelv.php');
+
 //a megjelenített tartalom elágazásainak kezelése
 require_once('public/tartalomvalasztas.php');
 
@@ -19,10 +22,10 @@ require_once('public/tartalomvalasztas.php');
 $array = array( 'tartalom'       => $tartalom,
 		'body_onload' => $body_onload,  
                 'popup_tartalom' => $popup_tartalom,
-                'kerdes_blokk'   => $kerdes_blokk,
+                'tartalom'   => $tartalom,
                 'hibauzenet'   => $hibauzenet,
                 'figy_uzenet'   => $figy_uzenet,
-				'adat_off'   => $adat_off,
+		'adat_off'   => $adat_off,
                 'orszag_combo'   => $orszag_combo,
                 'kerdoiv_cim'    => $kerdoiv_cim,
                 'kerdoiv_leiras' => $kerdoiv_leiras,

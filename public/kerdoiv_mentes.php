@@ -8,9 +8,9 @@
    $a = mysql_fetch_row($sql);
    $kitolto_sorszama = $a[0];
    
-	  if ($valaszok_data_checkbox){
+	  if ($valaszok_data_checkbox){ //tömb létezésének vizsgálata (volt e ilyen típusú kérdés)
 		 foreach ($valaszok_data_checkbox as $key => $value){
-			if ($valaszok_data_checkbox[$key][checkbox]){
+			if ($valaszok_data_checkbox[$key][checkbox]){ //$key a válasz sorszáma
 			   $kerdes_x = $valaszok_data_checkbox[$key][checkbox];
 			   $sql = "INSERT INTO valaszadasok (kerdoiv_sorszam, kerdes_sorszam, valasz_sorszam, ertek, kitolto_sorszam) 
 			   VALUES ('$kerdoiv_sorszam', '$kerdes_x', '$key', '1', '$kitolto_sorszama')";
