@@ -1,6 +1,6 @@
 <?php
 
-class data_connect{
+class data_connect{ //ez egy osztály, csak terv
 	public $domain;    
 
 	function connect(){

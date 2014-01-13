@@ -2,22 +2,22 @@
 
    $sql = "INSERT INTO kitoltok (email, neme, eletkora, lakhely, foglalkozas, nyelv) 
            VALUES ('$email', '$_REQUEST[neme]', '$_REQUEST[eletkora]', '$_REQUEST[lakhely]', '$foglalkozas', '$_SESSION[lang]')";
-   mysql_query($sql);
+   mysql_query($sql); //futtatás
 
    $sql = mysql_query("SELECT MAX(sorszam) FROM kitoltok");
    $a = mysql_fetch_row($sql);
    $kitolto_sorszama = $a[0];
    
-	  if ($valaszok_data_checkbox){ //tömb létezésének vizsgálata (volt e ilyen típusú kérdés)
-		 foreach ($valaszok_data_checkbox as $key => $value){
-			if ($valaszok_data_checkbox[$key][checkbox]){ //$key a válasz sorszáma
-			   $kerdes_x = $valaszok_data_checkbox[$key][checkbox];
-			   $sql = "INSERT INTO valaszadasok (kerdoiv_sorszam, kerdes_sorszam, valasz_sorszam, ertek, kitolto_sorszam) 
-			   VALUES ('$kerdoiv_sorszam', '$kerdes_x', '$key', '1', '$kitolto_sorszama')";
-			   mysql_query($sql);
-			}
-		 }
-      }
+   if ($valaszok_data_checkbox){ //tömb létezésének vizsgálata (volt e ilyen típusú kérdés)
+        foreach ($valaszok_data_checkbox as $key => $value){
+            if ($valaszok_data_checkbox[$key][checkbox]){ //$key a válasz sorszáma, amiket ki is választottak
+               $kerdes_x = $valaszok_data_checkbox[$key][checkbox]; //$kerdes_x kapja meg a kerdes sorszamat
+               $sql = "INSERT INTO valaszadasok (kerdoiv_sorszam, kerdes_sorszam, valasz_sorszam, ertek, kitolto_sorszam) 
+               VALUES ('$kerdoiv_sorszam', '$kerdes_x', '$key', '1', '$kitolto_sorszama')";
+               mysql_query($sql);
+            }
+	}
+   }
 	  
       if ($valaszok_data_select){
 		 foreach ($valaszok_data_select as $key => $value){
@@ -66,8 +66,9 @@
 	  if ($valaszok_data_rank){
 		 foreach ($valaszok_data_rank as $key => $value){
 			if ($valaszok_data_rank[$key][rank]){
-			   $valasz_x = $valaszok_data_rank[$key][rank];
+			   $valasz_x = $valaszok_data_rank[$key][rank]; //$valasz_x tartalmazza magát az értéket
 			   $kerdes_x = $valaszok_data_rank[$key][kerdes];
+                           
 			   $sql = "INSERT INTO valaszadasok (kerdoiv_sorszam, kerdes_sorszam, valasz_sorszam, ertek, szoveg, kitolto_sorszam) 
 					   VALUES ('$kerdoiv_sorszam', '$kerdes_x', '$key', '$valasz_x', '', '$kitolto_sorszama')";
 				 mysql_query($sql);

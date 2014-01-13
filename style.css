@@ -188,6 +188,19 @@ body{
     height: 22px;
 }
 
+.ranking_value{
+    float: left !important;
+    clear: none !important;
+    margin-right: 6px !important;
+    margin-left: 6px !important;
+}
+
+.ranking_text{
+    clear: both  !important;
+    float: left !important;
+    margin-left: 47px !important;
+}
+
 .ranking span{
     display: block;
     width: 13px;

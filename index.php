@@ -9,8 +9,8 @@ require_once('parameters.php');
 require_once('class/class.php');
 
 //kapcsolat létrehozása az adatbázis szerverrel (class.php)
-$adatkapcsolat = new data_connect;
-$adatkapcsolat->connect();
+$adatkapcsolat = new data_connect;  //példányosítjuk az objektumot
+$adatkapcsolat->connect();          //az objektum connect fügvényét futatjuk
 
 //nyelvi változatok kezelése
 include('public/nyelv.php');
