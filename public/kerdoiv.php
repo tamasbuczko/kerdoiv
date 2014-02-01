@@ -1,5 +1,5 @@
 <?php
-
+include('public/kerdoiv_hiba.php');
 include('public/kerdoiv_fejlec.php');
 
 //példák
@@ -9,7 +9,7 @@ $kerdes_darab = 0;
 $figyelmeztetes = 0;
 
 include('public/kerdoiv_generator.php');
-include('public/kerdoiv_hiba.php');
+
 include('public/kerdoiv_figyelmeztetesek.php');
 
 if (($_REQUEST[submit]) AND ($hiba == '0')){
