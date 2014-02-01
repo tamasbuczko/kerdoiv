@@ -22,7 +22,6 @@ require_once('public/tartalomvalasztas.php');
 $array = array( 'tartalom'       => $tartalom,
 		'body_onload' => $body_onload,  
                 'popup_tartalom' => $popup_tartalom,
-                'tartalom'   => $tartalom,
                 'hibauzenet'   => $hibauzenet,
                 'figy_uzenet'   => $figy_uzenet,
 		'adat_off'   => $adat_off,

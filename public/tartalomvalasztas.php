@@ -1,5 +1,5 @@
 <?php
-//$tartalom változó létrehozása
+
 if ($_REQUEST[p]){
     include('public/'.$_REQUEST[p].'.php');
 } else {

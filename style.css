@@ -157,10 +157,8 @@ body{
 .survey_question{
     background-color: #99aec3;
     height: auto;
-    padding-top: 8px;
-    padding-bottom: 8px;
-    padding-left: 20px;
-    width: 650px;
+    padding: 8px 8px 8px 20px;
+    width: 642px;
 }
 
 .survey_answers{
@@ -317,4 +315,37 @@ margin-left: 20px;
 .graf {
     background-color: #860000;
     height: 15px;
+}
+
+.graf2 {
+    background-color: #860000;
+    height: 3px;
+}
+
+.grafv{
+    background-color: #eeeeee;
+    width: 300px;
+    border: 1px solid #cecece;
+}
+
+.graf2v{
+    background-color: #eeeeee;
+    width: 30px;
+    border: 1px solid #cecece;
+}
+
+.rank_eredmeny{
+    border-collapse: collapse;
+}
+
+.rank_eredmeny td{
+    width: 30px;
+    text-align: center;
+    border: 1px solid #cecece;
+    padding: 3px;
+}
+
+.rank_eredmeny td:nth-child(1){
+    width: 450px;
+    text-align: left;
 }
