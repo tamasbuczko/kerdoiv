@@ -7,6 +7,17 @@ else {
     $kerdoiv_sorszam = 1;
 }
 
+#országok beolvasása comboboxhoz
+$result = mysql_query("SELECT country_id, short_name, calling_code FROM dat_orszag ORDER BY short_name");
+while ($next_element = mysql_fetch_array($result)){
+        if ($_REQUEST[lakhely] == $next_element[country_id]){//Ez végzi a kiválasztott elem megtartását.
+            $request_lakhely = 'selected="selected"';
+        } else {
+            $request_lakhely = '';
+        }
+	$orszag_combo .= '<option value="' . $next_element[country_id] . '" '.$request_lakhely.'>' . $next_element[short_name] . '</option>';
+}
+
 //a választott nyelv szerinti kérdőív cím és leírás betöltése
 $resultc = mysql_query ("SELECT cim_hu, cim_en, cim_de, leiras_hu, leiras_en, leiras_de FROM kerdoivek WHERE status = '1' AND sorszam = '$kerdoiv_sorszam' ");
 $next_elementc = mysql_fetch_array ($resultc);

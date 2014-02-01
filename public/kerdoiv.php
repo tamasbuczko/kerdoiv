@@ -5,17 +5,6 @@ include('public/kerdoiv_fejlec.php');
 //példák
 #include('public/peldak.php');
 
-#országok beolvasása comboboxhoz
-$result = mysql_query("SELECT country_id, short_name, calling_code FROM dat_orszag ORDER BY short_name");
-while ($next_element = mysql_fetch_array($result)){
-        if ($_REQUEST[lakhely] == $next_element[country_id]){//Ez végzi a kiválasztott elem megtartását.
-            $request_lakhely = 'selected="selected"';
-        } else {
-            $request_lakhely = '';
-        }
-	$orszag_combo .= '<option value="' . $next_element[country_id] . '" '.$request_lakhely.'>' . $next_element[short_name] . '</option>';
-}
-
 $kerdes_darab = 0;
 $figyelmeztetes = 0;
 
