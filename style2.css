@@ -1,0 +1,372 @@
+@font-face {
+    font-family: 'futura';
+    src: url('fonts/futuramdcnhu-webfont.eot');
+    src: url('fonts/futuramdcnhu-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/futuramdcnhu-webfont.woff') format('woff'),
+         url('fonts/futuramdcnhu-webfont.ttf') format('truetype'),
+         url('fonts/futuramdcnhu-webfont.svg#TrumpGothicEastRegular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}  
+
+body{
+    margin: 0;
+    padding: 0;
+    background-color: #9db5e1;//#eef3fa;
+    font-family: 'futura', Verdana;
+}
+
+#frame{
+    width: 860px;
+    background-color: #fffefc;//#ffffff;
+    margin: 10px auto 10px auto;
+    //border: 1px solid #666;
+    padding: 0px;
+}
+
+#head{
+    background-image: url('graphics/style_bg_head.jpg');
+    background-repeat: repeat-x;
+    height: 90px;
+    width: 850px;
+    color: #ffffff;
+    padding-left: 10px;
+    padding-top: 14px;
+    font-size: 52px;
+}
+
+#content{
+    margin: 0px 0px 0px 10px;
+}
+
+#languages{
+    width: 200px;
+    float: left;
+}
+
+#languages span {
+    display: block;
+    width: 86px;
+    height: 33px;
+    background-color: #dde5f0;
+    color: #111;
+	float: left;
+    text-decoration: none;
+    padding-top: 13px;
+    margin-top: 14px;
+	margin-right: 10px;
+	border: 2px solid transparent;
+	cursor: pointer;
+}
+
+#languages img{
+    float: left;    
+    height: 20px;
+    margin: 0px 5px 0px 12px; 
+}
+
+#languages span:hover{
+   border: 2px solid #5e98e8;
+}
+
+#languages span:hover img{
+    
+}
+
+#elkuld input{
+    float: left;
+    margin: 5px 10px 5px 20px;
+    width: 100px;
+    padding: 5px 5px 5px 5px;
+    border-radius: 25px 0px 25px 0px;
+    background-color: #eef3fa;
+	border-color: #eef3fa;
+    
+}
+
+#elkuld input:hover{
+    background-color:#99aec3;
+	border-color: #99aec3;
+}
+
+#elkuld label{
+    float: left;
+    margin-top: 10px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #99aec3;
+}
+
+#languages h3{
+    color: #003567;
+	font-weight: normal;
+    font-size: 20px;
+    width: 190px;
+    padding-top: 28px;
+    height: 21px;
+    margin: 0px auto 0px auto;
+    text-align: center;
+}
+
+#survey_intro{
+    float: left;
+    margin: 0px 0px 0px 40px;  
+}
+
+#survey_intro h1{
+    margin-top: 0px;
+    color: #003567;
+    height: 21px;
+    padding-top: 28px;
+	font-weight: normal;
+    font-size: 20px;
+    margin-left: 15px;
+    
+}
+
+#survey_intro div{
+    float: left;
+    width: 400px;
+    margin-top: 1px;
+    padding: 12px 15px 12px 15px;
+    background-color: #dde5f0;
+    font-size: 18px;
+    line-height:1.3;
+    text-align: justify;
+}
+
+#survey{
+   width: 100%;
+    clear: both;
+    float: left;
+    margin: 40px 0px 0px 0px;
+}
+
+.szemelyes{
+    margin-left: 125px;
+    margin-bottom: 25px;
+    width: 550px;
+}
+.szemelyes label{
+    margin: 5px 5px 5px 5px;
+    width: 100px;
+    float: left;
+}
+.szemelyes input, .szemelyes select{
+    margin: 5px 5px 5px 5px;
+    width: 250px;
+}
+
+
+.survey_question{
+    background-color: #dde5f0;
+    height: auto;
+    padding: 8px 8px 8px 20px;
+    width: 642px;
+}
+
+.survey_answers{
+    min-height: 40px;
+    margin-top: 20px;
+    margin-bottom: 25px;
+    width: 670px;
+}
+
+.survey_answers label{
+    display: block;
+    width: 490px;
+    float: left;
+    text-align: left;
+    
+}
+
+.label_v{
+    margin-top: 4px !important;
+}
+
+.ranking{
+    width: 132px;
+    float: right;
+    height: 22px;
+}
+
+.ranking_value{
+    float: left !important;
+    clear: none !important;
+    margin-right: 6px !important;
+    margin-left: 6px !important;
+}
+
+.ranking_text{
+    clear: both  !important;
+    float: left !important;
+    margin-left: 47px !important;
+}
+
+.ranking span{
+    display: block;
+    width: 13px;
+    height: 13px;
+    float: left;
+    margin: 0px 6px 0px 6px;
+    text-align: center;
+}
+
+.survey_answers input, .survey_answers select, .survey_answers textarea{
+    clear: both;
+    float: left;
+    margin: 3px 10px 0px 50px;
+}
+
+input[type=text]{
+   border: 1px solid #99aec3;
+}
+
+.form_survey input[type=text], .survey_answers textarea{
+    width: 560px;
+    padding: 2px;
+    border: 1px solid #99aec3;
+}
+
+
+.survey_answers textarea{
+    height: 80px;
+}
+
+.survey_answers p{
+    float: right;
+    width: 200px;
+    margin-top:-30px;
+    border: 1px solid #aaa;
+    background-color: #eee;
+    color: #666;
+    font-size: 11px;
+    padding: 8px;
+}
+
+
+
+
+ #popup{
+	position: absolute;
+	top: 0px;
+    left: 0px;
+    display: none;
+	padding-top: 120px;
+	width: 100%;
+	height: 4000px;
+    z-index: 2;
+	text-align: center;
+	background-image: url('graphics/homaly_f.png'); }
+	
+.q_box{
+   min-height: 100px;
+    -moz-box-shadow:    0px 0px 6px #484848;
+	-webkit-box-shadow: 0px 0px 6px #484848;
+	box-shadow:         0px 0px 6px #484848;
+	margin: 0px auto 0px auto;
+	text-align: left;
+	width: 270px;
+	font-size: 12px;
+	font-weight: normal;
+    border: 1px solid #aaaaaa;
+	padding: 15px 15px 15px 15px;
+	background-color: #fefefe;
+    color: #686868;}
+
+.q_box p{
+   margin: 0px;
+   font-weight: bold;
+}
+
+#rendben_gomb, #mentes_gomb{
+    color: #111 !important;
+    font-size: 12px;
+    width: 50px;
+    height: 18px;
+    text-align: center;
+    font-weight: bold;
+    padding-top: 4px;
+    clear: both;
+    cursor: pointer;
+    text-decoration: none;
+    margin: 30px auto 0px auto;
+    background-color: #99aec3;}
+
+#mentes_gomb{
+    
+}
+
+.q_box h3{
+    font-size: 13px;
+    margin-top: 0px;
+}
+
+#e-mail{
+margin-left: 20px;    
+}
+
+#posta{
+    float: right;
+    height: 50px;
+    margin: -5px 560px 40px 0px;
+    
+}
+
+#koszonjuk{
+   width: 400px;
+   margin: 20px auto 20px auto;
+   font-size: 28px;
+   text-align: center;
+}
+
+.graf {
+    background-color: #860000;
+    height: 15px;
+}
+
+.graf2 {
+    background-color: #860000;
+    height: 3px;
+}
+
+.grafv{
+    background-color: #eeeeee;
+    width: 300px;
+    border: 1px solid #cecece;
+}
+
+.graf2v{
+    background-color: #eeeeee;
+    width: 30px;
+    border: 1px solid #cecece;
+}
+
+.rank_eredmeny{
+    border-collapse: collapse;
+}
+
+.rank_eredmeny td{
+    width: 30px;
+    text-align: center;
+    border: 1px solid #cecece;
+    padding: 3px;
+}
+
+.rank_eredmeny td:nth-child(1){
+    width: 450px;
+    text-align: left;
+}
+
+#change_css{
+   width: 200px;
+   background-color: #fff;
+   border: 1px solid #999;
+   position: fixed;
+   right: 10px;
+   bottom: 10px;
+}
+
+#change_css input, #change_css select{
+   float: right;
+}

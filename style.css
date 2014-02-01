@@ -349,3 +349,16 @@ margin-left: 20px;
     width: 450px;
     text-align: left;
 }
+
+#change_css{
+   width: 200px;
+   background-color: #fff;
+   border: 1px solid #999;
+   position: fixed;
+   right: 10px;
+   bottom: 10px;
+}
+
+#change_css input, #change_css select{
+   float: right;
+}

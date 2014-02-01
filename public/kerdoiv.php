@@ -43,5 +43,5 @@ if (($hibauzenet) OR ($figy_uzenet)){  //figyelmeztető popup megjelenítése
 	  $body_onload = ' onload="divdisp_on(\'popup\');"'; 
    }
 }
-$tartalom = $kerdes_blokk;
+$tartalom .= $kerdes_blokk;
 ?>

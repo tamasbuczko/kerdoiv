@@ -1,9 +1,9 @@
 <?php
 $result = mysql_query("SELECT sorszam, kerdes_hu, kerdes_en, kerdes_de, tipus, sorrend FROM kerdesek WHERE status = '1' AND kerdoiv_sorszam = '$kerdoiv_sorszam' ORDER BY sorrend");
 while ($next_element = mysql_fetch_array($result)){
-    
+    $kerdes_darab++;
     $sorszam_kerdes = $next_element[sorszam];
-    $kerdesek[$sorszam_kerdes] = '0';   //alap esetben minden kérdés megválaszolatlannak jelölünk
+    $kerdesek[$sorszam_kerdes] = $kerdes_darab;   //alap esetben minden kérdés megválaszolatlannak jelölünk
     $kerdes_tipus = $next_element[tipus]; // aktuális kérdés tipusa
     
     $resultx = mysql_query("SELECT sorszam, kerdes_valasz, valasz_hu, valasz_en, valasz_de FROM valaszok WHERE status = '1' AND kerdes_valasz = '$sorszam_kerdes' ORDER BY sorrend");
@@ -39,7 +39,7 @@ while ($next_element = mysql_fetch_array($result)){
                if ($checkbox == 'on'){
                    $check_request = 'checked="checked"'; 
                    $valaszok_data_checkbox[$sorszam_valasz][checkbox] = $sorszam_kerdes; 
-                   $kerdesek[$sorszam_kerdes] = '1';    // azért, hogy tudjuk, hogy választott e valamit
+                   $kerdesek[$sorszam_kerdes] = '0';    // azért, hogy tudjuk, hogy választott e valamit
                }
             }
 			
@@ -69,7 +69,7 @@ while ($next_element = mysql_fetch_array($result)){
                 if ($rank){ 
                     $valaszok_data_rank[$sorszam_valasz][rank] = $rank;
                     $valaszok_data_rank[$sorszam_valasz][kerdes] = $sorszam_kerdes;
-                    $kerdesek[$sorszam_kerdes] = '1';
+                    $kerdesek[$sorszam_kerdes] = '0';
                 }
             }
         }
@@ -84,7 +84,7 @@ while ($next_element = mysql_fetch_array($result)){
            $radio = $_REQUEST['radio_'.$sorszam_kerdes];    //megvizsgáljuk, hogy a rádió típusú kérdésre volt e válasz
            $valaszok_data_radio[$sorszam_kerdes][radio] = $radio;
            if ($radio){ 
-              $kerdesek[$sorszam_kerdes] = '1';             //ha volt válasz, akkor a kérdést megválaszoltnak jelöljük
+              $kerdesek[$sorszam_kerdes] = '0';             //ha volt válasz, akkor a kérdést megválaszoltnak jelöljük
            }
         }
     }
@@ -99,7 +99,7 @@ while ($next_element = mysql_fetch_array($result)){
             if ($_REQUEST['select_'.$sorszam_kerdes]){
                 $select = $_REQUEST['select_'.$sorszam_kerdes];
 		if ($select != '0'){
-		  $kerdesek[$sorszam_kerdes] = '1';
+		  $kerdesek[$sorszam_kerdes] = '0';
 		}
             }
             $valaszok_data_select[$sorszam_kerdes][select] = $select; 
@@ -113,7 +113,7 @@ while ($next_element = mysql_fetch_array($result)){
                 $szoveg = $_REQUEST['text_'.$sorszam_kerdes];
                 $valaszok_data_text[$sorszam_kerdes][text] = $szoveg;
                 $text_request = $szoveg;
-		$kerdesek[$sorszam_kerdes] = '1';
+		$kerdesek[$sorszam_kerdes] = '0';
             }
         }
 	$valaszok .= "\n".'<input type="text" name="text_'.$sorszam_kerdes.'" value="'.$text_request.'" />';
@@ -127,7 +127,7 @@ while ($next_element = mysql_fetch_array($result)){
                 $szoveg = $_REQUEST['textarea_'.$sorszam_kerdes];
                 $valaszok_data_textarea[$sorszam_kerdes][textarea] = $szoveg;
                 $textarea_request = $szoveg;
-                $kerdesek[$sorszam_kerdes] = '1';   //megjelöljük, hogy válaszoltak a kérdésre
+                $kerdesek[$sorszam_kerdes] = '0';   //megjelöljük, hogy válaszoltak a kérdésre
             }
         }
 	$valaszok .= "\n".'<textarea cols="1" rows="1" name="textarea_'.$sorszam_kerdes.'">'.$textarea_request.'</textarea>';
@@ -141,8 +141,6 @@ while ($next_element = mysql_fetch_array($result)){
                 $valaszok;
     }
     
-    $kerdes_darab++;
-    
     $kerdes_blokk .= '<div class="survey_block">
                         <div class="survey_question">'.$kerdes_darab.'. '.$next_element['kerdes_'.$_SESSION[lang]] .'</div>
                         <div class="survey_answers">
@@ -153,4 +151,19 @@ while ($next_element = mysql_fetch_array($result)){
     
     unset($valaszok); // válaszok törlése
 }   //kérdés ciklus vége 
+
+$kerdes_blokk = $kerdoiv_fejlec.$kerdes_blokk.
+					 '<br />
+                                    <div style="'.$adat_off.'">
+                    <div id="e-mail"> <p>'.$email_bekeres.'</p>
+                    </div>    
+                    <div class="szemelyes">
+                        <label>E-mail:</label>
+                        <input type="text" name="email" value="'.$request_email_value.'" />
+                    </div>                      
+                        <div id="elkuld"><input type="submit" name="submit" value="'.$lang[elkuldes].'"/>
+                        <label> &gt; &gt; &gt;</label><img src="graphics/postalada.png" id="posta" alt="" /></div>
+					</div>
+					</form>
+                </div>';
 ?>

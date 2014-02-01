@@ -110,5 +110,5 @@ while ($next_element = mysql_fetch_array($result)){
                     </div>';
     unset($eredmeny_lista);
 } 
-$tartalom ='Eredmények'.$kerdes_blokk;
+$tartalom = $kerdoiv_fejlec.'Eredmények'.$kerdes_blokk;
 ?>

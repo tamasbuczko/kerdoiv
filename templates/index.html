@@ -6,81 +6,14 @@
         <title>Kérdőív</title>
 		<script type="text/javascript" src="js/jscripts.js"></script>
 		<script type="text/javascript" src="js/ganalytics.js"></script>
-        <link rel="stylesheet" type="text/css" href="style.css" />
+        <link rel="stylesheet" type="text/css" href="{css}" />
     </head>
     <body{body_onload}>
-    
+	   {css_valaszto}
         <div id="frame">
             <div id="head">homeup.eu</div>
             <div id="content">
-                
-                <div id="intro">
-                    <div id="languages">
-                        <h3>{nyelv_valasztas}</h3>
-                        <span id="magyar_zaszlo"><img src="graphics/magyar_zaszlo.png" alt="{magyar}" />{magyar}</span>
-                        <span id="angol_zaszlo"><img src="graphics/angol_zaszlo.png" alt="{angol}" />{angol}</span>
-                        <!--
-                        <span id="nemet_zaszlo"><img src="graphics/nemet_zaszlo.png" alt="{nemet}" />{nemet}</span>
-                        -->
-                    </div>
-                    <div id="survey_intro">
-                        <h1>{kerdoiv_cim}</h1>
-                        <div>
-                            {kerdoiv_leiras}
-                        </div>
-                    </div>
-                </div>
-                
-                <div id="survey">
-                    <form action="?" name="form_survey" id="form_survey" method="post">
-                    
-                    <div class="szemelyes" style="{adat_off}">                        
-                        <label>{eletkor}</label>
-                        <select name="eletkora">
-                            {request_eletkora_value}
-                            <option value="0">---</option>
-                            <option value="18">&lt;18</option>
-                            <option value="18-25">18-25</option>
-                            <option value="25-35">25-35</option>
-                            <option value="35-45">35-45</option>
-                            <option value="45">45&lt;</option>
-                        </select>
-                        <br />
-                        <label>{neme} </label>
-                        <select name="neme">
-                            {request_neme_value}
-                            <option value="0">---</option>
-                            <option value="{ferfi}">{ferfi}</option>
-                            <option value="{no}">{no}</option>
-                        </select>
-                        <br />
-                        <label>{orszag}</label>
-                        <select name="lakhely">
-                            <option value="0">---</option>
-                            {orszag_combo}
-                        </select>
-                        <br />
-                        <label>{foglalkozas}</label>
-                        <input type="text" name="foglalkozas" value="{request_foglalkozas_value}" />
-                        <br />
-                    </div>
-                        
-                    {tartalom}
-                    
-                    <br />
-                                    <div style="{adat_off}">
-                    <div id="e-mail"> <p>{email_bekeres}</p>
-                    </div>    
-                    <div class="szemelyes">
-                        <label>E-mail:</label>
-                        <input type="text" name="email" value="{request_email_value}" />
-                    </div>                      
-                        <div id="elkuld"><input type="submit" name="submit" value="{elkuldes}"/>
-                        <label> &gt; &gt; &gt;</label><img src="graphics/postalada.png" id="posta" alt="" /></div>
-					</div>
-                    </form>
-                </div>
-                
+               {tartalom}
             </div>
             <div id="footer"></div>
             <br style="clear: both;" />

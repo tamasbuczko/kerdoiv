@@ -15,16 +15,21 @@ $adatkapcsolat->connect();          //az objektum connect fügvényét futatjuk
 //nyelvi változatok kezelése
 include('public/nyelv.php');
 
+//css sablonok kezelése
+include('public/css.php');
+
 //a megjelenített tartalom elágazásainak kezelése
 require_once('public/tartalomvalasztas.php');
 
 //a teljes oldaltemplate-et feltöltjük és kiiratjuk a böngészőnek(index.html)
 $array = array( 'tartalom'       => $tartalom,
-		'body_onload' => $body_onload,  
+				'body_onload' => $body_onload,  
                 'popup_tartalom' => $popup_tartalom,
                 'hibauzenet'   => $hibauzenet,
                 'figy_uzenet'   => $figy_uzenet,
-		'adat_off'   => $adat_off,
+				'css'	=> $css,
+				'css_valaszto' => $css_valaszto,
+				'adat_off'   => $adat_off,
                 'orszag_combo'   => $orszag_combo,
                 'kerdoiv_cim'    => $kerdoiv_cim,
                 'kerdoiv_leiras' => $kerdoiv_leiras,
