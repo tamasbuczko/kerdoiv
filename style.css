@@ -1,28 +1,53 @@
 body{
     margin: 0;
     padding: 0;
-    background-color: #ffffff;//#eef3fa;
     font-family: Arial, Verdana;
 }
 
 #frame{
     width: 860px;
-    background-color: #eef3fa;//#ffffff;
     margin: 10px auto 10px auto;
-    //border: 1px solid #666;
     padding: 10px;
 }
 
+#menu{
+    float: right;
+    height: 30px;
+}
+
+#menu a{
+    display: block;
+    float: left;
+    text-decoration: none;
+    padding: 2px 30px 2px 30px;
+}
+
 #head{
-    background-image: url('graphics/head_background.jpg');
-    background-repeat: repeat-x;
-    height: 34px;
+    clear: both;
+    height: 80px;
     width: 830px;
-    color: #ffffff;
     padding-left: 30px;
     padding-top: 8px;
     font-size: 18px;
     font-style: italic;
+}
+
+.login{
+    width: 300px;
+    height: 100px;
+    float: right;
+    border: 1px solid #0000aa;
+    background-color: #eeee66;
+}
+
+.login label{
+    clear: both;
+    float: left;
+    width: 120px;
+}
+
+.login input{
+    float: left;
 }
 
 #content{
@@ -38,9 +63,8 @@ body{
     display: block;
     width: 190px;
     height: 33px;
-    background-color: #99aec3;
     font-style: italic;
-    color: #111;
+    color: #162054;
     text-decoration: none;
     font-weight: bold;
     padding-top: 13px;
@@ -111,12 +135,10 @@ body{
 
 #survey_intro h1{
     margin-top: 0px;
-    color: #003567;
     height: 21px;
     padding-top: 28px;
     font-size: 18px;
     margin-left: 15px;
-    
 }
 
 #survey_intro div{
@@ -155,7 +177,6 @@ body{
 
 
 .survey_question{
-    background-color: #99aec3;
     height: auto;
     padding: 8px 8px 8px 20px;
     width: 642px;
@@ -315,6 +336,9 @@ margin-left: 20px;
 .graf {
     background-color: #860000;
     height: 15px;
+    text-align: center;
+    font-size: 13px;
+    color: #fefefe;
 }
 
 .graf2 {

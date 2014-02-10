@@ -1,0 +1,27 @@
+body{
+    background-color: #99aec3;//#eef3fa;
+}
+
+#frame{
+    background-color: #cecece;//#ffffff;
+    //border: 1px solid #666;
+}
+
+#head{
+    background-image: url('graphics/head_background.jpg');
+    background-repeat: repeat-x;
+    color: #ffffff;
+}
+
+#survey_intro{
+    color: #8600000;
+}
+
+
+#survey_intro div{
+    background-color: #5e98e8;
+}
+
+.survey_question{
+    background-color: #9db5e1;
+}

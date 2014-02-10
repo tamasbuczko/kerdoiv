@@ -27,7 +27,7 @@ while ($next_element = mysql_fetch_array($result)){
         while ($eredmenyek = mysql_fetch_array($result2)){
             $eredmenyarany = $eredmenyek[3] / $valaszadok_szama;
             $eredmenyarany = $eredmenyarany*300;
-            $eredmeny_lista .= $eredmenyek[2].' ('.$eredmenyek[3].') <div class="grafv"><div class="graf" style="width: '.$eredmenyarany.'px">'.$eredmenyek[3].'</div></div><br />';
+            $eredmeny_lista .= $eredmenyek[2].' ('.$eredmenyek[3].' db) <div class="grafv"><div class="graf" style="width: '.$eredmenyarany.'px"></div></div><br />';
         }
     }
     

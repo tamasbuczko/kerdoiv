@@ -48,4 +48,120 @@ class kerdes{
    var $valaszok = array();
 }
 
+class menu_cikkek {
+	public $html_code;
+	
+	function mysql_read($nyelv){
+		if (($nyelv == '') OR ($nyelv == 'hu')){
+			$nyelvszures = "nyelv = 'hu'";}
+		else {
+			$nyelvszures = "nyelv = '".$nyelv."'";
+		}
+		
+		$result = mysql_query("SELECT cikkszam, menunev FROM szoveg WHERE ".$nyelvszures." AND archiv = 0 AND menunev != '' ORDER BY sorrend");	
+		while ($next_element = mysql_fetch_array($result)){
+			$cikkszam = $next_element['cikkszam'];
+			$menunev = $next_element['menunev'];
+			$menu_cikkek .= '<a href="?p='.$cikkszam.'">'.$menunev.'</a>';
+		}
+		
+		$this->html_code = $menu_cikkek;
+	}
+}
+
+class cikkszoveg {
+	public $html_code;
+	public $cim;
+        public $php_file;
+	
+	function mysql_read($cikksorszam, $nyelv){
+		if (($nyelv == '') OR ($nyelv == 'hu')){
+			$nyelvszures = "AND nyelv = 'hu'";}
+		else {
+			$nyelvszures = "AND nyelv = '".$nyelv."'";
+		}
+		$r = mysql_query("SELECT tartalom, cim, archiv, php_file FROM szoveg WHERE cikkszam =" . $cikksorszam . " ".$nyelvszures."");	
+		$a = mysql_fetch_row($r);
+		
+		$cikkszoveg = $a[0];
+		$cikkcim = $a[1];
+		$cikkarchiv = $a[2];
+                $this->php_file = $a[3];
+		
+		//ha keresés eredménye a cikk, akkor a keresett szöveget megjelöli
+		if ($_REQUEST[s]){
+			$cikkszoveg = str_replace ($_REQUEST[s],'<span class="keres_span">'.$_REQUEST[s].'</span>',$cikkszoveg);
+		}
+		
+		if ($cikkarchiv == 1){
+			$this->html_code= '
+			<h2 class="lapcim">Hiba történt!</h2>
+			<div class="szovegblokk">
+				A keresett oldal nem található!
+			</div>';
+		} else {
+			$this->cim= $cikkcim;
+			$this->html_code= '
+			<h1 class="lapcim">'.$cikkcim.'</h1>
+			<div class="szovegblokk">
+			' . $cikkszoveg. '
+			</div>';
+		}
+	}
+}
+
+class user{
+	public $sorszam;
+	public $nev;
+	public $jog;
+	public $email;
+	public $csoport;
+	public $belephiba;
+	public $html_code;
+
+	function login(){
+		$jel = mysql_real_escape_string($_REQUEST['jelszo']);
+		$azon = mysql_real_escape_string($_REQUEST['azonosito']);
+		if (!$_REQUEST['azonosito']){$azon = $_SESSION["sessfelhasznaloazonosito"];}
+		$jel = md5($jel);
+
+		If ($_REQUEST['logout'] == 1) {
+			unset($_SESSION["sessfelhasznalo"]);
+			unset($_SESSION["qa_user_id"]);
+			unset($_SESSION["sessfelhasznaloazonosito"]);
+			unset($_SESSION["sessfelhasznalojog"]);
+		}
+
+		If ($_REQUEST['azonosito'] != "") {
+			$result = mysql_query("SELECT id, nick, password, authority, email FROM users WHERE nick = '$azon' AND password = '$jel'");	
+			$s = mysql_fetch_row($result);
+			$mostlep == 1;
+		} else {
+		   if ($_SESSION[sessfelhasznalosorszam]){
+			$result = mysql_query("SELECT id, nick, password, authority, email FROM users WHERE id = '$_SESSION[sessfelhasznalosorszam]'");	
+			$s = mysql_fetch_row($result);
+		   }
+		}
+			if ($s[2] != ""){
+				$this->sorszam = $s[0];
+				$this->nev = $s[1];
+				$this->jog = $s[3];
+				$this->email = $s[4];
+				$_SESSION["sessfelhasznalo"] = $s[1];
+				$_SESSION["qa_user_id"] = $s[0];
+				$_SESSION["sessfelhasznaloazonosito"] = $s[1];
+				$_SESSION["sessfelhasznalojog"] = $s[3];
+				$_SESSION["sessfelhasznaloemail"] = $s[4];
+				if ($mostlep){
+				  $loging_db = new log_db;
+				  $loging_db->write($_SESSION["qa_user_id"], 'Bejelentkez�s');
+				}
+			} else {
+               If ($_REQUEST['azonosito'] != "") {
+				$_SESSION[messagetodiv] = '<p>Figyelem!</p><ul><li>Rossz felhaszn�l�n�v, vagy jelsz�!</li></ul>';
+               }
+			}
+
+	}
+}
 ?>

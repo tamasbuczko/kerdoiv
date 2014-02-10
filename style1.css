@@ -1,0 +1,42 @@
+body{
+    background-color: #ffffff;//#eef3fa;
+}
+
+#frame{
+    background-color: #eef3fa;//#ffffff;
+    //border: 1px solid #666;
+}
+
+#head{
+    background-image: url('graphics/head_background.jpg');
+    background-repeat: repeat-x;
+    color: #ffffff;
+}
+
+#languages span {
+    
+    background-color: #99aec3;
+    
+}
+
+#survey_intro{
+    color: #000000;
+}
+
+
+#survey_intro div{
+    background-color: #99aec3;
+}
+
+.survey_question{
+    background-color: #99aec3;
+}
+
+#survey_intro h1{
+    color: #003567;
+    margin-top: 0px;
+    height: 21px;
+    padding-top: 28px;
+    font-size: 18px;
+    margin-left: 15px;
+}

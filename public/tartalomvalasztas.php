@@ -1,8 +1,14 @@
 <?php
+$cikk = new cikkszoveg();
 
 if ($_REQUEST[p]){
-    include('public/'.$_REQUEST[p].'.php');
+    $cikk->mysql_read($_REQUEST[p], $_SESSION['lang']);
 } else {
-    include('public/kerdoiv.php');
+    $cikk->mysql_read(2, $_SESSION['lang']);
 }
+if ($cikk->php_file){
+    include('public/'.$cikk->php_file);
+}
+
+$tartalom = $cikk->html_code.$tartalom;
 ?>

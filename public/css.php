@@ -1,6 +1,6 @@
 <?php
 if ($_REQUEST['css'] == ''){
-	$css = 'style.css';
+	$css = 'style1.css';
 	if ($_SESSION["css"] != ""){$css = $_SESSION["css"];}}
 else {
 	$css = $_REQUEST['css'];
@@ -12,8 +12,12 @@ If ($_REQUEST['cssx'] != ""){
 	   <input type="submit" value="ok" />
 			<select name="css">
 				<option selected="selected" value="'.$css.'">'.$css.'</option>
-				<option value="style.css">style.css</option>
+				<option value="style1.css">style1.css</option>
 				<option value="style2.css">style2.css</option>
+                                <option value="style3.css">style3.css</option>
+                                <option value="style4.css">style4.css</option>
+                                <option value="style5.css">style5.css</option>
+                                <option value="style6.css">style6.css</option>
 			</select>
 		</form>';}
 ?>

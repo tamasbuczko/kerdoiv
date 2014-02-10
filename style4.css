@@ -1,0 +1,48 @@
+body{
+    background-color: #003399;
+}
+
+#frame{
+    background-color: #ffffff;
+    //border: 1px solid #666;
+}
+
+#head{
+    padding-top: 30px;
+    height: 50px;
+    background-color: #003399;
+    color: #ffffff;
+}
+
+#languages span {
+    
+    background-color: #eef3fa;
+    
+}
+
+#languages h3{
+    color: #162054;
+}
+
+#survey_intro{
+    color: #162054;
+}
+
+
+#survey_intro div{
+    background-color: #eef3fa;
+}
+
+.survey_question{
+    background-color: #eef3fa;
+    color: #000000;
+}
+
+#survey_intro h1{
+    color: #162054;
+    margin-top: 0px;
+    height: 21px;
+    padding-top: 28px;
+    font-size: 18px;
+    margin-left: 15px;
+}
