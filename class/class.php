@@ -58,11 +58,19 @@ class menu_cikkek {
 			$nyelvszures = "nyelv = '".$nyelv."'";
 		}
 		
-		$result = mysql_query("SELECT cikkszam, menunev FROM szoveg WHERE ".$nyelvszures." AND archiv = 0 AND menunev != '' ORDER BY sorrend");	
+		$result = mysql_query("SELECT cikkszam, menunev, jog FROM szoveg WHERE ".$nyelvszures." AND archiv = 0 AND menunev != '' ORDER BY sorrend");	
 		while ($next_element = mysql_fetch_array($result)){
 			$cikkszam = $next_element['cikkszam'];
 			$menunev = $next_element['menunev'];
-			$menu_cikkek .= '<a href="?p='.$cikkszam.'">'.$menunev.'</a>';
+                        
+                        if ($next_element['jog'] == '1'){
+                            $menu_cikkek .= '<a href="?p='.$cikkszam.'">'.$menunev.'</a>';
+                        } else {
+                            if ($_SESSION["qa_user_id"]){
+                                $menu_cikkek .= '<a href="?p='.$cikkszam.'">'.$menunev.'</a>';
+                            }
+                        }
+			
 		}
 		
 		$this->html_code = $menu_cikkek;
@@ -80,7 +88,14 @@ class cikkszoveg {
 		else {
 			$nyelvszures = "AND nyelv = '".$nyelv."'";
 		}
-		$r = mysql_query("SELECT tartalom, cim, archiv, php_file FROM szoveg WHERE cikkszam =" . $cikksorszam . " ".$nyelvszures."");	
+                
+                if (is_numeric($cikksorszam) == TRUE){ 
+                    $r = mysql_query("SELECT tartalom, cim, archiv, php_file FROM szoveg WHERE cikkszam =" . $cikksorszam . " ".$nyelvszures."");	
+                } else {
+                    $r = mysql_query("SELECT tartalom, cim, archiv, php_file FROM szoveg WHERE hivatkozas ='" . $cikksorszam . "' ".$nyelvszures."");	
+                }
+                
+		
 		$a = mysql_fetch_row($r);
 		
 		$cikkszoveg = $a[0];
@@ -128,6 +143,7 @@ class user{
 		If ($_REQUEST['logout'] == 1) {
 			unset($_SESSION["sessfelhasznalo"]);
 			unset($_SESSION["qa_user_id"]);
+                        unset($_SESSION["qa_user_authority"]);
 			unset($_SESSION["sessfelhasznaloazonosito"]);
 			unset($_SESSION["sessfelhasznalojog"]);
 		}
@@ -151,6 +167,7 @@ class user{
 				$_SESSION["qa_user_id"] = $s[0];
 				$_SESSION["sessfelhasznaloazonosito"] = $s[1];
 				$_SESSION["sessfelhasznalojog"] = $s[3];
+                                $_SESSION["qa_user_authority"] = $s[3];
 				$_SESSION["sessfelhasznaloemail"] = $s[4];
 				if ($mostlep){
 				  $loging_db = new log_db;

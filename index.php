@@ -12,6 +12,7 @@ require_once('class/class.php');
 $adatkapcsolat = new data_connect;  //példányosítjuk az objektumot
 $adatkapcsolat->connect();          //az objektum connect fügvényét futatjuk
 
+//látogató beléptetése, illetve állapotvizsgálat
 $user = new user;
 $user->login();
 
@@ -24,9 +25,8 @@ include('public/css.php');
 //a megjelenített tartalom elágazásainak kezelése
 require_once('public/tartalomvalasztas.php');
 
-$menu_obj = new menu_cikkek;
-$menu_obj->mysql_read($_SESSION["lang"]);
-$menu = $menu_obj->html_code;
+//menü létrehozása az oldal tetején
+require_once('public/menu.php');
 
 //a teljes oldaltemplate-et feltöltjük és kiiratjuk a böngészőnek(index.html)
 $array = array( 'tartalom'       => $tartalom,
@@ -36,7 +36,7 @@ $array = array( 'tartalom'       => $tartalom,
                 'figy_uzenet'   => $figy_uzenet,
 		'css'	=> $css,
                 'menu'	=> $menu,
-                'user_nick'	=> $_SESSION["sessfelhasznalo"],
+                'user_nick'	=> $user_nick,
 		'css_valaszto' => $css_valaszto,
 		'adat_off'   => $adat_off,
                 'orszag_combo'   => $orszag_combo,
