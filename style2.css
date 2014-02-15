@@ -1,10 +1,10 @@
 @font-face {
     font-family: 'futura';
-    src: url('fonts/futuramdcnhu-webfont.eot');
-    src: url('fonts/futuramdcnhu-webfont.eot?#iefix') format('embedded-opentype'),
-         url('fonts/futuramdcnhu-webfont.woff') format('woff'),
-         url('fonts/futuramdcnhu-webfont.ttf') format('truetype'),
-         url('fonts/futuramdcnhu-webfont.svg#TrumpGothicEastRegular') format('svg');
+    src: url('fonts/futuramdcnhu.eot');
+    src: url('fonts/futuramdcnhu.eot?#iefix') format('embedded-opentype'),
+         url('fonts/futuramdcnhu.woff') format('woff'),
+         url('fonts/futuramdcnhu.ttf') format('truetype'),
+         url('fonts/futuramdcnhu.svg#TrumpGothicEastRegular') format('svg');
     font-weight: normal;
     font-style: normal;
 }  
