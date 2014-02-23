@@ -23,7 +23,8 @@ body{
 
 #user_box{
     float: left;
-    font-size: 10px;
+    font-family: Arial;
+    font-size: 11px;
 }
 
 #user_box a{
@@ -442,4 +443,8 @@ margin-left: 20px;
 
 .ujkerdes input[type=text]{
     width: 500px;
+}
+
+.ujkerdes p{
+    clear: both;
 }

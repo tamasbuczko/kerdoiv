@@ -7,7 +7,10 @@ if ($_REQUEST[mentes]){
     $sql = "UPDATE kerdesek SET kerdes_hu='$kerdes_szoveg', tipus='$kerdes_tipus' WHERE sorszam='$kerdes_sorszam'";
     mysql_query($sql);
     
-    for ($i = 0; $i <= 10000; $i++){
+    $resultxx = mysql_query("SELECT MAX(sorszam) FROM valaszok ");
+    $b = mysql_fetch_row($resultxx);
+    $utolsovalaszsorszam = $b[0];
+    for ($i = 0; $i <= $utolsovalaszsorszam; $i++){
         $valasz_x = 'valasz_'.$i;
         if ($_REQUEST[$valasz_x]){
             $valasz_ertek = $_REQUEST[$valasz_x];

@@ -152,12 +152,14 @@ h1{
    margin: 20px auto 0px auto;
    font-size: 12px;
    cursor: pointer;
-   font-family: Arial;
+   font-family: 'Roboto_CB', Arial;
+   width: 100px;
 }
 
 .login input[type="submit"]:hover{
    background-color: #33aa33;
    font-size: 12px;
+   width: 100px;
 }
 
 .login div{
@@ -189,10 +191,10 @@ h1{
    text-decoration: none;
    display: block;
    float: right;
-   width: 100px;
+   width: 90px;
    font-size: 12px;
    text-align: center;
-   font-family: Arial;
+   font-family: 'Roboto_CB', Arial;
 }
 
 .login a[href="?p=regisztracio"]:hover{
