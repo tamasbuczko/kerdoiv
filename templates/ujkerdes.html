@@ -1,13 +1,39 @@
-<form action="" method="post" class="ujkerdes">
-    <label>Kérdés</label><input type="text" name="kerdes" value="" />
-    Típusa
-    <label>rádió</label><input type="radio" name="tipus" value="" />
-    <label>select</label><input type="radio" name="tipus" value="" />
-    <label>checkbox</label><input type="radio" name="tipus" value="" />
-    <label>text</label><input type="radio" name="tipus" value="" />
-    <label>textarea</label><input type="radio" name="tipus" value="" />
-    <label>ranking</label><input type="radio" name="tipus" value="" />
-    <label>Válaszok</label><input type="text" name="valasz_" value="" />
+<h1>{urlap_cim}</h1>
+<form action="" method="post" class="ujkerdes" >
+    <input type="hidden" name="id" value="{id}" />
+    <input type="hidden" name="kerdoiv_sorszam" value="{kerdoiv_sorszam}" />
+    <label>Kérdés</label>
+    <textarea name="kerdes">{kerdes_szoveg}</textarea>
+    
+    <label>Típusa</label>
+    <div>
+        <label>rádió</label>
+        <input type="radio" name="tipus" value="radio" {check_radio} />
+    </div>
+    <div>
+        <label>select</label>
+        <input type="radio" name="tipus" value="select" {check_select} />
+    </div>
+    <div>
+        <label>checkbox</label>
+        <input type="radio" name="tipus" value="checkbox" {check_checkbox} />
+    </div>
+    <div>
+        <label>text</label>
+        <input type="radio" name="tipus" value="text" {check_text} />
+    </div>
+    <div>
+        <label>textarea</label>
+        <input type="radio" name="tipus" value="textarea" {check_textarea} />
+    </div>
+    <div>
+        <label>ranking</label>
+        <input type="radio" name="tipus" value="ranking" {check_ranking} />
+    </div>
+    <label>Válaszok</label>
+    {valaszok}
+    
+    <input type="submit" name="mentes">
 </form>
 
-<a href="#">Vissza a kérdőívhez</a>
+<a href="?p=kerdoiv&mod=1&kerdoiv={kerdoiv_sorszam}">Vissza a kérdőívhez</a>

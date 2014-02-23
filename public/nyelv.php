@@ -25,7 +25,7 @@ if ($_SESSION["lang"] == 'hu'){
     $lang[email_bekeres] = 'Kérjük, add meg e-mail címed, ha szeretnéd megkapni a kérdőív eredményét!';
     $lang[nem_valaszoltal] = 'Az alábbi kérdésekre nem válaszoltál: ';
 	$lang[nem_feldolgozhato] = 'A kérdőív az alábbi hibák miatt nem feldolgozható: ';
-	$lang[email_cimed_hianyzik] = 'Email címed hiányzik';
+	$lang[email_cimed_hianyzik] = 'Email címed hiányzik!';
 	$lang[nem_adta_meg_a_nemet] = 'Nem adtad meg a nemed!';
 	$lang[nem_adta_meg_a_korat] = 'Nem adtad meg a korod!';
 	$lang[nem_adta_meg_a_lakhelyet] = 'Nem adtad meg a lakhelyed!';
@@ -49,7 +49,7 @@ if ($_SESSION["lang"] == 'en'){
     $lang[email_bekeres] = 'Please, give us your e-mail address if you want to know results of this survey!';
 	$lang[nem_valaszoltal] = 'You did not answer the following questions: ';
 	$lang[nem_feldolgozhato] = 'We can not accept the survey because of the following defects: ';
-	$lang[email_cimed_hianyzik] = 'Your Email is missing';
+	$lang[email_cimed_hianyzik] = 'Your Email is missing!';
 	$lang[nem_adta_meg_a_nemet] = 'You did not give your sex!';
 	$lang[nem_adta_meg_a_korat] = 'You did not give your age!';
 	$lang[nem_adta_meg_a_lakhelyet] = 'You did not give your living place!';
@@ -63,21 +63,21 @@ if ($_SESSION["lang"] == 'de'){
     $lang[nemet] = 'deutsch';
     $lang[eletkor] = 'Alter:';
     $lang[neme] = 'Sex:';
-    $lang[ferfi] = 'férfi';
-    $lang[no] = 'nő';
+    $lang[ferfi] = 'männlich';
+    $lang[no] = 'weiblich';
     $lang[orszag] = 'Land:';
     $lang[foglalkozas] = 'Beruf:';
     $lang[elkuldes] = 'Sendung';
     $lang[mentes] = 'Sendung';
-	$lang[koszonjuk_valaszaid] = 'Köszönjük válaszaid!';
+	$lang[koszonjuk_valaszaid] = 'Danke für Antworten!';
     $lang[email_bekeres] = 'Bitte, geben Sie uns Ihre E-Mail-Adresse, wenn Sie Ergebnisse dieser Umfrage wissen wollen!';
-	$lang[nem_valaszoltal] = 'Az alábbi kérdésekre nem válaszoltál:';
-	$lang[nem_feldolgozhato] = 'A kérdőív az alábbi hibák miatt nem feldolgozható: ';
-	$lang[email_cimed_hianyzik] = 'Email címed hiányzik';
-	$lang[nem_adta_meg_a_nemet] = 'Nem adta meg a nemét!';
-	$lang[nem_adta_meg_a_korat] = 'Nem adta meg a korát!';
-	$lang[nem_adta_meg_a_lakhelyet] = 'Nem adta meg a lakhelyét!';
-	$lang[nem_adta_meg_a_foglalkozasat] = 'Nem adta meg a foglalkozását!';
+	$lang[nem_valaszoltal] = 'Sie haben nicht die folgenden Fragen zu beantworten:';
+	$lang[nem_feldolgozhato] = 'Wir können die Umfrage aufgrund der folgenden Fehler nicht akzeptieren:';
+	$lang[email_cimed_hianyzik] = 'Ihre E-Mail fehlt!';
+	$lang[nem_adta_meg_a_nemet] = 'Sie gab nicht Ihr Geschlecht!';
+	$lang[nem_adta_meg_a_korat] = 'Sie gab nicht auf Ihr Alter!';
+	$lang[nem_adta_meg_a_lakhelyet] = 'Sie haben es nicht geben Ihrem Lebensraum!';
+	$lang[nem_adta_meg_a_foglalkozasat] = 'Sie haben Ihren Beruf nicht aufgeben!';
 }
 
 

@@ -1,11 +1,18 @@
 <form action="" name="register" method="post" class="login">
+    <h2>Regisztráció</h2>
     <label>Azonosító:</label><input type="text" name="reg_azonosito" value="" />
     <label>Email:</label><input type="text" name="email" value="" />
     <label>Jelszó:</label><input type="password" name="jelszo" value="" />
     <label>Jelszó mégegyszer:</label><input type="password" name="jelszo2" value="" />
     
-    <label>ingyenes</label><input type="radio" name="csomag" value="3" />
-    <label>kis csomag</label><input type="radio" name="csomag" value="4" />
-    <label>nagy csomag</label><input type="radio" name="csomag" value="5" />
+    <div>
+        <input type="radio" name="csomag" value="3" /><label>ingyenes</label>
+    </div>
+    <div>
+        <input type="radio" name="csomag" value="4" /><label>kis csomag</label>
+    </div>
+    <div>
+        <input type="radio" name="csomag" value="5" /><label>nagy csomag</label>
+    </div>
     <input name="send" type="submit" value="Regisztrál" />
 </form>

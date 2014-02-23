@@ -12,7 +12,6 @@ body{
 
 #menu{
     float: right;
-    height: 30px;
 }
 
 #menu a{
@@ -35,12 +34,15 @@ body{
 
 #head{
     clear: both;
-    height: 100px;
-    width: 830px;
-    padding-left: 30px;
-    padding-top: 8px;
+    width: 100%;
     font-size: 18px;
-    font-style: italic;
+}
+
+#head p{
+    display: none;
+    font-size: 14px;
+    margin-top: 5px;
+    font-style: normal;
 }
 
 .login{
@@ -179,6 +181,7 @@ body{
 .szemelyes label{
     margin: 5px 5px 5px 5px;
     width: 100px;
+    height: 10px;
     float: left;
 }
 .szemelyes input, .szemelyes select{
@@ -191,6 +194,15 @@ body{
     height: auto;
     padding: 8px 8px 8px 20px;
     width: 642px;
+}
+
+.survey_question a{ 
+   display: block;
+   float: right;
+   margin: -6px 0px 0px 0px;
+   width: 30px;
+   height: 30px;
+   background-image: url('graphics/icon_edit.png');
 }
 
 .survey_answers{
@@ -396,4 +408,38 @@ margin-left: 20px;
 
 #change_css input, #change_css select{
    float: right;
+}
+.ujkerdes{
+    
+}
+
+.ujkerdes label{
+    clear: both;
+    display: block;
+    margin: 10px 0 4px 0;
+    
+}
+
+.ujkerdes textarea{
+    width: 500px;
+    height: 50px;
+}
+
+.ujkerdes div{
+    padding: 4px;
+    border: 0px solid #cecece;
+    width: 100px;
+    float: left;
+    text-align: center;
+    height: 70px;
+    margin-bottom: 10px;
+}
+
+.ujkerdes input[type=submit]{
+    clear: both;
+    display: block;
+}
+
+.ujkerdes input[type=text]{
+    width: 500px;
 }

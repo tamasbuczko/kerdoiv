@@ -15,7 +15,8 @@ if ($_REQUEST[send]){
           
 	  if ($meglevo[0]){
 		 $_SESSION[popup_tartalom] = 'A megadott felhasználónév már foglalt!';
-		 $hiba++;	
+		 $hiba++;
+                 $hiba_uzenetek[$hiba] = 'A megadott felhasználónév már foglalt!';	
 	  }
 	  $result = mysql_query("SELECT id FROM users WHERE email = '$x_email'");
 	  $meglevo = mysql_fetch_array($result);
@@ -67,10 +68,18 @@ if ($_REQUEST[send]){
 		 header("Location: index.php");
 	  }
 	} else {
-	   $_SESSION[popup_tartalom] = 'A jelszó megerősítése nem megfelelő!';
+	   
+            
+
 	}
 }
 
+if ($hiba>0){
+    foreach($hiba_uzenetek as $key => $value){
+        $hibauzenet .= '- '. $value. '<br />';
+    }
+    $hibauzenet = '<h3>'.$lang['nem_feldolgozhato'].'</h3>'.$hibauzenet;
+}
 $array = array( 'tartalom'       => $tartalom,
                 'figy_uzenet'   => $figy_uzenet);
 

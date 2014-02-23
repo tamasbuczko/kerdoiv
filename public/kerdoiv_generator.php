@@ -141,8 +141,15 @@ while ($next_element = mysql_fetch_array($result)){
                 $valaszok;
     }
     
+    if (($_REQUEST[mod]) AND ($_SESSION[qa_user_id])){
+        $szerk_gomb = '<a href="?p=ujkerdes&amp;id='.$sorszam_kerdes.'"></a>';
+    }
+    
     $kerdes_blokk .= '<div class="survey_block">
-                        <div class="survey_question">'.$kerdes_darab.'. '.$next_element['kerdes_'.$_SESSION[lang]] .'</div>
+                        <div class="survey_question">
+				'.$kerdes_darab.'. '.$next_element['kerdes_'.$_SESSION[lang]] .'
+				'.$szerk_gomb.'
+			</div>
                         <div class="survey_answers">
                             '.$valaszok.'
                             <br style="clear:both" />

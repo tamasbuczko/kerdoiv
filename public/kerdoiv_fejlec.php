@@ -29,9 +29,8 @@ $kerdoiv_fejlec = '<div id="intro">
                         <h3>'.$lang[nyelv_valasztas].'</h3>
                         <span id="magyar_zaszlo"><img src="graphics/magyar_zaszlo.png" alt="'.$lang[magyar].'" />'.$lang[magyar].'</span>
                         <span id="angol_zaszlo"><img src="graphics/angol_zaszlo.png" alt="'.$lang[angol].'" />'.$lang[angol].'</span>
-                        <!--
                         <span id="nemet_zaszlo"><img src="graphics/nemet_zaszlo.png" alt="'.$lang[nemet].'" />'.$lang[nemet].'</span>
-                        -->
+                        
                     </div>
                     <div id="survey_intro" style="'.$adat_off2.'">
                         <h1>'.$kerdoiv_cim.'</h1>

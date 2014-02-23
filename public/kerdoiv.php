@@ -27,10 +27,5 @@ if ($_REQUEST[ok] == 1){
    $adat_off = 'display: none;'; //személyes adatlap kikapcsolása
 }
 
-if (($hibauzenet) OR ($figy_uzenet)){  //figyelmeztető popup megjelenítése
-   if (!$_REQUEST[lang]){
-	  $body_onload = ' onload="divdisp_on(\'popup\');"'; 
-   }
-}
 $tartalom .= $kerdes_blokk;
 ?>

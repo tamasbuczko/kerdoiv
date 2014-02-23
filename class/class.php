@@ -175,7 +175,7 @@ class user{
 				}
 			} else {
                If ($_REQUEST['azonosito'] != "") {
-				$_SESSION[messagetodiv] = '<p>Figyelem!</p><ul><li>Rossz felhaszn�l�n�v, vagy jelsz�!</li></ul>';
+				$_SESSION[messagetodiv] = '<p>Figyelem!</p><ul><li>Rossz felhasználónév, vagy jelszó!</li></ul>';
                }
 			}
 

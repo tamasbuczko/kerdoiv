@@ -13,6 +13,7 @@ If ($_REQUEST['cssx'] != ""){
 			<select name="css">
 				<option selected="selected" value="'.$css.'">'.$css.'</option>
 				<option value="style1.css">style1.css</option>
+                                <option value="style1x.css">style1x.css</option>
 				<option value="style2.css">style2.css</option>
                                 <option value="style3.css">style3.css</option>
                                 <option value="style4.css">style4.css</option>

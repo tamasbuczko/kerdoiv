@@ -25,6 +25,17 @@ include('public/css.php');
 //a megjelenített tartalom elágazásainak kezelése
 require_once('public/tartalomvalasztas.php');
 
+if ($_SESSION[messagetodiv]){
+    $hibauzenet = $_SESSION[messagetodiv];
+    unset($_SESSION[messagetodiv]);
+}
+
+if (($hibauzenet) OR ($figy_uzenet)){  //figyelmeztető popup megjelenítése
+   if (!$_REQUEST[lang]){
+	  $body_onload = ' onload="divdisp_on(\'popup\');"'; 
+   }
+}
+
 //menü létrehozása az oldal tetején
 require_once('public/menu.php');
 

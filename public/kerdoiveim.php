@@ -5,7 +5,7 @@ $result = mysql_query ("SELECT sorszam, cim_hu, cim_en, cim_de FROM kerdoivek WH
 while ($next_element = mysql_fetch_array($result)){
     $nyelv = 'cim_'.$_SESSION[lang];
     $cim = $next_element[$nyelv];
-    $lista_kerdoiveim .= '<tr><td>'.$cim.'</td><td><a href="?p=eredmeny&kerdoiv='.$next_element[sorszam].'">x</a></td><td><a href="?p=kerdoiv&kerdoiv='.$next_element[sorszam].'">x</a></td><td>x</td><td>x</td><td>fő</td></tr>';
+    $lista_kerdoiveim .= '<tr><td>'.$cim.'</td><td><a href="?p=eredmeny&kerdoiv='.$next_element[sorszam].'">x</a></td><td><a href="?p=kerdoiv&kerdoiv='.$next_element[sorszam].'">x</a></td><td><a href="?p=kerdoiv&amp;mod=1&amp;kerdoiv='.$next_element[sorszam].'">x</a></td><td>x</td><td>fő</td></tr>';
 }
 
 
