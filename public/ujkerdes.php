@@ -1,6 +1,12 @@
 <?php
 
-if ($_REQUEST[mentes]){
+if ($_REQUEST[torles]){
+   $sql = "DELETE FROM valaszok WHERE sorszam = $_REQUEST[torles]";
+   mysql_query($sql);
+   header("Location: ?p=ujkerdes&id=".$_REQUEST[id]);
+}
+
+if (($_REQUEST[mentes]) OR ($_REQUEST[pluszvalasz])){
     $kerdes_szoveg = $_REQUEST[kerdes];
     $kerdes_tipus = $_REQUEST[tipus];
     $kerdes_sorszam = $_REQUEST[id];
@@ -18,6 +24,15 @@ if ($_REQUEST[mentes]){
             mysql_query($sql);
         }
     }
+}
+
+if ($_REQUEST[pluszvalasz]){
+   $kerdoiv_sorszam = $_REQUEST[kerdoiv_sorszam];
+   $sql = "INSERT INTO valaszok (kerdoiv_sorszam, kerdes_valasz, status, sorrend)
+		   VALUES
+		   ('$kerdoiv_sorszam', '$kerdes_sorszam', '1', '$utolsovalaszsorszam')";
+   mysql_query($sql);
+   header("Location: ?p=ujkerdes&id=".$_REQUEST[id]);
 }
 
 if ($_REQUEST[id]){
@@ -40,7 +55,7 @@ if ($_REQUEST[id]){
 if ($_REQUEST[id]){
     $resultx = mysql_query("SELECT sorszam, kerdes_valasz, valasz_hu FROM valaszok WHERE status = '1' AND kerdes_valasz = '$_REQUEST[id]' ORDER BY sorrend");
     while ($next_elementv = mysql_fetch_array($resultx)){
-        $valaszok .= '<input type="text" name="valasz_'.$next_elementv[sorszam].'" value="'.$next_elementv[valasz_hu].'" />';
+        $valaszok .= '<input type="text" name="valasz_'.$next_elementv[sorszam].'" value="'.$next_elementv[valasz_hu].'" /><img src="graphics/icon_del.png" class="icon_del" alt="törlés" onclick="megerosites_x('.$next_elementv[sorszam].', \'valasz\', \''.$_REQUEST[id].'\')" />';
     }
 }
 

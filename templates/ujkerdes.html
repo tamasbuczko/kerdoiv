@@ -31,9 +31,11 @@
         <input type="radio" name="tipus" value="ranking" {check_ranking} />
     </div>
     <label>Válaszok</label>
+	<div id="admin_valaszok">
     {valaszok}
-    
-    <input type="submit" name="mentes">
+	</div>
+    <input type="submit" name="pluszvalasz" value="+ válasz hozzáadása">
+    <input type="submit" name="mentes" value="módosítások rögzítése">
 </form>
-
+<br /><br />
 <a href="?p=kerdoiv&mod=1&kerdoiv={kerdoiv_sorszam}">Vissza a kérdőívhez</a>

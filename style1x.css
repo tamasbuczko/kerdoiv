@@ -232,3 +232,20 @@ h1{
 #user_box{
    margin: 3px;
 }
+
+#admin_valaszok{
+   width: 532px;
+   float: left;
+   height: auto;
+}
+
+#admin_valaszok input{
+   float: left;
+}
+
+#admin_valaszok img{
+   width: 18px;
+   margin: 4px 0px 0px 0px;
+   float: right;
+   cursor: pointer;
+}

@@ -31,27 +31,32 @@ if ($_SESSION[messagetodiv]){
 }
 
 if (($hibauzenet) OR ($figy_uzenet)){  //figyelmeztető popup megjelenítése
-   if (!$_REQUEST[lang]){
+   if (!$_REQUEST[lang]){  //ha csak nyelvváltás miatt tölt újra az oldal, akkor ne jelenjenek meg az üzenetek
 	  $body_onload = ' onload="divdisp_on(\'popup\');"'; 
    }
+}
+
+if (($_REQUEST[p]) AND ($_REQUEST[p] != '2')){
+   $head_off = 'style="height: 40px; overflow: hidden;"';
 }
 
 //menü létrehozása az oldal tetején
 require_once('public/menu.php');
 
 //a teljes oldaltemplate-et feltöltjük és kiiratjuk a böngészőnek(index.html)
-$array = array( 'tartalom'       => $tartalom,
-		'body_onload' => $body_onload,  
+$array = array( 'tartalom' => $tartalom,
+				'body_onload' => $body_onload,  
                 'popup_tartalom' => $popup_tartalom,
-                'hibauzenet'   => $hibauzenet,
-                'figy_uzenet'   => $figy_uzenet,
-		'css'	=> $css,
-                'menu'	=> $menu,
+				'head_off' => $head_off,
+                'hibauzenet' => $hibauzenet,
+                'figy_uzenet' => $figy_uzenet,
+				'css' => $css,
+                'menu' => $menu,
                 'user_nick'	=> $user_nick,
-		'css_valaszto' => $css_valaszto,
-		'adat_off'   => $adat_off,
-                'orszag_combo'   => $orszag_combo,
-                'kerdoiv_cim'    => $kerdoiv_cim,
+				'css_valaszto' => $css_valaszto,
+				'adat_off' => $adat_off,
+                'orszag_combo' => $orszag_combo,
+                'kerdoiv_cim' => $kerdoiv_cim,
                 'kerdoiv_leiras' => $kerdoiv_leiras,
                 'request_eletkora_value' => $request_eletkora_value,
                 'request_neme_value' => $request_neme_value,
@@ -71,9 +76,8 @@ $array = array( 'tartalom'       => $tartalom,
                 'email_bekeres' => $lang[email_bekeres],
                 'session_lang' => $_SESSION["lang"],
                 'mentes_gomb' => $mentes_gomb,
-    		'alcim' => $alcim);
+				'alcim' => $alcim);
 	 
 $index_html = new html_blokk;
 $index_html->load_template_file("templates/index.html",$array);
 echo $index_html->html_code;
-?>

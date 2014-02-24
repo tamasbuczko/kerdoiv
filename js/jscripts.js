@@ -9,3 +9,10 @@ function divdisp_off(id){
       document.getElementById(id).style.display = 'none';
     }	
 }
+
+function megerosites_x(torolszam, formnev, kerdes) {
+	if (formnev == "valasz") {
+		var answer = confirm ("A VÁLASZ TÖRLÉSÉT választotta.\n Biztosan törölni szeretné?");
+		if (answer) { window.location="?p=ujkerdes&id="+kerdes+"&torles="+torolszam;}
+	}
+ }
