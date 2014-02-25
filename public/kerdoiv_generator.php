@@ -142,12 +142,17 @@ while ($next_element = mysql_fetch_array($result)){
     }
     
     if (($_REQUEST[mod]) AND ($_SESSION[qa_user_id])){
-        $szerk_gomb = '<a href="?p=ujkerdes&amp;id='.$sorszam_kerdes.'"></a>';
+        $szerk_gomb = '
+				<div>
+				<a href="?p=ujkerdes&amp;id='.$sorszam_kerdes.'&del=1" title="kérdés törlése"></a>
+				<a href="?p=ujkerdes&amp;id='.$sorszam_kerdes.'" title="kérdés módosítása"></a>
+				<a href="?p=ujkerdes&amp;id='.$sorszam_kerdes.'&new=1" title="új kérdés beszúrása"></a>
+				</div>';
     }
     
     $kerdes_blokk .= '<div class="survey_block">
-                        <div class="survey_question">
-				'.$kerdes_darab.'. '.$next_element['kerdes_'.$_SESSION[lang]] .'
+                        <div class="survey_question"><span>
+				'.$kerdes_darab.'. '.$next_element['kerdes_'.$_SESSION[lang]] .'</span>
 				'.$szerk_gomb.'
 			</div>
                         <div class="survey_answers">
