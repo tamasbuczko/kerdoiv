@@ -1,11 +1,13 @@
 <?php
 
+//válasz törlése
 if ($_REQUEST[torles]){
    $sql = "DELETE FROM valaszok WHERE sorszam = $_REQUEST[torles]";
    mysql_query($sql);
    header("Location: ?p=ujkerdes&id=".$_REQUEST[id]);
 }
 
+//kérdés törlése
 if ($_REQUEST[kerdestorles]){
    $result = mysql_query("SELECT kerdoiv_sorszam, kerdes_hu, tipus FROM kerdesek WHERE sorszam = '$_REQUEST[id]'");
    $a = mysql_fetch_row($result);
@@ -20,23 +22,40 @@ if ($_REQUEST[kerdestorles]){
    header("Location: ?p=kerdoiv&kerdoiv=".$kerdoiv_sorszam."&mod=1");
 }
 
+//új kérdés rögzítése
 if ($_REQUEST[ujkerdes]){
-   $result = mysql_query("SELECT MAX(sorszam) FROM kerdesek;");
-   $a = mysql_fetch_row($result);
-   $ujkerdes_sorszam = $a[0];
-   $ujkerdes_sorszam++;
-   
-   $result = mysql_query("SELECT sorrend FROM kerdesek WHERE sorszam =$_REQUEST[ujkerdes]");
-   $a = mysql_fetch_row($result);
-   $uj_sorrend = $a[0]-1;
-   
-   
-   $kerdoiv_sorszam = $_REQUEST[kerdoiv];
-   $sql = "INSERT INTO kerdesek (sorszam, kerdoiv_sorszam, kerdes_hu, status, sorrend)
-		   VALUES
-		   ('$ujkerdes_sorszam', '$kerdoiv_sorszam', 'Új kérdés', '1', '$uj_sorrend')";
-   mysql_query($sql);
-   header("Location: ?p=ujkerdes&id=".$ujkerdes_sorszam);
+    $kerdoiv_sorszam = $_REQUEST[kerdoiv];
+    
+    $result = mysql_query("SELECT MAX(sorszam) FROM kerdesek;");
+    $a = mysql_fetch_row($result);
+    $ujkerdes_sorszam = $a[0];
+    $ujkerdes_sorszam++;
+    
+   if ($_REQUEST[ujkerdes] == 'x'){
+       $result = mysql_query("SELECT MAX(sorrend) FROM kerdesek;");
+        $a = mysql_fetch_row($result);
+        $ujkerdes_sorrend = $a[0];
+        $ujkerdes_sorrend++;
+       
+       $sql = "INSERT INTO kerdesek (sorszam, kerdoiv_sorszam, kerdes_hu, status, sorrend)
+                        VALUES
+                        ('$ujkerdes_sorszam', '$kerdoiv_sorszam', 'Új kérdés', '1', '$ujkerdes_sorrend')";
+        mysql_query($sql);
+        header("Location: ?p=ujkerdes&id=".$ujkerdes_sorszam);
+   } else {
+
+        $result = mysql_query("SELECT sorrend FROM kerdesek WHERE sorszam =$_REQUEST[ujkerdes]");
+        $a = mysql_fetch_row($result);
+        $uj_sorrend = $a[0]-1;
+
+
+        
+        $sql = "INSERT INTO kerdesek (sorszam, kerdoiv_sorszam, kerdes_hu, status, sorrend)
+                        VALUES
+                        ('$ujkerdes_sorszam', '$kerdoiv_sorszam', 'Új kérdés', '1', '$uj_sorrend')";
+        mysql_query($sql);
+        header("Location: ?p=ujkerdes&id=".$ujkerdes_sorszam);
+   }
 }
 
 if (($_REQUEST[mentes]) OR ($_REQUEST[pluszvalasz])){

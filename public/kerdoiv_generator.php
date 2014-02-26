@@ -164,18 +164,26 @@ while ($next_element = mysql_fetch_array($result)){
     unset($valaszok); // válaszok törlése
 }   //kérdés ciklus vége 
 
-$kerdes_blokk = $kerdoiv_fejlec.$kerdes_blokk.
-					 '<br />
-                                    <div style="'.$adat_off.'">
+if (($_REQUEST[mod]) AND ($_SESSION[qa_user_id])){
+    $uj_kerdes_gomb = '<a href="?p=ujkerdes&amp;kerdoiv='.$kerdoiv_sorszam.'&ujkerdes=x">Új kérdés rögzítése</a>';
+} else {
+
+$email_es_elkuldes_blokk = '<div style="'.$adat_off.'">
                     <div id="e-mail"> <p>'.$email_bekeres.'</p>
                     </div>    
                     <div class="szemelyes">
                         <label>E-mail:</label>
                         <input type="text" name="email" value="'.$request_email_value.'" />
                     </div>                      
-                        <div id="elkuld"><input type="submit" name="submit" value="'.$lang[elkuldes].'"/>
-                        <label> &gt; &gt; &gt;</label><img src="graphics/postalada.png" id="posta" alt="" /></div>
-					</div>
-					</form>
+                    <div id="elkuld"><input type="submit" name="submit" value="'.$lang[elkuldes].'"/>
+                        <label> &gt; &gt; &gt;</label><img src="graphics/postalada.png" id="posta" alt="" />
+                    </div>
+                 </div>';
+}
+
+$kerdes_blokk = $kerdoiv_fejlec.$kerdes_blokk.$uj_kerdes_gomb.
+					 '<br />
+                 '.$email_es_elkuldes_blokk.'
+		</form>
                 </div>';
 ?>
