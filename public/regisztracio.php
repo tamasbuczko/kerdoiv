@@ -23,6 +23,7 @@ if ($_REQUEST[send]){
 	  if ($meglevo[0]){
 		 $_SESSION[popup_tartalom] = 'A megadott email címmel már történt regisztráció!<br /> Ha elfelejtette jelszavát, kérjen új jelszót!';
 		 $hiba++;
+		 $hiba_uzenetek[$hiba] = 'A megadott email címmel már történt regisztráció!';
 	  }
 	  if ($hiba == 0){
               

@@ -31,11 +31,21 @@
         <input type="radio" name="tipus" value="ranking" {check_ranking} />
     </div>
     <label>Válaszok</label>
-	<div id="admin_valaszok">
-    {valaszok}
+	
+	<div id="admin_valaszok" class="gridster" style="width: 660px; height: 260px; border: 0px solid #aaa;">
+	  <ul id="csempek">
+		 {valaszok2}
+	  </ul>
 	</div>
     <input type="submit" name="pluszvalasz" value="+ válasz hozzáadása">
     <input type="submit" name="mentes" value="módosítások rögzítése">
 </form>
 <br /><br />
+
+
+
+	  <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>	  
+	  <script src="gridster/dist/jquery.gridster.js" type="text/javascript" charset="utf-8"></script>
+	  <script type="text/javascript" src="csempe.js"></script>
+
 <a href="?p=kerdoiv&mod=1&kerdoiv={kerdoiv_sorszam}">Vissza a kérdőívhez</a>

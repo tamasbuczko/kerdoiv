@@ -57,7 +57,6 @@ while ($next_element = mysql_fetch_array($result)){
                 $rank_valasz = '';
                 $sortores = '';
             } else {
-                
                 $rank_valasz = '<td>'.$eredmenyek[2].'</td>';
                 if ($sor > 1){
                     $abszolut = $abszolut / $valaszadok_szama;
@@ -68,14 +67,12 @@ while ($next_element = mysql_fetch_array($result)){
                     $sortores = '<tr>';
                 }
             }
-
             
             $eredmenyarany = $szavazatszam / $valaszadok_szama;
             $eredmenyarany = $eredmenyarany*30;
             
             $rank_archiv = $eredmenyek[2];
             $eredmeny_lista .= $sortores.$rank_valasz.'<td>'.$szavazatszam.'<div class="graf2v"><div class="graf2" style="width: '.$eredmenyarany.'px"></div></div></td>'.$sortores2;
-            
         }
         
         $abszolut = $abszolut / $valaszadok_szama;

@@ -108,12 +108,14 @@ if ($_REQUEST[id]){
     $resultx = mysql_query("SELECT sorszam, kerdes_valasz, valasz_hu FROM valaszok WHERE status = '1' AND kerdes_valasz = '$_REQUEST[id]' ORDER BY sorrend");
     while ($next_elementv = mysql_fetch_array($resultx)){
         $valaszok .= '<input type="text" name="valasz_'.$next_elementv[sorszam].'" value="'.$next_elementv[valasz_hu].'" /><img src="graphics/icon_del.png" class="icon_del" alt="törlés" onclick="megerosites_x('.$next_elementv[sorszam].', \'valasz\', \''.$_REQUEST[id].'\')" />';
+		$valaszok2 .= '<li data-row="1" data-col="1" data-sizex="50" data-sizey="2"><input type="text" name="valasz_'.$next_elementv[sorszam].'" value="'.$next_elementv[valasz_hu].'" /><img src="graphics/icon_del.png" class="icon_del" alt="törlés" onclick="megerosites_x('.$next_elementv[sorszam].', \'valasz\', \''.$_REQUEST[id].'\')" /></li>';
     }
 }
 
 $array = array( 'kerdoiv_sorszam'       => $kerdoiv_sorszam,
                 'urlap_cim'   => $urlap_cim,
                 'valaszok'   => $valaszok,
+				'valaszok2'   => $valaszok2,
                 'check_radio'   => $check_radio,
                 'check_select'   => $check_select,
                 'check_checkbox'   => $check_checkbox,
