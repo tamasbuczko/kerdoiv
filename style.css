@@ -473,3 +473,12 @@ margin-left: 20px;
 .ujkerdes p{
     clear: both;
 }
+
+.modosito_gomb{
+    display: block;
+    width: 20px;
+    height: 20px;
+    float: right;
+    margin-top: -32px;
+    background-image: url('graphics/icon_edit.png');
+}

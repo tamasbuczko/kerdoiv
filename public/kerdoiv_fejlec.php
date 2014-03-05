@@ -19,21 +19,38 @@ while ($next_element = mysql_fetch_array($result)){
 }
 
 //a választott nyelv szerinti kérdőív cím és leírás betöltése
-$resultc = mysql_query ("SELECT cim_hu, cim_en, cim_de, leiras_hu, leiras_en, leiras_de FROM kerdoivek WHERE status = '1' AND sorszam = '$kerdoiv_sorszam' ");
+$resultc = mysql_query ("SELECT cim_hu, cim_en, cim_de, leiras_hu, leiras_en, leiras_de, hu, en, de FROM kerdoivek WHERE status = '1' AND sorszam = '$kerdoiv_sorszam' ");
 $next_elementc = mysql_fetch_array ($resultc);
 $kerdoiv_cim=$next_elementc['cim_'.$_SESSION[lang]];
 $kerdoiv_leiras=$next_elementc['leiras_'.$_SESSION[lang]];
+$nyelv = 0;
+if ($next_elementc[hu] == 1){
+    $nyelv_db++;
+    $zaszlo_hu = '<span id="magyar_zaszlo"><img src="graphics/magyar_zaszlo.png" alt="'.$lang[magyar].'" />'.$lang[magyar].'</span>';
+}
+if ($next_elementc[en] == 1){
+    $nyelv_db++;
+    $zaszlo_en = '<span id="angol_zaszlo"><img src="graphics/angol_zaszlo.png" alt="'.$lang[angol].'" />'.$lang[angol].'</span>';
+}
+if ($next_elementc[de] == 1){
+    $nyelv_db++;
+    $zaszlo_de = '<span id="nemet_zaszlo"><img src="graphics/nemet_zaszlo.png" alt="'.$lang[nemet].'" />'.$lang[nemet].'</span>';
+}
+
+if ($nyelv_db > 1){
+$nyelv_blokk = '<div id="languages">
+                        <h3>'.$lang[nyelv_valasztas].'</h3>
+                        '.$zaszlo_hu.'
+                        '.$zaszlo_en.'
+                        '.$zaszlo_de.'
+                </div>';
+}
 
 $kerdoiv_fejlec = '<div id="intro">
-                    <div id="languages">
-                        <h3>'.$lang[nyelv_valasztas].'</h3>
-                        <span id="magyar_zaszlo"><img src="graphics/magyar_zaszlo.png" alt="'.$lang[magyar].'" />'.$lang[magyar].'</span>
-                        <span id="angol_zaszlo"><img src="graphics/angol_zaszlo.png" alt="'.$lang[angol].'" />'.$lang[angol].'</span>
-                        <span id="nemet_zaszlo"><img src="graphics/nemet_zaszlo.png" alt="'.$lang[nemet].'" />'.$lang[nemet].'</span>
-                        
-                    </div>
+                    '.$nyelv_blokk.'
                     <div id="survey_intro" style="'.$adat_off2.'">
                         <h1>'.$kerdoiv_cim.'</h1>
+                        <a href="?p=ujkerdoiv&amp;id='.$kerdoiv_sorszam.'" class="modosito_gomb" title="kérdőív adatlap módosítása"></a>
                         <div>
                             '.$kerdoiv_leiras.'
                         </div>

@@ -1509,6 +1509,7 @@
             $el.attr({
                 'data-col': wgd.col,
                 'data-row': wgd.row,
+                'value': wgd.row,
                 'data-sizex': wgd.size_x,
                 'data-sizey': wgd.size_y
             });

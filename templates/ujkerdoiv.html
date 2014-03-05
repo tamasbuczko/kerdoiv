@@ -1,3 +1,4 @@
+<h1>{urlap_cim}</h1>
 <form action="" method="post" class="ujkerdes">
     <!--
     <label>Milyen nyelven</label>
@@ -6,10 +7,23 @@
     <label>EN</label><input type="checkbox" name="en" />
     <label>DE</label><input type="checkbox" name="de" />
     -->
-    
-    <label>Cím</label><input type="text" name="cim" value="" />
-    <label>Leírás</label><textarea name="leiras"></textarea>
+    <input type="hidden" name="sorszam" value="{id}" />
+    <label>Cím</label><input type="text" name="cim" value="{cim}" />
+    <label>Leírás</label><textarea name="leiras">{leiras}</textarea>
     <br /><br /><br />
+    <label>Milyen nyelveken szeretnéd elkészíteni a kérdőívet?</label>
+    <div>
+    <label>magyar</label><input type="checkbox" {checked_hu} name="check_hu" /><br />
+    </div>
+    <div>    
+    <label>angol</label><input type="checkbox" {checked_en} name="check_en" /><br />
+    </div>
+    <div>
+    <label>német</label><input type="checkbox" {checked_de} name="check_de" /><br />
+    </div>
+    
+    <br /><br /><br />
+    
     <label>Milyen adatokat kérsz a kitöltőtől?</label>
     <div>
     <label>Neme</label><input type="checkbox" name="neme" /><br />
