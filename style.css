@@ -448,7 +448,8 @@ margin-left: 20px;
    float: right;
 }
 .ujkerdes{
-    
+    width: 700px;
+    float: left;
 }
 
 .ujkerdes label{
@@ -478,8 +479,24 @@ margin-left: 20px;
     display: block;
 }
 
-.ujkerdes input[type=text]{
+.ujkerdes input[type=text], .ujkerdes textarea{
     width: 500px;
+    padding-left: 24px;
+    background-repeat: no-repeat;
+    background-position: 2px 2px;
+    margin-bottom: 3px;
+}
+
+.ujkerdes input[name=cim_hu], .ujkerdes textarea[name=leiras_hu]{
+    background-image: url('graphics/magyar_zaszlo_k.png');
+}
+
+.ujkerdes input[name=cim_en], .ujkerdes textarea[name=leiras_en]{
+    background-image: url('graphics/angol_zaszlo_k.png');
+}
+
+.ujkerdes input[name=cim_de], .ujkerdes textarea[name=leiras_de]{
+    background-image: url('graphics/nemet_zaszlo_k.png');
 }
 
 .ujkerdes p{
@@ -502,4 +519,12 @@ margin-left: 20px;
 .kis_zaszlo img{
    width: 20px;
    margin-left: 2px;
+}
+
+#control_box{
+    min-height: 160px;
+    width: 120px;
+    background-color: rgba(0,0,100,0.2);
+    float: right;
+    margin: 0 20px 0 0;
 }

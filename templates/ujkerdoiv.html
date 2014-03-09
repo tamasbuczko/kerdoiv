@@ -8,8 +8,14 @@
     <label>DE</label><input type="checkbox" name="de" />
     -->
     <input type="hidden" name="sorszam" value="{id}" />
-    <label>Cím</label><input type="text" name="cim" value="{cim}" />
-    <label>Leírás</label><textarea name="leiras">{leiras}</textarea>
+    <label>Cím</label>
+    <input type="text" name="cim_hu" id="cim_hu" value="{cim_hu}" {cim_hux}/>
+    <input type="text" name="cim_en" id="cim_en" value="{cim_en}" {cim_enx}/>
+    <input type="text" name="cim_de" id="cim_de" value="{cim_de}" {cim_dex}/>
+    <label>Leírás</label>
+    <textarea name="leiras_hu" id="leiras_hu"{leiras_hux}>{leiras_hu}</textarea>
+    <textarea name="leiras_en" id="leiras_en"{leiras_enx}>{leiras_en}</textarea>
+    <textarea name="leiras_de" id="leiras_de"{leiras_dex}>{leiras_de}</textarea>
     <br /><br /><br />
     <label>Milyen nyelveken szeretnéd elkészíteni a kérdőívet?</label>
     <div>
@@ -44,3 +50,9 @@
     <p><a href="?p=ujkerdes">Új kérdes rögzítése</a></p>
     -->
 </form>
+<div id="control_box">
+    <label>Látható nyelvek:</label>
+    <img src="graphics/magyar_zaszlo_k.png" id="hu" alt="magyar" onclick="nyelv_kapcs(this.id)" />
+    <img src="graphics/angol_zaszlo_k.png" id="en" alt="angol" onclick="nyelv_kapcs(this.id)" />
+    <img src="graphics/nemet_zaszlo_k.png" id="de" alt="német" onclick="nyelv_kapcs(this.id)" />
+</div>

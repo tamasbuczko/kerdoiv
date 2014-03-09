@@ -16,3 +16,16 @@ function megerosites_x(torolszam, formnev, kerdes) {
 		if (answer) { window.location="?p=ujkerdes&id="+kerdes+"&torles="+torolszam;}
 	}
  }
+ 
+ function nyelv_kapcs(id){
+     
+     if (document.getElementById(id).style.opacity == '0.5'){
+        document.getElementById(id).style.opacity="1";
+        document.getElementById('cim_'+id).style.display = 'block';
+        document.getElementById('leiras_'+id).style.display = 'block';
+     } else {
+        document.getElementById(id).style.opacity="0.5"; 
+        document.getElementById('cim_'+id).style.display = 'none';
+        document.getElementById('leiras_'+id).style.display = 'none';
+     }
+ }
