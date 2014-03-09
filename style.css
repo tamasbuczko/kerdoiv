@@ -10,6 +10,16 @@ body{
     padding: 10px;
 }
 
+#logo{
+   display: block;
+   width: 250px;
+   height: 35px;
+   background-image: url('graphics/kicsi_logo.png');
+   background-repeat: no-repeat;
+   float: left;
+   margin: 2px 0px 0px 2px;
+}
+
 #menu{
     float: right;
 }
@@ -18,13 +28,15 @@ body{
     display: block;
     float: left;
     text-decoration: none;
-    padding: 2px 30px 2px 30px;
+    padding: 2px 22px 2px 22px;
 }
 
 #user_box{
-    float: left;
+    float: right;
     font-family: Arial;
     font-size: 11px;
+	margin: 20px 0px 0px 0px;
+	
 }
 
 #user_box a{
@@ -481,4 +493,13 @@ margin-left: 20px;
     float: right;
     margin-top: -32px;
     background-image: url('graphics/icon_edit.png');
+}
+
+.kerdoiveim img{
+   width: 20px;
+}
+
+.kis_zaszlo img{
+   width: 20px;
+   margin-left: 2px;
 }

@@ -1,6 +1,6 @@
 <?php
 if ($_REQUEST['css'] == ''){
-	$css = 'style1.css';
+	$css = 'style1x.css';
 	if ($_SESSION["css"] != ""){$css = $_SESSION["css"];}}
 else {
 	$css = $_REQUEST['css'];

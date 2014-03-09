@@ -46,11 +46,15 @@ $nyelv_blokk = '<div id="languages">
                 </div>';
 }
 
+if (($_REQUEST[mod]) AND ($_SESSION[qa_user_id])){
+   $fejlec_szerk = '<a href="?p=ujkerdoiv&amp;id='.$kerdoiv_sorszam.'" class="modosito_gomb" title="kérdőív adatlap módosítása"></a>';
+}
+
 $kerdoiv_fejlec = '<div id="intro">
                     '.$nyelv_blokk.'
                     <div id="survey_intro" style="'.$adat_off2.'">
                         <h1>'.$kerdoiv_cim.'</h1>
-                        <a href="?p=ujkerdoiv&amp;id='.$kerdoiv_sorszam.'" class="modosito_gomb" title="kérdőív adatlap módosítása"></a>
+                        '.$fejlec_szerk.'
                         <div>
                             '.$kerdoiv_leiras.'
                         </div>

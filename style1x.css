@@ -43,7 +43,6 @@ h1{
 
 #head h1{
    font-family: 'Roboto_CB', Arial;
-   clear: both;
    color: #339933;
    float: left;
    margin: 150px 0px 0px 30px;
@@ -95,7 +94,7 @@ h1{
 
 #menu a{
    color: #fefefe;
-   padding: 8px 30px 8px 30px;
+   padding: 8px 22px 8px 22px;
 }
 
 #menu a:hover{
@@ -230,7 +229,10 @@ h1{
 }
 
 #user_box{
-   margin: 3px;
+   background-color: rgba(1,1,1,.6);
+   padding: 8px;
+   border-top-left-radius: 10px;
+   border-bottom-left-radius: 10px;
 }
 
 #admin_valaszok{
