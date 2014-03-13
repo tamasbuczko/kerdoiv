@@ -1,5 +1,12 @@
 <h1>{urlap_cim}</h1>
 <form action="" method="post" class="ujkerdes">
+    <div id="control_box" {control_box_ki}>
+        <label>Látható nyelvek:</label>
+        {control_hu}
+        {control_en}
+        {control_de}
+        <input type="submit" name="mentes" />
+    </div>
     <!--
     <label>Milyen nyelven</label>
     
@@ -29,7 +36,7 @@
     </div>
     
     <br /><br /><br />
-    
+    <br style="clear:both;" />
     <label>Milyen adatokat kérsz a kitöltőtől?</label>
     <div>
     <label>Neme</label><input type="checkbox" name="neme" /><br />
@@ -44,15 +51,9 @@
     </div>
     <!-- stílus, főkép -->
     
-    <input type="submit" name="mentes" />
+    
     
     <!--
     <p><a href="?p=ujkerdes">Új kérdes rögzítése</a></p>
     -->
 </form>
-<div id="control_box">
-    <label>Látható nyelvek:</label>
-    <img src="graphics/magyar_zaszlo_k.png" id="hu" alt="magyar" onclick="nyelv_kapcs(this.id)" />
-    <img src="graphics/angol_zaszlo_k.png" id="en" alt="angol" onclick="nyelv_kapcs(this.id)" />
-    <img src="graphics/nemet_zaszlo_k.png" id="de" alt="német" onclick="nyelv_kapcs(this.id)" />
-</div>

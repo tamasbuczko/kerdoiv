@@ -69,24 +69,36 @@ if ($_REQUEST[id]){
     $en = $a[3];
     $de = $a[4];
     $div_kikapcs = 'style="display: none;"';
+    $nyelv_db = 0;
     if ($hu == '1'){
+        $nyelv_db++;
         $checked_hu = 'checked="checked"';
+        $control_hu = '<img src="graphics/magyar_zaszlo_k.png" id="hu" alt="magyar" onclick="nyelv_kapcs(this.id)" />';
     } else {
         $cim_hux = $div_kikapcs;
         $leiras_hux = $div_kikapcs;
     }
     if ($en == '1'){
+        $nyelv_db++;
         $checked_en = 'checked="checked"';
+        $control_en = '<img src="graphics/angol_zaszlo_k.png" id="en" alt="angol" onclick="nyelv_kapcs(this.id)" />';
     } else {
         $cim_enx = $div_kikapcs;
         $leiras_enx = $div_kikapcs;
     }
     if ($de == '1'){
+        $nyelv_db++;
         $checked_de = 'checked="checked"';
+        $control_de = '<img src="graphics/nemet_zaszlo_k.png" id="de" alt="német" onclick="nyelv_kapcs(this.id)" />';
     } else {
         $cim_dex = $div_kikapcs;
         $leiras_dex = $div_kikapcs;
     }
+    
+    if ($nyelv_db < 2){
+        $control_box_ki = $div_kikapcs;
+    }
+    
     $urlap_cim = 'Kérdőív módosítása';
 } else {
     $urlap_cim = 'Új kérdőív rögzítése';
@@ -110,6 +122,10 @@ $array = array( 'tartalom'       => $tartalom,
                 'leiras_hux'       => $leiras_hux,
                 'leiras_enx'       => $leiras_enx,
                 'leiras_dex'       => $leiras_dex,
+                'control_hu'       => $control_hu,
+                'control_en'       => $control_en,
+                'control_de'       => $control_de,
+                'control_box_ki'       => $control_box_ki,
                 'figy_uzenet'   => $figy_uzenet);
 
 $oldal = new html_blokk;

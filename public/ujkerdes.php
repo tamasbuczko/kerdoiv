@@ -59,20 +59,36 @@ if ($_REQUEST[ujkerdes]){
 }
 
 if (($_REQUEST[mentes]) OR ($_REQUEST[pluszvalasz])){
-    $kerdes_szoveg = $_REQUEST[kerdes];
+    $kerdes_szoveg_hu = $_REQUEST[kerdes_hu];
+    $kerdes_szoveg_en = $_REQUEST[kerdes_en];
+    $kerdes_szoveg_de = $_REQUEST[kerdes_de];
     $kerdes_tipus = $_REQUEST[tipus];
     $kerdes_sorszam = $_REQUEST[id];
-    $sql = "UPDATE kerdesek SET kerdes_hu='$kerdes_szoveg', tipus='$kerdes_tipus' WHERE sorszam='$kerdes_sorszam'";
+    $sql = "UPDATE kerdesek SET kerdes_hu='$kerdes_szoveg_hu', kerdes_en='$kerdes_szoveg_en', kerdes_de='$kerdes_szoveg_de', tipus='$kerdes_tipus' WHERE sorszam='$kerdes_sorszam'";
     mysql_query($sql);
     
     $resultxx = mysql_query("SELECT MAX(sorszam) FROM valaszok ");
     $b = mysql_fetch_row($resultxx);
     $utolsovalaszsorszam = $b[0];
     for ($i = 0; $i <= $utolsovalaszsorszam; $i++){
-        $valasz_x = 'valasz_'.$i;
-        if ($_REQUEST[$valasz_x]){
-            $valasz_ertek = $_REQUEST[$valasz_x];
-            $sql = "UPDATE valaszok SET valasz_hu = '$valasz_ertek' WHERE sorszam = $i";
+        $valasz_x_hu = 'valasz_hu_'.$i;
+        if ($_REQUEST[$valasz_x_hu]){
+            $valasz_ertek_hu = $_REQUEST[$valasz_x_hu];
+            $sql = "UPDATE valaszok SET valasz_hu = '$valasz_ertek_hu' WHERE sorszam = $i";
+            mysql_query($sql);
+        }
+        
+        $valasz_x_en = 'valasz_en_'.$i;
+        if ($_REQUEST[$valasz_x_en]){
+            $valasz_ertek_en = $_REQUEST[$valasz_x_en];
+            $sql = "UPDATE valaszok SET valasz_en = '$valasz_ertek_en' WHERE sorszam = $i";
+            mysql_query($sql);
+        }
+        
+        $valasz_x_de = 'valasz_de_'.$i;
+        if ($_REQUEST[$valasz_x_de]){
+            $valasz_ertek_de = $_REQUEST[$valasz_x_de];
+            $sql = "UPDATE valaszok SET valasz_de = '$valasz_ertek_de' WHERE sorszam = $i";
             mysql_query($sql);
         }
     }
@@ -89,11 +105,13 @@ if ($_REQUEST[pluszvalasz]){
 }
 
 if ($_REQUEST[id]){
-    $result = mysql_query("SELECT kerdoiv_sorszam, kerdes_hu, tipus FROM kerdesek WHERE sorszam = '$_REQUEST[id]'");
+    $result = mysql_query("SELECT kerdoiv_sorszam, kerdes_hu, tipus, kerdes_en, kerdes_de FROM kerdesek WHERE sorszam = '$_REQUEST[id]'");
     $a = mysql_fetch_row($result);
     $kerdoiv_sorszam = $a[0];
-    $kerdes_szoveg = $a[1];
+    $kerdes_szoveg_hu = $a[1];
     $kerdes_tipus = $a[2];
+    $kerdes_szoveg_en = $a[3];
+    $kerdes_szoveg_de = $a[4];
     $urlap_cim = 'Kérdés módosítása';
     if ($kerdes_tipus == 'radio') {$check_radio = 'checked="checked"';}
     if ($kerdes_tipus == 'select') {$check_select = 'checked="checked"';}
@@ -101,22 +119,54 @@ if ($_REQUEST[id]){
     if ($kerdes_tipus == 'text') {$check_text = 'checked="checked"';}
     if ($kerdes_tipus == 'textarea') {$check_textarea = 'checked="checked"';}
     if ($kerdes_tipus == 'ranking') {$check_ranking = 'checked="checked"';}
+    
+    $result = mysql_query("SELECT hu, en, de FROM kerdoivek WHERE sorszam = '$kerdoiv_sorszam'");
+    $b = mysql_fetch_row($result);
+    $hu = $b[0];
+    $en = $b[1];
+    $de = $b[2];
+    
+    $div_kikapcs = ' style="display: none;"';
+    
+    if ($hu == '1'){
+        $control_hu = '<img src="graphics/magyar_zaszlo_k.png" id="hu" alt="magyar" onclick="nyelv_kapcs(this.id)" />';
+    } else {
+        $kerdes_hux = $div_kikapcs;
+    }
+    
+    if ($en == '1'){
+        $control_en = '<img src="graphics/angol_zaszlo_k.png" id="en" alt="angol" onclick="nyelv_kapcs(this.id)" />';
+    } else {
+        $kerdes_enx = $div_kikapcs;
+    }
+    
+    if ($de == '1'){
+        $control_de = '<img src="graphics/nemet_zaszlo_k.png" id="de" alt="német" onclick="nyelv_kapcs(this.id)" />';
+    } else {
+        $kerdes_dex = $div_kikapcs;
+    }
+    
 } else {
     $urlap_cim = 'Új kérdés rögzítése';
 }
 
 if ($_REQUEST[id]){
-    $resultx = mysql_query("SELECT sorszam, kerdes_valasz, valasz_hu FROM valaszok WHERE status = '1' AND kerdes_valasz = '$_REQUEST[id]' ORDER BY sorrend");
+    $resultx = mysql_query("SELECT sorszam, kerdes_valasz, valasz_hu, valasz_en, valasz_de FROM valaszok WHERE status = '1' AND kerdes_valasz = '$_REQUEST[id]' ORDER BY sorrend");
     while ($next_elementv = mysql_fetch_array($resultx)){
-        $valaszok .= '<input type="text" name="valasz_'.$next_elementv[sorszam].'" value="'.$next_elementv[valasz_hu].'" /><img src="graphics/icon_del.png" class="icon_del" alt="törlés" onclick="megerosites_x('.$next_elementv[sorszam].', \'valasz\', \''.$_REQUEST[id].'\')" />';
-		$valaszok2 .= '<li name="v" value="1" data-row="1" data-col="1" data-sizex="50" data-sizey="2"><input type="text" name="valasz_'.$next_elementv[sorszam].'" value="'.$next_elementv[valasz_hu].'" /><img src="graphics/icon_del.png" class="icon_del" alt="törlés" onclick="megerosites_x('.$next_elementv[sorszam].', \'valasz\', \''.$_REQUEST[id].'\')" /></li>';
+        #$valaszok .= '<input type="text" name="valasz_'.$next_elementv[sorszam].'" value="'.$next_elementv[valasz_hu].'" /><img src="graphics/icon_del.png" class="icon_del" alt="törlés" onclick="megerosites_x('.$next_elementv[sorszam].', \'valasz\', \''.$_REQUEST[id].'\')" />';
+	$valaszok2 .= '<li name="v" value="1" data-row="1" data-col="1" data-sizex="50" data-sizey="6">'
+                . '<input type="text" name="valasz_hu_'.$next_elementv[sorszam].'" id="valasz_hu_'.$next_elementv[sorszam].'" value="'.$next_elementv[valasz_hu].'" class="hu_k" />'
+                . '<input type="text" name="valasz_en_'.$next_elementv[sorszam].'" id="valasz_en_'.$next_elementv[sorszam].'" value="'.$next_elementv[valasz_en].'" class="en_k" />'
+                . '<input type="text" name="valasz_de_'.$next_elementv[sorszam].'" id="valasz_de_'.$next_elementv[sorszam].'" value="'.$next_elementv[valasz_de].'" class="de_k" />'
+                . '<img src="graphics/icon_del.png" class="icon_del" alt="törlés" onclick="megerosites_x('.$next_elementv[sorszam].', \'valasz\', \''.$_REQUEST[id].'\')" />'
+                . '</li>';
     }
 }
 
 $array = array( 'kerdoiv_sorszam'       => $kerdoiv_sorszam,
                 'urlap_cim'   => $urlap_cim,
                 'valaszok'   => $valaszok,
-				'valaszok2'   => $valaszok2,
+		'valaszok2'   => $valaszok2,
                 'check_radio'   => $check_radio,
                 'check_select'   => $check_select,
                 'check_checkbox'   => $check_checkbox,
@@ -124,7 +174,16 @@ $array = array( 'kerdoiv_sorszam'       => $kerdoiv_sorszam,
                 'check_textarea'   => $check_textarea,
                 'check_ranking'   => $check_ranking,
                 'id'   => $_REQUEST[id],
-                'kerdes_szoveg' => $kerdes_szoveg);
+                'kerdes_hux' => $kerdes_hux,
+                'kerdes_enx' => $kerdes_enx,
+                'kerdes_dex' => $kerdes_dex,
+                'kerdes_szoveg_hu' => $kerdes_szoveg_hu,
+                'kerdes_szoveg_en' => $kerdes_szoveg_en,
+                'kerdes_szoveg_de' => $kerdes_szoveg_de,
+                'control_hu'       => $control_hu,
+                'control_en'       => $control_en,
+                'control_de'       => $control_de,
+                'control_box_ki'       => $control_box_ki);
 
 $oldal = new html_blokk;
 $oldal->load_template_file("templates/ujkerdes.html",$array);

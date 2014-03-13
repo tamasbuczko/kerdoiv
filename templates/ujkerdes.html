@@ -1,9 +1,20 @@
 <h1>{urlap_cim}</h1>
 <form action="" method="post" class="ujkerdes" >
+    <div id="control_box" {control_box_ki}>
+        <label>Látható nyelvek:</label>
+        {control_hu}
+        {control_en}
+        {control_de}
+        <input type="submit" name="pluszvalasz" value="+ válasz hozzáadása">
+        <input type="submit" name="mentes" value="módosítások rögzítése">
+        <a href="?p=kerdoiv&mod=1&kerdoiv={kerdoiv_sorszam}">Vissza a kérdőívhez</a>
+    </div>
     <input type="hidden" name="id" value="{id}" />
     <input type="hidden" name="kerdoiv_sorszam" value="{kerdoiv_sorszam}" />
     <label>Kérdés</label>
-    <textarea name="kerdes">{kerdes_szoveg}</textarea>
+    <textarea name="kerdes_hu"{kerdes_hux} id="kerdes_hu"{kerdes_hux} class="hu_k">{kerdes_szoveg_hu}</textarea>
+    <textarea name="kerdes_en"{kerdes_enx} id="kerdes_en"{kerdes_enx} class="en_k">{kerdes_szoveg_en}</textarea>
+    <textarea name="kerdes_de"{kerdes_dex} id="kerdes_de"{kerdes_dex} class="de_k">{kerdes_szoveg_de}</textarea>
     
     <label>Típusa</label>
     <div>
@@ -30,6 +41,7 @@
         <label>ranking</label>
         <input type="radio" name="tipus" value="ranking" {check_ranking} />
     </div>
+    <br style="clear: both;" />
     <label>Válaszok</label>
 	
 	<div id="admin_valaszok" class="gridster" style="width: 660px; height: 260px; border: 0px solid #aaa;">
@@ -37,8 +49,7 @@
 		 {valaszok2}
 	  </ul>
 	</div>
-    <input type="submit" name="pluszvalasz" value="+ válasz hozzáadása">
-    <input type="submit" name="mentes" value="módosítások rögzítése">
+    
 </form>
 <br /><br />
 
@@ -48,4 +59,3 @@
 	  <script src="gridster/dist/jquery.gridster.js" type="text/javascript" charset="utf-8"></script>
 	  <script type="text/javascript" src="csempe.js"></script>
 
-<a href="?p=kerdoiv&mod=1&kerdoiv={kerdoiv_sorszam}">Vissza a kérdőívhez</a>
