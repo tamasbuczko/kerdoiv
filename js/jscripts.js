@@ -26,7 +26,15 @@ function megerosites_x(torolszam, formnev, kerdes) {
             document.getElementById('leiras_'+id).style.display = 'block';
         }
         if (document.getElementById('kerdes_'+id) != null){
-            document.getElementById('kerdes_'+id).style.display = 'block';
+            
+            if (document.getElementById('kerdes_'+id) != null){
+                var all = document.getElementsByClassName(id+'_k');
+                for (var i = 0; i < all.length; i++) {
+                  all[i].style.display = 'block';
+                }
+            }
+            
+            
         }
      } else {
         document.getElementById(id).style.opacity="0.5"; 
@@ -35,7 +43,10 @@ function megerosites_x(torolszam, formnev, kerdes) {
             document.getElementById('leiras_'+id).style.display = 'none';
         }
         if (document.getElementById('kerdes_'+id) != null){
-            document.getElementById('kerdes_'+id).style.display = 'none';
+            var all = document.getElementsByClassName(id+'_k');
+            for (var i = 0; i < all.length; i++) {
+              all[i].style.display = 'none';
+            }
         }
      }
  }

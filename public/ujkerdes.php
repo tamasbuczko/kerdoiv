@@ -113,6 +113,26 @@ if ($_REQUEST[id]){
     $kerdes_szoveg_en = $a[3];
     $kerdes_szoveg_de = $a[4];
     $urlap_cim = 'Kérdés módosítása';
+    
+    $result2 = mysql_query("SELECT COUNT(kerdes_hu) FROM kerdesek WHERE kerdoiv_sorszam = '$kerdoiv_sorszam'");
+    $b = mysql_fetch_row($result2);
+    $osszes_kerdes = $b[0];
+    
+    $result3 = mysql_query("SELECT sorszam FROM kerdesek WHERE kerdoiv_sorszam = '$kerdoiv_sorszam' ORDER BY sorrend");
+    $szamlalo = 0;
+    while ($next_elementv = mysql_fetch_array($result3)){
+        $szamlalo++;
+        $valaszokx[$szamlalo] = $next_elementv[sorszam];
+        if ($_REQUEST[id] == $next_elementv[sorszam]){
+            $hanyadik_kerdes = $szamlalo;
+        }
+    }
+    $elozo_kerdes = $valaszokx[$hanyadik_kerdes-1];
+    $kovetkezo_kerdes = $valaszokx[$hanyadik_kerdes+1];
+    
+    if ($_REQUEST[id] == end($valaszokx)){$kovetkezo_kerdes = $valaszokx[1];}
+    if ($_REQUEST[id] == $valaszokx[1]){$elozo_kerdes = end($valaszokx);}
+    
     if ($kerdes_tipus == 'radio') {$check_radio = 'checked="checked"';}
     if ($kerdes_tipus == 'select') {$check_select = 'checked="checked"';}
     if ($kerdes_tipus == 'checkbox') {$check_checkbox = 'checked="checked"';}
@@ -154,11 +174,17 @@ if ($_REQUEST[id]){
     $resultx = mysql_query("SELECT sorszam, kerdes_valasz, valasz_hu, valasz_en, valasz_de FROM valaszok WHERE status = '1' AND kerdes_valasz = '$_REQUEST[id]' ORDER BY sorrend");
     while ($next_elementv = mysql_fetch_array($resultx)){
         #$valaszok .= '<input type="text" name="valasz_'.$next_elementv[sorszam].'" value="'.$next_elementv[valasz_hu].'" /><img src="graphics/icon_del.png" class="icon_del" alt="törlés" onclick="megerosites_x('.$next_elementv[sorszam].', \'valasz\', \''.$_REQUEST[id].'\')" />';
-	$valaszok2 .= '<li name="v" value="1" data-row="1" data-col="1" data-sizex="50" data-sizey="6">'
-                . '<input type="text" name="valasz_hu_'.$next_elementv[sorszam].'" id="valasz_hu_'.$next_elementv[sorszam].'" value="'.$next_elementv[valasz_hu].'" class="hu_k" />'
-                . '<input type="text" name="valasz_en_'.$next_elementv[sorszam].'" id="valasz_en_'.$next_elementv[sorszam].'" value="'.$next_elementv[valasz_en].'" class="en_k" />'
-                . '<input type="text" name="valasz_de_'.$next_elementv[sorszam].'" id="valasz_de_'.$next_elementv[sorszam].'" value="'.$next_elementv[valasz_de].'" class="de_k" />'
-                . '<img src="graphics/icon_del.png" class="icon_del" alt="törlés" onclick="megerosites_x('.$next_elementv[sorszam].', \'valasz\', \''.$_REQUEST[id].'\')" />'
+	$valaszok2 .= '<li name="v" value="1" data-row="1" data-col="1" data-sizex="50" data-sizey="6">';
+        if ($hu == 1){
+            $valaszok2 .= '<input type="text" name="valasz_hu_'.$next_elementv[sorszam].'" id="valasz_hu_'.$next_elementv[sorszam].'" value="'.$next_elementv[valasz_hu].'" class="hu_k" />';
+        }
+        if ($en == 1){
+            $valaszok2 .= '<input type="text" name="valasz_en_'.$next_elementv[sorszam].'" id="valasz_en_'.$next_elementv[sorszam].'" value="'.$next_elementv[valasz_en].'" class="en_k" />';
+        }
+        if ($de == 1){
+            $valaszok2 .= '<input type="text" name="valasz_de_'.$next_elementv[sorszam].'" id="valasz_de_'.$next_elementv[sorszam].'" value="'.$next_elementv[valasz_de].'" class="de_k" />';
+        }
+        $valaszok2 .= '<img src="graphics/icon_del.png" class="icon_del" alt="törlés" onclick="megerosites_x('.$next_elementv[sorszam].', \'valasz\', \''.$_REQUEST[id].'\')" />'
                 . '</li>';
     }
 }
@@ -183,6 +209,10 @@ $array = array( 'kerdoiv_sorszam'       => $kerdoiv_sorszam,
                 'control_hu'       => $control_hu,
                 'control_en'       => $control_en,
                 'control_de'       => $control_de,
+                'osszes_kerdes'       => $osszes_kerdes,
+                'hanyadik_kerdes'       => $hanyadik_kerdes,
+                'elozo_kerdes'       => $elozo_kerdes,
+                'kovetkezo_kerdes'       => $kovetkezo_kerdes,
                 'control_box_ki'       => $control_box_ki);
 
 $oldal = new html_blokk;

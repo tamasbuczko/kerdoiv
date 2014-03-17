@@ -521,7 +521,7 @@ margin-left: 20px;
 }
 
 #control_box{
-    min-height: 180px;
+    min-height: 210px;
     width: 140px;
     background-color: rgba(0,0,100,0.2);
     float: right;
@@ -545,8 +545,35 @@ margin-left: 20px;
     padding: 5px;
     color: #fefefe;
     margin: 8px auto 0px auto;
+    float: left;
 }
 
 #control_box input[type=submit]:hover{
     color: #aaa;
+    float: left;
+}
+
+#lepteto{
+    width: 100%;
+    height: 48px;
+    float: left;
+}
+
+#lepteto a{
+    display: block;
+    width: 30px;
+    height: 27px;
+    float: left;
+}
+
+#lepteto a:nth-of-type(1){
+    background-image: url('graphics/back_arrow.png');
+}
+
+#lepteto a:nth-of-type(2){
+    background-image: url('graphics/next_arrow.png');
+}
+
+#lepteto span{
+    float: left;
 }
