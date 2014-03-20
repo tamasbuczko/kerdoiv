@@ -37,9 +37,9 @@ if ($_REQUEST[ujkerdes]){
         $ujkerdes_sorrend = $a[0];
         $ujkerdes_sorrend++;
        
-       $sql = "INSERT INTO kerdesek (sorszam, kerdoiv_sorszam, kerdes_hu, status, sorrend)
-                        VALUES
-                        ('$ujkerdes_sorszam', '$kerdoiv_sorszam', 'Új kérdés', '1', '$ujkerdes_sorrend')";
+       $sql = "INSERT INTO kerdesek (sorszam, kerdoiv_sorszam, kerdes_hu, status, sorrend, tipus)
+               VALUES
+               ('$ujkerdes_sorszam', '$kerdoiv_sorszam', 'Új kérdés', '1', '$ujkerdes_sorrend', 'radio')";
         mysql_query($sql);
         header("Location: ?p=ujkerdes&id=".$ujkerdes_sorszam);
    } else {
@@ -148,23 +148,34 @@ if ($_REQUEST[id]){
     
     $div_kikapcs = ' style="display: none;"';
     
+    $nyelv_db = 0;
+    
     if ($hu == '1'){
+        $nyelv_db++;
         $control_hu = '<img src="graphics/magyar_zaszlo_k.png" id="hu" alt="magyar" onclick="nyelv_kapcs(this.id)" />';
     } else {
         $kerdes_hux = $div_kikapcs;
     }
     
     if ($en == '1'){
+        $nyelv_db++;
         $control_en = '<img src="graphics/angol_zaszlo_k.png" id="en" alt="angol" onclick="nyelv_kapcs(this.id)" />';
     } else {
         $kerdes_enx = $div_kikapcs;
     }
     
     if ($de == '1'){
+        $nyelv_db++;
         $control_de = '<img src="graphics/nemet_zaszlo_k.png" id="de" alt="német" onclick="nyelv_kapcs(this.id)" />';
     } else {
         $kerdes_dex = $div_kikapcs;
     }
+    
+    if ($nyelv_db < 2){
+        $control_box_ki = $div_kikapcs;
+    }
+    
+    
     
 } else {
     $urlap_cim = 'Új kérdés rögzítése';

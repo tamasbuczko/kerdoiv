@@ -48,6 +48,10 @@ $nyelv_blokk = '<div id="languages">
 
 if (($_REQUEST[mod]) AND ($_SESSION[qa_user_id])){
    $fejlec_szerk = '<a href="?p=ujkerdoiv&amp;id='.$kerdoiv_sorszam.'" class="modosito_gomb" title="kérdőív adatlap módosítása"></a>';
+   $control_box = '<div id="control_box" style="margin-left: 450px;">
+                            <a href="?p=ujkerdes&amp;kerdoiv='.$kerdoiv_sorszam.'&ujkerdes=x">Új kérdés rögzítése</a>
+                            <a href="?p=kerdoiveim" />vissza</a>
+                        </div>';
 }
 
 $kerdoiv_fejlec = '<div id="intro">
@@ -55,9 +59,12 @@ $kerdoiv_fejlec = '<div id="intro">
                     <div id="survey_intro" style="'.$adat_off2.'">
                         <h1>'.$kerdoiv_cim.'</h1>
                         '.$fejlec_szerk.'
-                        <div>
+                        <div id="survey_intro_div">
                             '.$kerdoiv_leiras.'
                         </div>
+
+                        '.$control_box.'
+
                     </div>
                 </div> 
 

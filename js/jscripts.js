@@ -15,6 +15,11 @@ function megerosites_x(torolszam, formnev, kerdes) {
 		var answer = confirm ("A VÁLASZ TÖRLÉSÉT választotta.\n Biztosan törölni szeretné?");
 		if (answer) { window.location="?p=ujkerdes&id="+kerdes+"&torles="+torolszam;}
 	}
+        
+        if (formnev == "kerdes") {
+		var answer = confirm ("A KÉRDÉS TÖRLÉSÉT választotta.\n Biztosan törölni szeretné?");
+		if (answer) { window.location="?p=ujkerdes&id="+torolszam+"&kerdestorles=1";}
+	}
  }
  
  function nyelv_kapcs(id){
@@ -33,8 +38,6 @@ function megerosites_x(torolszam, formnev, kerdes) {
                   all[i].style.display = 'block';
                 }
             }
-            
-            
         }
      } else {
         document.getElementById(id).style.opacity="0.5"; 

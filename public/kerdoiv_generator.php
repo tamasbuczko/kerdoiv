@@ -144,7 +144,9 @@ while ($next_element = mysql_fetch_array($result)){
     if (($_REQUEST[mod]) AND ($_SESSION[qa_user_id])){
         $szerk_gomb = '
 				<div>
-				<a href="?p=ujkerdes&amp;id='.$sorszam_kerdes.'&kerdestorles=1" title="kérdés törlése"></a>
+                                
+
+				<a href="#" title="kérdés törlése" onclick="megerosites_x('.$sorszam_kerdes.', \'kerdes\', \''.$kerdoiv_sorszam.'\')" ></a>
 				<a href="?p=ujkerdes&amp;id='.$sorszam_kerdes.'" title="kérdés módosítása"></a>
 				<a href="?p=ujkerdes&amp;kerdoiv='.$kerdoiv_sorszam.'&ujkerdes='.$sorszam_kerdes.'" title="új kérdés beszúrása"></a>
 				</div>';

@@ -55,6 +55,8 @@ if ($_REQUEST[mentes]){
     }
 }
 
+$div_kikapcs = 'style="display: none;"';
+
 if ($_REQUEST[id]){
     $result = mysql_query("SELECT cim_hu, leiras_hu, hu, en, de, cim_en, leiras_en, cim_de, leiras_de FROM kerdoivek WHERE sorszam = '$_REQUEST[id]'");
     $a = mysql_fetch_row($result);
@@ -68,40 +70,81 @@ if ($_REQUEST[id]){
     $hu = $a[2];
     $en = $a[3];
     $de = $a[4];
-    $div_kikapcs = 'style="display: none;"';
     $nyelv_db = 0;
     if ($hu == '1'){
         $nyelv_db++;
         $checked_hu = 'checked="checked"';
-        $control_hu = '<img src="graphics/magyar_zaszlo_k.png" id="hu" alt="magyar" onclick="nyelv_kapcs(this.id)" />';
+        
     } else {
         $cim_hux = $div_kikapcs;
         $leiras_hux = $div_kikapcs;
+        $control_hu = 'style="display: none; opacity: 0.5;"';
     }
     if ($en == '1'){
         $nyelv_db++;
         $checked_en = 'checked="checked"';
-        $control_en = '<img src="graphics/angol_zaszlo_k.png" id="en" alt="angol" onclick="nyelv_kapcs(this.id)" />';
+        
     } else {
         $cim_enx = $div_kikapcs;
         $leiras_enx = $div_kikapcs;
+        $control_en = 'style="display: none; opacity: 0.5;"';
     }
     if ($de == '1'){
         $nyelv_db++;
         $checked_de = 'checked="checked"';
-        $control_de = '<img src="graphics/nemet_zaszlo_k.png" id="de" alt="német" onclick="nyelv_kapcs(this.id)" />';
+        
     } else {
         $cim_dex = $div_kikapcs;
         $leiras_dex = $div_kikapcs;
+        $control_de = 'style="display: none; opacity: 0.5;"';
     }
     
-    if ($nyelv_db < 2){
+    
         $control_box_ki = $div_kikapcs;
-    }
+    
     
     $urlap_cim = 'Kérdőív módosítása';
 } else {
-    $urlap_cim = 'Új kérdőív rögzítése';
+    if ($_SESSION[lang] == 'hu'){
+        $urlap_cim = 'Új kérdőív rögzítése';
+        $control_box_ki = $div_kikapcs;
+        $cim_enx = $div_kikapcs;
+        $cim_dex = $div_kikapcs;
+        $leiras_enx = $div_kikapcs;
+        $leiras_dex = $div_kikapcs;
+        $checked_hu = 'checked="checked"';
+        $cim_hu = 'Az új kérdőív címe';
+        #$cim_hu = $lang[az_uj_kerdoiv_cime];
+        $leiras_hu = 'Az új kérdőív rövid leírása';
+        $control_en = 'style="opacity: 0.5;"';
+        $control_de = 'style="opacity: 0.5;"';
+    }
+    if ($_SESSION[lang] == 'en'){
+        $urlap_cim = 'Új kérdőív rögzítése';
+        $control_box_ki = $div_kikapcs;
+        $cim_hux = $div_kikapcs;
+        $cim_dex = $div_kikapcs;
+        $leiras_hux = $div_kikapcs;
+        $leiras_dex = $div_kikapcs;
+        $checked_en = 'checked="checked"';
+        $cim_en = 'Az új kérdőív címe';
+        $leiras_en = 'Az új kérdőív rövid leírása';
+        $control_hu = 'style="opacity: 0.5;"';
+        $control_de = 'style="opacity: 0.5;"';
+    }
+    if ($_SESSION[lang] == 'de'){
+        $urlap_cim = 'Új kérdőív rögzítése';
+        $control_box_ki = $div_kikapcs;
+        $cim_enx = $div_kikapcs;
+        $cim_dex = $div_kikapcs;
+        $leiras_enx = $div_kikapcs;
+        $leiras_dex = $div_kikapcs;
+        $checked_hu = 'checked="checked"';
+        $cim_hu = 'Az új kérdőív címe';
+        $leiras_hu = 'Az új kérdőív rövid leírása';
+        $control_en = 'style="opacity: 0.5;"';
+        $control_de = 'style="opacity: 0.5;"';
+    }
 }
 
 $array = array( 'tartalom'       => $tartalom,

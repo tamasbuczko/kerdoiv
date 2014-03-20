@@ -3,11 +3,12 @@
     <div id="control_box">
         <div {control_box_ki}>
         <label>Látható nyelvek:</label>
-        {control_hu}
-        {control_en}
-        {control_de}
+        <img src="graphics/magyar_zaszlo_k.png" id="hu" alt="magyar" onclick="nyelv_kapcs(this.id)" {control_hu} />
+        <img src="graphics/angol_zaszlo_k.png" id="en" alt="angol" onclick="nyelv_kapcs(this.id)" {control_en} />
+        <img src="graphics/nemet_zaszlo_k.png" id="de" alt="német" onclick="nyelv_kapcs(this.id)" {control_de} />
         </div>
         <input type="submit" name="mentes" />
+        <a href="?p=kerdoiveim" />vissza</a>
     </div>
     <!--
     <label>Milyen nyelven</label>
@@ -17,6 +18,20 @@
     <label>DE</label><input type="checkbox" name="de" />
     -->
     <input type="hidden" name="sorszam" value="{id}" />
+    
+    <label>Milyen nyelveken szeretnéd elkészíteni a kérdőívet?</label>
+    <div>
+    <label>magyar</label><input type="checkbox" {checked_hu} name="check_hu" onclick="nyelv_kapcs('hu')" /><br />
+    </div>
+    <div>    
+    <label>angol</label><input type="checkbox" {checked_en} name="check_en" onclick="nyelv_kapcs('en')" /><br />
+    </div>
+    <div>
+    <label>német</label><input type="checkbox" {checked_de} name="check_de" onclick="nyelv_kapcs('de')" /><br />
+    </div>
+    
+    <br style="clear: both;"/>
+    
     <label>Cím</label>
     <input type="text" name="cim_hu" id="cim_hu" value="{cim_hu}" {cim_hux}/>
     <input type="text" name="cim_en" id="cim_en" value="{cim_en}" {cim_enx}/>
@@ -26,18 +41,7 @@
     <textarea name="leiras_en" id="leiras_en"{leiras_enx}>{leiras_en}</textarea>
     <textarea name="leiras_de" id="leiras_de"{leiras_dex}>{leiras_de}</textarea>
     <br /><br /><br />
-    <label>Milyen nyelveken szeretnéd elkészíteni a kérdőívet?</label>
-    <div>
-    <label>magyar</label><input type="checkbox" {checked_hu} name="check_hu" /><br />
-    </div>
-    <div>    
-    <label>angol</label><input type="checkbox" {checked_en} name="check_en" /><br />
-    </div>
-    <div>
-    <label>német</label><input type="checkbox" {checked_de} name="check_de" /><br />
-    </div>
-    
-    <br /><br /><br />
+
     <br style="clear:both;" />
     <label>Milyen adatokat kérsz a kitöltőtől?</label>
     <div>
