@@ -37,7 +37,7 @@ while ($next_element = mysql_fetch_array($result)){
    
     $nyelv = 'cim_'.$_SESSION[lang];
     $cim = $next_element[$nyelv];
-    $lista_kerdoiveim .= '<tr><td>'.$cim.'</td>'
+    $lista_kerdoiveim .= '<tr><td><a href="?p=kerdoiv_adatlap&kerdoiv='.$next_element[sorszam].'">'.$cim.'</a></td>'
 			. '<td><a href="?p=eredmeny&kerdoiv='.$next_element[sorszam].'"><img src="graphics/icon_graph.png" alt="eredmények" /></a></td>'
 			. '<td><a href="?p=kerdoiv&kerdoiv='.$next_element[sorszam].'"><img src="graphics/icon_checked.png" alt="eredmények" /></a></td>'
 			. '<td><a href="?p=kerdoiv&amp;mod=1&amp;kerdoiv='.$next_element[sorszam].'"><img src="graphics/icon_edit.png" alt="eredmények" /></a></td>'

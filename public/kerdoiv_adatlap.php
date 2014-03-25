@@ -1,0 +1,81 @@
+<?php
+$kerdoiv_sorszam = $_REQUEST[kerdoiv];
+$user_id = 1;
+
+$resultc = mysql_query ("SELECT cim_hu, cim_en, cim_de, leiras_hu, leiras_en, leiras_de, hu, en, de FROM kerdoivek WHERE status = '1' AND sorszam = '$kerdoiv_sorszam' ");
+$next_elementc = mysql_fetch_array ($resultc);
+$kerdoiv_cim=$next_elementc['cim_'.$_SESSION[lang]];
+$kerdoiv_leiras=$next_elementc['leiras_'.$_SESSION[lang]];
+
+//nyelvek száma
+$nyelv = 0;
+if ($next_elementc[hu] == 1){
+    $nyelv_db++;
+    $zaszlo_hu = '<span id="magyar_zaszlo"><img src="graphics/magyar_zaszlo.png" alt="'.$lang[magyar].'" />'.$lang[magyar].'</span>';
+}
+if ($next_elementc[en] == 1){
+    $nyelv_db++;
+    $zaszlo_en = '<span id="angol_zaszlo"><img src="graphics/angol_zaszlo.png" alt="'.$lang[angol].'" />'.$lang[angol].'</span>';
+}
+if ($next_elementc[de] == 1){
+    $nyelv_db++;
+    $zaszlo_de = '<span id="nemet_zaszlo"><img src="graphics/nemet_zaszlo.png" alt="'.$lang[nemet].'" />'.$lang[nemet].'</span>';
+}
+$zaszlok = 'Kérdőív fordításai ('.$nyelv_db.'): <div id="adatlap_zaszlok">'.$zaszlo_hu . $zaszlo_en . $zaszlo_de.'</div>';
+
+//kérdések száma
+$resultx = mysql_query("SELECT COUNT(sorszam) FROM kerdesek WHERE kerdoiv_sorszam = '$kerdoiv_sorszam'");
+$x = mysql_fetch_row($resultx);
+$kerdesek_szama = 'A kérdések száma: '.$x[0];
+
+//hányan töltötték ki
+$result2 = mysql_query("SELECT sorszam FROM valaszadasok WHERE kerdoiv_sorszam = '$kerdoiv_sorszam' GROUP BY kitolto_sorszam");
+$valaszadok_szama = 'A kitöltők száma: '.mysql_num_rows($result2);
+    
+//létrehozás dátuma
+$created_date = 'A létrehozás dátuma: ';
+
+//aktiválás dátuma
+$activated_date = 'Az aktiválás dátuma: még nem aktivált';
+
+//lejárat dátuma
+$expire_date = 'Az előfizetés lejárati dátuma: korlátlan';
+
+ 
+    $result2 = mysql_query("SELECT COUNT(sorszam) FROM kerdoivek WHERE user_id = '$user_id'");
+    $b = mysql_fetch_row($result2);
+    $osszes_kerdoiv = $b[0];
+    
+    $result3 = mysql_query("SELECT sorszam FROM kerdoivek WHERE user_id = '$user_id' ORDER BY sorszam");
+    $szamlalo = 0;
+    while ($next_elementv = mysql_fetch_array($result3)){
+        $szamlalo++;
+        $valaszokx[$szamlalo] = $next_elementv[sorszam];
+        if ($_REQUEST[kerdoiv] == $next_elementv[sorszam]){
+            $hanyadik_kerdoiv = $szamlalo;
+        }
+    }
+    $elozo_kerdoiv = $valaszokx[$hanyadik_kerdoiv-1];
+    $kovetkezo_kerdoiv = $valaszokx[$hanyadik_kerdoiv+1];
+    
+    if ($_REQUEST[kerdoiv] == end($valaszokx)){$kovetkezo_kerdoiv = $valaszokx[1];}
+    if ($_REQUEST[kerdoiv] == $valaszokx[1]){$elozo_kerdoiv = end($valaszokx);}
+
+
+$array = array( 'kerdoiv_cim'       => $kerdoiv_cim,
+                'kerdoiv_leiras'   => $kerdoiv_leiras,
+                'zaszlok'   => $zaszlok,
+                'kerdesek_szama'   => $kerdesek_szama,
+                'valaszadok_szama'   => $valaszadok_szama,
+                'created_date'   => $created_date,
+                'activated_date'   => $activated_date,
+                'expire_date'   => $expire_date,
+                'elozo_kerdoiv'   => $elozo_kerdoiv,
+                'kovetkezo_kerdoiv'   => $kovetkezo_kerdoiv,
+                'hanyadik_kerdoiv'   => $hanyadik_kerdoiv,
+                'osszes_kerdoiv'   => $osszes_kerdoiv,
+                'kerdoiv_sorszam'   => $kerdoiv_sorszam);
+
+$oldal = new html_blokk;
+$oldal->load_template_file("templates/kerdoiv_adatlap.html",$array);
+$tartalom = $oldal->html_code;
