@@ -258,6 +258,23 @@ body{
     
 }
 
+.answer_img{
+   width: 200px;
+   text-align: center;
+   float: left;
+   margin: 10px;
+}
+
+.answer_img label{
+   width: 100%;
+   text-align: center;
+}
+
+.answer_img img{
+   width: 100%;
+   
+}
+
 .label_v{
     margin-top: 4px !important;
 }
@@ -600,4 +617,27 @@ margin-left: 20px;
     margin-right: 250px;
     margin-bottom: 10px;
     height: 40px;
+}
+
+.file_browse_wrapper {
+   width: 14px !important;
+   height: 12px !important;
+   background-image: url('graphics/icon_add.png');
+   border:none;
+   overflow:hidden;
+}
+
+.file_browse_wrapper:hover {
+   background-image: url('graphics/icon_add.png');
+}
+
+.file_browse_wrapper:active {
+   background-image: url('graphics/icon_add.png');
+}
+
+.file_browse{
+   margin-left:-145px;
+   opacity:0;
+   -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
 }
