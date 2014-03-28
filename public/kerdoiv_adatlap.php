@@ -50,16 +50,16 @@ $expire_date = 'Az előfizetés lejárati dátuma: korlátlan';
     $szamlalo = 0;
     while ($next_elementv = mysql_fetch_array($result3)){
         $szamlalo++;
-        $valaszokx[$szamlalo] = $next_elementv[sorszam];
+        $kerdoivekx[$szamlalo] = $next_elementv[sorszam];
         if ($_REQUEST[kerdoiv] == $next_elementv[sorszam]){
             $hanyadik_kerdoiv = $szamlalo;
         }
     }
-    $elozo_kerdoiv = $valaszokx[$hanyadik_kerdoiv-1];
-    $kovetkezo_kerdoiv = $valaszokx[$hanyadik_kerdoiv+1];
+    $elozo_kerdoiv = $kerdoivekx[$hanyadik_kerdoiv-1];
+    $kovetkezo_kerdoiv = $kerdoivekx[$hanyadik_kerdoiv+1];
     
-    if ($_REQUEST[kerdoiv] == end($valaszokx)){$kovetkezo_kerdoiv = $valaszokx[1];}
-    if ($_REQUEST[kerdoiv] == $valaszokx[1]){$elozo_kerdoiv = end($valaszokx);}
+    if ($_REQUEST[kerdoiv] == end($kerdoivekx)){$kovetkezo_kerdoiv = $kerdoivekx[1];}
+    if ($_REQUEST[kerdoiv] == $kerdoivekx[1]){$elozo_kerdoiv = end($kerdoivekx);}
 
 
 $array = array( 'kerdoiv_cim'       => $kerdoiv_cim,

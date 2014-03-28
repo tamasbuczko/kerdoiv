@@ -6,6 +6,12 @@ while ($next_element = mysql_fetch_array($result)){
     $kerdesek[$sorszam_kerdes] = $kerdes_darab;   //alap esetben minden kérdés megválaszolatlannak jelölünk
     $kerdes_tipus = $next_element[tipus]; // aktuális kérdés tipusa
     
+    if ($next_element[kep_file]){
+        $kerdes_kep = '<img src="kerdes_kepek/'.$next_element[kep_file].'" class="question_img" alt="" />';
+    } else {
+        unset($kerdes_kep);
+    }
+    
     $resultx = mysql_query("SELECT sorszam, kerdes_valasz, valasz_hu, valasz_en, valasz_de, kep_file FROM valaszok WHERE status = '1' AND kerdes_valasz = '$sorszam_kerdes' ORDER BY sorrend");
     while ($next_elementv = mysql_fetch_array($resultx)){
         
@@ -19,7 +25,7 @@ while ($next_element = mysql_fetch_array($result)){
               $radio_request = '';
             }                                               // ***
 		   if ($next_elementv[kep_file]){
-			  $valaszok .= "\n".'<div class="answer_img"><input type="radio" name="radio_'.$sorszam_kerdes.'" '.$radio_request.' value="'.$sorszam_valasz.'" /><label>'.$next_elementv['valasz_'.$_SESSION[lang]].'</label><img src="valasz_kepek/'.$next_elementv[kep_file].'"></div>';
+			  $valaszok .= "\n".'<div class="answer_img"><input type="radio" name="radio_'.$sorszam_kerdes.'" '.$radio_request.' value="'.$sorszam_valasz.'" /><div class="answer_img_frame"><img src="valasz_kepek/'.$next_elementv[kep_file].'"><label>'.$next_elementv['valasz_'.$_SESSION[lang]].'</label></div></div>';
 		   } else {
 			   $valaszok .= "\n".'<input type="radio" name="radio_'.$sorszam_kerdes.'" '.$radio_request.' value="'.$sorszam_valasz.'" /><label>'.$next_elementv['valasz_'.$_SESSION[lang]].'</label>';
 		   }
@@ -45,8 +51,12 @@ while ($next_element = mysql_fetch_array($result)){
                    $kerdesek[$sorszam_kerdes] = '0';    // azért, hogy tudjuk, hogy választott e valamit
                }
             }
-			
-            $valaszok .= "\n".'<input type="checkbox" name="checkbox_'.$sorszam_valasz.'" '.$check_request.' /><label>'.$next_elementv['valasz_'.$_SESSION[lang]].'</label>';
+	
+            if ($next_elementv[kep_file]){
+		$valaszok .= "\n".'<div class="answer_img"><input type="checkbox" name="checkbox_'.$sorszam_valasz.'" '.$check_request.' /><div class="answer_img_frame"><img src="valasz_kepek/'.$next_elementv[kep_file].'"><label>'.$next_elementv['valasz_'.$_SESSION[lang]].'</label></div></div>';
+            } else {
+                $valaszok .= "\n".'<input type="checkbox" name="checkbox_'.$sorszam_valasz.'" '.$check_request.' /><label>'.$next_elementv['valasz_'.$_SESSION[lang]].'</label>';
+            }
             unset($check_request);
         }
         
@@ -63,8 +73,19 @@ while ($next_element = mysql_fetch_array($result)){
 		}
                $valasz_ertekek .= "\n".'<input type="radio" name="rank_'.$sorszam_valasz.'" '.$ranking_request.' class="ranking_value" value="'.$i.'" />';
             }
-            $valaszok .= "\n".'<label class="ranking_text">'.$next_elementv['valasz_'.$_SESSION[lang]].'</label>'
+            
+            if ($next_elementv[kep_file]){
+		$valaszok .= "\n".'<div class="answer_img">
+                        <div class="ranking_img">'
+                . '<span>1</span><span>2</span><span>3</span><span>4</span><span>5</span>'
+                . '</div>
+                        <div style="float: left;">'. $valasz_ertekek."\n".'</div><div class="answer_img_frame"><img src="valasz_kepek/'.$next_elementv[kep_file].'"><label>'.$next_elementv['valasz_'.$_SESSION[lang]].'</label></div></div>';
+                $ranking_kep = 1;
+            } else {
+                $valaszok .= "\n".'<label class="ranking_text">'.$next_elementv['valasz_'.$_SESSION[lang]].'</label>'
                     ."\n". '<div style="float: left;">'. $valasz_ertekek."\n".'</div>'; 
+                $ranking_kep = 0;
+            }
             
             //kitöltött űrlap feldolgozása
             if ($_REQUEST[submit]){
@@ -138,10 +159,12 @@ while ($next_element = mysql_fetch_array($result)){
     }  
        
     if ($next_element[tipus] == 'ranking'){ 
-        $valaszok = '<div class="ranking">'
+        if ($ranking_kep == 0){
+            $valaszok = '<div class="ranking">'
                 . '<span>1</span><span>2</span><span>3</span><span>4</span><span>5</span>'
                 . '</div>'.
                 $valaszok;
+        }
     }
     
     if (($_REQUEST[mod]) AND ($_SESSION[qa_user_id])){
@@ -161,6 +184,7 @@ while ($next_element = mysql_fetch_array($result)){
 				'.$szerk_gomb.'
 			</div>
                         <div class="survey_answers">
+                            '.$kerdes_kep.'
                             '.$valaszok.'
                             <br style="clear:both" />
                         </div>

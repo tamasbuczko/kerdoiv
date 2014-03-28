@@ -72,7 +72,7 @@ if (($_REQUEST[mentes]) OR ($_REQUEST[pluszvalasz])){
 		  $f5strx.=$chars[$rand];
 	  }
 
-	  $fajlnev_n = $f5strx .'.jpg';
+	  $fajlnev_n = $kerdoiv_sorszam.'_'.$f5strx .'.jpg';
 	  $konyvtar = 'kerdes_kepek/';
 
 	  move_uploaded_file($_FILES['kerdes_kep']['tmp_name'], $konyvtar.$fajlnev_n);
@@ -81,9 +81,11 @@ if (($_REQUEST[mentes]) OR ($_REQUEST[pluszvalasz])){
 	  $filename = $_FILES['kerdes_kep']['name'];
 	  settype ($filenev, 'string');
 	  $uzenet = $_FILES['kerdes_kep']['tmp_name'];
+          $sql = "UPDATE kerdesek SET kep_file='$fajlnev_n' WHERE sorszam='$kerdes_sorszam'";
+          mysql_query($sql);
 	}
 	
-    $sql = "UPDATE kerdesek SET kerdes_hu='$kerdes_szoveg_hu', kerdes_en='$kerdes_szoveg_en', kerdes_de='$kerdes_szoveg_de', tipus='$kerdes_tipus', kep_file='$fajlnev_n' WHERE sorszam='$kerdes_sorszam'";
+    $sql = "UPDATE kerdesek SET kerdes_hu='$kerdes_szoveg_hu', kerdes_en='$kerdes_szoveg_en', kerdes_de='$kerdes_szoveg_de', tipus='$kerdes_tipus' WHERE sorszam='$kerdes_sorszam'";
     mysql_query($sql);
     
     $resultxx = mysql_query("SELECT MAX(sorszam) FROM valaszok ");
@@ -111,27 +113,26 @@ if (($_REQUEST[mentes]) OR ($_REQUEST[pluszvalasz])){
             mysql_query($sql);
         }
 		
-			If ($_FILES['valasz_kep_'.$i]['tmp_name'] != "") {
+        If ($_FILES['valasz_kep_'.$i]['tmp_name'] != "") {
 
-				$chars="abcdefhjkmnpqrstuxy345789";
-				for ($c=0;$c<4;$c++){
-					$rand=rand(0,strlen($chars)-1);
-					$f5strx.=$chars[$rand];
-				}
+            $chars="abcdefhjkmnpqrstuxy345789";
+            for ($c=0;$c<4;$c++){
+                $rand=rand(0,strlen($chars)-1);
+		$f5strx.=$chars[$rand];
+            }
 
-				$fajlnev_n = $f5strx .'.jpg';
-				$konyvtar = 'valasz_kepek/';
+            $fajlnev_n = $f5strx .'.jpg';
+            $konyvtar = 'valasz_kepek/';
+            move_uploaded_file($_FILES['valasz_kep_'.$i]['tmp_name'], $konyvtar.$fajlnev_n);
 
-				move_uploaded_file($_FILES['valasz_kep_'.$i]['tmp_name'], $konyvtar.$fajlnev_n);
+            $filenev = $konyvtar.$_FILES['valasz_kep_'.$i]['name'];
+            $filename = $_FILES['valasz_kep_'.$i]['name'];
+            settype ($filenev, 'string');
+            $uzenet = $_FILES['valasz_kep_'.$i]['tmp_name'];
 
-				$filenev = $konyvtar.$_FILES['valasz_kep_'.$i]['name'];
-				$filename = $_FILES['valasz_kep_'.$i]['name'];
-				settype ($filenev, 'string');
-				$uzenet = $_FILES['valasz_kep_'.$i]['tmp_name'];
-
-				$sql = "UPDATE valaszok SET kep_file = '$fajlnev_n' WHERE sorszam = $i";
-				mysql_query($sql);
-			}
+            $sql = "UPDATE valaszok SET kep_file = '$fajlnev_n' WHERE sorszam = $i";
+            mysql_query($sql);
+	}
 			
 			
 		 }
@@ -165,16 +166,16 @@ if ($_REQUEST[id]){
     $szamlalo = 0;
     while ($next_elementv = mysql_fetch_array($result3)){
         $szamlalo++;
-        $valaszokx[$szamlalo] = $next_elementv[sorszam];
+        $kerdesekx[$szamlalo] = $next_elementv[sorszam];
         if ($_REQUEST[id] == $next_elementv[sorszam]){
             $hanyadik_kerdes = $szamlalo;
         }
     }
-    $elozo_kerdes = $valaszokx[$hanyadik_kerdes-1];
-    $kovetkezo_kerdes = $valaszokx[$hanyadik_kerdes+1];
+    $elozo_kerdes = $kerdesekx[$hanyadik_kerdes-1];
+    $kovetkezo_kerdes = $kerdesekx[$hanyadik_kerdes+1];
     
-    if ($_REQUEST[id] == end($valaszokx)){$kovetkezo_kerdes = $valaszokx[1];}
-    if ($_REQUEST[id] == $valaszokx[1]){$elozo_kerdes = end($valaszokx);}
+    if ($_REQUEST[id] == end($kerdesekx)){$kovetkezo_kerdes = $kerdesekx[1];}
+    if ($_REQUEST[id] == $kerdesekx[1]){$elozo_kerdes = end($kerdesekx);}
     
     if ($kerdes_tipus == 'radio') {$check_radio = 'checked="checked"';}
     if ($kerdes_tipus == 'select') {$check_select = 'checked="checked"';}
