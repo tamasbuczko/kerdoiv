@@ -52,4 +52,7 @@ function megerosites_x(torolszam, formnev, kerdes) {
             }
         }
      }
+	 //var element = document.getElementsByName('v');
+	 //$( element ).attr( "data-sizey", "3" );
+	 //$( element ).attr( "style", "height: 26px;" );
  }

@@ -643,6 +643,7 @@ margin-left: 20px;
    background-image: url('graphics/icon_add.png');
    border:none;
    overflow:hidden;
+   margin-top: 11px;
 }
 
 .file_browse_wrapper:hover {

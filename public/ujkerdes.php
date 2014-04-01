@@ -229,7 +229,7 @@ if ($_REQUEST[id]){
     $resultx = mysql_query("SELECT sorszam, kerdes_valasz, valasz_hu, valasz_en, valasz_de FROM valaszok WHERE status = '1' AND kerdes_valasz = '$_REQUEST[id]' ORDER BY sorrend");
     while ($next_elementv = mysql_fetch_array($resultx)){
         #$valaszok .= '<input type="text" name="valasz_'.$next_elementv[sorszam].'" value="'.$next_elementv[valasz_hu].'" /><img src="graphics/icon_del.png" class="icon_del" alt="törlés" onclick="megerosites_x('.$next_elementv[sorszam].', \'valasz\', \''.$_REQUEST[id].'\')" />';
-	$valaszok2 .= '<li name="v" value="1" data-row="1" data-col="1" data-sizex="50" data-sizey="6">';
+	$valaszok2 .= '<li name="v" value="1" data-row="1" data-col="1" data-sizex="50" data-sizey="8">';
         if ($hu == 1){
             $valaszok2 .= '<input type="text" name="valasz_hu_'.$next_elementv[sorszam].'" id="valasz_hu_'.$next_elementv[sorszam].'" value="'.$next_elementv[valasz_hu].'" class="hu_k" />';
         }
@@ -239,7 +239,7 @@ if ($_REQUEST[id]){
         if ($de == 1){
             $valaszok2 .= '<input type="text" name="valasz_de_'.$next_elementv[sorszam].'" id="valasz_de_'.$next_elementv[sorszam].'" value="'.$next_elementv[valasz_de].'" class="de_k" />';
         }
-        $valaszok2 .= '<div class="file_browse_wrapper"><input name="valasz_kep_'.$next_elementv[sorszam].'" type="file" title="kép feltöltése" size="30" accept="image/*" class="file_browse" /></div>'
+        $valaszok2 .= '<div class="file_browse_wrapper"><input name="valasz_kep_'.$next_elementv[sorszam].'" type="file" title="kép feltöltése a válaszhoz" size="30" accept="image/*" class="file_browse" /></div>'
 				. '<img src="graphics/icon_del.png" class="icon_del" alt="törlés" onclick="megerosites_x('.$next_elementv[sorszam].', \'valasz\', \''.$_REQUEST[id].'\')" />'
                 . '</li>';
     }
