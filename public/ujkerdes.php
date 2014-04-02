@@ -196,21 +196,21 @@ if ($_REQUEST[id]){
     
     if ($hu == '1'){
         $nyelv_db++;
-        $control_hu = '<img src="graphics/magyar_zaszlo_k.png" id="hu" alt="magyar" onclick="nyelv_kapcs(this.id)" />';
+        $control_hu = '<img src="graphics/magyar_zaszlo_20px.png" id="hu" alt="magyar" onclick="nyelv_kapcs(this.id)" />';
     } else {
         $kerdes_hux = $div_kikapcs;
     }
     
     if ($en == '1'){
         $nyelv_db++;
-        $control_en = '<img src="graphics/angol_zaszlo_k.png" id="en" alt="angol" onclick="nyelv_kapcs(this.id)" />';
+        $control_en = '<img src="graphics/angol_zaszlo_20px.png" id="en" alt="angol" onclick="nyelv_kapcs(this.id)" />';
     } else {
         $kerdes_enx = $div_kikapcs;
     }
     
     if ($de == '1'){
         $nyelv_db++;
-        $control_de = '<img src="graphics/nemet_zaszlo_k.png" id="de" alt="német" onclick="nyelv_kapcs(this.id)" />';
+        $control_de = '<img src="graphics/nemet_zaszlo_20px.png" id="de" alt="német" onclick="nyelv_kapcs(this.id)" />';
     } else {
         $kerdes_dex = $div_kikapcs;
     }

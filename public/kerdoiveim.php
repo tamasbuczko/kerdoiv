@@ -41,7 +41,7 @@ while ($next_element = mysql_fetch_array($result)){
 			. '<td><a href="?p=eredmeny&kerdoiv='.$next_element[sorszam].'"><img src="graphics/icon_graph.png" alt="eredmények" /></a></td>'
 			. '<td><a href="?p=kerdoiv&kerdoiv='.$next_element[sorszam].'"><img src="graphics/icon_checked.png" alt="eredmények" /></a></td>'
 			. '<td><a href="?p=kerdoiv&amp;mod=1&amp;kerdoiv='.$next_element[sorszam].'"><img src="graphics/icon_edit.png" alt="eredmények" /></a></td>'
-			. '<td>x</td><td>'.$valaszadok_szama.' fő</td>'.$zaszlok.'</tr>';
+			. '<td><img src="graphics/active_gomb.png" alt="aktiválás" /></td><td>'.$valaszadok_szama.' fő</td>'.$zaszlok.'</tr>';
 }
 
 
