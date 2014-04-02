@@ -19,6 +19,12 @@ if ($_REQUEST[mentes]){
         else {
             $check_de = 0;
         }
+        
+        if ($_REQUEST[nyilvanos] == 'on'){
+            $check_nyilvanos = 1;}
+        else {
+            $check_nyilvanos = 0;
+        }
     
     if (!$_REQUEST[sorszam]){
         $result = mysql_query("SELECT MAX(sorszam) FROM kerdoivek");
@@ -26,9 +32,9 @@ if ($_REQUEST[mentes]){
         $max_kerdoiv_sorszam = $a[0];
         $max_kerdoiv_sorszam++;
 
-        $sql = "INSERT INTO kerdoivek (sorszam, cim_hu, leiras_hu, status, user_id, hu, en, de, cim_en, leiras_en, cim_de, leiras_de)
+        $sql = "INSERT INTO kerdoivek (sorszam, cim_hu, leiras_hu, status, user_id, hu, en, de, cim_en, leiras_en, cim_de, leiras_de, nyilvanos)
                 VALUES
-                ('$max_kerdoiv_sorszam', '$_REQUEST[cim_hu]', '$_REQUEST[leiras_hu]', '1', '$_SESSION[qa_user_id]', '$check_hu', '$check_en', '$check_de', '$_REQUEST[cim_en]', '$_REQUEST[leiras_en]', '$_REQUEST[cim_de]', '$_REQUEST[leiras_de]')";
+                ('$max_kerdoiv_sorszam', '$_REQUEST[cim_hu]', '$_REQUEST[leiras_hu]', '1', '$_SESSION[qa_user_id]', '$check_hu', '$check_en', '$check_de', '$_REQUEST[cim_en]', '$_REQUEST[leiras_en]', '$_REQUEST[cim_de]', '$_REQUEST[leiras_de]', '$check_nyilvanos')";
         mysql_query($sql);
 
         $sql = "INSERT INTO kerdesek (kerdoiv_sorszam, kerdes_hu, status, sorrend)
@@ -49,7 +55,8 @@ if ($_REQUEST[mentes]){
         $sql = "UPDATE kerdoivek SET cim_hu='$cim_hu', leiras_hu='$leiras_hu',
                 cim_en='$cim_en', leiras_en='$leiras_en',
                 cim_de='$cim_de', leiras_de='$leiras_de',
-                hu='$check_hu', en='$check_en', de='$check_de' WHERE sorszam='$_REQUEST[sorszam]'";
+                hu='$check_hu', en='$check_en', de='$check_de',
+                nyilvanos='$check_nyilvanos' WHERE sorszam='$_REQUEST[sorszam]'";
         mysql_query($sql);
 
     }
@@ -58,7 +65,7 @@ if ($_REQUEST[mentes]){
 $div_kikapcs = 'style="display: none;"';
 
 if ($_REQUEST[id]){
-    $result = mysql_query("SELECT cim_hu, leiras_hu, hu, en, de, cim_en, leiras_en, cim_de, leiras_de FROM kerdoivek WHERE sorszam = '$_REQUEST[id]'");
+    $result = mysql_query("SELECT cim_hu, leiras_hu, hu, en, de, cim_en, leiras_en, cim_de, leiras_de, nyilvanos FROM kerdoivek WHERE sorszam = '$_REQUEST[id]'");
     $a = mysql_fetch_row($result);
     $kerdoiv_sorszam = $_REQUEST[id];
     $cim_hu = $a[0];
@@ -67,6 +74,7 @@ if ($_REQUEST[id]){
     $leiras_en = $a[6];
     $cim_de = $a[7];
     $leiras_de = $a[8];
+    $nyilvanos = $a[9];
     $hu = $a[2];
     $en = $a[3];
     $de = $a[4];
@@ -99,6 +107,9 @@ if ($_REQUEST[id]){
         $control_de = 'style="display: none; opacity: 0.5;"';
     }
     
+    if ($nyilvanos == '1'){
+        $checked_nyilvanos = 'checked="checked"';
+    }
     
         $control_box_ki = $div_kikapcs;
     
@@ -159,6 +170,7 @@ $array = array( 'tartalom'       => $tartalom,
                 'checked_hu'       => $checked_hu,
                 'checked_en'       => $checked_en,
                 'checked_de'       => $checked_de,
+                'checked_nyilvanos' => $checked_nyilvanos,
                 'cim_hux'       => $cim_hux,
                 'cim_enx'       => $cim_enx,
                 'cim_dex'       => $cim_dex,

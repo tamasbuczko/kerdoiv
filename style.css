@@ -490,7 +490,7 @@ margin-left: 20px;
 .ujkerdes label{
     display: block;
     margin: 10px 0 4px 0;
-    
+    width: 80%;
 }
 
 .ujkerdes textarea{
@@ -666,4 +666,8 @@ margin-left: 20px;
     display: block;
     margin: 0 auto 20px auto;
     border: 1px solid #aaa;
+}
+
+#nyilvanos_kerdoivek a{
+    display: block;
 }

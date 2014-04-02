@@ -30,6 +30,7 @@ if ($_SESSION["lang"] == 'hu'){
 	$lang[nem_adta_meg_a_korat] = 'Nem adtad meg a korod!';
 	$lang[nem_adta_meg_a_lakhelyet] = 'Nem adtad meg a lakhelyed!';
 	$lang[nem_adta_meg_a_foglalkozasat] = 'Nem adtad meg a foglalkozásod!';
+    $lang[bejelentkezes] = 'Bejelentkezés';
 }
 
 if ($_SESSION["lang"] == 'en'){
@@ -54,6 +55,7 @@ if ($_SESSION["lang"] == 'en'){
 	$lang[nem_adta_meg_a_korat] = 'You did not give your age!';
 	$lang[nem_adta_meg_a_lakhelyet] = 'You did not give your living place!';
 	$lang[nem_adta_meg_a_foglalkozasat] = 'You did not give your occupation!';
+        $lang[bejelentkezes] = 'Login';
 }
 
 if ($_SESSION["lang"] == 'de'){
@@ -78,6 +80,7 @@ if ($_SESSION["lang"] == 'de'){
 	$lang[nem_adta_meg_a_korat] = 'Sie gab nicht auf Ihr Alter!';
 	$lang[nem_adta_meg_a_lakhelyet] = 'Sie haben es nicht geben Ihrem Lebensraum!';
 	$lang[nem_adta_meg_a_foglalkozasat] = 'Sie haben Ihren Beruf nicht aufgeben!';
+        $lang[bejelentkezes] = 'Login';
 }
 
 

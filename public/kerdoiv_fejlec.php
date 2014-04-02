@@ -70,8 +70,8 @@ $kerdoiv_fejlec = '<div id="intro">
 
 		 <div id="survey">
            <form action="?" name="form_survey" id="form_survey" method="post">'
-		. '<input type="hidden" name="kerdoiv" value="'.$kerdoiv_sorszam.'" />
-                    <input type="hidden" name="p" value="'.$_REQUEST[p].'" />
+		. '<input type="hidden" name="kerdoiv" id="kerdoiv" value="'.$kerdoiv_sorszam.'" />
+                    <input type="hidden" name="p" id="p" value="'.$_REQUEST[p].'" />
                     <div class="szemelyes" style="'.$adat_off.'">                        
                         <label>'.$lang[eletkor].'</label>
                         <select name="eletkora">
