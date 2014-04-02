@@ -2,10 +2,13 @@
 $kerdoiv_sorszam = $_REQUEST[kerdoiv];
 $user_id = 1;
 
-$resultc = mysql_query ("SELECT cim_hu, cim_en, cim_de, leiras_hu, leiras_en, leiras_de, hu, en, de FROM kerdoivek WHERE status = '1' AND sorszam = '$kerdoiv_sorszam' ");
+$resultc = mysql_query ("SELECT cim_hu, cim_en, cim_de, leiras_hu, leiras_en, leiras_de, hu, en, de, datum, aktivalas, lejarat FROM kerdoivek WHERE status = '1' AND sorszam = '$kerdoiv_sorszam' ");
 $next_elementc = mysql_fetch_array ($resultc);
 $kerdoiv_cim=$next_elementc['cim_'.$_SESSION[lang]];
 $kerdoiv_leiras=$next_elementc['leiras_'.$_SESSION[lang]];
+$kerdoiv_kelt=$next_elementc['datum'];
+$kerdoiv_aktivalas=$next_elementc['aktivalas'];
+$kerdoiv_lejarat=$next_elementc['lejarat'];
 
 //nyelvek száma
 $nyelv = 0;
@@ -33,13 +36,15 @@ $result2 = mysql_query("SELECT sorszam FROM valaszadasok WHERE kerdoiv_sorszam =
 $valaszadok_szama = 'A kitöltők száma: '.mysql_num_rows($result2);
     
 //létrehozás dátuma
-$created_date = 'A létrehozás dátuma: ';
+$created_date = 'A létrehozás dátuma: '.$kerdoiv_kelt;
 
 //aktiválás dátuma
-$activated_date = 'Az aktiválás dátuma: még nem aktivált';
+if (!$kerdoiv_aktivalas){ $kerdoiv_aktivalas = 'még nem aktivált';}
+$activated_date = 'Az aktiválás dátuma: '.$kerdoiv_aktivalas;
 
 //lejárat dátuma
-$expire_date = 'Az előfizetés lejárati dátuma: korlátlan';
+if (!$kerdoiv_lejarat){ $kerdoiv_lejarat = 'határozatlan';}
+$expire_date = 'Az előfizetés lejárati dátuma: korlátlan<br />Kérdőív lejárati dátuma:'.$kerdoiv_lejarat;
 
  
     $result2 = mysql_query("SELECT COUNT(sorszam) FROM kerdoivek WHERE user_id = '$user_id'");
