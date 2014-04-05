@@ -8,6 +8,9 @@ while ($next_element = mysql_fetch_array($result)){
 $array = array( 'tartalom'       => $tartalom,
                 'nyilvanos_kerdoivek'       => $nyilvanos_kerdoivek,
                 'bejelentkezes'       =>$lang[bejelentkezes],
+                'azonosito'       =>$lang[azonosito],
+		'jelszo'       =>$lang[jelszo],
+		'regisztracio'       =>$lang[regisztracio],
                 'figy_uzenet'   => $figy_uzenet);
 
 $oldal = new html_blokk;

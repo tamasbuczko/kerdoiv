@@ -1,21 +1,3 @@
-@font-face{ 
-	font-family: 'Roboto_C';
-	src: url('fonts/RobotoCondensed-Regular-webfont.eot');
-	src: url('fonts/RobotoCondensed-Regular-webfont.eot?iefix') format('embedded-opentype'),
-	     url('fonts/RobotoCondensed-Regular-webfont.woff') format('woff'),
-	     url('fonts/RobotoCondensed-Regular-webfont.ttf') format('truetype'),
-	     url('fonts/RobotoCondensed-Regular-webfont.svg#webfont') format('svg');
-}
-
-@font-face{ 
-	font-family: 'Roboto_CB';
-	src: url('font/RobotoCondensed-Bold-webfont.eot');
-	src: url('font/RobotoCondensed-Bold-webfont.eot?iefix') format('embedded-opentype'),
-	     url('font/RobotoCondensed-Bold-webfont.woff') format('woff'),
-	     url('font/RobotoCondensed-Bold-webfont.ttf') format('truetype'),
-	     url('font/RobotoCondensed-Bold-webfont.svg#webfont') format('svg');
-}
-
 body{
    font-family: 'Roboto_C', Arial;
     background-color: #eee;//#eef3fa;
@@ -164,7 +146,7 @@ h1{
 .login div{
    width: 200px;
    float: left;
-   margin: 20px 0px 0px 20px;
+   margin: 0px 0px 0px 20px;
    border: 0px solid #cecece;
    text-align: left;
 }

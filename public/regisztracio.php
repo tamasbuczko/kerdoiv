@@ -82,6 +82,14 @@ if ($hiba>0){
     $hibauzenet = '<h3>'.$lang['nem_feldolgozhato'].'</h3>'.$hibauzenet;
 }
 $array = array( 'tartalom'       => $tartalom,
+                'regisztracio'   => $lang[regisztracio],
+		'azonosito'       => $lang[azonosito],
+		'email'       => $lang[email],
+		'jelszo'       => $lang[jelszo],
+		'jelszo_megegyszer' => $lang[jelszo_megegyszer],
+		'ingyenes' => $lang[ingyenes],
+		'ezust_csomag' => $lang[ezust_csomag],
+                'arany_csomag' => $lang[arany_csomag],
                 'figy_uzenet'   => $figy_uzenet);
 
 $oldal = new html_blokk;

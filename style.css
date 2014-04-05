@@ -1,3 +1,21 @@
+@font-face{ 
+	font-family: 'Roboto_C';
+	src: url('fonts/RobotoCondensed-Regular-webfont.eot');
+	src: url('fonts/RobotoCondensed-Regular-webfont.eot?iefix') format('embedded-opentype'),
+	     url('fonts/RobotoCondensed-Regular-webfont.woff') format('woff'),
+	     url('fonts/RobotoCondensed-Regular-webfont.ttf') format('truetype'),
+	     url('fonts/RobotoCondensed-Regular-webfont.svg#webfont') format('svg');
+}
+
+@font-face{ 
+	font-family: 'Roboto_CB';
+	src: url('font/RobotoCondensed-Bold-webfont.eot');
+	src: url('font/RobotoCondensed-Bold-webfont.eot?iefix') format('embedded-opentype'),
+	     url('font/RobotoCondensed-Bold-webfont.woff') format('woff'),
+	     url('font/RobotoCondensed-Bold-webfont.ttf') format('truetype'),
+	     url('font/RobotoCondensed-Bold-webfont.svg#webfont') format('svg');
+}
+
 body{
     margin: 0;
     padding: 0;
@@ -557,16 +575,28 @@ margin-left: 20px;
 }
 
 #control_box{
-    min-height: 210px;
+    min-height: 90px;
+    height: auto;
     width: 140px;
-    background-color: rgba(0,0,100,0.2) !important;
+    border: 1px solid #dfdfdd;
+    background-color: #eaeae8 !important;
     float: right;
     margin: 0 10px 0 690px;
     position: fixed;
-    border: 1px solid #aaa;
     -webkit-box-shadow: 3px 3px 7px 0px rgba(0,0,0,0.75);
     -moz-box-shadow: 3px 3px 7px 0px rgba(0,0,0,0.75);
     box-shadow: 3px 3px 7px 0px rgba(0,0,0,0.75);
+    text-align: center;
+    padding-bottom: 8px;
+    border-radius: 10px;
+}
+
+#control_box h3{
+    margin: 0px 0px 6px 0px;
+    font-weight: normal;
+    font-size: 14px;
+    padding-bottom: 2px;
+    border-bottom: 1px solid #bfbfbb;
 }
 
 #control_box img{
@@ -574,8 +604,18 @@ margin-left: 20px;
     opacity: 1;
 }
 
+#control_box div{
+    width: 100%;
+    float: left;
+}
+
+#control_box label{
+    width: 100% !important;
+    text-align: center;
+}
+
 #control_box input[type=submit]{
-    background-color: blue;
+    background-color: #299429;
     border-radius: 8px;
     border: 0px;
     cursor: pointer;
@@ -583,17 +623,38 @@ margin-left: 20px;
     color: #fefefe;
     margin: 8px auto 0px auto;
     float: left;
+    width: 100px;
+    height: 30px;
+    font-family: 'Roboto_CB', Arial;
+    font-size: 12px;
 }
 
 #control_box input[type=submit]:hover{
-    color: #aaa;
-    float: left;
+   background-color: #33aa33;
 }
 
+#control_box a{
+    color: #333 !important;
+    font-size: 14px;
+    text-decoration: none;
+}
+
+#control_box a:hover{
+    text-decoration: underline;
+}
+
+.sarga_gomb{
+    background-color: #CC9900 !important;
+}
+
+.sarga_gomb:hover{
+    background-color: #E6AC00 !important;
+}
+   
 #lepteto{
-    width: 100%;
-    height: 48px;
-    float: left;
+    width: 100px;
+    height: 34px;
+    margin: 12px auto 0px 20px;
 }
 
 #lepteto a{
@@ -670,4 +731,26 @@ margin-left: 20px;
 
 #nyilvanos_kerdoivek a{
     display: block;
+}
+
+#langs{
+   width: 860px;
+   margin: -24px auto 0px auto;
+   text-align: right;
+}
+
+#langs a{
+   text-decoration: none;
+   color: #666;
+}
+
+#headline{
+    width: 860px;
+    height: auto;
+    margin-left: -10px;
+    overflow: hidden;
+}
+
+#headline img{
+    width: 100%;
 }

@@ -19,10 +19,11 @@ while ($next_element = mysql_fetch_array($result)){
 }
 
 //a választott nyelv szerinti kérdőív cím és leírás betöltése
-$resultc = mysql_query ("SELECT cim_hu, cim_en, cim_de, leiras_hu, leiras_en, leiras_de, hu, en, de FROM kerdoivek WHERE status = '1' AND sorszam = '$kerdoiv_sorszam' ");
+$resultc = mysql_query ("SELECT cim_hu, cim_en, cim_de, leiras_hu, leiras_en, leiras_de, hu, en, de, fejlec_kep FROM kerdoivek WHERE status = '1' AND sorszam = '$kerdoiv_sorszam' ");
 $next_elementc = mysql_fetch_array ($resultc);
 $kerdoiv_cim=$next_elementc['cim_'.$_SESSION[lang]];
 $kerdoiv_leiras=$next_elementc['leiras_'.$_SESSION[lang]];
+$kerdoiv_fejlec_kep=$next_elementc['fejlec_kep'];
 $nyelv = 0;
 if ($next_elementc[hu] == 1){
     $nyelv_db++;
@@ -49,12 +50,20 @@ $nyelv_blokk = '<div id="languages">
 if (($_REQUEST[mod]) AND ($_SESSION[qa_user_id])){
    $fejlec_szerk = '<a href="?p=ujkerdoiv&amp;id='.$kerdoiv_sorszam.'" class="modosito_gomb" title="kérdőív adatlap módosítása"></a>';
    $control_box = '<div id="control_box" style="margin-left: 450px;">
+                            <h3>Vezérlőpult</h3>
                             <a href="?p=ujkerdes&amp;kerdoiv='.$kerdoiv_sorszam.'&ujkerdes=x">Új kérdés rögzítése</a>
                             <a href="?p=kerdoiveim" />vissza</a>
                         </div>';
 }
 
-$kerdoiv_fejlec = '<div id="intro">
+if ($kerdoiv_fejlec_kep){
+$kerdoiv_headline = '<div id="headline">
+                    <img src="fejlec_kepek/'.$kerdoiv_fejlec_kep.'" alt="" />
+                   </div>';
+}
+
+$kerdoiv_fejlec = $kerdoiv_headline.'
+                  <div id="intro">
                     '.$nyelv_blokk.'
                     <div id="survey_intro" style="'.$adat_off2.'">
                         <h1>'.$kerdoiv_cim.'</h1>

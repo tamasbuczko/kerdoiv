@@ -31,6 +31,14 @@ if ($_SESSION["lang"] == 'hu'){
 	$lang[nem_adta_meg_a_lakhelyet] = 'Nem adtad meg a lakhelyed!';
 	$lang[nem_adta_meg_a_foglalkozasat] = 'Nem adtad meg a foglalkozásod!';
     $lang[bejelentkezes] = 'Bejelentkezés';
+    $lang[azonosito] = 'Azonosító';
+    $lang[jelszo] = 'Jelszó';
+    $lang[regisztracio] = 'Regisztráció';
+    $lang[email] = 'E-mail';
+    $lang[jelszo_megegyszer] = 'Jelszó mégegyszer';
+    $lang[ingyenes] = 'ingyenes';
+    $lang[ezust_csomag] = 'ezüst csomag';
+    $lang[arany_csomag] = 'arany csomag';
 }
 
 if ($_SESSION["lang"] == 'en'){
@@ -56,6 +64,14 @@ if ($_SESSION["lang"] == 'en'){
 	$lang[nem_adta_meg_a_lakhelyet] = 'You did not give your living place!';
 	$lang[nem_adta_meg_a_foglalkozasat] = 'You did not give your occupation!';
         $lang[bejelentkezes] = 'Login';
+    $lang[azonosito] = 'User';
+	$lang[jelszo] = 'Password';
+	$lang[regisztracio] = 'Registration';
+	$lang[email] = 'E-mail';
+	$lang[jelszo_megegyszer] = 'Password again';
+	$lang[ingyenes] = 'free';
+	$lang[ezust_csomag] = 'silver package';
+	$lang[arany_csomag] = 'gold package';
 }
 
 if ($_SESSION["lang"] == 'de'){
@@ -81,6 +97,14 @@ if ($_SESSION["lang"] == 'de'){
 	$lang[nem_adta_meg_a_lakhelyet] = 'Sie haben es nicht geben Ihrem Lebensraum!';
 	$lang[nem_adta_meg_a_foglalkozasat] = 'Sie haben Ihren Beruf nicht aufgeben!';
         $lang[bejelentkezes] = 'Login';
+    	$lang[azonosito] = 'Azonosító';
+	$lang[jelszo] = 'Jelszó';
+	$lang[regisztracio] = 'Regisztráció';
+	$lang[email] = 'E-mail';
+	$lang[jelszo_megegyszer] = 'Jelszó mégegyszer';	
+	$lang[ingyenes] = 'ingyenes';
+	$lang[ezust_csomag] = 'ezüst csomag';
+	$lang[arany_csomag] = 'arany csomag';
 }
 
 

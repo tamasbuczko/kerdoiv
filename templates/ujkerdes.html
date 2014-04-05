@@ -1,20 +1,22 @@
 <h1>{urlap_cim}</h1>
 <form action="" method="post" enctype="multipart/form-data" class="ujkerdes" >
     <div id="control_box">
+        <h3>Vezérlőpult</h3>
         <div {control_box_ki}>
         <label>Látható nyelvek:</label>
         {control_hu}
         {control_en}
         {control_de}
         </div>
-        <input type="submit" name="pluszvalasz" value="+ válasz hozzáadása">
-        <input type="submit" name="mentes" value="módosítások rögzítése">
-        <a href="?p=kerdoiv&mod=1&kerdoiv={kerdoiv_sorszam}">Vissza a kérdőívhez</a>
+        <input type="submit" name="pluszvalasz" value="+1 válasz" title="+1 válasz hozzáadása" class="sarga_gomb">
+        <input type="submit" name="mentes" value="Mentés" title="változások rögzítése">
+        
         <div id="lepteto">
             <a href="?p=ujkerdes&id={elozo_kerdes}" /></a>
             <span>{hanyadik_kerdes}/{osszes_kerdes}</span>
             <a href="?p=ujkerdes&id={kovetkezo_kerdes}" /></a>
         </div>
+        <a href="?p=kerdoiv&mod=1&kerdoiv={kerdoiv_sorszam}">Vissza a kérdőívhez</a>
         <br style="clear: both;" />
     </div>
     <input type="hidden" name="id" value="{id}" />

@@ -1,19 +1,20 @@
 <img src="graphics/QA_logo.png" alt="questionaction" id="csomagajanlatok" />
 <form action="" name="register" method="post" class="login">
-    <h2>Regisztráció</h2>
-    <label>Azonosító:</label><input type="text" name="reg_azonosito" value="" />
-    <label>Email:</label><input type="text" name="email" value="" />
-    <label>Jelszó:</label><input type="password" name="jelszo" value="" />
-    <label>Jelszó mégegyszer:</label><input type="password" name="jelszo2" value="" />
+    <h2>{regisztracio}</h2>
+    <label>{azonosito}:</label><input type="text" name="reg_azonosito" value="" />
+    <label>{email}:</label><input type="text" name="email" value="" />
+    <label>{jelszo}:</label><input type="password" name="jelszo" value="" />
+    <label>{jelszo_megegyszer}:</label><input type="password" name="jelszo2" value="" />
     
+    <label>Választható csomagok:</label>
     <div>
-        <input type="radio" name="csomag" value="3" /><label>ingyenes</label>
+        <input type="radio" name="csomag" value="3" /><label>{ingyenes}</label>
     </div>
     <div>
-        <input type="radio" name="csomag" value="4" /><label>ezüst csomag</label>
+        <input type="radio" name="csomag" value="4" /><label>{ezust_csomag}</label>
     </div>
     <div>
-        <input type="radio" name="csomag" value="5" /><label>arany csomag</label>
+        <input type="radio" name="csomag" value="5" /><label>{arany_csomag}</label>
     </div>
-    <input name="send" type="submit" value="Regisztrál" />
+    <input name="send" type="submit" value="{regisztracio}" />
 </form>
