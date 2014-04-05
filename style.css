@@ -187,7 +187,6 @@ body{
 
 #survey_intro_div{
     float: left;
-    width: 400px;
     margin-top: 1px;
     padding: 12px 15px 12px 15px;
     background-color: #99aec3;
@@ -745,12 +744,15 @@ margin-left: 20px;
 }
 
 #headline{
-    width: 860px;
+    width: 690px;
     height: auto;
     margin-left: -10px;
     overflow: hidden;
+    float: left;
+    
 }
 
 #headline img{
     width: 100%;
+    float: left;
 }
