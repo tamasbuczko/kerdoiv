@@ -24,7 +24,7 @@ body{
 
 #frame{
     width: 860px;
-    margin: 10px auto 10px auto;
+    margin: 0px auto 10px auto;
     padding: 10px;
 }
 
@@ -734,7 +734,7 @@ margin-left: 20px;
 
 #langs{
    width: 860px;
-   margin: -24px auto 0px auto;
+   margin: auto;
    text-align: right;
 }
 
@@ -742,7 +742,9 @@ margin-left: 20px;
    text-decoration: none;
    color: #666;
 }
-
+#langs img{
+   margin-bottom: -2px; 
+}
 #headline{
     width: 690px;
     height: auto;
