@@ -30,7 +30,7 @@ while ($next_element = mysql_fetch_array($result)){
    
    if ($nyelv_db > 1){
 	  $nyelv_fejlec = '<th>nyelvek</th>';
-	  $zaszlok = '<td class="kis_zaszlo">'.$zaszlo_hu.$zaszlo_en.$zaszlo_de.'</td>';
+	  $zaszlok = '<td class="kis_zaszlo">'.$zaszlo_en.$zaszlo_de.$zaszlo_hu.'</td>';
    } else {
 	  $zaszlok = '';
    }

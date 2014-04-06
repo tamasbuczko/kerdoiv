@@ -4,9 +4,9 @@
         <h3>Vezérlőpult</h3>
         <div {control_box_ki}>
         <label>Látható nyelvek:</label>
-        {control_hu}
         {control_en}
         {control_de}
+        {control_hu}
         </div>
         <input type="submit" name="pluszvalasz" value="+1 válasz" title="+1 válasz hozzáadása" class="sarga_gomb">
         <input type="submit" name="mentes" value="Mentés" title="változások rögzítése">
@@ -23,10 +23,10 @@
     <input type="hidden" name="kerdoiv_sorszam" value="{kerdoiv_sorszam}" />
     <label>Kérdés</label>
 
-    <textarea name="kerdes_hu"{kerdes_hux} id="kerdes_hu"{kerdes_hux} class="hu_k">{kerdes_szoveg_hu}</textarea>
     <textarea name="kerdes_en"{kerdes_enx} id="kerdes_en"{kerdes_enx} class="en_k">{kerdes_szoveg_en}</textarea>
     <textarea name="kerdes_de"{kerdes_dex} id="kerdes_de"{kerdes_dex} class="de_k">{kerdes_szoveg_de}</textarea>
-	<br />
+    <textarea name="kerdes_hu"{kerdes_hux} id="kerdes_hu"{kerdes_hux} class="hu_k">{kerdes_szoveg_hu}</textarea>
+        <br />
 	<div class='file_browse_wrapper'>
 	  <input name="kerdes_kep" type="file" size="30" title="kép feltöltése" value="ok" accept="image/*" class='file_browse' />
 	</div>

@@ -41,9 +41,9 @@ if ($next_elementc[de] == 1){
 if ($nyelv_db > 1){
 $nyelv_blokk = '<div id="languages">
                         <h3>'.$lang[nyelv_valasztas].'</h3>
-                        '.$zaszlo_hu.'
                         '.$zaszlo_en.'
                         '.$zaszlo_de.'
+                        '.$zaszlo_hu.'
                 </div>';
 }
 

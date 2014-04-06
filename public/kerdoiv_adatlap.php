@@ -25,7 +25,7 @@ if ($next_elementc[de] == 1){
     $nyelv_db++;
     $zaszlo_de = '<span id="nemet_zaszlo"><img src="graphics/nemet_zaszlo.png" alt="'.$lang[nemet].'" />'.$lang[nemet].'</span>';
 }
-$zaszlok = 'Kérdőív fordításai ('.$nyelv_db.'): <div id="adatlap_zaszlok">'.$zaszlo_hu . $zaszlo_en . $zaszlo_de.'</div>';
+$zaszlok = 'Kérdőív fordításai ('.$nyelv_db.'): <div id="adatlap_zaszlok">'. $zaszlo_en . $zaszlo_de.$zaszlo_hu.'</div>';
 
 //kérdések száma
 $resultx = mysql_query("SELECT COUNT(sorszam) FROM kerdesek WHERE kerdoiv_sorszam = '$kerdoiv_sorszam'");
