@@ -622,7 +622,6 @@ margin-left: 20px;
     padding: 5px;
     color: #fefefe;
     margin: 8px auto 0px auto;
-    float: left;
     width: 100px;
     height: 30px;
     font-family: 'Roboto_CB', Arial;
@@ -633,10 +632,16 @@ margin-left: 20px;
    background-color: #33aa33;
 }
 
-#control_box a{
+#control_box .back{
     color: #333 !important;
     font-size: 14px;
     text-decoration: none;
+	clear: both;
+	float: right;
+	width: 100%;
+	text-align: right;
+	margin: 10px 0px 0px 0px;
+	border-top: 1px solid #bfbfbf;
 }
 
 #control_box a:hover{

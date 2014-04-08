@@ -59,8 +59,10 @@ if (($_REQUEST[mod]) AND ($_SESSION[qa_user_id])){
    $fejlec_szerk = '<a href="?p=ujkerdoiv&amp;id='.$kerdoiv_sorszam.'" class="modosito_gomb" title="kérdőív adatlap módosítása"></a>';
    $control_box = '<div id="control_box" '.$control_box_distance.'>
                             <h3>Vezérlőpult</h3>
+							<br />
                             <a href="?p=ujkerdes&amp;kerdoiv='.$kerdoiv_sorszam.'&ujkerdes=x">Új kérdés rögzítése</a>
-                            <a href="?p=kerdoiveim" />vissza</a>
+							<br /><br />
+                            <a href="?p=kerdoiveim" class="back" />vissza</a>
                         </div>';
 }
 
