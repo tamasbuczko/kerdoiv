@@ -757,11 +757,17 @@ margin-left: 20px;
    width: 860px;
    margin: auto;
    text-align: right;
+   height: 24px;
+}
+
+#langs img{
+   margin: 0px 1px 0px 0px;
 }
 
 #langs a{
    text-decoration: none;
    color: #666;
+   margin: 4px 0px 0px 6px;
 }
 #langs img{
    margin-bottom: -2px; 
