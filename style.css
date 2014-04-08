@@ -739,8 +739,18 @@ margin-left: 20px;
     border: 1px solid #aaa;
 }
 
+#nyilvanos_kerdoivek{
+   width: 380px;
+   float: left;
+}
+
 #nyilvanos_kerdoivek a{
     display: block;
+}
+
+.szovegblokk{
+   width: 400px;
+   float: left;
 }
 
 #langs{

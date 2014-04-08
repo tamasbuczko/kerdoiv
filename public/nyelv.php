@@ -39,6 +39,10 @@ if ($_SESSION["lang"] == 'hu'){
     $lang[ingyenes] = 'ingyenes';
     $lang[ezust_csomag] = 'ezüst csomag';
     $lang[arany_csomag] = 'arany csomag';
+	$lang[kapcsolat] = 'Kapcsolat';
+	$lang[az_on_email_cime] = 'Az Ön e-mail címe';
+	$lang[uzenet] = 'Üzenet';
+	$lang[elkuldes] = 'Elküldés';
 }
 
 if ($_SESSION["lang"] == 'en'){
@@ -72,6 +76,10 @@ if ($_SESSION["lang"] == 'en'){
 	$lang[ingyenes] = 'free';
 	$lang[ezust_csomag] = 'silver package';
 	$lang[arany_csomag] = 'gold package';
+	$lang[kapcsolat] = 'Contact';
+	$lang[az_on_email_cime] = 'Az Ön e-mail címe';
+	$lang[uzenet] = 'Üzenet';
+	$lang[elkuldes] = 'Elküldés';
 }
 
 if ($_SESSION["lang"] == 'de'){
@@ -105,6 +113,10 @@ if ($_SESSION["lang"] == 'de'){
 	$lang[ingyenes] = 'ingyenes';
 	$lang[ezust_csomag] = 'ezüst csomag';
 	$lang[arany_csomag] = 'arany csomag';
+	$lang[kapcsolat] = 'Kontakt';
+	$lang[az_on_email_cime] = 'Az Ön e-mail címe';
+	$lang[uzenet] = 'Üzenet';
+	$lang[elkuldes] = 'Elküldés';
 }
 
 

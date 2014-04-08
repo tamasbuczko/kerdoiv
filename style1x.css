@@ -92,7 +92,7 @@ h1{
     min-height: 100px;
     float: right;
 	padding: 20px;
-	margin: 30px;
+	margin: 0 30px 30px 30px;
 	border-radius: 10px;
     border: 1px solid #dfdfdd;
     background-color: #eaeae8;
@@ -180,6 +180,14 @@ h1{
 
 .login a[href="?p=regisztracio"]:hover{
    background-color: #E6AC00;
+}
+
+.login textarea{
+   width: 100%;
+   height: 150px;
+   border: 1px solid #aaa;
+   resize: none;
+   padding: 0px;
 }
 
 .kerdoiveim {
