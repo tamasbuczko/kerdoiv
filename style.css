@@ -537,6 +537,7 @@ margin-left: 20px;
     background-repeat: no-repeat;
     background-position: 2px 2px;
     margin-bottom: 3px;
+	border: 1px solid #aaa;
 }
 
 .ujkerdes input[name=cim_hu], .ujkerdes textarea[name=leiras_hu], .hu_k{

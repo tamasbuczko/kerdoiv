@@ -51,12 +51,14 @@ if ($_REQUEST[mentes]){
         $leiras_en = $_REQUEST[leiras_en];
         $cim_de = $_REQUEST[cim_de];
         $leiras_de = $_REQUEST[leiras_de];
+		$aktivalas = $_REQUEST[aktivalas_datum];
+		$lejarat = $_REQUEST[lejarat_datum];
         
         $sql = "UPDATE kerdoivek SET cim_hu='$cim_hu', leiras_hu='$leiras_hu',
                 cim_en='$cim_en', leiras_en='$leiras_en',
                 cim_de='$cim_de', leiras_de='$leiras_de',
                 hu='$check_hu', en='$check_en', de='$check_de',
-                nyilvanos='$check_nyilvanos' WHERE sorszam='$_REQUEST[sorszam]'";
+                nyilvanos='$check_nyilvanos', aktivalas='$aktivalas', lejarat='$lejarat' WHERE sorszam='$_REQUEST[sorszam]'";
         mysql_query($sql);
 
     }
@@ -65,7 +67,7 @@ if ($_REQUEST[mentes]){
 $div_kikapcs = 'style="display: none;"';
 
 if ($_REQUEST[id]){
-    $result = mysql_query("SELECT cim_hu, leiras_hu, hu, en, de, cim_en, leiras_en, cim_de, leiras_de, nyilvanos FROM kerdoivek WHERE sorszam = '$_REQUEST[id]'");
+    $result = mysql_query("SELECT cim_hu, leiras_hu, hu, en, de, cim_en, leiras_en, cim_de, leiras_de, nyilvanos, aktivalas, lejarat FROM kerdoivek WHERE sorszam = '$_REQUEST[id]'");
     $a = mysql_fetch_row($result);
     $kerdoiv_sorszam = $_REQUEST[id];
     $cim_hu = $a[0];
@@ -75,6 +77,8 @@ if ($_REQUEST[id]){
     $cim_de = $a[7];
     $leiras_de = $a[8];
     $nyilvanos = $a[9];
+	$aktivalas = $a[10];
+	$lejarat = $a[11];
     $hu = $a[2];
     $en = $a[3];
     $de = $a[4];
@@ -180,6 +184,8 @@ $array = array( 'tartalom'       => $tartalom,
                 'control_hu'       => $control_hu,
                 'control_en'       => $control_en,
                 'control_de'       => $control_de,
+				'aktivalas'       => $aktivalas,
+				'lejarat'       => $lejarat,
                 'control_box_ki'       => $control_box_ki,
                 'figy_uzenet'   => $figy_uzenet);
 

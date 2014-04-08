@@ -16,7 +16,7 @@ while ($next_element = mysql_fetch_array($result)){
         $result2 = mysql_query("SELECT sorszam FROM valaszadasok WHERE kerdes_sorszam = $sorszam_kerdes");
         $valaszadok_szama = mysql_num_rows($result2);
         
-        $result2 = mysql_query("SELECT k.sorszam, k.kerdes_hu, v.valasz_hu, COUNT(*)
+        $result2 = mysql_query("SELECT k.sorszam, k.kerdes_hu, v.valasz_hu, COUNT(*), v.valasz_en, v.valasz_de
         FROM valaszadasok AS va
         LEFT JOIN valaszok AS v ON va.valasz_sorszam = v.sorszam
         LEFT JOIN kerdesek AS k ON va.kerdes_sorszam = k.sorszam
@@ -27,7 +27,10 @@ while ($next_element = mysql_fetch_array($result)){
         while ($eredmenyek = mysql_fetch_array($result2)){
             $eredmenyarany = $eredmenyek[3] / $valaszadok_szama;
             $eredmenyarany = $eredmenyarany*300;
-            $eredmeny_lista .= $eredmenyek[2].' ('.$eredmenyek[3].' db) <div class="grafv"><div class="graf" style="width: '.$eredmenyarany.'px"></div></div><br />';
+			if ($_SESSION[lang] == 'hu'){ $valasz_szoveg = $eredmenyek[2];}
+			if ($_SESSION[lang] == 'en'){ $valasz_szoveg = $eredmenyek[4];}
+			if ($_SESSION[lang] == 'de'){ $valasz_szoveg = $eredmenyek[5];}
+            $eredmeny_lista .= $valasz_szoveg.' ('.$eredmenyek[3].' db) <div class="grafv"><div class="graf" style="width: '.$eredmenyarany.'px"></div></div><br />';
         }
     }
     
