@@ -657,9 +657,10 @@ margin-left: 20px;
 }
    
 #lepteto{
-    width: 100px;
+    width: 100px !important;
+	float: none !important;
     height: 34px;
-    margin: 12px auto 0px 20px;
+    margin: 12px auto 0px auto;
 }
 
 #lepteto a{
@@ -675,10 +676,14 @@ margin-left: 20px;
 
 #lepteto a:nth-of-type(2){
     background-image: url('graphics/next_arrow.png');
+	float: right;
 }
 
 #lepteto span{
     float: left;
+	text-align: center;
+	display: block;
+	width: 40px;
 }
 
 #kerdoiv_adatlap{
