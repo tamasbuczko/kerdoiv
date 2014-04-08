@@ -46,10 +46,14 @@ if (($_REQUEST[p]) AND ($_REQUEST[p] != '2')){
 //menü létrehozása az oldal tetején
 require_once('public/menu.php');
 
+//slider összeállítása
+require_once('public/slider.php');
+
 //a teljes oldaltemplate-et feltöltjük és kiiratjuk a böngészőnek(index.html)
 $array = array( 'tartalom' => $tartalom,
 				'body_onload' => $body_onload,  
                 'popup_tartalom' => $popup_tartalom,
+                'slider' => $slider,
 				'head_off' => $head_off,
                 'hibauzenet' => $hibauzenet,
                 'figy_uzenet' => $figy_uzenet,
