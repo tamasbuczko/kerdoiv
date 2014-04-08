@@ -41,7 +41,7 @@ if ($_REQUEST[send]){
 		 
 		 $message_bevezeto = 'Kedves Látogató!<br/><br/>
 					
-					Köszönjük, hogy regisztrált a www.homeup.eu weboldalon.<br/><br/>
+					Köszönjük, hogy regisztrált a www.questionaction.com weboldalon.<br/><br/>
 					
 					Az Ön azonosítója: ' . $x_azonosito .'<br/>
 					Az jelszava: ' . $_REQUEST[jelszo] . '<br/><br/>
@@ -49,13 +49,13 @@ if ($_REQUEST[send]){
 					
 					Amennyiben kérdése van kérjük írjon az info@homeup.eu címre.<br/><br/>
 					
-					A bejelentkezéshez kattintson: <a href="http://www.homeup.eu">http://www.homeup.eu</a><br/><br/>
+					A bejelentkezéshez kattintson: <a href="http://www.questionaction.com">http://www.questionaction.com</a><br/><br/>
 					
 					Üdvözlettel: a homeup.eu csapata';
 
-		$subject = 'homeup.eu - regisztráció';
-		$s_from = 'info@homeup.hu';
-		$s_feladnev = 'homeup.hu';
+		$subject = 'questionaction.com - regisztráció';
+		$s_from = 'info@questionaction.com';
+		$s_feladnev = 'questionaction.com';
 		$to2x = $x_email;
 		$message = $message_bevezeto . $message_hirek;
 		$headers  = 'MIME-Version: 1.0' . "\r\n";

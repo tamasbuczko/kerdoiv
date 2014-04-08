@@ -8,6 +8,9 @@ require_once('parameters.php');
 //osztályok betöltése az objektumokhoz
 require_once('class/class.php');
 
+//teszt
+require_once('public/teszt.php');
+
 //kapcsolat létrehozása az adatbázis szerverrel (class.php)
 $adatkapcsolat = new data_connect;  //példányosítjuk az objektumot
 $adatkapcsolat->connect();          //az objektum connect fügvényét futatjuk
