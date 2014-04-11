@@ -8,12 +8,19 @@ require_once('parameters.php');
 //osztályok betöltése az objektumokhoz
 require_once('class/class.php');
 
+//funkciók betöltése
+require_once('functions.php');
+
 //teszt
 require_once('public/teszt.php');
 
 //kapcsolat létrehozása az adatbázis szerverrel (class.php)
 $adatkapcsolat = new data_connect;  //példányosítjuk az objektumot
 $adatkapcsolat->connect();          //az objektum connect fügvényét futatjuk
+
+//logolás bekapcsolása
+#$log = new log_db;
+#$log->write('x', 'Futás indul...');
 
 //látogató beléptetése, illetve állapotvizsgálat
 $user = new user;
