@@ -213,10 +213,16 @@ h1{
 
 #footer{
    clear: both;
-   margin-top: 40px;
    background-color: #333;
    height: 80px;
    color: #fefefe;
+   
+}
+
+#footer p{
+    float: left;
+    margin: 30px 10px 10px 250px;
+    font-size: 14px;
 }
 
 #admin_valaszok{

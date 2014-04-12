@@ -461,6 +461,10 @@ margin-left: 20px;
    text-align: center;
 }
 
+.valasz_szoveg{
+    float: left;
+}
+
 .graf {
     background-color: #860000;
     height: 15px;
@@ -478,12 +482,20 @@ margin-left: 20px;
     background-color: #eeeeee;
     width: 300px;
     border: 1px solid #cecece;
+    float: left;
 }
 
 .graf2v{
     background-color: #eeeeee;
     width: 30px;
     border: 1px solid #cecece;
+}
+
+.filter img{
+    float: left;
+    height: 18px;
+    weight: auto;
+    margin-left: 5px;
 }
 
 .rank_eredmeny{
@@ -775,7 +787,7 @@ margin-left: 20px;
 
 .hasabok_3{
     width: 250px;
-    margin: 0 15px 30px 15px;
+    margin: 0 15px 100px 15px;
     float: left;
     text-align: justify;
 }
@@ -815,4 +827,16 @@ margin-left: 20px;
 #headline img{
     width: 100%;
     float: left;
+}
+
+.horizont{
+    border-bottom: 1px solid #999;
+    margin: auto;
+    width: 810px;
+}
+
+.horizont h2{
+    margin-bottom: 0px;
+    border-bottom: 3px solid #eaeae8;
+    font-size: 20px;
 }

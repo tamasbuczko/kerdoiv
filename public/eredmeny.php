@@ -30,8 +30,10 @@ while ($next_element = mysql_fetch_array($result)){
 			if ($_SESSION[lang] == 'hu'){ $valasz_szoveg = $eredmenyek[2];}
 			if ($_SESSION[lang] == 'en'){ $valasz_szoveg = $eredmenyek[4];}
 			if ($_SESSION[lang] == 'de'){ $valasz_szoveg = $eredmenyek[5];}
-            $eredmeny_lista .= $valasz_szoveg.' ('.$eredmenyek[3].' db) <div class="grafv"><div class="graf" style="width: '.$eredmenyarany.'px"></div></div><br />';
-        }
+            $eredmeny_lista .= '<div class="valasz szoveg">'.$valasz_szoveg.' ('.$eredmenyek[3].' db) </div><div class="grafv">
+                       <div class="graf" style="width: '.$eredmenyarany.'px"></div></div>
+                       <div class="filter"><a href="?p=eredmeny&kerdoiv='.$kerdoiv_sorszam.'"><img src="graphics/filter.png" alt="" /></a></div><br />';
+            }
     }
     
     if ($kerdes_tipus == 'ranking'){
