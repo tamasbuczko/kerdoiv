@@ -21,4 +21,7 @@ If ($_REQUEST['cssx'] != ""){
                                 <option value="style6.css">style6.css</option>
 			</select>
 		</form>';}
-?>
+
+if ($kerdoiv_css){
+   $css = 'surveys_css/'.$kerdoiv_css;
+}

@@ -29,11 +29,11 @@ $user->login();
 //nyelvi változatok kezelése
 include('public/nyelv.php');
 
-//css sablonok kezelése
-include('public/css.php');
-
 //a megjelenített tartalom elágazásainak kezelése
 require_once('public/tartalomvalasztas.php');
+
+//css sablonok kezelése
+require_once('public/css.php');
 
 if ($_SESSION[messagetodiv]){
     $hibauzenet = $_SESSION[messagetodiv];
