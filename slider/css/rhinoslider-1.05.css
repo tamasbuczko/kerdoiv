@@ -49,7 +49,7 @@
 
 .rhino-pause:hover { background-position:-56px -53px; }
 
-.rhino-container { position:relative; }
+.rhino-container { position:relative; clear: both !important;}
 
 .rhino-caption {
 	position:absolute;

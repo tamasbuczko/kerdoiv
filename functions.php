@@ -1,9 +1,7 @@
 <?php
 function backup_tables($tables = '*')
 {
-	
-	
-	
+		
 	  //get all of the tables
 	  if($tables == '*')
 	  {

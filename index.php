@@ -19,8 +19,8 @@ $adatkapcsolat = new data_connect;  //példányosítjuk az objektumot
 $adatkapcsolat->connect();          //az objektum connect fügvényét futatjuk
 
 //logolás bekapcsolása
-#$log = new log_db;
-#$log->write('x', 'Futás indul...');
+$log = new log_db;
+$log->write('x', 'Futás indul...');
 
 //látogató beléptetése, illetve állapotvizsgálat
 $user = new user;

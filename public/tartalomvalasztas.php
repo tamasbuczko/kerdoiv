@@ -10,5 +10,9 @@ if ($cikk->php_file){
     include('public/'.$cikk->php_file);
 }
 
-$tartalom = $cikk->html_code.$tartalom;
+if ($cikk->php_file == 'cimlap.php'){
+    $tartalom = $tartalom.$cikk->html_code;}
+else {
+    $tartalom = $cikk->html_code.$tartalom;
+}
 ?>

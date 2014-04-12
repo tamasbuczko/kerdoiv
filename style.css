@@ -50,18 +50,33 @@ body{
 }
 
 #user_box{
-    float: right;
+    float: left;
     font-family: Arial;
     font-size: 11px;
-	margin: 20px 0px 0px 0px;
-	
+    margin: 6px 0px 0px 0px;
+    width: 400px;
+    color: #666;
+    text-align: left;
+}
+
+#user_box span{
+    display: block;
+    margin-right: 10px;
+    float: left;
 }
 
 #user_box a{
-    clear: both;
-    display: block;
-    
+    text-decoration: none;
+    color: #666;
+    border-left: 1px solid #666;
+    padding-left: 10px;
+    margin: 0px !important;
 }
+
+#user_box a:hover{
+    text-decoration: underline;
+}
+
 
 #head{
     clear: both;
@@ -751,6 +766,22 @@ margin-left: 20px;
 .szovegblokk{
    width: 400px;
    float: left;
+}
+
+.szovegblokk_alul{
+    width: 840px;
+    clear: both;
+}
+
+.hasabok_3{
+    width: 250px;
+    margin: 0 15px 30px 15px;
+    float: left;
+    text-align: justify;
+}
+
+.hasabok_3 h2{
+    font-size: 18px;
 }
 
 #langs{

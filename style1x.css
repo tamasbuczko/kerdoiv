@@ -219,13 +219,6 @@ h1{
    color: #fefefe;
 }
 
-#user_box{
-   background-color: rgba(1,1,1,.6);
-   padding: 8px;
-   border-top-left-radius: 10px;
-   border-bottom-left-radius: 10px;
-}
-
 #admin_valaszok{
    width: 532px;
    float: left;

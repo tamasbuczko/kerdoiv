@@ -123,11 +123,22 @@ class cikkszoveg {
 			</div>';
 		} else {
 			$this->cim= $cikkcim;
+                        
+                        if ($this->php_file == 'cimlap.php'){
+                        $this->html_code= '
+			<h1 class="lapcim">'.$cikkcim.'</h1>
+			<div class="szovegblokk_alul">
+			' . $cikkszoveg. '
+			</div>'; 
+                        } else {
 			$this->html_code= '
 			<h1 class="lapcim">'.$cikkcim.'</h1>
 			<div class="szovegblokk">
 			' . $cikkszoveg. '
 			</div>';
+                        }
+                        
+                        
 		}
 	}
 }
