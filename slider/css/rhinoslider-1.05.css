@@ -22,13 +22,13 @@
 
 .rhino-prev {
 	left:6px;
-	top: 110px;
+	top: 80px;
 	background-position:-168px 0;
 }
 
 .rhino-next {
 	right:6px;
-	top: 110px;
+	top: 80px;
 	background-position:-106px 0;
 }
 
@@ -72,7 +72,7 @@
 	position: absolute;
 	bottom: 0px;
 	left: 50%;
-	margin: 0 0 -36px -50px;
+	margin: 0 0 0px -50px;
 	z-index: 10;
 /*	background: #fff;*/
 	padding:0;
@@ -138,7 +138,7 @@
    z-index: 0;
    width: 420px;
    height: 210px;
-   margin: 0px 0px 18px 0px;
+   margin: 0px 0px 0px 0px;
    border-radius: 8px;
    background-image: url('graphics/bg_head.png');
 	/*IE bugfix*/
