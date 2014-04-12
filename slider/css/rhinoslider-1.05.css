@@ -72,7 +72,7 @@
 	position: absolute;
 	bottom: 0px;
 	left: 50%;
-	margin: 0 0 0 -50px;
+	margin: 0 0 -36px -50px;
 	z-index: 10;
 /*	background: #fff;*/
 	padding:0;
@@ -97,7 +97,6 @@
 	float:left;
 	display:inline;
 	margin:0 2px;
-	
 }
 
 .rhino-bullets li a.rhino-bullet {
@@ -109,7 +108,7 @@
 	font-size: 10px;
 	text-align: center;
 	padding: 6px 0 5px 0;
-	color: transparent;
+	color: transparent !important;
 	text-decoration:none;
 	-webkit-user-select:none;
 	-moz-user-select:none;
@@ -124,7 +123,7 @@
 }
 
 .rhino-bullets li a.rhino-bullet.rhino-active-bullet {
-	color: transparent;
+	color: transparent !important;
 	background:url(../img/rhinoslider-sprite.png) -227px -41px no-repeat;
 /*	background:#5cd4e8;*/
 }
@@ -137,8 +136,8 @@
 #slider {
    position: relative;
    z-index: 0;
-   width: 400px;
-   height: 200px;
+   width: 420px;
+   height: 210px;
    margin: 0px 0px 18px 0px;
    border-radius: 8px;
    background-image: url('graphics/bg_head.png');
@@ -153,15 +152,15 @@
 	background-repeat: no-repeat;}
 
 #slider img{
-   width: 400px;
-   height: 200px;
+   width: 420px;
+   height: 210px;
 }
 	
 .rhino-white{
    position: relative;
    background-image: url('graphics/bg_slider.png');
    z-index: 20;
-   width: 200px;
+   width: 300px;
    height: 32px;
    margin-left: 0px;
    color: #fff;
