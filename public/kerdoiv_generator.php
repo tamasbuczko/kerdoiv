@@ -210,9 +210,11 @@ $email_es_elkuldes_blokk = '<div style="'.$adat_off.'">
                  </div>';
 }
 
+if ($kerdoiv_zaras){
+    $kerdoiv_also = '<div id="survey_zaras">'.$kerdoiv_zaras.'</div>';
+}
 $kerdes_blokk = $kerdoiv_fejlec.$kerdes_blokk.$uj_kerdes_gomb.
-					 '<br />
-                 '.$email_es_elkuldes_blokk.'
+                '<br />'.$kerdoiv_also.$email_es_elkuldes_blokk.'
 		</form>
                 </div>';
 ?>

@@ -425,6 +425,16 @@ h1{
     
 }
 
+#survey_zaras{
+    background-color: #F5FF9E;
+    width: 600px;
+    margin-left: 25px;
+    padding: 3px 10px 3px 10px;
+    margin-bottom: 20px;
+    font-style: italic;    
+    border: 1px solid #aaa;
+}
+
 .answer_img{
    height: 240px;
    width: 100%;
@@ -702,15 +712,15 @@ margin-left: 20px;
 	border: 1px solid #aaa;
 }
 
-.ujkerdes input[name=cim_hu], .ujkerdes textarea[name=leiras_hu], .hu_k{
+.ujkerdes input[name=cim_hu], .ujkerdes textarea[name=leiras_hu], .ujkerdes textarea[name=zaras_hu], .hu_k{
     background-image: url('graphics/magyar_zaszlo_k.png');
 }
 
-.ujkerdes input[name=cim_en], .ujkerdes textarea[name=leiras_en], .en_k{
+.ujkerdes input[name=cim_en], .ujkerdes textarea[name=leiras_en], .ujkerdes textarea[name=zaras_en], .en_k{
     background-image: url('graphics/angol_zaszlo_k.png');
 }
 
-.ujkerdes input[name=cim_de], .ujkerdes textarea[name=leiras_de], .de_k{
+.ujkerdes input[name=cim_de], .ujkerdes textarea[name=leiras_de], .ujkerdes textarea[name=zaras_de], .de_k{
     background-image: url('graphics/nemet_zaszlo_k.png');
 }
 
