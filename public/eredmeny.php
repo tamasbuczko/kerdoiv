@@ -23,6 +23,9 @@ while ($next_element = mysql_fetch_array($result)){
         WHERE k.sorszam = $sorszam_kerdes
         GROUP BY valasz_hu
         ORDER BY COUNT(*) DESC");
+        
+        #először szűrjük le azokat a kitöltőket akik egy adott kérdésre adott választ adtak
+        #(SELECT kitolto_sorszam FROM valaszadasok WHERE kerdes_sorszam = '1' AND valasz_sorszam = '1')
 
         while ($eredmenyek = mysql_fetch_array($result2)){
             $eredmenyarany = $eredmenyek[3] / $valaszadok_szama;
