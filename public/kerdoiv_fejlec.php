@@ -65,12 +65,13 @@ if (($_REQUEST[mod]) AND ($_SESSION[qa_user_id])){
                             <a href="?p=ujkerdes&amp;kerdoiv='.$kerdoiv_sorszam.'&ujkerdes=x">Új kérdés rögzítése</a>
 							<br /><br />
                             <a href="?p=kerdoiveim" class="back" />vissza</a>
-                        </div>';
+                        </div>
+						<script type="text/javascript">control_box();</script>';
 }
 
 if ($kerdoiv_fejlec_kep){
 $kerdoiv_headline = '<div id="headline">
-                    <img src="fejlec_kepek/'.$kerdoiv_fejlec_kep.'" alt="" />
+                    <img src="fejlec_kepek/'.$kerdoiv_fejlec_kep.'" id="headline_img" alt="" />
                    </div>';
 }
 
@@ -87,6 +88,7 @@ $kerdoiv_fejlec = $kerdoiv_headline.'
                         '.$control_box.'
 
                     </div>
+					
                 </div> 
 
 		 <div id="survey">

@@ -58,3 +58,11 @@ function megerosites_x(torolszam, formnev, kerdes) {
 	 //$( element ).attr( "data-sizey", "3" );
 	 //$( element ).attr( "style", "height: 26px;" );
  }
+ 
+ function control_box(){
+	jQuery("#headline_img").load(function(){
+	var getheight= $('#headline_img').height();
+	//$('#control_box').marginTop(getheight);
+	$("#control_box").css("margin-top", "-"+getheight+"px");
+ });
+ }

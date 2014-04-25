@@ -56,6 +56,9 @@ require_once('public/menu.php');
 //slider összeállítása
 require_once('public/slider.php');
 
+$url_params = explode('?', $_SERVER['REQUEST_URI']);
+$url_param = '&'.$url_params[1];
+
 //a teljes oldaltemplate-et feltöltjük és kiiratjuk a böngészőnek(index.html)
 $array = array( 'tartalom' => $tartalom,
 				'body_onload' => $body_onload,  
@@ -69,6 +72,7 @@ $array = array( 'tartalom' => $tartalom,
                 'user_nick'	=> $user_nick,
 				'css_valaszto' => $css_valaszto,
 				'adat_off' => $adat_off,
+			    'url_param' => $url_param,
                 'orszag_combo' => $orszag_combo,
                 'kerdoiv_cim' => $kerdoiv_cim,
                 'kerdoiv_leiras' => $kerdoiv_leiras,
