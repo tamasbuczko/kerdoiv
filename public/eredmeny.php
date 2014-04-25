@@ -12,15 +12,31 @@ while ($next_element = mysql_fetch_array($result)){
     $sorszam_kerdes = $next_element[sorszam];
     $kerdes_tipus = $next_element[tipus]; // aktuális kérdés tipusa
     
+    #$_SESSION['szures'][$sorszam]['kerdes'];
+    #$_SESSION['szures'][$sorszam]['valasz'];
+    $szures_kieg_kerdes = $_REQUEST[k];
+    $szures_kieg_valasz = $_REQUEST[v];
+    
+    if ($szures_kieg_kerdes == $sorszam_kerdes){
+        $szures_lista .= 'Kérdés: '. $next_element['kerdes_'.$_SESSION[lang]];
+    }
+        
+    if (($szures_kieg_kerdes) AND ($szures_kieg_valasz)){
+        $szures_kiegeszites = "
+        AND va.kitolto_sorszam
+        IN (SELECT kitolto_sorszam FROM valaszadasok WHERE kerdes_sorszam = $szures_kieg_kerdes AND valasz_sorszam = $szures_kieg_valasz)";
+    }
+    
     if (($kerdes_tipus == 'radio') OR ($kerdes_tipus == 'select') OR ($kerdes_tipus == 'checkbox')){
         $result2 = mysql_query("SELECT sorszam FROM valaszadasok WHERE kerdes_sorszam = $sorszam_kerdes");
         $valaszadok_szama = mysql_num_rows($result2);
         
-        $result2 = mysql_query("SELECT k.sorszam, k.kerdes_hu, v.valasz_hu, COUNT(*), v.valasz_en, v.valasz_de
+        $result2 = mysql_query("SELECT k.sorszam, k.kerdes_hu, v.valasz_hu, COUNT(*), v.valasz_en, v.valasz_de, va.valasz_sorszam
         FROM valaszadasok AS va
         LEFT JOIN valaszok AS v ON va.valasz_sorszam = v.sorszam
         LEFT JOIN kerdesek AS k ON va.kerdes_sorszam = k.sorszam
         WHERE k.sorszam = $sorszam_kerdes
+        $szures_kiegeszites
         GROUP BY valasz_hu
         ORDER BY COUNT(*) DESC");
         
@@ -35,7 +51,12 @@ while ($next_element = mysql_fetch_array($result)){
 			if ($_SESSION[lang] == 'de'){ $valasz_szoveg = $eredmenyek[5];}
             $eredmeny_lista .= '<div class="valasz szoveg">'.$valasz_szoveg.' ('.$eredmenyek[3].' db) </div><div class="grafv">
                        <div class="graf" style="width: '.$eredmenyarany.'px"></div></div>
-                       <div class="filter"><a href="?p=eredmeny&kerdoiv='.$kerdoiv_sorszam.'"><img src="graphics/filter.png" alt="" /></a></div><br />';
+                       <div class="filter"><a href="?p=eredmeny&kerdoiv='.$kerdoiv_sorszam.'&k='.$sorszam_kerdes.'&v='.$eredmenyek[6].'"><img src="graphics/filter.png" alt="" /></a></div><br />';
+            
+            if ($szures_kieg_valasz == $eredmenyek[6]){
+                $szures_lista .= '<br />Válasz: '. $valasz_szoveg;
+            }
+            
             }
     }
     
@@ -44,7 +65,8 @@ while ($next_element = mysql_fetch_array($result)){
         FROM valaszadasok AS va
         LEFT JOIN valaszok AS v ON va.valasz_sorszam = v.sorszam
         LEFT JOIN kerdesek AS k ON va.kerdes_sorszam = k.sorszam
-        WHERE k.sorszam = $sorszam_kerdes
+        WHERE k.sorszam = $sorszam_kerdes 
+        $szures_kiegeszites
         GROUP BY valasz_hu, va.ertek
         ORDER BY v.sorszam, va.ertek");
         
@@ -99,6 +121,7 @@ while ($next_element = mysql_fetch_array($result)){
         LEFT JOIN valaszok AS v ON va.valasz_sorszam = v.sorszam
         LEFT JOIN kerdesek AS k ON va.kerdes_sorszam = k.sorszam
         WHERE k.sorszam = $sorszam_kerdes
+        $szures_kiegeszites
         ORDER BY k.sorszam");
 
         while ($eredmenyek = mysql_fetch_array($result2)){
@@ -115,5 +138,10 @@ while ($next_element = mysql_fetch_array($result)){
                     </div>';
     unset($eredmeny_lista);
 } 
-$tartalom = $kerdoiv_fejlec.'Eredmények'.$kerdes_blokk;
+if ($szures_kiegeszites){
+    $szuresek_lista = '<h4>Szűrésre jelölt válaszok:</h4>'.$szures_lista;
+    
+}
+
+$tartalom = $kerdoiv_fejlec.$szuresek_lista.$kerdes_blokk;
 ?>
