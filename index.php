@@ -56,8 +56,15 @@ require_once('public/menu.php');
 //slider összeállítása
 require_once('public/slider.php');
 
+//nyelvváltáshoz
 $url_params = explode('?', $_SERVER['REQUEST_URI']);
 $url_param = '&'.$url_params[1];
+if ($_REQUEST['lang'] != ''){
+    $url_param_x = str_replace("&lang=".$_REQUEST['lang'], "", $url_param); //kitöröljük a nyelvi paramétert az url-ből
+    $url_param_x = substr($url_param_x, 1); //első karaktert levágjuk
+    $url_param_x = '?'.$url_param_x;
+    header("Location: ".$url_param_x);
+}
 
 //a teljes oldaltemplate-et feltöltjük és kiiratjuk a böngészőnek(index.html)
 $array = array( 'tartalom' => $tartalom,

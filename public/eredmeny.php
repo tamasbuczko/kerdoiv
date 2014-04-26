@@ -39,9 +39,9 @@ while ($next_element = mysql_fetch_array($result)){
 	  foreach ($_SESSION['szures'] as $key => $value) {
 		$szures_kieg_kerdes = $_SESSION['szures'][$key]['kerdes'];
 		$szures_kieg_valasz	= $_SESSION['szures'][$key]['valasz'];	
-        $szures_kiegeszites .= "
-        AND va.kitolto_sorszam
-        IN (SELECT kitolto_sorszam FROM valaszadasok WHERE kerdes_sorszam = $szures_kieg_kerdes AND valasz_sorszam = $szures_kieg_valasz)";
+                $szures_kiegeszites .= "
+                AND va.kitolto_sorszam
+                IN (SELECT kitolto_sorszam FROM valaszadasok WHERE kerdes_sorszam = $szures_kieg_kerdes AND valasz_sorszam = $szures_kieg_valasz)";
 	  }
 	}
 	

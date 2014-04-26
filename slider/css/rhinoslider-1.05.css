@@ -141,8 +141,9 @@
    margin: 0px 0px 0px 0px;
    border-radius: 8px;
    background-image: url('graphics/bg_head.png');
-	/*IE bugfix*/
-	padding:0;
+   /*IE bugfix*/
+   padding:0;
+   overflow: hidden;
 }
 			
 #slider li { 

@@ -321,12 +321,13 @@ h1{
 #survey_intro h1{
 	color: #003567;
     margin-top: 0px;
-    height: 21px;
+    min-height: 21px;
     padding-top: 28px;
     font-size: 18px;
     margin-left: 15px;
-	font-family: 'Roboto_CB', Arial;
+    font-family: 'Roboto_CB', Arial;
    font-weight:normal !important;
+   word-wrap: break-word;
 }
 
 #survey_intro div{
@@ -739,26 +740,36 @@ margin-left: 20px;
 
 .kerdoiveim {
    margin: 20px 0px 20px 0px;
+   border-collapse: collapse;
 }
 
 .kerdoiveim th{
    font-family: 'Roboto_CB', Arial;
    font-weight: bolder;
    font-size: 13px;
+   border-bottom: 2px solid #dedede;
+   padding-bottom: 8px;
 }
 
 .kerdoiveim td{
    text-align: center;
    width: 70px;
+   border-bottom: 1px solid #dedede;
 }
 
 .kerdoiveim td:first-child{
    text-align: left;
-   width: 350px;
+}
+
+.kerdoiveim td:first-child a{
+    display: block;
+    width: 350px;
+    word-wrap: break-word;
 }
 
 .kerdoiveim img{
-   width: 20px;
+   width: 30px;
+   margin-top: 5px;
 }
 
 .kis_zaszlo img{
@@ -781,12 +792,15 @@ margin-left: 20px;
     text-align: center;
     padding-bottom: 8px;
     border-radius: 10px;
+    padding:4px;
 }
 
 #control_box h3{
     margin: 0px 0px 6px 0px;
     font-weight: normal;
     font-size: 14px;
+    background-color:#cecece;
+    border-radius: 7px 7px 0px 0px;
     padding-bottom: 2px;
     border-bottom: 1px solid #bfbfbb;
 }
@@ -880,6 +894,11 @@ margin-left: 20px;
 
 #kerdoiv_adatlap{
     width: 600px;
+}
+
+#kerdoiv_adatlap h2{
+    width: 600px;
+    word-wrap: break-word;
 }
 
 #adatlap_zaszlok{

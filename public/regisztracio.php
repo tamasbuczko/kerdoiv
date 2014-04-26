@@ -44,14 +44,14 @@ if ($_REQUEST[send]){
 					Köszönjük, hogy regisztrált a www.questionaction.com weboldalon.<br/><br/>
 					
 					Az Ön azonosítója: ' . $x_azonosito .'<br/>
-					Az jelszava: ' . $_REQUEST[jelszo] . '<br/><br/>
+					Az Ön jelszava: ' . $_REQUEST[jelszo] . '<br/><br/>
 					
 					
-					Amennyiben kérdése van kérjük írjon az info@homeup.eu címre.<br/><br/>
+					Amennyiben kérdése van kérjük írjon az info@questionaction.com címre.<br/><br/>
 					
 					A bejelentkezéshez kattintson: <a href="http://www.questionaction.com">http://www.questionaction.com</a><br/><br/>
 					
-					Üdvözlettel: a homeup.eu csapata';
+					Üdvözlettel: a QuestionAction.com csapata';
 
 		$subject = 'questionaction.com - regisztráció';
 		$s_from = 'info@questionaction.com';

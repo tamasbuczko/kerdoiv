@@ -1,6 +1,6 @@
 <?php
 $kerdoiv_sorszam = $_REQUEST[kerdoiv];
-$user_id = 1;
+$user_id = $_SESSION["qa_user_id"];
 
 $resultc = mysql_query ("SELECT cim_hu, cim_en, cim_de, leiras_hu, leiras_en, leiras_de, hu, en, de, datum, aktivalas, lejarat, nyilvanos FROM kerdoivek WHERE status = '1' AND sorszam = '$kerdoiv_sorszam' ");
 $next_elementc = mysql_fetch_array ($resultc);

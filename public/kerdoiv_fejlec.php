@@ -79,7 +79,7 @@ $kerdoiv_fejlec = $kerdoiv_headline.'
                   <div id="intro">
                     '.$nyelv_blokk.'
                     <div id="survey_intro" style="'.$adat_off2.'">
-                        <h1>'.$kerdoiv_cim.'</h1>
+                        <h1 style="'.$intro_width.'">'.$kerdoiv_cim.'</h1>
                         '.$fejlec_szerk.'
                         <div id="survey_intro_div" style="'.$intro_width.'">
                             '.$kerdoiv_leiras.'
