@@ -753,7 +753,7 @@ margin-left: 20px;
 
 .kerdoiveim td{
    text-align: center;
-   width: 70px;
+   width: 77px;
    border-bottom: 1px solid #dedede;
 }
 
@@ -763,7 +763,7 @@ margin-left: 20px;
 
 .kerdoiveim td:first-child a{
     display: block;
-    width: 350px;
+    width: 352px;
     word-wrap: break-word;
 }
 
@@ -864,6 +864,29 @@ margin-left: 20px;
 
 .sarga_gomb:hover{
     background-color: #E6AC00 !important;
+}
+
+.zold_gomb{
+   display: block;
+    background-color: #299429;
+    border-radius: 8px;
+    border: 0px;
+    cursor: pointer;
+    padding: 5px;
+    color: #fefefe;
+    margin: 8px auto 0px auto;
+    width: 120px;
+    font-family: 'Roboto_CB', Arial;
+    font-size: 12px;
+	text-decoration: none;
+	padding: 8px 10px 8px 10px;
+	float: right;
+	text-align: center;
+	margin: 0px 20px 20px 0px;
+}
+
+.zold_gomb:hover{
+   background-color: #33aa33;
 }
    
 #lepteto{
