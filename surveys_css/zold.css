@@ -1,0 +1,25 @@
+.survey_question, #survey_intro_div{
+   background-color: #749929 !important;
+   color: #eee;
+}
+
+#survey_intro h1{
+   color: #749929;
+}
+
+.survey_answers label{
+   color: #749929;
+}
+
+.szemelyes label{
+   color: #749929;
+}
+
+#languages h3{
+   color: #749929;
+}
+
+#languages span{
+   background-color: #749929 !important;
+   color: #eee;
+}

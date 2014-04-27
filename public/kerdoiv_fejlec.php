@@ -26,6 +26,13 @@ $kerdoiv_leiras=$next_elementc['leiras_'.$_SESSION[lang]];
 $kerdoiv_fejlec_kep=$next_elementc['fejlec_kep'];
 $kerdoiv_css=$next_elementc['css_id'];
 $kerdoiv_zaras=$next_elementc['zaras_'.$_SESSION[lang]];
+
+if ($kerdoiv_css > 0){
+   $resultcc = mysql_query ("SELECT file FROM css WHERE sorszam = '$kerdoiv_css'");
+   $next_elementcss = mysql_fetch_array($resultcc);
+   $kerdoiv_css = $next_elementcss[file];
+}
+
 $nyelv = 0;
 if ($next_elementc[hu] == 1){
     $nyelv_db++;

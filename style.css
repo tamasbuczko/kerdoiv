@@ -1083,3 +1083,15 @@ margin-left: 20px;
    float: right;
    cursor: pointer;
 }
+
+#stilusok {
+   width: 600px;
+   height: 180px;
+}
+
+#stilusok div{
+   display: block;
+   width: 130px;
+   height: 180px !important;
+   float: left;
+}

@@ -57,11 +57,13 @@ if ($_REQUEST[mentes]){
                         
 		$aktivalas = $_REQUEST[aktivalas_datum];
 		$lejarat = $_REQUEST[lejarat_datum];
+		
+		$css_id = $_REQUEST[stilus];
         
         $sql = "UPDATE kerdoivek SET cim_hu='$cim_hu', leiras_hu='$leiras_hu', zaras_hu='$zaras_hu',
                 cim_en='$cim_en', leiras_en='$leiras_en', zaras_en='$zaras_en',
                 cim_de='$cim_de', leiras_de='$leiras_de', zaras_de='$zaras_de',
-                hu='$check_hu', en='$check_en', de='$check_de',
+                hu='$check_hu', en='$check_en', de='$check_de', css_id = '$css_id',
                 nyilvanos='$check_nyilvanos', aktivalas='$aktivalas', lejarat='$lejarat' WHERE sorszam='$_REQUEST[sorszam]'";
         mysql_query($sql);
 
@@ -71,7 +73,7 @@ if ($_REQUEST[mentes]){
 $div_kikapcs = 'style="display: none;"';
 
 if ($_REQUEST[id]){
-    $result = mysql_query("SELECT cim_hu, leiras_hu, hu, en, de, cim_en, leiras_en, cim_de, leiras_de, nyilvanos, aktivalas, lejarat, zaras_hu, zaras_en, zaras_de FROM kerdoivek WHERE sorszam = '$_REQUEST[id]'");
+    $result = mysql_query("SELECT cim_hu, leiras_hu, hu, en, de, cim_en, leiras_en, cim_de, leiras_de, nyilvanos, aktivalas, lejarat, zaras_hu, zaras_en, zaras_de, css_id FROM kerdoivek WHERE sorszam = '$_REQUEST[id]'");
     $a = mysql_fetch_row($result);
     $kerdoiv_sorszam = $_REQUEST[id];
     $cim_hu = $a[0];
@@ -86,10 +88,16 @@ if ($_REQUEST[id]){
     $zaras_hu = $a[12];
     $zaras_en = $a[13];
     $zaras_de = $a[14];
+	$css_id = $a[15];
     $hu = $a[2];
     $en = $a[3];
     $de = $a[4];
     $nyelv_db = 0;
+	
+	if ($css_id == '0'){ $checked_stilus_alap = 'checked="checked"';}
+	if ($css_id == '1'){ $checked_stilus_1 = 'checked="checked"';}
+	if ($css_id == '2'){ $checked_stilus_2 = 'checked="checked"';}
+	
     if ($hu == '1'){
         $nyelv_db++;
         $checked_hu = 'checked="checked"';
@@ -206,6 +214,9 @@ $array = array( 'tartalom'       => $tartalom,
                 'zaras_hux'       => $zaras_hux,
                 'zaras_enx'       => $zaras_enx,
                 'zaras_dex'       => $zaras_dex,
+			   'checked_stilus_alap'       => $checked_stilus_alap,
+			   'checked_stilus_1'       => $checked_stilus_1,
+			   'checked_stilus_2'       => $checked_stilus_2,
                 'control_hu'       => $control_hu,
                 'control_en'       => $control_en,
                 'control_de'       => $control_de,
@@ -217,5 +228,3 @@ $array = array( 'tartalom'       => $tartalom,
 $oldal = new html_blokk;
 $oldal->load_template_file("templates/ujkerdoiv.html",$array);
 $tartalom = $oldal->html_code;
-
-?>
