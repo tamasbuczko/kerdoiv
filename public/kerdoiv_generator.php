@@ -1,5 +1,5 @@
 <?php
-$result = mysql_query("SELECT sorszam, kerdes_hu, kerdes_en, kerdes_de, tipus, sorrend, kep_file FROM kerdesek WHERE status = '1' AND kerdoiv_sorszam = '$kerdoiv_sorszam' ORDER BY sorrend");
+$result = mysql_query("SELECT sorszam, kerdes_hu, kerdes_en, kerdes_de, tipus, sorrend, kep_file, video_embed FROM kerdesek WHERE status = '1' AND kerdoiv_sorszam = '$kerdoiv_sorszam' ORDER BY sorrend");
 while ($next_element = mysql_fetch_array($result)){
     $kerdes_darab++;
     $sorszam_kerdes = $next_element[sorszam];
@@ -11,8 +11,14 @@ while ($next_element = mysql_fetch_array($result)){
     } else {
         unset($kerdes_kep);
     }
+	
+	if ($next_element[video_embed]){
+	   $kerdes_video = '<iframe width="560" height="315" src="//'.$next_element[video_embed].'" frameborder="0" allowfullscreen></iframe>';
+    } else {
+        unset($kerdes_video);   
+	}
     
-    $resultx = mysql_query("SELECT sorszam, kerdes_valasz, valasz_hu, valasz_en, valasz_de, kep_file FROM valaszok WHERE status = '1' AND kerdes_valasz = '$sorszam_kerdes' ORDER BY sorrend");
+    $resultx = mysql_query("SELECT sorszam, kerdes_valasz, valasz_hu, valasz_en, valasz_de, kep_file, video_embed FROM valaszok WHERE status = '1' AND kerdes_valasz = '$sorszam_kerdes' ORDER BY sorrend");
     while ($next_elementv = mysql_fetch_array($resultx)){
         
         $sorszam_valasz = $next_elementv[sorszam];
@@ -28,6 +34,9 @@ while ($next_element = mysql_fetch_array($result)){
 			  $valaszok .= "\n".'<div class="answer_img"><input type="radio" name="radio_'.$sorszam_kerdes.'" '.$radio_request.' value="'.$sorszam_valasz.'" /><div class="answer_img_frame"><img src="valasz_kepek/'.$next_elementv[kep_file].'"><label>'.$next_elementv['valasz_'.$_SESSION[lang]].'</label></div></div>';
 		   } else {
 			   $valaszok .= "\n".'<input type="radio" name="radio_'.$sorszam_kerdes.'" '.$radio_request.' value="'.$sorszam_valasz.'" /><label>'.$next_elementv['valasz_'.$_SESSION[lang]].'</label>';
+		   }
+		   if ($next_elementv[video_embed]){
+			  $valaszok .= "\n".'<div class="answer_img"><input type="radio" name="radio_'.$sorszam_kerdes.'" '.$radio_request.' value="'.$sorszam_valasz.'" /><div class="answer_img_frame"><iframe width="280" height="210" src="//'.$next_elementv[video_embed].'" frameborder="0" allowfullscreen></iframe><label>'.$next_elementv['valasz_'.$_SESSION[lang]].'</label></div></div>';
 		   }
         }
         
@@ -56,6 +65,10 @@ while ($next_element = mysql_fetch_array($result)){
 		$valaszok .= "\n".'<div class="answer_img"><input type="checkbox" name="checkbox_'.$sorszam_valasz.'" '.$check_request.' /><div class="answer_img_frame"><img src="valasz_kepek/'.$next_elementv[kep_file].'"><label>'.$next_elementv['valasz_'.$_SESSION[lang]].'</label></div></div>';
             } else {
                 $valaszok .= "\n".'<input type="checkbox" name="checkbox_'.$sorszam_valasz.'" '.$check_request.' /><label>'.$next_elementv['valasz_'.$_SESSION[lang]].'</label>';
+            }
+			
+			if ($next_elementv[video_embed]){
+		$valaszok .= "\n".'<div class="answer_img"><input type="checkbox" name="checkbox_'.$sorszam_valasz.'" '.$check_request.' /><div class="answer_img_frame"><img src="valasz_kepek/'.$next_elementv[kep_file].'"><label>'.$next_elementv['valasz_'.$_SESSION[lang]].'</label></div></div>';
             }
             unset($check_request);
         }
@@ -185,6 +198,7 @@ while ($next_element = mysql_fetch_array($result)){
 			</div>
                         <div class="survey_answers">
                             '.$kerdes_kep.'
+							'.$kerdes_video.'
                             '.$valaszok.'
                             <br style="clear:both" />
                         </div>
