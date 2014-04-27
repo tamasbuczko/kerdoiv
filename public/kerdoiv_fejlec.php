@@ -131,5 +131,3 @@ If (!$kerdoiv_cim){
    $adat_off = 'display: none;';
    $adat_off2 = 'display: none;';   
 }
-
-?>

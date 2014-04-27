@@ -777,6 +777,10 @@ margin-left: 20px;
    margin-left: 2px;
 }
 
+.kerdoiveim a{
+   color: #444;
+}
+
 #control_box{
     min-height: 90px;
     height: auto;
