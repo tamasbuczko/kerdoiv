@@ -1,5 +1,5 @@
 <?php
-
+if (!$_REQUEST[p]){
 $slider =
 			'<ul id="slider">
 			   <li>
@@ -20,4 +20,9 @@ $slider =
 					 <div class="rhino-white"> </div>
 				  </div>
 			   </li>
-			</ul>';
+			</ul>
+				<script type="text/javascript" src="slider/js/rhinoslider-1.05.min.js"></script>
+                <script type="text/javascript" src="slider/js/mousewheel.js"></script>
+                <script type="text/javascript" src="slider/js/easing.js"></script>
+                <script type="text/javascript" src="slider/parameters.js"></script>';
+}

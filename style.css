@@ -353,6 +353,10 @@ h1{
     margin: 40px 0px 0px 0px;
 }
 
+#survey ul{
+   padding: 0px;
+}
+
 .szemelyes{
     margin-left: 125px;
     margin-bottom: 25px;

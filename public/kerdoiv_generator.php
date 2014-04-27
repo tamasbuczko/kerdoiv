@@ -178,7 +178,7 @@ while ($next_element = mysql_fetch_array($result)){
 				</div>';
     }
     
-    $kerdes_blokk .= '<div class="survey_block">
+    $kerdes_blokk .= '<li><div class="survey_block">
                         <div class="survey_question"><span>
 				'.$kerdes_darab.'. '.$next_element['kerdes_'.$_SESSION[lang]] .'</span>
 				'.$szerk_gomb.'
@@ -188,7 +188,7 @@ while ($next_element = mysql_fetch_array($result)){
                             '.$valaszok.'
                             <br style="clear:both" />
                         </div>
-                    </div>';
+                    </div></li>';
     
     unset($valaszok); // válaszok törlése
 }   //kérdés ciklus vége 
@@ -213,8 +213,17 @@ $email_es_elkuldes_blokk = '<div style="'.$adat_off.'">
 if ($kerdoiv_zaras){
     $kerdoiv_also = '<div id="survey_zaras">'.$kerdoiv_zaras.'</div>';
 }
-$kerdes_blokk = $kerdoiv_fejlec.$kerdes_blokk.$uj_kerdes_gomb.
+
+$slider_script = '
+				<script type="text/javascript" src="slider/js/rhinoslider-1.05.min.js"></script>
+                <script type="text/javascript" src="slider/js/mousewheel.js"></script>
+                <script type="text/javascript" src="slider/js/easing.js"></script>
+                <script type="text/javascript" src="slider/parameters2.js"></script>';
+
+$slider_script = '';
+
+$kerdes_blokk = $kerdoiv_fejlec.'<ul id="slider2">'.$kerdes_blokk.'</ul>'.$uj_kerdes_gomb.
                 '<br />'.$kerdoiv_also.$email_es_elkuldes_blokk.'
 		</form>
-                </div>';
+                </div>'.$slider_script;
 ?>
