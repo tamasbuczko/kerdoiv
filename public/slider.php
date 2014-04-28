@@ -3,19 +3,19 @@ if (!$_REQUEST[p]){
 $slider =
 			'<ul id="slider">
 			   <li>
-				  <img src="slider/1.png" alt="" />
+				  <img src="slider/slide1.png" alt="" />
 				  <div class="rhino-caption">
 					 <div class="rhino-white"> </div>
 				  </div>
 			   </li>
 			   <li>
-				  <img src="slider/2.png" alt="" />
+				  <img src="slider/slide2.png" alt="" />
 				  <div class="rhino-caption">
 					 <div class="rhino-white"> </div>
 				  </div>
 			   </li>
 			   <li>
-				  <img src="slider/3.png" alt="" />
+				  <img src="slider/slide3.png" alt="" />
 				  <div class="rhino-caption">
 					 <div class="rhino-white"> </div>
 				  </div>

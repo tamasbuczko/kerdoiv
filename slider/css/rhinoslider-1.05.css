@@ -153,8 +153,8 @@
 	background-repeat: no-repeat;}
 
 #slider img{
-   width: 420px;
-   height: 210px;
+   margin: 0px 0px 0px 30px;
+   height: 220px;
 }
 	
 .rhino-white{
