@@ -7,11 +7,12 @@ while ($next_element = mysql_fetch_array($result)){
 
 $array = array( 'tartalom'       => $tartalom,
                 'nyilvanos_kerdoivek'       => $nyilvanos_kerdoivek,
-                'bejelentkezes'       =>$lang[bejelentkezes],
-                'azonosito'       =>$lang[azonosito],
-		'jelszo'       =>$lang[jelszo],
-		'regisztracio'       =>$lang[regisztracio],
-                'figy_uzenet'   => $figy_uzenet);
+                'bejelentkezes'       => $lang[bejelentkezes],
+                'azonosito'       => $lang[azonosito],
+		'jelszo'       => $lang[jelszo],
+		'regisztracio'       => $lang[regisztracio],
+                'figy_uzenet'   => $figy_uzenet,
+                'uj_nyilvanos_kerdoivek' => $lang[uj_nyilvanos_kerdoivek]);
 
 $oldal = new html_blokk;
 

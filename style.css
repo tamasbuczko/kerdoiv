@@ -951,20 +951,20 @@ margin-left: 20px;
 }
 
 .file_browse_wrapper {
-   width: 14px !important;
-   height: 12px !important;
-   background-image: url('graphics/icon_add.png');
+   width: 16px !important;
+   height: 14px !important;
+   background-image: url('graphics/img-add.png');
    border:none;
    overflow:hidden;
    margin-top: 11px;
 }
 
 .file_browse_wrapper:hover {
-   background-image: url('graphics/icon_add.png');
+   background-image: url('graphics/img-add.png');
 }
 
 .file_browse_wrapper:active {
-   background-image: url('graphics/icon_add.png');
+   background-image: url('graphics/img-add.png');
 }
 
 .file_browse{
