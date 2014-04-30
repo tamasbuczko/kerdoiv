@@ -13,7 +13,7 @@ while ($next_element = mysql_fetch_array($result)){
     }
 	
 	if ($next_element[video_embed]){
-	   $kerdes_video = '<iframe width="560" height="315" src="//'.$next_element[video_embed].'" frameborder="0" allowfullscreen></iframe>';
+	   $kerdes_video = '<iframe width="560" height="315" src="//'.$next_element[video_embed].'" frameborder="0" allowfullscreen></iframe><br stlye="clear:both;">';
     } else {
         unset($kerdes_video);   
 	}
@@ -229,7 +229,7 @@ if ($kerdoiv_zaras){
 }
 
 $slider_script = '
-				<script type="text/javascript" src="slider/js/rhinoslider-1.05.min.js"></script>
+                <script type="text/javascript" src="slider/js/rhinoslider-1.05.min.js"></script>
                 <script type="text/javascript" src="slider/js/mousewheel.js"></script>
                 <script type="text/javascript" src="slider/js/easing.js"></script>
                 <script type="text/javascript" src="slider/parameters2.js"></script>';

@@ -954,9 +954,15 @@ margin-left: 20px;
    width: 16px !important;
    height: 14px !important;
    background-image: url('graphics/img-add.png');
+   background-repeat: no-repeat;
+   cursor: pointer;
    border:none;
    overflow:hidden;
-   margin-top: 11px;
+   margin: 9px 10px 0px 0px;
+}
+
+.file_browse_wrapper input{
+    cursor: pointer;
 }
 
 .file_browse_wrapper:hover {
@@ -1069,6 +1075,24 @@ margin-left: 20px;
     float: left;
     margin: 30px 10px 10px 250px;
     font-size: 14px;
+}
+
+.admin_kep{
+    clear: both;
+    float: left !important;
+    height: 150px !important;
+    width: 300px !important;
+}
+
+.admin_kep img:nth-child(1){
+    height: 140px;
+    border: 1px solid #ccc;
+    float: left;
+}
+
+.admin_kep img:nth-child(2){
+    float: left;
+    margin: 62px 0px 0px 20px;
 }
 
 #admin_valaszok{

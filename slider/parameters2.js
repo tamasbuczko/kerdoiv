@@ -1,7 +1,7 @@
 $(document).ready(function() {
 				$('#slider2').rhinoslider({
-					effectTime: 1000,
-					showTime: 7000,
+					effectTime: 2000,
+					showTime: 3000,
 					controlsMousewheel: false,
 					controlsKeyboard: false,
 					controlsPrevNext: true,

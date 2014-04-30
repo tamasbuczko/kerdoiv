@@ -149,14 +149,22 @@ if ($_REQUEST[pluszvalasz]){
 }
 
 if ($_REQUEST[id]){
-    $result = mysql_query("SELECT kerdoiv_sorszam, kerdes_hu, tipus, kerdes_en, kerdes_de FROM kerdesek WHERE sorszam = '$_REQUEST[id]'");
+    $result = mysql_query("SELECT kerdoiv_sorszam, kerdes_hu, tipus, kerdes_en, kerdes_de, kep_file FROM kerdesek WHERE sorszam = '$_REQUEST[id]'");
     $a = mysql_fetch_row($result);
     $kerdoiv_sorszam = $a[0];
     $kerdes_szoveg_hu = $a[1];
     $kerdes_tipus = $a[2];
     $kerdes_szoveg_en = $a[3];
     $kerdes_szoveg_de = $a[4];
+    $kep_file = $a[5];
     $urlap_cim = 'Kérdés módosítása';
+    
+    if ($kep_file){
+        $kep_kerdes = '<div class="admin_kep">'
+                . '<img src="kerdes_kepek/'.$kep_file.'" alt="" />'
+                . '<img src="graphics/icon_del.png" class="icon_del" alt="törlés" onclick="megerosites_x(\'1\', \'kerdes_kep\', \'1\')" />'
+                . '</div>';
+    }
     
     $result2 = mysql_query("SELECT COUNT(kerdes_hu) FROM kerdesek WHERE kerdoiv_sorszam = '$kerdoiv_sorszam'");
     $b = mysql_fetch_row($result2);
@@ -269,6 +277,7 @@ $array = array( 'kerdoiv_sorszam'       => $kerdoiv_sorszam,
                 'osszes_kerdes'       => $osszes_kerdes,
                 'hanyadik_kerdes'       => $hanyadik_kerdes,
                 'elozo_kerdes'       => $elozo_kerdes,
+                'kep_kerdes'       => $kep_kerdes,
                 'kovetkezo_kerdes'       => $kovetkezo_kerdes,
                 'control_box_ki'       => $control_box_ki);
 
