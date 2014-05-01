@@ -73,7 +73,7 @@ class menu_cikkek {
                         if ($next_element['jog'] == '1'){
                             $menu_cikkek .= '<a href="?p='.$cikkszam.'">'.$menunev.'</a>';
                         } else {
-                            if ($_SESSION["qa_user_id"]){
+                            if (($_SESSION["qa_user_id"]) AND ($_SESSION["qa_user_authority"] > 0) ){
                                 $menu_cikkek .= '<a href="?p='.$cikkszam.'">'.$menunev.'</a>';
                             }
                         }
@@ -161,7 +161,7 @@ class user{
 		If ($_REQUEST['logout'] == 1) {
 			unset($_SESSION["sessfelhasznalo"]);
 			unset($_SESSION["qa_user_id"]);
-                        unset($_SESSION["qa_user_authority"]);
+            unset($_SESSION["qa_user_authority"]);
 			unset($_SESSION["sessfelhasznaloazonosito"]);
 			unset($_SESSION["sessfelhasznalojog"]);
 		}
@@ -185,11 +185,11 @@ class user{
 				$_SESSION["qa_user_id"] = $s[0];
 				$_SESSION["sessfelhasznaloazonosito"] = $s[1];
 				$_SESSION["sessfelhasznalojog"] = $s[3];
-                                $_SESSION["qa_user_authority"] = $s[3];
+                $_SESSION["qa_user_authority"] = $s[3];
 				$_SESSION["sessfelhasznaloemail"] = $s[4];
 				if ($mostlep){
 				  $loging_db = new log_db;
-				  $loging_db->write($_SESSION["qa_user_id"], 'Bejelentkez�s');
+				  $loging_db->write($_SESSION["qa_user_id"], 'Bejelentkezés');
 				}
 			} else {
                If ($_REQUEST['azonosito'] != "") {
