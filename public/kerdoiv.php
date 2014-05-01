@@ -1,4 +1,15 @@
 <?php
+if (!is_numeric($_REQUEST[kerdoiv])){
+   $result = mysql_query ("SELECT sorszam FROM kerdoivek WHERE status = '1' AND hivatkozas = '$_REQUEST[kerdoiv]' ");
+   $a = mysql_fetch_array($result);
+   $_REQUEST[kerdoiv] = $a[0];
+   if (!$a[0]){
+	  $_REQUEST[kerdoiv] = x;
+   } else {
+	  $csak_kerdoiv = 'on';
+   }
+}
+
 include('public/kerdoiv_hiba.php');
 include('public/kerdoiv_fejlec.php');
 

@@ -171,7 +171,7 @@ class user{
 			$s = mysql_fetch_row($result);
 			$mostlep == 1;
 		} else {
-		   if ($_SESSION[sessfelhasznalosorszam]){
+		   if ($_SESSION[qa_user_id]){
 			$result = mysql_query("SELECT id, nick, password, authority, email FROM users WHERE id = '$_SESSION[sessfelhasznalosorszam]'");	
 			$s = mysql_fetch_row($result);
 		   }

@@ -50,6 +50,10 @@ if (($_REQUEST[p]) AND ($_REQUEST[p] != '2')){
    $head_off = 'style="height: 40px; overflow: hidden;"';
 }
 
+if ($csak_kerdoiv == 'on'){
+   $head_off = ' style="display: none;"';
+}
+
 //menü létrehozása az oldal tetején
 require_once('public/menu.php');
 
