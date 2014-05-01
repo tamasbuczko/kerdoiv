@@ -871,6 +871,14 @@ margin-left: 20px;
 
 .sarga_gomb{
     background-color: #CC9900 !important;
+	text-decoration: none;
+	color: #fefefe;
+	padding: 8px 10px 8px 10px;
+	text-align: center;
+	width: 120px;
+	font-family: 'Roboto_CB', Arial;
+    font-size: 12px;
+	border-radius: 8px;
 }
 
 .sarga_gomb:hover{

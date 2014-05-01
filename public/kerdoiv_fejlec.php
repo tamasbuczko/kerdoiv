@@ -69,7 +69,8 @@ if (($_REQUEST[mod]) AND ($_SESSION[qa_user_id])){
    $control_box = '<div id="control_box" '.$control_box_distance.'>
                             <h3>Vezérlőpult</h3>
 							<br />
-                            <a href="?p=ujkerdes&amp;kerdoiv='.$kerdoiv_sorszam.'&ujkerdes=x">Új kérdés rögzítése</a>
+                            <a href="?p=ujkerdes&amp;kerdoiv='.$kerdoiv_sorszam.'&ujkerdes=x" class="zold_gomb" style="float: left;">Új kérdés rögzítése</a>
+							<a href="?p=ujkerdoiv&amp;id='.$kerdoiv_sorszam.'" class="sarga_gomb" style="float: left;">Kérdőív adatlap</a>
 							<br /><br />
                             <a href="?p=kerdoiveim" class="back" />vissza</a>
                         </div>

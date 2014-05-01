@@ -208,7 +208,7 @@ while ($next_element = mysql_fetch_array($result)){
 }   //kérdés ciklus vége 
 
 if (($_REQUEST[mod]) AND ($_SESSION[qa_user_id])){
-    $uj_kerdes_gomb = '<a href="?p=ujkerdes&amp;kerdoiv='.$kerdoiv_sorszam.'&ujkerdes=x">Új kérdés rögzítése</a>';
+    $uj_kerdes_gomb = '<a href="?p=ujkerdes&amp;kerdoiv='.$kerdoiv_sorszam.'&ujkerdes=x" class="zold_gomb" style="float: left;">Új kérdés rögzítése</a>';
 } else {
 
 $email_es_elkuldes_blokk = '<div style="'.$adat_off.'">
@@ -225,7 +225,9 @@ $email_es_elkuldes_blokk = '<div style="'.$adat_off.'">
 }
 
 if ($kerdoiv_zaras){
+   if (!$_REQUEST[mod]){
     $kerdoiv_also = '<div id="survey_zaras">'.$kerdoiv_zaras.'</div>';
+   }
 }
 
 $slider_script = '
