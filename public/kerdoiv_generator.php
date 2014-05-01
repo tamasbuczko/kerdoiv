@@ -13,7 +13,15 @@ while ($next_element = mysql_fetch_array($result)){
     }
 	
 	if ($next_element[video_embed]){
-	   $kerdes_video = '<iframe width="560" height="315" src="//'.$next_element[video_embed].'" frameborder="0" allowfullscreen></iframe><br stlye="clear:both;">';
+	   if (strpos($next_element[video_embed], 'youtube')){
+		  $video_link = explode('=', $next_element[video_embed]);
+		  $kerdes_video = '<iframe style="float: left; margin: 0px 0px 20px 50px;" width="560" height="315" src="//www.youtube.com/embed/'.$video_link[1].'" frameborder="0" allowfullscreen></iframe><br stlye="clear:both;">';
+	   }
+	   if (strpos($next_element[video_embed], 'vimeo')){
+		  $video_link = explode('/', $next_element[video_embed]);
+		  $kerdes_video = '<iframe src="//player.vimeo.com/video/'.end($video_link).'" width="500" height="281" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe><br stlye="clear:both;">';
+	   }
+	   
     } else {
         unset($kerdes_video);   
 	}

@@ -1108,6 +1108,7 @@ margin-left: 20px;
 .admin_kep img:nth-child(2){
     float: left;
     margin: 62px 0px 0px 20px;
+	cursor: pointer;
 }
 
 #admin_valaszok{

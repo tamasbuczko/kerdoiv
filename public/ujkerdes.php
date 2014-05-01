@@ -7,6 +7,12 @@ if ($_REQUEST[torles]){
    header("Location: ?p=ujkerdes&id=".$_REQUEST[id]);
 }
 
+if ($_REQUEST[kerdeskeptorles]){
+   $sql = "UPDATE kerdesek SET kep_file='' WHERE sorszam = $_REQUEST[id]";
+   mysql_query($sql);
+   header("Location: ?p=ujkerdes&id=".$_REQUEST[id]);
+}
+
 //kérdés törlése
 if ($_REQUEST[kerdestorles]){
    $result = mysql_query("SELECT kerdoiv_sorszam, kerdes_hu, tipus FROM kerdesek WHERE sorszam = '$_REQUEST[id]'");
@@ -63,6 +69,7 @@ if (($_REQUEST[mentes]) OR ($_REQUEST[pluszvalasz])){
     $kerdes_szoveg_en = $_REQUEST[kerdes_en];
     $kerdes_szoveg_de = $_REQUEST[kerdes_de];
     $kerdes_tipus = $_REQUEST[tipus];
+	$video_kerdes = $_REQUEST[video_kerdes];
     $kerdes_sorszam = $_REQUEST[id];
 	
 	If ($_FILES['kerdes_kep']['tmp_name'] != "") {
@@ -85,7 +92,7 @@ if (($_REQUEST[mentes]) OR ($_REQUEST[pluszvalasz])){
           mysql_query($sql);
 	}
 	
-    $sql = "UPDATE kerdesek SET kerdes_hu='$kerdes_szoveg_hu', kerdes_en='$kerdes_szoveg_en', kerdes_de='$kerdes_szoveg_de', tipus='$kerdes_tipus' WHERE sorszam='$kerdes_sorszam'";
+    $sql = "UPDATE kerdesek SET kerdes_hu='$kerdes_szoveg_hu', kerdes_en='$kerdes_szoveg_en', kerdes_de='$kerdes_szoveg_de', tipus='$kerdes_tipus', video_embed='$video_kerdes' WHERE sorszam='$kerdes_sorszam'";
     mysql_query($sql);
     
     $resultxx = mysql_query("SELECT MAX(sorszam) FROM valaszok ");
@@ -149,7 +156,7 @@ if ($_REQUEST[pluszvalasz]){
 }
 
 if ($_REQUEST[id]){
-    $result = mysql_query("SELECT kerdoiv_sorszam, kerdes_hu, tipus, kerdes_en, kerdes_de, kep_file FROM kerdesek WHERE sorszam = '$_REQUEST[id]'");
+    $result = mysql_query("SELECT kerdoiv_sorszam, kerdes_hu, tipus, kerdes_en, kerdes_de, kep_file, video_embed FROM kerdesek WHERE sorszam = '$_REQUEST[id]'");
     $a = mysql_fetch_row($result);
     $kerdoiv_sorszam = $a[0];
     $kerdes_szoveg_hu = $a[1];
@@ -157,12 +164,13 @@ if ($_REQUEST[id]){
     $kerdes_szoveg_en = $a[3];
     $kerdes_szoveg_de = $a[4];
     $kep_file = $a[5];
+	$video_kerdes = $a[6];
     $urlap_cim = 'Kérdés módosítása';
     
     if ($kep_file){
         $kep_kerdes = '<div class="admin_kep">'
                 . '<img src="kerdes_kepek/'.$kep_file.'" alt="" />'
-                . '<img src="graphics/icon_del.png" class="icon_del" alt="törlés" onclick="megerosites_x(\'1\', \'kerdes_kep\', \'1\')" />'
+                . '<img src="graphics/icon_del.png" class="icon_del" alt="törlés" onclick="megerosites_x(\''.$_REQUEST[id].'\', \'kerdes_kep\', \'1\')" />'
                 . '</div>';
     }
     
@@ -278,11 +286,10 @@ $array = array( 'kerdoiv_sorszam'       => $kerdoiv_sorszam,
                 'hanyadik_kerdes'       => $hanyadik_kerdes,
                 'elozo_kerdes'       => $elozo_kerdes,
                 'kep_kerdes'       => $kep_kerdes,
+				'video_kerdes'       => $video_kerdes,
                 'kovetkezo_kerdes'       => $kovetkezo_kerdes,
                 'control_box_ki'       => $control_box_ki);
 
 $oldal = new html_blokk;
 $oldal->load_template_file("templates/ujkerdes.html",$array);
 $tartalom = $oldal->html_code;
-
-?>
