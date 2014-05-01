@@ -320,8 +320,9 @@ h1{
 
 #survey_intro{
     float: left;
-    margin: 0px 0px 0px 40px;  
+    margin: 0px 0px 0px 0px;  
 	color: #000000;
+	width: 670px;
 }
 
 #survey_intro h1{
