@@ -19,7 +19,7 @@ while ($next_element = mysql_fetch_array($result)){
 	   }
 	   if (strpos($next_element[video_embed], 'vimeo')){
 		  $video_link = explode('/', $next_element[video_embed]);
-		  $kerdes_video = '<iframe src="//player.vimeo.com/video/'.end($video_link).'" width="500" height="281" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe><br stlye="clear:both;">';
+		  $kerdes_video = '<iframe src="//player.vimeo.com/video/'.end($video_link).'" style="float: left; margin: 0px 0px 20px 50px;" width="500" height="281" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe><br stlye="clear:both;">';
 	   }
 	   
     } else {
