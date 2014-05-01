@@ -16,6 +16,12 @@
 	     url('font/RobotoCondensed-Bold-webfont.svg#webfont') format('svg');
 }
 
+img{
+   border: 0px;
+}
+
+a:focus {outline:none;}
+
 body{
     margin: 0;
     padding: 0;
