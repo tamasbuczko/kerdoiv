@@ -1111,6 +1111,25 @@ margin-left: 20px;
 	cursor: pointer;
 }
 
+.admin_fejleckep{
+    clear: both;
+    float: left !important;
+    height: 150px !important;
+    width: 500px !important;
+}
+
+.admin_fejleckep img:nth-child(1){
+    height: 140px;
+    border: 1px solid #ccc;
+    float: left;
+}
+
+.admin_fejleckep img:nth-child(2){
+    float: left;
+    margin: 62px 0px 0px 20px;
+	cursor: pointer;
+}
+
 #admin_valaszok{
    width: 532px;
    float: left;

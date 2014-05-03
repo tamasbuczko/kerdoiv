@@ -1,5 +1,5 @@
 <h1>{urlap_cim}</h1>
-<form action="" method="post" class="ujkerdes">
+<form action="" method="post" enctype="multipart/form-data" class="ujkerdes">
     <div id="control_box">
         <h3>Vezérlőpult</h3>
         <div {control_box_ki}>
@@ -31,7 +31,13 @@
     <label>magyar</label><input type="checkbox" {checked_hu} name="check_hu" onclick="nyelv_kapcs('hu')" /><br />
     </div>
     
-    <br style="clear: both;"/>
+    <br style="clear: both;" />
+	<div class="file_browse_wrapper">
+	  <input name="fejlec_kep" type="file" size="30" title="kép feltöltése" value="ok" accept="image/*" class="file_browse" />
+	</div>
+        <label>Fejléckép feltöltése a kérdőívhez</label>
+        {kep_fejlec}
+        <br style="clear: both;" />
     
     <label>A kérdőív címe</label>
     <input type="text" name="cim_en" id="cim_en" value="{cim_en}" {cim_enx}/>

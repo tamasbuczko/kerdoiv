@@ -1,5 +1,11 @@
 <?php
 
+if ($_REQUEST[fejleckeptorles]){
+   $sql = "UPDATE kerdoivek SET fejlec_kep='' WHERE sorszam = $_REQUEST[id]";
+   mysql_query($sql);
+   header("Location: ?p=ujkerdoiv&id=".$_REQUEST[id]);
+}
+
 if ($_REQUEST[mentes]){
     
         if ($_REQUEST[check_hu] == 'on'){
@@ -44,6 +50,25 @@ if ($_REQUEST[mentes]){
 
         header("Location: ?p=kerdoiv&mod=1&kerdoiv=".$max_kerdoiv_sorszam);
     } else {
+        if ($_FILES['fejlec_kep']['tmp_name'] != "") {
+	  $chars="abcdefhjkmnpqrstuxy345789";
+	  for ($i=0;$i<4;$i++){
+		  $rand=rand(0,strlen($chars)-1);
+		  $f5strx.=$chars[$rand];
+	  }
+
+	  $fajlnev_n = $kerdoiv_sorszam.'_'.$f5strx .'.jpg';
+	  $konyvtar = 'fejlec_kepek/';
+
+	  move_uploaded_file($_FILES['fejlec_kep']['tmp_name'], $konyvtar.$fajlnev_n);
+
+	  $filenev = $konyvtar.$_FILES['fejlec_kep']['name'];
+	  $filename = $_FILES['fejlec_kep']['name'];
+	  settype ($filenev, 'string');
+	  $uzenet = $_FILES['fejlec_kep']['tmp_name'];
+          $sql = "UPDATE kerdoivek SET fejlec_kep='$fajlnev_n' WHERE sorszam='$_REQUEST[id]'";
+          mysql_query($sql);
+	}
         
         $cim_hu = $_REQUEST[cim_hu];
         $leiras_hu = $_REQUEST[leiras_hu];
@@ -73,7 +98,7 @@ if ($_REQUEST[mentes]){
 $div_kikapcs = 'style="display: none;"';
 
 if ($_REQUEST[id]){
-    $result = mysql_query("SELECT cim_hu, leiras_hu, hu, en, de, cim_en, leiras_en, cim_de, leiras_de, nyilvanos, aktivalas, lejarat, zaras_hu, zaras_en, zaras_de, css_id FROM kerdoivek WHERE sorszam = '$_REQUEST[id]'");
+    $result = mysql_query("SELECT cim_hu, leiras_hu, hu, en, de, cim_en, leiras_en, cim_de, leiras_de, nyilvanos, aktivalas, lejarat, zaras_hu, zaras_en, zaras_de, css_id, fejlec_kep FROM kerdoivek WHERE sorszam = '$_REQUEST[id]'");
     $a = mysql_fetch_row($result);
     $kerdoiv_sorszam = $_REQUEST[id];
     $cim_hu = $a[0];
@@ -88,11 +113,19 @@ if ($_REQUEST[id]){
     $zaras_hu = $a[12];
     $zaras_en = $a[13];
     $zaras_de = $a[14];
-	$css_id = $a[15];
+    $css_id = $a[15];
+    $fejlec_kep = $a[16];
     $hu = $a[2];
     $en = $a[3];
     $de = $a[4];
     $nyelv_db = 0;
+    
+    if ($fejlec_kep){
+        $kep_fejlec = '<div class="admin_fejleckep">'
+                . '<img src="fejlec_kepek/'.$fejlec_kep.'" alt="" />'
+                . '<img src="graphics/icon_del.png" class="icon_del" alt="törlés" onclick="megerosites_x(\''.$_REQUEST[id].'\', \'fejlec_kep\', \'1\')" />'
+                . '</div>';
+    }
 	
 	if ($css_id == '0'){ $checked_stilus_alap = 'checked="checked"';}
 	if ($css_id == '1'){ $checked_stilus_1 = 'checked="checked"';}
@@ -208,6 +241,7 @@ $array = array( 'tartalom'       => $tartalom,
                 'cim_hux'       => $cim_hux,
                 'cim_enx'       => $cim_enx,
                 'cim_dex'       => $cim_dex,
+                'kep_fejlec'       => $kep_fejlec,
                 'leiras_hux'       => $leiras_hux,
                 'leiras_enx'       => $leiras_enx,
                 'leiras_dex'       => $leiras_dex,

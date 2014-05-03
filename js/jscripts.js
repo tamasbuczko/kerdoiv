@@ -25,6 +25,11 @@ function megerosites_x(torolszam, formnev, kerdes) {
 		var answer = confirm ("A KÉP TÖRLÉSÉT választotta.\n Biztosan törölni szeretné?");
 		if (answer) { window.location="?p=ujkerdes&id="+torolszam+"&kerdeskeptorles=1";}
 	}
+        
+        if (formnev == "fejlec_kep") {
+		var answer = confirm ("A KÉP TÖRLÉSÉT választotta.\n Biztosan törölni szeretné?");
+		if (answer) { window.location="?p=ujkerdoiv&id="+torolszam+"&fejleckeptorles=1";}
+	}
  }
  
  function nyelv_kapcs(id){
