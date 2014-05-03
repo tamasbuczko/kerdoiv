@@ -13,6 +13,12 @@ if ($_REQUEST[kerdeskeptorles]){
    header("Location: ?p=ujkerdes&id=".$_REQUEST[id]);
 }
 
+if ($_REQUEST[valaszkeptorles]){
+   $sql = "UPDATE valaszok SET kep_file='' WHERE sorszam = $_REQUEST[valaszkeptorles]";
+   mysql_query($sql);
+   header("Location: ?p=ujkerdes&id=".$_REQUEST[id]);
+}
+
 //kérdés törlése
 if ($_REQUEST[kerdestorles]){
    $result = mysql_query("SELECT kerdoiv_sorszam, kerdes_hu, tipus FROM kerdesek WHERE sorszam = '$_REQUEST[id]'");
@@ -242,10 +248,10 @@ if ($_REQUEST[id]){
 }
 
 if ($_REQUEST[id]){
-    $resultx = mysql_query("SELECT sorszam, kerdes_valasz, valasz_hu, valasz_en, valasz_de FROM valaszok WHERE status = '1' AND kerdes_valasz = '$_REQUEST[id]' ORDER BY sorrend");
+    $resultx = mysql_query("SELECT sorszam, kerdes_valasz, valasz_hu, valasz_en, valasz_de, kep_file FROM valaszok WHERE status = '1' AND kerdes_valasz = '$_REQUEST[id]' ORDER BY sorrend");
     while ($next_elementv = mysql_fetch_array($resultx)){
         #$valaszok .= '<input type="text" name="valasz_'.$next_elementv[sorszam].'" value="'.$next_elementv[valasz_hu].'" /><img src="graphics/icon_del.png" class="icon_del" alt="törlés" onclick="megerosites_x('.$next_elementv[sorszam].', \'valasz\', \''.$_REQUEST[id].'\')" />';
-	$valaszok2 .= '<li name="v" value="1" data-row="1" data-col="1" data-sizex="50" data-sizey="8">';
+	$valaszok2 .= '<li name="v" value="1" data-row="1" data-col="1" data-sizex="64" data-sizey="10">';
         
         if ($en == 1){
             $valaszok2 .= '<input type="text" name="valasz_en_'.$next_elementv[sorszam].'" id="valasz_en_'.$next_elementv[sorszam].'" value="'.$next_elementv[valasz_en].'" class="en_k" />';
@@ -256,8 +262,20 @@ if ($_REQUEST[id]){
         if ($hu == 1){
             $valaszok2 .= '<input type="text" name="valasz_hu_'.$next_elementv[sorszam].'" id="valasz_hu_'.$next_elementv[sorszam].'" value="'.$next_elementv[valasz_hu].'" class="hu_k" />';
         }
-        $valaszok2 .= '<div class="file_browse_wrapper"><input name="valasz_kep_'.$next_elementv[sorszam].'" type="file" title="kép feltöltése a válaszhoz" size="30" accept="image/*" class="file_browse" /></div>'
-				. '<img src="graphics/icon_del.png" class="icon_del" alt="törlés" onclick="megerosites_x('.$next_elementv[sorszam].', \'valasz\', \''.$_REQUEST[id].'\')" />'
+		
+		unset($kep);
+		if ($next_elementv[kep_file]){
+		   $kep = '<div class="admin_valaszkep">'
+				   . '<img src="valasz_kepek/'.$next_elementv[kep_file].'" alt="" />'
+				   . '<img src="graphics/icon_del.png" class="icon_del" style="float: left;" alt="a kép törlése" title="a kép törlése" onclick="megerosites_x('.$next_elementv[sorszam].', \'valasz_kep\', \''.$_REQUEST[id].'\')" />'
+				 . '</div>';
+		}
+		
+        $valaszok2 .= '<div class="file_browse_wrapper">'
+				. '<input name="valasz_kep_'.$next_elementv[sorszam].'" type="file" title="kép feltöltése a válaszhoz" size="30" accept="image/*" class="file_browse" /></div>'
+				. '<br style="clear: both;"><img src="graphics/icon_del.png" class="icon_del" style="float: left;" alt="a válasz törlése" title="a válasz törlése" onclick="megerosites_x('.$next_elementv[sorszam].', \'valasz\', \''.$_REQUEST[id].'\')" />'
+				. $kep
+				. ''
                 . '</li>';
     }
 }
