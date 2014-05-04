@@ -11,13 +11,6 @@
         <input type="submit" name="mentes" />
         <a href="?p=kerdoiveim" class="back" />vissza</a>
     </div>
-    <!--
-    <label>Milyen nyelven</label>
-    
-    <label>HU</label><input type="checkbox" name="hu" />
-    <label>EN</label><input type="checkbox" name="en" />
-    <label>DE</label><input type="checkbox" name="de" />
-    -->
     <input type="hidden" name="sorszam" value="{id}" />
     
     <label>Milyen nyelveken szeretnéd elkészíteni a kérdőívet?</label>
@@ -80,23 +73,18 @@
 	<input type="text" name="lejarat_datum" id="lejarat_datum" value="{lejarat}" style="width: 90px;" />
 
     <br style="clear:both;" />
-    <label>Milyen adatokat kérsz a kitöltőtől?</label>
+    <label>Milyen kötelező személyes adatokat kérsz a kitöltőtől?</label>
     <div>
-    <label>Neme</label><input type="checkbox" name="neme" /><br />
-    </div><div>    
-    <label>Kora</label><input type="checkbox" name="neme" /><br />
-    </div><div>
-    <label>Ország</label><input type="checkbox" name="neme" /><br />
-    </div><div>
-    <label>Város</label><input type="checkbox" name="neme" /><br />
-    </div><div>
-    <label>Foglalkozása</label><input type="checkbox" name="neme" />
+    <label>Neme</label><input type="checkbox" name="neme" {checked_neme}/><br />
     </div>
-    <!-- stílus, főkép -->
-    
-    
-    
-    <!--
-    <p><a href="?p=ujkerdes">Új kérdes rögzítése</a></p>
-    -->
+	<div>    
+    <label>Kora</label><input type="checkbox" name="kora" {checked_kora}/><br />
+    </div>
+	<div>
+    <label>Ország</label><input type="checkbox" name="orszag" {checked_orszag}/><br />
+    </div>
+	<div>
+    <label>Foglalkozása</label><input type="checkbox" name="foglalkozas" {checked_foglalkozas}/>
+    </div>
+
 </form>

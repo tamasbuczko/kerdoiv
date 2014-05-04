@@ -33,6 +33,14 @@ if ($kerdoiv_css > 0){
    $kerdoiv_css = $next_elementcss[file];
 }
 
+$resultx = mysql_query ("SELECT neme, kora, orszag, varos, foglalkozas FROM kerdoiv_szemelyesadat WHERE kerdoiv_sorszam = '$kerdoiv_sorszam'");
+$next_elementx = mysql_fetch_array ($resultx);
+$kapcs_neme = $next_elementx[neme];
+$kapcs_kora = $next_elementx[kora];
+$kapcs_orszag = $next_elementx[orszag];
+$kapcs_varos = $next_elementx[varos];
+$kapcs_foglalkozas = $next_elementx[foglalkozas];
+
 $nyelv = 0;
 if ($next_elementc[hu] == 1){
     $nyelv_db++;
@@ -85,6 +93,47 @@ $kerdoiv_headline = '<div id="headline">
 
 unset($nyelv_blokk);
 
+if ($kapcs_kora == '1'){
+   $x_kora = '<label>'.$lang[eletkor].'</label>
+                        <select name="eletkora">
+                            '.$request_eletkora_value.'
+                            <option value="0">---</option>
+                            <option value="18">&lt;18</option>
+                            <option value="18-25">18-25</option>
+                            <option value="25-35">25-35</option>
+                            <option value="35-45">35-45</option>
+                            <option value="45">45&lt;</option>
+                        </select><br />';
+}
+
+if ($kapcs_neme == '1'){
+   $x_neme = '<label>'.$lang[neme].'</label>
+                        <select name="neme">
+                            '.$request_neme_value.'
+                            <option value="0">---</option>
+                            <option value="'.$lang[ferfi].'">'.$lang[ferfi].'</option>
+                            <option value="'.$lang[no].'">'.$lang[no].'</option>
+                        </select>
+                        <br />';
+}
+
+if ($kapcs_foglalkozas == '1'){
+   $x_foglalkozas = '<label>'.$lang[foglalkozas].'</label>
+                        <input type="text" name="foglalkozas" value="'.$request_foglalkozas_value.'" />
+                        <br />';
+}
+
+if ($kapcs_orszag == '1'){
+   $x_orszag = ' <label>'.$lang[orszag].'</label>
+                        <select name="lakhely">
+                            <option value="0">---</option>
+                            '.$orszag_combo.'
+                        </select>
+                        <br />';
+}
+
+
+
 $kerdoiv_fejlec = $kerdoiv_headline.'
                   <div id="intro">
                     '.$nyelv_blokk.'
@@ -106,34 +155,10 @@ $kerdoiv_fejlec = $kerdoiv_headline.'
 		. '<input type="hidden" name="kerdoiv" id="kerdoiv" value="'.$kerdoiv_sorszam.'" />
                     <input type="hidden" name="p" id="p" value="'.$_REQUEST[p].'" />
                     <div class="szemelyes" style="'.$adat_off.'">                        
-                        <label>'.$lang[eletkor].'</label>
-                        <select name="eletkora">
-                            '.$request_eletkora_value.'
-                            <option value="0">---</option>
-                            <option value="18">&lt;18</option>
-                            <option value="18-25">18-25</option>
-                            <option value="25-35">25-35</option>
-                            <option value="35-45">35-45</option>
-                            <option value="45">45&lt;</option>
-                        </select>
-                        <br />
-                        <label>'.$lang[neme].'</label>
-                        <select name="neme">
-                            '.$request_neme_value.'
-                            <option value="0">---</option>
-                            <option value="'.$lang[ferfi].'">'.$lang[ferfi].'</option>
-                            <option value="'.$lang[no].'">'.$lang[no].'</option>
-                        </select>
-                        <br />
-                        <label>'.$lang[orszag].'</label>
-                        <select name="lakhely">
-                            <option value="0">---</option>
-                            '.$orszag_combo.'
-                        </select>
-                        <br />
-                        <label>'.$lang[foglalkozas].'</label>
-                        <input type="text" name="foglalkozas" value="'.$request_foglalkozas_value.'" />
-                        <br />
+                        '.$x_kora.'
+                        '.$x_neme.'
+						'.$x_orszag.'
+                        '.$x_foglalkozas.'
                     </div>';
 
 If (!$kerdoiv_cim){

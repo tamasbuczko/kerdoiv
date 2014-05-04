@@ -31,6 +31,30 @@ if ($_REQUEST[mentes]){
         else {
             $check_nyilvanos = 0;
         }
+		
+		if ($_REQUEST[neme] == 'on'){
+            $check_neme = 1;}
+        else {
+            $check_neme = 0;
+        }
+		
+		if ($_REQUEST[kora] == 'on'){
+            $check_kora = 1;}
+        else {
+            $check_kora = 0;
+        }
+		
+		if ($_REQUEST[orszag] == 'on'){
+            $check_orszag = 1;}
+        else {
+            $check_orszag = 0;
+        }
+		
+		if ($_REQUEST[foglalkozas] == 'on'){
+            $check_foglalkozas = 1;}
+        else {
+            $check_foglalkozas = 0;
+        }
     
     if (!$_REQUEST[sorszam]){
         $result = mysql_query("SELECT MAX(sorszam) FROM kerdoivek");
@@ -91,7 +115,9 @@ if ($_REQUEST[mentes]){
                 hu='$check_hu', en='$check_en', de='$check_de', css_id = '$css_id',
                 nyilvanos='$check_nyilvanos', aktivalas='$aktivalas', lejarat='$lejarat' WHERE sorszam='$_REQUEST[sorszam]'";
         mysql_query($sql);
-
+		
+		$sql = "UPDATE kerdoiv_szemelyesadat SET neme='$check_neme', kora='$check_kora', orszag='$check_orszag', foglalkozas='$check_foglalkozas' WHERE kerdoiv_sorszam = '$_REQUEST[sorszam]'";
+		mysql_query($sql);
     }
 }
 
@@ -119,6 +145,19 @@ if ($_REQUEST[id]){
     $en = $a[3];
     $de = $a[4];
     $nyelv_db = 0;
+	
+	$resultx = mysql_query ("SELECT neme, kora, orszag, varos, foglalkozas FROM kerdoiv_szemelyesadat WHERE kerdoiv_sorszam = '$kerdoiv_sorszam'");
+   $next_elementx = mysql_fetch_array ($resultx);
+   $kapcs_neme = $next_elementx[neme];
+   $kapcs_kora = $next_elementx[kora];
+   $kapcs_orszag = $next_elementx[orszag];
+   $kapcs_varos = $next_elementx[varos];
+   $kapcs_foglalkozas = $next_elementx[foglalkozas];
+   if ($kapcs_neme == '1'){$checked_neme = 'checked="checked"';}
+   if ($kapcs_kora == '1'){$checked_kora = 'checked="checked"';}
+   if ($kapcs_orszag == '1'){$checked_orszag = 'checked="checked"';}
+   if ($kapcs_varos == '1'){$checked_varos = 'checked="checked"';}
+   if ($kapcs_foglalkozas == '1'){$checked_foglalkozas = 'checked="checked"';}
     
     if ($fejlec_kep){
         $kep_fejlec = '<div class="admin_fejleckep">'
@@ -248,6 +287,10 @@ $array = array( 'tartalom'       => $tartalom,
                 'zaras_hux'       => $zaras_hux,
                 'zaras_enx'       => $zaras_enx,
                 'zaras_dex'       => $zaras_dex,
+				'checked_neme'       => $checked_neme,
+				'checked_kora'       => $checked_kora,
+				'checked_orszag'       => $checked_orszag,
+				'checked_foglalkozas'       => $checked_foglalkozas,
 			   'checked_stilus_alap'       => $checked_stilus_alap,
 			   'checked_stilus_1'       => $checked_stilus_1,
 			   'checked_stilus_2'       => $checked_stilus_2,
