@@ -35,6 +35,10 @@ $kerdesek_szama = 'A kérdések száma: '.$x[0];
 //hányan töltötték ki
 $result2 = mysql_query("SELECT sorszam FROM valaszadasok WHERE kerdoiv_sorszam = '$kerdoiv_sorszam' GROUP BY kitolto_sorszam");
 $valaszadok_szama = 'A kitöltők száma: '.mysql_num_rows($result2);
+
+//hányan töltötték ki (email-el)
+$result2 = mysql_query("SELECT va.sorszam FROM valaszadasok AS va LEFT JOIN kitoltok AS k ON va.kitolto_sorszam = k.sorszam WHERE va.kerdoiv_sorszam = $kerdoiv_sorszam AND k.email != '' GROUP BY va.kitolto_sorszam");
+$valaszadok_szama_emailes = 'A kitöltők száma (e-mail): '.mysql_num_rows($result2);
     
 //létrehozás dátuma
 $created_date = 'A létrehozás dátuma: '.$kerdoiv_kelt;
@@ -77,6 +81,7 @@ $array = array( 'kerdoiv_cim'       => $kerdoiv_cim,
                 'zaszlok'   => $zaszlok,
                 'kerdesek_szama'   => $kerdesek_szama,
                 'valaszadok_szama'   => $valaszadok_szama,
+				'valaszadok_szama_emailes'   => $valaszadok_szama_emailes,
                 'created_date'   => $created_date,
                 'activated_date'   => $activated_date,
                 'expire_date'   => $expire_date,
