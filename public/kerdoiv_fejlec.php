@@ -19,7 +19,7 @@ while ($next_element = mysql_fetch_array($result)){
 }
 
 //a választott nyelv szerinti kérdőív cím és leírás betöltése
-$resultc = mysql_query ("SELECT cim_hu, cim_en, cim_de, leiras_hu, leiras_en, leiras_de, hu, en, de, fejlec_kep, css_id, zaras_hu, zaras_en, zaras_de FROM kerdoivek WHERE status = '1' AND sorszam = '$kerdoiv_sorszam' ");
+$resultc = mysql_query ("SELECT cim_hu, cim_en, cim_de, leiras_hu, leiras_en, leiras_de, hu, en, de, fejlec_kep, css_id, zaras_hu, zaras_en, zaras_de, status FROM kerdoivek WHERE sorszam = '$kerdoiv_sorszam' ");
 $next_elementc = mysql_fetch_array ($resultc);
 $kerdoiv_cim=$next_elementc['cim_'.$_SESSION[lang]];
 $kerdoiv_leiras=$next_elementc['leiras_'.$_SESSION[lang]];

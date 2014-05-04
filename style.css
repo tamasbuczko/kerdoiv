@@ -74,24 +74,34 @@ body{
     text-align: left;
 }
 
-#user_box span{
-    display: block;
-    margin-right: 10px;
-    float: left;
+#user_box a:nth-child(1){
+    text-decoration: none;
+    color: #666;
+    padding-left: 10px;
+    margin: 0px !important;
+	background-image: url('graphics/profil_k.png');
+	background-repeat: no-repeat;
+	background-position: top right;
+	padding-right: 20px;
 }
 
-#user_box a{
+#user_box a:nth-child(2){
     text-decoration: none;
     color: #666;
     border-left: 1px solid #666;
     padding-left: 10px;
-    margin: 0px !important;
+    margin: 0px 0px 0px 10px !important;
 }
 
 #user_box a:hover{
     text-decoration: underline;
 }
 
+#user_box img{
+   float: left;
+   width: 18px;
+   margin: -4px 0px 0px 2px;
+}
 
 #head{
     clear: both;
