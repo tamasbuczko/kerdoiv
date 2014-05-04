@@ -105,7 +105,13 @@ if (($_REQUEST[mentes]) OR ($_REQUEST[pluszvalasz])){
     $b = mysql_fetch_row($resultxx);
     $utolsovalaszsorszam = $b[0];
     for ($i = 0; $i <= $utolsovalaszsorszam; $i++){
-        $valasz_x_hu = 'valasz_hu_'.$i;
+        $valasz_video = 'valasz_video_'.$i;
+		if ($_REQUEST[$valasz_video]){
+            $sql = "UPDATE valaszok SET video_embed = '$_REQUEST[$valasz_video]' WHERE sorszam = $i";
+            mysql_query($sql);
+		}
+		
+		$valasz_x_hu = 'valasz_hu_'.$i;
         if ($_REQUEST[$valasz_x_hu]){
             $valasz_ertek_hu = $_REQUEST[$valasz_x_hu];
             $sql = "UPDATE valaszok SET valasz_hu = '$valasz_ertek_hu' WHERE sorszam = $i";
@@ -248,7 +254,7 @@ if ($_REQUEST[id]){
 }
 
 if ($_REQUEST[id]){
-    $resultx = mysql_query("SELECT sorszam, kerdes_valasz, valasz_hu, valasz_en, valasz_de, kep_file FROM valaszok WHERE status = '1' AND kerdes_valasz = '$_REQUEST[id]' ORDER BY sorrend");
+    $resultx = mysql_query("SELECT sorszam, kerdes_valasz, valasz_hu, valasz_en, valasz_de, kep_file, video_embed FROM valaszok WHERE status = '1' AND kerdes_valasz = '$_REQUEST[id]' ORDER BY sorrend");
     while ($next_elementv = mysql_fetch_array($resultx)){
         #$valaszok .= '<input type="text" name="valasz_'.$next_elementv[sorszam].'" value="'.$next_elementv[valasz_hu].'" /><img src="graphics/icon_del.png" class="icon_del" alt="törlés" onclick="megerosites_x('.$next_elementv[sorszam].', \'valasz\', \''.$_REQUEST[id].'\')" />';
 	$valaszok2 .= '<li name="v" value="1" data-row="1" data-col="1" data-sizex="64" data-sizey="10">';
@@ -262,6 +268,8 @@ if ($_REQUEST[id]){
         if ($hu == 1){
             $valaszok2 .= '<input type="text" name="valasz_hu_'.$next_elementv[sorszam].'" id="valasz_hu_'.$next_elementv[sorszam].'" value="'.$next_elementv[valasz_hu].'" class="hu_k" />';
         }
+		
+		$valaszok2 .= '<input type="text" name="valasz_video_'.$next_elementv[sorszam].'" value="'.$next_elementv[video_embed].'" title="video link" class="video_embed" />';
 		
 		unset($kep);
 		if ($next_elementv[kep_file]){

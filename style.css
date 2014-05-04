@@ -792,6 +792,10 @@ margin-left: 20px;
    color: #444;
 }
 
+.video_embed{
+   background-image: url('graphics/play_k.png');
+}
+
 #control_box{
     min-height: 90px;
     height: auto;

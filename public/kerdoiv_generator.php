@@ -41,16 +41,18 @@ while ($next_element = mysql_fetch_array($result)){
 		   if ($next_elementv[kep_file]){
 			  $valaszok .= "\n".'<div class="answer_img"><input type="radio" name="radio_'.$sorszam_kerdes.'" '.$radio_request.' value="'.$sorszam_valasz.'" /><div class="answer_img_frame"><img src="valasz_kepek/'.$next_elementv[kep_file].'"><label>'.$next_elementv['valasz_'.$_SESSION[lang]].'</label></div></div>';
 		   } else {
+			  if (!$next_elementv[video_embed]){
 			   $valaszok .= "\n".'<input type="radio" name="radio_'.$sorszam_kerdes.'" '.$radio_request.' value="'.$sorszam_valasz.'" /><label>'.$next_elementv['valasz_'.$_SESSION[lang]].'</label>';
+			  }
 		   }
 		   if ($next_elementv[video_embed]){
 			  
-			  if (strpos($next_element[video_embed], 'youtube')){
-				  $video_link = explode('=', $next_element[video_embed]);
+			  if (strpos($next_elementv[video_embed], 'youtube')){
+				  $video_link = explode('=', $next_elementv[video_embed]);
 				  $valasz_video = '<iframe style="float: left; margin: 0px 0px 20px 50px;" width="280" height="210" src="//www.youtube.com/embed/'.$video_link[1].'" frameborder="0" allowfullscreen></iframe><br stlye="clear:both;">';
 			   }
-			   if (strpos($next_element[video_embed], 'vimeo')){
-				  $video_link = explode('/', $next_element[video_embed]);
+			   if (strpos($next_elementv[video_embed], 'vimeo')){
+				  $video_link = explode('/', $next_elementv[video_embed]);
 				  $valasz_video = '<iframe src="//player.vimeo.com/video/'.end($video_link).'" style="float: left; margin: 0px 0px 20px 50px;" width="280" height="210" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe><br stlye="clear:both;">';
 			   }
 			  
@@ -84,17 +86,19 @@ while ($next_element = mysql_fetch_array($result)){
             if ($next_elementv[kep_file]){
 		$valaszok .= "\n".'<div class="answer_img"><input type="checkbox" name="checkbox_'.$sorszam_valasz.'" '.$check_request.' /><div class="answer_img_frame"><img src="valasz_kepek/'.$next_elementv[kep_file].'"><label>'.$next_elementv['valasz_'.$_SESSION[lang]].'</label></div></div>';
             } else {
+			   if (!$next_elementv[video_embed]){
                 $valaszok .= "\n".'<input type="checkbox" name="checkbox_'.$sorszam_valasz.'" '.$check_request.' /><label>'.$next_elementv['valasz_'.$_SESSION[lang]].'</label>';
+			   }
             }
 			
 			if ($next_elementv[video_embed]){
 			   
-			   if (strpos($next_element[video_embed], 'youtube')){
-				  $video_link = explode('=', $next_element[video_embed]);
+			   if (strpos($next_elementv[video_embed], 'youtube')){
+				  $video_link = explode('=', $next_elementv[video_embed]);
 				  $valasz_video = '<iframe style="float: left; margin: 0px 0px 20px 50px;" width="280" height="210" src="//www.youtube.com/embed/'.$video_link[1].'" frameborder="0" allowfullscreen></iframe><br stlye="clear:both;">';
 			   }
-			   if (strpos($next_element[video_embed], 'vimeo')){
-				  $video_link = explode('/', $next_element[video_embed]);
+			   if (strpos($next_elementv[video_embed], 'vimeo')){
+				  $video_link = explode('/', $next_elementv[video_embed]);
 				  $valasz_video = '<iframe src="//player.vimeo.com/video/'.end($video_link).'" style="float: left; margin: 0px 0px 20px 50px;" width="280" height="210" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe><br stlye="clear:both;">';
 			   }
 			   
