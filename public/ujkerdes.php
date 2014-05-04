@@ -273,7 +273,7 @@ if ($_REQUEST[id]){
 		
         $valaszok2 .= '<div class="file_browse_wrapper">'
 				. '<input name="valasz_kep_'.$next_elementv[sorszam].'" type="file" title="kép feltöltése a válaszhoz" size="30" accept="image/*" class="file_browse" /></div>'
-				. '<br style="clear: both;"><img src="graphics/icon_del.png" class="icon_del" style="float: left;" alt="a válasz törlése" title="a válasz törlése" onclick="megerosites_x('.$next_elementv[sorszam].', \'valasz\', \''.$_REQUEST[id].'\')" />'
+				. '<br style="clear: both;"><img src="graphics/icon_del.png" class="icon_del" style="position: relative; float: right; margin: 0px 0 0 0; z-index: 10;" alt="a válasz törlése" title="a válasz törlése" onclick="megerosites_x('.$next_elementv[sorszam].', \'valasz\', \''.$_REQUEST[id].'\')" />'
 				. $kep
 				. ''
                 . '</li>';
