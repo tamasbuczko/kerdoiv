@@ -8,7 +8,7 @@ if ($_REQUEST[id]){
 $result = mysql_query ("SELECT sorszam, cim_hu, cim_en, cim_de, status FROM kerdoivek WHERE user_id = '$_SESSION[qa_user_id]' ");
 $db_kerdoivek = 0;
 while ($next_element = mysql_fetch_array($result)){
-   
+   $db_kerdoivek++;
    $result2 = mysql_query("SELECT sorszam FROM valaszadasok WHERE kerdoiv_sorszam = $next_element[sorszam] GROUP BY kitolto_sorszam");
    $valaszadok_szama = mysql_num_rows($result2);
    
