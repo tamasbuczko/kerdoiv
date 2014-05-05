@@ -981,8 +981,8 @@ margin-left: 20px;
 }
 
 .file_browse_wrapper {
-   width: 16px !important;
-   height: 14px !important;
+   width: 20px !important;
+   height: 15px !important;
    background-image: url('graphics/img-add.png');
    background-repeat: no-repeat;
    cursor: pointer;
