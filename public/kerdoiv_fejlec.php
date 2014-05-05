@@ -22,7 +22,7 @@ while ($next_element = mysql_fetch_array($result)){
 $resultc = mysql_query ("SELECT cim_hu, cim_en, cim_de, leiras_hu, leiras_en, leiras_de, hu, en, de, fejlec_kep, css_id, zaras_hu, zaras_en, zaras_de, status FROM kerdoivek WHERE sorszam = '$kerdoiv_sorszam' ");
 $next_elementc = mysql_fetch_array ($resultc);
 $kerdoiv_cim=$next_elementc['cim_'.$_SESSION[lang]];
-$kerdoiv_leiras=$next_elementc['leiras_'.$_SESSION[lang]];
+$kerdoiv_leiras=nl2br($next_elementc['leiras_'.$_SESSION[lang]]);
 $kerdoiv_fejlec_kep=$next_elementc['fejlec_kep'];
 $kerdoiv_css=$next_elementc['css_id'];
 $kerdoiv_zaras=$next_elementc['zaras_'.$_SESSION[lang]];
