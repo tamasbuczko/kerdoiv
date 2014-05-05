@@ -6,6 +6,7 @@ if ($_REQUEST[id]){
 }
 
 $result = mysql_query ("SELECT sorszam, cim_hu, cim_en, cim_de, status FROM kerdoivek WHERE user_id = '$_SESSION[qa_user_id]' ");
+$db_kerdoivek = 0;
 while ($next_element = mysql_fetch_array($result)){
    
    $result2 = mysql_query("SELECT sorszam FROM valaszadasok WHERE kerdoiv_sorszam = $next_element[sorszam] GROUP BY kitolto_sorszam");
@@ -65,6 +66,11 @@ while ($next_element = mysql_fetch_array($result)){
 			. '</tr>';
 }
 
+if ($db_kerdoivek == 0){
+   $display_none = ' style="display: none;"';
+   $uzenet = '<div style="width: 100%; text-align: center; margin: 70px 0px 90px 0px;">Jelenleg még nincs saját kérdőíve!</div>';
+}
+
 
 $oldal = new html_blokk;
 
@@ -76,6 +82,8 @@ $array = array( 'lista_kerdoiveim'       => $lista_kerdoiveim,
                 'kitoltes'       => $lang[kitoltes],
                 'modositas'       => $lang[modositas],
                 'aktiv'       => $lang[aktiv],
+				'display_none' => $display_none,
+				'uzenet' => $uzenet,
                 'kitoltottek'       => $lang[kitoltottek],
                 'nyelvek' => $lang[nyelvek],
                 'figy_uzenet'   => $figy_uzenet);
