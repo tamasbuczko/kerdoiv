@@ -33,7 +33,7 @@ while ($next_element = mysql_fetch_array($result)){
    }
    
    if ($nyelv_db > 1){
-	  $nyelv_fejlec = '<th>nyelvek</th>';
+	  $nyelv_fejlec = '<th>'.$lang[nyelvek].'</th>';
 	  $zaszlok = $zaszlo_en.$zaszlo_de.$zaszlo_hu;
    } else {
 	  $zaszlok = '';
@@ -60,7 +60,7 @@ while ($next_element = mysql_fetch_array($result)){
 			. '<td><a href="?p=kerdoiv&kerdoiv='.$next_element[sorszam].'"><img src="graphics/icon_checked.png" alt="eredmények" /></a></td>'
 			. '<td><a href="?p=kerdoiv&amp;mod=1&amp;kerdoiv='.$next_element[sorszam].'"><img src="graphics/icon_edit.gif" alt="eredmények" /></a></td>'
 			. '<td>'.$status.'</td>'
-			. '<td>'.$valaszadok_szama.' fő</td>'
+			. '<td>'.$valaszadok_szama.'</td>'
 			. '<td class="kis_zaszlo">'.$zaszlok.'</td>'
 			. '</tr>';
 }
@@ -69,7 +69,15 @@ while ($next_element = mysql_fetch_array($result)){
 $oldal = new html_blokk;
 
 $array = array( 'lista_kerdoiveim'       => $lista_kerdoiveim,
-				'nyelv_fejlec'       => $nyelv_fejlec,
+		'nyelv_fejlec'       => $nyelv_fejlec,
+                'uj_kerdoiv_rogzitese'=> $lang[uj_kerdoiv_rogzitese], 
+                'cim'       => $lang[cim],
+                'eredmenyek'       => $lang[eredmenyek],
+                'kitoltes'       => $lang[kitoltes],
+                'modositas'       => $lang[modositas],
+                'aktiv'       => $lang[aktiv],
+                'kitoltottek'       => $lang[kitoltottek],
+                'nyelvek' => $lang[nyelvek],
                 'figy_uzenet'   => $figy_uzenet);
 
 $oldal->load_template_file("templates/kerdoiveim.html",$array);

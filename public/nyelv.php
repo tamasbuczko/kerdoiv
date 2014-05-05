@@ -44,6 +44,14 @@ if ($_SESSION["lang"] == 'hu'){
 	$lang[uzenet] = 'Üzenet';
 	$lang[elkuldes] = 'Elküldés';
         $lang[uj_nyilvanos_kerdoivek] = 'Legfrissebb nyilvános kérdőívek';
+        $lang[uj_kerdoiv_rogzitese] = 'Új kérdőív rögzítése';
+        $lang[cim] = 'cím';
+        $lang[eredmenyek] = 'eredmények';
+        $lang[kitoltes] = 'kitöltés';
+        $lang[modositas] = 'módosítás';
+        $lang[aktiv] = 'aktív';
+        $lang[kitoltottek] = 'kitöltötték';
+        $lang[nyelvek] = 'nyelvek';
 }
 
 if ($_SESSION["lang"] == 'en'){
@@ -82,6 +90,14 @@ if ($_SESSION["lang"] == 'en'){
 	$lang[uzenet] = 'Message';
 	$lang[elkuldes] = 'Sending';
         $lang[uj_nyilvanos_kerdoivek] = 'Newest public surveys';
+        $lang[uj_kerdoiv_rogzitese] = 'Add new survey';
+        $lang[cim] = 'title';
+        $lang[eredmenyek] = 'results';
+        $lang[kitoltes] = 'filling';
+        $lang[modositas] = 'modification';
+        $lang[aktiv] = 'active';
+        $lang[kitoltottek] = 'completed';
+        $lang[nyelvek] = 'languages';
 }
 
 if ($_SESSION["lang"] == 'de'){
@@ -120,6 +136,14 @@ if ($_SESSION["lang"] == 'de'){
 	$lang[uzenet] = 'Nachricht';
 	$lang[elkuldes] = 'Sendung';
         $lang[uj_nyilvanos_kerdoivek] = 'Neueste öffentliche Umfrage';
+        $lang[uj_kerdoiv_rogzitese] = 'Fügen Sie neue Umfrage';
+        $lang[cim] = 'Titel';
+        $lang[eredmenyek] = 'Ergebnisse';
+        $lang[kitoltes] = 'Füllung';
+        $lang[modositas] = 'Änderung';
+        $lang[aktiv] = 'aktiv';
+        $lang[kitoltottek] = 'vollendet';
+        $lang[nyelvek] = 'Sprachen';
 }
 
 
