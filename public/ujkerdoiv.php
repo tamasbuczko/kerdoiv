@@ -116,8 +116,17 @@ if ($_REQUEST[mentes]){
                 nyilvanos='$check_nyilvanos', aktivalas='$aktivalas', lejarat='$lejarat' WHERE sorszam='$_REQUEST[sorszam]'";
         mysql_query($sql);
 		
-		$sql = "UPDATE kerdoiv_szemelyesadat SET neme='$check_neme', kora='$check_kora', orszag='$check_orszag', foglalkozas='$check_foglalkozas' WHERE kerdoiv_sorszam = '$_REQUEST[sorszam]'";
-		mysql_query($sql);
+		$result = mysql_query("SELECT kerdoiv_sorszam FROM kerdoiv_szemelyesadat WHERE kerdoiv_sorszam = '$_REQUEST[sorszam]'");
+		$ertek = mysql_fetch_row($result);
+		
+		if ($ertek[0]){
+			$sql = "UPDATE kerdoiv_szemelyesadat SET neme='$check_neme', kora='$check_kora', orszag='$check_orszag', foglalkozas='$check_foglalkozas' WHERE kerdoiv_sorszam = '$_REQUEST[sorszam]'";
+			mysql_query($sql);}
+		else {
+			$sql = "INSERT INTO kerdoiv_szemelyesadat (kerdoiv_sorszam, neme, kora, orszag, foglalkozas) VALUES"
+					. "($_REQUEST[sorszam], '$check_neme', '$check_kora', '$check_orszag', '$check_foglalkozas')";
+			mysql_query($sql);
+		}
     }
 }
 
