@@ -119,7 +119,7 @@ if ($kapcs_neme == '1'){
 
 if ($kapcs_foglalkozas == '1'){
    $x_foglalkozas = '<label>'.$lang[foglalkozas].'</label>
-                        <input type="text" name="foglalkozas" value="'.$request_foglalkozas_value.'" />
+                        <input type="text" name="foglalkozas" value="'.$request_foglalkozas_value.' " />
                         <br />';
 }
 

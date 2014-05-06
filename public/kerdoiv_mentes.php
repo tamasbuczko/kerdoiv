@@ -1,5 +1,6 @@
 <?php
-
+   $foglalkozas = rtrim($foglalkozas);
+   $foglalkozas = ltrim($foglalkozas);
    $sql = "INSERT INTO kitoltok (email, neme, eletkora, lakhely, foglalkozas, nyelv) 
            VALUES ('$email', '$_REQUEST[neme]', '$_REQUEST[eletkora]', '$_REQUEST[lakhely]', '$foglalkozas', '$_SESSION[lang]')";
    mysql_query($sql); //futtatás

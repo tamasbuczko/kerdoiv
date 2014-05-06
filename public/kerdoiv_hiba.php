@@ -26,7 +26,7 @@ if ($_REQUEST[submit]){ //űrlap elküldésének vizsgálata(személyes adatok)
         $hiba_uzenetek[$hiba] = $lang['nem_adta_meg_a_lakhelyet'];
     }
     
-    if ($_REQUEST[foglalkozas] == ''){
+    if ($_REQUEST[foglalkozas] == ' '){
         $hiba++;
         $hiba_uzenetek[$hiba] = $lang['nem_adta_meg_a_foglalkozasat'];
     }
