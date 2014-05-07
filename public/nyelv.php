@@ -55,6 +55,11 @@ if ($_SESSION["lang"] == 'hu'){
         $lang[aszf] = 'Használati és adatvédelmi szabályok';
         $lang[vezerlopult] = 'Vezérlőpult';
         $lang[radio_i] = 'A kitöltő csak egy választ jelölhet be.';
+        $lang[select_i] = 'Kitöltéskor egy legördülő listából lehet egyet kiválasztani.';
+        $lang[checkbox_i] = 'Kitöltéskor bármennyi válasz bejelölhető.';
+        $lang[text_i] = 'Egy szavas vagy rövid mondatos választ kérhetünk.';
+        $lang[textarea_i] = 'Hosszabb terjedelmű válasz kérésére használható.';
+        $lang[ranking_i] = 'Egy vagy több válaszlehetőséget értékelhetünk 1-től 5-ig terjedő skálán.';
 }
 
 if ($_SESSION["lang"] == 'en'){
@@ -104,6 +109,11 @@ if ($_SESSION["lang"] == 'en'){
         $lang[aszf] = 'Terms and conditions';
         $lang[vezerlopult] = 'Control panel';
         $lang[radio_i] = 'The responser can mark only one answer.';
+        $lang[select_i] = 'The responser can choose one answer from a drop-down list.';
+        $lang[checkbox_i] = 'The responser can mark more answer.';
+        $lang[text_i] = 'The responser can write a short answer.';
+        $lang[textarea_i] = 'The responser can write longer answer.';
+        $lang[ranking_i] = 'The responser can evaluate one or more answer from 1 to 5.';
 }
 
 if ($_SESSION["lang"] == 'de'){
@@ -153,6 +163,11 @@ if ($_SESSION["lang"] == 'de'){
         $lang[aszf] = 'Allgemeine Geschäftsbedingungen';
         $lang[vezerlopult] = 'Schalttafel';
         $lang[radio_i] = 'Kitöltéskor csak egy válasz jelölhető be.';
+        $lang[select_i] = 'Kitöltéskor egy legördülő listából lehet egyet kiválasztani.';
+        $lang[checkbox_i] = 'Kitöltéskor bármennyi válasz bejelölhető.';
+        $lang[text_i] = 'Egy szavas vagy rövid mondatos választ kérhetünk.';
+        $lang[textarea_i] = 'Hosszabb terjedelmű válasz kérésére használható.';
+        $lang[ranking_i] = 'Egy vagy több válaszlehetőséget értékelhetünk 1-től 5-ig terjedő skálán.';
 }
 
 
