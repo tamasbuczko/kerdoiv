@@ -12,6 +12,7 @@ $array = array( 'tartalom'       => $tartalom,
 		'jelszo'       => $lang[jelszo],
 		'regisztracio'       => $lang[regisztracio],
                 'figy_uzenet'   => $figy_uzenet,
+                'aszf' => $lang[aszf],
                 'uj_nyilvanos_kerdoivek' => $lang[uj_nyilvanos_kerdoivek]);
 
 $oldal = new html_blokk;

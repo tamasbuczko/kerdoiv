@@ -52,6 +52,9 @@ if ($_SESSION["lang"] == 'hu'){
         $lang[aktiv] = 'aktív';
         $lang[kitoltottek] = 'kitöltötték';
         $lang[nyelvek] = 'nyelvek';
+        $lang[aszf] = 'Használati és adatvédelmi szabályok';
+        $lang[vezerlopult] = 'Vezérlőpult';
+        $lang[radio_i] = 'A kitöltő csak egy választ jelölhet be.';
 }
 
 if ($_SESSION["lang"] == 'en'){
@@ -98,6 +101,9 @@ if ($_SESSION["lang"] == 'en'){
         $lang[aktiv] = 'active';
         $lang[kitoltottek] = 'completed';
         $lang[nyelvek] = 'languages';
+        $lang[aszf] = 'Terms and conditions';
+        $lang[vezerlopult] = 'Control panel';
+        $lang[radio_i] = 'The responser can mark only one answer.';
 }
 
 if ($_SESSION["lang"] == 'de'){
@@ -144,6 +150,9 @@ if ($_SESSION["lang"] == 'de'){
         $lang[aktiv] = 'aktiv';
         $lang[kitoltottek] = 'vollendet';
         $lang[nyelvek] = 'Sprachen';
+        $lang[aszf] = 'Allgemeine Geschäftsbedingungen';
+        $lang[vezerlopult] = 'Schalttafel';
+        $lang[radio_i] = 'Kitöltéskor csak egy válasz jelölhető be.';
 }
 
 

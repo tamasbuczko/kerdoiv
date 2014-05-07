@@ -309,7 +309,8 @@ $array = array( 'tartalom'       => $tartalom,
 		'aktivalas'       => $aktivalas,
 		'lejarat'       => $lejarat,
                 'control_box_ki'       => $control_box_ki,
-                'figy_uzenet'   => $figy_uzenet);
+                'figy_uzenet'   => $figy_uzenet,
+                'vezerlopult' => $lang[vezerlopult]);
 
 $oldal = new html_blokk;
 $oldal->load_template_file("templates/ujkerdoiv.html",$array);

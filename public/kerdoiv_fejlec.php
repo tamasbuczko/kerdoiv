@@ -157,12 +157,12 @@ $kerdoiv_fejlec = $kerdoiv_headline.'
                     <div class="szemelyes" style="'.$adat_off.'">                        
                         '.$x_kora.'
                         '.$x_neme.'
-						'.$x_orszag.'
+                        '.$x_orszag.'
                         '.$x_foglalkozas.'
                     </div>';
 
 If (!$kerdoiv_cim){
-   $tartalom = '<div id="koszonjuk">Nincs ilyen kérdőiv!</div>';
+   $tartalom = '<div id="koszonjuk">Nincs ilyen kérdőív!</div>';
    $adat_off = 'display: none;';
    $adat_off2 = 'display: none;';   
 }
