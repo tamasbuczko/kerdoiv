@@ -1,7 +1,7 @@
 <h1>{urlap_cim}</h1>
 <form action="" method="post" enctype="multipart/form-data" class="ujkerdes" >
     <div id="control_box">
-        <h3>Vezérlőpult</h3>
+        <h3>{vezerlopult}</h3>
         <div {control_box_ki}>
         <label>Látható nyelvek:</label>
         {control_en}
@@ -37,27 +37,27 @@
 	<input type="text" name="video_kerdes" value="{video_kerdes}" />
     <label>Típusa</label>
     <div>
-        <label>rádió</label>
+        <label Title="{radio_i}">radio</label>
         <input type="radio" name="tipus" value="radio" {check_radio} />
     </div>
     <div>
-        <label>select</label>
+        <label Title="{select_i}">select</label>
         <input type="radio" name="tipus" value="select" {check_select} />
     </div>
     <div>
-        <label>checkbox</label>
+        <label Title="{checkbox_i}">checkbox</label>
         <input type="radio" name="tipus" value="checkbox" {check_checkbox} />
     </div>
     <div>
-        <label>text</label>
+        <label Title="{text_i}">text</label>
         <input type="radio" name="tipus" value="text" {check_text} />
     </div>
     <div>
-        <label>textarea</label>
+        <label Title="{textarea_i}">textarea</label>
         <input type="radio" name="tipus" value="textarea" {check_textarea} />
     </div>
     <div>
-        <label>ranking</label>
+        <label Title="{ranking_i}">ranking</label>
         <input type="radio" name="tipus" value="ranking" {check_ranking} />
     </div>
     <br style="clear: both;" />

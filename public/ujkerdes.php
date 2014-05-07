@@ -312,9 +312,16 @@ $array = array( 'kerdoiv_sorszam'       => $kerdoiv_sorszam,
                 'hanyadik_kerdes'       => $hanyadik_kerdes,
                 'elozo_kerdes'       => $elozo_kerdes,
                 'kep_kerdes'       => $kep_kerdes,
-				'video_kerdes'       => $video_kerdes,
+		'video_kerdes'       => $video_kerdes,
                 'kovetkezo_kerdes'       => $kovetkezo_kerdes,
-                'control_box_ki'       => $control_box_ki);
+                'control_box_ki'       => $control_box_ki,
+                'radio_i' => $lang[radio_i],
+                'select_i' => $lang[select_i],
+                'checkbox_i' => $lang[checkbox_i],
+                'text_i' => $lang[text_i],
+                'textarea_i' => $lang[textarea_i],
+                'ranking_i' => $lang[ranking_i],
+                'vezerlopult' => $lang[vezerlopult]);
 
 $oldal = new html_blokk;
 $oldal->load_template_file("templates/ujkerdes.html",$array);
