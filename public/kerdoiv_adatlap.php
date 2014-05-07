@@ -38,7 +38,11 @@ $valaszadok_szama = 'A kitöltők száma: '.mysql_num_rows($result2);
 
 //hányan töltötték ki (email-el)
 $result2 = mysql_query("SELECT va.sorszam FROM valaszadasok AS va LEFT JOIN kitoltok AS k ON va.kitolto_sorszam = k.sorszam WHERE va.kerdoiv_sorszam = $kerdoiv_sorszam AND k.email != '' GROUP BY va.kitolto_sorszam");
-$valaszadok_szama_emailes = 'A kitöltők száma (e-mail): '.mysql_num_rows($result2);
+$kitoltok_email = mysql_num_rows($result2);
+if ($kitoltok_email > 0){
+   $kitoltok_link = ' <a href="?p=kitoltok&amp;kerdoiv='.$kerdoiv_sorszam.'">listázás</a>';
+}
+$valaszadok_szama_emailes = 'A kitöltők száma (e-mail): '.$kitoltok_email.$kitoltok_link;
     
 //létrehozás dátuma
 $created_date = 'A létrehozás dátuma: '.$kerdoiv_kelt;
