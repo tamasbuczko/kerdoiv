@@ -22,6 +22,9 @@ $adatkapcsolat->connect();          //az objektum connect fügvényét futatjuk
 $log = new log_db;
 $log->write('x', 'Futás indul...');
 
+//fejlesztés alatti sql szinkronizációk
+require_once('sql_commands.php');
+
 //látogató beléptetése, illetve állapotvizsgálat
 $user = new user;
 $user->login();
