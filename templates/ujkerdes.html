@@ -3,7 +3,7 @@
     <div id="control_box">
         <h3>{vezerlopult}</h3>
         <div {control_box_ki}>
-        <label>Látható nyelvek:</label>
+        <label>{lathato_nyelvek}</label>
         {control_en}
         {control_de}
         {control_hu}
@@ -16,7 +16,7 @@
             <span>{hanyadik_kerdes}/{osszes_kerdes}</span>
             <a href="?p=ujkerdes&id={kovetkezo_kerdes}" /></a>
         </div>
-        <a href="?p=kerdoiv&mod=1&kerdoiv={kerdoiv_sorszam}" class="back">Vissza a kérdőívhez</a>
+        <a href="?p=kerdoiv&mod=1&kerdoiv={kerdoiv_sorszam}" class="back">{vissza}</a>
         <br style="clear: both;" />
     </div>
     <input type="hidden" name="id" value="{id}" />

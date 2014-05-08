@@ -321,6 +321,8 @@ $array = array( 'kerdoiv_sorszam'       => $kerdoiv_sorszam,
                 'text_i' => $lang[text_i],
                 'textarea_i' => $lang[textarea_i],
                 'ranking_i' => $lang[ranking_i],
+                'vissza' => $lang[vissza],
+                'lathato_nyelvek' => $lang[lathato_nyelvek],
                 'vezerlopult' => $lang[vezerlopult]);
 
 $oldal = new html_blokk;

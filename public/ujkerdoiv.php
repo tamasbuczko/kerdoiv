@@ -311,6 +311,9 @@ $array = array( 'kerdoiv_sorszam'       => $kerdoiv_sorszam,
 		'lejarat'       => $lejarat,
                 'control_box_ki'       => $control_box_ki,
                 'figy_uzenet'   => $figy_uzenet,
+                'vissza_a_kerdoivhez' => $lang[vissza_a_kerdoivhez],
+                'vissza' => $lang[vissza],
+                'elkuldes' => $lang[elkuldes],
                 'vezerlopult' => $lang[vezerlopult]);
 
 $oldal = new html_blokk;
