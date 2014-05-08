@@ -4,5 +4,5 @@ $menu_obj->mysql_read($_SESSION["lang"]);
 $menu = $menu_obj->html_code;
 
 if ($_SESSION["sessfelhasznalo"]){
-    $user_nick = '<div id="user_box">Bejelentkezve:<a href="#" alt="profil" title="profil">'.$_SESSION["sessfelhasznalo"].'</a><a href="?logout=1">Kijelentkezés</a></div>';
+    $user_nick = '<div id="user_box">Bejelentkezve:<a href="?p=profil" alt="profil" title="profil">'.$_SESSION["sessfelhasznalo"].'</a><a href="?logout=1">Kijelentkezés</a></div>';
 }

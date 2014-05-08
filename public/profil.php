@@ -1,0 +1,3 @@
+<?php
+
+$tartalom = 'Profil';
