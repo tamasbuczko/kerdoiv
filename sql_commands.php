@@ -59,6 +59,6 @@ if($val == FALSE){
    $result = "
    INSERT INTO `regisztralt` (`sorszam`, `azonosito`, `jelszo`, `email`, `hirlevel`, `jog`, `csoport`, `archiv`, `regisztracio`, `bejelentkezes`, `megjegyzes`) VALUES
    (3, 'AdminZoli', 'e20ffabe4230eed6ba92c6ee9d9618e4', 'info@inkozrt.hu', '1', '1', 1, '0', NULL, NULL, NULL),
-   (24, 'BuczkĂł1', 'a4094997585517ef239386c45f0b0fa5', 'tamasbuczko@gmail.com', '1', '1', 1, '0', NULL, NULL, NULL)";
+   (24, 'BT', 'a4094997585517ef239386c45f0b0fa5', 'tamasbuczko@gmail.com', '1', '1', 1, '0', NULL, NULL, NULL)";
    mysql_query($result);
 }
