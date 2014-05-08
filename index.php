@@ -11,6 +11,10 @@ require_once('class/class.php');
 //funkciók betöltése
 require_once('functions.php');
 
+//Smarty sablonkezelő betöltése
+require_once('smarty.php');
+$smarty = new Smarty();
+
 //teszt
 require_once('public/teszt.php');
 
@@ -109,7 +113,33 @@ $array = array( 'tartalom' => $tartalom,
                 'mentes_gomb' => $mentes_gomb,
                 'aszf' => $lang[aszf],
                 'alcim' => $alcim);
+
+$smarty->assign('tartalom', $tartalom);
+$smarty->assign('body_onload', $body_onload);  
+$smarty->assign('popup_tartalom', $popup_tartalom);
+$smarty->assign('slider', $slider);
+$smarty->assign('head_off', $head_off);
+$smarty->assign('hibauzenet', $hibauzenet);
+$smarty->assign('figy_uzenet', $figy_uzenet);
+$smarty->assign('css', $css);
+$smarty->assign('menu', $menu);
+$smarty->assign('user_nick', $user_nick);
+$smarty->assign('css_valaszto', $css_valaszto);
+$smarty->assign('adat_off', $adat_off);
+$smarty->assign('url_param', $url_param);
+$smarty->assign('orszag_combo', $orszag_combo);
+$smarty->assign('kerdoiv_cim', $kerdoiv_cim);
+$smarty->assign('kerdoiv_leiras', $kerdoiv_leiras);
+$smarty->assign('request_eletkora_value', $request_eletkora_value);
+$smarty->assign('request_neme_value', $request_neme_value);
+$smarty->assign('request_foglalkozas_value', $request_foglalkozas_value);    
+$smarty->assign('request_email_value', $request_email_value);
+$smarty->assign('lang', $lang);
+$smarty->assign('session_lang', $_SESSION["lang"]);
+$smarty->assign('mentes_gomb', $mentes_gomb);
+$smarty->assign('alcim', $alcim);
+$smarty->display('templates/index.tpl');
 	 
-$index_html = new html_blokk;
-$index_html->load_template_file("templates/index.html",$array);
-echo $index_html->html_code;
+#$index_html = new html_blokk;
+#$index_html->load_template_file("templates/index.html",$array);
+#echo $index_html->html_code;

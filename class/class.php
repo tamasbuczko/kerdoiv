@@ -200,6 +200,63 @@ class user{
 	}
 }
 
+class user_admin{
+	public $sorszam;
+	public $nev;
+	public $jog;
+	public $email;
+	public $csoport;
+	public $belephiba;
+	public $html_code;
+
+	function login(){
+		$jel = mysql_real_escape_string($_REQUEST['jelszo']);
+		$azon = mysql_real_escape_string($_REQUEST['azonosito']);
+		if (!$_REQUEST['azonosito']){$azon = $_SESSION["sessfelhasznaloazonosito"];}
+		$jel = md5($jel);
+
+		If ($_REQUEST['logout'] == 1) {
+			unset($_SESSION["sessfelhasznalo"]);
+			unset($_SESSION["qa_user_id"]);
+            unset($_SESSION["qa_user_authority"]);
+			unset($_SESSION["sessfelhasznaloazonosito"]);
+			unset($_SESSION["sessfelhasznalojog"]);
+		}
+
+		If ($_REQUEST['azonosito'] != "") {
+			$result = mysql_query("SELECT sorszam, azonosito, jelszo, jog FROM regisztralt WHERE azonosito = '$azon' AND jelszo = '$jel'");	
+			$s = mysql_fetch_row($result);
+			$mostlep == 1;
+		} else {
+		   if ($_SESSION[qa_user_id]){
+			$result = mysql_query("SELECT sorszam, azonosito, jelszo, jog FROM regisztralt WHERE sorszam = '$_SESSION[sessfelhasznalosorszam]'");	
+			$s = mysql_fetch_row($result);
+		   }
+		}
+			if ($s[2] != ""){
+				$this->sorszam = $s[0];
+				$this->nev = $s[1];
+				$this->jog = $s[3];
+				$this->email = $s[4];
+				$_SESSION["sessfelhasznalo"] = $s[1];
+				$_SESSION["qa_user_id"] = $s[0];
+				$_SESSION["sessfelhasznaloazonosito"] = $s[1];
+				$_SESSION["sessfelhasznalojog"] = $s[3];
+                $_SESSION["qa_user_authority"] = $s[3];
+				$_SESSION["sessfelhasznaloemail"] = $s[4];
+				if ($mostlep){
+				  $loging_db = new log_db;
+				  $loging_db->write($_SESSION["qa_user_id"], 'Bejelentkezés');
+				}
+			} else {
+               If ($_REQUEST['azonosito'] != "") {
+				$_SESSION[messagetodiv] = '<p>Figyelem!</p><ul><li>Rossz felhasználónév, vagy jelszó!</li></ul>';
+               }
+			}
+
+	}
+}
+
 class log_db {
 	public function write($user, $message) {
         $idopont = date("Y-m-d H:i:s");
