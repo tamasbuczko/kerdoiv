@@ -73,12 +73,12 @@ $intro_width = 'width: 400px';
        }
 
 if (($_REQUEST[mod]) AND ($_SESSION[qa_user_id])){
-   $fejlec_szerk = '<a href="?p=ujkerdoiv&amp;id='.$kerdoiv_sorszam.'" class="modosito_gomb" title="kérdőív adatlap módosítása"></a>';
+   $fejlec_szerk = '<a href="?p=ujkerdoiv&amp;id='.$kerdoiv_sorszam.'" class="modosito_gomb" title="kérdőív módosítása"></a>';
    $control_box = '<div id="control_box" '.$control_box_distance.'>
-                            <h3>Vezérlőpult</h3>
+                            <h3>'.$lang[vezerlopult].'</h3>
 							<br />
                             <a href="?p=ujkerdes&amp;kerdoiv='.$kerdoiv_sorszam.'&ujkerdes=x" class="zold_gomb" style="float: left;">Új kérdés rögzítése</a>
-							<a href="?p=ujkerdoiv&amp;id='.$kerdoiv_sorszam.'" class="sarga_gomb" style="float: left;">Kérdőív adatlap</a>
+							<a href="?p=ujkerdoiv&amp;id='.$kerdoiv_sorszam.'" class="sarga_gomb" style="float: left;">Kérdőív módosítása</a>
 							<br /><br />
                             <a href="?p=kerdoiveim" class="back" />vissza</a>
                         </div>

@@ -108,7 +108,8 @@ $array = array( 'tartalom' => $tartalom,
                 'email_bekeres' => $lang[email_bekeres],
                 'session_lang' => $_SESSION["lang"],
                 'mentes_gomb' => $mentes_gomb,
-				'alcim' => $alcim);
+                'aszf' => $lang[aszf],
+                'alcim' => $alcim);
 	 
 $index_html = new html_blokk;
 $index_html->load_template_file("templates/index.html",$array);

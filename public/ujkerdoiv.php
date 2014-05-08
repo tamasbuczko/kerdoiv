@@ -270,7 +270,8 @@ if ($_REQUEST[id]){
     }
 }
 
-$array = array( 'tartalom'       => $tartalom,
+$array = array( 'kerdoiv_sorszam'       => $kerdoiv_sorszam,
+                'tartalom'       => $tartalom,
                 'urlap_cim'       => $urlap_cim,
                 'cim_hu'       => $cim_hu,
                 'leiras_hu'       => $leiras_hu,
