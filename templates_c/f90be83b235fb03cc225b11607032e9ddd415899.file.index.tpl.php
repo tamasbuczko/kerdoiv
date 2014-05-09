@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.14, created on 2014-05-08 21:25:54
+<?php /* Smarty version Smarty-3.1.14, created on 2014-05-09 16:16:44
          compiled from "templates\index.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:26553536bda425c0430-81966018%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'f90be83b235fb03cc225b11607032e9ddd415899' => 
     array (
       0 => 'templates\\index.tpl',
-      1 => 1399576897,
+      1 => 1399645001,
       2 => 'file',
     ),
   ),
@@ -15,6 +15,8 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   'function' => 
   array (
   ),
+  'version' => 'Smarty-3.1.14',
+  'unifunc' => 'content_536bda427f1e71_32036099',
   'variables' => 
   array (
     'session_lang' => 0,
@@ -34,8 +36,6 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'mentes_gomb' => 0,
   ),
   'has_nocache_code' => false,
-  'version' => 'Smarty-3.1.14',
-  'unifunc' => 'content_536bda427f1e71_32036099',
 ),false); /*/%%SmartyHeaderCode%%*/?>
 <?php if ($_valid && !is_callable('content_536bda427f1e71_32036099')) {function content_536bda427f1e71_32036099($_smarty_tpl) {?><!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="<?php echo $_smarty_tpl->tpl_vars['session_lang']->value;?>
@@ -91,7 +91,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 
                 </div>
                        <div id="footer">
-                             <p> © 2014 questionaction.com - Használati és adatkezelési szabályok</p> 
+                             <p> © 2014 questionaction.com - Használati és adatvédelmi szabályok</p> 
                        </div>
 
             </div>

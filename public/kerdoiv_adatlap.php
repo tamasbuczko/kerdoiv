@@ -85,7 +85,7 @@ $array = array( 'kerdoiv_cim'       => $kerdoiv_cim,
                 'zaszlok'   => $zaszlok,
                 'kerdesek_szama'   => $kerdesek_szama,
                 'valaszadok_szama'   => $valaszadok_szama,
-				'valaszadok_szama_emailes'   => $valaszadok_szama_emailes,
+		'valaszadok_szama_emailes'   => $valaszadok_szama_emailes,
                 'created_date'   => $created_date,
                 'activated_date'   => $activated_date,
                 'expire_date'   => $expire_date,
@@ -94,7 +94,12 @@ $array = array( 'kerdoiv_cim'       => $kerdoiv_cim,
                 'kovetkezo_kerdoiv'   => $kovetkezo_kerdoiv,
                 'hanyadik_kerdoiv'   => $hanyadik_kerdoiv,
                 'osszes_kerdoiv'   => $osszes_kerdoiv,
-                'kerdoiv_sorszam'   => $kerdoiv_sorszam);
+                'kerdoiv_sorszam'   => $kerdoiv_sorszam,
+                'eredmenyek' => $lang[eredmenyek],
+                'kitoltes' => $lang[kitoltes],
+                'modositas' => $lang[modositas],
+                'vissza' => $lang[vissza],
+                'vezerlopult' => $lang[vezerlopult]);
 
 $oldal = new html_blokk;
 $oldal->load_template_file("templates/kerdoiv_adatlap.html",$array);

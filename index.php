@@ -138,7 +138,9 @@ $smarty->assign('lang', $lang);
 $smarty->assign('session_lang', $_SESSION["lang"]);
 $smarty->assign('mentes_gomb', $mentes_gomb);
 $smarty->assign('alcim', $alcim);
+$smarty->assign('aszf', $aszf);
 $smarty->display('templates/index.tpl');
+
 	 
 #$index_html = new html_blokk;
 #$index_html->load_template_file("templates/index.html",$array);

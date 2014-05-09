@@ -12,7 +12,7 @@ if ($_SESSION["lang"] == 'hu'){
     $lang[nyelv_valasztas] = 'Nyelv választás';
     $lang[magyar] = 'magyar';
     $lang[angol] = 'angol';
-    $lang[nemet] = 'német';
+    $lang[nemet] = 'német'; 
     $lang[eletkor] = 'Életkor:';
     $lang[neme] = 'Neme:';
     $lang[ferfi] = 'férfi';
