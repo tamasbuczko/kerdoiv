@@ -325,6 +325,12 @@ $array = array( 'kerdoiv_sorszam'       => $kerdoiv_sorszam,
                 'lathato_nyelvek' => $lang[lathato_nyelvek],
                 'vezerlopult' => $lang[vezerlopult]);
 
+$smarty->assign('valaszok2', $valaszok2);
+$smarty->assign('check_radio', $check_radio);
+$smarty->assign('check_select', $check_select);
+$smarty->assign('check_checkbox', $check_checkbox);
+$smarty->assign('lang', $lang);
+        
 $oldal = new html_blokk;
 $oldal->load_template_file("templates/ujkerdes.html",$array);
 $tartalom = $oldal->html_code;

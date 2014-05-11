@@ -88,6 +88,15 @@ $array = array( 'lista_kerdoiveim'       => $lista_kerdoiveim,
                 'nyelvek' => $lang[nyelvek],
                 'figy_uzenet'   => $figy_uzenet);
 
+$smarty->assign('lang', $lang);
+$smarty->assign('nyelv_fejlec',$nyelv_fejlec);
+$smarty->assign('lista_kerdoiveim',$lista_kerdoiveim);
+$smarty->assign('display_none',$display_none);
+$smarty->assign('uzenet',$uzenet);
+$smarty->assign('figy_uzenet',$figy_uzenet);
+                
+$tartalom = $smarty->fetch('templates/kapcsolat.tpl');
+
 $oldal->load_template_file("templates/kerdoiveim.html",$array);
 
 $tartalom = $oldal->html_code;

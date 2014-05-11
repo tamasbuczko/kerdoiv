@@ -78,42 +78,6 @@ if ($_REQUEST['lang'] != ''){
 }
 
 //a teljes oldaltemplate-et feltöltjük és kiiratjuk a böngészőnek(index.html)
-$array = array( 'tartalom' => $tartalom,
-				'body_onload' => $body_onload,  
-                'popup_tartalom' => $popup_tartalom,
-                'slider' => $slider,
-				'head_off' => $head_off,
-                'hibauzenet' => $hibauzenet,
-                'figy_uzenet' => $figy_uzenet,
-				'css' => $css,
-                'menu' => $menu,
-                'user_nick'	=> $user_nick,
-				'css_valaszto' => $css_valaszto,
-				'adat_off' => $adat_off,
-			    'url_param' => $url_param,
-                'orszag_combo' => $orszag_combo,
-                'kerdoiv_cim' => $kerdoiv_cim,
-                'kerdoiv_leiras' => $kerdoiv_leiras,
-                'request_eletkora_value' => $request_eletkora_value,
-                'request_neme_value' => $request_neme_value,
-                'request_foglalkozas_value' => $request_foglalkozas_value,    
-                'request_email_value' => $request_email_value,
-                'nyelv_valasztas' => $lang[nyelv_valasztas],
-                'magyar' => $lang[magyar],
-                'angol' => $lang[angol],
-                'nemet' => $lang[nemet],
-                'eletkor' => $lang[eletkor],
-                'neme' => $lang[neme],
-                'ferfi' => $lang[ferfi],
-                'no' => $lang[no],
-                'orszag' => $lang[orszag],
-                'foglalkozas' => $lang[foglalkozas],
-                'email_bekeres' => $lang[email_bekeres],
-                'session_lang' => $_SESSION["lang"],
-                'mentes_gomb' => $mentes_gomb,
-                'aszf' => $lang[aszf],
-                'alcim' => $alcim);
-
 $smarty->assign('tartalom', $tartalom);
 $smarty->assign('body_onload', $body_onload);  
 $smarty->assign('popup_tartalom', $popup_tartalom);
@@ -138,10 +102,5 @@ $smarty->assign('lang', $lang);
 $smarty->assign('session_lang', $_SESSION["lang"]);
 $smarty->assign('mentes_gomb', $mentes_gomb);
 $smarty->assign('alcim', $alcim);
-$smarty->assign('aszf', $aszf);
-$smarty->display('templates/index.tpl');
 
-	 
-#$index_html = new html_blokk;
-#$index_html->load_template_file("templates/index.html",$array);
-#echo $index_html->html_code;
+$smarty->display('templates/index.tpl');

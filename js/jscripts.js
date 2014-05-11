@@ -81,3 +81,9 @@ function megerosites_x(torolszam, formnev, kerdes) {
 	$("#control_box").css("margin-top", "-"+getheight+"px");
  });
  }
+ 
+ function del_text(id){
+     //if (document.getElementById(id).value == 'Az új kérdőív címe'){
+        //document.getElementById(id).value = '';
+     //}
+ }

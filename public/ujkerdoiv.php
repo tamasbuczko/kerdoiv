@@ -229,7 +229,7 @@ if ($_REQUEST[id]){
         $zaras_enx =  $div_kikapcs;
         $zaras_dex =  $div_kikapcs;
         $checked_hu = 'checked="checked"';
-        $cim_hu = 'Az új kérdőív címe';
+        #$cim_hu = 'Az új kérdőív címe';
         #$cim_hu = $lang[az_uj_kerdoiv_cime];
         $leiras_hu = 'Az új kérdőív rövid leírása';
         $zaras_hu = 'A kérdőív záró szövege';
@@ -270,8 +270,15 @@ if ($_REQUEST[id]){
     }
 }
 
+if ($kerdoiv_sorszam){
+    $vissza_link = '?p=kerdoiv&mod=1&kerdoiv='.$kerdoiv_sorszam;
+} else {
+    $vissza_link = '?p=kerdoiveim';
+}
+
 $array = array( 'kerdoiv_sorszam'       => $kerdoiv_sorszam,
                 'tartalom'       => $tartalom,
+                'vissza_link'       => $vissza_link,
                 'urlap_cim'       => $urlap_cim,
                 'cim_hu'       => $cim_hu,
                 'leiras_hu'       => $leiras_hu,

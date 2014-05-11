@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.14, created on 2014-05-09 16:16:44
+<?php /* Smarty version Smarty-3.1.14, created on 2014-05-11 15:45:43
          compiled from "templates\index.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:26553536bda425c0430-81966018%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'f90be83b235fb03cc225b11607032e9ddd415899' => 
     array (
       0 => 'templates\\index.tpl',
-      1 => 1399645001,
+      1 => 1399815840,
       2 => 'file',
     ),
   ),
@@ -30,6 +30,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'menu' => 0,
     'slider' => 0,
     'tartalom' => 0,
+    'lang' => 0,
     'popup_tartalom' => 0,
     'hibauzenet' => 0,
     'figy_uzenet' => 0,
@@ -91,7 +92,8 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 
                 </div>
                        <div id="footer">
-                             <p> © 2014 questionaction.com - Használati és adatvédelmi szabályok</p> 
+                             <p> © 2014 questionaction.com - <?php echo $_smarty_tpl->tpl_vars['lang']->value['Használati és adatvédelmi szabályok'];?>
+</p> 
                        </div>
 
             </div>

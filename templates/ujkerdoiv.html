@@ -9,7 +9,7 @@
         <img src="graphics/nemet_zaszlo_k.png" id="de" alt="német" onclick="nyelv_kapcs(this.id)" {control_de} />
         </div>
         <input type="submit" name="mentes" value="{mentes}"/>
-        <a href="?p=kerdoiv&mod=1&kerdoiv={kerdoiv_sorszam}" class="back">{vissza}</a>
+        <a href="{vissza_link}" class="back">{vissza}</a>
     </div>
     <input type="hidden" name="sorszam" value="{id}" />
     
@@ -35,15 +35,15 @@
     <label>A kérdőív címe</label>
     <input type="text" name="cim_en" id="cim_en" value="{cim_en}" {cim_enx}/>
     <input type="text" name="cim_de" id="cim_de" value="{cim_de}" {cim_dex}/>
-    <input type="text" name="cim_hu" id="cim_hu" value="{cim_hu}" {cim_hux}/>
+    <input type="text" name="cim_hu" id="cim_hu" value="{cim_hu}" placeholder="Az új kérdőív címe" onclick="del_text(this.id)" {cim_hux}/>
     <label>Leírás</label>
     <textarea name="leiras_en" id="leiras_en"{leiras_enx}>{leiras_en}</textarea>
     <textarea name="leiras_de" id="leiras_de"{leiras_dex}>{leiras_de}</textarea>
-    <textarea name="leiras_hu" id="leiras_hu"{leiras_hux}>{leiras_hu}</textarea>
+    <textarea name="leiras_hu" id="leiras_hu"{leiras_hux} onclick="del_text(this.id)">{leiras_hu}</textarea>
     <label>Zárás</label>
     <textarea name="zaras_en" id="zaras_en"{zaras_enx}>{zaras_en}</textarea>
     <textarea name="zaras_de" id="zaras_de"{zaras_dex}>{zaras_de}</textarea>
-    <textarea name="zaras_hu" id="zaras_hu"{zaras_hux}>{zaras_hu}</textarea>
+    <textarea name="zaras_hu" id="zaras_hu"{zaras_hux} onclick="del_text(this.id)">{zaras_hu}</textarea>
     <br style="clear:both;" />
     <label style="width: 230px; float: left;">A kérdőív eredményei nyilvánosak?</label>
     <input type="checkbox" name="nyilvanos" style="margin-top: 15px;" {checked_nyilvanos} />
