@@ -30,11 +30,11 @@ $zaszlok = 'Kérdőív fordításai ('.$nyelv_db.'): <div id="adatlap_zaszlok">'
 //kérdések száma
 $resultx = mysql_query("SELECT COUNT(sorszam) FROM kerdesek WHERE kerdoiv_sorszam = '$kerdoiv_sorszam'");
 $x = mysql_fetch_row($resultx);
-$kerdesek_szama = 'A kérdések száma: '.$x[0];
+$kerdesek_szama = '<td>A kérdések száma:</td><td>'.$x[0].'</td>';
 
 //hányan töltötték ki
 $result2 = mysql_query("SELECT sorszam FROM valaszadasok WHERE kerdoiv_sorszam = '$kerdoiv_sorszam' GROUP BY kitolto_sorszam");
-$valaszadok_szama = 'A kitöltők száma: '.mysql_num_rows($result2);
+$valaszadok_szama = '<td>A kitöltők száma: </td><td>'.mysql_num_rows($result2).'</td>';
 
 //hányan töltötték ki (email-el)
 $result2 = mysql_query("SELECT va.sorszam FROM valaszadasok AS va LEFT JOIN kitoltok AS k ON va.kitolto_sorszam = k.sorszam WHERE va.kerdoiv_sorszam = $kerdoiv_sorszam AND k.email != '' GROUP BY va.kitolto_sorszam");
@@ -42,23 +42,23 @@ $kitoltok_email = mysql_num_rows($result2);
 if ($kitoltok_email > 0){
    $kitoltok_link = ' <a href="?p=kitoltok&amp;kerdoiv='.$kerdoiv_sorszam.'">listázás</a>';
 }
-$valaszadok_szama_emailes = 'A kitöltők száma (e-mail): '.$kitoltok_email.$kitoltok_link;
+$valaszadok_szama_emailes = '<td>A kitöltők száma (e-mail):</td><td>'.$kitoltok_email.$kitoltok_link.'</td>';
     
 //létrehozás dátuma
-$created_date = 'A létrehozás dátuma: '.$kerdoiv_kelt;
+$created_date = '<td>A létrehozás dátuma:</td><td>'.$kerdoiv_kelt.'</td>';
 
 //aktiválás dátuma
 if (!$kerdoiv_aktivalas){ $kerdoiv_aktivalas = 'még nem aktivált';}
-$activated_date = 'Az aktiválás dátuma: '.$kerdoiv_aktivalas;
+$activated_date = '<td>Az aktiválás dátuma:</td><td>'.$kerdoiv_aktivalas.'</td>';
 
 //lejárat dátuma
 if (!$kerdoiv_lejarat){ $kerdoiv_lejarat = 'határozatlan';}
-$expire_date = 'Az előfizetés lejárati dátuma: korlátlan <br />Kérdőív lejárati dátuma: '.$kerdoiv_lejarat;
+$expire_date = '<tr><td>Az előfizetés lejárati dátuma:</td><td>korlátlan</td></tr><tr><td>Kérdőív lejárati dátuma:</td><td>'.$kerdoiv_lejarat.'</td></tr>';
 
 //nyilvánosság
 if ($kerdoiv_nyilvanos == '0'){ $nyilvanos = 'nem';}
 if ($kerdoiv_nyilvanos == '1'){ $nyilvanos = 'igen';}
-$nyilvanos = 'A kérdőív eredményei nyilvánosak: '.$nyilvanos;
+$nyilvanos = '<td>A kérdőív eredményei nyilvánosak:</td><td>'.$nyilvanos.'</td>';
  
     $result2 = mysql_query("SELECT COUNT(sorszam) FROM kerdoivek WHERE user_id = '$user_id'");
     $b = mysql_fetch_row($result2);
