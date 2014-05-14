@@ -14,6 +14,12 @@ if ($_REQUEST[submit]){
     if ((!$_REQUEST[email]) AND (!$_REQUEST[ok])){
         $figy_uzenet .= '<br /><br />'.$lang['email_cimed_hianyzik'];
     }
+	
+	if ($_REQUEST[email]){
+	  if (!filter_var($_REQUEST[email], FILTER_VALIDATE_EMAIL)) {
+		 $figy_uzenet .= '<br /><br />A megadott e-mail cím helytelen';
+	  }
+	}
 }
 
 if (!$figy_uzenet){

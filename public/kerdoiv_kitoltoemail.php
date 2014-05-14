@@ -4,8 +4,10 @@ $result = mysql_query("SELECT va.sorszam, k.email AS email FROM valaszadasok AS 
 $sor = 0;
 while ($next_element = mysql_fetch_array($result)){
    $sor++;
-   $list .= $next_element[email].'<br />';
-   $emailek[$sor] = $next_element[email];
+   if (filter_var($next_element[email], FILTER_VALIDATE_EMAIL)) {
+	  $list .= $next_element[email].'<br />';
+	  $emailek[$sor] = $next_element[email];
+   }
 }
 
 $sorsol_db= $_REQUEST[sorsol_db];
