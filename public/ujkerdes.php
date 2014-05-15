@@ -288,7 +288,7 @@ if ($_REQUEST[id]){
     }
 }
 
-$array = array( 'kerdoiv_sorszam'       => $kerdoiv_sorszam,
+/*$array = array( 'kerdoiv_sorszam'       => $kerdoiv_sorszam,
                 'urlap_cim'   => $urlap_cim,
                 'valaszok'   => $valaszok,
 		'valaszok2'   => $valaszok2,
@@ -323,14 +323,39 @@ $array = array( 'kerdoiv_sorszam'       => $kerdoiv_sorszam,
                 'ranking_i' => $lang[ranking_i],
                 'vissza' => $lang[vissza],
                 'lathato_nyelvek' => $lang[lathato_nyelvek],
-                'vezerlopult' => $lang[vezerlopult]);
+                'vezerlopult' => $lang[vezerlopult]);*/
 
+$smarty->assign('kerdoiv_sorszam', $kerdoiv_sorszam);
+$smarty->assign('urlap_cim', $urlap_cim);
+$smarty->assign('valaszok', $valaszok);
 $smarty->assign('valaszok2', $valaszok2);
 $smarty->assign('check_radio', $check_radio);
 $smarty->assign('check_select', $check_select);
 $smarty->assign('check_checkbox', $check_checkbox);
+$smarty->assign('check_text', $check_text);
+$smarty->assign('check_ranking', $check_ranking);
+$smarty->assign('id', $_REQUEST[id]);
+$smarty->assign('kerdes_hux', $kerdes_hux);
+$smarty->assign('kerdes_enx', $kerdes_enx);
+$smarty->assign('kerdes_dex', $kerdes_dex);
+$smarty->assign('kerdes_szoveg_hu', $kerdes_szoveg_hu);
+$smarty->assign('kerdes_szoveg_en', $kerdes_szoveg_en);
+$smarty->assign('kerdes_szoveg_de', $kerdes_szoveg_de);
+$smarty->assign('control_hu', $control_hu);
+$smarty->assign('control_en', $control_en);
+$smarty->assign('control_de', $control_de);
+$smarty->assign('osszes_kerdes', $osszes_kerdes);
+$smarty->assign('hanyadik_kerdes', $hanyadik_kerdes);
+$smarty->assign('elozo_kerdes', $elozo_kerdes);
+$smarty->assign('kep_kerdes', $kep_kerdes);
+$smarty->assign('video_kerdes', $video_kerdes);
+$smarty->assign('kovetkezo_kerdes', $kovetkezo_kerdes);
+$smarty->assign('control_box_ki', $control_box_ki);
+$smarty->assign('check_checkbox', $check_checkbox);
 $smarty->assign('lang', $lang);
-        
-$oldal = new html_blokk;
-$oldal->load_template_file("templates/ujkerdes.html",$array);
-$tartalom = $oldal->html_code;
+
+$tartalom = $smarty->fetch('templates/ujkerdes.tpl');
+
+//$oldal = new html_blokk;
+//$oldal->load_template_file("templates/ujkerdes.html",$array);
+//$tartalom = $oldal->html_code;

@@ -891,12 +891,12 @@ margin-left: 20px;
     color: #333 !important;
     font-size: 14px;
     text-decoration: none;
-	clear: both;
-	float: right;
-	width: 100%;
-	text-align: right;
-	margin: 10px 0px 0px 0px;
-	border-top: 1px solid #bfbfbf;
+    clear: both;
+    float: right;
+    width: 100%;
+    text-align: right;
+    margin: 10px 0px 0px 0px;
+    border-top: 1px solid #bfbfbf;
 }
 
 #control_box a:hover{
@@ -905,14 +905,18 @@ margin-left: 20px;
 
 .sarga_gomb{
     background-color: #CC9900 !important;
-	text-decoration: none;
-	color: #fefefe;
-	padding: 8px 10px 8px 10px;
-	text-align: center;
-	width: 120px;
-	font-family: 'Roboto_C', Arial;
+    text-decoration: none;
+    color: #fefefe;
+    padding: 8px 10px 8px 10px;
+    text-align: center;
+    width: 120px;
+    font-family: 'Roboto_C', Arial;
     font-size: 14px;
-	border-radius: 8px;
+    border-radius: 8px;
+}
+
+.sarga_gomb:first-letter{
+    text-transform: uppercase;
 }
 
 .sarga_gomb:hover{

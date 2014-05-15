@@ -77,8 +77,9 @@ if (($_REQUEST[mod]) AND ($_SESSION[qa_user_id])){
    $control_box = '<div id="control_box" '.$control_box_distance.'>
                             <h3>'.$lang[vezerlopult].'</h3>
 							<br />
+                            <a href="?p=kerdoiv_adatlap&kerdoiv='.$kerdoiv_sorszam.'" class="sarga_gomb" style="float: left; margin-bottom: 20px;">'.$lang['kérdőív adatlap'].'</a>
                             <a href="?p=ujkerdes&amp;kerdoiv='.$kerdoiv_sorszam.'&ujkerdes=x" class="zold_gomb" style="float: left;">'.$lang[uj_kerdes_rogzitese].'</a>
-							<a href="?p=ujkerdoiv&amp;id='.$kerdoiv_sorszam.'" class="sarga_gomb" style="float: left;">'.$lang[kerdoiv_modositasa].'</a>
+                            <a href="?p=ujkerdoiv&amp;id='.$kerdoiv_sorszam.'" class="sarga_gomb" style="float: left;">'.$lang[kerdoiv_modositasa].'</a>
 							<br /><br />
                             <a href="?p=kerdoiveim" class="back" />'.$lang[vissza].'</a>
                         </div>

@@ -34,7 +34,7 @@ while ($next_element = mysql_fetch_array($result)){
    }
    
    if ($nyelv_db > 1){
-	  $nyelv_fejlec = '<th>'.$lang[nyelvek].'</th>';
+	  $nyelv_fejlec = '<th>'.$lang['nyelvek'].'</th>';
 	  $zaszlok = $zaszlo_en.$zaszlo_de.$zaszlo_hu;
    } else {
 	  $zaszlok = '';
@@ -74,7 +74,7 @@ if ($db_kerdoivek == 0){
 
 $oldal = new html_blokk;
 
-$array = array( 'lista_kerdoiveim'       => $lista_kerdoiveim,
+/*$array = array( 'lista_kerdoiveim'       => $lista_kerdoiveim,
 		'nyelv_fejlec'       => $nyelv_fejlec,
                 'uj_kerdoiv_rogzitese'=> $lang[uj_kerdoiv_rogzitese], 
                 'cim'       => $lang[cim],
@@ -86,7 +86,7 @@ $array = array( 'lista_kerdoiveim'       => $lista_kerdoiveim,
 		'uzenet' => $uzenet,
                 'kitoltottek'       => $lang[kitoltottek],
                 'nyelvek' => $lang[nyelvek],
-                'figy_uzenet'   => $figy_uzenet);
+                'figy_uzenet'   => $figy_uzenet);*/
 
 $smarty->assign('lang', $lang);
 $smarty->assign('nyelv_fejlec',$nyelv_fejlec);
@@ -95,9 +95,9 @@ $smarty->assign('display_none',$display_none);
 $smarty->assign('uzenet',$uzenet);
 $smarty->assign('figy_uzenet',$figy_uzenet);
                 
-$tartalom = $smarty->fetch('templates/kapcsolat.tpl');
+$tartalom = $smarty->fetch('templates/kerdoiveim.tpl');
 
-$oldal->load_template_file("templates/kerdoiveim.html",$array);
+//$oldal->load_template_file("templates/kerdoiveim.html",$array);
 
-$tartalom = $oldal->html_code;
+//$tartalom = $oldal->html_code;
 ?>

@@ -10,9 +10,9 @@ if ($_REQUEST['lang'] != ''){
 
 $result = mysql_query("SELECT hu, en, de, ro FROM szotar");
 while ($next_element = mysql_fetch_array($result)){
-   $hu = $next_element['hu'];
-   $nyelv = $_SESSION[lang];
-   $lang[$hu] = $next_element[$nyelv];
+   $hu = $next_element['hu']; //a magyar szó
+   $nyelv = $_SESSION[lang]; //milyen nyelven fut az oldal
+   $lang[$hu] = $next_element[$nyelv]; //$lang[nyelvek] = $next_element[en];
 }
 
 if ($_SESSION["lang"] == 'hu'){
