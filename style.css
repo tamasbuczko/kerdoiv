@@ -1041,12 +1041,23 @@ margin-left: 20px;
 }
 
 #nyilvanos_kerdoivek{
-   width: 380px;
+   width: 450px;
    float: left;
 }
 
 #nyilvanos_kerdoivek a{
     display: block;
+	color: #333;
+	text-decoration: none;
+}
+
+#nyilvanos_kerdoivek a:hover{
+   color: #777;
+}
+
+.nyilvanos_link{
+   float: right;
+   margin-top: 20px;
 }
 
 .szovegblokk{
