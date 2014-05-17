@@ -3,6 +3,15 @@ $result = mysql_query ("SELECT sorszam, status, nyilvanos, user_id FROM kerdoive
 $a = mysql_fetch_array($result);
 
 //be van-e lépve user és szerkeszteni akar
+if ((!$_SESSION[qa_user_id])AND(!$_REQUEST[mod])){
+   if ($a[status] == '1'){
+	  $jogosult = 1;
+   } else {
+	  $tartalom = 'Nincs jogosultsága a kérdőív szerkesztéséhez!';
+   }
+}
+
+//be van-e lépve user és szerkeszteni akar
 if (($_SESSION[qa_user_id])AND($_REQUEST[mod])){
    if ($_SESSION[qa_user_id] == $a[user_id]){
 	  $jogosult = 1;

@@ -30,7 +30,7 @@
 	  <div id="frame">
 		 <div id="head"{$head_off}>
 			<div id="head_menu">
-			   <a href="?" id="logo"></a>
+			   <a href="?" id="logo"></a>}
 			   <div id="menu">
 				  {$menu}
 			   </div>
