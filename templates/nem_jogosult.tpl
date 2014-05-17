@@ -1,0 +1,1 @@
+Nem jogosult a kérdés szerkesztéséhez!

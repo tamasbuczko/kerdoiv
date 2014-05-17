@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.14, created on 2014-05-15 19:40:59
+<?php /* Smarty version Smarty-3.1.14, created on 2014-05-17 19:21:28
          compiled from "templates\ujkerdes.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:258845374fc2b1eabd2-48848554%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'b1b1d43fe17613717d088137f82eaee7dbc3ccf3' => 
     array (
       0 => 'templates\\ujkerdes.tpl',
-      1 => 1400175655,
+      1 => 1400345729,
       2 => 'file',
     ),
   ),
@@ -15,6 +15,8 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   'function' => 
   array (
   ),
+  'version' => 'Smarty-3.1.14',
+  'unifunc' => 'content_5374fc2bae4277_54985124',
   'variables' => 
   array (
     'urlap_cim' => 0,
@@ -46,8 +48,6 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'valaszok2' => 0,
   ),
   'has_nocache_code' => false,
-  'version' => 'Smarty-3.1.14',
-  'unifunc' => 'content_5374fc2bae4277_54985124',
 ),false); /*/%%SmartyHeaderCode%%*/?>
 <?php if ($_valid && !is_callable('content_5374fc2bae4277_54985124')) {function content_5374fc2bae4277_54985124($_smarty_tpl) {?><h1><?php echo $_smarty_tpl->tpl_vars['urlap_cim']->value;?>
 </h1>

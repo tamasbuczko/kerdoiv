@@ -1,4 +1,5 @@
 <?php
+require_once ('public/jogosultsag_ujkerdoiv.php');
 
 if ($_REQUEST[fejleckeptorles]){
    $sql = "UPDATE kerdoivek SET fejlec_kep='' WHERE sorszam = $_REQUEST[id]";
@@ -324,5 +325,9 @@ $array = array( 'kerdoiv_sorszam'       => $kerdoiv_sorszam,
                 'vezerlopult' => $lang[vezerlopult]);
 
 $oldal = new html_blokk;
-$oldal->load_template_file("templates/ujkerdoiv.html",$array);
+if ($jogosult){
+   $oldal->load_template_file("templates/ujkerdoiv.html",$array);}
+else {
+   $oldal->load_template_file("templates/nem_jogosult.tpl",$array);	  
+}
 $tartalom = $oldal->html_code;

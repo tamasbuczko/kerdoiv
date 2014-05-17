@@ -1,4 +1,5 @@
 <?php
+require_once ('public/jogosultsag_ujkerdes.php');
 
 //válasz törlése
 if ($_REQUEST[torles]){
@@ -354,7 +355,11 @@ $smarty->assign('control_box_ki', $control_box_ki);
 $smarty->assign('check_checkbox', $check_checkbox);
 $smarty->assign('lang', $lang);
 
-$tartalom = $smarty->fetch('templates/ujkerdes.tpl');
+if ($jogosult){
+   $tartalom = $smarty->fetch('templates/ujkerdes.tpl');
+} else {
+   $tartalom = $smarty->fetch('templates/nem_jogosult.tpl');
+}
 
 //$oldal = new html_blokk;
 //$oldal->load_template_file("templates/ujkerdes.html",$array);

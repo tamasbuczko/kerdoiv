@@ -9,34 +9,33 @@ if (!is_numeric($_REQUEST[kerdoiv])){
 	  $csak_kerdoiv = 'on';
    }
 }
+require_once ('public/jogosultsag_kerdoiv.php');
 
-include('public/kerdoiv_hiba.php');
-include('public/kerdoiv_fejlec.php');
+if ($jogosult){
+   require_once('public/kerdoiv_hiba.php');
+   require_once('public/kerdoiv_fejlec.php');
 
-//példák
-#include('public/peldak.php');
+   $kerdes_darab = 0;
+   $figyelmeztetes = 0;
 
-$kerdes_darab = 0;
-$figyelmeztetes = 0;
+   require_once('public/kerdoiv_generator.php');
 
-include('public/kerdoiv_generator.php');
+   require_once('public/kerdoiv_figyelmeztetesek.php');
 
-include('public/kerdoiv_figyelmeztetesek.php');
+   if (($_REQUEST[submit]) AND ($hiba == '0')){
+	   $mentes_gomb = '<div id="mentes_gomb">'.$lang[mentes].'</div>';
+   }
 
-if (($_REQUEST[submit]) AND ($hiba == '0')){
-    $mentes_gomb = '<div id="mentes_gomb">'.$lang[mentes].'</div>';
-}
+   if (($_REQUEST[submit]) AND ($hiba == '0') AND ($_REQUEST[b] == '1')){ //biztosan ment, megnyomta a mentés gombot
+	  unset($figy_uzenet);
+	  require_once('public/kerdoiv_mentes.php');
+	  header("Location: index.php?ok=1");
+   }
 
-if (($_REQUEST[submit]) AND ($hiba == '0') AND ($_REQUEST[b] == '1')){ //biztosan ment, megnyomta a mentés gombot
-   unset($figy_uzenet);
-   include('public/kerdoiv_mentes.php');
-   header("Location: index.php?ok=1");
-}
-
-if ($_REQUEST[ok] == 1){
-   $kerdes_blokk = '<div id="koszonjuk">'.$lang['koszonjuk_valaszaid'].'</div>';
-   $adat_off = 'display: none;'; //személyes adatlap kikapcsolása
+   if ($_REQUEST[ok] == 1){
+	  $kerdes_blokk = '<div id="koszonjuk">'.$lang['koszonjuk_valaszaid'].'</div>';
+	  $adat_off = 'display: none;'; //személyes adatlap kikapcsolása
+   }
 }
 
 $tartalom .= $kerdes_blokk;
-?>
