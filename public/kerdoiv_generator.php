@@ -277,5 +277,16 @@ $slider_script = '';
 $kerdes_blokk = $kerdoiv_fejlec.'<ul id="slider2">'.$kerdes_blokk.'</ul>'.$uj_kerdes_gomb.
                 '<br />'.$kerdoiv_also.$email_es_elkuldes_blokk.'
 		</form>
-                </div>'.$slider_script;
+                </div>'.$slider_script.''
+		. '
+<br style="clear: both;"/>
+<a class="a2a_dd" href="http://www.addtoany.com/share_save?linkurl=www.questionaction.com/?p=kerdoiv&kerdoiv='.$_REQUEST[kerdoiv].';linkname=QuestionAction.com"><img src="http://static.addtoany.com/buttons/share_save_171_16.png" width="171" height="16" border="0" alt="Share"/></a>
+<script type="text/javascript">
+var a2a_config = a2a_config || {};
+a2a_config.linkname = "Questionaction.com";
+a2a_config.linkurl = "www.Questionaction.com/?p=kerdoiv&kerdoiv='.$_REQUEST[kerdoiv].'"
+a2a_config.num_services = 6;
+</script>
+<script type="text/javascript" src="http://static.addtoany.com/menu/page.js"></script>
+';
 ?>
