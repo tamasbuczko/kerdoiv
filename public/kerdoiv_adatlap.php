@@ -82,7 +82,7 @@ $nyilvanos = '<td>A kérdőív eredményei nyilvánosak:</td><td>'.$nyilvanos.'<
     if ($_REQUEST[kerdoiv] == $kerdoivekx[1]){$elozo_kerdoiv = end($kerdoivekx);}
 
 
-$array = array( 'kerdoiv_cim'       => $kerdoiv_cim,
+/*$array = array( 'kerdoiv_cim'       => $kerdoiv_cim,
                 'kerdoiv_leiras'   => $kerdoiv_leiras,
                 'zaszlok'   => $zaszlok,
                 'kerdesek_szama'   => $kerdesek_szama,
@@ -101,10 +101,29 @@ $array = array( 'kerdoiv_cim'       => $kerdoiv_cim,
                 'kitoltes' => $lang[kitoltes],
                 'modositas' => $lang[modositas],
                 'vissza' => $lang[vissza],
-                'vezerlopult' => $lang[vezerlopult]);
+                'vezerlopult' => $lang[vezerlopult]);*/
+
+$smarty->assign('lang', $lang);
+$smarty->assign('kerdoiv_cim',$kerdoiv_cim);
+$smarty->assign('kerdoiv_leiras',$kerdoiv_leiras);
+$smarty->assign('zaszlok',$zaszlok);
+$smarty->assign('kerdesek_szama',$kerdesek_szama);
+$smarty->assign('valaszadok_szama',$valaszadok_szama);
+$smarty->assign('valaszadok_szama_emailes',$valaszadok_szama_emailes);
+$smarty->assign('created_date',$created_date);
+$smarty->assign('activated_date',$activated_date);
+$smarty->assign('expire_date',$expire_date);
+$smarty->assign('nyilvanos',$nyilvanos);
+$smarty->assign('elozo_kerdoiv',$elozo_kerdoiv);
+$smarty->assign('kovetkezo_kerdoiv',$kovetkezo_kerdoiv);
+$smarty->assign('hanyadik_kerdoiv',$hanyadik_kerdoiv);
+$smarty->assign('osszes_kerdoiv',$osszes_kerdoiv);
+$smarty->assign('kerdoiv_sorszam',$kerdoiv_sorszam);
+$smarty->assign('elozo_kerdoiv',$elozo_kerdoiv);
+
 
 $oldal = new html_blokk;
+
 if ($jogosult){
-    $oldal->load_template_file("templates/kerdoiv_adatlap.html",$array);
-    $tartalom = $oldal->html_code;
+    $tartalom = $smarty->fetch('templates/kerdoiv_adatlap.tpl');
 }

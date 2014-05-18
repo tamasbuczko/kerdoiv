@@ -901,7 +901,20 @@ margin-left: 20px;
 }
 
 #control_box a:hover{
-    text-decoration: underline;
+    text-decoration: none !important;
+    color: #777;
+}
+
+.adatlap_pult{
+    text-decoration: none !important;
+    color: #444;
+    
+}
+
+.adatlap_pult img{
+   width: 30px;
+   margin-top: 5px;
+  
 }
 
 .sarga_gomb{
