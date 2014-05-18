@@ -1221,3 +1221,25 @@ margin-left: 20px;
 .csomagok {
     background-color: #33aa33;
 }
+
+.szemelyes_szures {
+    border: 1px solid #cecece;
+    width: 200px;
+    height: 100px;
+    overflow-y: auto;
+    margin: 0px 10px 10px 0px;
+    float: left;
+}
+
+.szemelyes_szures p{
+    float: left;
+    width: 158px;
+    height: 20px;
+    margin: 2px 0px 2px 0px;
+}
+
+.szemelyes_szures img{
+    width: 20px;
+    margin: 2px 0px 2px 0px;
+    float: right;
+}

@@ -1,4 +1,6 @@
 <?php
+require_once ('public/jogosultsag_adatlap.php');
+
 $kerdoiv_sorszam = $_REQUEST[kerdoiv];
 $user_id = $_SESSION["qa_user_id"];
 
@@ -102,5 +104,7 @@ $array = array( 'kerdoiv_cim'       => $kerdoiv_cim,
                 'vezerlopult' => $lang[vezerlopult]);
 
 $oldal = new html_blokk;
-$oldal->load_template_file("templates/kerdoiv_adatlap.html",$array);
-$tartalom = $oldal->html_code;
+if ($jogosult){
+    $oldal->load_template_file("templates/kerdoiv_adatlap.html",$array);
+    $tartalom = $oldal->html_code;
+}

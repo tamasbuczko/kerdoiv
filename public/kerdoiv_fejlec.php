@@ -42,6 +42,30 @@ while ($next_element = mysql_fetch_array($result)){
 	$vegzettseg_combo .= '<option value="' . $next_element[id] . '" '.$request_vegzettseg.'>' . $next_element[$vegzettseg_nyelv] . '</option>';
 }
 
+#családi állapot beolvasása comboboxhoz
+$result = mysql_query("SELECT id, nev_hu, nev_en, nev_de FROM dat_csaladiallapot ORDER BY nev_hu");
+while ($next_element = mysql_fetch_array($result)){
+        if ($_REQUEST[csaladiallapot] == $next_element[id]){//Ez végzi a kiválasztott elem megtartását.
+            $request_csaladiallapot = 'selected="selected"';
+        } else {
+            $request_csaladiallapot = '';
+        }
+        $csaladiall_nyelv = 'nev_'.$_SESSION[lang];
+	$csaladiallapot_combo .= '<option value="' . $next_element[id] . '" '.$request_csaladiallapot.'>' . $next_element[$csaladiall_nyelv] . '</option>';
+}
+
+#jövedelmek beolvasása comboboxhoz
+$result = mysql_query("SELECT id, nev_hu, nev_en, nev_de FROM dat_jovedelmek ORDER BY nev_hu");
+while ($next_element = mysql_fetch_array($result)){
+        if ($_REQUEST[jovedelmek] == $next_element[id]){//Ez végzi a kiválasztott elem megtartását.
+            $request_jovedelmek = 'selected="selected"';
+        } else {
+            $request_jovedelmek = '';
+        }
+        $jovedelmek_nyelv = 'nev_'.$_SESSION[lang];
+	$jovedelmek_combo .= '<option value="' . $next_element[id] . '" '.$request_jovedelmek.'>' . $next_element[$jovedelmek_nyelv] . '</option>';
+}
+
 //a választott nyelv szerinti kérdőív cím és leírás betöltése
 $resultc = mysql_query ("SELECT cim_hu, cim_en, cim_de, leiras_hu, leiras_en, leiras_de, hu, en, de, fejlec_kep, css_id, zaras_hu, zaras_en, zaras_de, status FROM kerdoivek WHERE sorszam = '$kerdoiv_sorszam' ");
 $next_elementc = mysql_fetch_array ($resultc);
@@ -123,11 +147,16 @@ if ($kapcs_kora == '1'){
                         <select name="eletkora">
                             '.$request_eletkora_value.'
                             <option value="0">---</option>
-                            <option value="18">&lt;18</option>
-                            <option value="18-25">18-25</option>
-                            <option value="25-35">25-35</option>
+                            <option value="14">&lt;14</option>
+                            <option value="14-18">14-18</option>
+                            <option value="18-21">18-21</option>
+                            <option value="21-25">21-25</option>
+                            <option value="25-30">25-30</option>
+                            <option value="30-35">30-35</option>
                             <option value="35-45">35-45</option>
-                            <option value="45">45&lt;</option>
+                            <option value="45-55">45-55</option>
+                            <option value="55-65">55-65</option>
+                            <option value="65">65&lt;</option>
                         </select><br />';
 }
 
@@ -190,7 +219,7 @@ if ($kapcs_orszag == '1'){
 }
 
 #if ($kapcs_vegzettseg == '1'){
-   $x_vegzettseg = ' <label>'.$lang['végzettség'].'</label>
+   $x_vegzettseg = ' <label>'.$lang['Végzettség:'].'</label>
                         <select name="vegzettseg">
                             <option value="0">---</option>
                             '.$vegzettseg_combo.'
@@ -198,7 +227,23 @@ if ($kapcs_orszag == '1'){
                         <br />';
 #}
 
-
+#if ($kapcs_csaladiallapot == '1'){
+   $x_csaladiallapot = ' <label>'.$lang['Családi állapot:'].'</label>
+                        <select name="csaladiallapot">
+                            <option value="0">---</option>
+                            '.$csaladiallapot_combo.'
+                        </select>
+                        <br />';
+#}
+   
+#if ($kapcs_csaladiallapot == '1'){
+   $x_jovedelmek = ' <label>'.$lang['Jövedelmek:'].'</label>
+                        <select name="jovedelmek">
+                            <option value="0">---</option>
+                            '.$jovedelmek_combo.'
+                        </select>
+                        <br />';
+#}   
 
 $kerdoiv_fejlec = $kerdoiv_headline.'
                   <div id="intro">
@@ -226,6 +271,8 @@ $kerdoiv_fejlec = $kerdoiv_headline.'
                         '.$x_orszag.'
                         '.$x_foglalkozas.'
                         '.$x_vegzettseg.'
+                        '.$x_csaladiallapot.'
+                        '.$x_jovedelmek.'
                     </div>';
 
 If (!$kerdoiv_cim){
