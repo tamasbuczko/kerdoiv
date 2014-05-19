@@ -8,7 +8,7 @@
         <img src="graphics/angol_zaszlo_k.png" id="en" alt="angol" onclick="nyelv_kapcs(this.id)" {$control_en} />
         <img src="graphics/nemet_zaszlo_k.png" id="de" alt="német" onclick="nyelv_kapcs(this.id)" {$control_de} />
         </div>
-        <input type="submit" name="mentes" value="{$lang['mentés']}"/>
+        <input type="submit" name="mentes" value="{$lang['Mentés']}"/>
         <a href="{$vissza_link}" class="back">{$lang['vissza']}</a>
     </div>
     <input type="hidden" name="sorszam" value="{$id}" />

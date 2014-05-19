@@ -3,7 +3,7 @@
     <div id="control_box">
         <h3>{$lang['Vezérlőpult']}</h3>
         <div {$control_box_ki}>
-        <label>{$lang['Látható nyelvek']}</label>
+        <label>{$lang['Látható nyelvek:']}</label>
         {$control_en}
         {$control_de}
         {$control_hu}
