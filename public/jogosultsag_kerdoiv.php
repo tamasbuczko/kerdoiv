@@ -1,6 +1,10 @@
 <?php
-$result = mysql_query ("SELECT sorszam, status, nyilvanos, user_id FROM kerdoivek WHERE sorszam = '$_REQUEST[kerdoiv]' ");
-$a = mysql_fetch_array($result);
+if ($_REQUEST[kerdoiv]){
+   $result = mysql_query ("SELECT sorszam, status, nyilvanos, user_id FROM kerdoivek WHERE sorszam = '$_REQUEST[kerdoiv]' ");
+   $a = mysql_fetch_array($result);
+} else {
+   $a[user_id] = $_SESSION[qa_user_id];
+}
 
 //be van-e lépve user és szerkeszteni akar
 if ((!$_SESSION[qa_user_id])AND(!$_REQUEST[mod])){
