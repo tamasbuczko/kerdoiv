@@ -277,7 +277,7 @@ if ($kerdoiv_sorszam){
     $vissza_link = '?p=kerdoiveim';
 }
 
-$array = array( 'kerdoiv_sorszam'       => $kerdoiv_sorszam,
+/*$array = array( 'kerdoiv_sorszam'       => $kerdoiv_sorszam,
                 'tartalom'       => $tartalom,
                 'vissza_link'       => $vissza_link,
                 'urlap_cim'       => $urlap_cim,
@@ -322,12 +322,63 @@ $array = array( 'kerdoiv_sorszam'       => $kerdoiv_sorszam,
                 'vissza_a_kerdoivhez' => $lang[vissza_a_kerdoivhez],
                 'vissza' => $lang[vissza],
                 'mentes' => $lang[mentes],
-                'vezerlopult' => $lang[vezerlopult]);
+                'vezerlopult' => $lang[vezerlopult]);*/
 
 $oldal = new html_blokk;
+
+$smarty->assign('lang', $lang);
+$smarty->assign('kerdoiv_sorszam', $kerdoiv_sorszam);
+$smarty->assign('tartalom', $tartalom);
+$smarty->assign('vissza_link', $vissza_link);
+$smarty->assign('urlap_cim', $urlap_cim);
+$smarty->assign('cim_hu', $cim_hu);
+$smarty->assign('leiras_hu', $leiras_hu);
+$smarty->assign('zaras_hu', $zaras_hu);
+$smarty->assign('cim_en', $cim_en);
+$smarty->assign('leiras_en', $leiras_en);
+$smarty->assign('zaras_en', $zaras_en);
+$smarty->assign('cim_de', $cim_de);
+$smarty->assign('leiras_de', $leiras_de);
+$smarty->assign('zaras_de', $zaras_de);
+$smarty->assign('id', $_REQUEST[id]);
+$smarty->assign('checked_hu', $checked_hu);
+$smarty->assign('checked_en', $checked_en);
+$smarty->assign('checked_de', $checked_de);
+$smarty->assign('checked_nyilvanos', $checked_nyilvanos);
+$smarty->assign('cim_hux', $cim_hux);
+$smarty->assign('cim_enx', $cim_enx);
+$smarty->assign('cim_dex', $cim_dex);
+$smarty->assign('kep_fejlec', $kep_fejlec);
+$smarty->assign('leiras_hux', $leiras_hux);
+$smarty->assign('leiras_enx', $leiras_enx);
+$smarty->assign('leiras_dex', $leiras_dex);
+$smarty->assign('zaras_hux', $zaras_hux);
+$smarty->assign('zaras_enx', $zaras_enx);
+$smarty->assign('zaras_dex', $zaras_dex);
+$smarty->assign('checked_neme', $checked_neme);
+$smarty->assign('checked_kora', $checked_kora);
+$smarty->assign('checked_orszag', $checked_orszag);
+$smarty->assign('checked_foglalkozas', $checked_foglalkozas);
+$smarty->assign('checked_stilus_alap', $checked_stilus_alap);
+$smarty->assign('checked_stilus_1', $checked_stilus_1);
+$smarty->assign('checked_stilus_2', $checked_stilus_2);
+$smarty->assign('control_hu', $control_hu);
+$smarty->assign('control_en', $control_en);
+$smarty->assign('control_de', $control_de);
+$smarty->assign('aktivalas', $aktivalas);
+$smarty->assign('lejarat', $lejarat);
+$smarty->assign('control_box_ki', $control_box_ki);
+$smarty->assign('figy_uzenet', $figy_uzenet);
+
 if ($jogosult){
+   $tartalom = $smarty->fetch('templates/ujkerdoiv.tpl');
+} else {
+   $tartalom = $smarty->fetch('templates/nem_jogosult.tpl');
+}
+
+/*if ($jogosult){
    $oldal->load_template_file("templates/ujkerdoiv.html",$array);}
 else {
    $oldal->load_template_file("templates/nem_jogosult.tpl",$array);	  
 }
-$tartalom = $oldal->html_code;
+$tartalom = $oldal->html_code;*/
