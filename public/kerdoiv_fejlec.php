@@ -66,6 +66,30 @@ while ($next_element = mysql_fetch_array($result)){
 	$jovedelmek_combo .= '<option value="' . $next_element[id] . '" '.$request_jovedelmek.'>' . $next_element[$jovedelmek_nyelv] . '</option>';
 }
 
+#életkorok beolvasása comboboxhoz
+$result = mysql_query("SELECT id, nev_hu, nev_en, nev_de FROM dat_eletkor ORDER BY nev_hu");
+while ($next_element = mysql_fetch_array($result)){
+        if ($_REQUEST[neme] == $next_element[id]){//Ez végzi a kiválasztott elem megtartását.
+            $request_neme = 'selected="selected"';
+        } else {
+            $request_neme = '';
+        }
+        $neme_nyelv = 'nev_'.$_SESSION[lang];
+	$eletkora_combo .= '<option value="' . $next_element[id] . '" '.$request_neme.'>' . $next_element[$neme_nyelv] . '</option>';
+}
+
+#nemek beolvasása comboboxhoz
+$result = mysql_query("SELECT id, nev_hu, nev_en, nev_de FROM dat_nemek ORDER BY nev_hu");
+while ($next_element = mysql_fetch_array($result)){
+        if ($_REQUEST[eletkora] == $next_element[id]){//Ez végzi a kiválasztott elem megtartását.
+            $request_eletkora = 'selected="selected"';
+        } else {
+            $request_eletkora = '';
+        }
+        $eletkora_nyelv = 'nev_'.$_SESSION[lang];
+	$neme_combo .= '<option value="' . $next_element[id] . '" '.$request_eletkora.'>' . $next_element[$eletkora_nyelv] . '</option>';
+}
+
 //a választott nyelv szerinti kérdőív cím és leírás betöltése
 $resultc = mysql_query ("SELECT cim_hu, cim_en, cim_de, leiras_hu, leiras_en, leiras_de, hu, en, de, fejlec_kep, css_id, zaras_hu, zaras_en, zaras_de, status FROM kerdoivek WHERE sorszam = '$kerdoiv_sorszam' ");
 $next_elementc = mysql_fetch_array ($resultc);
@@ -81,13 +105,16 @@ if ($kerdoiv_css > 0){
    $kerdoiv_css = $next_elementcss[file];
 }
 
-$resultx = mysql_query ("SELECT neme, kora, orszag, varos, foglalkozas FROM kerdoiv_szemelyesadat WHERE kerdoiv_sorszam = '$kerdoiv_sorszam'");
+$resultx = mysql_query ("SELECT neme, kora, orszag, varos, foglalkozas, vegzettseg, jovedelem, csaladiallapot FROM kerdoiv_szemelyesadat WHERE kerdoiv_sorszam = '$kerdoiv_sorszam'");
 $next_elementx = mysql_fetch_array ($resultx);
 $kapcs_neme = $next_elementx[neme];
 $kapcs_kora = $next_elementx[kora];
 $kapcs_orszag = $next_elementx[orszag];
 $kapcs_varos = $next_elementx[varos];
 $kapcs_foglalkozas = $next_elementx[foglalkozas];
+$kapcs_vegzettseg = $next_elementx[vegzettseg];
+$kapcs_jovedelem = $next_elementx[jovedelem];
+$kapcs_csaladiallapot = $next_elementx[csaladiallapot];
 
 $nyelv = 0;
 if ($next_elementc[hu] == 1){
@@ -147,16 +174,7 @@ if ($kapcs_kora == '1'){
                         <select name="eletkora">
                             '.$request_eletkora_value.'
                             <option value="0">---</option>
-                            <option value="14">&lt;14</option>
-                            <option value="14-18">14-18</option>
-                            <option value="18-21">18-21</option>
-                            <option value="21-25">21-25</option>
-                            <option value="25-30">25-30</option>
-                            <option value="30-35">30-35</option>
-                            <option value="35-45">35-45</option>
-                            <option value="45-55">45-55</option>
-                            <option value="55-65">55-65</option>
-                            <option value="65">65&lt;</option>
+                            '.$eletkora_combo.'
                         </select><br />';
 }
 
@@ -165,8 +183,7 @@ if ($kapcs_neme == '1'){
                         <select name="neme">
                             '.$request_neme_value.'
                             <option value="0">---</option>
-                            <option value="'.$lang[ferfi].'">'.$lang[ferfi].'</option>
-                            <option value="'.$lang[no].'">'.$lang[no].'</option>
+                            '.$neme_combo.'
                         </select>
                         <br />';
 }
@@ -177,35 +194,6 @@ if ($kapcs_foglalkozas == '1'){
                             <option value="0">---</option>
                             '.$foglalkozas_combo.'
                         </select>
-                        <!--<input type="text" name="foglalkozas" value="'.$request_foglalkozas_value.' " />
-<select id="in_work2" name="in_work2" style="width:auto;">
-<option value=""> ---- </option>
-<option value="job1">Adminisztráció / Titkári</option>
-<option value="job2">Bank</option>
-<option value="job6">Biztonság / Honvédelem</option>
-<option value="job25">Egyéb</option>
-<option value="job22">Egészségügy / Szociális ellátás</option>
-<option value="job5">Emberi erőforrások</option>
-<option value="12">Háztartásbeli</option>
-<option value="job8">Információs technológia / Elektronika</option>
-<option value="job10">Jog / Jogi tanácsadás</option>
-<option value="job17">Kereskedelem</option>
-<option value="job11">Kultúra / Művészetek / Szórakozás</option>
-<option value="job18">Közlekedés / Logisztika</option>
-<option value="job14">Marketing / Reklám</option>
-<option value="job20">Menedzsment</option>
-<option value="job12">Mezőgazdaság / Környezettudományok</option>
-<option value="job3">Munkanélküli</option>
-<option value="job24">Média / PR</option>
-<option value="job9">Oktatás / Tudomány</option>
-<option value="job7">Pénzügy / Könyvelés</option>
-<option value="job15">Szolgáltatás</option>
-<option value="job23">Telekommunikáció</option>
-<option value="job16">Termelés / Gyártás</option>
-<option value="job19">Turizmus / Hotelek / Vendéglátás</option>
-<option value="job21">Állami adminisztráció / Igazgatásszervezés</option>
-<option value="job4">Építőipar / Ingatlanforgalmazás</option>
-</select>-->
                         <br />';
 }
 
@@ -218,32 +206,32 @@ if ($kapcs_orszag == '1'){
                         <br />';
 }
 
-#if ($kapcs_vegzettseg == '1'){
+if ($kapcs_vegzettseg == '1'){
    $x_vegzettseg = ' <label>'.$lang['Végzettség:'].'</label>
                         <select name="vegzettseg">
                             <option value="0">---</option>
                             '.$vegzettseg_combo.'
                         </select>
                         <br />';
-#}
+}
 
-#if ($kapcs_csaladiallapot == '1'){
+if ($kapcs_csaladiallapot == '1'){
    $x_csaladiallapot = ' <label>'.$lang['Családi állapot:'].'</label>
                         <select name="csaladiallapot">
                             <option value="0">---</option>
                             '.$csaladiallapot_combo.'
                         </select>
                         <br />';
-#}
+}
    
-#if ($kapcs_csaladiallapot == '1'){
+if ($kapcs_jovedelem == '1'){
    $x_jovedelmek = ' <label>'.$lang['Jövedelmek:'].'</label>
                         <select name="jovedelmek">
                             <option value="0">---</option>
                             '.$jovedelmek_combo.'
                         </select>
                         <br />';
-#}   
+}   
 
 $kerdoiv_fejlec = $kerdoiv_headline.'
                   <div id="intro">
