@@ -74,17 +74,35 @@
 
     <br style="clear:both;" />
     <label>Milyen kötelező személyes adatokat kérsz a kitöltőtől?</label>
-    <div>
-    <label>Neme</label><input type="checkbox" name="neme" {$checked_neme}/><br />
-    </div>
-	<div>    
-    <label>Kora</label><input type="checkbox" name="kora" {$checked_kora}/><br />
-    </div>
-	<div>
-    <label>Ország</label><input type="checkbox" name="orszag" {$checked_orszag}/><br />
-    </div>
-	<div>
-    <label>Foglalkozása</label><input type="checkbox" name="foglalkozas" {$checked_foglalkozas}/>
-    </div>
+	<div id="szemelyes_admin">
+	  <div>
+		<label>Neme</label>
+		<input type="checkbox" name="neme" {$checked_neme}/>
+	  </div>
+	  <div>    
+		<label>Kora</label>
+		<input type="checkbox" name="kora" {$checked_kora}/>
+	  </div>
+	  <div>
+		<label>Ország</label>
+		<input type="checkbox" name="orszag" {$checked_orszag}/>
+	  </div>
+	  <div>
+		<label>Foglalkozása</label>
+		<input type="checkbox" name="foglalkozas" {$checked_foglalkozas}/>
+	  </div>
+	  <div>
+		<label>Végzettség</label>
+		<input type="checkbox" name="vegzettseg" {$checked_vegzettseg}/>
+	  </div>
+	  <div>
+		<label>Jövedelem</label>
+		<input type="checkbox" name="jovedelem" {$checked_jovedelem}/>
+	  </div>
+	  <div>
+		<label>Családi állapot</label>
+		<input type="checkbox" name="csaladiallapot" {$checked_csaladiallapot}/>
+	  </div>
+	</div>
 
 </form>

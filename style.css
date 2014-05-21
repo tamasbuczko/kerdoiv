@@ -721,6 +721,20 @@ margin-left: 20px;
     font-family: "Times New Roman",Georgia;
 }
 
+#szemelyes_admin{
+   width: 100%;
+   margin-bottom: 30px;
+}
+
+#szemelyes_admin div{
+   width: 105px;
+   float: left !important;
+}
+
+#szemelyes_admin label{
+   width: 100%;
+}
+
 .ujkerdes textarea{
     font-family: Arial;
     width: 500px;

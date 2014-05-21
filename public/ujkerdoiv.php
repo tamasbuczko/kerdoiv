@@ -56,6 +56,24 @@ if ($_REQUEST[mentes]){
         else {
             $check_foglalkozas = 0;
         }
+		
+		if ($_REQUEST[vegzettseg] == 'on'){
+            $check_vegzettseg = 1;}
+        else {
+            $check_vegzettseg = 0;
+        }
+		
+		if ($_REQUEST[jovedelem] == 'on'){
+            $check_jovedelem = 1;}
+        else {
+            $check_jovedelem = 0;
+        }
+		
+		if ($_REQUEST[csaladiallapot] == 'on'){
+            $check_csaladiallapot = 1;}
+        else {
+            $check_csaladiallapot = 0;
+        }
     
     if (!$_REQUEST[sorszam]){
         $result = mysql_query("SELECT MAX(sorszam) FROM kerdoivek");
@@ -121,11 +139,11 @@ if ($_REQUEST[mentes]){
 		$ertek = mysql_fetch_row($result);
 		
 		if ($ertek[0]){
-			$sql = "UPDATE kerdoiv_szemelyesadat SET neme='$check_neme', kora='$check_kora', orszag='$check_orszag', foglalkozas='$check_foglalkozas' WHERE kerdoiv_sorszam = '$_REQUEST[sorszam]'";
+			$sql = "UPDATE kerdoiv_szemelyesadat SET neme='$check_neme', kora='$check_kora', orszag='$check_orszag', foglalkozas='$check_foglalkozas', vegzettseg='$check_vegzettseg', jovedelem='$check_jovedelem', csaladiallapot='$check_csaladiallapot' WHERE kerdoiv_sorszam = '$_REQUEST[sorszam]'";
 			mysql_query($sql);}
 		else {
-			$sql = "INSERT INTO kerdoiv_szemelyesadat (kerdoiv_sorszam, neme, kora, orszag, foglalkozas) VALUES"
-					. "($_REQUEST[sorszam], '$check_neme', '$check_kora', '$check_orszag', '$check_foglalkozas')";
+			$sql = "INSERT INTO kerdoiv_szemelyesadat (kerdoiv_sorszam, neme, kora, orszag, foglalkozas, vegzettseg, jovedelem, csaladiallapot) VALUES"
+					. "($_REQUEST[sorszam], '$check_neme', '$check_kora', '$check_orszag', '$check_foglalkozas', '$check_vegzettseg', '$check_jovedelem', '$check_csaladiallapot')";
 			mysql_query($sql);
 		}
     }
@@ -156,18 +174,24 @@ if ($_REQUEST[id]){
     $de = $a[4];
     $nyelv_db = 0;
 	
-	$resultx = mysql_query ("SELECT neme, kora, orszag, varos, foglalkozas FROM kerdoiv_szemelyesadat WHERE kerdoiv_sorszam = '$kerdoiv_sorszam'");
+	$resultx = mysql_query ("SELECT neme, kora, orszag, varos, foglalkozas, vegzettseg, jovedelem, csaladiallapot FROM kerdoiv_szemelyesadat WHERE kerdoiv_sorszam = '$kerdoiv_sorszam'");
    $next_elementx = mysql_fetch_array ($resultx);
    $kapcs_neme = $next_elementx[neme];
    $kapcs_kora = $next_elementx[kora];
    $kapcs_orszag = $next_elementx[orszag];
    $kapcs_varos = $next_elementx[varos];
    $kapcs_foglalkozas = $next_elementx[foglalkozas];
+   $kapcs_vegzettseg = $next_elementx[vegzettseg];
+   $kapcs_jovedelem = $next_elementx[jovedelem];
+   $kapcs_csaladiallapot = $next_elementx[csaladiallapot];
    if ($kapcs_neme == '1'){$checked_neme = 'checked="checked"';}
    if ($kapcs_kora == '1'){$checked_kora = 'checked="checked"';}
    if ($kapcs_orszag == '1'){$checked_orszag = 'checked="checked"';}
    if ($kapcs_varos == '1'){$checked_varos = 'checked="checked"';}
    if ($kapcs_foglalkozas == '1'){$checked_foglalkozas = 'checked="checked"';}
+   if ($kapcs_vegzettseg == '1'){$checked_vegzettseg = 'checked="checked"';}
+   if ($kapcs_jovedelem == '1'){$checked_jovedelem = 'checked="checked"';}
+   if ($kapcs_csaladiallapot == '1'){$checked_csaladiallapot = 'checked="checked"';}
     
     if ($fejlec_kep){
         $kep_fejlec = '<div class="admin_fejleckep">'
@@ -359,6 +383,9 @@ $smarty->assign('checked_neme', $checked_neme);
 $smarty->assign('checked_kora', $checked_kora);
 $smarty->assign('checked_orszag', $checked_orszag);
 $smarty->assign('checked_foglalkozas', $checked_foglalkozas);
+$smarty->assign('checked_vegzettseg', $checked_vegzettseg);
+$smarty->assign('checked_jovedelem', $checked_jovedelem);
+$smarty->assign('checked_csaladiallapot', $checked_csaladiallapot);
 $smarty->assign('checked_stilus_alap', $checked_stilus_alap);
 $smarty->assign('checked_stilus_1', $checked_stilus_1);
 $smarty->assign('checked_stilus_2', $checked_stilus_2);
