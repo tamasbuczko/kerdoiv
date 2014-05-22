@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.14, created on 2014-05-19 21:23:09
+<?php /* Smarty version Smarty-3.1.14, created on 2014-05-21 20:43:07
          compiled from "templates\ujkerdoiv.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:15232537a573bcc04d7-04197359%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'e8e92d3d621d708d8a4653d762662ad4c7db05e7' => 
     array (
       0 => 'templates\\ujkerdoiv.tpl',
-      1 => 1400527387,
+      1 => 1400696649,
       2 => 'file',
     ),
   ),
@@ -59,6 +59,9 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'checked_kora' => 0,
     'checked_orszag' => 0,
     'checked_foglalkozas' => 0,
+    'checked_vegzettseg' => 0,
+    'checked_jovedelem' => 0,
+    'checked_csaladiallapot' => 0,
   ),
   'has_nocache_code' => false,
 ),false); /*/%%SmartyHeaderCode%%*/?>
@@ -176,21 +179,42 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 
     <br style="clear:both;" />
     <label>Milyen kötelező személyes adatokat kérsz a kitöltőtől?</label>
-    <div>
-    <label>Neme</label><input type="checkbox" name="neme" <?php echo $_smarty_tpl->tpl_vars['checked_neme']->value;?>
-/><br />
-    </div>
-	<div>    
-    <label>Kora</label><input type="checkbox" name="kora" <?php echo $_smarty_tpl->tpl_vars['checked_kora']->value;?>
-/><br />
-    </div>
-	<div>
-    <label>Ország</label><input type="checkbox" name="orszag" <?php echo $_smarty_tpl->tpl_vars['checked_orszag']->value;?>
-/><br />
-    </div>
-	<div>
-    <label>Foglalkozása</label><input type="checkbox" name="foglalkozas" <?php echo $_smarty_tpl->tpl_vars['checked_foglalkozas']->value;?>
+	<div id="szemelyes_admin">
+	  <div>
+		<label>Neme</label>
+		<input type="checkbox" name="neme" <?php echo $_smarty_tpl->tpl_vars['checked_neme']->value;?>
 />
-    </div>
+	  </div>
+	  <div>    
+		<label>Kora</label>
+		<input type="checkbox" name="kora" <?php echo $_smarty_tpl->tpl_vars['checked_kora']->value;?>
+/>
+	  </div>
+	  <div>
+		<label>Ország</label>
+		<input type="checkbox" name="orszag" <?php echo $_smarty_tpl->tpl_vars['checked_orszag']->value;?>
+/>
+	  </div>
+	  <div>
+		<label>Foglalkozása</label>
+		<input type="checkbox" name="foglalkozas" <?php echo $_smarty_tpl->tpl_vars['checked_foglalkozas']->value;?>
+/>
+	  </div>
+	  <div>
+		<label>Végzettség</label>
+		<input type="checkbox" name="vegzettseg" <?php echo $_smarty_tpl->tpl_vars['checked_vegzettseg']->value;?>
+/>
+	  </div>
+	  <div>
+		<label>Jövedelem</label>
+		<input type="checkbox" name="jovedelem" <?php echo $_smarty_tpl->tpl_vars['checked_jovedelem']->value;?>
+/>
+	  </div>
+	  <div>
+		<label>Családi állapot</label>
+		<input type="checkbox" name="csaladiallapot" <?php echo $_smarty_tpl->tpl_vars['checked_csaladiallapot']->value;?>
+/>
+	  </div>
+	</div>
 
 </form><?php }} ?>

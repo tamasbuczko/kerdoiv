@@ -87,3 +87,16 @@ function megerosites_x(torolszam, formnev, kerdes) {
         //document.getElementById(id).value = '';
      //}
  }
+ 
+ function display_switch(id, id2){
+     //document.getElementById('neme_doboz').style.display = 'none';
+     //document.getElementById('eletkor_doboz').style.display = 'none';
+     //document.getElementById('jovedelme_doboz').style.display = 'none';
+   if (document.getElementById(id).style.display == 'block'){
+    document.getElementById(id).style.display = 'none';
+    $('#'+id2).css('background-image', 'url(graphics/icon_edit.png)');
+   } else {
+    document.getElementById(id).style.display = 'block';
+    $('#'+id2).css('background-image', 'url(graphics/icon_del.png)');
+    }
+}

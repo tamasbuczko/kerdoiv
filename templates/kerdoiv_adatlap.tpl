@@ -2,11 +2,11 @@
 
 <div id="control_box">
    <h3>{$lang['Vezérlőpult']}</h3>
-    <table class="adatlap_pult">
-    <tr><td><img src="graphics/icon_graph.png" alt="eredmények" /></td><td><a  class="adatlap_pult" href="?p=eredmeny&kerdoiv={$kerdoiv_sorszam}" >{$lang['eredmények']}</a><br /></td></tr>
-    <tr><td><img src="graphics/icon_edit.gif" alt="módosítás" /></td><td><a  class="adatlap_pult" href="?p=kerdoiv&mod=1&kerdoiv={$kerdoiv_sorszam}" >{$lang['módosítás']}</a><br /></td></tr>
-    <tr><td><img src="graphics/icon_checked.png" alt="kitöltés" /></td><td><a  class="adatlap_pult" href="?p=kerdoiv&kerdoiv={$kerdoiv_sorszam}" >{$lang['kitöltés nézet']}</a></td></tr>
-    </table> 
+    <div class="adatlap_pult">
+        <a href="?p=eredmeny&kerdoiv={$kerdoiv_sorszam}" alt="eredmények" >{$lang['eredmények']}</a>
+        <a href="?p=kerdoiv&mod=1&kerdoiv={$kerdoiv_sorszam}" alt="módosítás" >{$lang['módosítás']}</a>
+        <a href="?p=kerdoiv&kerdoiv={$kerdoiv_sorszam}" alt="kitöltés" >{$lang['kitöltés nézet']}</a>
+    </div> 
     <div id="lepteto">
             <a href="?p=kerdoiv_adatlap&kerdoiv={$elozo_kerdoiv}" /></a>
             <span>{$hanyadik_kerdoiv}/{$osszes_kerdoiv}</span>

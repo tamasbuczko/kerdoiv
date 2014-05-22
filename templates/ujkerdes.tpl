@@ -8,8 +8,8 @@
         {$control_de}
         {$control_hu}
         </div>
-        <input type="submit" name="pluszvalasz" value="+1 válasz" title="+1 válasz hozzáadása" class="sarga_gomb">
-        <input type="submit" name="mentes" value="Mentés" title="változások rögzítése">
+        <input type="submit" name="pluszvalasz" value={$lang['+1 válasz']} title="+1 válasz hozzáadása" class="sarga_gomb">
+        <input type="submit" name="mentes" value={$lang['Mentés']} title="változások rögzítése">
         
         <div id="lepteto">
             <a href="?p=ujkerdes&id={$elozo_kerdes}" /></a>

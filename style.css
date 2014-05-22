@@ -158,7 +158,7 @@ h1{
 .login h2{
    margin: -4px 0 4px 0;
    font-weight: normal;
-   color: #222;
+   color: #222; 
    border-bottom: 1px solid #aaa;
 }
 
@@ -914,24 +914,43 @@ margin-left: 20px;
     border-top: 1px solid #bfbfbf;
 }
 
-#control_box a:hover{
-    text-decoration: none !important;
-    color: #777;
-}
-
 .adatlap_pult{
-    text-decoration: none !important;
-    color: #444;
+    
+    margin: 0px 10px 10px 5px;
+    text-align: left;
     
 }
 
-.adatlap_pult img{
-   width: 30px;
-   margin-top: 5px;
-  
+.adatlap_pult a:hover{
+    text-decoration: none;
+    color: #777;
 }
 
-.sarga_gomb{
+.adatlap_pult a{
+    text-decoration: none;
+    color: #444;
+    float:left;
+    margin: 10px 0px 10px 0px; 
+    padding-left: 28px;
+}
+
+.adatlap_pult a[alt="eredmények"]{
+    background-image: url('graphics/icon_edit.png');
+    background-repeat: no-repeat;
+    background-position: 0px 0px;
+}
+
+.adatlap_pult a[alt="módosítás"]{
+    background-image: url('graphics/icon_edit.png');
+    background-repeat: no-repeat;
+}
+
+.adatlap_pult a[alt="kitöltés"]{
+    background-image: url('graphics/icon_edit.png');
+    background-repeat: no-repeat;
+}    
+
+.sarga_gomb{ 
     background-color: #CC9900 !important;
     text-decoration: none;
     color: #fefefe;
@@ -1249,18 +1268,47 @@ margin-left: 20px;
     background-color: #33aa33;
 }
 
+.doboz{
+    width: 380px;
+    padding-left: 15px;
+    background-color: white;
+    margin-bottom: 15px;
+    border: 1px solid #aaa;
+}
+
+#neme_kapcs, #eletkor_kapcs, #csaladiallapot_kapcs, #foglalkozas_kapcs, #vegzettseg_kapcs, #jovedelme_kapcs, #orszag_kapcs {
+    display: block;
+    clear: both;
+    width: 200px;
+    height: 24px;
+    cursor: pointer;
+    background-image: url('graphics/icon_edit.png');
+    background-repeat: no-repeat;
+    background-position: right 2px;
+    margin-bottom: 3px;
+    border-bottom: 1px solid #eee;
+}
+
+#neme_doboz{
+    height:50px;
+}
+
 .szemelyes_szures {
     border: 1px solid #cecece;
-    width: 200px;
+    width: 350px;
     height: 100px;
-    overflow-y: auto;
+    overflow-y:scroll;
     margin: 0px 10px 10px 0px;
     float: left;
+    font-size: 14px;
+    display: none;
+    padding-left: 5px;
+    background-color:#eee;
 }
 
 .szemelyes_szures p{
     float: left;
-    width: 158px;
+    width: 300px;
     height: 20px;
     margin: 2px 0px 2px 0px;
 }

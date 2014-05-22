@@ -21,7 +21,7 @@ if ($_SESSION["lang"] == 'hu'){
     $lang[angol] = 'angol';
     $lang[nemet] = 'német'; 
     $lang[eletkor] = 'Életkor:';
-    $lang[neme] = 'Neme:';
+    
     $lang[ferfi] = 'férfi';
     $lang[no] = 'nő';
     $lang[orszag] = 'Ország:';
@@ -79,7 +79,7 @@ if ($_SESSION["lang"] == 'en'){
     $lang[angol] = 'English';
     $lang[nemet] = 'German';
     $lang[eletkor] = 'Age:';
-    $lang[neme] = 'Sex:';
+    
     $lang[ferfi] = 'male';
     $lang[no] = 'female';
     $lang[orszag] = 'Country:';
@@ -137,7 +137,7 @@ if ($_SESSION["lang"] == 'de'){
     $lang[angol] = 'englisch';
     $lang[nemet] = 'deutsch';
     $lang[eletkor] = 'Alter:';
-    $lang[neme] = 'Sex:';
+    
     $lang[ferfi] = 'männlich';
     $lang[no] = 'weiblich';
     $lang[orszag] = 'Land:';

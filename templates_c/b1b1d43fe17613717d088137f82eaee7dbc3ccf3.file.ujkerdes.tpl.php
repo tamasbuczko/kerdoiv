@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.14, created on 2014-05-19 21:25:02
+<?php /* Smarty version Smarty-3.1.14, created on 2014-05-19 22:10:01
          compiled from "templates\ujkerdes.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:258845374fc2b1eabd2-48848554%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'b1b1d43fe17613717d088137f82eaee7dbc3ccf3' => 
     array (
       0 => 'templates\\ujkerdes.tpl',
-      1 => 1400527498,
+      1 => 1400530188,
       2 => 'file',
     ),
   ),
@@ -66,8 +66,10 @@ $_valid = $_smarty_tpl->decodeProperties(array (
         <?php echo $_smarty_tpl->tpl_vars['control_hu']->value;?>
 
         </div>
-        <input type="submit" name="pluszvalasz" value="+1 válasz" title="+1 válasz hozzáadása" class="sarga_gomb">
-        <input type="submit" name="mentes" value="Mentés" title="változások rögzítése">
+        <input type="submit" name="pluszvalasz" value=<?php echo $_smarty_tpl->tpl_vars['lang']->value['+1 válasz'];?>
+ title="+1 válasz hozzáadása" class="sarga_gomb">
+        <input type="submit" name="mentes" value=<?php echo $_smarty_tpl->tpl_vars['lang']->value['Mentés'];?>
+ title="változások rögzítése">
         
         <div id="lepteto">
             <a href="?p=ujkerdes&id=<?php echo $_smarty_tpl->tpl_vars['elozo_kerdes']->value;?>
