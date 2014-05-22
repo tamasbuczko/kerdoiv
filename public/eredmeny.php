@@ -202,6 +202,7 @@ while ($next_element = mysql_fetch_array($result)){
         LEFT JOIN kerdesek AS k ON va.kerdes_sorszam = k.sorszam
         WHERE k.sorszam = $sorszam_kerdes 
         $szures_kiegeszites
+		$szures_kiegeszites2
         GROUP BY valasz_hu, va.ertek
         ORDER BY v.sorszam, va.ertek");
         
@@ -257,6 +258,7 @@ while ($next_element = mysql_fetch_array($result)){
         LEFT JOIN kerdesek AS k ON va.kerdes_sorszam = k.sorszam
         WHERE k.sorszam = $sorszam_kerdes
         $szures_kiegeszites
+		$szures_kiegeszites2
         ORDER BY k.sorszam");
 
         while ($eredmenyek = mysql_fetch_array($result2)){
@@ -273,8 +275,8 @@ while ($next_element = mysql_fetch_array($result)){
                     </div>';
     unset($eredmeny_lista);
 } 
-if ($szures_kiegeszites){
-    $szuresek_lista = '<h4>Szűrésre jelölt válaszok:</h4>'.$szures_lista.'<br />'
+if (($szures_kiegeszites) OR ($szures_kiegeszites2)){
+    $szuresek_lista = '<h4>Szűrésre jelölt válaszok:</h4>'.$szures_lista.$szures_lista2.'<br />'
             . '<a href="?p=eredmeny&kerdoiv='.$kerdoiv_sorszam.'&szurki=1">szűrés kikapcsolása</a>';
     
 }
