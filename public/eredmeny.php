@@ -57,10 +57,22 @@ while ($next_element = mysql_fetch_array($result)){
         . '</a>';
 }
 
+$result = mysql_query("SELECT id, nev_hu FROM dat_eletkor");
+while ($next_element = mysql_fetch_array($result)){
+    $eletkor_szureslista .=  
+          '<p>'.$next_element[nev_hu].'</p>'
+        . '<a href="?p=eredmeny&kerdoiv='.$kerdoiv_sorszam.'&k2=eletkora&v2='.$next_element[id].'">'
+        . '<img src="graphics/filter.png" alt="" />'
+        . '</a>';
+}
+
 $szemelyes_szuresek = ''
         . '<div style="width: 710px;">'
         . '<div class="szemelyes_szures">'
         . $nemek_szureslista
+        . '</div>'
+		. '<div class="szemelyes_szures">'
+        . $eletkor_szureslista
         . '</div>'
         . '<div class="szemelyes_szures">'
         . $csaladiallapot_szureslista 
