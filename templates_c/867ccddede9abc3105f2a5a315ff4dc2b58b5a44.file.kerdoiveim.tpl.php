@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.14, created on 2014-05-17 18:59:13
+<?php /* Smarty version Smarty-3.1.14, created on 2014-05-25 11:04:07
          compiled from "templates\kerdoiveim.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:8615374fcd5bb1334-80371822%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '867ccddede9abc3105f2a5a315ff4dc2b58b5a44' => 
     array (
       0 => 'templates\\kerdoiveim.tpl',
-      1 => 1400345729,
+      1 => 1401008644,
       2 => 'file',
     ),
   ),
@@ -33,7 +33,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 </th><th><?php echo $_smarty_tpl->tpl_vars['lang']->value['eredmények'];?>
 </th><th><?php echo $_smarty_tpl->tpl_vars['lang']->value['kitöltés nézet'];?>
 </th><th><?php echo $_smarty_tpl->tpl_vars['lang']->value['módosítás'];?>
-</th><th><?php echo $_smarty_tpl->tpl_vars['lang']->value['aktív/inaktív'];?>
+</th><th><?php echo $_smarty_tpl->tpl_vars['lang']->value['aktív/ inaktív'];?>
 </th><th><?php echo $_smarty_tpl->tpl_vars['lang']->value['kitöltötték'];?>
 </th><?php echo $_smarty_tpl->tpl_vars['nyelv_fejlec']->value;?>
 </tr>

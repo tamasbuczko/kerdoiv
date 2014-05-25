@@ -935,18 +935,18 @@ margin-left: 20px;
 }
 
 .adatlap_pult a[alt="eredmények"]{
-    background-image: url('graphics/icon_edit.png');
+    background-image: url('graphics/icon_graph_k.png');
     background-repeat: no-repeat;
     background-position: 0px 0px;
 }
 
 .adatlap_pult a[alt="módosítás"]{
-    background-image: url('graphics/icon_edit.png');
+    background-image: url('graphics/icon_edit_k.png');
     background-repeat: no-repeat;
 }
 
 .adatlap_pult a[alt="kitöltés"]{
-    background-image: url('graphics/icon_edit.png');
+    background-image: url('graphics/icon_checked_k.png');
     background-repeat: no-repeat;
 }    
 
@@ -1282,7 +1282,7 @@ margin-left: 20px;
     width: 200px;
     height: 24px;
     cursor: pointer;
-    background-image: url('graphics/icon_edit.png');
+    background-image: url('graphics/le.png');
     background-repeat: no-repeat;
     background-position: right 2px;
     margin-bottom: 3px;

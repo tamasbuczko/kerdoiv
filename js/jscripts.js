@@ -94,9 +94,9 @@ function megerosites_x(torolszam, formnev, kerdes) {
      //document.getElementById('jovedelme_doboz').style.display = 'none';
    if (document.getElementById(id).style.display == 'block'){
     document.getElementById(id).style.display = 'none';
-    $('#'+id2).css('background-image', 'url(graphics/icon_edit.png)');
+    $('#'+id2).css('background-image', 'url(graphics/le.png)');
    } else {
     document.getElementById(id).style.display = 'block';
-    $('#'+id2).css('background-image', 'url(graphics/icon_del.png)');
+    $('#'+id2).css('background-image', 'url(graphics/fel.png)');
     }
 }
