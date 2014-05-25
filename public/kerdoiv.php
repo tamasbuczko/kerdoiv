@@ -1,14 +1,36 @@
 <?php
-if (!is_numeric($_REQUEST[kerdoiv])){
-   $result = mysql_query ("SELECT sorszam FROM kerdoivek WHERE status = '1' AND hivatkozas = '$_REQUEST[kerdoiv]' ");
-   $a = mysql_fetch_array($result);
-   $_REQUEST[kerdoiv] = $a[0];
-   if (!$a[0]){
-	  $_REQUEST[kerdoiv] = x;
-   } else {
-	  $csak_kerdoiv = 'on';
-   }
+if ($_REQUEST[pub] == '1'){
+    $_SESSION[pub] = '1';
 }
+
+if ($_REQUEST[pub] == '2'){
+    unset($_SESSION[pub]);
+}
+
+if (!is_numeric($_REQUEST[kerdoiv])){
+   $result = mysql_query ("SELECT sorszam, user_id FROM kerdoivek WHERE status = '1' AND hivatkozas = '$_REQUEST[kerdoiv]' ");
+} else {
+   $result = mysql_query ("SELECT sorszam, user_id FROM kerdoivek WHERE status = '1' AND sorszam = '$_REQUEST[kerdoiv]' ");
+}
+   $a = mysql_fetch_array($result);
+   if ($a[0]){
+    $_REQUEST[kerdoiv] = $a[0];
+   } 
+
+
+$result2 = mysql_query ("SELECT authority FROM users WHERE id = '$a[1]'");
+$b = mysql_fetch_array($result2);
+$kerdoiv_authority = $b[0]; // a kérdőív készítőjének csomagja
+
+if (($kerdoiv_authority == '2') AND ($_SESSION[pub] == '1')){
+    $csak_kerdoiv = 'on'; //kikapcsolja a menüt
+    $reklammentes = 'on';
+}
+
+if (($kerdoiv_authority == '1') AND ($_SESSION[pub] == '1')){
+    $nincs_menu = 'on'; //kikapcsolja a menüt
+}
+
 require_once ('public/jogosultsag_kerdoiv.php');
 
 if ($jogosult){

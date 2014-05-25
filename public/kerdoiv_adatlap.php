@@ -4,7 +4,7 @@ require_once ('public/jogosultsag_adatlap.php');
 $kerdoiv_sorszam = $_REQUEST[kerdoiv];
 $user_id = $_SESSION["qa_user_id"];
 
-$resultc = mysql_query ("SELECT cim_hu, cim_en, cim_de, leiras_hu, leiras_en, leiras_de, hu, en, de, datum, aktivalas, lejarat, nyilvanos FROM kerdoivek WHERE sorszam = '$kerdoiv_sorszam' ");
+$resultc = mysql_query ("SELECT cim_hu, cim_en, cim_de, leiras_hu, leiras_en, leiras_de, hu, en, de, datum, aktivalas, lejarat, nyilvanos, hivatkozas FROM kerdoivek WHERE sorszam = '$kerdoiv_sorszam' ");
 $next_elementc = mysql_fetch_array ($resultc);
 $kerdoiv_cim=$next_elementc['cim_'.$_SESSION[lang]];
 $kerdoiv_leiras=$next_elementc['leiras_'.$_SESSION[lang]];
@@ -12,6 +12,9 @@ $kerdoiv_kelt=$next_elementc['datum'];
 $kerdoiv_aktivalas=$next_elementc['aktivalas'];
 $kerdoiv_lejarat=$next_elementc['lejarat'];
 $kerdoiv_nyilvanos=$next_elementc['nyilvanos'];
+$kerdoiv_hivatkozas=$next_elementc['hivatkozas'];
+
+$elerhetoseg = '<td>Kérdőíved elérhetősége:</td><td style="word-break: keep-all;">www.questionaction.com/?p=kerdoiv&kerdoiv='.$kerdoiv_hivatkozas.'&pub=1</td>';
 
 //nyelvek száma
 $nyelv = 0;
@@ -82,28 +85,8 @@ $nyilvanos = '<td>A kérdőív eredményei nyilvánosak:</td><td>'.$nyilvanos.'<
     if ($_REQUEST[kerdoiv] == $kerdoivekx[1]){$elozo_kerdoiv = end($kerdoivekx);}
 
 
-/*$array = array( 'kerdoiv_cim'       => $kerdoiv_cim,
-                'kerdoiv_leiras'   => $kerdoiv_leiras,
-                'zaszlok'   => $zaszlok,
-                'kerdesek_szama'   => $kerdesek_szama,
-                'valaszadok_szama'   => $valaszadok_szama,
-		'valaszadok_szama_emailes'   => $valaszadok_szama_emailes,
-                'created_date'   => $created_date,
-                'activated_date'   => $activated_date,
-                'expire_date'   => $expire_date,
-                'nyilvanos'   => $nyilvanos,
-                'elozo_kerdoiv'   => $elozo_kerdoiv,
-                'kovetkezo_kerdoiv'   => $kovetkezo_kerdoiv,
-                'hanyadik_kerdoiv'   => $hanyadik_kerdoiv,
-                'osszes_kerdoiv'   => $osszes_kerdoiv,
-                'kerdoiv_sorszam'   => $kerdoiv_sorszam,
-                'eredmenyek' => $lang[eredmenyek],
-                'kitoltes' => $lang[kitoltes],
-                'modositas' => $lang[modositas],
-                'vissza' => $lang[vissza],
-                'vezerlopult' => $lang[vezerlopult]);*/
-
 $smarty->assign('lang', $lang);
+$smarty->assign('elerhetoseg', $elerhetoseg);
 $smarty->assign('kerdoiv_cim',$kerdoiv_cim);
 $smarty->assign('kerdoiv_leiras',$kerdoiv_leiras);
 $smarty->assign('zaszlok',$zaszlok);

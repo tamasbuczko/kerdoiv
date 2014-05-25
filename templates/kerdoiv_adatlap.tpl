@@ -21,7 +21,7 @@
     <p>{$kerdoiv_leiras}</p>
     {$zaszlok}
     <br/><br/><br/><br/><br/><br style="clear: both;"/>
-	<table>
+	<table class="adatlap_table">
     <tr>{$nyilvanos}</tr>
     <tr>{$kerdesek_szama}</tr>
     <tr>{$valaszadok_szama}</tr>
@@ -29,6 +29,7 @@
     <tr>{$created_date}</tr>
     <tr>{$activated_date}</tr>
     {$expire_date}
+    <tr>{$elerhetoseg}</tr>
 	</table>
 </div>
 

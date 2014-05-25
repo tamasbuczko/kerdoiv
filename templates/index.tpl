@@ -19,7 +19,7 @@
 {if $css_valaszto}
    {$css_valaszto}    
 {/if}
-	  <div id="langs">
+	  <div id="langs"{if $reklammentes} style="width: 690px;"{/if}>
 {if $user_nick}
 		 {$user_nick}
 {/if}
@@ -27,7 +27,7 @@
 		 <a href="?lang=de{$url_param}"><img src="graphics/nemet_zaszlo_k.png" alt="" />de</a>
 		 <a href="?lang=hu{$url_param}"><img src="graphics/magyar_zaszlo_k.png" alt="" />hu</a>
 	  </div>
-	  <div id="frame">
+	  <div id="frame"{if $reklammentes} style="width: 690px;"{/if}>
 		 <div id="head"{$head_off}>
 			<div id="head_menu">
 			   <a href="?" id="logo"></a>

@@ -123,14 +123,20 @@ if ($_REQUEST[mentes]){
         $leiras_de = $_REQUEST[leiras_de];
         $zaras_de = $_REQUEST[zaras_de];
                         
-		$aktivalas = $_REQUEST[aktivalas_datum];
-		$lejarat = $_REQUEST[lejarat_datum];
+        $aktivalas = $_REQUEST[aktivalas_datum];
+	$lejarat = $_REQUEST[lejarat_datum];
 		
-		$css_id = $_REQUEST[stilus];
+	$css_id = $_REQUEST[stilus];
+        
+        $mit = array("á", "é", "ű", "ú", "ó", "ő", "ö", "í", " ");
+        $mire = array("a", "e", "u", "u", "o", "o", "o", "i", "_");
+                       
+        $hivatkozas = str_replace($mit, $mire, $cim_hu);
+        $hivatkozas = strtolower($hivatkozas);
         
         $sql = "UPDATE kerdoivek SET cim_hu='$cim_hu', leiras_hu='$leiras_hu', zaras_hu='$zaras_hu',
                 cim_en='$cim_en', leiras_en='$leiras_en', zaras_en='$zaras_en',
-                cim_de='$cim_de', leiras_de='$leiras_de', zaras_de='$zaras_de',
+                cim_de='$cim_de', leiras_de='$leiras_de', zaras_de='$zaras_de', hivatkozas='$hivatkozas',
                 hu='$check_hu', en='$check_en', de='$check_de', css_id = '$css_id',
                 nyilvanos='$check_nyilvanos', aktivalas='$aktivalas', lejarat='$lejarat' WHERE sorszam='$_REQUEST[sorszam]'";
         mysql_query($sql);

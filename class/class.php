@@ -161,9 +161,10 @@ class user{
 		If ($_REQUEST['logout'] == 1) {
 			unset($_SESSION["sessfelhasznalo"]);
 			unset($_SESSION["qa_user_id"]);
-            unset($_SESSION["qa_user_authority"]);
+                        unset($_SESSION["qa_user_authority"]);
 			unset($_SESSION["sessfelhasznaloazonosito"]);
 			unset($_SESSION["sessfelhasznalojog"]);
+                        unset($_SESSION[pub]);
 		}
 
 		If ($_REQUEST['azonosito'] != "") {

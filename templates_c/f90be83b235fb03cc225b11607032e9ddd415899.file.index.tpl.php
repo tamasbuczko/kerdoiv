@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.14, created on 2014-05-18 15:47:19
+<?php /* Smarty version Smarty-3.1.14, created on 2014-05-25 18:34:34
          compiled from "templates\index.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:26553536bda425c0430-81966018%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'f90be83b235fb03cc225b11607032e9ddd415899' => 
     array (
       0 => 'templates\\index.tpl',
-      1 => 1400420834,
+      1 => 1401035668,
       2 => 'file',
     ),
   ),
@@ -24,6 +24,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'head_game' => 0,
     'body_onload' => 0,
     'css_valaszto' => 0,
+    'reklammentes' => 0,
     'user_nick' => 0,
     'url_param' => 0,
     'head_off' => 0,
@@ -65,7 +66,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
    <?php echo $_smarty_tpl->tpl_vars['css_valaszto']->value;?>
     
 <?php }?>
-	  <div id="langs">
+	  <div id="langs"<?php if ($_smarty_tpl->tpl_vars['reklammentes']->value){?> style="width: 690px;"<?php }?>>
 <?php if ($_smarty_tpl->tpl_vars['user_nick']->value){?>
 		 <?php echo $_smarty_tpl->tpl_vars['user_nick']->value;?>
 
@@ -77,7 +78,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 		 <a href="?lang=hu<?php echo $_smarty_tpl->tpl_vars['url_param']->value;?>
 "><img src="graphics/magyar_zaszlo_k.png" alt="" />hu</a>
 	  </div>
-	  <div id="frame">
+	  <div id="frame"<?php if ($_smarty_tpl->tpl_vars['reklammentes']->value){?> style="width: 690px;"<?php }?>>
 		 <div id="head"<?php echo $_smarty_tpl->tpl_vars['head_off']->value;?>
 >
 			<div id="head_menu">

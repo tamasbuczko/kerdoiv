@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.14, created on 2014-05-20 18:14:42
+<?php /* Smarty version Smarty-3.1.14, created on 2014-05-25 19:06:43
          compiled from "templates\kerdoiv_adatlap.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:77395378ebcf0be6c1-19373174%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'cded2225f14c3bd5f12142c6f863df1fc45fa885' => 
     array (
       0 => 'templates\\kerdoiv_adatlap.tpl',
-      1 => 1400602442,
+      1 => 1401037565,
       2 => 'file',
     ),
   ),
@@ -35,6 +35,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'created_date' => 0,
     'activated_date' => 0,
     'expire_date' => 0,
+    'elerhetoseg' => 0,
   ),
   'has_nocache_code' => false,
 ),false); /*/%%SmartyHeaderCode%%*/?>
@@ -76,7 +77,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     <?php echo $_smarty_tpl->tpl_vars['zaszlok']->value;?>
 
     <br/><br/><br/><br/><br/><br style="clear: both;"/>
-	<table>
+	<table class="adatlap_table">
     <tr><?php echo $_smarty_tpl->tpl_vars['nyilvanos']->value;?>
 </tr>
     <tr><?php echo $_smarty_tpl->tpl_vars['kerdesek_szama']->value;?>
@@ -91,6 +92,8 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 </tr>
     <?php echo $_smarty_tpl->tpl_vars['expire_date']->value;?>
 
+    <tr><?php echo $_smarty_tpl->tpl_vars['elerhetoseg']->value;?>
+</tr>
 	</table>
 </div>
 

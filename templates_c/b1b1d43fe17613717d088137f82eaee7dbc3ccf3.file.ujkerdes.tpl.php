@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.14, created on 2014-05-19 22:10:01
+<?php /* Smarty version Smarty-3.1.14, created on 2014-05-25 17:23:53
          compiled from "templates\ujkerdes.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:258845374fc2b1eabd2-48848554%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'b1b1d43fe17613717d088137f82eaee7dbc3ccf3' => 
     array (
       0 => 'templates\\ujkerdes.tpl',
-      1 => 1400530188,
+      1 => 1401031304,
       2 => 'file',
     ),
   ),
@@ -155,16 +155,12 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     <label>Válaszok</label>
 	
 	<div id="admin_valaszok" class="gridster" style="width: 790px; border: 0px solid #aaa;">
-	  <ul id="csempek">
 		 <?php echo $_smarty_tpl->tpl_vars['valaszok2']->value;?>
 
-	  </ul>
 	</div>
     
 </form>
 <br /><br />
-
-
 
 	  <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>	  
 	  <script src="gridster/dist/jquery.gridster.js" type="text/javascript" charset="utf-8"></script>

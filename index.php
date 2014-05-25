@@ -83,6 +83,7 @@ $smarty->assign('body_onload', $body_onload);
 $smarty->assign('popup_tartalom', $popup_tartalom);
 $smarty->assign('slider', $slider);
 $smarty->assign('head_off', $head_off);
+$smarty->assign('reklammentes', $reklammentes);
 $smarty->assign('hibauzenet', $hibauzenet);
 $smarty->assign('figy_uzenet', $figy_uzenet);
 $smarty->assign('css', $css);
