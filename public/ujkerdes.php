@@ -258,7 +258,7 @@ if ($_REQUEST[id]){
     $resultx = mysql_query("SELECT sorszam, kerdes_valasz, valasz_hu, valasz_en, valasz_de, kep_file, video_embed FROM valaszok WHERE status = '1' AND kerdes_valasz = '$_REQUEST[id]' ORDER BY sorrend");
     while ($next_elementv = mysql_fetch_array($resultx)){
         #$valaszok .= '<input type="text" name="valasz_'.$next_elementv[sorszam].'" value="'.$next_elementv[valasz_hu].'" /><img src="graphics/icon_del.png" class="icon_del" alt="törlés" onclick="megerosites_x('.$next_elementv[sorszam].', \'valasz\', \''.$_REQUEST[id].'\')" />';
-	$valaszok2 .= '<li name="v" value="1" data-row="1" data-col="1" data-sizex="64" data-sizey="10">';
+	$valaszok2 .= '<div class="valasz_blokk">';
         
         if ($en == 1){
             $valaszok2 .= '<input type="text" name="valasz_en_'.$next_elementv[sorszam].'" id="valasz_en_'.$next_elementv[sorszam].'" value="'.$next_elementv[valasz_en].'" class="en_k" />';
@@ -280,51 +280,16 @@ if ($_REQUEST[id]){
 				 . '</div>';
 		}
 		
-        $valaszok2 .= '<div class="file_browse_wrapper">'
-				. '<input name="valasz_kep_'.$next_elementv[sorszam].'" type="file" title="kép feltöltése a válaszhoz" size="30" accept="image/*" class="file_browse" /></div>'
+        $valaszok2 .= ''
+				. '<br /><div class="file_browse_wrapper" style="margin-top: -20px;">'
+				. '<input name="valasz_kep_'.$next_elementv[sorszam].'" type="file" title="kép feltöltése a válaszhoz" size="30" accept="image/*" class="file_browse" />'
+				. '</div>'
 				. '<br style="clear: both;"><img src="graphics/icon_del.png" class="icon_del" style="position: relative; float: right; margin: 0px 0 0 0; z-index: 10;" alt="a válasz törlése" title="a válasz törlése" onclick="megerosites_x('.$next_elementv[sorszam].', \'valasz\', \''.$_REQUEST[id].'\')" />'
 				. $kep
-				. ''
-                . '</li>';
+				. '</div>'
+                . '';
     }
 }
-
-/*$array = array( 'kerdoiv_sorszam'       => $kerdoiv_sorszam,
-                'urlap_cim'   => $urlap_cim,
-                'valaszok'   => $valaszok,
-		'valaszok2'   => $valaszok2,
-                'check_radio'   => $check_radio,
-                'check_select'   => $check_select,
-                'check_checkbox'   => $check_checkbox,
-                'check_text'   => $check_text,
-                'check_textarea'   => $check_textarea,
-                'check_ranking'   => $check_ranking,
-                'id'   => $_REQUEST[id],
-                'kerdes_hux' => $kerdes_hux,
-                'kerdes_enx' => $kerdes_enx,
-                'kerdes_dex' => $kerdes_dex,
-                'kerdes_szoveg_hu' => $kerdes_szoveg_hu,
-                'kerdes_szoveg_en' => $kerdes_szoveg_en,
-                'kerdes_szoveg_de' => $kerdes_szoveg_de,
-                'control_hu'       => $control_hu,
-                'control_en'       => $control_en,
-                'control_de'       => $control_de,
-                'osszes_kerdes'       => $osszes_kerdes,
-                'hanyadik_kerdes'       => $hanyadik_kerdes,
-                'elozo_kerdes'       => $elozo_kerdes,
-                'kep_kerdes'       => $kep_kerdes,
-		'video_kerdes'       => $video_kerdes,
-                'kovetkezo_kerdes'       => $kovetkezo_kerdes,
-                'control_box_ki'       => $control_box_ki,
-                'radio_i' => $lang[radio_i],
-                'select_i' => $lang[select_i],
-                'checkbox_i' => $lang[checkbox_i],
-                'text_i' => $lang[text_i],
-                'textarea_i' => $lang[textarea_i],
-                'ranking_i' => $lang[ranking_i],
-                'vissza' => $lang[vissza],
-                'lathato_nyelvek' => $lang[lathato_nyelvek],
-                'vezerlopult' => $lang[vezerlopult]);*/
 
 $smarty->assign('kerdoiv_sorszam', $kerdoiv_sorszam);
 $smarty->assign('urlap_cim', $urlap_cim);

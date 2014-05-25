@@ -634,6 +634,12 @@ margin-left: 20px;
     float: left;
 }
 
+.valasz_blokk{
+   float: left;
+   width: 580px !important;
+   height: 120px !important;
+}
+
 .graf {
     background-color: #860000;
     height: 15px;
@@ -1050,9 +1056,12 @@ margin-left: 20px;
     height: 40px;
 }
 
+
+
+
 .file_browse_wrapper {
-   width: 20px !important;
-   height: 15px !important;
+   width: 200px !important;
+   height: 45px !important;
    background-image: url('graphics/img-add.png');
    background-repeat: no-repeat;
    cursor: pointer;
@@ -1063,6 +1072,8 @@ margin-left: 20px;
 
 .file_browse_wrapper input{
     cursor: pointer;
+	border: 0px !important;
+	color: #333 !important;
 }
 
 .file_browse_wrapper:hover {
@@ -1074,11 +1085,14 @@ margin-left: 20px;
 }
 
 .file_browse{
-   margin-left:-145px;
-   opacity:0;
+   margin-left:-196px !important;
+   margin-top: 22px !important;
+   opacity:1;
    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
 }
+
+
 
 .question_img{
     height: 240px;

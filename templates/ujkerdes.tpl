@@ -64,15 +64,11 @@
     <label>Válaszok</label>
 	
 	<div id="admin_valaszok" class="gridster" style="width: 790px; border: 0px solid #aaa;">
-	  <ul id="csempek">
 		 {$valaszok2}
-	  </ul>
 	</div>
     
 </form>
 <br /><br />
-
-
 
 	  <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>	  
 	  <script src="gridster/dist/jquery.gridster.js" type="text/javascript" charset="utf-8"></script>
