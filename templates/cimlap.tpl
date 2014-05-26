@@ -1,6 +1,9 @@
 <div id="nyilvanos_kerdoivek">
+   <div>
     <h2>{$lang['uj_nyilvanos_kerdoivek']}</h2>
     {$nyilvanos_kerdoivek}
+
+   </div>
 	<a href="?p=nyilvanos" class="nyilvanos_link">További nyilvános kérdőívek...</a>
 </div>
 

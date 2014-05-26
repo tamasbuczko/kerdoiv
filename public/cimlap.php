@@ -4,6 +4,11 @@ while ($next_element = mysql_fetch_array($result)){
     $nyilvanos_kerdoivek .= '<a href="?p=kerdoiv&amp;kerdoiv='.$next_element[sorszam].'">'.$next_element['cim_'.$_SESSION[lang]].'</a>'."\n";
 }
 
+$result = mysql_query ("SELECT DISTINCT kerdoiv_sorszam FROM valaszadasok WHERE kitolto_sorszam = '$_SESSION[qa_user_id]' LIMIT 10");
+while ($next_element = mysql_fetch_array($result)){
+    $kitoltott_kerdoivek .= '<a href="?p=kerdoiv&amp;kerdoiv='.$next_element[sorszam].'">'.$next_element['cim_'.$_SESSION[lang]].'</a>'."\n";
+}
+
 $smarty->assign('tartalom', $tartalom);
 $smarty->assign('nyilvanos_kerdoivek', $nyilvanos_kerdoivek);
 $smarty->assign('figy_uzenet', $figy_uzenet);
