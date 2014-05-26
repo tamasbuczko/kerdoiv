@@ -69,7 +69,7 @@ while ($next_element = mysql_fetch_array($result)){
 #életkorok beolvasása comboboxhoz
 $result = mysql_query("SELECT id, nev_hu, nev_en, nev_de FROM dat_eletkor ORDER BY nev_hu");
 while ($next_element = mysql_fetch_array($result)){
-        if ($_REQUEST[neme] == $next_element[id]){//Ez végzi a kiválasztott elem megtartását.
+        if ($_REQUEST[eletkora] == $next_element[id]){//Ez végzi a kiválasztott elem megtartását.
             $request_neme = 'selected="selected"';
         } else {
             $request_neme = '';
@@ -173,7 +173,7 @@ if ($kapcs_kora == '1'){
    $x_kora = '<label>'.$lang[eletkor].'</label>
                         <select name="eletkora">
                             '.$request_eletkora_value.'
-                            <option value="0">---</option>
+                            <option value="x">---</option>
                             '.$eletkora_combo.'
                         </select><br />';
 }
@@ -182,7 +182,7 @@ if ($kapcs_neme == '1'){
    $x_neme = '<label>'.$lang[neme].'</label>
                         <select name="neme">
                             '.$request_neme_value.'
-                            <option value="0">---</option>
+                            <option value="x">---</option>
                             '.$neme_combo.'
                         </select>
                         <br />';
@@ -191,7 +191,7 @@ if ($kapcs_neme == '1'){
 if ($kapcs_foglalkozas == '1'){
    $x_foglalkozas = '<label>'.$lang[foglalkozas].'</label>
                         <select name="foglalkozas">
-                            <option value="0">---</option>
+                            <option value="x">---</option>
                             '.$foglalkozas_combo.'
                         </select>
                         <br />';
@@ -200,7 +200,7 @@ if ($kapcs_foglalkozas == '1'){
 if ($kapcs_orszag == '1'){
    $x_orszag = ' <label>'.$lang[orszag].'</label>
                         <select name="lakhely">
-                            <option value="0">---</option>
+                            <option value="x">---</option>
                             '.$orszag_combo.'
                         </select>
                         <br />';
@@ -209,7 +209,7 @@ if ($kapcs_orszag == '1'){
 if ($kapcs_vegzettseg == '1'){
    $x_vegzettseg = ' <label>'.$lang['Végzettség:'].'</label>
                         <select name="vegzettseg">
-                            <option value="0">---</option>
+                            <option value="x">---</option>
                             '.$vegzettseg_combo.'
                         </select>
                         <br />';
@@ -218,7 +218,7 @@ if ($kapcs_vegzettseg == '1'){
 if ($kapcs_csaladiallapot == '1'){
    $x_csaladiallapot = ' <label>'.$lang['Családi állapot:'].'</label>
                         <select name="csaladiallapot">
-                            <option value="0">---</option>
+                            <option value="x">---</option>
                             '.$csaladiallapot_combo.'
                         </select>
                         <br />';
@@ -227,7 +227,7 @@ if ($kapcs_csaladiallapot == '1'){
 if ($kapcs_jovedelem == '1'){
    $x_jovedelmek = ' <label>'.$lang['Jövedelmek:'].'</label>
                         <select name="jovedelmek">
-                            <option value="0">---</option>
+                            <option value="x">---</option>
                             '.$jovedelmek_combo.'
                         </select>
                         <br />';
