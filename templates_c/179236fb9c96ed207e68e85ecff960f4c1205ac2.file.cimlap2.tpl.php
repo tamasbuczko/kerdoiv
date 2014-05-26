@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.14, created on 2014-05-26 19:28:41
+<?php /* Smarty version Smarty-3.1.14, created on 2014-05-26 19:44:17
          compiled from "templates\cimlap2.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:32065377a9b5257c42-85014550%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '179236fb9c96ed207e68e85ecff960f4c1205ac2' => 
     array (
       0 => 'templates\\cimlap2.tpl',
-      1 => 1401125285,
+      1 => 1401126055,
       2 => 'file',
     ),
   ),
@@ -41,5 +41,5 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     <?php echo $_smarty_tpl->tpl_vars['kitoltott_kerdoivek']->value;?>
 
    </div>
-	<a href="?p=nyilvanos" class="nyilvanos_link">További kitöltött kérdőívek...</a>
+	<a href="?p=kitoltott" class="nyilvanos_link">További kitöltött kérdőívek...</a>
 </div><?php }} ?>

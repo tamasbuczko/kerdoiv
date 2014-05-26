@@ -48,6 +48,16 @@ body{
    margin: 2px 0px 0px 2px;
 }
 
+#logo_footer{
+   display: block;
+   width: 250px;
+   height: 35px;
+   background-image: url('graphics/kicsi_logo.png');
+   background-repeat: no-repeat;
+   float: left;
+   margin: 2px 0px 0px 2px;
+}
+
 #menu{
     float: right;
 }
@@ -251,7 +261,7 @@ h1{
 
 #content{
     margin: 15px 0px 0px 10px;
-	min-height: 300px;
+	min-height: 500px;
 }
 
 #languages{
@@ -1202,15 +1212,33 @@ margin-left: 20px;
 #footer{
    clear: both;
    background-color: #333;
-   height: 80px;
+   height: 90px;
    color: #fefefe;
-   
+   text-align: center;
 }
 
 #footer p{
-    float: left;
-    margin: 30px 10px 10px 250px;
+	display: block;
+	float: left;
+	width: 100%;
+    margin: 14px auto 16px auto;
     font-size: 14px;
+}
+
+#footer div{
+   float: right;
+}
+
+#footer a{
+    display: block;
+    float: left;
+    text-decoration: none;
+    padding: 8px 22px 8px 22px;
+	color: #fefefe;
+}
+
+#footer a:hover{
+   color: #FFD814;
 }
 
 .admin_kep{

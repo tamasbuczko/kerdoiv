@@ -43,6 +43,8 @@
 		 </div>
 		 <div id="footer">
 			<p> © 2014 questionaction.com - {$lang['Használati és adatvédelmi szabályok']}</p> 
+			<a href="?" id="logo_footer"></a>
+			<div>{$menu}</div>
 		 </div>
 	  </div>	
 	  <div id="popup">
