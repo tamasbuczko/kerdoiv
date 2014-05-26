@@ -216,57 +216,37 @@ while ($next_element = mysql_fetch_array($result)){
     }
     
     if ($kerdes_tipus == 'ranking'){
-        $result2 = mysql_query("SELECT k.sorszam, k.kerdes_hu, v.valasz_hu, va.ertek, COUNT(*), v.sorszam
-        FROM valaszadasok AS va
-        LEFT JOIN valaszok AS v ON va.valasz_sorszam = v.sorszam
-        LEFT JOIN kerdesek AS k ON va.kerdes_sorszam = k.sorszam
-        WHERE k.sorszam = $sorszam_kerdes 
-        $szures_kiegeszites
-		$szures_kiegeszites2
-        GROUP BY valasz_hu, va.ertek
-        ORDER BY v.sorszam, va.ertek");
+		
+		$result2 = mysql_query("SELECT sorszam, valasz_hu, valasz_en, valasz_de 
+		FROM valaszok WHERE kerdes_valasz = $sorszam_kerdes");
         
         $sor = 0;
         while ($eredmenyek = mysql_fetch_array($result2)){
+            unset($sor_adat);
+			unset($abszolut);
+			$result22v = mysql_query("SELECT va.sorszam FROM valaszadasok AS va WHERE va.valasz_sorszam = $eredmenyek[0] $szures_kiegeszites $szures_kiegeszites2");
+			$valaszadok_szama = mysql_num_rows($result22v);
+            for ($i=1; $i<=5; $i++){
+			   
+			   $result22 = mysql_query("SELECT va.sorszam FROM valaszadasok AS va WHERE va.valasz_sorszam = $eredmenyek[0] AND va.ertek = $i $szures_kiegeszites $szures_kiegeszites2");
+			   if ($result22){
+				  $szavazatszam = mysql_num_rows($result22);
+			   } else {
+				  $szavazatszam = 0;
+			   }
+			   $eredmenyarany = $szavazatszam / $valaszadok_szama;
+			   $eredmenyarany = $eredmenyarany*30;
+			   $sor_adat .= '<td>'.$szavazatszam.'<div class="graf2v"><div class="graf2" style="width: '.$eredmenyarany.'px"></div></div></td>';
+			   $abszolut = $abszolut + ($i*$szavazatszam);
+			}
+			$atlag = $abszolut / $valaszadok_szama;
+			$atlag = round($atlag, 1);
+			$eredmeny_lista .= '<tr><td>'.$eredmenyek[1].'</td>'.$sor_adat.'<td>'.$atlag.'</td></tr>';
             
-            $result22 = mysql_query("SELECT sorszam FROM valaszadasok WHERE valasz_sorszam = $eredmenyek[5]");
-            $valaszadok_szama = mysql_num_rows($result22);
-            
-            $sor++;
-            
-            $osztalyzat = $eredmenyek[3];
-            $szavazatszam = $eredmenyek[4]-1;
-            
-            $abszolut = $abszolut + ($osztalyzat*$szavazatszam);
-            
-            if ($rank_archiv == $eredmenyek[2]){
-                $rank_valasz = '';
-                $sortores = '';
-            } else {
-                $rank_valasz = '<td>'.$eredmenyek[2].'</td>';
-                if ($sor > 1){
-                    $abszolut = $abszolut / $valaszadok_szama;
-                    $abszolut = round($abszolut, 1);
-                    $sortores = '<td>'.$abszolut.'</td></tr><tr>';
-                    $abszolut = 0;
-                } else {
-                    $sortores = '<tr>';
-                }
-            }
-            
-            $eredmenyarany = $szavazatszam / $valaszadok_szama;
-            $eredmenyarany = $eredmenyarany*30;
-            
-            $rank_archiv = $eredmenyek[2];
-            $eredmeny_lista .= $sortores.$rank_valasz.'<td>'.$szavazatszam.'<div class="graf2v"><div class="graf2" style="width: '.$eredmenyarany.'px"></div></div></td>'.$sortores2;
         }
-        
-        $abszolut = $abszolut / $valaszadok_szama;
-        $abszolut = round($abszolut, 1);
         $eredmeny_lista = '<table class="rank_eredmeny">'
-                . '<td></td><td>1</td><td>2</td><td>3</td><td>4</td><td>5</td><td>Átlag</td>'
-                . $eredmeny_lista.'<td>'.$abszolut.'</td>'
-                . '</tr>'
+                . '<tr><td></td><td>1</td><td>2</td><td>3</td><td>4</td><td>5</td><td>Átlag</td></tr>'
+                . $eredmeny_lista
                 . '</table>';
         
     }
