@@ -28,22 +28,24 @@ if ($_REQUEST[submit]){ //űrlap elküldésének vizsgálata(személyes adatok)
     
     if ($_REQUEST[foglalkozas] == 'x'){
         $hiba++;
-        $hiba_uzenetek[$hiba] = $lang['nem_adta_meg_a_foglalkozasat'];
+        #$hiba_uzenetek[$hiba] = $lang['nem_adta_meg_a_foglalkozasat'];
+		$hiba_uzenetek[$hiba] = lang('nem_adta_meg_a_foglalkozasat', $lang);
     }
 	
 	if ($_REQUEST[vegzettseg] == 'x'){
         $hiba++;
-        $hiba_uzenetek[$hiba] = $lang['Nem adtad meg a vegzettséged!'];
+        $hiba_uzenetek[$hiba] = lang('Nem adtad meg a vegzettséged!', $lang);
     }
 	
 	if ($_REQUEST[csaladiallapot] == 'x'){
         $hiba++;
-        $hiba_uzenetek[$hiba] = $lang['Nem adtad meg a családi állapotod!'];
+        #$hiba_uzenetek[$hiba] = $lang['Nem adtad meg a családi állapotod!'];
+		$hiba_uzenetek[$hiba] = lang('Nem adtad meg a családi állapotod!', $lang);
     }
 	
 	if ($_REQUEST[jovedelmek] == 'x'){
         $hiba++;
-        $hiba_uzenetek[$hiba] = $lang['Nem adtad meg a jövedelmed!'];
+        $hiba_uzenetek[$hiba] = lang('Nem adtad meg a jövedelmed!', $lang);
     }
         
     $request_foglalkozas_value = $_REQUEST[foglalkozas];

@@ -15,6 +15,14 @@ while ($next_element = mysql_fetch_array($result)){
    $lang[$hu] = $next_element[$nyelv]; //$lang[nyelvek] = $next_element[en];
 }
 
+function lang($hu, $lang){
+   if (array_key_exists($hu, $lang)){
+	  return $lang[$hu];
+   } else {
+	  return $hu;
+   }
+}
+
 if ($_SESSION["lang"] == 'hu'){
     $lang[nyelv_valasztas] = 'Nyelv választás';
     $lang[magyar] = 'magyar';
