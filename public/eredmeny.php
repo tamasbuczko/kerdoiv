@@ -241,7 +241,7 @@ while ($next_element = mysql_fetch_array($result)){
 			}
 			$atlag = $abszolut / $valaszadok_szama;
 			$atlag = round($atlag, 1);
-			$eredmeny_lista .= '<tr><td>'.$eredmenyek[1].'</td>'.$sor_adat.'<td>'.$atlag.'</td></tr>';
+			$eredmeny_lista .= '<tr><td>'.$eredmenyek[valasz_.$_SESSION[lang]].'</td>'.$sor_adat.'<td>'.$atlag.'</td></tr>';
             
         }
         $eredmeny_lista = '<table class="rank_eredmeny">'
