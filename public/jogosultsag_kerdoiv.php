@@ -12,6 +12,7 @@ if ((!$_SESSION[qa_user_id])AND(!$_REQUEST[mod])){
 	  $jogosult = 1;
    } else {
 	  $tartalom = 'Nincs jogosultsága a kérdőív szerkesztéséhez!';
+	  //ez az üzenet jelenik meg az inaktív kérdőívek esetén is
    }
 }
 

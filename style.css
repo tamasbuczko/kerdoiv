@@ -1336,3 +1336,19 @@ margin-left: 20px;
     margin: 2px 0px 2px 0px;
     float: right;
 }
+
+.profil_form{
+   margin-bottom: 20px;
+}
+
+.profil_form label{
+   display: block;
+   float: left;
+   clear: both;
+   width: 180px;
+}
+
+.profil_form input{
+   display: block;
+   float: left;
+}
