@@ -94,12 +94,23 @@ $array = array( 'tartalom'       => $tartalom,
 
 $oldal = new html_blokk;
 
+$smarty->assign('lang', $lang);
+$smarty->assign('tartalom', $tartalom);
+$smarty->assign('figy_uzenet', $figy_uzenet);
+
+if ($_SESSION["sessfelhasznalo"]){
+    $tartalom = $smarty->fetch('templates/regisztracio2.tpl');
+} else {
+    $tartalom = $smarty->fetch('templates/regisztracio.tpl');
+}
+
+/*
 if ($_SESSION["sessfelhasznalo"]){
     $oldal->load_template_file("templates/regisztracio2.html",$array);
 } else {
     $oldal->load_template_file("templates/regisztracio.html",$array);
 }
-
-$tartalom = $oldal->html_code;
+*/
+//$tartalom = $oldal->html_code;
 
 ?>

@@ -165,6 +165,10 @@ h1{
     background-color: #eaeae8;
 }
 
+.login :first-letter{
+    text-transform: uppercase;
+}
+
 .login h2{
    margin: -4px 0 4px 0;
    font-weight: normal;
@@ -1317,8 +1321,29 @@ margin-left: 20px;
    float: left;
 }
 
-.csomagok {
-    background-color: #33aa33;
+.csomagok :first-letter{
+    text-transform: uppercase;
+}
+
+.csomagok th:nth-child(1){
+   text-align: left;
+   background-color:#4297d7;
+   width: 150px;
+}
+.csomagok th:nth-child(2){
+   text-align: left;
+   background-color:#33aa33;
+   width: 150px;
+}
+.csomagok th:nth-child(3){
+   text-align: left;
+   background-color:#777;
+   width: 150px;
+}
+.csomagok th:nth-child(4){
+   text-align: left;
+   background-color:#FFD814;
+   width: 150px;
 }
 
 .doboz{

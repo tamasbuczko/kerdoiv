@@ -46,14 +46,7 @@ if ($_SESSION["lang"] == 'hu'){
 	$lang[nem_adta_meg_a_lakhelyet] = 'Nem adtad meg a lakhelyed!';
 	$lang[nem_adta_meg_a_foglalkozasat] = 'Nem adtad meg a foglalkozásod!';
     $lang[bejelentkezes] = 'Bejelentkezés';
-    $lang[azonosito] = 'Azonosító';
-    $lang[jelszo] = 'Jelszó';
-    $lang[regisztracio] = 'Regisztráció';
-    $lang[email] = 'E-mail';
-    $lang[jelszo_megegyszer] = 'Jelszó mégegyszer';
-    $lang[ingyenes] = 'ingyenes';
-    $lang[ezust_csomag] = 'ezüst csomag';
-    $lang[arany_csomag] = 'arany csomag';
+    
 	$lang[kapcsolat] = 'Kapcsolat';
 	$lang[az_on_email_cime] = 'Az Ön e-mail címe';
 	$lang[uzenet] = 'Üzenet';
@@ -104,14 +97,7 @@ if ($_SESSION["lang"] == 'en'){
 	$lang[nem_adta_meg_a_lakhelyet] = 'You did not give your living place!';
 	$lang[nem_adta_meg_a_foglalkozasat] = 'You did not give your occupation!';
         $lang[bejelentkezes] = 'Login';
-    $lang[azonosito] = 'Username';
-	$lang[jelszo] = 'Password';
-	$lang[regisztracio] = 'Registration';
-	$lang[email] = 'E-mail';
-	$lang[jelszo_megegyszer] = 'Password again';
-	$lang[ingyenes] = 'free';
-	$lang[ezust_csomag] = 'silver package';
-	$lang[arany_csomag] = 'gold package';
+   
 	$lang[kapcsolat] = 'Contact';
 	$lang[az_on_email_cime] = 'Your e-mail';
 	$lang[uzenet] = 'Message';
@@ -162,14 +148,8 @@ if ($_SESSION["lang"] == 'de'){
 	$lang[nem_adta_meg_a_lakhelyet] = 'Sie haben es nicht geben Ihrem Lebensraum!';
 	$lang[nem_adta_meg_a_foglalkozasat] = 'Sie haben Ihren Beruf nicht aufgeben!';
         $lang[bejelentkezes] = 'Anmelden';
-    	$lang[azonosito] = 'Benutzername';
-	$lang[jelszo] = 'Passwort';
-	$lang[regisztracio] = 'Registrierung';
-	$lang[email] = 'Ihre E-Mail';
-	$lang[jelszo_megegyszer] = 'Passwort erneut';	
-	$lang[ingyenes] = 'Frei';
-	$lang[ezust_csomag] = 'Silber-Paket';
-	$lang[arany_csomag] = 'Gold-Paket';
+    
+	
 	$lang[kapcsolat] = 'Kontakt';
 	$lang[az_on_email_cime] = 'Ihre E-Mail';
 	$lang[uzenet] = 'Nachricht';
