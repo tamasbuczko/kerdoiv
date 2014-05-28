@@ -29,6 +29,9 @@ if ($_SESSION["lang"] == 'hu'){
     $lang[angol] = 'angol';
     $lang[nemet] = 'német'; 
     $lang[eletkor] = 'Életkor:';
+	$lang['Építsd fel!'] = 'Építsd fel!';
+	$lang['Terjeszd el!'] = 'Terjeszd el!';
+	$lang['Arasd le!'] = 'Arasd le!';
     
     $lang[ferfi] = 'férfi';
     $lang[no] = 'nő';
@@ -80,6 +83,9 @@ if ($_SESSION["lang"] == 'en'){
     $lang[angol] = 'English';
     $lang[nemet] = 'German';
     $lang[eletkor] = 'Age:';
+	$lang['Építsd fel!'] = 'Build it!';
+	$lang['Terjeszd el!'] = 'Propagate it!';
+	$lang['Arasd le!'] = 'Reap it!';
     
     $lang[ferfi] = 'male';
     $lang[no] = 'female';
@@ -131,6 +137,9 @@ if ($_SESSION["lang"] == 'de'){
     $lang[angol] = 'englisch';
     $lang[nemet] = 'deutsch';
     $lang[eletkor] = 'Alter:';
+	$lang['Építsd fel!'] = 'Bauen!';
+	$lang['Terjeszd el!'] = 'Propagieren!';
+	$lang['Arasd le!'] = 'Ernte!';
     
     $lang[ferfi] = 'männlich';
     $lang[no] = 'weiblich';
