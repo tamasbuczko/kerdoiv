@@ -208,6 +208,7 @@ h1{
    cursor: pointer;
    font-family: 'Roboto_C', Arial;
    width: 100px;
+   text-transform: capitalize;
 }
 
 .login input[type="submit"]:hover{
@@ -1320,30 +1321,59 @@ margin-left: 20px;
    height: 180px !important;
    float: left;
 }
-
 .csomagok :first-letter{
     text-transform: uppercase;
 }
+.csomagok {
+    margin-bottom: 10px;
+    font-size:16px;
+    border-collapse:collapse;
+    border: 2px solid #aaa;
+    text-align: center;
+}
+.csomagok tr:nth-child(1){
+    border-top: 2px solid #aaa;
+    border-bottom: 2px solid #aaa;
+    height: 40px;
+}
 
+.csomagok th{
+    text-align: center;
+    width: 70px;
+}
 .csomagok th:nth-child(1){
-   text-align: left;
-   background-color:#4297d7;
-   width: 150px;
+   background-color:#d0e5f5;
+   width: 200px;
 }
 .csomagok th:nth-child(2){
-   text-align: left;
-   background-color:#33aa33;
-   width: 150px;
+  background-color:#72eb65;  
 }
 .csomagok th:nth-child(3){
-   text-align: left;
-   background-color:#777;
-   width: 150px;
+   background-color:#d8d8d8;
 }
 .csomagok th:nth-child(4){
-   text-align: left;
-   background-color:#FFD814;
-   width: 150px;
+   background-color:#fdf551;
+}
+
+.csomagok td{
+    font-size:14px;
+    padding:3px;
+    border-bottom: 1px solid #aaa;
+}
+
+.csomagok td:nth-child(1){
+   background-color:#d0e5f5;
+   width: 200px;
+   text-align: left;   
+}
+.csomagok td:nth-child(2){
+  background-color:#72eb65;  
+}
+.csomagok td:nth-child(3){
+   background-color:#d8d8d8;
+}
+.csomagok td:nth-child(4){
+   background-color:#fdf551;
 }
 
 .doboz{
