@@ -103,5 +103,6 @@ $smarty->assign('lang', $lang);
 $smarty->assign('session_lang', $_SESSION["lang"]);
 $smarty->assign('mentes_gomb', $mentes_gomb);
 $smarty->assign('alcim', $alcim);
+$smarty->assign('MAIN_DIRECTORY', MAIN_DIRECTORY);
 
 $smarty->display('templates/index.tpl');

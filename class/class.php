@@ -173,10 +173,10 @@ class user{
 			$mostlep == 1;
 		} else {
 		   if ($_SESSION[qa_user_id]){
-			$result = mysql_query("SELECT id, nick, password, authority, email FROM users WHERE id = '$_SESSION[sessfelhasznalosorszam]'");	
+			$result = mysql_query("SELECT id, nick, password, authority, email FROM users WHERE id = '$_SESSION[qa_user_id]'");	
 			$s = mysql_fetch_row($result);
 		   }
-		}
+		} 
 			if ($s[2] != ""){
 				$this->sorszam = $s[0];
 				$this->nev = $s[1];
