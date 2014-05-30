@@ -16,7 +16,7 @@
     <div>
         <input type="radio" name="csomag" value="5" /><label>{$lang['arany csomag']}</label>
     </div>
-    <input name="send" type="submit" value="{$lang['regisztráció']}" />
+    <input name="send" type="submit" value="{$lang['regisztráció']}" /> 
 </form>
 
 <table class="csomagok">
