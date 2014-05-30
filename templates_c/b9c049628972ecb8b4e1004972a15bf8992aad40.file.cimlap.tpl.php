@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.14, created on 2014-05-28 18:04:56
+<?php /* Smarty version Smarty-3.1.14, created on 2014-05-27 18:53:45
          compiled from "templates\cimlap.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:321475377a902477e01-94518615%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'b9c049628972ecb8b4e1004972a15bf8992aad40' => 
     array (
       0 => 'templates\\cimlap.tpl',
-      1 => 1401293093,
+      1 => 1401209361,
       2 => 'file',
     ),
   ),
@@ -36,14 +36,14 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 </div>
 
 <form action="" name="login" method="post" class="login">
-  <h2><?php echo $_smarty_tpl->tpl_vars['lang']->value['bejelentkezés'];?>
+  <h2><?php echo $_smarty_tpl->tpl_vars['lang']->value['bejelentkezes'];?>
 </h2>
-  <label><?php echo $_smarty_tpl->tpl_vars['lang']->value['azonosító'];?>
+  <label><?php echo $_smarty_tpl->tpl_vars['lang']->value['azonosito'];?>
 :</label><input type="text" name="azonosito" value="" />
-  <label><?php echo $_smarty_tpl->tpl_vars['lang']->value['jelszó'];?>
+  <label><?php echo $_smarty_tpl->tpl_vars['lang']->value['jelszo'];?>
 :</label><input type="password" name="jelszo" value="" />
-  <input name="send" type="submit" value="<?php echo $_smarty_tpl->tpl_vars['lang']->value['bejelentkezés'];?>
+  <input name="send" type="submit" value="<?php echo $_smarty_tpl->tpl_vars['lang']->value['bejelentkezes'];?>
 " />
-  <a href="?p=regisztracio"><?php echo $_smarty_tpl->tpl_vars['lang']->value['regisztráció'];?>
+  <a href="?p=regisztracio"><?php echo $_smarty_tpl->tpl_vars['lang']->value['regisztracio'];?>
 </a>
 </form><?php }} ?>
