@@ -45,7 +45,7 @@ if ($_SESSION["lang"] == 'hu'){
 	$lang[nem_adta_meg_a_korat] = 'Nem adtad meg a korod!';
 	$lang[nem_adta_meg_a_lakhelyet] = 'Nem adtad meg a lakhelyed!';
 	$lang[nem_adta_meg_a_foglalkozasat] = 'Nem adtad meg a foglalkozásod!';
-    $lang[bejelentkezes] = 'Bejelentkezés';
+    
     
 	$lang[kapcsolat] = 'Kapcsolat';
 	$lang[az_on_email_cime] = 'Az Ön e-mail címe';

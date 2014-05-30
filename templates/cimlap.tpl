@@ -8,9 +8,9 @@
 </div>
 
 <form action="" name="login" method="post" class="login">
-  <h2>{$lang['bejelentkezes']}</h2>
-  <label>{$lang['azonosito']}:</label><input type="text" name="azonosito" value="" />
-  <label>{$lang['jelszo']}:</label><input type="password" name="jelszo" value="" />
-  <input name="send" type="submit" value="{$lang['bejelentkezes']}" />
-  <a href="?p=regisztracio">{$lang['regisztracio']}</a>
+  <h2>{$lang['bejelentkezés']}</h2>
+  <label>{$lang['azonosító']}:</label><input type="text" name="azonosito" value="" />
+  <label>{$lang['jelszó']}:</label><input type="password" name="jelszo" value="" />
+  <input name="send" type="submit" value="{$lang['bejelentkezés']}" />
+  <a href="?p=regisztracio">{$lang['regisztráció']}</a>
 </form>
