@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.14, created on 2014-05-30 17:38:38
+<?php /* Smarty version Smarty-3.1.14, created on 2014-05-30 18:25:26
          compiled from "templates\fizetes.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:52195388a5fe29f7d2-61496938%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'fdcda54d15daa403b1b93857ce916361b2bad17f' => 
     array (
       0 => 'templates\\fizetes.tpl',
-      1 => 1401464125,
+      1 => 1401466300,
       2 => 'file',
     ),
   ),
@@ -15,9 +15,9 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   'function' => 
   array (
   ),
-  'has_nocache_code' => false,
   'version' => 'Smarty-3.1.14',
   'unifunc' => 'content_5388a5fe2dae06_81860649',
+  'has_nocache_code' => false,
 ),false); /*/%%SmartyHeaderCode%%*/?>
 <?php if ($_valid && !is_callable('content_5388a5fe2dae06_81860649')) {function content_5388a5fe2dae06_81860649($_smarty_tpl) {?><form name="fizetes" method="post" action="?p=profil&pay=1">
 	 <select name="termek">

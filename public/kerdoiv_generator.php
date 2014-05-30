@@ -262,7 +262,7 @@ $email_es_elkuldes_blokk = '<div style="'.$adat_off.'">
 
 if ($kerdoiv_zaras){
    if (!$_REQUEST[mod]){
-    $kerdoiv_also = '<div id="survey_zaras">'.$kerdoiv_zaras.'</div>';
+    $kerdoiv_also = '<div id="survey_zaras">'.$kerdoiv_zaras.'</div>'; 
    }
 }
 
@@ -274,7 +274,53 @@ $slider_script = '
 
 $slider_script = '';
 
-$kerdes_blokk = $kerdoiv_fejlec.'<ul id="slider2">'.$kerdes_blokk.'</ul>'.$uj_kerdes_gomb.
+$google_hirdetes_qa1 = '
+<div>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- qa1 -->
+<ins class="adsbygoogle"
+     style="display:inline-block;width:160px;height:600px"
+     data-ad-client="ca-pub-5390887008581273"
+     data-ad-slot="5591790437"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>';
+
+$google_hirdetes_qa2 = '
+<div>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- qa2 -->
+<ins class="adsbygoogle"
+     style="display:inline-block;width:160px;height:600px"
+     data-ad-client="ca-pub-5390887008581273"
+     data-ad-slot="6928922839"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>';
+
+$google_hirdetes_qa3 = '
+<div>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- qa3 -->
+<ins class="adsbygoogle"
+     style="display:inline-block;width:160px;height:600px"
+     data-ad-client="ca-pub-5390887008581273"
+     data-ad-slot="2359122436"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>';
+
+$kerdes_blokk = $kerdoiv_fejlec .
+        '<div class="google_hirdetes">'.
+        $google_hirdetes_qa1.$google_hirdetes_qa2.$google_hirdetes_qa3.
+        '</div>
+        <div style="float: left; background-color: #fff;">
+        <ul id="slider2">'.$kerdes_blokk.'</ul>
+        </div>'   
+        .$uj_kerdes_gomb.
                 '<br />'.$kerdoiv_also.$email_es_elkuldes_blokk.'
 		</form>
                 </div>'.$slider_script.''

@@ -28,7 +28,7 @@
 		 <a href="?lang=hu{$url_param}"><img src="graphics/magyar_zaszlo_k.png" alt="" />hu</a>
 	  </div>
 	  <div id="frame"{if $reklammentes} style="width: 690px;"{/if}>
-		 <div id="head"{$head_off}>
+		 <div id="head"{if $head_off}{$head_off}{/if}>
 			<div id="head_menu">
 			   <a href="?" id="logo"></a>
 			   <div id="menu">

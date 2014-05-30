@@ -415,6 +415,20 @@ INSERT INTO dat_vegzettseg VALUES("8","Doktor, Professzor","Doctor, Professor","
 
 
 
+DROP TABLE fizetesek;
+
+CREATE TABLE `fizetesek` (
+  `id` int(11) NOT NULL auto_increment,
+  `user_id` int(11) default NULL,
+  `osszeg` int(11) default NULL,
+  `idopont` datetime default NULL,
+  `status` varchar(1) default NULL,
+  PRIMARY KEY  (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+
+
+
 DROP TABLE kerdesek;
 
 CREATE TABLE `kerdesek` (
@@ -551,7 +565,7 @@ CREATE TABLE `kitoltok` (
   `jovedelem` int(11) default NULL,
   `csaladiallapot` int(11) default NULL,
   PRIMARY KEY  (`sorszam`)
-) ENGINE=InnoDB AUTO_INCREMENT=127 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=129 DEFAULT CHARSET=latin1;
 
 INSERT INTO kitoltok VALUES("18","savo@freemail.hu","6","2","100","jogász","hu","","","");
 INSERT INTO kitoltok VALUES("19","tamasbuczko@gmail.com","6","1","100","hegesztőmérnök","hu","","","");
@@ -662,6 +676,8 @@ INSERT INTO kitoltok VALUES("123","","6","2","100","moderátor","hu","","","");
 INSERT INTO kitoltok VALUES("124","","6","1","100","mérnök","hu","","","");
 INSERT INTO kitoltok VALUES("125","","3","1","4","dsdsd","hu","","","");
 INSERT INTO kitoltok VALUES("126","","2","1","2","pék","hu","","","");
+INSERT INTO kitoltok VALUES("127","tamasbuczko@gmail.com","7","1","10","10","hu","","","");
+INSERT INTO kitoltok VALUES("128","","5","1","6","14","hu","","","");
 
 
 
@@ -677,7 +693,7 @@ CREATE TABLE `log` (
   `host` varchar(150) character set latin2 collate latin2_hungarian_ci default NULL,
   `ip` varchar(30) default NULL,
   PRIMARY KEY  (`sorszam`)
-) ENGINE=InnoDB AUTO_INCREMENT=5738 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=5828 DEFAULT CHARSET=latin1;
 
 INSERT INTO log VALUES("1","2014-04-11 21:11:35","0","/kerdoiv/","Futás indul...","Mozilla/5.0 (Windows NT 6.0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/34.0.1847.116 Safari/537.36","","::1");
 INSERT INTO log VALUES("2","2014-04-12 09:17:09","0","/kerdoiv/?db_load=on","Futás indul...","Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/29.0.1547.76 Safari/537.36","","127.0.0.1");
@@ -6416,6 +6432,96 @@ INSERT INTO log VALUES("5734","2014-05-29 22:22:59","0","/kerdoiv/?p=5","Futás 
 INSERT INTO log VALUES("5735","2014-05-29 22:23:06","0","/kerdoiv/?logout=1","Futás indul...","Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/29.0.1547.76 Safari/537.36","","127.0.0.1");
 INSERT INTO log VALUES("5736","2014-05-29 22:23:09","0","/kerdoiv/?p=5","Futás indul...","Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/29.0.1547.76 Safari/537.36","","127.0.0.1");
 INSERT INTO log VALUES("5737","2014-05-29 22:27:44","0","/kerdoiv/","Futás indul...","Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/29.0.1547.76 Safari/537.36","","127.0.0.1");
+INSERT INTO log VALUES("5738","2014-05-29 22:28:16","0","/kerdoiv/?db_save=on","Futás indul...","Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/29.0.1547.76 Safari/537.36","","127.0.0.1");
+INSERT INTO log VALUES("5739","2014-05-29 22:28:21","0","/kerdoiv/","Futás indul...","Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/29.0.1547.76 Safari/537.36","","127.0.0.1");
+INSERT INTO log VALUES("5740","2014-05-29 22:33:01","0","/kerdoiv/","Futás indul...","Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/29.0.1547.76 Safari/537.36","","127.0.0.1");
+INSERT INTO log VALUES("5741","2014-05-29 22:33:03","0","/kerdoiv/?p=5","Futás indul...","Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/29.0.1547.76 Safari/537.36","","127.0.0.1");
+INSERT INTO log VALUES("5742","2014-05-30 18:17:45","0","/kerdoiv/","Futás indul...","Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/29.0.1547.76 Safari/537.36","","127.0.0.1");
+INSERT INTO log VALUES("5743","2014-05-30 18:18:01","0","/kerdoiv/","Futás indul...","Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/29.0.1547.76 Safari/537.36","","127.0.0.1");
+INSERT INTO log VALUES("5744","2014-05-30 18:18:52","0","/kerdoiv/?lang=de&","Futás indul...","Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/29.0.1547.76 Safari/537.36","","127.0.0.1");
+INSERT INTO log VALUES("5745","2014-05-30 18:18:52","0","/kerdoiv/?","Futás indul...","Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/29.0.1547.76 Safari/537.36","","127.0.0.1");
+INSERT INTO log VALUES("5746","2014-05-30 18:21:15","0","/kerdoiv/?lang=hu&","Futás indul...","Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/29.0.1547.76 Safari/537.36","","127.0.0.1");
+INSERT INTO log VALUES("5747","2014-05-30 18:21:15","0","/kerdoiv/?","Futás indul...","Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/29.0.1547.76 Safari/537.36","","127.0.0.1");
+INSERT INTO log VALUES("5748","2014-05-30 18:21:23","0","/kerdoiv/?","Futás indul...","Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/29.0.1547.76 Safari/537.36","","127.0.0.1");
+INSERT INTO log VALUES("5749","2014-05-30 18:21:25","0","/kerdoiv/?p=5","Futás indul...","Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/29.0.1547.76 Safari/537.36","","127.0.0.1");
+INSERT INTO log VALUES("5750","2014-05-30 18:22:40","0","/kerdoiv/?p=profil","Futás indul...","Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/29.0.1547.76 Safari/537.36","","127.0.0.1");
+INSERT INTO log VALUES("5751","2014-05-30 18:23:09","0","/kerdoiv/?p=profil","Futás indul...","Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/29.0.1547.76 Safari/537.36","","127.0.0.1");
+INSERT INTO log VALUES("5752","2014-05-30 18:25:26","0","/kerdoiv/?p=fizetes","Futás indul...","Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/29.0.1547.76 Safari/537.36","","127.0.0.1");
+INSERT INTO log VALUES("5753","2014-05-30 18:25:36","0","/kerdoiv/?p=profil","Futás indul...","Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/29.0.1547.76 Safari/537.36","","127.0.0.1");
+INSERT INTO log VALUES("5754","2014-05-30 18:25:45","0","/kerdoiv/?p=profil","Futás indul...","Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/29.0.1547.76 Safari/537.36","","127.0.0.1");
+INSERT INTO log VALUES("5755","2014-05-30 18:25:46","0","/kerdoiv/?p=profil","Futás indul...","Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/29.0.1547.76 Safari/537.36","","127.0.0.1");
+INSERT INTO log VALUES("5756","2014-05-30 18:25:47","0","/kerdoiv/?p=profil","Futás indul...","Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/29.0.1547.76 Safari/537.36","","127.0.0.1");
+INSERT INTO log VALUES("5757","2014-05-30 18:25:52","0","/kerdoiv/?p=profil","Futás indul...","Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/29.0.1547.76 Safari/537.36","","127.0.0.1");
+INSERT INTO log VALUES("5758","2014-05-30 18:26:01","0","/kerdoiv/?p=profil","Futás indul...","Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/29.0.1547.76 Safari/537.36","","127.0.0.1");
+INSERT INTO log VALUES("5759","2014-05-30 18:26:08","0","/kerdoiv/?p=profil","Futás indul...","Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/29.0.1547.76 Safari/537.36","","127.0.0.1");
+INSERT INTO log VALUES("5760","2014-05-30 18:26:20","0","/kerdoiv/?p=profil","Futás indul...","Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/29.0.1547.76 Safari/537.36","","127.0.0.1");
+INSERT INTO log VALUES("5761","2014-05-30 18:29:12","0","/kerdoiv/?p=5","Futás indul...","Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/29.0.1547.76 Safari/537.36","","127.0.0.1");
+INSERT INTO log VALUES("5762","2014-05-30 18:29:34","0","/kerdoiv/?p=profil","Futás indul...","Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/29.0.1547.76 Safari/537.36","","127.0.0.1");
+INSERT INTO log VALUES("5763","2014-05-30 18:30:09","0","/kerdoiv/?p=fizetes","Futás indul...","Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/29.0.1547.76 Safari/537.36","","127.0.0.1");
+INSERT INTO log VALUES("5764","2014-05-30 18:32:00","0","/kerdoiv/?p=profil","Futás indul...","Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/29.0.1547.76 Safari/537.36","","127.0.0.1");
+INSERT INTO log VALUES("5765","2014-05-30 18:32:20","0","/kerdoiv/?p=5","Futás indul...","Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/29.0.1547.76 Safari/537.36","","127.0.0.1");
+INSERT INTO log VALUES("5766","2014-05-30 18:35:24","0","/kerdoiv/?","Futás indul...","Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/29.0.1547.76 Safari/537.36","","127.0.0.1");
+INSERT INTO log VALUES("5767","2014-05-30 18:35:26","0","/kerdoiv/?p=7","Futás indul...","Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/29.0.1547.76 Safari/537.36","","127.0.0.1");
+INSERT INTO log VALUES("5768","2014-05-30 18:35:29","0","/kerdoiv/?","Futás indul...","Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/29.0.1547.76 Safari/537.36","","127.0.0.1");
+INSERT INTO log VALUES("5769","2014-05-30 18:35:34","0","/kerdoiv/?p=nyilvanos","Futás indul...","Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/29.0.1547.76 Safari/537.36","","127.0.0.1");
+INSERT INTO log VALUES("5770","2014-05-30 18:35:44","0","/kerdoiv/?","Futás indul...","Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/29.0.1547.76 Safari/537.36","","127.0.0.1");
+INSERT INTO log VALUES("5771","2014-05-30 18:35:50","0","/kerdoiv/?p=nyilvanos","Futás indul...","Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/29.0.1547.76 Safari/537.36","","127.0.0.1");
+INSERT INTO log VALUES("5772","2014-05-30 18:36:01","0","/kerdoiv/?","Futás indul...","Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/29.0.1547.76 Safari/537.36","","127.0.0.1");
+INSERT INTO log VALUES("5773","2014-05-30 18:37:10","0","/kerdoiv/?p=kitoltott","Futás indul...","Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/29.0.1547.76 Safari/537.36","","127.0.0.1");
+INSERT INTO log VALUES("5774","2014-05-30 18:37:32","0","/kerdoiv/?","Futás indul...","Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/29.0.1547.76 Safari/537.36","","127.0.0.1");
+INSERT INTO log VALUES("5775","2014-05-30 18:40:28","0","/kerdoiv/?p=profil","Futás indul...","Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/29.0.1547.76 Safari/537.36","","127.0.0.1");
+INSERT INTO log VALUES("5776","2014-05-30 18:40:49","0","/kerdoiv/?p=profil","Futás indul...","Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/29.0.1547.76 Safari/537.36","","127.0.0.1");
+INSERT INTO log VALUES("5777","2014-05-30 18:40:51","0","/kerdoiv/?p=profil","Futás indul...","Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/29.0.1547.76 Safari/537.36","","127.0.0.1");
+INSERT INTO log VALUES("5778","2014-05-30 18:40:56","0","/kerdoiv/?","Futás indul...","Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/29.0.1547.76 Safari/537.36","","127.0.0.1");
+INSERT INTO log VALUES("5779","2014-05-30 18:41:52","0","/kerdoiv/?p=profil","Futás indul...","Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/29.0.1547.76 Safari/537.36","","127.0.0.1");
+INSERT INTO log VALUES("5780","2014-05-30 18:41:58","0","/kerdoiv/?p=profil","Futás indul...","Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/29.0.1547.76 Safari/537.36","","127.0.0.1");
+INSERT INTO log VALUES("5781","2014-05-30 18:42:01","0","/kerdoiv/?p=profil","Futás indul...","Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/29.0.1547.76 Safari/537.36","","127.0.0.1");
+INSERT INTO log VALUES("5782","2014-05-30 18:42:03","0","/kerdoiv/?","Futás indul...","Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/29.0.1547.76 Safari/537.36","","127.0.0.1");
+INSERT INTO log VALUES("5783","2014-05-30 18:47:53","0","/kerdoiv/?","Futás indul...","Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/29.0.1547.76 Safari/537.36","","127.0.0.1");
+INSERT INTO log VALUES("5784","2014-05-30 18:47:57","0","/kerdoiv/?","Futás indul...","Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/29.0.1547.76 Safari/537.36","","127.0.0.1");
+INSERT INTO log VALUES("5785","2014-05-30 18:49:38","0","/kerdoiv/?","Futás indul...","Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/29.0.1547.76 Safari/537.36","","127.0.0.1");
+INSERT INTO log VALUES("5786","2014-05-30 18:50:41","0","/kerdoiv/?","Futás indul...","Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/29.0.1547.76 Safari/537.36","","127.0.0.1");
+INSERT INTO log VALUES("5787","2014-05-30 18:50:57","0","/kerdoiv/?p=7","Futás indul...","Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/29.0.1547.76 Safari/537.36","","127.0.0.1");
+INSERT INTO log VALUES("5788","2014-05-30 18:52:03","0","/kerdoiv/?","Futás indul...","Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/29.0.1547.76 Safari/537.36","","127.0.0.1");
+INSERT INTO log VALUES("5789","2014-05-30 18:52:08","0","/kerdoiv/?p=kerdoiv&kerdoiv=6","Futás indul...","Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/29.0.1547.76 Safari/537.36","","127.0.0.1");
+INSERT INTO log VALUES("5790","2014-05-30 18:52:51","0","/kerdoiv/?","Futás indul...","Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/29.0.1547.76 Safari/537.36","","127.0.0.1");
+INSERT INTO log VALUES("5791","2014-05-30 18:52:51","0","/kerdoiv/index.php?ok=1","Futás indul...","Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/29.0.1547.76 Safari/537.36","","127.0.0.1");
+INSERT INTO log VALUES("5792","2014-05-30 18:55:30","0","/kerdoiv/index.php?ok=1","Futás indul...","Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/29.0.1547.76 Safari/537.36","","127.0.0.1");
+INSERT INTO log VALUES("5793","2014-05-30 18:56:46","0","/kerdoiv/index.php?ok=1","Futás indul...","Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/29.0.1547.76 Safari/537.36","","127.0.0.1");
+INSERT INTO log VALUES("5794","2014-05-30 18:56:50","0","/kerdoiv/index.php?lang=en&ok=1","Futás indul...","Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/29.0.1547.76 Safari/537.36","","127.0.0.1");
+INSERT INTO log VALUES("5795","2014-05-30 18:56:51","0","/kerdoiv/index.php?ok=1","Futás indul...","Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/29.0.1547.76 Safari/537.36","","127.0.0.1");
+INSERT INTO log VALUES("5796","2014-05-30 18:57:03","0","/kerdoiv/index.php?lang=hu&ok=1","Futás indul...","Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/29.0.1547.76 Safari/537.36","","127.0.0.1");
+INSERT INTO log VALUES("5797","2014-05-30 18:57:03","0","/kerdoiv/index.php?ok=1","Futás indul...","Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/29.0.1547.76 Safari/537.36","","127.0.0.1");
+INSERT INTO log VALUES("5798","2014-05-30 18:57:24","0","/kerdoiv/index.php?p=kerdoiv&kerdoiv=2","Futás indul...","Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/29.0.1547.76 Safari/537.36","","127.0.0.1");
+INSERT INTO log VALUES("5799","2014-05-30 18:57:52","0","/kerdoiv/index.php?","Futás indul...","Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/29.0.1547.76 Safari/537.36","","127.0.0.1");
+INSERT INTO log VALUES("5800","2014-05-30 18:57:56","0","/kerdoiv/index.php?b=1","Futás indul...","Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/29.0.1547.76 Safari/537.36","","127.0.0.1");
+INSERT INTO log VALUES("5801","2014-05-30 18:57:57","0","/kerdoiv/index.php?ok=1","Futás indul...","Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/29.0.1547.76 Safari/537.36","","127.0.0.1");
+INSERT INTO log VALUES("5802","2014-05-30 18:58:01","0","/kerdoiv/index.php?ok=1","Futás indul...","Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/29.0.1547.76 Safari/537.36","","127.0.0.1");
+INSERT INTO log VALUES("5803","2014-05-30 19:11:29","0","/kerdoiv/index.php?p=kerdoiv&kerdoiv=1","Futás indul...","Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/29.0.1547.76 Safari/537.36","","127.0.0.1");
+INSERT INTO log VALUES("5804","2014-05-30 19:13:30","0","/kerdoiv/index.php?p=kerdoiv&kerdoiv=1","Futás indul...","Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/29.0.1547.76 Safari/537.36","","127.0.0.1");
+INSERT INTO log VALUES("5805","2014-05-30 19:13:47","0","/kerdoiv/index.php?p=kerdoiv&kerdoiv=1","Futás indul...","Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/29.0.1547.76 Safari/537.36","","127.0.0.1");
+INSERT INTO log VALUES("5806","2014-05-30 19:15:06","0","/kerdoiv/index.php?p=kerdoiv&kerdoiv=1","Futás indul...","Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/29.0.1547.76 Safari/537.36","","127.0.0.1");
+INSERT INTO log VALUES("5807","2014-05-30 19:16:16","0","/kerdoiv/index.php?p=kerdoiv&kerdoiv=1","Futás indul...","Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/29.0.1547.76 Safari/537.36","","127.0.0.1");
+INSERT INTO log VALUES("5808","2014-05-30 19:24:39","0","/kerdoiv/index.php?p=kerdoiv&kerdoiv=1","Futás indul...","Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/29.0.1547.76 Safari/537.36","","127.0.0.1");
+INSERT INTO log VALUES("5809","2014-05-30 19:27:12","0","/kerdoiv/index.php?p=kerdoiv&kerdoiv=1","Futás indul...","Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/29.0.1547.76 Safari/537.36","","127.0.0.1");
+INSERT INTO log VALUES("5810","2014-05-30 19:28:17","0","/kerdoiv/index.php?p=kerdoiv&kerdoiv=1","Futás indul...","Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/29.0.1547.76 Safari/537.36","","127.0.0.1");
+INSERT INTO log VALUES("5811","2014-05-30 19:28:55","0","/kerdoiv/index.php?p=kerdoiv&kerdoiv=1","Futás indul...","Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/29.0.1547.76 Safari/537.36","","127.0.0.1");
+INSERT INTO log VALUES("5812","2014-05-30 19:31:10","0","/kerdoiv/index.php?p=kerdoiv&kerdoiv=1","Futás indul...","Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/29.0.1547.76 Safari/537.36","","127.0.0.1");
+INSERT INTO log VALUES("5813","2014-05-30 19:33:40","0","/kerdoiv/index.php?p=kerdoiv&kerdoiv=1","Futás indul...","Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/29.0.1547.76 Safari/537.36","","127.0.0.1");
+INSERT INTO log VALUES("5814","2014-05-30 19:34:35","0","/kerdoiv/index.php?p=kerdoiv&kerdoiv=1","Futás indul...","Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/29.0.1547.76 Safari/537.36","","127.0.0.1");
+INSERT INTO log VALUES("5815","2014-05-30 19:35:13","0","/kerdoiv/index.php?p=kerdoiv&kerdoiv=1","Futás indul...","Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/29.0.1547.76 Safari/537.36","","127.0.0.1");
+INSERT INTO log VALUES("5816","2014-05-30 19:35:44","0","/kerdoiv/index.php?p=kerdoiv&kerdoiv=1","Futás indul...","Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/29.0.1547.76 Safari/537.36","","127.0.0.1");
+INSERT INTO log VALUES("5817","2014-05-30 19:36:12","0","/kerdoiv/index.php?p=kerdoiv&kerdoiv=1","Futás indul...","Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/29.0.1547.76 Safari/537.36","","127.0.0.1");
+INSERT INTO log VALUES("5818","2014-05-30 19:38:16","0","/kerdoiv/index.php?p=kerdoiv&kerdoiv=1","Futás indul...","Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/29.0.1547.76 Safari/537.36","","127.0.0.1");
+INSERT INTO log VALUES("5819","2014-05-30 19:43:14","0","/kerdoiv/index.php?p=kerdoiv&kerdoiv=1","Futás indul...","Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/29.0.1547.76 Safari/537.36","","127.0.0.1");
+INSERT INTO log VALUES("5820","2014-05-30 19:45:25","0","/kerdoiv/index.php?p=kerdoiv&kerdoiv=1","Futás indul...","Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/29.0.1547.76 Safari/537.36","","127.0.0.1");
+INSERT INTO log VALUES("5821","2014-05-30 19:46:31","0","/kerdoiv/index.php?p=kerdoiv&kerdoiv=1","Futás indul...","Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/29.0.1547.76 Safari/537.36","","127.0.0.1");
+INSERT INTO log VALUES("5822","2014-05-30 19:54:48","0","/kerdoiv/index.php?p=kerdoiv&kerdoiv=1","Futás indul...","Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/29.0.1547.76 Safari/537.36","","127.0.0.1");
+INSERT INTO log VALUES("5823","2014-05-30 19:55:30","0","/kerdoiv/index.php?p=kerdoiv&kerdoiv=1","Futás indul...","Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/29.0.1547.76 Safari/537.36","","127.0.0.1");
+INSERT INTO log VALUES("5824","2014-05-30 19:56:14","0","/kerdoiv/index.php?","Futás indul...","Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/29.0.1547.76 Safari/537.36","","127.0.0.1");
+INSERT INTO log VALUES("5825","2014-05-30 19:56:19","0","/kerdoiv/index.php?","Futás indul...","Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/29.0.1547.76 Safari/537.36","","127.0.0.1");
+INSERT INTO log VALUES("5826","2014-05-30 20:32:06","0","/kerdoiv/?p=fizetes","Futás indul...","Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/29.0.1547.76 Safari/537.36","","127.0.0.1");
+INSERT INTO log VALUES("5827","2014-05-30 20:32:09","0","/kerdoiv/","Futás indul...","Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/29.0.1547.76 Safari/537.36","","127.0.0.1");
 
 
 
@@ -6562,7 +6668,7 @@ CREATE TABLE `szoveg` (
   `php_file` varchar(100) collate utf8_unicode_ci default NULL,
   `hivatkozas` varchar(50) collate utf8_unicode_ci default NULL,
   PRIMARY KEY  (`sorszam`)
-) ENGINE=MyISAM AUTO_INCREMENT=45 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=48 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 INSERT INTO szoveg VALUES("1","1","Kapcsolat","<p>
 Ha bármilyen kérdése van, vagy segítségre van szüksége, írjon nekünk.
@@ -6660,6 +6766,9 @@ INSERT INTO szoveg VALUES("41","16","Profil","","0","2","de","","","profil.php",
 INSERT INTO szoveg VALUES("42","20","Nyilvános kérdőívek","","0","1","hu","","","nyilvanos.php","nyilvanos");
 INSERT INTO szoveg VALUES("43","20","Nyilvános kérdőívek","","0","1","en","","","nyilvanos.php","nyilvanos");
 INSERT INTO szoveg VALUES("44","20","Nyilvános kérdőívek","","0","1","de","","","nyilvanos.php","nyilvanos");
+INSERT INTO szoveg VALUES("45","21","Fizetés","","0","2","hu","","","fizetes.php","fizetes");
+INSERT INTO szoveg VALUES("46","21","Fizetés","","0","2","en","","","fizetes.php","fizetes");
+INSERT INTO szoveg VALUES("47","21","Fizetés","","0","2","de","","","fizetes.php","fizetes");
 
 
 
@@ -10577,11 +10686,16 @@ INSERT INTO teszt_view VALUES("18","Ha használsz valamilyen naptárat, akkor mi
 INSERT INTO teszt_view VALUES("18","Ha használsz valamilyen naptárat, akkor mit követsz vele?	","Érdeklődési körödbe tartozó rendezvényeket","1");
 INSERT INTO teszt_view VALUES("18","Ha használsz valamilyen naptárat, akkor mit követsz vele?	","Hétköznapi teendőket","1");
 INSERT INTO teszt_view VALUES("19","Ön szerint a társkereső oldalak mennyire szokványosak a barát/barátnő szerzés szempontjából. ","egyértelműen első számú","1");
+INSERT INTO teszt_view VALUES("19","Ön szerint a társkereső oldalak mennyire szokványosak a barát/barátnő szerzés szempontjából. ","egyértelműen első számú","1");
 INSERT INTO teszt_view VALUES("20","Jelen van valamelyik társkereső oldalon?","igen, aktívan","1");
+INSERT INTO teszt_view VALUES("20","Jelen van valamelyik társkereső oldalon?","igen, de nem használom","1");
 INSERT INTO teszt_view VALUES("21","Ha önnek kéne összeállítani egy társkereső oldalt az alábbiakból melyeket tenné bele.","valósidejű chat","1");
 INSERT INTO teszt_view VALUES("21","Ha önnek kéne összeállítani egy társkereső oldalt az alábbiakból melyeket tenné bele.","virtuális virág, ajándék küldő gombok","1");
 INSERT INTO teszt_view VALUES("21","Ha önnek kéne összeállítani egy társkereső oldalt az alábbiakból melyeket tenné bele.","szimpatikusnak jelölés de a másik fél csak akkor lássa, ha ő is szimpatikusnak jelöl","1");
+INSERT INTO teszt_view VALUES("21","Ha önnek kéne összeállítani egy társkereső oldalt az alábbiakból melyeket tenné bele.","naptár megtekintése, hol találkozhatunk","1");
 INSERT INTO teszt_view VALUES("22","Mi az amit, legjobban hiányol a társkereső oldalakon?","","1");
+INSERT INTO teszt_view VALUES("22","Mi az amit, legjobban hiányol a társkereső oldalakon?","","1");
+INSERT INTO teszt_view VALUES("23","Mire vágysz?","gyors ismerkedés, minél hamarabb randi","1");
 INSERT INTO teszt_view VALUES("23","Mire vágysz?","gyors ismerkedés, minél hamarabb randi","1");
 INSERT INTO teszt_view VALUES("30","Ön a végzettségének megfelelő munkahelyen dolgozik?","Igen","1");
 INSERT INTO teszt_view VALUES("30","Ön a végzettségének megfelelő munkahelyen dolgozik?","Igen","1");
@@ -10594,10 +10708,13 @@ INSERT INTO teszt_view VALUES("34","Milyen típusú munkát végeznél szívesen
 INSERT INTO teszt_view VALUES("34","Milyen típusú munkát végeznél szívesen?","Távmunkát, Otthon végezhető munkát","1");
 INSERT INTO teszt_view VALUES("38","Mi a véleménye az okos telefonokról?","","1");
 INSERT INTO teszt_view VALUES("38","Mi a véleménye az okos telefonokról?","","1");
+INSERT INTO teszt_view VALUES("38","Mi a véleménye az okos telefonokról?","","1");
 INSERT INTO teszt_view VALUES("39","Mi az amitől tart az okos telefonok tekintetében?","Lehallgatástól","1");
+INSERT INTO teszt_view VALUES("39","Mi az amitől tart az okos telefonok tekintetében?","Sugárzás veszélytől","1");
 INSERT INTO teszt_view VALUES("39","Mi az amitől tart az okos telefonok tekintetében?","Sugárzás veszélytől","1");
 INSERT INTO teszt_view VALUES("40","Melyik mobil szimpatikusabb Önnek?","i Phone 6","1");
 INSERT INTO teszt_view VALUES("40","Melyik mobil szimpatikusabb Önnek?","i Phone 6","1");
+INSERT INTO teszt_view VALUES("40","Melyik mobil szimpatikusabb Önnek?","Samsung Galaxy S IV.","1");
 INSERT INTO teszt_view VALUES("41","Osztályozd a munkahelyi pihenés lehetőségeit 1-től 5-ig.","Kávézás","5");
 INSERT INTO teszt_view VALUES("41","Osztályozd a munkahelyi pihenés lehetőségeit 1-től 5-ig.","Étkezés","4");
 INSERT INTO teszt_view VALUES("41","Osztályozd a munkahelyi pihenés lehetőségeit 1-től 5-ig.","Séta","3");
@@ -10621,7 +10738,7 @@ CREATE TABLE `users` (
   PRIMARY KEY  (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
-INSERT INTO users VALUES("1","teszt","6c90aa3760658846a86a263a4e92630e","","1","1");
+INSERT INTO users VALUES("1","teszt","6c90aa3760658846a86a263a4e92630e","tamasbuczko@gmail.com","1","1");
 INSERT INTO users VALUES("2","teszt1","fe282d20bc8dcc12647088d0fe0ca7d7","molnarzoli82@gmail.com","3","0");
 INSERT INTO users VALUES("3","","d41d8cd98f00b204e9800998ecf8427e","","","0");
 INSERT INTO users VALUES("4","teszt2","e970707c584b0c4574564ad239301c01","","3","0");
@@ -10643,7 +10760,7 @@ CREATE TABLE `valaszadasok` (
   KEY `kerdes_sorszam` (`kerdes_sorszam`),
   KEY `valasz_sorszam` (`valasz_sorszam`),
   KEY `kerdoiv_sorszam` (`kerdoiv_sorszam`)
-) ENGINE=InnoDB AUTO_INCREMENT=4080 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=4088 DEFAULT CHARSET=latin1;
 
 INSERT INTO valaszadasok VALUES("141","1","4","13","1","","18");
 INSERT INTO valaszadasok VALUES("142","1","4","15","1","","18");
@@ -14588,6 +14705,14 @@ INSERT INTO valaszadasok VALUES("4076","5","41","153","1","","125");
 INSERT INTO valaszadasok VALUES("4077","6","38","0","1","jók","126");
 INSERT INTO valaszadasok VALUES("4078","6","39","144","1","","126");
 INSERT INTO valaszadasok VALUES("4079","6","40","147","1","","126");
+INSERT INTO valaszadasok VALUES("4080","6","38","0","1","semmi","127");
+INSERT INTO valaszadasok VALUES("4081","6","39","144","1","","127");
+INSERT INTO valaszadasok VALUES("4082","6","40","148","1","","127");
+INSERT INTO valaszadasok VALUES("4083","2","21","102","1","","128");
+INSERT INTO valaszadasok VALUES("4084","2","20","90","1","","128");
+INSERT INTO valaszadasok VALUES("4085","2","22","0","1","nem tudom","128");
+INSERT INTO valaszadasok VALUES("4086","2","19","86","1","","128");
+INSERT INTO valaszadasok VALUES("4087","2","23","104","1","","128");
 
 
 

@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.14, created on 2014-05-27 18:53:47
+<?php /* Smarty version Smarty-3.1.14, created on 2014-05-30 19:46:31
          compiled from "templates\index.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:26553536bda425c0430-81966018%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'f90be83b235fb03cc225b11607032e9ddd415899' => 
     array (
       0 => 'templates\\index.tpl',
-      1 => 1401209361,
+      1 => 1401471954,
       2 => 'file',
     ),
   ),
@@ -79,8 +79,8 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 "><img src="graphics/magyar_zaszlo_k.png" alt="" />hu</a>
 	  </div>
 	  <div id="frame"<?php if ($_smarty_tpl->tpl_vars['reklammentes']->value){?> style="width: 690px;"<?php }?>>
-		 <div id="head"<?php echo $_smarty_tpl->tpl_vars['head_off']->value;?>
->
+		 <div id="head"<?php if ($_smarty_tpl->tpl_vars['head_off']->value){?><?php echo $_smarty_tpl->tpl_vars['head_off']->value;?>
+<?php }?>>
 			<div id="head_menu">
 			   <a href="?" id="logo"></a>
 			   <div id="menu">

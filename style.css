@@ -1442,3 +1442,13 @@ margin-left: 20px;
    display: block;
    float: left;
 }
+
+.google_hirdetes{
+    width: 160px;
+    float: right;
+}
+
+.google_hirdetes div{
+    margin: 0 0 30px 0 !important;
+    
+}
