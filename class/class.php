@@ -18,7 +18,7 @@ class data_connect{ //ez egy osztály, csak terv
 		$ekezet = mysql_set_charset("utf8",$kapcsolat);
 
 		if ($_REQUEST[db_save]){
-			backup_tables();
+			backup_tables($_REQUEST[table]);
 		 }
 
 		 if ($_REQUEST[db_load]){
