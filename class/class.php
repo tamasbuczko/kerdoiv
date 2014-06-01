@@ -266,4 +266,109 @@ class log_db {
             mysql_query($sql2);
 	}
 }
+
+class navsav{
+	//egy lista navigációs sávjának elkészítése (várt adat az sql, melyik lapon vagyunk)
+	public $tol;
+	public $ig;
+	public $lap;
+	public $termekdb;
+	public $lapszamsor;
+	
+	function create_navsav($sql_query, $lap, $db_peroldal, $xkategoriaszures, $adminpublic){
+		$result = mysql_query($sql_query);
+		$this->termekdb = mysql_num_rows($result);
+		
+		If (($lap == "") OR ($lap == 1)) {
+			$this->tol = 0;
+			$this->ig = $db_peroldal;}
+		else {
+			$this->tol = $db_peroldal * ($lap-1);
+			$this->ig = $db_peroldal;
+		}
+		
+		if ($_REQUEST[akcio]){
+		   $akcios_link = '&amp;akcio=1';
+		}
+		
+		if ($_REQUEST[search]){
+		   $search_link = '&amp;search='.$_REQUEST[search];
+		}
+		
+		if ($_REQUEST[meret]){
+		   $meret_link = '&amp;meret='.$_REQUEST[meret];
+		}
+		
+		if ($_REQUEST[szin]){
+		   $szin_link = '&amp;szin='.$_REQUEST[szin];
+		}
+		
+		$olddb = 0;
+		$oldelemdb = 0;
+		#10 számos oldalszámblokk elemei
+		if ($lap != ""){
+			$kapott_oldal = $lap;}
+		else {
+			$kapott_oldal = 1;
+		}
+			
+		$kapott_oldal_m = $kapott_oldal;
+		$kapott_oldal_p = $kapott_oldal;
+
+		for ($i = 0; 10>$i; $i++){
+			If (($kapott_oldal_m %10 == 0) OR ($kapott_oldal_m == 1)) {
+				if ($min_oldal == ""){
+					$min_oldal = $kapott_oldal_m;
+				}
+			}
+			If ($kapott_oldal_p %10 == 0) {
+				if ($max_oldal == ""){
+				$max_oldal = $kapott_oldal_p;
+				}
+			}
+			$kapott_oldal_m--;
+			$kapott_oldal_p++;
+		}
+		
+		if (($adminpublic == 'public') OR ($adminpublic == '')) {$cel = '?p=nyilvanos&amp;lap=';}
+		if ($adminpublic == 'admin') {$cel = 'admin.php?tartalom=termeklist&amp;lap=';}
+		
+		If ($this->termekdb > $db_peroldal){
+			$olddb = ($min_oldal-1);
+			for ($i = ($min_oldal-1); $i <= $this->termekdb; $i++){
+				If (($i %$db_peroldal == 0) OR ($i == 0)) {
+					$olddb++;
+					$oldelemdb++;
+					$oldvalt = "oldalszam";
+					If ($olddb == $lap){$oldvalt = "oldalszamv";}
+					If (($lap == "") AND ($i == 0)) {$oldvalt = "oldalszamv";}
+					if ($xkategoriaszures != "") {$kategoriaszuresxx = '&amp;kategoriaszures='.$xkategoriaszures;}
+					if ($_REQUEST[k] != "") {$kategoriaszuresxx = '&amp;x=list&amp;k='.$_REQUEST[k];}
+					if ($_REQUEST[fk] != "") {$kategoriaszuresxx = '&amp;x=list&amp;fk='.$_REQUEST[fk];}
+					$this->lapszamsor .= '<a class="'.$oldvalt.'" href="'.$cel.$olddb.$kategoriaszuresxx.$akcios_link.$search_link.$szin_link.$meret_link.'">'.$olddb.'</a>'."\n";}
+					if ($oldelemdb == 10) {break;}
+					if ($olddb == round($this->termekdb/$db_peroldal,0)+1){break;}
+				}
+		}
+		
+		if ($this->lapszamsor != ""){
+			$elozooldal = $kapott_oldal-1;
+			$kovetkezooldal = $kapott_oldal+1;
+			if ($elozooldal < 1) {$elozooldal = 1;}
+			if ($kovetkezooldal > round($this->termekdb/$db_peroldal,0)){ $kovetkezooldal = (round($this->termekdb/$db_peroldal,0)+1);}
+			if ($_REQUEST[k] != "") {$kategoriaszuresxx = '&amp;k='.$_REQUEST[k];}
+			$this->lapszamsor = '
+			<div class="navsav">
+			   <a href="'.$cel.'1'.$kategoriaszuresxx.$akcios_link.$search_link.$szin_link.$meret_link.'" class="oldalszam" title="első">&#60;&#60;</a>
+			   <a href="'.$cel.$elozooldal.$kategoriaszuresxx.$akcios_link.$search_link.$szin_link.$meret_link.'" class="oldalszam" title="előző">&#60;</a>
+			   '. $this->lapszamsor .'
+			   <a href="'.$cel.$kovetkezooldal.$kategoriaszuresxx.$akcios_link.$search_link.$szin_link.$meret_link.'" class="oldalszam" title="következő">&#62;</a>
+			   <a href="'.$cel.(round($this->termekdb/$db_peroldal,0)+1).$kategoriaszuresxx.$akcios_link.$search_link.$szin_link.$meret_link.'" class="oldalszam" title="utolsó">&#62;&#62;</a>
+			</div>';
+			
+		}
+		
+	}
+}
+
 ?>
