@@ -244,7 +244,7 @@ while ($next_element = mysql_fetch_array($result)){
 }   //kérdés ciklus vége 
 
 if (($_REQUEST[mod]) AND ($_SESSION[qa_user_id])){
-    $uj_kerdes_gomb = '<a href="?p=ujkerdes&amp;kerdoiv='.$kerdoiv_sorszam.'&ujkerdes=x" class="zold_gomb" style="float: left;">Új kérdés rögzítése</a>';
+    $uj_kerdes_gomb = '<a href="?p=ujkerdes&amp;kerdoiv='.$kerdoiv_sorszam.'&ujkerdes=x" class="zold_gomb" style="float: left; clear:both;">Új kérdés rögzítése</a>';
 } else {
 
 $email_es_elkuldes_blokk = '<div style="'.$adat_off.'">
