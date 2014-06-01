@@ -49,6 +49,10 @@
     <input type="checkbox" name="nyilvanos" style="margin-top: 15px;" {$checked_nyilvanos} />
 	<br style="clear:both;" />
 	
+	<label style="width: 230px; float: left;">A kérdőív tartalmazhat hirdetéseket?</label>
+    <input type="checkbox" name="hirdetessel" style="margin-top: 15px;" {$checked_hirdetessel} />
+	<br style="clear:both;" />
+	
 	<label style="width: 230px;">Választott stílus:</label>
 	<div id="stilusok">
 	  <div>

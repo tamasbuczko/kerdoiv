@@ -8,14 +8,16 @@ if ($_REQUEST[pub] == '2'){
 }
 
 if (!is_numeric($_REQUEST[kerdoiv])){
-   $result = mysql_query ("SELECT sorszam, user_id FROM kerdoivek WHERE status = '1' AND hivatkozas = '$_REQUEST[kerdoiv]' ");
+   $result = mysql_query ("SELECT sorszam, user_id, hirdetessel FROM kerdoivek WHERE status = '1' AND hivatkozas = '$_REQUEST[kerdoiv]' ");
 } else {
-   $result = mysql_query ("SELECT sorszam, user_id FROM kerdoivek WHERE status = '1' AND sorszam = '$_REQUEST[kerdoiv]' ");
+   $result = mysql_query ("SELECT sorszam, user_id, hirdetessel FROM kerdoivek WHERE status = '1' AND sorszam = '$_REQUEST[kerdoiv]' ");
 }
    $a = mysql_fetch_array($result);
    if ($a[0]){
     $_REQUEST[kerdoiv] = $a[0];
    } 
+   
+   $kerdoiv_hirdetessel = $a[2];
 
 
 $result2 = mysql_query ("SELECT authority FROM users WHERE id = '$a[1]'");
