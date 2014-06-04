@@ -1452,3 +1452,25 @@ margin-left: 20px;
     margin: 0 0 30px 0 !important;
     
 }
+
+.kereses{
+    font-weight: bold;
+    color: #1c78de;
+}
+
+.nyilvanos_kerdoivek div{
+    height: 70px;
+    margin-bottom: 10px;
+    margin-top: 3px;
+    width: 500px;
+    border: 1px solid #f2f2f2;
+    background-color: #EFF2FB;
+    overflow-y: scroll;
+    padding-left: 3px;
+}
+
+.nyilvanos_kerdoivek a{
+    color: #444;
+    margin-left:4px;
+    font-size: 17px;
+}

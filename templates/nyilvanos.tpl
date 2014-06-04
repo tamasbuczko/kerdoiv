@@ -3,7 +3,9 @@
    <input name="submit" type="submit" value="keresés" />
 </form>
 <br />
-{$nyilvanos_kerdoivek}
+<div class="nyilvanos_kerdoivek">
+    {$nyilvanos_kerdoivek}
+</div>
 <br />
 
 {$navsav}

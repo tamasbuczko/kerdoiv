@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.14, created on 2014-06-02 21:21:46
+<?php /* Smarty version Smarty-3.1.14, created on 2014-06-04 20:01:52
          compiled from "templates\nyilvanos.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:21613538ae4270c54e9-43964366%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '9824c263124e894146075702f2c8efa3502e654a' => 
     array (
       0 => 'templates\\nyilvanos.tpl',
-      1 => 1401734964,
+      1 => 1401904864,
       2 => 'file',
     ),
   ),
@@ -31,8 +31,10 @@ $_valid = $_smarty_tpl->decodeProperties(array (
    <input name="submit" type="submit" value="keresés" />
 </form>
 <br />
-<?php echo $_smarty_tpl->tpl_vars['nyilvanos_kerdoivek']->value;?>
+<div class="nyilvanos_kerdoivek">
+    <?php echo $_smarty_tpl->tpl_vars['nyilvanos_kerdoivek']->value;?>
 
+</div>
 <br />
 
 <?php echo $_smarty_tpl->tpl_vars['navsav']->value;?>
