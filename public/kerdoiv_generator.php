@@ -274,7 +274,7 @@ $slider_script = '
 
 $slider_script = '';
 
-if ($kerdoiv_hirdetessel == '1'){
+if (($kerdoiv_hirdetessel == '1') AND (!$_REQUEST[mod])){
    $google_hirdetes_qa1 = '
    <div>
    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>

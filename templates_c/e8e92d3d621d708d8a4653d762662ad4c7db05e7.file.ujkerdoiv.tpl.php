@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.14, created on 2014-05-21 20:43:07
+<?php /* Smarty version Smarty-3.1.14, created on 2014-06-02 20:54:01
          compiled from "templates\ujkerdoiv.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:15232537a573bcc04d7-04197359%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'e8e92d3d621d708d8a4653d762662ad4c7db05e7' => 
     array (
       0 => 'templates\\ujkerdoiv.tpl',
-      1 => 1400696649,
+      1 => 1401734964,
       2 => 'file',
     ),
   ),
@@ -50,6 +50,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'zaras_hux' => 0,
     'zaras_hu' => 0,
     'checked_nyilvanos' => 0,
+    'checked_hirdetessel' => 0,
     'checked_stilus_alap' => 0,
     'checked_stilus_1' => 0,
     'checked_stilus_2' => 0,
@@ -146,6 +147,11 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     <br style="clear:both;" />
     <label style="width: 230px; float: left;">A kérdőív eredményei nyilvánosak?</label>
     <input type="checkbox" name="nyilvanos" style="margin-top: 15px;" <?php echo $_smarty_tpl->tpl_vars['checked_nyilvanos']->value;?>
+ />
+	<br style="clear:both;" />
+	
+	<label style="width: 230px; float: left;">A kérdőív tartalmazhat hirdetéseket?</label>
+    <input type="checkbox" name="hirdetessel" style="margin-top: 15px;" <?php echo $_smarty_tpl->tpl_vars['checked_hirdetessel']->value;?>
  />
 	<br style="clear:both;" />
 	
