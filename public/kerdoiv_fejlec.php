@@ -150,11 +150,13 @@ $intro_width = 'width: 400px';
 if (($_REQUEST[mod]) AND ($_SESSION[qa_user_id])){
    $fejlec_szerk = '<a href="?p=ujkerdoiv&amp;id='.$kerdoiv_sorszam.'" class="modosito_gomb" title="kérdőív módosítása"></a>';
    $control_box = '<div id="control_box" '.$control_box_distance.'>
-                            <h3>'.$lang[vezerlopult].'</h3>
+                            <h3>'.$lang['vezérlőpult'].'</h3>
 							<br />
+                            <a href="?p=ujkerdes&amp;kerdoiv='.$kerdoiv_sorszam.'&ujkerdes=x" class="zold_gomb" style="float: left;">'.$lang['új kérdés rögzítése'].'</a>                            
+
                             <a href="?p=kerdoiv_adatlap&kerdoiv='.$kerdoiv_sorszam.'" class="sarga_gomb" style="float: left; margin-bottom: 20px;">'.$lang['kérdőív adatlap'].'</a>
-                            <a href="?p=ujkerdes&amp;kerdoiv='.$kerdoiv_sorszam.'&ujkerdes=x" class="zold_gomb" style="float: left;">'.$lang[uj_kerdes_rogzitese].'</a>
-                            <a href="?p=ujkerdoiv&amp;id='.$kerdoiv_sorszam.'" class="sarga_gomb" style="float: left;">'.$lang[kerdoiv_modositasa].'</a>
+                            
+                            <a href="?p=ujkerdoiv&amp;id='.$kerdoiv_sorszam.'" class="zold_gomb" style="float: left;">'.$lang[kerdoiv_modositasa].'</a>
 							<br /><br />
                             <a href="?p=kerdoiveim" class="back" />'.$lang[vissza].'</a>
                         </div>
@@ -268,3 +270,5 @@ If (!$kerdoiv_cim){
    $adat_off = 'display: none;';
    $adat_off2 = 'display: none;';   
 }
+
+$smarty->assign('lang', $lang);
