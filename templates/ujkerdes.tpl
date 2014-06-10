@@ -29,7 +29,7 @@
         <br />
 		<label>Kép feltöltése a kérdéshez</label>
 	<div class="file_browse_wrapper" style="float: left !important;">
-	   <input name="kerdes_kep" type="file" size="30" title="kép feltöltése" value="ok" accept="image/*" class="file_browse" onmouseover="naptarlap('', 'próba segítőszöveg <br /> akár több sor...<br /> esetleg kép is <br /> (több nyelven, adatbázisból)', '')" onmouseout="naptarlap_ki()" />
+            <input name="kerdes_kep" id="kerdes_kep" type="file" size="30" title="kép feltöltése" value="ok" accept="image/*" class="file_browse" onmouseover="sugo('próba segítőszöveg <br /> akár több sor...<br /> esetleg kép is <br /> (több nyelven, adatbázisból)', this.id)" />
 	</div>
         {$kep_kerdes}
         <br style="clear: both;" />
@@ -61,7 +61,7 @@
         <input type="radio" name="tipus" value="ranking" {$check_ranking} />
     </div>
     <br style="clear: both;" />
-    <label>Válaszok</label>
+    <label id="szoveg_valasz" onmouseover="sugo('próba segítőszöveg <br /> akár több sor...<br /> esetleg kép is <br /> (több nyelven, adatbázisból)', this.id)">Válaszok</label>
 	
 	<div id="admin_valaszok" class="gridster" style="width: 790px; border: 0px solid #aaa;">
 		 {$valaszok2}
@@ -74,8 +74,7 @@
 	  <script src="gridster/dist/jquery.gridster.js" type="text/javascript" charset="utf-8"></script>
 	  <script type="text/javascript" src="csempe.js"></script>
 
-<div id="naptar_popup" style="display: none;">
-	<h3 id="np_h3"></h3>
-	<p id="np_p"></p>
-	<p id="np_p2"></p>
+<div id="sugo_popup">
+	<h3 id="np_h3">Segítség</h3>
+	<div id="np_p"></div>
 </div>

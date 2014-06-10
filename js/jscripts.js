@@ -109,33 +109,34 @@ function valasz_ful(id, valasz){
    document.getElementById('a_vl_sz_'+valasz).style.display = 'none';
    document.getElementById('a_vl_k_'+valasz).style.display = 'none';
    document.getElementById('a_vl_v_'+valasz).style.display = 'none';
+   document.getElementById('a_vf_sz_'+valasz).style.backgroundImage="url('graphics/bg_v_ful.jpg')";
+   document.getElementById('a_vf_k_'+valasz).style.backgroundImage="url('graphics/bg_v_ful.jpg')";
+   document.getElementById('a_vf_v_'+valasz).style.backgroundImage="url('graphics/bg_v_ful.jpg')";
    
    document.getElementById('a_vl_'+id+'_'+valasz).style.display = 'block';
+   document.getElementById('a_vf_'+id+'_'+valasz).style.backgroundImage="none";
 }
 
 
 
-function naptarlap(nap, szoveg, szoveg2){
-
-	document.getElementById("np_h3").innerHTML= 'Segítség'+nap;
-	document.getElementById("np_p").innerHTML= szoveg;
-	document.getElementById("np_p2").innerHTML= ''+szoveg2;
-	
-	document.onmousemove = getCursorXY;
-	
-	document.getElementById('naptar_popup').style.display = 'block';
+function sugo(szoveg, id){
+	document.getElementById("np_p").innerHTML= szoveg;	
+	document.onmousemove = getCursorXY;	
+	document.getElementById('sugo_popup').style.display = 'block';
+        
+        $( "#"+id ).mouseout(function() {
+            sugo_ki();
+        });
 }
 
 
 function getCursorXY(e){
 	x = (window.Event) ? e.pageX : event.clientX + (document.documentElement.scrollLeft ? document.documentElement.scrollLeft : document.body.scrollLeft);
 	y = (window.Event) ? e.pageY : event.clientY + (document.documentElement.scrollTop ? document.documentElement.scrollTop : document.body.scrollTop);
-	document.getElementById('naptar_popup').style.left = (x-70) + 'px';
-	document.getElementById('naptar_popup').style.top = (y-170) + 'px';
+	document.getElementById('sugo_popup').style.left = (x-70) + 'px';
+	document.getElementById('sugo_popup').style.top = (y-170) + 'px';
 }
 
-
-
-function naptarlap_ki(){
-	document.getElementById('naptar_popup').style.display = 'none';
+function sugo_ki(){
+	document.getElementById('sugo_popup').style.display = 'none';
 }

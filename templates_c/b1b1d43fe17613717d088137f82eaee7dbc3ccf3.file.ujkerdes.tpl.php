@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.14, created on 2014-06-03 21:09:40
+<?php /* Smarty version Smarty-3.1.14, created on 2014-06-10 20:05:43
          compiled from "templates\ujkerdes.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:258845374fc2b1eabd2-48848554%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'b1b1d43fe17613717d088137f82eaee7dbc3ccf3' => 
     array (
       0 => 'templates\\ujkerdes.tpl',
-      1 => 1401734964,
+      1 => 1402423534,
       2 => 'file',
     ),
   ),
@@ -104,10 +104,10 @@ $_valid = $_smarty_tpl->decodeProperties(array (
  class="hu_k"><?php echo $_smarty_tpl->tpl_vars['kerdes_szoveg_hu']->value;?>
 </textarea>
         <br />
-	<div class="file_browse_wrapper">
-	  <input name="kerdes_kep" type="file" size="30" title="kép feltöltése" value="ok" accept="image/*" class="file_browse" />
+		<label>Kép feltöltése a kérdéshez</label>
+	<div class="file_browse_wrapper" style="float: left !important;">
+            <input name="kerdes_kep" id="kerdes_kep" type="file" size="30" title="kép feltöltése" value="ok" accept="image/*" class="file_browse" onmouseover="sugo('próba segítőszöveg <br /> akár több sor...<br /> esetleg kép is <br /> (több nyelven, adatbázisból)', this.id)" />
 	</div>
-        <label>Kép feltöltése a kérdéshez</label>
         <?php echo $_smarty_tpl->tpl_vars['kep_kerdes']->value;?>
 
         <br style="clear: both;" />
@@ -152,7 +152,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
  />
     </div>
     <br style="clear: both;" />
-    <label>Válaszok</label>
+    <label id="szoveg_valasz" onmouseover="sugo('próba segítőszöveg <br /> akár több sor...<br /> esetleg kép is <br /> (több nyelven, adatbázisból)', this.id)">Válaszok</label>
 	
 	<div id="admin_valaszok" class="gridster" style="width: 790px; border: 0px solid #aaa;">
 		 <?php echo $_smarty_tpl->tpl_vars['valaszok2']->value;?>
@@ -166,4 +166,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 	  <script src="gridster/dist/jquery.gridster.js" type="text/javascript" charset="utf-8"></script>
 	  <script type="text/javascript" src="csempe.js"></script>
 
-<?php }} ?>
+<div id="sugo_popup">
+	<h3 id="np_h3">Segítség</h3>
+	<div id="np_p"></div>
+</div><?php }} ?>

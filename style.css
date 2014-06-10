@@ -1500,8 +1500,9 @@ margin-left: 20px;
 }
 
 .a_v_fulek:hover{
-   background-image: none;
+   background-image: none !important;
    background-color: #eee;
+   display:block;
 }
 
 .a_v_lapok{
@@ -1514,7 +1515,7 @@ margin-left: 20px;
    margin: -1px 0px 0px 0px !important;
 }
 
-#naptar_popup{
+#sugo_popup{
 	position: absolute;
 	height: 140px;
 	width: 140px;
@@ -1527,9 +1528,10 @@ margin-left: 20px;
 	margin: 0px;
 	top: 0px;
 	left: 0px;
+        display: none;
 }
 
-#naptar_popup h3{
+#sugo_popup h3{
 	background-color: #0f4eb8;
 	color: #eee;
 	font-size: 17px;
@@ -1542,14 +1544,9 @@ margin-left: 20px;
 	font-weight: normal;
 }
 
-#naptar_popup #np_p{
+#sugo_popup #np_p{
 	width: 120px;
 	margin: 10px auto 2px auto;
 	font-size: 13px !important;
 	font-weight: normal !important;
-}
-
-#np_p2{
-	color: #383838;
-	font-size: 12px;
 }

@@ -292,7 +292,7 @@ if ($_REQUEST[id]){
 				 . '</div>';
 		}
 		
-        $valaszok2x .= ''
+        $valaszok2_kep .= ''
 				. '<br style="clear: both;">'
 				. '<!--<img src="graphics/icon_del.png" class="icon_del" style="position: relative; float: right; margin: 0px 0 0 0; z-index: 10;" alt="a válasz törlése" title="a válasz törlése" onclick="megerosites_x('.$next_elementv[sorszam].', \'valasz\', \''.$_REQUEST[id].'\')" />-->'
 				. $kep.
@@ -313,14 +313,23 @@ if ($_REQUEST[id]){
 		$valaszok2 .= ''
 				. '<div class="valasz_blokk">'
 				  . '<div class="a_v_fulek" style="width: 40px !important;">'
-				  . '<select name="valasz_sorrend_c_'.$next_elementv[sorszam].'">'
-				  . $options
-				  . '</select>'
+                                        . '<select name="valasz_sorrend_c_'.$next_elementv[sorszam].'">'
+                                        . $options
+                                        . '</select>'
 				  . '</div>'
-				  . '<div id="a_vf_sz_'.$next_elementv[sorszam].'" class="a_v_fulek" onclick="valasz_ful(\'sz\', '.$next_elementv[sorszam].');">Szöveg</div>'
-				  . '<div id="a_vf_k_'.$next_elementv[sorszam].'" class="a_v_fulek" onclick="valasz_ful(\'k\', '.$next_elementv[sorszam].');">Kép</div>'
-				  . '<div id="a_vf_v_'.$next_elementv[sorszam].'" class="a_v_fulek" onclick="valasz_ful(\'v\', '.$next_elementv[sorszam].');">Videó</div>'
-				  . '<div class="a_v_fulek" style="width: 30px !important; margin-left: 124px !important;"><img src="graphics/icon_del.png" class="icon_del" style="position: relative; float: right; width: 16px; margin: 2px 6px 0 0; z-index: 10;" alt="a válasz törlése" title="a válasz törlése" onclick="megerosites_x('.$next_elementv[sorszam].', \'valasz\', \''.$_REQUEST[id].'\')" /></div>'
+				  . '<div id="a_vf_sz_'.$next_elementv[sorszam].'" class="a_v_fulek" onclick="valasz_ful(\'sz\', '.$next_elementv[sorszam].');">'
+                                        . 'Szöveg'
+                                  . '</div>'
+				  . '<div id="a_vf_k_'.$next_elementv[sorszam].'" class="a_v_fulek" onclick="valasz_ful(\'k\', '.$next_elementv[sorszam].');">'
+                                        . 'Kép'
+                                  . '</div>'
+				  . '<div id="a_vf_v_'.$next_elementv[sorszam].'" class="a_v_fulek" onclick="valasz_ful(\'v\', '.$next_elementv[sorszam].');">'
+                                        . 'Videó'
+                                  . '</div>'
+				  . '<div class="a_v_fulek" style="width: 30px !important; margin-left: 124px !important;">'
+                                        . '<img src="graphics/icon_del.png" class="icon_del" style="position: relative; float: right; width: 16px; margin: 2px 6px 0 0; z-index: 10;" alt="a válasz törlése" title="a válasz törlése" onclick="megerosites_x('.$next_elementv[sorszam].', \'valasz\', \''.$_REQUEST[id].'\')" />'
+                                  . '</div>'
+                                  . ''
 				  . '<div id="a_vl_sz_'.$next_elementv[sorszam].'" class="a_v_lapok" style="display: block;">'
 				  . ''.$valaszok2_szoveg.''
 				  . '</div>'
@@ -328,10 +337,10 @@ if ($_REQUEST[id]){
 				  . ''.$valaszok2_video.''
 				  . '</div>'
 				  . '<div id="a_vl_k_'.$next_elementv[sorszam].'" class="a_v_lapok">'
-				  . ''.$valaszok2x.''
+				  . ''.$valaszok2_kep.''
 				  . '</div><br style="clear:both;"/>'
 				. '</div><br style="clear:both;"/>';
-		unset($valaszok2x);
+		unset($valaszok2_kep);
 		unset($valaszok2_szoveg);
 		unset($valaszok2_video);
     }
