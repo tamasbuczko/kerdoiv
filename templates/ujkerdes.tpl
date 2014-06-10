@@ -27,10 +27,10 @@
     <textarea name="kerdes_de"{$kerdes_dex} id="kerdes_de"{$kerdes_dex} class="de_k">{$kerdes_szoveg_de}</textarea>
     <textarea name="kerdes_hu"{$kerdes_hux} id="kerdes_hu"{$kerdes_hux} class="hu_k">{$kerdes_szoveg_hu}</textarea>
         <br />
-	<div class="file_browse_wrapper">
-	  <input name="kerdes_kep" type="file" size="30" title="kép feltöltése" value="ok" accept="image/*" class="file_browse" />
+		<label>Kép feltöltése a kérdéshez</label>
+	<div class="file_browse_wrapper" style="float: left !important;">
+	   <input name="kerdes_kep" type="file" size="30" title="kép feltöltése" value="ok" accept="image/*" class="file_browse" onmouseover="naptarlap('', 'próba segítőszöveg <br /> akár több sor...<br /> esetleg kép is <br /> (több nyelven, adatbázisból)', '')" onmouseout="naptarlap_ki()" />
 	</div>
-        <label>Kép feltöltése a kérdéshez</label>
         {$kep_kerdes}
         <br style="clear: both;" />
 	<label>Videó beágyazása a kérdéshez</label>
@@ -74,3 +74,8 @@
 	  <script src="gridster/dist/jquery.gridster.js" type="text/javascript" charset="utf-8"></script>
 	  <script type="text/javascript" src="csempe.js"></script>
 
+<div id="naptar_popup" style="display: none;">
+	<h3 id="np_h3"></h3>
+	<p id="np_p"></p>
+	<p id="np_p2"></p>
+</div>
