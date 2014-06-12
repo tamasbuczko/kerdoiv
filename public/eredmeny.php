@@ -68,31 +68,31 @@ while ($next_element = mysql_fetch_array($result)){
 
 $szemelyes_szuresek = '<div class="doboz"><h4>'.$lang['Szűrés a kitöltői adatokra'].':</h4>'
         . '<div style="width: 710px;">'
-        . '<label id="neme_kapcs">'.$lang['neme'].':</label>'
+        . '<label id="neme_kapcs" class="kitoltoi_adatok">'.$lang['neme'].':</label>'
         . '<div id="neme_doboz" class="szemelyes_szures">'
         . $nemek_szureslista
         . '</div>'
-        . '<label id="eletkor_kapcs">'.$lang['életkora'].':</label>'
+        . '<label id="eletkor_kapcs" class="kitoltoi_adatok">'.$lang['életkor'].':</label>'
 	. '<div id="eletkor_doboz" class="szemelyes_szures">'
         . $eletkor_szureslista
         . '</div>'
-        . '<label id="csaladiallapot_kapcs">'.$lang['családi állapota'].':</label>'
+        . '<label id="csaladiallapot_kapcs" class="kitoltoi_adatok">'.$lang['családi állapot'].':</label>'
         . '<div id="csaladiallapot_doboz" class="szemelyes_szures">'
         . $csaladiallapot_szureslista 
         . '</div>'
-        . '<label id="foglalkozas_kapcs">'.$lang['foglalkozása'].':</label>'
+        . '<label id="foglalkozas_kapcs" class="kitoltoi_adatok">'.$lang['foglalkozás'].':</label>'
         . '<div id="foglalkozas_doboz" class="szemelyes_szures">'
         . $foglalkozasok_szureslista 
         . '</div>'
-        . '<label id="vegzettseg_kapcs">'.$lang['végzettsége'].':</label>'
+        . '<label id="vegzettseg_kapcs" class="kitoltoi_adatok">'.$lang['végzettség'].':</label>'
         . '<div id="vegzettseg_doboz" class="szemelyes_szures">'
         . $vegzettseg_szureslista 
         . '</div>'
-        . '<label id="jovedelme_kapcs">'.$lang['jövedelme'].':</label>'
+        . '<label id="jovedelme_kapcs" class="kitoltoi_adatok">'.$lang['jövedelem'].':</label>'
         . '<div id="jovedelme_doboz" class="szemelyes_szures">'
         . $jovedelmek_szureslista 
         . '</div>'
-        . '<label id="orszag_kapcs">'.$lang['ország'].':</label>'
+        . '<label id="orszag_kapcs" class="kitoltoi_adatok">'.$lang['ország'].':</label>'
         . '<div id="orszag_doboz" class="szemelyes_szures">'
         . $orszag_szureslista 
         . '</div>'

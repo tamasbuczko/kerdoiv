@@ -244,7 +244,7 @@ while ($next_element = mysql_fetch_array($result)){
 }   //kérdés ciklus vége 
 
 if (($_REQUEST[mod]) AND ($_SESSION[qa_user_id])){
-    $uj_kerdes_gomb = '<a href="?p=ujkerdes&amp;kerdoiv='.$kerdoiv_sorszam.'&ujkerdes=x" class="zold_gomb" style="float: left; clear:both;">Új kérdés rögzítése</a>';
+    $uj_kerdes_gomb = '<a href="?p=ujkerdes&amp;kerdoiv='.$kerdoiv_sorszam.'&ujkerdes=x" class="zold_gomb" style="float: left; clear:both;">'.$lang['új kérdés rögzítése'].'</a>';
 } else {
 
 $email_es_elkuldes_blokk = '<div style="'.$adat_off.'">
@@ -254,7 +254,7 @@ $email_es_elkuldes_blokk = '<div style="'.$adat_off.'">
                         <label>E-mail:</label>
                         <input type="text" name="email" value="'.$request_email_value.'" />
                     </div>                      
-                    <div id="elkuld"><input type="submit" name="submit" value="'.$lang[elkuldes].'"/>
+                    <div id="elkuld"><input type="submit" name="submit" value="'.$lang['Elküldés'].'"/>
                         <label> &gt; &gt; &gt;</label><img src="graphics/postalada.png" id="posta" alt="" />
                     </div>
                  </div>';
@@ -337,4 +337,5 @@ a2a_config.num_services = 6;
 </script>
 <script type="text/javascript" src="http://static.addtoany.com/menu/page.js"></script>
 ';
+$smarty->assign('lang', $lang);
 ?>

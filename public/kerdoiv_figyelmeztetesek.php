@@ -8,16 +8,16 @@ if ($_REQUEST[submit]){
           
     if ($figy_uzenet){
 	$figy_uzenet = substr($figy_uzenet, 0, -2); //eltávolítjuk az utolsó két karaktert
-	$figy_uzenet = '<h3><br />'.$lang['nem_valaszoltal'].'</h3>'.$figy_uzenet;
+	$figy_uzenet = '<h3><br />'.$lang['Az alábbi kérdésekre nem válaszoltál'].':</h3>'.$figy_uzenet;
     }
           
     if ((!$_REQUEST[email]) AND (!$_REQUEST[ok])){
-        $figy_uzenet .= '<br /><br />'.$lang['email_cimed_hianyzik'];
+        $figy_uzenet .= '<br /><br />'.$lang['E-mail címed hiányzik!'];
     }
 	
 	if ($_REQUEST[email]){
 	  if (!filter_var($_REQUEST[email], FILTER_VALIDATE_EMAIL)) {
-		 $figy_uzenet .= '<br /><br />A megadott e-mail cím helytelen';
+		 $figy_uzenet .= '<br /><br />'.$lang['A megadott e-mail cím helytelen'];
 	  }
 	}
 }
@@ -25,4 +25,5 @@ if ($_REQUEST[submit]){
 if (!$figy_uzenet){
     $_REQUEST['b'] = '1';
 }
+$smarty->assign('lang', $lang);
 ?>

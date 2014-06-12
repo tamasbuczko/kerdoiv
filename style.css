@@ -876,7 +876,6 @@ margin-left: 20px;
     padding-bottom: 8px;
     border-radius: 10px;
     padding:4px;
-    text-transform: capitalize;
 }
 
 #control_box h3{
@@ -1015,13 +1014,21 @@ margin-left: 20px;
 	margin: 0px 20px 20px 0px;
 }
 
+.zold_gomb:first-letter{
+    text-transform: uppercase;
+}
+
 .zold_gomb:hover{
    background-color: #33aa33;
 }
-   
+
+.kitoltoi_adatok:first-letter{
+    text-transform: uppercase;
+}
+
 #lepteto{
     width: 100px !important;
-	float: none !important;
+    float: none !important;
     height: 34px;
     margin: 12px auto 0px auto;
 }

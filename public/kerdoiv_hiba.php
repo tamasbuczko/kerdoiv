@@ -6,7 +6,7 @@ if ($_REQUEST[submit]){ //űrlap elküldésének vizsgálata(személyes adatok)
     
     if ($_REQUEST[neme] == 'x'){
         $hiba++;
-        $hiba_uzenetek[$hiba] = $lang['nem_adta_meg_a_nemet'];
+        $hiba_uzenetek[$hiba] = lang('Nem adtad meg a nemed!',$lang);
         //$tomb[1] = 'első elem';
         //$tomb[2] = 'második elem';
     } else {
@@ -16,20 +16,20 @@ if ($_REQUEST[submit]){ //űrlap elküldésének vizsgálata(személyes adatok)
     
     if ($_REQUEST[eletkora] == 'x'){
         $hiba++;
-        $hiba_uzenetek[$hiba] = $lang['nem_adta_meg_a_korat'];
+        $hiba_uzenetek[$hiba] = lang('Nem adtad meg a korod!',$lang);
     } else {
         $request_eletkora_value = '<option value="'.$_REQUEST[eletkora].'" selected="selected">'.$_REQUEST[eletkora].'</option>';
     }
     
     if ($_REQUEST[lakhely] == 'x'){
         $hiba++;
-        $hiba_uzenetek[$hiba] = $lang['nem_adta_meg_a_lakhelyet'];
+        $hiba_uzenetek[$hiba] = lang('Nem adtad meg a lakhelyed!',$lang);
     }
     
     if ($_REQUEST[foglalkozas] == 'x'){
         $hiba++;
         #$hiba_uzenetek[$hiba] = $lang['nem_adta_meg_a_foglalkozasat'];
-		$hiba_uzenetek[$hiba] = lang('nem_adta_meg_a_foglalkozasat', $lang);
+		$hiba_uzenetek[$hiba] = lang('Nem adtad meg a foglalkozásod!', $lang);
     }
 	
 	if ($_REQUEST[vegzettseg] == 'x'){
@@ -58,4 +58,5 @@ if ($hiba > 0){
     }
     $hibauzenet = '<h3>'.$lang['nem_feldolgozhato'].'</h3>'.$hibauzenet;
 }
+$smarty->assign('lang', $lang);
 ?>

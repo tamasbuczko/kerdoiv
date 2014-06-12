@@ -156,9 +156,9 @@ if (($_REQUEST[mod]) AND ($_SESSION[qa_user_id])){
 
                             <a href="?p=kerdoiv_adatlap&kerdoiv='.$kerdoiv_sorszam.'" class="sarga_gomb" style="float: left; margin-bottom: 20px;">'.$lang['kérdőív adatlap'].'</a>
                             
-                            <a href="?p=ujkerdoiv&amp;id='.$kerdoiv_sorszam.'" class="zold_gomb" style="float: left;">'.$lang[kerdoiv_modositasa].'</a>
+                            <a href="?p=ujkerdoiv&amp;id='.$kerdoiv_sorszam.'" class="zold_gomb" style="float: left;">'.$lang['kérdőív módosítása'].'</a>
 							<br /><br />
-                            <a href="?p=kerdoiveim" class="back" />'.$lang[vissza].'</a>
+                            <a href="?p=kerdoiveim" class="back" />'.$lang['vissza'].'</a>
                         </div>
 						<script type="text/javascript">control_box();</script>';
 }
@@ -172,7 +172,7 @@ $kerdoiv_headline = '<div id="headline">
 unset($nyelv_blokk);
 
 if ($kapcs_kora == '1'){
-   $x_kora = '<label>'.$lang[eletkor].'</label>
+   $x_kora = '<label class="kitoltoi_adatok">'.$lang['életkor'].':</label>
                         <select name="eletkora">
                             '.$request_eletkora_value.'
                             <option value="x">---</option>
@@ -181,7 +181,7 @@ if ($kapcs_kora == '1'){
 }
 
 if ($kapcs_neme == '1'){
-   $x_neme = '<label>'.$lang[neme].'</label>
+   $x_neme = '<label class="kitoltoi_adatok">'.$lang['neme'].':</label>
                         <select name="neme">
                             '.$request_neme_value.'
                             <option value="x">---</option>
@@ -191,7 +191,7 @@ if ($kapcs_neme == '1'){
 }
 
 if ($kapcs_foglalkozas == '1'){
-   $x_foglalkozas = '<label>'.$lang[foglalkozas].'</label>
+   $x_foglalkozas = '<label class="kitoltoi_adatok">'.$lang['foglalkozás'].':</label>
                         <select name="foglalkozas">
                             <option value="x">---</option>
                             '.$foglalkozas_combo.'
@@ -200,7 +200,7 @@ if ($kapcs_foglalkozas == '1'){
 }
 
 if ($kapcs_orszag == '1'){
-   $x_orszag = ' <label>'.$lang[orszag].'</label>
+   $x_orszag = ' <label class="kitoltoi_adatok">'.$lang['ország'].':</label>
                         <select name="lakhely">
                             <option value="x">---</option>
                             '.$orszag_combo.'
@@ -209,7 +209,7 @@ if ($kapcs_orszag == '1'){
 }
 
 if ($kapcs_vegzettseg == '1'){
-   $x_vegzettseg = ' <label>'.$lang['Végzettség:'].'</label>
+   $x_vegzettseg = ' <label class="kitoltoi_adatok">'.$lang['végzettség'].':</label>
                         <select name="vegzettseg">
                             <option value="x">---</option>
                             '.$vegzettseg_combo.'
@@ -218,7 +218,7 @@ if ($kapcs_vegzettseg == '1'){
 }
 
 if ($kapcs_csaladiallapot == '1'){
-   $x_csaladiallapot = ' <label>'.$lang['Családi állapot:'].'</label>
+   $x_csaladiallapot = ' <label class="kitoltoi_adatok">'.$lang['családi állapot'].':</label>
                         <select name="csaladiallapot">
                             <option value="x">---</option>
                             '.$csaladiallapot_combo.'
@@ -227,7 +227,7 @@ if ($kapcs_csaladiallapot == '1'){
 }
    
 if ($kapcs_jovedelem == '1'){
-   $x_jovedelmek = ' <label>'.$lang['Jövedelmek:'].'</label>
+   $x_jovedelmek = ' <label class="kitoltoi_adatok">'.$lang['jövedelem'].':</label>
                         <select name="jovedelmek">
                             <option value="x">---</option>
                             '.$jovedelmek_combo.'
