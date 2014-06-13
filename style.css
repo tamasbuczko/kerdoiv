@@ -1151,9 +1151,37 @@ margin-left: 20px;
    color: #777;
 }
 
+.nyilvanos_kerdoivek div{
+    max-height: 70px;
+    margin-bottom: 10px;
+    margin-top: 3px;
+    width: 400px;
+background: rgb(255,255,255);
+background: -moz-linear-gradient(top,  rgba(255,255,255,1) 0%, rgba(234,243,247,1) 100%);
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,255,255,1)), color-stop(100%,rgba(234,243,247,1)));
+background: -webkit-linear-gradient(top,  rgba(255,255,255,1) 0%,rgba(234,243,247,1) 100%);
+background: -o-linear-gradient(top,  rgba(255,255,255,1) 0%,rgba(234,243,247,1) 100%);
+background: -ms-linear-gradient(top,  rgba(255,255,255,1) 0%,rgba(234,243,247,1) 100%);
+background: linear-gradient(to bottom,  rgba(255,255,255,1) 0%,rgba(234,243,247,1) 100%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#eaf3f7',GradientType=0 );
+    overflow-y:auto;
+    padding-left: 3px;
+    padding-right: 3px;
+    text-align:justify;
+}
+
+.nyilvanos_kerdoivek a{
+    color: #444;
+    margin-left:4px;
+    font-size: 18px;
+}
+
 .nyilvanos_link{
    float: right;
    margin-top: 20px;
+}
+.nyilvanos_kepek{
+   height: 80px;
 }
 
 .szovegblokk{
@@ -1473,23 +1501,6 @@ margin-left: 20px;
 .kereses{
     font-weight: bold;
     color: #1c78de;
-}
-
-.nyilvanos_kerdoivek div{
-    height: 70px;
-    margin-bottom: 10px;
-    margin-top: 3px;
-    width: 500px;
-    border: 1px solid #f2f2f2;
-    background-color: #EFF2FB;
-    overflow-y: scroll;
-    padding-left: 3px;
-}
-
-.nyilvanos_kerdoivek a{
-    color: #444;
-    margin-left:4px;
-    font-size: 17px;
 }
 
 .a_v_fulek{
