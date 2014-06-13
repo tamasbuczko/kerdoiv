@@ -52,10 +52,10 @@ body{
    display: block;
    width: 250px;
    height: 35px;
-   background-image: url('graphics/kicsi_logo.png');
+   background-image: url('graphics/kicsi_logo_also.png');
    background-repeat: no-repeat;
    float: left;
-   margin: 2px 0px 0px 2px;
+   margin: 5px 0px 0px 15px;
 }
 
 #menu{

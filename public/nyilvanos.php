@@ -11,18 +11,21 @@ $navsav->create_navsav($result, $_REQUEST['lap'], 2, $kiemeltx, $_REQUEST[katego
 $result = mysql_query($result."LIMIT $navsav->tol, $navsav->ig");
 while ($next_element = mysql_fetch_array($result)){
     $leiras_x = $next_element['leiras_'.$_SESSION[lang]];
-    
+    $talalat++;
     if ($_REQUEST[keres]){
         $leiras_x = str_replace($_REQUEST[keres], '<span class="kereses">'.$_REQUEST[keres].'</span>', $leiras_x);
     }
-    
+        
     $nyilvanos_kerdoivek .= '<a href="?p=kerdoiv&amp;kerdoiv='.$next_element[sorszam].'">'.$next_element['cim_'.$_SESSION[lang]].'</a><br />'
             . '<div>'.$leiras_x.'</div>'."\n";
 }
+
+$talalatszam .= '<div>A keresés eredménye: '.$talalat.' db találat</div>';
 
 $smarty->assign('lang', $lang);
 $smarty->assign('keres', $_REQUEST[keres]);
 $smarty->assign('navsav', $navsav->lapszamsor);
 $smarty->assign('nyilvanos_kerdoivek', $nyilvanos_kerdoivek);
+$smarty->assign('talalatszam', $talalatszam);
 
 $tartalom = $smarty->fetch('templates/nyilvanos.tpl');

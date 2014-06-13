@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.14, created on 2014-05-29 22:23:09
+<?php /* Smarty version Smarty-3.1.14, created on 2014-06-13 14:55:29
          compiled from "templates\regisztracio.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:170785384f0c4322843-25186817%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '165f4f3a544fff5ca35b373ff98d2f50e48ace40' => 
     array (
       0 => 'templates\\regisztracio.tpl',
-      1 => 1401394907,
+      1 => 1401466093,
       2 => 'file',
     ),
   ),
@@ -51,7 +51,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 </label>
     </div>
     <input name="send" type="submit" value="<?php echo $_smarty_tpl->tpl_vars['lang']->value['regisztráció'];?>
-" />
+" /> 
 </form>
 
 <table class="csomagok">
