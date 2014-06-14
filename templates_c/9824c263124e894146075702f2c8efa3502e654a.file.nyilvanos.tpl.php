@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.14, created on 2014-06-14 11:05:54
+<?php /* Smarty version Smarty-3.1.14, created on 2014-06-14 19:42:31
          compiled from "templates\nyilvanos.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:14645539bff60be3a59-96966737%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '9824c263124e894146075702f2c8efa3502e654a' => 
     array (
       0 => 'templates\\nyilvanos.tpl',
-      1 => 1402736746,
+      1 => 1402767749,
       2 => 'file',
     ),
   ),
@@ -74,16 +74,13 @@ $_smarty_tpl->tpl_vars['smarty']->value['section']['obj']['last']       = ($_sma
         <?php echo $_smarty_tpl->tpl_vars['sor']->value->leiras;?>
 
     </div>
-    <img src="fejlec_kepek/<?php echo $_smarty_tpl->tpl_vars['sor']->value->fejlec_kep;?>
-" alt="" />
-    
+       
     
 <?php endfor; endif; ?>
 
 <div class="nyilvanos_kerdoivek">
     <?php echo $_smarty_tpl->tpl_vars['nyilvanos_kerdoivek']->value;?>
-
-    <p> Bal alsó saroktól kezdve feltüntetni a létrehozó nevét és dátumot, majd a kitöltések számát és az eredményhez hozzáférők számát valamint az ajándéksorsolás a kitöltők között van vagy nincs infót. A jobb oldalon a feltöltött képekből egyet meg kell jeleníteni. </p>
+    
 </div>
 <br />
 <?php echo $_smarty_tpl->tpl_vars['navsav']->value;?>

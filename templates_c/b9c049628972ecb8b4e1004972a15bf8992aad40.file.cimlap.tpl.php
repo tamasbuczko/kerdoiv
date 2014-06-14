@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.14, created on 2014-06-14 09:12:52
+<?php /* Smarty version Smarty-3.1.14, created on 2014-06-14 19:18:59
          compiled from "templates\cimlap.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:11897539bf5f4487888-25066927%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'b9c049628972ecb8b4e1004972a15bf8992aad40' => 
     array (
       0 => 'templates\\cimlap.tpl',
-      1 => 1401432066,
+      1 => 1402766335,
       2 => 'file',
     ),
   ),
@@ -15,14 +15,14 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   'function' => 
   array (
   ),
+  'version' => 'Smarty-3.1.14',
+  'unifunc' => 'content_539bf5f4824cf9_66200148',
   'variables' => 
   array (
     'lang' => 0,
     'nyilvanos_kerdoivek' => 0,
   ),
   'has_nocache_code' => false,
-  'version' => 'Smarty-3.1.14',
-  'unifunc' => 'content_539bf5f4824cf9_66200148',
 ),false); /*/%%SmartyHeaderCode%%*/?>
 <?php if ($_valid && !is_callable('content_539bf5f4824cf9_66200148')) {function content_539bf5f4824cf9_66200148($_smarty_tpl) {?><div id="nyilvanos_kerdoivek">
    <div>
@@ -32,7 +32,8 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 
 
    </div>
-	<a href="?p=nyilvanos" class="nyilvanos_link">További nyilvános kérdőívek...</a>
+	<a href="?p=nyilvanos" class="nyilvanos_link"><?php echo $_smarty_tpl->tpl_vars['lang']->value['További nyilvános kérdőívek'];?>
+...</a>
 </div>
 
 <form action="" name="login" method="post" class="login">

@@ -4,7 +4,7 @@
     {$nyilvanos_kerdoivek}
 
    </div>
-	<a href="?p=nyilvanos" class="nyilvanos_link">További nyilvános kérdőívek...</a>
+	<a href="?p=nyilvanos" class="nyilvanos_link">{$lang['További nyilvános kérdőívek']}...</a>
 </div>
 
 <form action="" name="login" method="post" class="login">

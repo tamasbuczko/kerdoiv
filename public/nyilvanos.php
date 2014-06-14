@@ -27,6 +27,8 @@ while ($next_element = mysql_fetch_array($result)){
     #$nyilvanos_kerdoivek .= '<a href="?p=kerdoiv&amp;kerdoiv='.$next_element[sorszam].'">'.$cim_x.'</a>'
     #        . '<div>'.$leiras_x.'</div>'.'<img src="fejlec_kepek/'.$nyilvanos_kepek.'" alt="" />'."\n";
     #unset($nyilvanos_kerdoivek);
+    
+    # ez megy a tpl fájlba csak nem tudom, hogy kell ott kommentelni<img src="fejlec_kepek/{$sor->fejlec_kep}" alt="" />
 }
 
 #if ($_REQUEST[keres]){

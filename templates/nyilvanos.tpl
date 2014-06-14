@@ -16,14 +16,12 @@
     <div>
         {$sor->leiras}
     </div>
-    <img src="fejlec_kepek/{$sor->fejlec_kep}" alt="" />
-    
+       
     
 {/section}
 
 <div class="nyilvanos_kerdoivek">
-    {$nyilvanos_kerdoivek}
-    <p> Bal alsó saroktól kezdve feltüntetni a létrehozó nevét és dátumot, majd a kitöltések számát és az eredményhez hozzáférők számát valamint az ajándéksorsolás a kitöltők között van vagy nincs infót. A jobb oldalon a feltöltött képekből egyet meg kell jeleníteni. </p>
+    {$nyilvanos_kerdoivek}    
 </div>
 <br />
 {$navsav}
