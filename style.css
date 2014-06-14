@@ -727,7 +727,7 @@ margin-left: 20px;
     width: 80%;
 }
 
-#info span{
+.info span{
     background-color: #99aec3;
     margin: -8px -2px 3px 3px;
     padding:0px 5px 0px 5px;
@@ -1156,24 +1156,30 @@ margin-left: 20px;
     margin-bottom: 10px;
     margin-top: 3px;
     width: 400px;
-background: rgb(255,255,255);
-background: -moz-linear-gradient(top,  rgba(255,255,255,1) 0%, rgba(234,243,247,1) 100%);
-background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,255,255,1)), color-stop(100%,rgba(234,243,247,1)));
-background: -webkit-linear-gradient(top,  rgba(255,255,255,1) 0%,rgba(234,243,247,1) 100%);
-background: -o-linear-gradient(top,  rgba(255,255,255,1) 0%,rgba(234,243,247,1) 100%);
-background: -ms-linear-gradient(top,  rgba(255,255,255,1) 0%,rgba(234,243,247,1) 100%);
-background: linear-gradient(to bottom,  rgba(255,255,255,1) 0%,rgba(234,243,247,1) 100%);
-filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#eaf3f7',GradientType=0 );
+    background: rgb(255,255,255);
+    background: -moz-linear-gradient(top,  rgba(255,255,255,1) 0%, rgba(234,243,247,1) 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,255,255,1)), color-stop(100%,rgba(234,243,247,1)));
+    background: -webkit-linear-gradient(top,  rgba(255,255,255,1) 0%,rgba(234,243,247,1) 100%);
+    background: -o-linear-gradient(top,  rgba(255,255,255,1) 0%,rgba(234,243,247,1) 100%);
+    background: -ms-linear-gradient(top,  rgba(255,255,255,1) 0%,rgba(234,243,247,1) 100%);
+    background: linear-gradient(to bottom,  rgba(255,255,255,1) 0%,rgba(234,243,247,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#eaf3f7',GradientType=0 );
     overflow-y:auto;
     padding-left: 3px;
     padding-right: 3px;
     text-align:justify;
 }
 
+.nyilvanos_kerdoivek img{
+    width: 400px;
+}
+
 .nyilvanos_kerdoivek a{
+    clear: both;
     color: #444;
-    margin-left:4px;
+    margin: 0px 0px 0px 4px;
     font-size: 18px;
+    display: block;
 }
 
 .nyilvanos_link{
@@ -1536,8 +1542,9 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
 
 #sugo_popup{
 	position: absolute;
-	height: 140px;
-	width: 140px;
+	min-height: 140px;
+	min-width: 140px;
+        width: auto;
 	border: 2px solid #0f4eb8;
 	color: #444;
 	background-color: #d0e5f5;
@@ -1548,6 +1555,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
 	top: 0px;
 	left: 0px;
         display: none;
+        z-index: 50;
 }
 
 #sugo_popup h3{
@@ -1593,4 +1601,52 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
 .valasz_keptolt{
    margin: 0px 0px 0px 0px !important;
    float: right !important;
+}
+
+.lapszamsor{
+	margin: 0px 0px 10px 0px;}
+
+.oldalszam {
+	margin: 0px 3px 10px 3px;
+	text-decoration: none;
+	color: #009AC8;}
+
+.oldalszam:hover {
+	color: #686868;}	
+	
+.oldalszamv {
+	text-decoration: none;
+	color: #686868;
+	font-weight: bold;}
+
+.lapszamsor{
+   float: right;
+   margin: -10px 0px 0px 0px;
+   
+}
+
+.lapszamsor a{
+   text-decoration: none;
+   color: #fefefe;
+   background-color: #0f4eb8;
+   margin: 1px 1px 1px 1px;
+   text-align: center;
+   padding: 1px 3px 1px 3px;
+   border: 0px solid #111111;
+   font-size: 10px;
+   height: 18px;
+   display: block;
+   float: left;
+}
+
+.lapszamsor a:hover{
+   background-color: #28668f;
+}
+
+.oldalszamv{
+   background-color: #0098d7 !important;
+}
+
+.navsav{
+    margin: 0px 0px 10px 0px;
 }

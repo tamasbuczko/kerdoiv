@@ -36,32 +36,32 @@
 	<label>Videó beágyazása a kérdéshez</label>
 	<input type="text" name="video_kerdes" value="{$video_kerdes}" class="video_embed" />
     <label>Típusa</label>
-    <div id="info">
-        <label title="{$lang['A kitöltő csak egy választ jelölhet be.']}">radio<span>i</span></label>
+    <div class="info">
+        <label>radio<span id="radio_s" onmouseover="sugo(2, this.id)">i</span></label>
         <input type="radio" name="tipus" value="radio" {$check_radio} />
     </div>
-    <div id="info">
-        <label title="{$lang['Kitöltéskor egy legördülő listából lehet egyet kiválasztani.']}">select<span>i</span></label>
+    <div class="info">
+        <label>select<span id="select_s" onmouseover="sugo(3, this.id)">i</span></label>
         <input type="radio" name="tipus" value="select" {$check_select} />
     </div>
-    <div id="info">
-        <label title="{$lang['Kitöltéskor bármennyi válasz bejelölhető.']}">checkbox<span>i</span></label>
+    <div class="info">
+        <label>checkbox<span id="checkbox_s" onmouseover="sugo(4, this.id)">i</span></label>
         <input type="radio" name="tipus" value="checkbox" {$check_checkbox} />
     </div>
-    <div id="info">
-        <label title="{$lang['Egy szavas vagy rövid mondatos választ kérhetünk.']}">text<span>i</span></label>
+    <div class="info">
+        <label>text<span id="text_s" onmouseover="sugo(5, this.id)">i</span></label>
         <input type="radio" name="tipus" value="text" {$check_text} />
     </div>
-    <div id="info">
-        <label title="{$lang['Hosszabb terjedelmű válasz kérésére használható.']}">textarea<span>i</span></label>
+    <div class="info">
+        <label>textarea<span id="textarea_s" onmouseover="sugo(6, this.id)">i</span></label>
         <input type="radio" name="tipus" value="textarea" {$check_textarea} />
     </div>
-    <div id="info">
-        <label Title="{$lang['Egy vagy több válaszlehetőséget értékelhetünk 1-től 5-ig terjedő skálán.']}">ranking<span>i</span></label>
+    <div class="info">
+        <label>ranking<span id="ranking_s" onmouseover="sugo(7, this.id)">i</span></label>
         <input type="radio" name="tipus" value="ranking" {$check_ranking} />
     </div>
     <br style="clear: both;" />
-    <label id="szoveg_valasz" onmouseover="sugo('próba segítőszöveg <br /> akár több sor...<br /> esetleg kép is <br /> (több nyelven, adatbázisból)', this.id)">Válaszok</label>
+    <label id="szoveg_valasz">Válaszok</label>
 	
 	<div id="admin_valaszok" class="gridster" style="width: 790px; border: 0px solid #aaa;">
 		 {$valaszok2}
@@ -75,6 +75,6 @@
 	  <script type="text/javascript" src="csempe.js"></script>
 
 <div id="sugo_popup">
-	<h3 id="np_h3">Segítség</h3>
+	<h3 id="np_h3">{$lang['Segítség']}</h3>
 	<div id="np_p"></div>
 </div>

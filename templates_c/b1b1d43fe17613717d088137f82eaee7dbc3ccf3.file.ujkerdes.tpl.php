@@ -1,22 +1,22 @@
-<?php /* Smarty version Smarty-3.1.14, created on 2014-06-10 20:05:43
+<?php /* Smarty version Smarty-3.1.14, created on 2014-06-14 11:56:07
          compiled from "templates\ujkerdes.tpl" */ ?>
-<?php /*%%SmartyHeaderCode:258845374fc2b1eabd2-48848554%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:21512539bf6252ab459-79890438%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
     'b1b1d43fe17613717d088137f82eaee7dbc3ccf3' => 
     array (
       0 => 'templates\\ujkerdes.tpl',
-      1 => 1402423534,
+      1 => 1402739697,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '258845374fc2b1eabd2-48848554',
+  'nocache_hash' => '21512539bf6252ab459-79890438',
   'function' => 
   array (
   ),
   'version' => 'Smarty-3.1.14',
-  'unifunc' => 'content_5374fc2bae4277_54985124',
+  'unifunc' => 'content_539bf62571b291_38826100',
   'variables' => 
   array (
     'urlap_cim' => 0,
@@ -49,7 +49,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'has_nocache_code' => false,
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_5374fc2bae4277_54985124')) {function content_5374fc2bae4277_54985124($_smarty_tpl) {?><h1><?php echo $_smarty_tpl->tpl_vars['urlap_cim']->value;?>
+<?php if ($_valid && !is_callable('content_539bf62571b291_38826100')) {function content_539bf62571b291_38826100($_smarty_tpl) {?><h1><?php echo $_smarty_tpl->tpl_vars['urlap_cim']->value;?>
 </h1>
 <form action="" method="post" enctype="multipart/form-data" class="ujkerdes" >
     <div id="control_box">
@@ -106,7 +106,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
         <br />
 		<label>Kép feltöltése a kérdéshez</label>
 	<div class="file_browse_wrapper" style="float: left !important;">
-            <input name="kerdes_kep" id="kerdes_kep" type="file" size="30" title="kép feltöltése" value="ok" accept="image/*" class="file_browse" onmouseover="sugo('próba segítőszöveg <br /> akár több sor...<br /> esetleg kép is <br /> (több nyelven, adatbázisból)', this.id)" />
+            <input name="kerdes_kep" id="kerdes_kep" type="file" size="30" title="kép feltöltése" value="ok" accept="image/*" class="file_browse" onmouseover="sugo('1', this.id)" />
 	</div>
         <?php echo $_smarty_tpl->tpl_vars['kep_kerdes']->value;?>
 
@@ -115,44 +115,38 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 	<input type="text" name="video_kerdes" value="<?php echo $_smarty_tpl->tpl_vars['video_kerdes']->value;?>
 " class="video_embed" />
     <label>Típusa</label>
-    <div id="info">
-        <label title="<?php echo $_smarty_tpl->tpl_vars['lang']->value['A kitöltő csak egy választ jelölhet be.'];?>
-">radio<span>i</span></label>
+    <div class="info">
+        <label>radio<span id="radio_s" onmouseover="sugo(2, this.id)">i</span></label>
         <input type="radio" name="tipus" value="radio" <?php echo $_smarty_tpl->tpl_vars['check_radio']->value;?>
  />
     </div>
-    <div id="info">
-        <label title="<?php echo $_smarty_tpl->tpl_vars['lang']->value['Kitöltéskor egy legördülő listából lehet egyet kiválasztani.'];?>
-">select<span>i</span></label>
+    <div class="info">
+        <label>select<span id="select_s" onmouseover="sugo(3, this.id)">i</span></label>
         <input type="radio" name="tipus" value="select" <?php echo $_smarty_tpl->tpl_vars['check_select']->value;?>
  />
     </div>
-    <div id="info">
-        <label title="<?php echo $_smarty_tpl->tpl_vars['lang']->value['Kitöltéskor bármennyi válasz bejelölhető.'];?>
-">checkbox<span>i</span></label>
+    <div class="info">
+        <label>checkbox<span id="checkbox_s" onmouseover="sugo(4, this.id)">i</span></label>
         <input type="radio" name="tipus" value="checkbox" <?php echo $_smarty_tpl->tpl_vars['check_checkbox']->value;?>
  />
     </div>
-    <div id="info">
-        <label title="<?php echo $_smarty_tpl->tpl_vars['lang']->value['Egy szavas vagy rövid mondatos választ kérhetünk.'];?>
-">text<span>i</span></label>
+    <div class="info">
+        <label>text<span id="text_s" onmouseover="sugo(5, this.id)">i</span></label>
         <input type="radio" name="tipus" value="text" <?php echo $_smarty_tpl->tpl_vars['check_text']->value;?>
  />
     </div>
-    <div id="info">
-        <label title="<?php echo $_smarty_tpl->tpl_vars['lang']->value['Hosszabb terjedelmű válasz kérésére használható.'];?>
-">textarea<span>i</span></label>
+    <div class="info">
+        <label>textarea<span id="textarea_s" onmouseover="sugo(6, this.id)">i</span></label>
         <input type="radio" name="tipus" value="textarea" <?php echo $_smarty_tpl->tpl_vars['check_textarea']->value;?>
  />
     </div>
-    <div id="info">
-        <label Title="<?php echo $_smarty_tpl->tpl_vars['lang']->value['Egy vagy több válaszlehetőséget értékelhetünk 1-től 5-ig terjedő skálán.'];?>
-">ranking<span>i</span></label>
+    <div class="info">
+        <label>ranking<span id="ranking_s" onmouseover="sugo(7, this.id)">i</span></label>
         <input type="radio" name="tipus" value="ranking" <?php echo $_smarty_tpl->tpl_vars['check_ranking']->value;?>
  />
     </div>
     <br style="clear: both;" />
-    <label id="szoveg_valasz" onmouseover="sugo('próba segítőszöveg <br /> akár több sor...<br /> esetleg kép is <br /> (több nyelven, adatbázisból)', this.id)">Válaszok</label>
+    <label id="szoveg_valasz">Válaszok</label>
 	
 	<div id="admin_valaszok" class="gridster" style="width: 790px; border: 0px solid #aaa;">
 		 <?php echo $_smarty_tpl->tpl_vars['valaszok2']->value;?>
@@ -167,6 +161,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 	  <script type="text/javascript" src="csempe.js"></script>
 
 <div id="sugo_popup">
-	<h3 id="np_h3">Segítség</h3>
+	<h3 id="np_h3"><?php echo $_smarty_tpl->tpl_vars['lang']->value['Segítség'];?>
+</h3>
 	<div id="np_p"></div>
 </div><?php }} ?>

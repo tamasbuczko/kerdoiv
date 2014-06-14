@@ -134,7 +134,7 @@ function getCursorXY(e){
 	x = (window.Event) ? e.pageX : event.clientX + (document.documentElement.scrollLeft ? document.documentElement.scrollLeft : document.body.scrollLeft);
 	y = (window.Event) ? e.pageY : event.clientY + (document.documentElement.scrollTop ? document.documentElement.scrollTop : document.body.scrollTop);
 	document.getElementById('sugo_popup').style.left = (x-70) + 'px';
-	document.getElementById('sugo_popup').style.top = (y-170) + 'px';
+	document.getElementById('sugo_popup').style.top = (y+30) + 'px';
 }
 
 function sugo_ki(){
@@ -150,9 +150,9 @@ function showSugo(id){
 		xmlhttp.onreadystatechange=function(){
 		  if (xmlhttp.readyState==4 && xmlhttp.status==200)
 			{
-			   document.getElementById("np_p").innerHTML= xmlhttp.responseText;
+			   document.getElementById("np_p").innerHTML= xmlhttp.responseText;  //külső php file eredményének beírása az np_p divbe
 			}
 		  }
-		xmlhttp.open("GET","sugo.php?id="+id,true);
+		xmlhttp.open("GET","sugo.php?id="+id,true);  //külső php fájl meghívása
 		xmlhttp.send();
 }

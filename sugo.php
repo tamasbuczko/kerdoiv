@@ -15,4 +15,4 @@ $adatkapcsolat->connect();          //az objektum connect fügvényét futatjuk
 $result = mysql_query("SELECT hu, en, de, megjegyzes FROM sugo WHERE id = $_REQUEST[id]");
 $value = mysql_fetch_array($result);
 
-echo $value[$_SESSION[lang]];
+echo $value[$_SESSION[lang]];   //ezt az értéket kapja meg a responseText a javascript függvényben

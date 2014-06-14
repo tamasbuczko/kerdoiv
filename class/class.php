@@ -377,4 +377,25 @@ class navsav{
 	}
 }
 
+class kerdoiv {
+    public $sorszam;
+    public $cim;
+    public $leiras;
+    public $keszito;
+    public $kelt;
+    public $kereso_kep;
+    public $kitoltok_szama;
+    public $kovetok_szama;
+    public $nyeremeny;
+    
+    public function load($sorszam){
+        $result = mysql_query("SELECT sorszam, cim_hu, cim_en, cim_de, leiras_hu, leiras_en, leiras_de FROM kerdoivek WHERE sorszam = $sorszam");
+        $row = mysql_fetch_array($result);
+        $this->sorszam = $row['sorszam'];
+        $this->cim = $row['cim_'.$_SESSION[lang]];
+        $this->leiras = $row['leiras_'.$_SESSION[lang]];
+    }
+    
+}
+
 ?>

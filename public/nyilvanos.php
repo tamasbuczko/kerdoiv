@@ -10,23 +10,37 @@ $navsav->create_navsav($result, $_REQUEST['lap'], 2, $kiemeltx, $_REQUEST[katego
 
 $result = mysql_query($result."LIMIT $navsav->tol, $navsav->ig");
 while ($next_element = mysql_fetch_array($result)){
-    $leiras_x = $next_element['leiras_'.$_SESSION[lang]];
-    $talalat++;
+    
+    $obj_kerdoiv = new kerdoiv;
+    $obj_kerdoiv->load($next_element[sorszam]);
+    
+    #$leiras_x = $obj_kerdoiv->leiras;
+    #$cim_x = $obj_kerdoiv->cim;
+    
+    $obj_array[] = $obj_kerdoiv;
+    
     if ($_REQUEST[keres]){
-        $leiras_x = str_replace($_REQUEST[keres], '<span class="kereses">'.$_REQUEST[keres].'</span>', $leiras_x);
+        $cim_x = str_ireplace($_REQUEST[keres], '<span class="kereses">'.$_REQUEST[keres].'</span>', $cim_x);
+        $leiras_x = str_ireplace($_REQUEST[keres], '<span class="kereses">'.$_REQUEST[keres].'</span>', $leiras_x);
     }
-    $nyilvanos_kepek = $next_element[fejlec_kep];    
-    $nyilvanos_kerdoivek .= '<a href="?p=kerdoiv&amp;kerdoiv='.$next_element[sorszam].'">'.$next_element['cim_'.$_SESSION[lang]].'</a><br />'
-            . '<div>'.$leiras_x.'</div>'.'<div class="nyilvanos_kepek"><img src="fejlec_kepek/'.$nyilvanos_kepek.'" alt="" /></div>'."\n";
+    #$nyilvanos_kepek = $next_element[fejlec_kep];    
+    #$nyilvanos_kerdoivek .= '<a href="?p=kerdoiv&amp;kerdoiv='.$next_element[sorszam].'">'.$cim_x.'</a>'
+    #        . '<div>'.$leiras_x.'</div>'.'<img src="fejlec_kepek/'.$nyilvanos_kepek.'" alt="" />'."\n";
+    #unset($nyilvanos_kerdoivek);
 }
 
-$talalatszam .= '<div>A keresés eredménye: '.$talalat.' db találat</div>';
+#if ($_REQUEST[keres]){
+    $talalatszam .= '<div>A keresés eredménye: '.$navsav->termekdb.' db találat</div>';
+#}
 
+    
+    
 $smarty->assign('lang', $lang);
+$smarty->assign('obj_array', $obj_array);
 $smarty->assign('keres', $_REQUEST[keres]);
 $smarty->assign('navsav', $navsav->lapszamsor);
-$smarty->assign('nyilvanos_kerdoivek', $nyilvanos_kerdoivek);
 $smarty->assign('talalatszam', $talalatszam);
+$smarty->assign('nyilvanos_kerdoivek', $nyilvanos_kerdoivek);
 $smarty->assign('nyilvanos_kepek', $nyilvanos_kepek);
 
 $tartalom = $smarty->fetch('templates/nyilvanos.tpl');
