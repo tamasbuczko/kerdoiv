@@ -29,7 +29,7 @@
         <br />
 		<label>Kép feltöltése a kérdéshez</label>
 	<div class="file_browse_wrapper" style="float: left !important;">
-            <input name="kerdes_kep" id="kerdes_kep" type="file" size="30" title="kép feltöltése" value="ok" accept="image/*" class="file_browse" onmouseover="sugo('próba segítőszöveg <br /> akár több sor...<br /> esetleg kép is <br /> (több nyelven, adatbázisból)', this.id)" />
+            <input name="kerdes_kep" id="kerdes_kep" type="file" size="30" title="kép feltöltése" value="ok" accept="image/*" class="file_browse" onmouseover="sugo('1', this.id)" />
 	</div>
         {$kep_kerdes}
         <br style="clear: both;" />

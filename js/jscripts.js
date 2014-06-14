@@ -120,7 +120,7 @@ function valasz_ful(id, valasz){
 
 
 function sugo(szoveg, id){
-	document.getElementById("np_p").innerHTML= szoveg;	
+	showSugo(szoveg);	
 	document.onmousemove = getCursorXY;	
 	document.getElementById('sugo_popup').style.display = 'block';
         
@@ -139,4 +139,20 @@ function getCursorXY(e){
 
 function sugo_ki(){
 	document.getElementById('sugo_popup').style.display = 'none';
+}
+
+function showSugo(id){
+		if (window.XMLHttpRequest) {// code for IE7+, Firefox, Chrome, Opera, Safari
+		  xmlhttp=new XMLHttpRequest();}
+		else {// code for IE6, IE5
+		  xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+		}
+		xmlhttp.onreadystatechange=function(){
+		  if (xmlhttp.readyState==4 && xmlhttp.status==200)
+			{
+			   document.getElementById("np_p").innerHTML= xmlhttp.responseText;
+			}
+		  }
+		xmlhttp.open("GET","sugo.php?id="+id,true);
+		xmlhttp.send();
 }

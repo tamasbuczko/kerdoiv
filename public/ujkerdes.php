@@ -271,7 +271,9 @@ if ($_REQUEST[id]){
     while ($next_elementv = mysql_fetch_array($resultx)){
 	   $sorrendszam++;
         #$valaszok .= '<input type="text" name="valasz_'.$next_elementv[sorszam].'" value="'.$next_elementv[valasz_hu].'" /><img src="graphics/icon_del.png" class="icon_del" alt="törlés" onclick="megerosites_x('.$next_elementv[sorszam].', \'valasz\', \''.$_REQUEST[id].'\')" />';
-        
+       
+	   $valaszok2_szoveg .= '<div class="valasz_tipus_kapcs"><label>Szöveg megjelenítése a válaszhoz</label><input type="checkbox" name="szoveg_be" /></div>';
+	   
         if ($en == 1){
             $valaszok2_szoveg .= '<input type="text" name="valasz_en_'.$next_elementv[sorszam].'" id="valasz_en_'.$next_elementv[sorszam].'" value="'.$next_elementv[valasz_en].'" class="en_k" />';
         }
@@ -282,22 +284,26 @@ if ($_REQUEST[id]){
             $valaszok2_szoveg .= '<input type="text" name="valasz_hu_'.$next_elementv[sorszam].'" id="valasz_hu_'.$next_elementv[sorszam].'" value="'.$next_elementv[valasz_hu].'" class="hu_k" />';
         }
 		
-		$valaszok2_video .= '<input type="text" name="valasz_video_'.$next_elementv[sorszam].'" value="'.$next_elementv[video_embed].'" title="video link" class="video_embed" />';
+		$valaszok2_video .= '<div class="valasz_tipus_kapcs"><label>Videó megjelenítése a válaszhoz</label><input type="checkbox" name="video_be" /></div>'
+				. '<input type="text" name="valasz_video_'.$next_elementv[sorszam].'" value="'.$next_elementv[video_embed].'" title="video link" class="video_embed" />';
 		
 		unset($kep);
 		if ($next_elementv[kep_file]){
 		   $kep = '<div class="admin_valaszkep">'
 				   . '<img src="valasz_kepek/'.$next_elementv[kep_file].'" alt="" />'
-				   . '<img src="graphics/icon_del.png" class="icon_del" alt="a kép törlése" title="a kép törlése" onclick="megerosites_x('.$next_elementv[sorszam].', \'valasz_kep\', \''.$_REQUEST[id].'\')" />'
 				 . '</div>';
 		}
 		
         $valaszok2_kep .= ''
-				. '<br style="clear: both;">'
-				. '<!--<img src="graphics/icon_del.png" class="icon_del" style="position: relative; float: right; margin: 0px 0 0 0; z-index: 10;" alt="a válasz törlése" title="a válasz törlése" onclick="megerosites_x('.$next_elementv[sorszam].', \'valasz\', \''.$_REQUEST[id].'\')" />-->'
-				. $kep.
-				'<div class="file_browse_wrapper" style="margin-top: -20px;">'
-				. '<input name="valasz_kep_'.$next_elementv[sorszam].'" type="file" title="kép feltöltése a válaszhoz" size="30" accept="image/*" class="file_browse" />'
+				. ''
+				. $kep
+				. '<div style="width: 300px; float: right;">'
+				. '<div class="valasz_tipus_kapcs"><label>Kép megjelenítése a válaszhoz</label><input type="checkbox" name="kep_be" /></div>'
+				. '<input name="valasz_kep_'.$next_elementv[sorszam].'" type="file" title="kép feltöltése a válaszhoz" size="30" accept="image/*" class="valasz_keptolt" /><br style="clear: both;" />'
+				. '<div class="valasz_tipus_kapcs">'
+				. '<label>Kép törlése</label>'
+				. '<img src="graphics/icon_del.png" class="icon_del" alt="a kép törlése" title="a kép törlése" onclick="megerosites_x('.$next_elementv[sorszam].', \'valasz_kep\', \''.$_REQUEST[id].'\')" />'
+				. '</div>'
 				. '</div>';
 		unset($options);
 		unset($valasz_jel);

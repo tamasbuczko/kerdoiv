@@ -1340,15 +1340,16 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
 
 .admin_valaszkep{
    float: left !important;
-   margin-top: -20px !important;
+   margin-top: 0px !important;
    width: 200px !important;
+   text-align: left !important;
 }
 
 .admin_valaszkep img:nth-child(1){
    height: 80px !important;
    width: auto !important;
    border: 1px solid #aaa;
-   float: left;
+   float: left !important;
 }
 
 .admin_valaszkep img:nth-child(2){
@@ -1567,4 +1568,29 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
 	margin: 10px auto 2px auto;
 	font-size: 13px !important;
 	font-weight: normal !important;
+}
+
+.valasz_tipus_kapcs{
+   font-size: 14px;
+   width: 400px !important;
+   height: 22px !important;
+   float: right !important;
+   margin: 0px 10px 0px 0px !important;
+   text-align: right !important;
+}
+
+.valasz_tipus_kapcs label{
+   margin: 0px 0px 0px 0px !important;
+   width: auto !important;
+   float: right !important;
+}
+
+.valasz_tipus_kapcs input{
+   float: right !important;
+   margin: 3px 6px 0px 0px !important;
+}
+
+.valasz_keptolt{
+   margin: 0px 0px 0px 0px !important;
+   float: right !important;
 }
