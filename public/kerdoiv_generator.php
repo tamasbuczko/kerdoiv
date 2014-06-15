@@ -26,7 +26,7 @@ while ($next_element = mysql_fetch_array($result)){
         unset($kerdes_video);   
 	}
     
-    $resultx = mysql_query("SELECT sorszam, kerdes_valasz, valasz_hu, valasz_en, valasz_de, kep_file, video_embed FROM valaszok WHERE status = '1' AND kerdes_valasz = '$sorszam_kerdes' ORDER BY sorrend");
+    $resultx = mysql_query("SELECT sorszam, kerdes_valasz, valasz_hu, valasz_en, valasz_de, kep_file, video_embed, kapcs_szoveg, kapcs_kep, kapcs_video FROM valaszok WHERE status = '1' AND kerdes_valasz = '$sorszam_kerdes' ORDER BY sorrend");
     while ($next_elementv = mysql_fetch_array($resultx)){
         
         $sorszam_valasz = $next_elementv[sorszam];
@@ -38,14 +38,14 @@ while ($next_element = mysql_fetch_array($result)){
             } else {
               $radio_request = '';
             }                                               // ***
-		   if ($next_elementv[kep_file]){
+		   if (($next_elementv[kep_file]) AND ($next_elementv[kapcs_kep] == '1')){
 			  $valaszok .= "\n".'<div class="answer_img"><input type="radio" name="radio_'.$sorszam_kerdes.'" '.$radio_request.' value="'.$sorszam_valasz.'" /><div class="answer_img_frame"><img src="valasz_kepek/'.$next_elementv[kep_file].'"><label>'.$next_elementv['valasz_'.$_SESSION[lang]].'</label></div></div>';
 		   } else {
 			  if (!$next_elementv[video_embed]){
 			   $valaszok .= "\n".'<input type="radio" name="radio_'.$sorszam_kerdes.'" '.$radio_request.' value="'.$sorszam_valasz.'" /><label>'.$next_elementv['valasz_'.$_SESSION[lang]].'</label>';
 			  }
 		   }
-		   if ($next_elementv[video_embed]){
+		   if (($next_elementv[video_embed]) AND ($next_elementv[kapcs_video] == '1')){
 			  
 			  if (strpos($next_elementv[video_embed], 'youtube')){
 				  $video_link = explode('=', $next_elementv[video_embed]);
@@ -83,7 +83,7 @@ while ($next_element = mysql_fetch_array($result)){
                }
             }
 	
-            if ($next_elementv[kep_file]){
+            if (($next_elementv[kep_file]) AND ($next_elementv[kapcs_kep] == '1')){
 		$valaszok .= "\n".'<div class="answer_img"><input type="checkbox" name="checkbox_'.$sorszam_valasz.'" '.$check_request.' /><div class="answer_img_frame"><img src="valasz_kepek/'.$next_elementv[kep_file].'"><label>'.$next_elementv['valasz_'.$_SESSION[lang]].'</label></div></div>';
             } else {
 			   if (!$next_elementv[video_embed]){
@@ -91,7 +91,7 @@ while ($next_element = mysql_fetch_array($result)){
 			   }
             }
 			
-			if ($next_elementv[video_embed]){
+			if (($next_elementv[video_embed]) AND ($next_elementv[kapcs_video] == '1')){
 			   
 			   if (strpos($next_elementv[video_embed], 'youtube')){
 				  $video_link = explode('=', $next_elementv[video_embed]);
@@ -123,7 +123,7 @@ while ($next_element = mysql_fetch_array($result)){
                $valasz_ertekek .= "\n".'<input type="radio" name="rank_'.$sorszam_valasz.'" '.$ranking_request.' class="ranking_value" value="'.$i.'" />';
             }
             
-            if ($next_elementv[kep_file]){
+            if (($next_elementv[kep_file]) AND ($next_elementv[kapcs_kep] == '1')){
 		$valaszok .= "\n".'<div class="answer_img">
                         <div class="ranking_img">'
                 . '<span>1</span><span>2</span><span>3</span><span>4</span><span>5</span>'

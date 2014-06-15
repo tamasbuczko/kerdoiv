@@ -119,6 +119,31 @@ if (($_REQUEST[mentes]) OR ($_REQUEST[pluszvalasz])){
             mysql_query($sql);
 		}
 		
+		$szoveg_be_x = 'szoveg_be_'.$i;
+		$kep_be_x = 'kep_be_'.$i;
+		$video_be_x = 'video_be_'.$i;
+		
+		if ($_REQUEST[$szoveg_be_x] == 'on'){
+		   $szoveg_be_x = '1';}
+		else {
+		   $szoveg_be_x = '0';
+		}
+		
+		if ($_REQUEST[$kep_be_x] == 'on'){
+		   $kep_be_x = '1';}
+		else {
+		   $kep_be_x = '0';
+		}
+		
+		if ($_REQUEST[$video_be_x] == 'on'){
+		   $video_be_x = '1';}
+		else {
+		   $video_be_x = '0';
+		}
+		
+		$sql = "UPDATE valaszok SET kapcs_szoveg = '$szoveg_be_x', kapcs_kep = '$kep_be_x', kapcs_video = '$video_be_x' WHERE sorszam = $i";
+        mysql_query($sql);
+		
 		$valasz_x_hu = 'valasz_hu_'.$i;
         if ($_REQUEST[$valasz_x_hu]){
             $valasz_ertek_hu = $_REQUEST[$valasz_x_hu];
@@ -267,12 +292,29 @@ if ($_REQUEST[id]){
    
    $sorrendszam = 0;
    
-    $resultx = mysql_query("SELECT sorszam, kerdes_valasz, valasz_hu, valasz_en, valasz_de, kep_file, video_embed, sorrend FROM valaszok WHERE status = '1' AND kerdes_valasz = '$_REQUEST[id]' ORDER BY sorrend");
+    $resultx = mysql_query("SELECT sorszam, kerdes_valasz, valasz_hu, valasz_en, valasz_de, kep_file, video_embed, sorrend, kapcs_szoveg, kapcs_kep, kapcs_video FROM valaszok WHERE status = '1' AND kerdes_valasz = '$_REQUEST[id]' ORDER BY sorrend");
     while ($next_elementv = mysql_fetch_array($resultx)){
 	   $sorrendszam++;
         #$valaszok .= '<input type="text" name="valasz_'.$next_elementv[sorszam].'" value="'.$next_elementv[valasz_hu].'" /><img src="graphics/icon_del.png" class="icon_del" alt="törlés" onclick="megerosites_x('.$next_elementv[sorszam].', \'valasz\', \''.$_REQUEST[id].'\')" />';
+	   if ($next_elementv[kapcs_szoveg] == '1'){
+		  $kapcs_szoveg = 'checked="checked"';
+	   } else {
+		  $kapcs_szoveg = '';
+	   }
+	   
+	   if ($next_elementv[kapcs_kep] == '1'){
+		  $kapcs_kep = 'checked="checked"';
+	   } else {
+		  $kapcs_kep = '';
+	   }
+	   
+	   if ($next_elementv[kapcs_video] == '1'){
+		  $kapcs_video = 'checked="checked"';
+	   } else {
+		  $kapcs_video = '';
+	   }
        
-	   $valaszok2_szoveg .= '<div class="valasz_tipus_kapcs"><label>Szöveg megjelenítése a válaszhoz</label><input type="checkbox" name="szoveg_be" /></div>';
+	   $valaszok2_szoveg .= '<div class="valasz_tipus_kapcs"><label>Szöveg megjelenítése a válaszhoz</label><input type="checkbox" name="szoveg_be_'.$next_elementv[sorszam].'" '.$kapcs_szoveg.'/></div>';
 	   
         if ($en == 1){
             $valaszok2_szoveg .= '<input type="text" name="valasz_en_'.$next_elementv[sorszam].'" id="valasz_en_'.$next_elementv[sorszam].'" value="'.$next_elementv[valasz_en].'" class="en_k" />';
@@ -284,7 +326,7 @@ if ($_REQUEST[id]){
             $valaszok2_szoveg .= '<input type="text" name="valasz_hu_'.$next_elementv[sorszam].'" id="valasz_hu_'.$next_elementv[sorszam].'" value="'.$next_elementv[valasz_hu].'" class="hu_k" />';
         }
 		
-		$valaszok2_video .= '<div class="valasz_tipus_kapcs"><label>Videó megjelenítése a válaszhoz</label><input type="checkbox" name="video_be" /></div>'
+		$valaszok2_video .= '<div class="valasz_tipus_kapcs"><label>Videó megjelenítése a válaszhoz</label><input type="checkbox" name="video_be_'.$next_elementv[sorszam].'" '.$kapcs_video.'/></div>'
 				. '<input type="text" name="valasz_video_'.$next_elementv[sorszam].'" value="'.$next_elementv[video_embed].'" title="video link" class="video_embed" />';
 		
 		unset($kep);
@@ -298,7 +340,7 @@ if ($_REQUEST[id]){
 				. ''
 				. $kep
 				. '<div style="width: 300px; float: right;">'
-				. '<div class="valasz_tipus_kapcs"><label>Kép megjelenítése a válaszhoz</label><input type="checkbox" name="kep_be" /></div>'
+				. '<div class="valasz_tipus_kapcs"><label>Kép megjelenítése a válaszhoz</label><input type="checkbox" name="kep_be_'.$next_elementv[sorszam].'" '.$kapcs_kep.'/></div>'
 				. '<input name="valasz_kep_'.$next_elementv[sorszam].'" type="file" title="kép feltöltése a válaszhoz" size="30" accept="image/*" class="valasz_keptolt" /><br style="clear: both;" />'
 				. '<div class="valasz_tipus_kapcs">'
 				. '<label>Kép törlése</label>'
