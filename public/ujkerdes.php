@@ -326,8 +326,27 @@ if ($_REQUEST[id]){
             $valaszok2_szoveg .= '<input type="text" name="valasz_hu_'.$next_elementv[sorszam].'" id="valasz_hu_'.$next_elementv[sorszam].'" value="'.$next_elementv[valasz_hu].'" class="hu_k" />';
         }
 		
+		if ($next_elementv[video_embed]){
+		   
+		   if ($next_elementv[video_embed]){
+			   if (strpos($next_elementv[video_embed], 'youtube')){
+				  $video_link = explode('=', $next_elementv[video_embed]);
+				  $valasz_video_x = '<iframe style="float: left; margin: -24px 0px 20px 10px;" width="156" height="88" src="//www.youtube.com/embed/'.$video_link[1].'" frameborder="0" allowfullscreen></iframe><br stlye="clear:both;">';
+			   }
+			   if (strpos($next_elementv[video_embed], 'vimeo')){
+				  $video_link = explode('/', $next_elementv[video_embed]);
+				  $valasz_video_x = '<iframe src="//player.vimeo.com/video/'.end($video_link).'" style="float: left; margin: -24px 0px 20px 10px;" width="156" height="88" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe><br stlye="clear:both;">';
+			   }
+
+			} else {
+				unset($valasz_video_x);   
+			}
+		   
+		}
+		
 		$valaszok2_video .= '<div class="valasz_tipus_kapcs"><label>Videó megjelenítése a válaszhoz</label><input type="checkbox" name="video_be_'.$next_elementv[sorszam].'" '.$kapcs_video.'/></div>'
-				. '<input type="text" name="valasz_video_'.$next_elementv[sorszam].'" value="'.$next_elementv[video_embed].'" title="video link" class="video_embed" />';
+				. $valasz_video_x
+				. '<input type="text" name="valasz_video_'.$next_elementv[sorszam].'" value="'.$next_elementv[video_embed].'" style="width: 340px; float: right;" title="video link" class="video_embed" />';
 		
 		unset($kep);
 		if ($next_elementv[kep_file]){
