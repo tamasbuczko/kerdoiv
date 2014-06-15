@@ -21,4 +21,16 @@ if ($sql < 2){
    $result2 ="ALTER TABLE `valaszadasok` ADD INDEX (`kerdoiv_sorszam`)";
    mysql_query($result2);
 }
-   
+
+$result = mysql_query("SELECT COUNT( * ) 
+					 FROM information_schema.columns
+					 WHERE table_name =  'valaszok'");
+$sql = mysql_num_rows($result);
+
+if ($sql < 11){
+   $result3 = "ALTER TABLE `valaszok` ADD  `kapcs_szoveg` VARCHAR(1) NULL DEFAULT  '1',
+   ADD  `kapcs_kep` VARCHAR(1) NULL DEFAULT  '0',
+   ADD  `kapcs_video` VARCHAR(1) NULL DEFAULT  '0'";
+
+   mysql_query($result3);
+}
