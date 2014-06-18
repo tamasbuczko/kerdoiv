@@ -29,7 +29,7 @@ if (($kerdoiv_authority == '2') AND ($_SESSION[pub] == '1')){
     $reklammentes = 'on';
 }
 
-if (($kerdoiv_authority == '1') AND ($_SESSION[pub] == '1')){
+if (($kerdoiv_authority == '3') AND ($_SESSION[pub] == '1')){
     $nincs_menu = 'on'; //kikapcsolja a menüt
 }
 

@@ -1,7 +1,7 @@
 <?php
 
 if ($_REQUEST[submit]){
-   $query = mysql_query("UPDATE users SET email='$_REQUEST[email_mod]' WHERE id = '$_SESSION[qa_user_id]'");
+   $query = mysql_query("UPDATE users SET email='$_REQUEST[email_mod]', authority='$_REQUEST[csomag_mod]' WHERE id = '$_SESSION[qa_user_id]'");
    mysql_query($query);
    $user->email = $_REQUEST[email_mod];
 }
