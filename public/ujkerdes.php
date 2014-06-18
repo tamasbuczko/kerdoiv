@@ -141,8 +141,10 @@ if (($_REQUEST[mentes]) OR ($_REQUEST[pluszvalasz])){
 		   $video_be_x = '0';
 		}
 		
-		$sql = "UPDATE valaszok SET kapcs_szoveg = '$szoveg_be_x', kapcs_kep = '$kep_be_x', kapcs_video = '$video_be_x' WHERE sorszam = $i";
-        mysql_query($sql);
+		if ($_REQUEST[$xx]){
+		 $sql = "UPDATE valaszok SET kapcs_szoveg = '$szoveg_be_x', kapcs_kep = '$kep_be_x', kapcs_video = '$video_be_x' WHERE sorszam = $i";
+		 mysql_query($sql);
+		}
 		
 		$valasz_x_hu = 'valasz_hu_'.$i;
         if ($_REQUEST[$valasz_x_hu]){
