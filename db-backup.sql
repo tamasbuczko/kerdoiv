@@ -1,11 +1,11 @@
 DROP TABLE css;
 
 CREATE TABLE `css` (
-  `sorszam` int(11) NOT NULL auto_increment,
-  `megnevezes` varchar(200) collate utf8_unicode_ci default NULL,
-  `file` varchar(200) collate utf8_unicode_ci default NULL,
-  `kep` varchar(200) collate utf8_unicode_ci default NULL,
-  PRIMARY KEY  (`sorszam`)
+  `sorszam` int(11) NOT NULL AUTO_INCREMENT,
+  `megnevezes` varchar(200) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `file` varchar(200) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `kep` varchar(200) COLLATE utf8_unicode_ci DEFAULT NULL,
+  PRIMARY KEY (`sorszam`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 INSERT INTO css VALUES("1","Piros","piros.css","");
@@ -15,11 +15,11 @@ INSERT INTO css VALUES("1","Piros","piros.css","");
 DROP TABLE dat_csaladiallapot;
 
 CREATE TABLE `dat_csaladiallapot` (
-  `id` int(11) NOT NULL auto_increment,
-  `nev_hu` varchar(50) collate utf8_unicode_ci default NULL,
-  `nev_en` varchar(50) collate utf8_unicode_ci default NULL,
-  `nev_de` varchar(50) collate utf8_unicode_ci default NULL,
-  PRIMARY KEY  (`id`)
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `nev_hu` varchar(50) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `nev_en` varchar(50) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `nev_de` varchar(50) COLLATE utf8_unicode_ci DEFAULT NULL,
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 INSERT INTO dat_csaladiallapot VALUES("1","Egyedülálló","Single","Single");
@@ -36,11 +36,11 @@ INSERT INTO dat_csaladiallapot VALUES("8","Özvegy","Widowed","Verwitwet");
 DROP TABLE dat_eletkor;
 
 CREATE TABLE `dat_eletkor` (
-  `id` int(11) NOT NULL auto_increment,
-  `nev_hu` varchar(50) collate utf8_unicode_ci default NULL,
-  `nev_en` varchar(50) collate utf8_unicode_ci default NULL,
-  `nev_de` varchar(50) collate utf8_unicode_ci default NULL,
-  PRIMARY KEY  (`id`)
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `nev_hu` varchar(50) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `nev_en` varchar(50) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `nev_de` varchar(50) COLLATE utf8_unicode_ci DEFAULT NULL,
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 INSERT INTO dat_eletkor VALUES("1","<14","<14","<14");
@@ -59,11 +59,11 @@ INSERT INTO dat_eletkor VALUES("10","65<","65<","65<");
 DROP TABLE dat_foglalkozasok;
 
 CREATE TABLE `dat_foglalkozasok` (
-  `id` int(11) NOT NULL auto_increment,
-  `nev_hu` varchar(50) collate utf8_unicode_ci default NULL,
-  `nev_en` varchar(50) collate utf8_unicode_ci default NULL,
-  `nev_de` varchar(50) collate utf8_unicode_ci default NULL,
-  PRIMARY KEY  (`id`)
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `nev_hu` varchar(50) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `nev_en` varchar(50) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `nev_de` varchar(50) COLLATE utf8_unicode_ci DEFAULT NULL,
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=26 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 INSERT INTO dat_foglalkozasok VALUES("1","Adminisztráció / Titkári","Administration / Secretarial","Verwaltung / Sekretariat");
@@ -97,11 +97,11 @@ INSERT INTO dat_foglalkozasok VALUES("25","Építőipar / Ingatlanforgalmazás",
 DROP TABLE dat_jovedelmek;
 
 CREATE TABLE `dat_jovedelmek` (
-  `id` int(11) NOT NULL auto_increment,
-  `nev_hu` varchar(50) collate utf8_unicode_ci default NULL,
-  `nev_en` varchar(50) collate utf8_unicode_ci default NULL,
-  `nev_de` varchar(50) collate utf8_unicode_ci default NULL,
-  PRIMARY KEY  (`id`)
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `nev_hu` varchar(50) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `nev_en` varchar(50) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `nev_de` varchar(50) COLLATE utf8_unicode_ci DEFAULT NULL,
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 INSERT INTO dat_jovedelmek VALUES("1","Minimálbér alatt","Below minimum wage","Unter Mindestlohn");
@@ -114,11 +114,11 @@ INSERT INTO dat_jovedelmek VALUES("4","Kétszeres átlagbér felett","Over twice
 DROP TABLE dat_nemek;
 
 CREATE TABLE `dat_nemek` (
-  `id` int(11) NOT NULL auto_increment,
-  `nev_hu` varchar(50) collate utf8_unicode_ci default NULL,
-  `nev_en` varchar(50) collate utf8_unicode_ci default NULL,
-  `nev_de` varchar(50) collate utf8_unicode_ci default NULL,
-  PRIMARY KEY  (`id`)
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `nev_hu` varchar(50) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `nev_en` varchar(50) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `nev_de` varchar(50) COLLATE utf8_unicode_ci DEFAULT NULL,
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 INSERT INTO dat_nemek VALUES("1","Férfi","Male","Mann");
@@ -129,16 +129,16 @@ INSERT INTO dat_nemek VALUES("2","Nő","Female","Frau");
 DROP TABLE dat_orszag;
 
 CREATE TABLE `dat_orszag` (
-  `country_id` int(5) NOT NULL auto_increment,
-  `iso2` char(2) default NULL,
-  `short_name` varchar(80) NOT NULL default '',
-  `long_name` varchar(80) NOT NULL default '',
-  `iso3` char(3) default NULL,
-  `numcode` varchar(6) default NULL,
-  `un_member` varchar(12) default NULL,
-  `calling_code` varchar(8) default NULL,
-  `cctld` varchar(5) default NULL,
-  PRIMARY KEY  (`country_id`)
+  `country_id` int(5) NOT NULL AUTO_INCREMENT,
+  `iso2` char(2) DEFAULT NULL,
+  `short_name` varchar(80) NOT NULL DEFAULT '',
+  `long_name` varchar(80) NOT NULL DEFAULT '',
+  `iso3` char(3) DEFAULT NULL,
+  `numcode` varchar(6) DEFAULT NULL,
+  `un_member` varchar(12) DEFAULT NULL,
+  `calling_code` varchar(8) DEFAULT NULL,
+  `cctld` varchar(5) DEFAULT NULL,
+  PRIMARY KEY (`country_id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=251 DEFAULT CHARSET=latin1;
 
 INSERT INTO dat_orszag VALUES("1","AF","Afghanistan","Islamic Republic of Afghanistan","AFG","004","yes","93",".af");
@@ -397,11 +397,11 @@ INSERT INTO dat_orszag VALUES("250","ZW","Zimbabwe","Republic of Zimbabwe","ZWE"
 DROP TABLE dat_vegzettseg;
 
 CREATE TABLE `dat_vegzettseg` (
-  `id` int(11) NOT NULL auto_increment,
-  `nev_hu` varchar(50) collate utf8_unicode_ci default NULL,
-  `nev_en` varchar(50) collate utf8_unicode_ci default NULL,
-  `nev_de` varchar(50) collate utf8_unicode_ci default NULL,
-  PRIMARY KEY  (`id`)
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `nev_hu` varchar(50) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `nev_en` varchar(50) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `nev_de` varchar(50) COLLATE utf8_unicode_ci DEFAULT NULL,
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 INSERT INTO dat_vegzettseg VALUES("1","Általános Iskola","Primary school","Grundschule");
@@ -418,12 +418,12 @@ INSERT INTO dat_vegzettseg VALUES("8","Doktor, Professzor","Doctor, Professor","
 DROP TABLE fizetesek;
 
 CREATE TABLE `fizetesek` (
-  `id` int(11) NOT NULL auto_increment,
-  `user_id` int(11) default NULL,
-  `osszeg` int(11) default NULL,
-  `idopont` datetime default NULL,
-  `status` varchar(1) default NULL,
-  PRIMARY KEY  (`id`)
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `user_id` int(11) DEFAULT NULL,
+  `osszeg` int(11) DEFAULT NULL,
+  `idopont` datetime DEFAULT NULL,
+  `status` varchar(1) DEFAULT NULL,
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 
@@ -432,19 +432,19 @@ CREATE TABLE `fizetesek` (
 DROP TABLE kerdesek;
 
 CREATE TABLE `kerdesek` (
-  `sorszam` int(11) NOT NULL auto_increment,
-  `kerdoiv_sorszam` int(11) default NULL,
-  `kerdes_hu` text character set utf8 collate utf8_hungarian_ci,
-  `kerdes_en` text character set utf8 collate utf8_unicode_ci,
-  `kerdes_de` text character set utf8 collate utf8_unicode_ci,
-  `kep_file` varchar(200) character set utf8 collate utf8_unicode_ci default NULL,
-  `video_embed` text character set utf8 collate utf8_unicode_ci,
-  `sorrend` int(11) default NULL,
-  `tipus` varchar(20) default NULL,
-  `status` varchar(1) default NULL,
+  `sorszam` int(11) NOT NULL AUTO_INCREMENT,
+  `kerdoiv_sorszam` int(11) DEFAULT NULL,
+  `kerdes_hu` text CHARACTER SET utf8 COLLATE utf8_hungarian_ci,
+  `kerdes_en` text CHARACTER SET utf8 COLLATE utf8_unicode_ci,
+  `kerdes_de` text CHARACTER SET utf8 COLLATE utf8_unicode_ci,
+  `kep_file` varchar(200) CHARACTER SET utf8 COLLATE utf8_unicode_ci DEFAULT NULL,
+  `video_embed` text CHARACTER SET utf8 COLLATE utf8_unicode_ci,
+  `sorrend` int(11) DEFAULT NULL,
+  `tipus` varchar(20) DEFAULT NULL,
+  `status` varchar(1) DEFAULT NULL,
   `leiras` text,
-  PRIMARY KEY  (`sorszam`)
-) ENGINE=InnoDB AUTO_INCREMENT=47 DEFAULT CHARSET=latin1;
+  PRIMARY KEY (`sorszam`)
+) ENGINE=InnoDB AUTO_INCREMENT=50 DEFAULT CHARSET=latin1;
 
 INSERT INTO kerdesek VALUES("1","1","Számolsz a családi költségvetésben az ajándékozással?","Do you calculate with the cost of gifts during planning family budget?","Kalkulierst du die Geschenke im Familienbudget ein?","_k7eb.jpg","","1","select","1","");
 INSERT INTO kerdesek VALUES("2","1","Használsz valamilyen ajándék listát, amelyből ismerőseid tájékozódhatnak, hogy mit szeretnél kapni?","Do you use some kind of gift list for informing your friends your wishes? ","Hast du eine Geschenkliste, aus der deine Bekannten erfahren könnten, was du bekommen möchtest?","","","2","radio","1","");
@@ -486,6 +486,8 @@ INSERT INTO kerdesek VALUES("43","0","Új kérdés","","","","","29","radio","1"
 INSERT INTO kerdesek VALUES("44","0","Új kérdés","","","","","30","radio","1","");
 INSERT INTO kerdesek VALUES("45","0","Új kérdés","","","","","31","radio","1","");
 INSERT INTO kerdesek VALUES("46","0","Új kérdés","","","","","32","radio","1","");
+INSERT INTO kerdesek VALUES("47","1","Új kérdés","","","","","33","radio","1","");
+INSERT INTO kerdesek VALUES("48","7","Új hibabejelentés leírása:","","","","","0","textarea","1","");
 
 
 
@@ -493,16 +495,16 @@ DROP TABLE kerdoiv_szemelyesadat;
 
 CREATE TABLE `kerdoiv_szemelyesadat` (
   `sorszam` int(11) NOT NULL,
-  `kerdoiv_sorszam` int(11) default NULL,
-  `neme` varchar(1) default NULL,
-  `kora` varchar(1) default NULL,
-  `orszag` varchar(1) default NULL,
-  `varos` varchar(1) default NULL,
-  `foglalkozas` varchar(1) default NULL,
-  `vegzettseg` varchar(1) default NULL,
-  `jovedelem` varchar(1) default NULL,
-  `csaladiallapot` varchar(1) default NULL,
-  PRIMARY KEY  (`sorszam`)
+  `kerdoiv_sorszam` int(11) DEFAULT NULL,
+  `neme` varchar(1) DEFAULT NULL,
+  `kora` varchar(1) DEFAULT NULL,
+  `orszag` varchar(1) DEFAULT NULL,
+  `varos` varchar(1) DEFAULT NULL,
+  `foglalkozas` varchar(1) DEFAULT NULL,
+  `vegzettseg` varchar(1) DEFAULT NULL,
+  `jovedelem` varchar(1) DEFAULT NULL,
+  `csaladiallapot` varchar(1) DEFAULT NULL,
+  PRIMARY KEY (`sorszam`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 INSERT INTO kerdoiv_szemelyesadat VALUES("1","1","1","1","1","1","1","1","1","1");
@@ -511,38 +513,38 @@ INSERT INTO kerdoiv_szemelyesadat VALUES("3","3","1","1","1","1","1","1","1","1"
 INSERT INTO kerdoiv_szemelyesadat VALUES("4","4","1","1","1","1","1","1","1","1");
 INSERT INTO kerdoiv_szemelyesadat VALUES("5","5","1","1","1","1","1","1","1","1");
 INSERT INTO kerdoiv_szemelyesadat VALUES("6","6","1","1","1","1","1","1","1","1");
-INSERT INTO kerdoiv_szemelyesadat VALUES("7","7","1","1","1","1","1","1","1","1");
+INSERT INTO kerdoiv_szemelyesadat VALUES("7","7","0","0","0","1","0","0","0","0");
 
 
 
 DROP TABLE kerdoivek;
 
 CREATE TABLE `kerdoivek` (
-  `sorszam` int(11) NOT NULL auto_increment,
-  `hivatkozas` varchar(200) default NULL,
-  `cim_hu` varchar(200) character set utf8 collate utf8_unicode_ci default NULL,
-  `cim_en` varchar(200) character set utf8 collate utf8_unicode_ci default NULL,
-  `cim_de` varchar(200) character set utf8 collate utf8_unicode_ci default NULL,
-  `leiras_hu` text character set utf8 collate utf8_unicode_ci,
-  `leiras_en` text character set utf8 collate utf8_unicode_ci,
-  `leiras_de` text character set utf8 collate utf8_unicode_ci,
-  `status` varchar(1) default NULL,
-  `hirdetessel` varchar(1) default NULL,
-  `datum` date default NULL,
-  `aktivalas` date default NULL,
-  `lejarat` date default NULL,
+  `sorszam` int(11) NOT NULL AUTO_INCREMENT,
+  `hivatkozas` varchar(200) DEFAULT NULL,
+  `cim_hu` varchar(200) CHARACTER SET utf8 COLLATE utf8_unicode_ci DEFAULT NULL,
+  `cim_en` varchar(200) CHARACTER SET utf8 COLLATE utf8_unicode_ci DEFAULT NULL,
+  `cim_de` varchar(200) CHARACTER SET utf8 COLLATE utf8_unicode_ci DEFAULT NULL,
+  `leiras_hu` text CHARACTER SET utf8 COLLATE utf8_unicode_ci,
+  `leiras_en` text CHARACTER SET utf8 COLLATE utf8_unicode_ci,
+  `leiras_de` text CHARACTER SET utf8 COLLATE utf8_unicode_ci,
+  `status` varchar(1) DEFAULT NULL,
+  `hirdetessel` varchar(1) DEFAULT NULL,
+  `datum` date DEFAULT NULL,
+  `aktivalas` date DEFAULT NULL,
+  `lejarat` date DEFAULT NULL,
   `user_id` int(11) NOT NULL,
-  `css_id` varchar(50) default NULL,
-  `fejlec_kep` varchar(200) character set utf8 collate utf8_unicode_ci default NULL,
-  `hu` varchar(1) default NULL,
-  `en` varchar(1) default NULL,
-  `de` varchar(1) default NULL,
-  `nyilvanos` varchar(1) NOT NULL default '0',
-  `zaras_hu` text character set utf8 collate utf8_unicode_ci,
-  `zaras_en` text character set utf8 collate utf8_unicode_ci,
-  `zaras_de` text character set utf8 collate utf8_unicode_ci,
-  PRIMARY KEY  (`sorszam`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
+  `css_id` varchar(50) DEFAULT NULL,
+  `fejlec_kep` varchar(200) CHARACTER SET utf8 COLLATE utf8_unicode_ci DEFAULT NULL,
+  `hu` varchar(1) DEFAULT NULL,
+  `en` varchar(1) DEFAULT NULL,
+  `de` varchar(1) DEFAULT NULL,
+  `nyilvanos` varchar(1) NOT NULL DEFAULT '0',
+  `zaras_hu` text CHARACTER SET utf8 COLLATE utf8_unicode_ci,
+  `zaras_en` text CHARACTER SET utf8 COLLATE utf8_unicode_ci,
+  `zaras_de` text CHARACTER SET utf8 COLLATE utf8_unicode_ci,
+  PRIMARY KEY (`sorszam`)
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=latin1;
 
 INSERT INTO kerdoivek VALUES("1","a_kozosseg_szerepe_celjaink_alakulasaban","A közösség szerepe céljaink alakulásában","The role of the community in reaching our goals","Die Rolle der Gemeinschaft in der Entwicklung unserer Ziele","Kérdőívünk azt vizsgálja, hogy országonként hogyan változik anyagi vágyunk, illetve fizikai és szellemi célunk. Milyen módon szerezzük meg vagy akarjuk megszerezni azt, ami életünknek értelmet ad. Milyen hatással van ránk a közösség véleménye céljainak megválasztása során. A célunk elérését követően hogyan reagálunk, mit közvetítünk a közösségek felé és mit akarunk ezzel kifejezni. ","Our survey is examining how changes our material dreams, and our phisycal and intellectual goals by country. What is the way until acquiring or obtaining our goals giving meaning to our life. How  we are affected by the opinion of the community in choosing our goals. After reaching our goals, how we react, what we show to the community, what we want to express.","Unser Fragebogen untersucht  nach Ländern wie sich unsere  materiellen, bzw. physischen und geistigen Ziele ändern. Wie schaffen wir uns etwas an oder wie wollen wir uns etwas anschaffen, das unserem Leben einen Sinn gibt. Wie beeinflusst uns die Meinung der Gemeinschaft bei der Wahl unserer Ziele. Nach Erreichen des Ziels, wie reagieren wir, was vermitteln wir an die Gemeinschaft und was möchten wir damit ausdrücken.","1","1","2013-11-26","2014-04-04","2014-03-30","1","2","_xe3p.jpg","1","1","1","1","Köszönjük a kitöltést! Ha szeretné megtekinteni az eredményt, kérjük adja meg e-mail címét.","Thank you for the filling! If you would like to see the result please give us your e-mail address.","Bitte geben Sie Ihre E-Mail-Adresse an, wenn Sie den Artikel mit dem Ergebnis der Umfrage erhalten möchten. ");
 INSERT INTO kerdoivek VALUES("2","A_tarskereso_oldalak_letjogosultsaga_2014-ben","A társkereső oldalak létjogosultsága 2014-ben","english title","","A társkeresés számos formája közül az internet használata a legjelentősebb. Vagy mégsem? Kérdőívünk azt kutatja, hogy a társkereső oldalak mennyire vezetnek célra. Melyek a felesleges, esetleg helytelenül működő funkciók és melyek azok a funkciók amelyek hiányoznak.","","","1","","2014-01-28","0000-00-00","0000-00-00","1","0","","1","1","0","1","A kérdőív elküldésével hozzájárul a kutatáshoz.","","");
@@ -550,152 +552,153 @@ INSERT INTO kerdoivek VALUES("3","","Teljesen új kérdőív","","","első leír
 INSERT INTO kerdoivek VALUES("4","","Új próba","","","valami","","","1","","0000-00-00","0000-00-00","0000-00-00","1","0","","1","1","0","0","","","");
 INSERT INTO kerdoivek VALUES("5","","Munkaszeretet","","","Kérdőívünk azt vizsgálja, hogy az emberek mennyire szeretik a munkahelyüket illetve munkájukat.","","","1","","0000-00-00","0000-00-00","0000-00-00","1","0","","1","0","0","0","","","");
 INSERT INTO kerdoivek VALUES("6","","Az okos telefonok","","","Kérdőívünk az okos telefonok használhatóságát, megbízhatóságát kutatja.","","","1","","0000-00-00","0000-00-00","0000-00-00","4","","","1","0","0","1","","","");
+INSERT INTO kerdoivek VALUES("7","hibabejelenes_-_teszteles","Hibabejelenés - Tesztelés","","","Ide írhatod le a teszteléssel kapcsolatban felmerült észrevételeidet. Részletesen írd le, hogy egyértelmű legyen a hiba.","","","1","1","","0000-00-00","0000-00-00","6","1","","1","0","0","1","Köszönöm!","","");
 
 
 
 DROP TABLE kitoltok;
 
 CREATE TABLE `kitoltok` (
-  `sorszam` int(11) NOT NULL auto_increment,
-  `email` varchar(100) default NULL,
-  `eletkora` varchar(10) default NULL,
-  `neme` varchar(10) character set utf8 collate utf8_unicode_ci default NULL,
-  `lakhely` varchar(40) default NULL,
-  `foglalkozas` varchar(60) character set utf8 collate utf8_unicode_ci default NULL,
-  `nyelv` varchar(2) default NULL,
-  `vegzettseg` int(11) default NULL,
-  `jovedelem` int(11) default NULL,
-  `csaladiallapot` int(11) default NULL,
-  PRIMARY KEY  (`sorszam`)
+  `sorszam` int(11) NOT NULL AUTO_INCREMENT,
+  `email` varchar(100) DEFAULT NULL,
+  `eletkora` varchar(10) DEFAULT NULL,
+  `neme` varchar(10) CHARACTER SET utf8 COLLATE utf8_unicode_ci DEFAULT NULL,
+  `lakhely` varchar(40) DEFAULT NULL,
+  `foglalkozas` varchar(60) CHARACTER SET utf8 COLLATE utf8_unicode_ci DEFAULT NULL,
+  `nyelv` varchar(2) DEFAULT NULL,
+  `vegzettseg` int(11) DEFAULT NULL,
+  `jovedelem` int(11) DEFAULT NULL,
+  `csaladiallapot` int(11) DEFAULT NULL,
+  PRIMARY KEY (`sorszam`)
 ) ENGINE=InnoDB AUTO_INCREMENT=129 DEFAULT CHARSET=latin1;
 
-INSERT INTO kitoltok VALUES("18","savo@freemail.hu","6","2","100","jogász","hu","","","");
-INSERT INTO kitoltok VALUES("19","tamasbuczko@gmail.com","6","1","100","hegesztőmérnök","hu","","","");
-INSERT INTO kitoltok VALUES("20","gyetvainandor@gmail.com","6","1","100","projektvezető","hu","","","");
-INSERT INTO kitoltok VALUES("21","3ati3.antisteam@gmail.com","6","1","100","mérnök","hu","","","");
-INSERT INTO kitoltok VALUES("22","abrakadabra86@gmail.com","6","1","100","Gépész","hu","","","");
-INSERT INTO kitoltok VALUES("23","daniel.nagy.ext@evosoft.com","3","1","100","Gépészmérnök","hu","","","");
-INSERT INTO kitoltok VALUES("24","belme.tamas@gmail.com","6","1","100","Technikus","hu","","","");
-INSERT INTO kitoltok VALUES("25","bigro86@freemail.hu","6","2","100","anyuka","hu","","","");
-INSERT INTO kitoltok VALUES("26","csilla.v@citromail.hu","6","2","100","ápoló","hu","","","");
-INSERT INTO kitoltok VALUES("27","bendikistvan@gmail.com","6","1","100","újságíró","hu","","","");
-INSERT INTO kitoltok VALUES("28","duno24@freemail.hu","6","1","100","Kőműves","hu","","","");
-INSERT INTO kitoltok VALUES("29","briozsbizsu@citromail.hu","7","2","100","mérnök","hu","","","");
-INSERT INTO kitoltok VALUES("30","xxx","3","1","18","v","hu","","","");
-INSERT INTO kitoltok VALUES("31","buczkooo@freemail.hu","6","1","100","Gépész Mérnök","hu","","","");
-INSERT INTO kitoltok VALUES("32","eszla@vipmail.hu","6","1","100","műszaki vezető","hu","","","");
-INSERT INTO kitoltok VALUES("33","dornyeiagnes@citromail.hu","3","2","100","tanuló","hu","","","");
-INSERT INTO kitoltok VALUES("34","zsuark@gmail.com","7","1","100","vállalkozó","hu","","","");
-INSERT INTO kitoltok VALUES("35","almasib@freemail.hu","6","1","100","Építésvezető","hu","","","");
-INSERT INTO kitoltok VALUES("36","gardi.judit@freemail.hu","8","2","100","Tanár","hu","","","");
-INSERT INTO kitoltok VALUES("37","","3","2","100","Logisztikus","hu","","","");
-INSERT INTO kitoltok VALUES("38","maria.buczko@gmail.com","8","2","100","vállalkozó","hu","","","");
-INSERT INTO kitoltok VALUES("39","","6","2","100","Jog","hu","","","");
-INSERT INTO kitoltok VALUES("40","","6","2","100","adminisztrátor","hu","","","");
-INSERT INTO kitoltok VALUES("41","hilda1986@freemail.hu","6","2","100","Tanár","hu","","","");
-INSERT INTO kitoltok VALUES("42","","6","2","100","tanuló","hu","","","");
-INSERT INTO kitoltok VALUES("43","vecsi.bettina.emoke@gmail.com","3","2","100","egyetemi hallgató","hu","","","");
-INSERT INTO kitoltok VALUES("44","bridgettes21@gmail.com","6","2","100","gyesen vagyok","hu","","","");
-INSERT INTO kitoltok VALUES("45","dzsidzsi16@citromail.hu","3","1","100","Egyetemista","hu","","","");
-INSERT INTO kitoltok VALUES("46","esztermolnar24@gmail.com","3","2","100","Tanuló","hu","","","");
-INSERT INTO kitoltok VALUES("47","gabocza@gmail.com","6","1","100","üzemvezető helyettes","hu","","","");
-INSERT INTO kitoltok VALUES("48","","3","2","100","hallgató","hu","","","");
-INSERT INTO kitoltok VALUES("49","deauxvaganza@yahoo.com","6","1","100","Beszerző","hu","","","");
-INSERT INTO kitoltok VALUES("50","","6","2","100","grafikus","hu","","","");
-INSERT INTO kitoltok VALUES("51","","6","1","100","Mérnök","hu","","","");
-INSERT INTO kitoltok VALUES("52","","7","1","100","Adószakértő","hu","","","");
-INSERT INTO kitoltok VALUES("53","","2","2","100","Tanuló","hu","","","");
-INSERT INTO kitoltok VALUES("54","egembachris@gmail.com","6","male","160","Business","en","","","");
-INSERT INTO kitoltok VALUES("55","-","3","2","100","egyetemi hallgató","hu","","","");
-INSERT INTO kitoltok VALUES("56","","3","2","100","tanuló","hu","","","");
-INSERT INTO kitoltok VALUES("57","","3","2","100","pénzügyi asszisztens","hu","","","");
-INSERT INTO kitoltok VALUES("58","","3","2","100","pénzügyi asszisztens","hu","","","");
-INSERT INTO kitoltok VALUES("59","onyechukwu2k6@gmail.com","6","male","160","cashier","en","","","");
-INSERT INTO kitoltok VALUES("60","onyechukwu2k6@gmail.com","6","male","160","cashier","en","","","");
-INSERT INTO kitoltok VALUES("61","onyechukwu2k6@gmail.com","6","male","160","cashier","en","","","");
-INSERT INTO kitoltok VALUES("62","","3","2","100","ügyintéző","hu","","","");
-INSERT INTO kitoltok VALUES("63","kkagota@gmail.com","6","2","100","Biztosítási ügyintéző","hu","","","");
-INSERT INTO kitoltok VALUES("64","","3","1","100","hallgató","hu","","","");
-INSERT INTO kitoltok VALUES("65","gaspar.kata95@gmail.com","3","2","100","tanuló","hu","","","");
-INSERT INTO kitoltok VALUES("66","enfride2@gmail.com","3","2","100","tanuló","hu","","","");
-INSERT INTO kitoltok VALUES("67","lizhudema@hotmail.com","3","female","14","student/retail assistant","en","","","");
-INSERT INTO kitoltok VALUES("68","tipip@freemail.hu","3","2","100","szellemi munka","hu","","","");
-INSERT INTO kitoltok VALUES("69","lh","3","2","100","tanuló","hu","","","");
-INSERT INTO kitoltok VALUES("70","","3","2","100","tanuló","hu","","","");
-INSERT INTO kitoltok VALUES("71","dilienczzsofia@gmail.com","6","2","100","HR előadó","hu","","","");
-INSERT INTO kitoltok VALUES("72","","3","2","100","tanuló","hu","","","");
-INSERT INTO kitoltok VALUES("73","","7","1","100","x","hu","","","");
-INSERT INTO kitoltok VALUES("74","gaspartam@gmail.com","8","1","100","technológus","hu","","","");
-INSERT INTO kitoltok VALUES("75","","7","1","100","radiológus","hu","","","");
-INSERT INTO kitoltok VALUES("76","","3","2","100","Diák","hu","","","");
-INSERT INTO kitoltok VALUES("77","","6","2","100","Operátor","hu","","","");
-INSERT INTO kitoltok VALUES("78","erika830322@freemail.hu","6","2","100","munlanélküli","hu","","","");
-INSERT INTO kitoltok VALUES("79","s.p.zsuzsa@citromail.hu","8","2","100","tanár","hu","","","");
-INSERT INTO kitoltok VALUES("80","katalin0807@freemail.hu","8","2","100","nyugdijas (adminisztrátor)","hu","","","");
-INSERT INTO kitoltok VALUES("81","sjetty60@gmail.com","8","2","100","nyugdíjas","hu","","","");
-INSERT INTO kitoltok VALUES("82","ihasz57@hotmail.com","8","2","100","gyermekfelügyelő","hu","","","");
-INSERT INTO kitoltok VALUES("83","","8","1","100","pedagógus","hu","","","");
-INSERT INTO kitoltok VALUES("84","ternoczky@citromail.hu","8","2","100","irodavezető","hu","","","");
-INSERT INTO kitoltok VALUES("85","katihh@freemail.hu","8","2","100","nyugdíjas","hu","","","");
-INSERT INTO kitoltok VALUES("86","50rozika@citromail.hu","8","2","100","nyugdíjas","hu","","","");
-INSERT INTO kitoltok VALUES("87","teglas.robert@gmail.com","7","1","100","Kőműves","hu","","","");
-INSERT INTO kitoltok VALUES("88","szekely49@gmail.com","8","2","100","eladó","hu","","","");
-INSERT INTO kitoltok VALUES("89","ojjanek@freemail.hu","6","1","100","karbantartó","hu","","","");
-INSERT INTO kitoltok VALUES("90","vekonygabor@citromail.hu","7","1","100","Targoncás","hu","","","");
-INSERT INTO kitoltok VALUES("91","misanthrope.floris@gmail.com","3","2","100","egyetemista","hu","","","");
-INSERT INTO kitoltok VALUES("92","kocsorneerika70@hotmail.com","7","2","100","Eladó","hu","","","");
-INSERT INTO kitoltok VALUES("93","chrona007@gmail.com","3","1","100","Tanuló","hu","","","");
-INSERT INTO kitoltok VALUES("94","tischler94@t-online.hu","7","2","100","nyugdijas","hu","","","");
-INSERT INTO kitoltok VALUES("95","kovacsne19730403@freemail.hu","7","2","100","most nincs..","hu","","","");
-INSERT INTO kitoltok VALUES("96","lazaarerika@freemail.hu","8","2","100","vendéglátó üzletvezető","hu","","","");
-INSERT INTO kitoltok VALUES("97","","7","2","100","adatrögzítő","hu","","","");
-INSERT INTO kitoltok VALUES("98","mamoca1026@gmail.com","8","2","100","Kézbesítő","hu","","","");
-INSERT INTO kitoltok VALUES("99","u.erika0105@gmail.com","8","2","100","Munka nélküli","hu","","","");
-INSERT INTO kitoltok VALUES("100","gabyka65@freemail.hu","8","2","100","gyesen lévő nagymama","hu","","","");
-INSERT INTO kitoltok VALUES("101","","3","2","100","könyvtáros","hu","","","");
-INSERT INTO kitoltok VALUES("102","enrico95@citromail.hu","3","1","100","Pincér","hu","","","");
-INSERT INTO kitoltok VALUES("103","","6","2","100","könyvtáros","hu","","","");
-INSERT INTO kitoltok VALUES("104","","8","2","100","statisztikus","hu","","","");
-INSERT INTO kitoltok VALUES("105","pelbat_nikoletta@freemail.hu","3","2","100","munkanélküli","hu","","","");
-INSERT INTO kitoltok VALUES("106","","2","2","100","tanuló","hu","","","");
-INSERT INTO kitoltok VALUES("107","polevaster@gmail.com","8","2","100","munkanélküli","hu","","","");
-INSERT INTO kitoltok VALUES("108","molamolnar@gportal.hu","8","1","100","alkalmazott","hu","","","");
-INSERT INTO kitoltok VALUES("109","","6","2","165","Fogtechnikus","hu","","","");
-INSERT INTO kitoltok VALUES("110","rakosattila23@citromail.hu","3","1","100","Épületgépész Technikus","hu","","","");
-INSERT INTO kitoltok VALUES("111","bikkeszsanett@hotmail.com","2","2","3","tanulo","hu","","","");
-INSERT INTO kitoltok VALUES("112","sz.irod@citromail.hu","3","2","100","tanuló","hu","","","");
-INSERT INTO kitoltok VALUES("113","gerlice@gmail.com","6","2","100","asszisztens","hu","","","");
-INSERT INTO kitoltok VALUES("114","vklau92@hotmail.com","3","2","100","főiskolai hallgató","hu","","","");
-INSERT INTO kitoltok VALUES("115","","3","2","100","tanuló","hu","","","");
-INSERT INTO kitoltok VALUES("116","samu.istvan80@gmail.com","6","1","100","Zenész","hu","","","");
-INSERT INTO kitoltok VALUES("117","doband93@gmail.com","3","1","100","raktáros","hu","","","");
-INSERT INTO kitoltok VALUES("118","holdszem@gmail.com","3","2","100","grafikus","hu","","","");
-INSERT INTO kitoltok VALUES("119","heiczingerr@gmail.com","2","2","100","Tanuló","hu","","","");
-INSERT INTO kitoltok VALUES("120","hpatricia@citromail.hu","3","2","100","előadóművészet","hu","","","");
-INSERT INTO kitoltok VALUES("121","","6","1","100","mérnök","hu","","","");
-INSERT INTO kitoltok VALUES("122","","6","1","100","napszámos","hu","","","");
-INSERT INTO kitoltok VALUES("123","","6","2","100","moderátor","hu","","","");
-INSERT INTO kitoltok VALUES("124","","6","1","100","mérnök","hu","","","");
-INSERT INTO kitoltok VALUES("125","","3","1","4","dsdsd","hu","","","");
-INSERT INTO kitoltok VALUES("126","","2","1","2","pék","hu","","","");
-INSERT INTO kitoltok VALUES("127","tamasbuczko@gmail.com","7","1","10","10","hu","","","");
-INSERT INTO kitoltok VALUES("128","","5","1","6","14","hu","","","");
+INSERT INTO kitoltok VALUES("18","savo@freemail.hu","6","2","100","jogász","hu","0","0","0");
+INSERT INTO kitoltok VALUES("19","tamasbuczko@gmail.com","6","1","100","hegesztőmérnök","hu","0","0","0");
+INSERT INTO kitoltok VALUES("20","gyetvainandor@gmail.com","6","1","100","projektvezető","hu","0","0","0");
+INSERT INTO kitoltok VALUES("21","3ati3.antisteam@gmail.com","6","1","100","mérnök","hu","0","0","0");
+INSERT INTO kitoltok VALUES("22","abrakadabra86@gmail.com","6","1","100","Gépész","hu","0","0","0");
+INSERT INTO kitoltok VALUES("23","daniel.nagy.ext@evosoft.com","3","1","100","Gépészmérnök","hu","0","0","0");
+INSERT INTO kitoltok VALUES("24","belme.tamas@gmail.com","6","1","100","Technikus","hu","0","0","0");
+INSERT INTO kitoltok VALUES("25","bigro86@freemail.hu","6","2","100","anyuka","hu","0","0","0");
+INSERT INTO kitoltok VALUES("26","csilla.v@citromail.hu","6","2","100","ápoló","hu","0","0","0");
+INSERT INTO kitoltok VALUES("27","bendikistvan@gmail.com","6","1","100","újságíró","hu","0","0","0");
+INSERT INTO kitoltok VALUES("28","duno24@freemail.hu","6","1","100","Kőműves","hu","0","0","0");
+INSERT INTO kitoltok VALUES("29","briozsbizsu@citromail.hu","7","2","100","mérnök","hu","0","0","0");
+INSERT INTO kitoltok VALUES("30","xxx","3","1","18","v","hu","0","0","0");
+INSERT INTO kitoltok VALUES("31","buczkooo@freemail.hu","6","1","100","Gépész Mérnök","hu","0","0","0");
+INSERT INTO kitoltok VALUES("32","eszla@vipmail.hu","6","1","100","műszaki vezető","hu","0","0","0");
+INSERT INTO kitoltok VALUES("33","dornyeiagnes@citromail.hu","3","2","100","tanuló","hu","0","0","0");
+INSERT INTO kitoltok VALUES("34","zsuark@gmail.com","7","1","100","vállalkozó","hu","0","0","0");
+INSERT INTO kitoltok VALUES("35","almasib@freemail.hu","6","1","100","Építésvezető","hu","0","0","0");
+INSERT INTO kitoltok VALUES("36","gardi.judit@freemail.hu","8","2","100","Tanár","hu","0","0","0");
+INSERT INTO kitoltok VALUES("37","","3","2","100","Logisztikus","hu","0","0","0");
+INSERT INTO kitoltok VALUES("38","maria.buczko@gmail.com","8","2","100","vállalkozó","hu","0","0","0");
+INSERT INTO kitoltok VALUES("39","","6","2","100","Jog","hu","0","0","0");
+INSERT INTO kitoltok VALUES("40","","6","2","100","adminisztrátor","hu","0","0","0");
+INSERT INTO kitoltok VALUES("41","hilda1986@freemail.hu","6","2","100","Tanár","hu","0","0","0");
+INSERT INTO kitoltok VALUES("42","","6","2","100","tanuló","hu","0","0","0");
+INSERT INTO kitoltok VALUES("43","vecsi.bettina.emoke@gmail.com","3","2","100","egyetemi hallgató","hu","0","0","0");
+INSERT INTO kitoltok VALUES("44","bridgettes21@gmail.com","6","2","100","gyesen vagyok","hu","0","0","0");
+INSERT INTO kitoltok VALUES("45","dzsidzsi16@citromail.hu","3","1","100","Egyetemista","hu","0","0","0");
+INSERT INTO kitoltok VALUES("46","esztermolnar24@gmail.com","3","2","100","Tanuló","hu","0","0","0");
+INSERT INTO kitoltok VALUES("47","gabocza@gmail.com","6","1","100","üzemvezető helyettes","hu","0","0","0");
+INSERT INTO kitoltok VALUES("48","","3","2","100","hallgató","hu","0","0","0");
+INSERT INTO kitoltok VALUES("49","deauxvaganza@yahoo.com","6","1","100","Beszerző","hu","0","0","0");
+INSERT INTO kitoltok VALUES("50","","6","2","100","grafikus","hu","0","0","0");
+INSERT INTO kitoltok VALUES("51","","6","1","100","Mérnök","hu","0","0","0");
+INSERT INTO kitoltok VALUES("52","","7","1","100","Adószakértő","hu","0","0","0");
+INSERT INTO kitoltok VALUES("53","","2","2","100","Tanuló","hu","0","0","0");
+INSERT INTO kitoltok VALUES("54","egembachris@gmail.com","6","male","160","Business","en","0","0","0");
+INSERT INTO kitoltok VALUES("55","-","3","2","100","egyetemi hallgató","hu","0","0","0");
+INSERT INTO kitoltok VALUES("56","","3","2","100","tanuló","hu","0","0","0");
+INSERT INTO kitoltok VALUES("57","","3","2","100","pénzügyi asszisztens","hu","0","0","0");
+INSERT INTO kitoltok VALUES("58","","3","2","100","pénzügyi asszisztens","hu","0","0","0");
+INSERT INTO kitoltok VALUES("59","onyechukwu2k6@gmail.com","6","male","160","cashier","en","0","0","0");
+INSERT INTO kitoltok VALUES("60","onyechukwu2k6@gmail.com","6","male","160","cashier","en","0","0","0");
+INSERT INTO kitoltok VALUES("61","onyechukwu2k6@gmail.com","6","male","160","cashier","en","0","0","0");
+INSERT INTO kitoltok VALUES("62","","3","2","100","ügyintéző","hu","0","0","0");
+INSERT INTO kitoltok VALUES("63","kkagota@gmail.com","6","2","100","Biztosítási ügyintéző","hu","0","0","0");
+INSERT INTO kitoltok VALUES("64","","3","1","100","hallgató","hu","0","0","0");
+INSERT INTO kitoltok VALUES("65","gaspar.kata95@gmail.com","3","2","100","tanuló","hu","0","0","0");
+INSERT INTO kitoltok VALUES("66","enfride2@gmail.com","3","2","100","tanuló","hu","0","0","0");
+INSERT INTO kitoltok VALUES("67","lizhudema@hotmail.com","3","female","14","student/retail assistant","en","0","0","0");
+INSERT INTO kitoltok VALUES("68","tipip@freemail.hu","3","2","100","szellemi munka","hu","0","0","0");
+INSERT INTO kitoltok VALUES("69","lh","3","2","100","tanuló","hu","0","0","0");
+INSERT INTO kitoltok VALUES("70","","3","2","100","tanuló","hu","0","0","0");
+INSERT INTO kitoltok VALUES("71","dilienczzsofia@gmail.com","6","2","100","HR előadó","hu","0","0","0");
+INSERT INTO kitoltok VALUES("72","","3","2","100","tanuló","hu","0","0","0");
+INSERT INTO kitoltok VALUES("73","","7","1","100","x","hu","0","0","0");
+INSERT INTO kitoltok VALUES("74","gaspartam@gmail.com","8","1","100","technológus","hu","0","0","0");
+INSERT INTO kitoltok VALUES("75","","7","1","100","radiológus","hu","0","0","0");
+INSERT INTO kitoltok VALUES("76","","3","2","100","Diák","hu","0","0","0");
+INSERT INTO kitoltok VALUES("77","","6","2","100","Operátor","hu","0","0","0");
+INSERT INTO kitoltok VALUES("78","erika830322@freemail.hu","6","2","100","munlanélküli","hu","0","0","0");
+INSERT INTO kitoltok VALUES("79","s.p.zsuzsa@citromail.hu","8","2","100","tanár","hu","0","0","0");
+INSERT INTO kitoltok VALUES("80","katalin0807@freemail.hu","8","2","100","nyugdijas (adminisztrátor)","hu","0","0","0");
+INSERT INTO kitoltok VALUES("81","sjetty60@gmail.com","8","2","100","nyugdíjas","hu","0","0","0");
+INSERT INTO kitoltok VALUES("82","ihasz57@hotmail.com","8","2","100","gyermekfelügyelő","hu","0","0","0");
+INSERT INTO kitoltok VALUES("83","","8","1","100","pedagógus","hu","0","0","0");
+INSERT INTO kitoltok VALUES("84","ternoczky@citromail.hu","8","2","100","irodavezető","hu","0","0","0");
+INSERT INTO kitoltok VALUES("85","katihh@freemail.hu","8","2","100","nyugdíjas","hu","0","0","0");
+INSERT INTO kitoltok VALUES("86","50rozika@citromail.hu","8","2","100","nyugdíjas","hu","0","0","0");
+INSERT INTO kitoltok VALUES("87","teglas.robert@gmail.com","7","1","100","Kőműves","hu","0","0","0");
+INSERT INTO kitoltok VALUES("88","szekely49@gmail.com","8","2","100","eladó","hu","0","0","0");
+INSERT INTO kitoltok VALUES("89","ojjanek@freemail.hu","6","1","100","karbantartó","hu","0","0","0");
+INSERT INTO kitoltok VALUES("90","vekonygabor@citromail.hu","7","1","100","Targoncás","hu","0","0","0");
+INSERT INTO kitoltok VALUES("91","misanthrope.floris@gmail.com","3","2","100","egyetemista","hu","0","0","0");
+INSERT INTO kitoltok VALUES("92","kocsorneerika70@hotmail.com","7","2","100","Eladó","hu","0","0","0");
+INSERT INTO kitoltok VALUES("93","chrona007@gmail.com","3","1","100","Tanuló","hu","0","0","0");
+INSERT INTO kitoltok VALUES("94","tischler94@t-online.hu","7","2","100","nyugdijas","hu","0","0","0");
+INSERT INTO kitoltok VALUES("95","kovacsne19730403@freemail.hu","7","2","100","most nincs..","hu","0","0","0");
+INSERT INTO kitoltok VALUES("96","lazaarerika@freemail.hu","8","2","100","vendéglátó üzletvezető","hu","0","0","0");
+INSERT INTO kitoltok VALUES("97","","7","2","100","adatrögzítő","hu","0","0","0");
+INSERT INTO kitoltok VALUES("98","mamoca1026@gmail.com","8","2","100","Kézbesítő","hu","0","0","0");
+INSERT INTO kitoltok VALUES("99","u.erika0105@gmail.com","8","2","100","Munka nélküli","hu","0","0","0");
+INSERT INTO kitoltok VALUES("100","gabyka65@freemail.hu","8","2","100","gyesen lévő nagymama","hu","0","0","0");
+INSERT INTO kitoltok VALUES("101","","3","2","100","könyvtáros","hu","0","0","0");
+INSERT INTO kitoltok VALUES("102","enrico95@citromail.hu","3","1","100","Pincér","hu","0","0","0");
+INSERT INTO kitoltok VALUES("103","","6","2","100","könyvtáros","hu","0","0","0");
+INSERT INTO kitoltok VALUES("104","","8","2","100","statisztikus","hu","0","0","0");
+INSERT INTO kitoltok VALUES("105","pelbat_nikoletta@freemail.hu","3","2","100","munkanélküli","hu","0","0","0");
+INSERT INTO kitoltok VALUES("106","","2","2","100","tanuló","hu","0","0","0");
+INSERT INTO kitoltok VALUES("107","polevaster@gmail.com","8","2","100","munkanélküli","hu","0","0","0");
+INSERT INTO kitoltok VALUES("108","molamolnar@gportal.hu","8","1","100","alkalmazott","hu","0","0","0");
+INSERT INTO kitoltok VALUES("109","","6","2","165","Fogtechnikus","hu","0","0","0");
+INSERT INTO kitoltok VALUES("110","rakosattila23@citromail.hu","3","1","100","Épületgépész Technikus","hu","0","0","0");
+INSERT INTO kitoltok VALUES("111","bikkeszsanett@hotmail.com","2","2","3","tanulo","hu","0","0","0");
+INSERT INTO kitoltok VALUES("112","sz.irod@citromail.hu","3","2","100","tanuló","hu","0","0","0");
+INSERT INTO kitoltok VALUES("113","gerlice@gmail.com","6","2","100","asszisztens","hu","0","0","0");
+INSERT INTO kitoltok VALUES("114","vklau92@hotmail.com","3","2","100","főiskolai hallgató","hu","0","0","0");
+INSERT INTO kitoltok VALUES("115","","3","2","100","tanuló","hu","0","0","0");
+INSERT INTO kitoltok VALUES("116","samu.istvan80@gmail.com","6","1","100","Zenész","hu","0","0","0");
+INSERT INTO kitoltok VALUES("117","doband93@gmail.com","3","1","100","raktáros","hu","0","0","0");
+INSERT INTO kitoltok VALUES("118","holdszem@gmail.com","3","2","100","grafikus","hu","0","0","0");
+INSERT INTO kitoltok VALUES("119","heiczingerr@gmail.com","2","2","100","Tanuló","hu","0","0","0");
+INSERT INTO kitoltok VALUES("120","hpatricia@citromail.hu","3","2","100","előadóművészet","hu","0","0","0");
+INSERT INTO kitoltok VALUES("121","","6","1","100","mérnök","hu","0","0","0");
+INSERT INTO kitoltok VALUES("122","","6","1","100","napszámos","hu","0","0","0");
+INSERT INTO kitoltok VALUES("123","","6","2","100","moderátor","hu","0","0","0");
+INSERT INTO kitoltok VALUES("124","","6","1","100","mérnök","hu","0","0","0");
+INSERT INTO kitoltok VALUES("125","","3","1","4","dsdsd","hu","0","0","0");
+INSERT INTO kitoltok VALUES("126","","2","1","2","pék","hu","0","0","0");
+INSERT INTO kitoltok VALUES("127","tamasbuczko@gmail.com","7","1","10","10","hu","0","0","0");
+INSERT INTO kitoltok VALUES("128","","5","1","6","14","hu","0","0","0");
 
 
 
 DROP TABLE log;
 
 CREATE TABLE `log` (
-  `sorszam` int(11) NOT NULL auto_increment,
-  `idopont` datetime default NULL,
-  `user` int(11) default NULL,
-  `uri` varchar(200) character set latin2 collate latin2_hungarian_ci default NULL,
-  `message` text character set utf8 collate utf8_unicode_ci,
-  `user_agent` varchar(150) character set latin2 collate latin2_hungarian_ci default NULL,
-  `host` varchar(150) character set latin2 collate latin2_hungarian_ci default NULL,
-  `ip` varchar(30) default NULL,
-  PRIMARY KEY  (`sorszam`)
-) ENGINE=InnoDB AUTO_INCREMENT=6992 DEFAULT CHARSET=latin1;
+  `sorszam` int(11) NOT NULL AUTO_INCREMENT,
+  `idopont` datetime DEFAULT NULL,
+  `user` int(11) DEFAULT NULL,
+  `uri` varchar(200) CHARACTER SET latin2 COLLATE latin2_hungarian_ci DEFAULT NULL,
+  `message` text CHARACTER SET utf8 COLLATE utf8_unicode_ci,
+  `user_agent` varchar(150) CHARACTER SET latin2 COLLATE latin2_hungarian_ci DEFAULT NULL,
+  `host` varchar(150) CHARACTER SET latin2 COLLATE latin2_hungarian_ci DEFAULT NULL,
+  `ip` varchar(30) DEFAULT NULL,
+  PRIMARY KEY (`sorszam`)
+) ENGINE=InnoDB AUTO_INCREMENT=7105 DEFAULT CHARSET=latin1;
 
 INSERT INTO log VALUES("1","2014-04-11 21:11:35","0","/kerdoiv/","Futás indul...","Mozilla/5.0 (Windows NT 6.0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/34.0.1847.116 Safari/537.36","","::1");
 INSERT INTO log VALUES("2","2014-04-12 09:17:09","0","/kerdoiv/?db_load=on","Futás indul...","Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/29.0.1547.76 Safari/537.36","","127.0.0.1");
@@ -7688,40 +7691,153 @@ INSERT INTO log VALUES("6988","2014-06-14 19:44:12","0","/kerdoiv/?p=nyilvanos",
 INSERT INTO log VALUES("6989","2014-06-14 19:45:58","0","/kerdoiv/?p=nyilvanos","Futás indul...","Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/29.0.1547.76 Safari/537.36","","127.0.0.1");
 INSERT INTO log VALUES("6990","2014-06-14 19:46:01","0","/kerdoiv/?","Futás indul...","Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/29.0.1547.76 Safari/537.36","","127.0.0.1");
 INSERT INTO log VALUES("6991","2014-06-14 19:53:15","0","/kerdoiv/","Futás indul...","Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/29.0.1547.76 Safari/537.36","","127.0.0.1");
+INSERT INTO log VALUES("6992","2014-06-15 18:34:54","0","/?db_load=on","Futás indul...","Mozilla/5.0 (Windows NT 6.0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/35.0.1916.153 Safari/537.36","","94.21.86.136");
+INSERT INTO log VALUES("6993","2014-06-15 18:34:57","0","/?","Futás indul...","Mozilla/5.0 (Windows NT 6.0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/35.0.1916.153 Safari/537.36","","94.21.86.136");
+INSERT INTO log VALUES("6994","2014-06-15 18:35:02","0","/?","Futás indul...","Mozilla/5.0 (Windows NT 6.0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/35.0.1916.153 Safari/537.36","","94.21.86.136");
+INSERT INTO log VALUES("6995","2014-06-15 18:35:07","0","/?p=nyilvanos","Futás indul...","Mozilla/5.0 (Windows NT 6.0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/35.0.1916.153 Safari/537.36","","94.21.86.136");
+INSERT INTO log VALUES("6996","2014-06-15 18:35:21","0","/?p=7","Futás indul...","Mozilla/5.0 (Windows NT 6.0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/35.0.1916.153 Safari/537.36","","94.21.86.136");
+INSERT INTO log VALUES("6997","2014-06-16 09:12:46","0","/?teszt=on","Futás indul...","Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/29.0.1547.76 Safari/537.36","","91.82.203.178");
+INSERT INTO log VALUES("6998","2014-06-16 09:13:41","0","/?teszt=on","Futás indul...","Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/29.0.1547.76 Safari/537.36","","91.82.203.178");
+INSERT INTO log VALUES("6999","2014-06-16 09:13:46","0","/?p=7","Futás indul...","Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/29.0.1547.76 Safari/537.36","","91.82.203.178");
+INSERT INTO log VALUES("7000","2014-06-16 09:13:50","0","/?p=kerdoiv&mod=1&kerdoiv=1","Futás indul...","Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/29.0.1547.76 Safari/537.36","","91.82.203.178");
+INSERT INTO log VALUES("7001","2014-06-16 09:14:02","0","/?p=ujkerdes&kerdoiv=1&ujkerdes=x","Futás indul...","Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/29.0.1547.76 Safari/537.36","","91.82.203.178");
+INSERT INTO log VALUES("7002","2014-06-16 09:14:02","0","/?p=ujkerdes&id=47","Futás indul...","Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/29.0.1547.76 Safari/537.36","","91.82.203.178");
+INSERT INTO log VALUES("7003","2014-06-16 09:14:17","0","/?p=kerdoiv&mod=1&kerdoiv=1","Futás indul...","Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/29.0.1547.76 Safari/537.36","","91.82.203.178");
+INSERT INTO log VALUES("7004","2014-06-16 09:15:46","0","/","Futás indul...","Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/29.0.1547.76 Safari/537.36","","91.82.203.178");
+INSERT INTO log VALUES("7005","2014-06-16 09:15:51","0","/?teszt=on","Futás indul...","Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/29.0.1547.76 Safari/537.36","","91.82.203.178");
+INSERT INTO log VALUES("7006","2014-06-16 09:29:40","0","/","Futás indul...","Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/29.0.1547.76 Safari/537.36","","91.82.203.178");
+INSERT INTO log VALUES("7007","2014-06-16 09:32:09","0","/","Futás indul...","Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/29.0.1547.76 Safari/537.36","","91.82.203.178");
+INSERT INTO log VALUES("7008","2014-06-16 09:32:19","0","/?teszt=on","Futás indul...","Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/29.0.1547.76 Safari/537.36","","91.82.203.178");
+INSERT INTO log VALUES("7009","2014-06-16 09:32:23","0","/?logout=1","Futás indul...","Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/29.0.1547.76 Safari/537.36","","91.82.203.178");
+INSERT INTO log VALUES("7010","2014-06-16 09:32:25","0","/?p=regisztracio","Futás indul...","Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/29.0.1547.76 Safari/537.36","","91.82.203.178");
+INSERT INTO log VALUES("7011","2014-06-16 09:32:58","0","/?p=regisztracio","Futás indul...","Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/29.0.1547.76 Safari/537.36","","91.82.203.178");
+INSERT INTO log VALUES("7012","2014-06-16 09:33:41","0","/?p=regisztracio","Futás indul...","Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/29.0.1547.76 Safari/537.36","","91.82.203.178");
+INSERT INTO log VALUES("7013","2014-06-16 09:33:42","0","/index.php","Futás indul...","Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/29.0.1547.76 Safari/537.36","","91.82.203.178");
+INSERT INTO log VALUES("7014","2014-06-16 09:35:30","0","/","Futás indul...","Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/29.0.1547.76 Safari/537.36","","91.82.203.178");
+INSERT INTO log VALUES("7015","2014-06-16 09:35:49","0","/","Futás indul...","Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/29.0.1547.76 Safari/537.36","","91.82.203.178");
+INSERT INTO log VALUES("7016","2014-06-16 09:35:58","0","/?p=nyilvanos","Futás indul...","Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/29.0.1547.76 Safari/537.36","","91.82.203.178");
+INSERT INTO log VALUES("7017","2014-06-16 09:36:00","0","/?","Futás indul...","Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/29.0.1547.76 Safari/537.36","","91.82.203.178");
+INSERT INTO log VALUES("7018","2014-06-16 09:36:03","0","/?p=7","Futás indul...","Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/29.0.1547.76 Safari/537.36","","91.82.203.178");
+INSERT INTO log VALUES("7019","2014-06-16 09:36:11","0","/?p=ujkerdoiv","Futás indul...","Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/29.0.1547.76 Safari/537.36","","91.82.203.178");
+INSERT INTO log VALUES("7020","2014-06-16 10:20:24","0","/?","Futás indul...","Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/29.0.1547.76 Safari/537.36","","91.82.203.178");
+INSERT INTO log VALUES("7021","2014-06-16 10:20:27","0","/?logout=1","Futás indul...","Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/29.0.1547.76 Safari/537.36","","91.82.203.178");
+INSERT INTO log VALUES("7022","2014-06-16 10:20:30","0","/?","Futás indul...","Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/29.0.1547.76 Safari/537.36","","91.82.203.178");
+INSERT INTO log VALUES("7023","2014-06-16 10:20:41","0","/?","Futás indul...","Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/29.0.1547.76 Safari/537.36","","91.82.203.178");
+INSERT INTO log VALUES("7024","2014-06-16 10:20:48","0","/?p=7","Futás indul...","Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/29.0.1547.76 Safari/537.36","","91.82.203.178");
+INSERT INTO log VALUES("7025","2014-06-16 10:20:51","0","/?p=ujkerdoiv","Futás indul...","Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/29.0.1547.76 Safari/537.36","","91.82.203.178");
+INSERT INTO log VALUES("7026","2014-06-16 10:24:35","0","/?p=ujkerdoiv","Futás indul...","Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/29.0.1547.76 Safari/537.36","","91.82.203.178");
+INSERT INTO log VALUES("7027","2014-06-16 10:24:36","0","/?p=kerdoiv&mod=1&kerdoiv=7","Futás indul...","Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/29.0.1547.76 Safari/537.36","","91.82.203.178");
+INSERT INTO log VALUES("7028","2014-06-16 10:24:52","0","/?p=ujkerdoiv&id=7","Futás indul...","Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/29.0.1547.76 Safari/537.36","","91.82.203.178");
+INSERT INTO log VALUES("7029","2014-06-16 10:25:02","0","/?p=ujkerdoiv&id=7","Futás indul...","Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/29.0.1547.76 Safari/537.36","","91.82.203.178");
+INSERT INTO log VALUES("7030","2014-06-16 10:25:04","0","/?p=7","Futás indul...","Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/29.0.1547.76 Safari/537.36","","91.82.203.178");
+INSERT INTO log VALUES("7031","2014-06-16 10:25:10","0","/?p=kerdoiv&mod=1&kerdoiv=7","Futás indul...","Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/29.0.1547.76 Safari/537.36","","91.82.203.178");
+INSERT INTO log VALUES("7032","2014-06-16 10:25:21","0","/?p=ujkerdes&id=48","Futás indul...","Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/29.0.1547.76 Safari/537.36","","91.82.203.178");
+INSERT INTO log VALUES("7033","2014-06-16 10:26:23","0","/?p=ujkerdes&id=48","Futás indul...","Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/29.0.1547.76 Safari/537.36","","91.82.203.178");
+INSERT INTO log VALUES("7034","2014-06-16 10:26:32","0","/?p=kerdoiv&mod=1&kerdoiv=7","Futás indul...","Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/29.0.1547.76 Safari/537.36","","91.82.203.178");
+INSERT INTO log VALUES("7035","2014-06-16 10:26:40","0","/?p=ujkerdes&kerdoiv=7&ujkerdes=x","Futás indul...","Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/29.0.1547.76 Safari/537.36","","91.82.203.178");
+INSERT INTO log VALUES("7036","2014-06-16 10:26:41","0","/?p=ujkerdes&id=49","Futás indul...","Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/29.0.1547.76 Safari/537.36","","91.82.203.178");
+INSERT INTO log VALUES("7037","2014-06-16 10:28:55","0","/?p=ujkerdes&id=49","Futás indul...","Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/29.0.1547.76 Safari/537.36","","91.82.203.178");
+INSERT INTO log VALUES("7038","2014-06-16 10:28:56","0","/?p=ujkerdes&id=49","Futás indul...","Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/29.0.1547.76 Safari/537.36","","91.82.203.178");
+INSERT INTO log VALUES("7039","2014-06-16 10:29:23","0","/?p=ujkerdes&id=49","Futás indul...","Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/29.0.1547.76 Safari/537.36","","91.82.203.178");
+INSERT INTO log VALUES("7040","2014-06-16 10:29:27","0","/?p=ujkerdes&id=49","Futás indul...","Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/29.0.1547.76 Safari/537.36","","91.82.203.178");
+INSERT INTO log VALUES("7041","2014-06-16 10:29:28","0","/?p=ujkerdes&id=49","Futás indul...","Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/29.0.1547.76 Safari/537.36","","91.82.203.178");
+INSERT INTO log VALUES("7042","2014-06-16 10:29:38","0","/?p=ujkerdes&id=49","Futás indul...","Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/29.0.1547.76 Safari/537.36","","91.82.203.178");
+INSERT INTO log VALUES("7043","2014-06-16 10:29:41","0","/?p=7","Futás indul...","Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/29.0.1547.76 Safari/537.36","","91.82.203.178");
+INSERT INTO log VALUES("7044","2014-06-16 10:29:43","0","/?p=kerdoiv_adatlap&kerdoiv=7","Futás indul...","Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/29.0.1547.76 Safari/537.36","","91.82.203.178");
+INSERT INTO log VALUES("7045","2014-06-16 10:29:52","0","/?p=kerdoiv&mod=1&kerdoiv=7","Futás indul...","Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/29.0.1547.76 Safari/537.36","","91.82.203.178");
+INSERT INTO log VALUES("7046","2014-06-16 10:29:58","0","/?p=7","Futás indul...","Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/29.0.1547.76 Safari/537.36","","91.82.203.178");
+INSERT INTO log VALUES("7047","2014-06-16 10:30:01","0","/?p=kerdoiv&kerdoiv=7","Futás indul...","Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/29.0.1547.76 Safari/537.36","","91.82.203.178");
+INSERT INTO log VALUES("7048","2014-06-16 10:32:00","0","/?","Futás indul...","Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/29.0.1547.76 Safari/537.36","","91.82.203.178");
+INSERT INTO log VALUES("7049","2014-06-16 10:32:15","0","/?p=kerdoiv&kerdoiv=7","Futás indul...","Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/29.0.1547.76 Safari/537.36","","91.82.203.178");
+INSERT INTO log VALUES("7050","2014-06-16 10:34:44","0","/?teszt=on","Futás indul...","Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/29.0.1547.76 Safari/537.36","","91.82.203.178");
+INSERT INTO log VALUES("7051","2014-06-16 10:34:47","0","/?p=kerdoiv&kerdoiv=7","Futás indul...","Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/29.0.1547.76 Safari/537.36","","91.82.203.178");
+INSERT INTO log VALUES("7052","2014-06-16 10:39:22","0","/?","Futás indul...","Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/29.0.1547.76 Safari/537.36","","91.82.203.178");
+INSERT INTO log VALUES("7053","2014-06-16 10:39:28","0","/?","Futás indul...","Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/29.0.1547.76 Safari/537.36","","91.82.203.178");
+INSERT INTO log VALUES("7054","2014-06-16 10:39:30","0","/?p=7","Futás indul...","Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/29.0.1547.76 Safari/537.36","","91.82.203.178");
+INSERT INTO log VALUES("7055","2014-06-16 10:39:33","0","/?p=kerdoiv&kerdoiv=7","Futás indul...","Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/29.0.1547.76 Safari/537.36","","91.82.203.178");
+INSERT INTO log VALUES("7056","2014-06-16 10:40:47","0","/?p=7","Futás indul...","Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/29.0.1547.76 Safari/537.36","","91.82.203.178");
+INSERT INTO log VALUES("7057","2014-06-16 10:40:48","0","/?p=kerdoiv&mod=1&kerdoiv=7","Futás indul...","Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/29.0.1547.76 Safari/537.36","","91.82.203.178");
+INSERT INTO log VALUES("7058","2014-06-16 10:40:52","0","/?p=ujkerdes&id=49&kerdestorles=1","Futás indul...","Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/29.0.1547.76 Safari/537.36","","91.82.203.178");
+INSERT INTO log VALUES("7059","2014-06-16 10:40:52","0","/?p=kerdoiv&kerdoiv=7&mod=1","Futás indul...","Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/29.0.1547.76 Safari/537.36","","91.82.203.178");
+INSERT INTO log VALUES("7060","2014-06-16 10:40:58","0","/?p=7","Futás indul...","Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/29.0.1547.76 Safari/537.36","","91.82.203.178");
+INSERT INTO log VALUES("7061","2014-06-16 10:40:59","0","/?p=kerdoiv&kerdoiv=7","Futás indul...","Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/29.0.1547.76 Safari/537.36","","91.82.203.178");
+INSERT INTO log VALUES("7062","2014-06-16 10:41:17","0","/?p=7","Futás indul...","Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/29.0.1547.76 Safari/537.36","","91.82.203.178");
+INSERT INTO log VALUES("7063","2014-06-16 10:41:18","0","/?p=kerdoiv&mod=1&kerdoiv=7","Futás indul...","Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/29.0.1547.76 Safari/537.36","","91.82.203.178");
+INSERT INTO log VALUES("7064","2014-06-16 10:41:22","0","/?p=ujkerdoiv&id=7","Futás indul...","Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/29.0.1547.76 Safari/537.36","","91.82.203.178");
+INSERT INTO log VALUES("7065","2014-06-16 10:42:23","0","/?p=ujkerdoiv&id=7","Futás indul...","Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/29.0.1547.76 Safari/537.36","","91.82.203.178");
+INSERT INTO log VALUES("7066","2014-06-16 10:42:28","0","/?p=7","Futás indul...","Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/29.0.1547.76 Safari/537.36","","91.82.203.178");
+INSERT INTO log VALUES("7067","2014-06-16 10:42:30","0","/?p=kerdoiv&kerdoiv=7","Futás indul...","Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/29.0.1547.76 Safari/537.36","","91.82.203.178");
+INSERT INTO log VALUES("7068","2014-06-16 10:42:52","0","/?","Futás indul...","Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/29.0.1547.76 Safari/537.36","","91.82.203.178");
+INSERT INTO log VALUES("7069","2014-06-16 10:43:16","0","/?p=7","Futás indul...","Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/29.0.1547.76 Safari/537.36","","91.82.203.178");
+INSERT INTO log VALUES("7070","2014-06-16 10:43:44","0","/?p=7","Futás indul...","Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/29.0.1547.76 Safari/537.36","","91.82.203.178");
+INSERT INTO log VALUES("7071","2014-06-16 10:43:47","0","/?p=5","Futás indul...","Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/29.0.1547.76 Safari/537.36","","91.82.203.178");
+INSERT INTO log VALUES("7072","2014-06-16 10:43:48","0","/?","Futás indul...","Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/29.0.1547.76 Safari/537.36","","91.82.203.178");
+INSERT INTO log VALUES("7073","2014-06-16 10:43:52","0","/?p=kerdoiv&kerdoiv=1","Futás indul...","Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/29.0.1547.76 Safari/537.36","","91.82.203.178");
+INSERT INTO log VALUES("7074","2014-06-16 10:43:57","0","/?","Futás indul...","Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/29.0.1547.76 Safari/537.36","","91.82.203.178");
+INSERT INTO log VALUES("7075","2014-06-16 10:43:59","0","/?p=kerdoiv&kerdoiv=6","Futás indul...","Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/29.0.1547.76 Safari/537.36","","91.82.203.178");
+INSERT INTO log VALUES("7076","2014-06-16 10:44:05","0","/?","Futás indul...","Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/29.0.1547.76 Safari/537.36","","91.82.203.178");
+INSERT INTO log VALUES("7077","2014-06-16 10:44:10","0","/?","Futás indul...","Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/29.0.1547.76 Safari/537.36","","91.82.203.178");
+INSERT INTO log VALUES("7078","2014-06-16 10:44:14","0","/?p=7","Futás indul...","Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/29.0.1547.76 Safari/537.36","","91.82.203.178");
+INSERT INTO log VALUES("7079","2014-06-16 10:44:17","0","/?p=kerdoiv_adatlap&kerdoiv=7","Futás indul...","Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/29.0.1547.76 Safari/537.36","","91.82.203.178");
+INSERT INTO log VALUES("7080","2014-06-16 10:44:20","0","/?p=kerdoiv&mod=1&kerdoiv=7","Futás indul...","Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/29.0.1547.76 Safari/537.36","","91.82.203.178");
+INSERT INTO log VALUES("7081","2014-06-16 10:44:30","0","/?p=ujkerdoiv&id=7","Futás indul...","Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/29.0.1547.76 Safari/537.36","","91.82.203.178");
+INSERT INTO log VALUES("7082","2014-06-16 10:46:58","0","/?p=ujkerdoiv&id=7","Futás indul...","Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/29.0.1547.76 Safari/537.36","","91.82.203.178");
+INSERT INTO log VALUES("7083","2014-06-16 10:47:00","0","/?p=7","Futás indul...","Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/29.0.1547.76 Safari/537.36","","91.82.203.178");
+INSERT INTO log VALUES("7084","2014-06-16 10:47:03","0","/?p=kerdoiv&kerdoiv=7","Futás indul...","Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/29.0.1547.76 Safari/537.36","","91.82.203.178");
+INSERT INTO log VALUES("7085","2014-06-16 10:47:42","0","/?p=7","Futás indul...","Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/29.0.1547.76 Safari/537.36","","91.82.203.178");
+INSERT INTO log VALUES("7086","2014-06-16 10:47:43","0","/?p=kerdoiv_adatlap&kerdoiv=7","Futás indul...","Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/29.0.1547.76 Safari/537.36","","91.82.203.178");
+INSERT INTO log VALUES("7087","2014-06-16 10:47:50","0","/?","Futás indul...","Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/29.0.1547.76 Safari/537.36","","91.82.203.178");
+INSERT INTO log VALUES("7088","2014-06-16 10:48:06","0","/","Futás indul...","Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/29.0.1547.76 Safari/537.36","","91.82.203.178");
+INSERT INTO log VALUES("7089","2014-06-16 10:48:15","0","/?p=kerdoiv&kerdoiv=hibabejelenes_-_teszteles&pub=1","Futás indul...","Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/29.0.1547.76 Safari/537.36","","91.82.203.178");
+INSERT INTO log VALUES("7090","2014-06-16 10:48:28","0","/?p=7","Futás indul...","Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/29.0.1547.76 Safari/537.36","","91.82.203.178");
+INSERT INTO log VALUES("7091","2014-06-16 11:10:49","0","/?teszt=on","Futás indul...","Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/29.0.1547.76 Safari/537.36","","91.82.203.178");
+INSERT INTO log VALUES("7092","2014-06-16 11:10:59","0","/?teszt=on","Futás indul...","Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/29.0.1547.76 Safari/537.36","","91.82.203.178");
+INSERT INTO log VALUES("7093","2014-06-17 18:04:14","0","/?teszt=on","Futás indul...","Mozilla/5.0 (Windows NT 6.0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/35.0.1916.153 Safari/537.36","","94.21.86.136");
+INSERT INTO log VALUES("7094","2014-06-17 18:04:16","0","/favicon.ico","Futás indul...","Mozilla/5.0 (Windows NT 6.0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/35.0.1916.153 Safari/537.36","","94.21.86.136");
+INSERT INTO log VALUES("7095","2014-06-17 18:04:21","0","/?p=kerdoiv&kerdoiv=7","Futás indul...","Mozilla/5.0 (Windows NT 6.0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/35.0.1916.153 Safari/537.36","","94.21.86.136");
+INSERT INTO log VALUES("7096","2014-06-17 18:05:37","0","/?","Futás indul...","Mozilla/5.0 (Windows NT 6.0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/35.0.1916.153 Safari/537.36","","94.21.86.136");
+INSERT INTO log VALUES("7097","2014-06-17 18:05:40","0","/?","Futás indul...","Mozilla/5.0 (Windows NT 6.0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/35.0.1916.153 Safari/537.36","","94.21.86.136");
+INSERT INTO log VALUES("7098","2014-06-17 18:06:07","0","/?p=kerdoiv&kerdoiv=6","Futás indul...","Mozilla/5.0 (Windows NT 6.0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/35.0.1916.153 Safari/537.36","","94.21.86.136");
+INSERT INTO log VALUES("7099","2014-06-17 18:06:39","0","/?","Futás indul...","Mozilla/5.0 (Windows NT 6.0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/35.0.1916.153 Safari/537.36","","94.21.86.136");
+INSERT INTO log VALUES("7100","2014-06-17 18:31:51","0","/?teszt=on","Futás indul...","Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/29.0.1547.76 Safari/537.36","","79.121.65.167");
+INSERT INTO log VALUES("7101","2014-06-17 18:32:20","0","/?p=kerdoiv&kerdoiv=7","Futás indul...","Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/29.0.1547.76 Safari/537.36","","79.121.65.167");
+INSERT INTO log VALUES("7102","2014-06-17 18:40:47","0","/","Futás indul...","Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/29.0.1547.76 Safari/537.36","","79.121.65.167");
+INSERT INTO log VALUES("7103","2014-06-17 18:48:00","0","/","Futás indul...","Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/29.0.1547.76 Safari/537.36","","79.121.65.167");
+INSERT INTO log VALUES("7104","2014-06-17 18:48:10","0","/","Futás indul...","Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/29.0.1547.76 Safari/537.36","","79.121.65.167");
 
 
 
 DROP TABLE regisztralt;
 
 CREATE TABLE `regisztralt` (
-  `sorszam` int(11) NOT NULL auto_increment,
-  `azonosito` varchar(20) collate latin2_hungarian_ci NOT NULL,
-  `jelszo` varchar(32) collate latin2_hungarian_ci NOT NULL,
-  `email` varchar(100) collate latin2_hungarian_ci default NULL,
-  `hirlevel` varchar(10) collate latin2_hungarian_ci default NULL,
-  `jog` varchar(1) collate latin2_hungarian_ci NOT NULL default '0',
-  `csoport` int(11) default NULL,
-  `archiv` varchar(1) collate latin2_hungarian_ci NOT NULL default '0',
-  `regisztracio` datetime default NULL,
-  `bejelentkezes` datetime default NULL,
-  `megjegyzes` text collate latin2_hungarian_ci,
-  PRIMARY KEY  (`sorszam`)
+  `sorszam` int(11) NOT NULL AUTO_INCREMENT,
+  `azonosito` varchar(20) COLLATE latin2_hungarian_ci NOT NULL,
+  `jelszo` varchar(32) COLLATE latin2_hungarian_ci NOT NULL,
+  `email` varchar(100) COLLATE latin2_hungarian_ci DEFAULT NULL,
+  `hirlevel` varchar(10) COLLATE latin2_hungarian_ci DEFAULT NULL,
+  `jog` varchar(1) COLLATE latin2_hungarian_ci NOT NULL DEFAULT '0',
+  `csoport` int(11) DEFAULT NULL,
+  `archiv` varchar(1) COLLATE latin2_hungarian_ci NOT NULL DEFAULT '0',
+  `regisztracio` datetime DEFAULT NULL,
+  `bejelentkezes` datetime DEFAULT NULL,
+  `megjegyzes` text COLLATE latin2_hungarian_ci,
+  PRIMARY KEY (`sorszam`)
 ) ENGINE=InnoDB AUTO_INCREMENT=25 DEFAULT CHARSET=latin2 COLLATE=latin2_hungarian_ci;
 
-INSERT INTO regisztralt VALUES("3","AdminZoli","e20ffabe4230eed6ba92c6ee9d9618e4","info@inkozrt.hu","1","1","1","0","","","");
-INSERT INTO regisztralt VALUES("24","BT","a4094997585517ef239386c45f0b0fa5","tamasbuczko@gmail.com","1","1","1","0","","","");
+INSERT INTO regisztralt VALUES("3","AdminZoli","e20ffabe4230eed6ba92c6ee9d9618e4","info@inkozrt.hu","1","1","1","0","0000-00-00 00:00:00","0000-00-00 00:00:00","");
+INSERT INTO regisztralt VALUES("24","BT","a4094997585517ef239386c45f0b0fa5","tamasbuczko@gmail.com","1","1","1","0","0000-00-00 00:00:00","0000-00-00 00:00:00","");
 
 
 
 DROP TABLE sugo;
 
 CREATE TABLE `sugo` (
-  `id` int(11) NOT NULL auto_increment,
-  `hu` text character set utf8 collate utf8_unicode_ci,
-  `en` text character set utf8 collate utf8_unicode_ci,
-  `de` text character set utf8 collate utf8_unicode_ci,
-  `megjegyzes` text character set utf8 collate utf8_unicode_ci,
-  PRIMARY KEY  (`id`)
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `hu` text CHARACTER SET utf8 COLLATE utf8_unicode_ci,
+  `en` text CHARACTER SET utf8 COLLATE utf8_unicode_ci,
+  `de` text CHARACTER SET utf8 COLLATE utf8_unicode_ci,
+  `megjegyzes` text CHARACTER SET utf8 COLLATE utf8_unicode_ci,
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=latin1;
 
 INSERT INTO sugo VALUES("1","teszt súgóx","x","x","x");
@@ -7737,13 +7853,13 @@ INSERT INTO sugo VALUES("7","Egy vagy több válaszlehetőséget értékelhetün
 DROP TABLE szotar;
 
 CREATE TABLE `szotar` (
-  `id` int(11) NOT NULL auto_increment,
-  `hu` varchar(200) collate utf8_unicode_ci default NULL,
-  `en` varchar(200) collate utf8_unicode_ci default NULL,
-  `de` varchar(200) collate utf8_unicode_ci default NULL,
-  `ro` varchar(200) collate utf8_unicode_ci default NULL,
-  `megjegyzes` varchar(250) collate utf8_unicode_ci default NULL,
-  PRIMARY KEY  (`id`)
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `hu` varchar(200) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `en` varchar(200) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `de` varchar(200) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `ro` varchar(200) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `megjegyzes` varchar(250) COLLATE utf8_unicode_ci DEFAULT NULL,
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=117 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 INSERT INTO szotar VALUES("6","Írja be a nevét","Enter your name","","Introduceți numele dvs.","kapcsolat űrlap");
@@ -7860,48 +7976,48 @@ INSERT INTO szotar VALUES("116","További követett kérdőívek","More followed
 DROP TABLE szoveg;
 
 CREATE TABLE `szoveg` (
-  `sorszam` int(11) NOT NULL auto_increment,
+  `sorszam` int(11) NOT NULL AUTO_INCREMENT,
   `cikkszam` int(11) NOT NULL,
-  `cim` varchar(200) collate utf8_unicode_ci default NULL,
-  `tartalom` text collate utf8_unicode_ci,
-  `archiv` varchar(1) collate utf8_unicode_ci default NULL,
-  `jog` varchar(1) collate utf8_unicode_ci default NULL,
-  `nyelv` varchar(2) collate utf8_unicode_ci default NULL,
-  `menunev` varchar(30) collate utf8_unicode_ci default NULL,
-  `sorrend` int(5) default NULL,
-  `php_file` varchar(100) collate utf8_unicode_ci default NULL,
-  `hivatkozas` varchar(50) collate utf8_unicode_ci default NULL,
-  PRIMARY KEY  (`sorszam`)
+  `cim` varchar(200) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `tartalom` text COLLATE utf8_unicode_ci,
+  `archiv` varchar(1) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `jog` varchar(1) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `nyelv` varchar(2) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `menunev` varchar(30) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `sorrend` int(5) DEFAULT NULL,
+  `php_file` varchar(100) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `hivatkozas` varchar(50) COLLATE utf8_unicode_ci DEFAULT NULL,
+  PRIMARY KEY (`sorszam`)
 ) ENGINE=MyISAM AUTO_INCREMENT=48 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
-INSERT INTO szoveg VALUES("1","1","Kapcsolat","<p>
-Ha bármilyen kérdése van, vagy segítségre van szüksége, írjon nekünk.
-</p>
-<p>
-Elérhetőségünk: info@questionaction.com
-</p>
-<p>
-Médiaajánlatunkat itt találja: ...
-</p>
-<p>
-Kérjük, mielőtt feltenné kérdését, tekintse meg a gyakori kérdéseket, mivel a kérdések nagy részére itt megtalálja a választ!
-Ha mégsem sikerült megoldást találnia kérdésére, írjon bátran! --->
-</p>
+INSERT INTO szoveg VALUES("1","1","Kapcsolat","<p>
+Ha bármilyen kérdése van, vagy segítségre van szüksége, írjon nekünk.
+</p>
+<p>
+Elérhetőségünk: info@questionaction.com
+</p>
+<p>
+Médiaajánlatunkat itt találja: ...
+</p>
+<p>
+Kérjük, mielőtt feltenné kérdését, tekintse meg a gyakori kérdéseket, mivel a kérdések nagy részére itt megtalálja a választ!
+Ha mégsem sikerült megoldást találnia kérdésére, írjon bátran! --->
+</p>
 ","0","1","hu","Kapcsolat","10","kapcsolat.php","kapcsolat");
-INSERT INTO szoveg VALUES("2","2","","<div class=\"horizont\">
-<h2>Hogyan működik</h2>
-</div>
-<div class=\"hasabok_3\">
-<h2>Építsd fel</h2>
-Ingyen, kedved szerint készíthetsz gyorsan és egyszerűen különleges kérdőíveket, korlátlan kitöltővel. Meríts ötletet a nyilvános kérdőívekből. Tekintsd meg őket fentebb!
-</div>
-<div class=\"hasabok_3\">
-<h2>Terjeszd el</h2>
-Lehet nyílt és zártkörű, valamint nyilvános a kérdőíved. Ezektől függően az egyedi linket terjesztheted e-mailben, közösségi oldalakon és fórumokon vagy nyilvános esetben a kezdőlapon is.
-</div>
-<div class=\"hasabok_3\">
-<h2>Arasd le</h2>
-A beáramló kitöltött kérdőíveket könnyen átláthatod a beépített eredmény kiértékelő segítségével vagy letöltheted pdf-ben, excel-ben, sql-ben, hogy további elemzéseket készíts.
+INSERT INTO szoveg VALUES("2","2","","<div class=\"horizont\">
+<h2>Hogyan működik</h2>
+</div>
+<div class=\"hasabok_3\">
+<h2>Építsd fel</h2>
+Ingyen, kedved szerint készíthetsz gyorsan és egyszerűen különleges kérdőíveket, korlátlan kitöltővel. Meríts ötletet a nyilvános kérdőívekből. Tekintsd meg őket fentebb!
+</div>
+<div class=\"hasabok_3\">
+<h2>Terjeszd el</h2>
+Lehet nyílt és zártkörű, valamint nyilvános a kérdőíved. Ezektől függően az egyedi linket terjesztheted e-mailben, közösségi oldalakon és fórumokon vagy nyilvános esetben a kezdőlapon is.
+</div>
+<div class=\"hasabok_3\">
+<h2>Arasd le</h2>
+A beáramló kitöltött kérdőíveket könnyen átláthatod a beépített eredmény kiértékelő segítségével vagy letöltheted pdf-ben, excel-ben, sql-ben, hogy további elemzéseket készíts.
 </div>","0","1","hu","","1","cimlap.php","cimlap");
 INSERT INTO szoveg VALUES("3","3","","","0","1","hu","","3","kerdoiv.php","kerdoiv");
 INSERT INTO szoveg VALUES("4","4","Regisztráció","","0","1","hu","","0","regisztracio.php","regisztracio");
@@ -7924,4043 +8040,90 @@ INSERT INTO szoveg VALUES("20","9","Eredmények","","0","2","de","","0","eredmen
 INSERT INTO szoveg VALUES("21","1","","","0","1","en","Contact","10","kapcsolat.php","kapcsolat");
 INSERT INTO szoveg VALUES("22","6","QuizGame","","0","1","en","Quiz","4","","jatek");
 INSERT INTO szoveg VALUES("23","5","","","0","1","en","Packages","2","regisztracio.php","regisztracio");
-INSERT INTO szoveg VALUES("24","2","","<div class=\"horizont\">
-<h2>How it works</h2>
-</div>
-<div class=\"hasabok_3\">
-<h2>Build it</h2>
-You can create limitless surveys quickly and simply as you imagine and you can achieve limitless number of people. Find your style and construction idea from the Public surveys. View it above!
-</div>
-<div class=\"hasabok_3\">
-<h2>Propagate it</h2>
-Your survey can be opened, closed and public. Depending on type, you can send surveys in e-mail, share in social networks and forums. If the survey is public, it appears in main page, too.
-</div>
-<div class=\"hasabok_3\">
-<h2>Reap it</h2>
-The influx of filled questionnaires you can evaluate easily and see results immediately. If you want, it is possible to download results in pdf or export to Excel file to make further analysis.
+INSERT INTO szoveg VALUES("24","2","","<div class=\"horizont\">
+<h2>How it works</h2>
+</div>
+<div class=\"hasabok_3\">
+<h2>Build it</h2>
+You can create limitless surveys quickly and simply as you imagine and you can achieve limitless number of people. Find your style and construction idea from the Public surveys. View it above!
+</div>
+<div class=\"hasabok_3\">
+<h2>Propagate it</h2>
+Your survey can be opened, closed and public. Depending on type, you can send surveys in e-mail, share in social networks and forums. If the survey is public, it appears in main page, too.
+</div>
+<div class=\"hasabok_3\">
+<h2>Reap it</h2>
+The influx of filled questionnaires you can evaluate easily and see results immediately. If you want, it is possible to download results in pdf or export to Excel file to make further analysis.
 </div>","0","1","en","","1","cimlap.php","cimlap");
 INSERT INTO szoveg VALUES("25","7","My surveys","","0","2","en","My surveys","5","kerdoiveim.php","kerdoiveim");
 INSERT INTO szoveg VALUES("26","1","Kontakt","","0","1","de","Kontakt","10","kapcsolat.php","kapcsolat");
 INSERT INTO szoveg VALUES("27","6","QuizSpiel","","0","1","de","Quiz","4","","jatek");
 INSERT INTO szoveg VALUES("28","5","","","0","1","de","Pakete","2","regisztracio.php","regisztracio");
-INSERT INTO szoveg VALUES("29","2","","<div class=\"horizont\">
-<h2>Wie es funktioniert</h2>
-</div>
-<div class=\"hasabok_3\">
-<h2>Bauen</h2>
-Ingyen, kedved szerint készíthetsz gyorsan és egyszerűen különleges kérdőíveket, korlátlan kitöltővel. Meríts ötletet a nyilvános kérdőívekből. Tekintsd meg őket fentebb!
-</div>
-<div class=\"hasabok_3\">
-<h2>Propagieren</h2>
-Lehet nyílt és zártkörű, valamint nyilvános a kérdőíved. Ezektől függően az egyedi linket terjesztheted e-mailben, közösségi oldalakon és fórumokon vagy nyilvános esetben a kezdőlapon is.
-</div>
-<div class=\"hasabok_3\">
-<h2>Ernte</h2>
-A beáramló kitöltött kérdőíveket könnyen átláthatod a beépített eredmény kiértékelő segítségével vagy letöltheted pdf-ben, excel-ben, sql-ben, hogy további elemzéseket készíts.
+INSERT INTO szoveg VALUES("29","2","","<div class=\"horizont\">
+<h2>Wie es funktioniert</h2>
+</div>
+<div class=\"hasabok_3\">
+<h2>Bauen</h2>
+Ingyen, kedved szerint készíthetsz gyorsan és egyszerűen különleges kérdőíveket, korlátlan kitöltővel. Meríts ötletet a nyilvános kérdőívekből. Tekintsd meg őket fentebb!
+</div>
+<div class=\"hasabok_3\">
+<h2>Propagieren</h2>
+Lehet nyílt és zártkörű, valamint nyilvános a kérdőíved. Ezektől függően az egyedi linket terjesztheted e-mailben, közösségi oldalakon és fórumokon vagy nyilvános esetben a kezdőlapon is.
+</div>
+<div class=\"hasabok_3\">
+<h2>Ernte</h2>
+A beáramló kitöltött kérdőíveket könnyen átláthatod a beépített eredmény kiértékelő segítségével vagy letöltheted pdf-ben, excel-ben, sql-ben, hogy további elemzéseket készíts.
 </div>","0","1","de","","1","cimlap.php","cimlap");
 INSERT INTO szoveg VALUES("30","7","Mein Fragebogen","","0","2","de","Mein Fragebogen","5","kerdoiveim.php","kerdoiveim");
-INSERT INTO szoveg VALUES("34","11","","","0","2","de","","","ujkerdes.php","ujkerdes");
-INSERT INTO szoveg VALUES("35","11","","","0","2","en","","","ujkerdes.php","ujkerdes");
-INSERT INTO szoveg VALUES("36","15","Kitöltők email címei","","0","2","hu","","","kerdoiv_kitoltoemail.php","kitoltok");
-INSERT INTO szoveg VALUES("37","15","Kitöltők email címei","","0","2","en","","","kerdoiv_kitoltoemail.php","kitoltok");
-INSERT INTO szoveg VALUES("38","15","Kitöltők email címei","","0","2","de","","","kerdoiv_kitoltoemail.php","kitoltok");
-INSERT INTO szoveg VALUES("39","16","Profil","","0","2","hu","","","profil.php","kitoltok");
-INSERT INTO szoveg VALUES("40","16","Profil","","0","2","en","","","profil.php","kitoltok");
-INSERT INTO szoveg VALUES("41","16","Profil","","0","2","de","","","profil.php","kitoltok");
-INSERT INTO szoveg VALUES("42","20","Nyilvános kérdőívek","","0","1","hu","","","nyilvanos.php","nyilvanos");
-INSERT INTO szoveg VALUES("43","20","Nyilvános kérdőívek","","0","1","en","","","nyilvanos.php","nyilvanos");
-INSERT INTO szoveg VALUES("44","20","Nyilvános kérdőívek","","0","1","de","","","nyilvanos.php","nyilvanos");
-INSERT INTO szoveg VALUES("45","21","Fizetés","","0","2","hu","","","fizetes.php","fizetes");
-INSERT INTO szoveg VALUES("46","21","Fizetés","","0","2","en","","","fizetes.php","fizetes");
-INSERT INTO szoveg VALUES("47","21","Fizetés","","0","2","de","","","fizetes.php","fizetes");
-
-
-
-DROP TABLE teszt_view;
-
-CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `teszt_view` AS select `k`.`sorszam` AS `kerdes`,`k`.`kerdes_hu` AS `kerdes_hu`,`v`.`valasz_hu` AS `valasz_hu`,`va`.`ertek` AS `ertek` from ((`valaszadasok` `va` left join `valaszok` `v` on((`va`.`valasz_sorszam` = `v`.`sorszam`))) left join `kerdesek` `k` on((`va`.`kerdes_sorszam` = `k`.`sorszam`))) order by `k`.`sorszam`;
-
-INSERT INTO teszt_view VALUES("1","Számolsz a családi költségvetésben az ajándékozással?","igen","1");
-INSERT INTO teszt_view VALUES("1","Számolsz a családi költségvetésben az ajándékozással?","nem","1");
-INSERT INTO teszt_view VALUES("1","Számolsz a családi költségvetésben az ajándékozással?","nem","1");
-INSERT INTO teszt_view VALUES("1","Számolsz a családi költségvetésben az ajándékozással?","nem","1");
-INSERT INTO teszt_view VALUES("1","Számolsz a családi költségvetésben az ajándékozással?","igen","1");
-INSERT INTO teszt_view VALUES("1","Számolsz a családi költségvetésben az ajándékozással?","igen","1");
-INSERT INTO teszt_view VALUES("1","Számolsz a családi költségvetésben az ajándékozással?","igen","1");
-INSERT INTO teszt_view VALUES("1","Számolsz a családi költségvetésben az ajándékozással?","igen","1");
-INSERT INTO teszt_view VALUES("1","Számolsz a családi költségvetésben az ajándékozással?","igen","1");
-INSERT INTO teszt_view VALUES("1","Számolsz a családi költségvetésben az ajándékozással?","igen","1");
-INSERT INTO teszt_view VALUES("1","Számolsz a családi költségvetésben az ajándékozással?","igen","1");
-INSERT INTO teszt_view VALUES("1","Számolsz a családi költségvetésben az ajándékozással?","igen","1");
-INSERT INTO teszt_view VALUES("1","Számolsz a családi költségvetésben az ajándékozással?","igen","1");
-INSERT INTO teszt_view VALUES("1","Számolsz a családi költségvetésben az ajándékozással?","nem","1");
-INSERT INTO teszt_view VALUES("1","Számolsz a családi költségvetésben az ajándékozással?","nem","1");
-INSERT INTO teszt_view VALUES("1","Számolsz a családi költségvetésben az ajándékozással?","igen","1");
-INSERT INTO teszt_view VALUES("1","Számolsz a családi költségvetésben az ajándékozással?","nem","1");
-INSERT INTO teszt_view VALUES("1","Számolsz a családi költségvetésben az ajándékozással?","nem","1");
-INSERT INTO teszt_view VALUES("1","Számolsz a családi költségvetésben az ajándékozással?","igen","1");
-INSERT INTO teszt_view VALUES("1","Számolsz a családi költségvetésben az ajándékozással?","igen","1");
-INSERT INTO teszt_view VALUES("1","Számolsz a családi költségvetésben az ajándékozással?","nem","1");
-INSERT INTO teszt_view VALUES("1","Számolsz a családi költségvetésben az ajándékozással?","igen","1");
-INSERT INTO teszt_view VALUES("1","Számolsz a családi költségvetésben az ajándékozással?","igen","1");
-INSERT INTO teszt_view VALUES("1","Számolsz a családi költségvetésben az ajándékozással?","igen","1");
-INSERT INTO teszt_view VALUES("1","Számolsz a családi költségvetésben az ajándékozással?","igen","1");
-INSERT INTO teszt_view VALUES("1","Számolsz a családi költségvetésben az ajándékozással?","igen","1");
-INSERT INTO teszt_view VALUES("1","Számolsz a családi költségvetésben az ajándékozással?","igen","1");
-INSERT INTO teszt_view VALUES("1","Számolsz a családi költségvetésben az ajándékozással?","igen","1");
-INSERT INTO teszt_view VALUES("1","Számolsz a családi költségvetésben az ajándékozással?","igen","1");
-INSERT INTO teszt_view VALUES("1","Számolsz a családi költségvetésben az ajándékozással?","igen","1");
-INSERT INTO teszt_view VALUES("1","Számolsz a családi költségvetésben az ajándékozással?","igen","1");
-INSERT INTO teszt_view VALUES("1","Számolsz a családi költségvetésben az ajándékozással?","igen","1");
-INSERT INTO teszt_view VALUES("1","Számolsz a családi költségvetésben az ajándékozással?","igen","1");
-INSERT INTO teszt_view VALUES("1","Számolsz a családi költségvetésben az ajándékozással?","nem","1");
-INSERT INTO teszt_view VALUES("1","Számolsz a családi költségvetésben az ajándékozással?","nem","1");
-INSERT INTO teszt_view VALUES("1","Számolsz a családi költségvetésben az ajándékozással?","igen","1");
-INSERT INTO teszt_view VALUES("1","Számolsz a családi költségvetésben az ajándékozással?","igen","1");
-INSERT INTO teszt_view VALUES("1","Számolsz a családi költségvetésben az ajándékozással?","igen","1");
-INSERT INTO teszt_view VALUES("1","Számolsz a családi költségvetésben az ajándékozással?","nem","1");
-INSERT INTO teszt_view VALUES("1","Számolsz a családi költségvetésben az ajándékozással?","nem","1");
-INSERT INTO teszt_view VALUES("1","Számolsz a családi költségvetésben az ajándékozással?","nem","1");
-INSERT INTO teszt_view VALUES("1","Számolsz a családi költségvetésben az ajándékozással?","igen","1");
-INSERT INTO teszt_view VALUES("1","Számolsz a családi költségvetésben az ajándékozással?","igen","1");
-INSERT INTO teszt_view VALUES("1","Számolsz a családi költségvetésben az ajándékozással?","igen","1");
-INSERT INTO teszt_view VALUES("1","Számolsz a családi költségvetésben az ajándékozással?","igen","1");
-INSERT INTO teszt_view VALUES("1","Számolsz a családi költségvetésben az ajándékozással?","nem","1");
-INSERT INTO teszt_view VALUES("1","Számolsz a családi költségvetésben az ajándékozással?","nem","1");
-INSERT INTO teszt_view VALUES("1","Számolsz a családi költségvetésben az ajándékozással?","igen","1");
-INSERT INTO teszt_view VALUES("1","Számolsz a családi költségvetésben az ajándékozással?","igen","1");
-INSERT INTO teszt_view VALUES("1","Számolsz a családi költségvetésben az ajándékozással?","nem","1");
-INSERT INTO teszt_view VALUES("1","Számolsz a családi költségvetésben az ajándékozással?","igen","1");
-INSERT INTO teszt_view VALUES("1","Számolsz a családi költségvetésben az ajándékozással?","igen","1");
-INSERT INTO teszt_view VALUES("1","Számolsz a családi költségvetésben az ajándékozással?","igen","1");
-INSERT INTO teszt_view VALUES("1","Számolsz a családi költségvetésben az ajándékozással?","igen","1");
-INSERT INTO teszt_view VALUES("1","Számolsz a családi költségvetésben az ajándékozással?","nem","1");
-INSERT INTO teszt_view VALUES("1","Számolsz a családi költségvetésben az ajándékozással?","nem","1");
-INSERT INTO teszt_view VALUES("1","Számolsz a családi költségvetésben az ajándékozással?","igen","1");
-INSERT INTO teszt_view VALUES("1","Számolsz a családi költségvetésben az ajándékozással?","nem","1");
-INSERT INTO teszt_view VALUES("1","Számolsz a családi költségvetésben az ajándékozással?","nem","1");
-INSERT INTO teszt_view VALUES("1","Számolsz a családi költségvetésben az ajándékozással?","igen","1");
-INSERT INTO teszt_view VALUES("1","Számolsz a családi költségvetésben az ajándékozással?","igen","1");
-INSERT INTO teszt_view VALUES("1","Számolsz a családi költségvetésben az ajándékozással?","igen","1");
-INSERT INTO teszt_view VALUES("1","Számolsz a családi költségvetésben az ajándékozással?","nem","1");
-INSERT INTO teszt_view VALUES("1","Számolsz a családi költségvetésben az ajándékozással?","igen","1");
-INSERT INTO teszt_view VALUES("1","Számolsz a családi költségvetésben az ajándékozással?","nem","1");
-INSERT INTO teszt_view VALUES("1","Számolsz a családi költségvetésben az ajándékozással?","igen","1");
-INSERT INTO teszt_view VALUES("1","Számolsz a családi költségvetésben az ajándékozással?","igen","1");
-INSERT INTO teszt_view VALUES("1","Számolsz a családi költségvetésben az ajándékozással?","igen","1");
-INSERT INTO teszt_view VALUES("1","Számolsz a családi költségvetésben az ajándékozással?","nem","1");
-INSERT INTO teszt_view VALUES("1","Számolsz a családi költségvetésben az ajándékozással?","igen","1");
-INSERT INTO teszt_view VALUES("1","Számolsz a családi költségvetésben az ajándékozással?","igen","1");
-INSERT INTO teszt_view VALUES("1","Számolsz a családi költségvetésben az ajándékozással?","igen","1");
-INSERT INTO teszt_view VALUES("1","Számolsz a családi költségvetésben az ajándékozással?","igen","1");
-INSERT INTO teszt_view VALUES("1","Számolsz a családi költségvetésben az ajándékozással?","nem","1");
-INSERT INTO teszt_view VALUES("1","Számolsz a családi költségvetésben az ajándékozással?","igen","1");
-INSERT INTO teszt_view VALUES("1","Számolsz a családi költségvetésben az ajándékozással?","igen","1");
-INSERT INTO teszt_view VALUES("1","Számolsz a családi költségvetésben az ajándékozással?","igen","1");
-INSERT INTO teszt_view VALUES("1","Számolsz a családi költségvetésben az ajándékozással?","igen","1");
-INSERT INTO teszt_view VALUES("1","Számolsz a családi költségvetésben az ajándékozással?","igen","1");
-INSERT INTO teszt_view VALUES("1","Számolsz a családi költségvetésben az ajándékozással?","igen","1");
-INSERT INTO teszt_view VALUES("1","Számolsz a családi költségvetésben az ajándékozással?","igen","1");
-INSERT INTO teszt_view VALUES("1","Számolsz a családi költségvetésben az ajándékozással?","igen","1");
-INSERT INTO teszt_view VALUES("1","Számolsz a családi költségvetésben az ajándékozással?","nem","1");
-INSERT INTO teszt_view VALUES("1","Számolsz a családi költségvetésben az ajándékozással?","igen","1");
-INSERT INTO teszt_view VALUES("1","Számolsz a családi költségvetésben az ajándékozással?","igen","1");
-INSERT INTO teszt_view VALUES("1","Számolsz a családi költségvetésben az ajándékozással?","igen","1");
-INSERT INTO teszt_view VALUES("1","Számolsz a családi költségvetésben az ajándékozással?","igen","1");
-INSERT INTO teszt_view VALUES("1","Számolsz a családi költségvetésben az ajándékozással?","igen","1");
-INSERT INTO teszt_view VALUES("1","Számolsz a családi költségvetésben az ajándékozással?","igen","1");
-INSERT INTO teszt_view VALUES("1","Számolsz a családi költségvetésben az ajándékozással?","igen","1");
-INSERT INTO teszt_view VALUES("1","Számolsz a családi költségvetésben az ajándékozással?","igen","1");
-INSERT INTO teszt_view VALUES("1","Számolsz a családi költségvetésben az ajándékozással?","nem","1");
-INSERT INTO teszt_view VALUES("1","Számolsz a családi költségvetésben az ajándékozással?","nem","1");
-INSERT INTO teszt_view VALUES("1","Számolsz a családi költségvetésben az ajándékozással?","igen","1");
-INSERT INTO teszt_view VALUES("1","Számolsz a családi költségvetésben az ajándékozással?","igen","1");
-INSERT INTO teszt_view VALUES("1","Számolsz a családi költségvetésben az ajándékozással?","nem","1");
-INSERT INTO teszt_view VALUES("1","Számolsz a családi költségvetésben az ajándékozással?","igen","1");
-INSERT INTO teszt_view VALUES("1","Számolsz a családi költségvetésben az ajándékozással?","igen","1");
-INSERT INTO teszt_view VALUES("1","Számolsz a családi költségvetésben az ajándékozással?","nem","1");
-INSERT INTO teszt_view VALUES("1","Számolsz a családi költségvetésben az ajándékozással?","nem","1");
-INSERT INTO teszt_view VALUES("1","Számolsz a családi költségvetésben az ajándékozással?","igen","1");
-INSERT INTO teszt_view VALUES("1","Számolsz a családi költségvetésben az ajándékozással?","igen","1");
-INSERT INTO teszt_view VALUES("1","Számolsz a családi költségvetésben az ajándékozással?","igen","1");
-INSERT INTO teszt_view VALUES("1","Számolsz a családi költségvetésben az ajándékozással?","igen","1");
-INSERT INTO teszt_view VALUES("2","Használsz valamilyen ajándék listát, amelyből ismerőseid tájékozódhatnak, hogy mit szeretnél kapni?","nem és egy ismerősömről se tudok, hogy használna ","1");
-INSERT INTO teszt_view VALUES("2","Használsz valamilyen ajándék listát, amelyből ismerőseid tájékozódhatnak, hogy mit szeretnél kapni?","nem, de van olyan ismerősöm, aki használ","1");
-INSERT INTO teszt_view VALUES("2","Használsz valamilyen ajándék listát, amelyből ismerőseid tájékozódhatnak, hogy mit szeretnél kapni?","nem és egy ismerősömről se tudok, hogy használna ","1");
-INSERT INTO teszt_view VALUES("2","Használsz valamilyen ajándék listát, amelyből ismerőseid tájékozódhatnak, hogy mit szeretnél kapni?","nem, de van olyan ismerősöm, aki használ","1");
-INSERT INTO teszt_view VALUES("2","Használsz valamilyen ajándék listát, amelyből ismerőseid tájékozódhatnak, hogy mit szeretnél kapni?","nem és egy ismerősömről se tudok, hogy használna ","1");
-INSERT INTO teszt_view VALUES("2","Használsz valamilyen ajándék listát, amelyből ismerőseid tájékozódhatnak, hogy mit szeretnél kapni?","nem, de van olyan ismerősöm, aki használ","1");
-INSERT INTO teszt_view VALUES("2","Használsz valamilyen ajándék listát, amelyből ismerőseid tájékozódhatnak, hogy mit szeretnél kapni?","igen, van folyamatosan frissített listám","1");
-INSERT INTO teszt_view VALUES("2","Használsz valamilyen ajándék listát, amelyből ismerőseid tájékozódhatnak, hogy mit szeretnél kapni?","nem és egy ismerősömről se tudok, hogy használna ","1");
-INSERT INTO teszt_view VALUES("2","Használsz valamilyen ajándék listát, amelyből ismerőseid tájékozódhatnak, hogy mit szeretnél kapni?","igen, de csak nagyobb esemény idején pl. esküvő, karácsony","1");
-INSERT INTO teszt_view VALUES("2","Használsz valamilyen ajándék listát, amelyből ismerőseid tájékozódhatnak, hogy mit szeretnél kapni?","nem és egy ismerősömről se tudok, hogy használna ","1");
-INSERT INTO teszt_view VALUES("2","Használsz valamilyen ajándék listát, amelyből ismerőseid tájékozódhatnak, hogy mit szeretnél kapni?","nem és egy ismerősömről se tudok, hogy használna ","1");
-INSERT INTO teszt_view VALUES("2","Használsz valamilyen ajándék listát, amelyből ismerőseid tájékozódhatnak, hogy mit szeretnél kapni?","nem, de van olyan ismerősöm, aki használ","1");
-INSERT INTO teszt_view VALUES("2","Használsz valamilyen ajándék listát, amelyből ismerőseid tájékozódhatnak, hogy mit szeretnél kapni?","igen, van folyamatosan frissített listám","1");
-INSERT INTO teszt_view VALUES("2","Használsz valamilyen ajándék listát, amelyből ismerőseid tájékozódhatnak, hogy mit szeretnél kapni?","nem és egy ismerősömről se tudok, hogy használna ","1");
-INSERT INTO teszt_view VALUES("2","Használsz valamilyen ajándék listát, amelyből ismerőseid tájékozódhatnak, hogy mit szeretnél kapni?","nem, de van olyan ismerősöm, aki használ","1");
-INSERT INTO teszt_view VALUES("2","Használsz valamilyen ajándék listát, amelyből ismerőseid tájékozódhatnak, hogy mit szeretnél kapni?","nem és egy ismerősömről se tudok, hogy használna ","1");
-INSERT INTO teszt_view VALUES("2","Használsz valamilyen ajándék listát, amelyből ismerőseid tájékozódhatnak, hogy mit szeretnél kapni?","nem és egy ismerősömről se tudok, hogy használna ","1");
-INSERT INTO teszt_view VALUES("2","Használsz valamilyen ajándék listát, amelyből ismerőseid tájékozódhatnak, hogy mit szeretnél kapni?","nem és egy ismerősömről se tudok, hogy használna ","1");
-INSERT INTO teszt_view VALUES("2","Használsz valamilyen ajándék listát, amelyből ismerőseid tájékozódhatnak, hogy mit szeretnél kapni?","nem és egy ismerősömről se tudok, hogy használna ","1");
-INSERT INTO teszt_view VALUES("2","Használsz valamilyen ajándék listát, amelyből ismerőseid tájékozódhatnak, hogy mit szeretnél kapni?","nem és egy ismerősömről se tudok, hogy használna ","1");
-INSERT INTO teszt_view VALUES("2","Használsz valamilyen ajándék listát, amelyből ismerőseid tájékozódhatnak, hogy mit szeretnél kapni?","nem és egy ismerősömről se tudok, hogy használna ","1");
-INSERT INTO teszt_view VALUES("2","Használsz valamilyen ajándék listát, amelyből ismerőseid tájékozódhatnak, hogy mit szeretnél kapni?","nem és egy ismerősömről se tudok, hogy használna ","1");
-INSERT INTO teszt_view VALUES("2","Használsz valamilyen ajándék listát, amelyből ismerőseid tájékozódhatnak, hogy mit szeretnél kapni?","nem, de van olyan ismerősöm, aki használ","1");
-INSERT INTO teszt_view VALUES("2","Használsz valamilyen ajándék listát, amelyből ismerőseid tájékozódhatnak, hogy mit szeretnél kapni?","nem és egy ismerősömről se tudok, hogy használna ","1");
-INSERT INTO teszt_view VALUES("2","Használsz valamilyen ajándék listát, amelyből ismerőseid tájékozódhatnak, hogy mit szeretnél kapni?","nem és egy ismerősömről se tudok, hogy használna ","1");
-INSERT INTO teszt_view VALUES("2","Használsz valamilyen ajándék listát, amelyből ismerőseid tájékozódhatnak, hogy mit szeretnél kapni?","nem és egy ismerősömről se tudok, hogy használna ","1");
-INSERT INTO teszt_view VALUES("2","Használsz valamilyen ajándék listát, amelyből ismerőseid tájékozódhatnak, hogy mit szeretnél kapni?","nem és egy ismerősömről se tudok, hogy használna ","1");
-INSERT INTO teszt_view VALUES("2","Használsz valamilyen ajándék listát, amelyből ismerőseid tájékozódhatnak, hogy mit szeretnél kapni?","nem és egy ismerősömről se tudok, hogy használna ","1");
-INSERT INTO teszt_view VALUES("2","Használsz valamilyen ajándék listát, amelyből ismerőseid tájékozódhatnak, hogy mit szeretnél kapni?","nem, de van olyan ismerősöm, aki használ","1");
-INSERT INTO teszt_view VALUES("2","Használsz valamilyen ajándék listát, amelyből ismerőseid tájékozódhatnak, hogy mit szeretnél kapni?","nem és egy ismerősömről se tudok, hogy használna ","1");
-INSERT INTO teszt_view VALUES("2","Használsz valamilyen ajándék listát, amelyből ismerőseid tájékozódhatnak, hogy mit szeretnél kapni?","nem és egy ismerősömről se tudok, hogy használna ","1");
-INSERT INTO teszt_view VALUES("2","Használsz valamilyen ajándék listát, amelyből ismerőseid tájékozódhatnak, hogy mit szeretnél kapni?","nem és egy ismerősömről se tudok, hogy használna ","1");
-INSERT INTO teszt_view VALUES("2","Használsz valamilyen ajándék listát, amelyből ismerőseid tájékozódhatnak, hogy mit szeretnél kapni?","igen, van listám, de csak saját céljaim rendezésére","1");
-INSERT INTO teszt_view VALUES("2","Használsz valamilyen ajándék listát, amelyből ismerőseid tájékozódhatnak, hogy mit szeretnél kapni?","nem és egy ismerősömről se tudok, hogy használna ","1");
-INSERT INTO teszt_view VALUES("2","Használsz valamilyen ajándék listát, amelyből ismerőseid tájékozódhatnak, hogy mit szeretnél kapni?","nem, de van olyan ismerősöm, aki használ","1");
-INSERT INTO teszt_view VALUES("2","Használsz valamilyen ajándék listát, amelyből ismerőseid tájékozódhatnak, hogy mit szeretnél kapni?","nem és egy ismerősömről se tudok, hogy használna ","1");
-INSERT INTO teszt_view VALUES("2","Használsz valamilyen ajándék listát, amelyből ismerőseid tájékozódhatnak, hogy mit szeretnél kapni?","nem és egy ismerősömről se tudok, hogy használna ","1");
-INSERT INTO teszt_view VALUES("2","Használsz valamilyen ajándék listát, amelyből ismerőseid tájékozódhatnak, hogy mit szeretnél kapni?","igen, de csak nagyobb esemény idején pl. esküvő, karácsony","1");
-INSERT INTO teszt_view VALUES("2","Használsz valamilyen ajándék listát, amelyből ismerőseid tájékozódhatnak, hogy mit szeretnél kapni?","nem és egy ismerősömről se tudok, hogy használna ","1");
-INSERT INTO teszt_view VALUES("2","Használsz valamilyen ajándék listát, amelyből ismerőseid tájékozódhatnak, hogy mit szeretnél kapni?","nem és egy ismerősömről se tudok, hogy használna ","1");
-INSERT INTO teszt_view VALUES("2","Használsz valamilyen ajándék listát, amelyből ismerőseid tájékozódhatnak, hogy mit szeretnél kapni?","nem és egy ismerősömről se tudok, hogy használna ","1");
-INSERT INTO teszt_view VALUES("2","Használsz valamilyen ajándék listát, amelyből ismerőseid tájékozódhatnak, hogy mit szeretnél kapni?","igen, van folyamatosan frissített listám","1");
-INSERT INTO teszt_view VALUES("2","Használsz valamilyen ajándék listát, amelyből ismerőseid tájékozódhatnak, hogy mit szeretnél kapni?","igen, van folyamatosan frissített listám","1");
-INSERT INTO teszt_view VALUES("2","Használsz valamilyen ajándék listát, amelyből ismerőseid tájékozódhatnak, hogy mit szeretnél kapni?","igen, van folyamatosan frissített listám","1");
-INSERT INTO teszt_view VALUES("2","Használsz valamilyen ajándék listát, amelyből ismerőseid tájékozódhatnak, hogy mit szeretnél kapni?","nem és egy ismerősömről se tudok, hogy használna ","1");
-INSERT INTO teszt_view VALUES("2","Használsz valamilyen ajándék listát, amelyből ismerőseid tájékozódhatnak, hogy mit szeretnél kapni?","nem és egy ismerősömről se tudok, hogy használna ","1");
-INSERT INTO teszt_view VALUES("2","Használsz valamilyen ajándék listát, amelyből ismerőseid tájékozódhatnak, hogy mit szeretnél kapni?","nem és egy ismerősömről se tudok, hogy használna ","1");
-INSERT INTO teszt_view VALUES("2","Használsz valamilyen ajándék listát, amelyből ismerőseid tájékozódhatnak, hogy mit szeretnél kapni?","nem és egy ismerősömről se tudok, hogy használna ","1");
-INSERT INTO teszt_view VALUES("2","Használsz valamilyen ajándék listát, amelyből ismerőseid tájékozódhatnak, hogy mit szeretnél kapni?","nem, de van olyan ismerősöm, aki használ","1");
-INSERT INTO teszt_view VALUES("2","Használsz valamilyen ajándék listát, amelyből ismerőseid tájékozódhatnak, hogy mit szeretnél kapni?","nem, de van olyan ismerősöm, aki használ","1");
-INSERT INTO teszt_view VALUES("2","Használsz valamilyen ajándék listát, amelyből ismerőseid tájékozódhatnak, hogy mit szeretnél kapni?","nem és egy ismerősömről se tudok, hogy használna ","1");
-INSERT INTO teszt_view VALUES("2","Használsz valamilyen ajándék listát, amelyből ismerőseid tájékozódhatnak, hogy mit szeretnél kapni?","nem és egy ismerősömről se tudok, hogy használna ","1");
-INSERT INTO teszt_view VALUES("2","Használsz valamilyen ajándék listát, amelyből ismerőseid tájékozódhatnak, hogy mit szeretnél kapni?","igen, van listám, de csak saját céljaim rendezésére","1");
-INSERT INTO teszt_view VALUES("2","Használsz valamilyen ajándék listát, amelyből ismerőseid tájékozódhatnak, hogy mit szeretnél kapni?","nem és egy ismerősömről se tudok, hogy használna ","1");
-INSERT INTO teszt_view VALUES("2","Használsz valamilyen ajándék listát, amelyből ismerőseid tájékozódhatnak, hogy mit szeretnél kapni?","nem és egy ismerősömről se tudok, hogy használna ","1");
-INSERT INTO teszt_view VALUES("2","Használsz valamilyen ajándék listát, amelyből ismerőseid tájékozódhatnak, hogy mit szeretnél kapni?","nem és egy ismerősömről se tudok, hogy használna ","1");
-INSERT INTO teszt_view VALUES("2","Használsz valamilyen ajándék listát, amelyből ismerőseid tájékozódhatnak, hogy mit szeretnél kapni?","nem és egy ismerősömről se tudok, hogy használna ","1");
-INSERT INTO teszt_view VALUES("2","Használsz valamilyen ajándék listát, amelyből ismerőseid tájékozódhatnak, hogy mit szeretnél kapni?","nem és egy ismerősömről se tudok, hogy használna ","1");
-INSERT INTO teszt_view VALUES("2","Használsz valamilyen ajándék listát, amelyből ismerőseid tájékozódhatnak, hogy mit szeretnél kapni?","nem és egy ismerősömről se tudok, hogy használna ","1");
-INSERT INTO teszt_view VALUES("2","Használsz valamilyen ajándék listát, amelyből ismerőseid tájékozódhatnak, hogy mit szeretnél kapni?","nem és egy ismerősömről se tudok, hogy használna ","1");
-INSERT INTO teszt_view VALUES("2","Használsz valamilyen ajándék listát, amelyből ismerőseid tájékozódhatnak, hogy mit szeretnél kapni?","nem, de van olyan ismerősöm, aki használ","1");
-INSERT INTO teszt_view VALUES("2","Használsz valamilyen ajándék listát, amelyből ismerőseid tájékozódhatnak, hogy mit szeretnél kapni?","nem és egy ismerősömről se tudok, hogy használna ","1");
-INSERT INTO teszt_view VALUES("2","Használsz valamilyen ajándék listát, amelyből ismerőseid tájékozódhatnak, hogy mit szeretnél kapni?","nem és egy ismerősömről se tudok, hogy használna ","1");
-INSERT INTO teszt_view VALUES("2","Használsz valamilyen ajándék listát, amelyből ismerőseid tájékozódhatnak, hogy mit szeretnél kapni?","nem és egy ismerősömről se tudok, hogy használna ","1");
-INSERT INTO teszt_view VALUES("2","Használsz valamilyen ajándék listát, amelyből ismerőseid tájékozódhatnak, hogy mit szeretnél kapni?","nem és egy ismerősömről se tudok, hogy használna ","1");
-INSERT INTO teszt_view VALUES("2","Használsz valamilyen ajándék listát, amelyből ismerőseid tájékozódhatnak, hogy mit szeretnél kapni?","nem, de van olyan ismerősöm, aki használ","1");
-INSERT INTO teszt_view VALUES("2","Használsz valamilyen ajándék listát, amelyből ismerőseid tájékozódhatnak, hogy mit szeretnél kapni?","nem és egy ismerősömről se tudok, hogy használna ","1");
-INSERT INTO teszt_view VALUES("2","Használsz valamilyen ajándék listát, amelyből ismerőseid tájékozódhatnak, hogy mit szeretnél kapni?","igen, van listám, de csak saját céljaim rendezésére","1");
-INSERT INTO teszt_view VALUES("2","Használsz valamilyen ajándék listát, amelyből ismerőseid tájékozódhatnak, hogy mit szeretnél kapni?","nem és egy ismerősömről se tudok, hogy használna ","1");
-INSERT INTO teszt_view VALUES("2","Használsz valamilyen ajándék listát, amelyből ismerőseid tájékozódhatnak, hogy mit szeretnél kapni?","nem és egy ismerősömről se tudok, hogy használna ","1");
-INSERT INTO teszt_view VALUES("2","Használsz valamilyen ajándék listát, amelyből ismerőseid tájékozódhatnak, hogy mit szeretnél kapni?","igen, de csak nagyobb esemény idején pl. esküvő, karácsony","1");
-INSERT INTO teszt_view VALUES("2","Használsz valamilyen ajándék listát, amelyből ismerőseid tájékozódhatnak, hogy mit szeretnél kapni?","nem és egy ismerősömről se tudok, hogy használna ","1");
-INSERT INTO teszt_view VALUES("2","Használsz valamilyen ajándék listát, amelyből ismerőseid tájékozódhatnak, hogy mit szeretnél kapni?","nem és egy ismerősömről se tudok, hogy használna ","1");
-INSERT INTO teszt_view VALUES("2","Használsz valamilyen ajándék listát, amelyből ismerőseid tájékozódhatnak, hogy mit szeretnél kapni?","nem és egy ismerősömről se tudok, hogy használna ","1");
-INSERT INTO teszt_view VALUES("2","Használsz valamilyen ajándék listát, amelyből ismerőseid tájékozódhatnak, hogy mit szeretnél kapni?","nem és egy ismerősömről se tudok, hogy használna ","1");
-INSERT INTO teszt_view VALUES("2","Használsz valamilyen ajándék listát, amelyből ismerőseid tájékozódhatnak, hogy mit szeretnél kapni?","nem, de van olyan ismerősöm, aki használ","1");
-INSERT INTO teszt_view VALUES("2","Használsz valamilyen ajándék listát, amelyből ismerőseid tájékozódhatnak, hogy mit szeretnél kapni?","nem és egy ismerősömről se tudok, hogy használna ","1");
-INSERT INTO teszt_view VALUES("2","Használsz valamilyen ajándék listát, amelyből ismerőseid tájékozódhatnak, hogy mit szeretnél kapni?","nem és egy ismerősömről se tudok, hogy használna ","1");
-INSERT INTO teszt_view VALUES("2","Használsz valamilyen ajándék listát, amelyből ismerőseid tájékozódhatnak, hogy mit szeretnél kapni?","igen, van listám, de csak saját céljaim rendezésére","1");
-INSERT INTO teszt_view VALUES("2","Használsz valamilyen ajándék listát, amelyből ismerőseid tájékozódhatnak, hogy mit szeretnél kapni?","igen, van listám, de csak saját céljaim rendezésére","1");
-INSERT INTO teszt_view VALUES("2","Használsz valamilyen ajándék listát, amelyből ismerőseid tájékozódhatnak, hogy mit szeretnél kapni?","nem és egy ismerősömről se tudok, hogy használna ","1");
-INSERT INTO teszt_view VALUES("2","Használsz valamilyen ajándék listát, amelyből ismerőseid tájékozódhatnak, hogy mit szeretnél kapni?","nem és egy ismerősömről se tudok, hogy használna ","1");
-INSERT INTO teszt_view VALUES("2","Használsz valamilyen ajándék listát, amelyből ismerőseid tájékozódhatnak, hogy mit szeretnél kapni?","nem, de van olyan ismerősöm, aki használ","1");
-INSERT INTO teszt_view VALUES("2","Használsz valamilyen ajándék listát, amelyből ismerőseid tájékozódhatnak, hogy mit szeretnél kapni?","nem és egy ismerősömről se tudok, hogy használna ","1");
-INSERT INTO teszt_view VALUES("2","Használsz valamilyen ajándék listát, amelyből ismerőseid tájékozódhatnak, hogy mit szeretnél kapni?","nem és egy ismerősömről se tudok, hogy használna ","1");
-INSERT INTO teszt_view VALUES("2","Használsz valamilyen ajándék listát, amelyből ismerőseid tájékozódhatnak, hogy mit szeretnél kapni?","nem és egy ismerősömről se tudok, hogy használna ","1");
-INSERT INTO teszt_view VALUES("2","Használsz valamilyen ajándék listát, amelyből ismerőseid tájékozódhatnak, hogy mit szeretnél kapni?","nem és egy ismerősömről se tudok, hogy használna ","1");
-INSERT INTO teszt_view VALUES("2","Használsz valamilyen ajándék listát, amelyből ismerőseid tájékozódhatnak, hogy mit szeretnél kapni?","nem és egy ismerősömről se tudok, hogy használna ","1");
-INSERT INTO teszt_view VALUES("2","Használsz valamilyen ajándék listát, amelyből ismerőseid tájékozódhatnak, hogy mit szeretnél kapni?","nem és egy ismerősömről se tudok, hogy használna ","1");
-INSERT INTO teszt_view VALUES("2","Használsz valamilyen ajándék listát, amelyből ismerőseid tájékozódhatnak, hogy mit szeretnél kapni?","igen, de csak nagyobb esemény idején pl. esküvő, karácsony","1");
-INSERT INTO teszt_view VALUES("2","Használsz valamilyen ajándék listát, amelyből ismerőseid tájékozódhatnak, hogy mit szeretnél kapni?","nem és egy ismerősömről se tudok, hogy használna ","1");
-INSERT INTO teszt_view VALUES("2","Használsz valamilyen ajándék listát, amelyből ismerőseid tájékozódhatnak, hogy mit szeretnél kapni?","nem és egy ismerősömről se tudok, hogy használna ","1");
-INSERT INTO teszt_view VALUES("2","Használsz valamilyen ajándék listát, amelyből ismerőseid tájékozódhatnak, hogy mit szeretnél kapni?","nem és egy ismerősömről se tudok, hogy használna ","1");
-INSERT INTO teszt_view VALUES("2","Használsz valamilyen ajándék listát, amelyből ismerőseid tájékozódhatnak, hogy mit szeretnél kapni?","igen, van listám, de csak saját céljaim rendezésére","1");
-INSERT INTO teszt_view VALUES("2","Használsz valamilyen ajándék listát, amelyből ismerőseid tájékozódhatnak, hogy mit szeretnél kapni?","nem és egy ismerősömről se tudok, hogy használna ","1");
-INSERT INTO teszt_view VALUES("2","Használsz valamilyen ajándék listát, amelyből ismerőseid tájékozódhatnak, hogy mit szeretnél kapni?","igen, de csak nagyobb esemény idején pl. esküvő, karácsony","1");
-INSERT INTO teszt_view VALUES("2","Használsz valamilyen ajándék listát, amelyből ismerőseid tájékozódhatnak, hogy mit szeretnél kapni?","nem és egy ismerősömről se tudok, hogy használna ","1");
-INSERT INTO teszt_view VALUES("2","Használsz valamilyen ajándék listát, amelyből ismerőseid tájékozódhatnak, hogy mit szeretnél kapni?","nem, de van olyan ismerősöm, aki használ","1");
-INSERT INTO teszt_view VALUES("2","Használsz valamilyen ajándék listát, amelyből ismerőseid tájékozódhatnak, hogy mit szeretnél kapni?","nem és egy ismerősömről se tudok, hogy használna ","1");
-INSERT INTO teszt_view VALUES("2","Használsz valamilyen ajándék listát, amelyből ismerőseid tájékozódhatnak, hogy mit szeretnél kapni?","nem és egy ismerősömről se tudok, hogy használna ","1");
-INSERT INTO teszt_view VALUES("2","Használsz valamilyen ajándék listát, amelyből ismerőseid tájékozódhatnak, hogy mit szeretnél kapni?","igen, van listám, de csak saját céljaim rendezésére","1");
-INSERT INTO teszt_view VALUES("2","Használsz valamilyen ajándék listát, amelyből ismerőseid tájékozódhatnak, hogy mit szeretnél kapni?","nem és egy ismerősömről se tudok, hogy használna ","1");
-INSERT INTO teszt_view VALUES("2","Használsz valamilyen ajándék listát, amelyből ismerőseid tájékozódhatnak, hogy mit szeretnél kapni?","nem és egy ismerősömről se tudok, hogy használna ","1");
-INSERT INTO teszt_view VALUES("2","Használsz valamilyen ajándék listát, amelyből ismerőseid tájékozódhatnak, hogy mit szeretnél kapni?","igen, van listám, de csak saját céljaim rendezésére","1");
-INSERT INTO teszt_view VALUES("3","A heti vagy havi nagybevásárlások során milyen elv szerint vásárolsz?","Az ár/érték arány szerint döntök.","1");
-INSERT INTO teszt_view VALUES("3","A heti vagy havi nagybevásárlások során milyen elv szerint vásárolsz?","Az ár/érték arány szerint döntök.","1");
-INSERT INTO teszt_view VALUES("3","A heti vagy havi nagybevásárlások során milyen elv szerint vásárolsz?","Az ár/érték arány szerint döntök.","1");
-INSERT INTO teszt_view VALUES("3","A heti vagy havi nagybevásárlások során milyen elv szerint vásárolsz?","A minőséget tartom szem előtt, de azonos minőség esetén megnézem melyik az olcsóbb.","1");
-INSERT INTO teszt_view VALUES("3","A heti vagy havi nagybevásárlások során milyen elv szerint vásárolsz?","Az ár/érték arány szerint döntök.","1");
-INSERT INTO teszt_view VALUES("3","A heti vagy havi nagybevásárlások során milyen elv szerint vásárolsz?","Az ár/érték arány szerint döntök.","1");
-INSERT INTO teszt_view VALUES("3","A heti vagy havi nagybevásárlások során milyen elv szerint vásárolsz?","A minőséget tartom szem előtt, de azonos minőség esetén megnézem melyik az olcsóbb.","1");
-INSERT INTO teszt_view VALUES("3","A heti vagy havi nagybevásárlások során milyen elv szerint vásárolsz?","Az ár/érték arány szerint döntök.","1");
-INSERT INTO teszt_view VALUES("3","A heti vagy havi nagybevásárlások során milyen elv szerint vásárolsz?","A minőséget tartom szem előtt, de azonos minőség esetén megnézem melyik az olcsóbb.","1");
-INSERT INTO teszt_view VALUES("3","A heti vagy havi nagybevásárlások során milyen elv szerint vásárolsz?","Az ár/érték arány szerint döntök.","1");
-INSERT INTO teszt_view VALUES("3","A heti vagy havi nagybevásárlások során milyen elv szerint vásárolsz?","A minőséget tartom szem előtt, de azonos minőség esetén megnézem melyik az olcsóbb.","1");
-INSERT INTO teszt_view VALUES("3","A heti vagy havi nagybevásárlások során milyen elv szerint vásárolsz?","A minőséget tartom szem előtt, de azonos minőség esetén megnézem melyik az olcsóbb.","1");
-INSERT INTO teszt_view VALUES("3","A heti vagy havi nagybevásárlások során milyen elv szerint vásárolsz?","Nem nézem az árakat csak a minőséget.","1");
-INSERT INTO teszt_view VALUES("3","A heti vagy havi nagybevásárlások során milyen elv szerint vásárolsz?","Az ár/érték arány szerint döntök.","1");
-INSERT INTO teszt_view VALUES("3","A heti vagy havi nagybevásárlások során milyen elv szerint vásárolsz?","Az ár/érték arány szerint döntök.","1");
-INSERT INTO teszt_view VALUES("3","A heti vagy havi nagybevásárlások során milyen elv szerint vásárolsz?","A minőséget tartom szem előtt, de azonos minőség esetén megnézem melyik az olcsóbb.","1");
-INSERT INTO teszt_view VALUES("3","A heti vagy havi nagybevásárlások során milyen elv szerint vásárolsz?","Az ár/érték arány szerint döntök.","1");
-INSERT INTO teszt_view VALUES("3","A heti vagy havi nagybevásárlások során milyen elv szerint vásárolsz?","A minőséget tartom szem előtt, de azonos minőség esetén megnézem melyik az olcsóbb.","1");
-INSERT INTO teszt_view VALUES("3","A heti vagy havi nagybevásárlások során milyen elv szerint vásárolsz?","A minőséget tartom szem előtt, de azonos minőség esetén megnézem melyik az olcsóbb.","1");
-INSERT INTO teszt_view VALUES("3","A heti vagy havi nagybevásárlások során milyen elv szerint vásárolsz?","Az ár/érték arány szerint döntök.","1");
-INSERT INTO teszt_view VALUES("3","A heti vagy havi nagybevásárlások során milyen elv szerint vásárolsz?","A minőséget tartom szem előtt, de azonos minőség esetén megnézem melyik az olcsóbb.","1");
-INSERT INTO teszt_view VALUES("3","A heti vagy havi nagybevásárlások során milyen elv szerint vásárolsz?","Az ár/érték arány szerint döntök.","1");
-INSERT INTO teszt_view VALUES("3","A heti vagy havi nagybevásárlások során milyen elv szerint vásárolsz?","Az ár/érték arány szerint döntök.","1");
-INSERT INTO teszt_view VALUES("3","A heti vagy havi nagybevásárlások során milyen elv szerint vásárolsz?","Az ár/érték arány szerint döntök.","1");
-INSERT INTO teszt_view VALUES("3","A heti vagy havi nagybevásárlások során milyen elv szerint vásárolsz?","A minőséget tartom szem előtt, de azonos minőség esetén megnézem melyik az olcsóbb.","1");
-INSERT INTO teszt_view VALUES("3","A heti vagy havi nagybevásárlások során milyen elv szerint vásárolsz?","Az ár/érték arány szerint döntök.","1");
-INSERT INTO teszt_view VALUES("3","A heti vagy havi nagybevásárlások során milyen elv szerint vásárolsz?","Az ár/érték arány szerint döntök.","1");
-INSERT INTO teszt_view VALUES("3","A heti vagy havi nagybevásárlások során milyen elv szerint vásárolsz?","Az ár/érték arány szerint döntök.","1");
-INSERT INTO teszt_view VALUES("3","A heti vagy havi nagybevásárlások során milyen elv szerint vásárolsz?","Az ár/érték arány szerint döntök.","1");
-INSERT INTO teszt_view VALUES("3","A heti vagy havi nagybevásárlások során milyen elv szerint vásárolsz?","Az ár/érték arány szerint döntök.","1");
-INSERT INTO teszt_view VALUES("3","A heti vagy havi nagybevásárlások során milyen elv szerint vásárolsz?","Az ár/érték arány szerint döntök.","1");
-INSERT INTO teszt_view VALUES("3","A heti vagy havi nagybevásárlások során milyen elv szerint vásárolsz?","Az ár/érték arány szerint döntök.","1");
-INSERT INTO teszt_view VALUES("3","A heti vagy havi nagybevásárlások során milyen elv szerint vásárolsz?","Az ár/érték arány szerint döntök.","1");
-INSERT INTO teszt_view VALUES("3","A heti vagy havi nagybevásárlások során milyen elv szerint vásárolsz?","Az ár/érték arány szerint döntök.","1");
-INSERT INTO teszt_view VALUES("3","A heti vagy havi nagybevásárlások során milyen elv szerint vásárolsz?","A minőséget tartom szem előtt, de azonos minőség esetén megnézem melyik az olcsóbb.","1");
-INSERT INTO teszt_view VALUES("3","A heti vagy havi nagybevásárlások során milyen elv szerint vásárolsz?","Az ár/érték arány szerint döntök.","1");
-INSERT INTO teszt_view VALUES("3","A heti vagy havi nagybevásárlások során milyen elv szerint vásárolsz?","A minőséget tartom szem előtt, de azonos minőség esetén megnézem melyik az olcsóbb.","1");
-INSERT INTO teszt_view VALUES("3","A heti vagy havi nagybevásárlások során milyen elv szerint vásárolsz?","Az ár/érték arány szerint döntök.","1");
-INSERT INTO teszt_view VALUES("3","A heti vagy havi nagybevásárlások során milyen elv szerint vásárolsz?","A minőséget tartom szem előtt, de azonos minőség esetén megnézem melyik az olcsóbb.","1");
-INSERT INTO teszt_view VALUES("3","A heti vagy havi nagybevásárlások során milyen elv szerint vásárolsz?","Az ár/érték arány szerint döntök.","1");
-INSERT INTO teszt_view VALUES("3","A heti vagy havi nagybevásárlások során milyen elv szerint vásárolsz?","Az ár/érték arány szerint döntök.","1");
-INSERT INTO teszt_view VALUES("3","A heti vagy havi nagybevásárlások során milyen elv szerint vásárolsz?","A minőséget tartom szem előtt, de azonos minőség esetén megnézem melyik az olcsóbb.","1");
-INSERT INTO teszt_view VALUES("3","A heti vagy havi nagybevásárlások során milyen elv szerint vásárolsz?","A minőséget tartom szem előtt, de azonos minőség esetén megnézem melyik az olcsóbb.","1");
-INSERT INTO teszt_view VALUES("3","A heti vagy havi nagybevásárlások során milyen elv szerint vásárolsz?","A minőséget tartom szem előtt, de azonos minőség esetén megnézem melyik az olcsóbb.","1");
-INSERT INTO teszt_view VALUES("3","A heti vagy havi nagybevásárlások során milyen elv szerint vásárolsz?","Az ár/érték arány szerint döntök.","1");
-INSERT INTO teszt_view VALUES("3","A heti vagy havi nagybevásárlások során milyen elv szerint vásárolsz?","Az ár/érték arány szerint döntök.","1");
-INSERT INTO teszt_view VALUES("3","A heti vagy havi nagybevásárlások során milyen elv szerint vásárolsz?","A minőséget tartom szem előtt, de azonos minőség esetén megnézem melyik az olcsóbb.","1");
-INSERT INTO teszt_view VALUES("3","A heti vagy havi nagybevásárlások során milyen elv szerint vásárolsz?","Az ár/érték arány szerint döntök.","1");
-INSERT INTO teszt_view VALUES("3","A heti vagy havi nagybevásárlások során milyen elv szerint vásárolsz?","Az ár/érték arány szerint döntök.","1");
-INSERT INTO teszt_view VALUES("3","A heti vagy havi nagybevásárlások során milyen elv szerint vásárolsz?","A minőséget tartom szem előtt, de azonos minőség esetén megnézem melyik az olcsóbb.","1");
-INSERT INTO teszt_view VALUES("3","A heti vagy havi nagybevásárlások során milyen elv szerint vásárolsz?","Az ár/érték arány szerint döntök.","1");
-INSERT INTO teszt_view VALUES("3","A heti vagy havi nagybevásárlások során milyen elv szerint vásárolsz?","Az ár/érték arány szerint döntök.","1");
-INSERT INTO teszt_view VALUES("3","A heti vagy havi nagybevásárlások során milyen elv szerint vásárolsz?","A minőséget tartom szem előtt, de azonos minőség esetén megnézem melyik az olcsóbb.","1");
-INSERT INTO teszt_view VALUES("3","A heti vagy havi nagybevásárlások során milyen elv szerint vásárolsz?","A minőséget tartom szem előtt, de azonos minőség esetén megnézem melyik az olcsóbb.","1");
-INSERT INTO teszt_view VALUES("3","A heti vagy havi nagybevásárlások során milyen elv szerint vásárolsz?","A minőséget tartom szem előtt, de azonos minőség esetén megnézem melyik az olcsóbb.","1");
-INSERT INTO teszt_view VALUES("3","A heti vagy havi nagybevásárlások során milyen elv szerint vásárolsz?","Az ár/érték arány szerint döntök.","1");
-INSERT INTO teszt_view VALUES("3","A heti vagy havi nagybevásárlások során milyen elv szerint vásárolsz?","Az ár/érték arány szerint döntök.","1");
-INSERT INTO teszt_view VALUES("3","A heti vagy havi nagybevásárlások során milyen elv szerint vásárolsz?","Nem nézem az árakat csak a minőséget.","1");
-INSERT INTO teszt_view VALUES("3","A heti vagy havi nagybevásárlások során milyen elv szerint vásárolsz?","A minőséget tartom szem előtt, de azonos minőség esetén megnézem melyik az olcsóbb.","1");
-INSERT INTO teszt_view VALUES("3","A heti vagy havi nagybevásárlások során milyen elv szerint vásárolsz?","Az ár/érték arány szerint döntök.","1");
-INSERT INTO teszt_view VALUES("3","A heti vagy havi nagybevásárlások során milyen elv szerint vásárolsz?","A minőséget tartom szem előtt, de azonos minőség esetén megnézem melyik az olcsóbb.","1");
-INSERT INTO teszt_view VALUES("3","A heti vagy havi nagybevásárlások során milyen elv szerint vásárolsz?","Az ár/érték arány szerint döntök.","1");
-INSERT INTO teszt_view VALUES("3","A heti vagy havi nagybevásárlások során milyen elv szerint vásárolsz?","Kizárólag a legolcsóbb termékeket vásárolom meg.","1");
-INSERT INTO teszt_view VALUES("3","A heti vagy havi nagybevásárlások során milyen elv szerint vásárolsz?","A minőséget tartom szem előtt, de azonos minőség esetén megnézem melyik az olcsóbb.","1");
-INSERT INTO teszt_view VALUES("3","A heti vagy havi nagybevásárlások során milyen elv szerint vásárolsz?","Az ár/érték arány szerint döntök.","1");
-INSERT INTO teszt_view VALUES("3","A heti vagy havi nagybevásárlások során milyen elv szerint vásárolsz?","A minőséget tartom szem előtt, de azonos minőség esetén megnézem melyik az olcsóbb.","1");
-INSERT INTO teszt_view VALUES("3","A heti vagy havi nagybevásárlások során milyen elv szerint vásárolsz?","A minőséget tartom szem előtt, de azonos minőség esetén megnézem melyik az olcsóbb.","1");
-INSERT INTO teszt_view VALUES("3","A heti vagy havi nagybevásárlások során milyen elv szerint vásárolsz?","A minőséget tartom szem előtt, de azonos minőség esetén megnézem melyik az olcsóbb.","1");
-INSERT INTO teszt_view VALUES("3","A heti vagy havi nagybevásárlások során milyen elv szerint vásárolsz?","Kizárólag a legolcsóbb termékeket vásárolom meg.","1");
-INSERT INTO teszt_view VALUES("3","A heti vagy havi nagybevásárlások során milyen elv szerint vásárolsz?","Az ár/érték arány szerint döntök.","1");
-INSERT INTO teszt_view VALUES("3","A heti vagy havi nagybevásárlások során milyen elv szerint vásárolsz?","A minőséget tartom szem előtt, de azonos minőség esetén megnézem melyik az olcsóbb.","1");
-INSERT INTO teszt_view VALUES("3","A heti vagy havi nagybevásárlások során milyen elv szerint vásárolsz?","Az ár/érték arány szerint döntök.","1");
-INSERT INTO teszt_view VALUES("3","A heti vagy havi nagybevásárlások során milyen elv szerint vásárolsz?","Az ár/érték arány szerint döntök.","1");
-INSERT INTO teszt_view VALUES("3","A heti vagy havi nagybevásárlások során milyen elv szerint vásárolsz?","Nem nézem az árakat csak a minőséget.","1");
-INSERT INTO teszt_view VALUES("3","A heti vagy havi nagybevásárlások során milyen elv szerint vásárolsz?","A minőséget tartom szem előtt, de azonos minőség esetén megnézem melyik az olcsóbb.","1");
-INSERT INTO teszt_view VALUES("3","A heti vagy havi nagybevásárlások során milyen elv szerint vásárolsz?","Az ár/érték arány szerint döntök.","1");
-INSERT INTO teszt_view VALUES("3","A heti vagy havi nagybevásárlások során milyen elv szerint vásárolsz?","A minőséget tartom szem előtt, de azonos minőség esetén megnézem melyik az olcsóbb.","1");
-INSERT INTO teszt_view VALUES("3","A heti vagy havi nagybevásárlások során milyen elv szerint vásárolsz?","Kizárólag a legolcsóbb termékeket vásárolom meg.","1");
-INSERT INTO teszt_view VALUES("3","A heti vagy havi nagybevásárlások során milyen elv szerint vásárolsz?","Az ár/érték arány szerint döntök.","1");
-INSERT INTO teszt_view VALUES("3","A heti vagy havi nagybevásárlások során milyen elv szerint vásárolsz?","A minőséget tartom szem előtt, de azonos minőség esetén megnézem melyik az olcsóbb.","1");
-INSERT INTO teszt_view VALUES("3","A heti vagy havi nagybevásárlások során milyen elv szerint vásárolsz?","Az ár/érték arány szerint döntök.","1");
-INSERT INTO teszt_view VALUES("3","A heti vagy havi nagybevásárlások során milyen elv szerint vásárolsz?","Kizárólag a legolcsóbb termékeket vásárolom meg.","1");
-INSERT INTO teszt_view VALUES("3","A heti vagy havi nagybevásárlások során milyen elv szerint vásárolsz?","Kizárólag a legolcsóbb termékeket vásárolom meg.","1");
-INSERT INTO teszt_view VALUES("3","A heti vagy havi nagybevásárlások során milyen elv szerint vásárolsz?","Az ár/érték arány szerint döntök.","1");
-INSERT INTO teszt_view VALUES("3","A heti vagy havi nagybevásárlások során milyen elv szerint vásárolsz?","A minőséget tartom szem előtt, de azonos minőség esetén megnézem melyik az olcsóbb.","1");
-INSERT INTO teszt_view VALUES("3","A heti vagy havi nagybevásárlások során milyen elv szerint vásárolsz?","Kizárólag a legolcsóbb termékeket vásárolom meg.","1");
-INSERT INTO teszt_view VALUES("3","A heti vagy havi nagybevásárlások során milyen elv szerint vásárolsz?","Az ár/érték arány szerint döntök.","1");
-INSERT INTO teszt_view VALUES("3","A heti vagy havi nagybevásárlások során milyen elv szerint vásárolsz?","Az ár/érték arány szerint döntök.","1");
-INSERT INTO teszt_view VALUES("3","A heti vagy havi nagybevásárlások során milyen elv szerint vásárolsz?","A minőséget tartom szem előtt, de azonos minőség esetén megnézem melyik az olcsóbb.","1");
-INSERT INTO teszt_view VALUES("3","A heti vagy havi nagybevásárlások során milyen elv szerint vásárolsz?","A minőséget tartom szem előtt, de azonos minőség esetén megnézem melyik az olcsóbb.","1");
-INSERT INTO teszt_view VALUES("3","A heti vagy havi nagybevásárlások során milyen elv szerint vásárolsz?","Az ár/érték arány szerint döntök.","1");
-INSERT INTO teszt_view VALUES("3","A heti vagy havi nagybevásárlások során milyen elv szerint vásárolsz?","A minőséget tartom szem előtt, de azonos minőség esetén megnézem melyik az olcsóbb.","1");
-INSERT INTO teszt_view VALUES("3","A heti vagy havi nagybevásárlások során milyen elv szerint vásárolsz?","A minőséget tartom szem előtt, de azonos minőség esetén megnézem melyik az olcsóbb.","1");
-INSERT INTO teszt_view VALUES("3","A heti vagy havi nagybevásárlások során milyen elv szerint vásárolsz?","Az ár/érték arány szerint döntök.","1");
-INSERT INTO teszt_view VALUES("3","A heti vagy havi nagybevásárlások során milyen elv szerint vásárolsz?","Az ár/érték arány szerint döntök.","1");
-INSERT INTO teszt_view VALUES("3","A heti vagy havi nagybevásárlások során milyen elv szerint vásárolsz?","A minőséget tartom szem előtt, de azonos minőség esetén megnézem melyik az olcsóbb.","1");
-INSERT INTO teszt_view VALUES("3","A heti vagy havi nagybevásárlások során milyen elv szerint vásárolsz?","Kizárólag a legolcsóbb termékeket vásárolom meg.","1");
-INSERT INTO teszt_view VALUES("3","A heti vagy havi nagybevásárlások során milyen elv szerint vásárolsz?","Az ár/érték arány szerint döntök.","1");
-INSERT INTO teszt_view VALUES("3","A heti vagy havi nagybevásárlások során milyen elv szerint vásárolsz?","A minőséget tartom szem előtt, de azonos minőség esetén megnézem melyik az olcsóbb.","1");
-INSERT INTO teszt_view VALUES("3","A heti vagy havi nagybevásárlások során milyen elv szerint vásárolsz?","A minőséget tartom szem előtt, de azonos minőség esetén megnézem melyik az olcsóbb.","1");
-INSERT INTO teszt_view VALUES("3","A heti vagy havi nagybevásárlások során milyen elv szerint vásárolsz?","Az ár/érték arány szerint döntök.","1");
-INSERT INTO teszt_view VALUES("3","A heti vagy havi nagybevásárlások során milyen elv szerint vásárolsz?","A minőséget tartom szem előtt, de azonos minőség esetén megnézem melyik az olcsóbb.","1");
-INSERT INTO teszt_view VALUES("3","A heti vagy havi nagybevásárlások során milyen elv szerint vásárolsz?","Az ár/érték arány szerint döntök.","1");
-INSERT INTO teszt_view VALUES("3","A heti vagy havi nagybevásárlások során milyen elv szerint vásárolsz?","Nem nézem az árakat csak a minőséget.","1");
-INSERT INTO teszt_view VALUES("4","Hol szoktál vásárolni leginkább?","Üzlet","1");
-INSERT INTO teszt_view VALUES("4","Hol szoktál vásárolni leginkább?","Áruház","1");
-INSERT INTO teszt_view VALUES("4","Hol szoktál vásárolni leginkább?","Webáruház","1");
-INSERT INTO teszt_view VALUES("4","Hol szoktál vásárolni leginkább?","Üzlet","1");
-INSERT INTO teszt_view VALUES("4","Hol szoktál vásárolni leginkább?","Áruház","1");
-INSERT INTO teszt_view VALUES("4","Hol szoktál vásárolni leginkább?","Online pláza","1");
-INSERT INTO teszt_view VALUES("4","Hol szoktál vásárolni leginkább?","Áruház","1");
-INSERT INTO teszt_view VALUES("4","Hol szoktál vásárolni leginkább?","Üzlet","1");
-INSERT INTO teszt_view VALUES("4","Hol szoktál vásárolni leginkább?","Áruház","1");
-INSERT INTO teszt_view VALUES("4","Hol szoktál vásárolni leginkább?","Üzlet","1");
-INSERT INTO teszt_view VALUES("4","Hol szoktál vásárolni leginkább?","Áruház","1");
-INSERT INTO teszt_view VALUES("4","Hol szoktál vásárolni leginkább?","Üzlet","1");
-INSERT INTO teszt_view VALUES("4","Hol szoktál vásárolni leginkább?","Áruház","1");
-INSERT INTO teszt_view VALUES("4","Hol szoktál vásárolni leginkább?","Webáruház","1");
-INSERT INTO teszt_view VALUES("4","Hol szoktál vásárolni leginkább?","Áruház","1");
-INSERT INTO teszt_view VALUES("4","Hol szoktál vásárolni leginkább?","Áruház","1");
-INSERT INTO teszt_view VALUES("4","Hol szoktál vásárolni leginkább?","Áruház","1");
-INSERT INTO teszt_view VALUES("4","Hol szoktál vásárolni leginkább?","Áruház","1");
-INSERT INTO teszt_view VALUES("4","Hol szoktál vásárolni leginkább?","Üzlet","1");
-INSERT INTO teszt_view VALUES("4","Hol szoktál vásárolni leginkább?","Üzlet","1");
-INSERT INTO teszt_view VALUES("4","Hol szoktál vásárolni leginkább?","Webáruház","1");
-INSERT INTO teszt_view VALUES("4","Hol szoktál vásárolni leginkább?","Online pláza","1");
-INSERT INTO teszt_view VALUES("4","Hol szoktál vásárolni leginkább?","Turkáló","1");
-INSERT INTO teszt_view VALUES("4","Hol szoktál vásárolni leginkább?","Üzlet","1");
-INSERT INTO teszt_view VALUES("4","Hol szoktál vásárolni leginkább?","Áruház","1");
-INSERT INTO teszt_view VALUES("4","Hol szoktál vásárolni leginkább?","Üzlet","1");
-INSERT INTO teszt_view VALUES("4","Hol szoktál vásárolni leginkább?","Áruház","1");
-INSERT INTO teszt_view VALUES("4","Hol szoktál vásárolni leginkább?","Online pláza","1");
-INSERT INTO teszt_view VALUES("4","Hol szoktál vásárolni leginkább?","Üzlet","1");
-INSERT INTO teszt_view VALUES("4","Hol szoktál vásárolni leginkább?","Áruház","1");
-INSERT INTO teszt_view VALUES("4","Hol szoktál vásárolni leginkább?","Turkáló","1");
-INSERT INTO teszt_view VALUES("4","Hol szoktál vásárolni leginkább?","Piac","1");
-INSERT INTO teszt_view VALUES("4","Hol szoktál vásárolni leginkább?","Áruház","1");
-INSERT INTO teszt_view VALUES("4","Hol szoktál vásárolni leginkább?","Webáruház","1");
-INSERT INTO teszt_view VALUES("4","Hol szoktál vásárolni leginkább?","Üzlet","1");
-INSERT INTO teszt_view VALUES("4","Hol szoktál vásárolni leginkább?","Áruház","1");
-INSERT INTO teszt_view VALUES("4","Hol szoktál vásárolni leginkább?","Üzlet","1");
-INSERT INTO teszt_view VALUES("4","Hol szoktál vásárolni leginkább?","Piac","1");
-INSERT INTO teszt_view VALUES("4","Hol szoktál vásárolni leginkább?","Áruház","1");
-INSERT INTO teszt_view VALUES("4","Hol szoktál vásárolni leginkább?","Áruház","1");
-INSERT INTO teszt_view VALUES("4","Hol szoktál vásárolni leginkább?","Turkáló","1");
-INSERT INTO teszt_view VALUES("4","Hol szoktál vásárolni leginkább?","Üzlet","1");
-INSERT INTO teszt_view VALUES("4","Hol szoktál vásárolni leginkább?","Piac","1");
-INSERT INTO teszt_view VALUES("4","Hol szoktál vásárolni leginkább?","Áruház","1");
-INSERT INTO teszt_view VALUES("4","Hol szoktál vásárolni leginkább?","Webáruház","1");
-INSERT INTO teszt_view VALUES("4","Hol szoktál vásárolni leginkább?","Üzlet","1");
-INSERT INTO teszt_view VALUES("4","Hol szoktál vásárolni leginkább?","Piac","1");
-INSERT INTO teszt_view VALUES("4","Hol szoktál vásárolni leginkább?","Áruház","1");
-INSERT INTO teszt_view VALUES("4","Hol szoktál vásárolni leginkább?","Turkáló","1");
-INSERT INTO teszt_view VALUES("4","Hol szoktál vásárolni leginkább?","Áruház","1");
-INSERT INTO teszt_view VALUES("4","Hol szoktál vásárolni leginkább?","Áruház","1");
-INSERT INTO teszt_view VALUES("4","Hol szoktál vásárolni leginkább?","Üzlet","1");
-INSERT INTO teszt_view VALUES("4","Hol szoktál vásárolni leginkább?","Áruház","1");
-INSERT INTO teszt_view VALUES("4","Hol szoktál vásárolni leginkább?","Turkáló","1");
-INSERT INTO teszt_view VALUES("4","Hol szoktál vásárolni leginkább?","Üzlet","1");
-INSERT INTO teszt_view VALUES("4","Hol szoktál vásárolni leginkább?","Áruház","1");
-INSERT INTO teszt_view VALUES("4","Hol szoktál vásárolni leginkább?","Webáruház","1");
-INSERT INTO teszt_view VALUES("4","Hol szoktál vásárolni leginkább?","Üzlet","1");
-INSERT INTO teszt_view VALUES("4","Hol szoktál vásárolni leginkább?","Áruház","1");
-INSERT INTO teszt_view VALUES("4","Hol szoktál vásárolni leginkább?","Üzlet","1");
-INSERT INTO teszt_view VALUES("4","Hol szoktál vásárolni leginkább?","Áruház","1");
-INSERT INTO teszt_view VALUES("4","Hol szoktál vásárolni leginkább?","Webáruház","1");
-INSERT INTO teszt_view VALUES("4","Hol szoktál vásárolni leginkább?","Üzlet","1");
-INSERT INTO teszt_view VALUES("4","Hol szoktál vásárolni leginkább?","Piac","1");
-INSERT INTO teszt_view VALUES("4","Hol szoktál vásárolni leginkább?","Áruház","1");
-INSERT INTO teszt_view VALUES("4","Hol szoktál vásárolni leginkább?","Áruház","1");
-INSERT INTO teszt_view VALUES("4","Hol szoktál vásárolni leginkább?","Webáruház","1");
-INSERT INTO teszt_view VALUES("4","Hol szoktál vásárolni leginkább?","Turkáló","1");
-INSERT INTO teszt_view VALUES("4","Hol szoktál vásárolni leginkább?","Üzlet","1");
-INSERT INTO teszt_view VALUES("4","Hol szoktál vásárolni leginkább?","Áruház","1");
-INSERT INTO teszt_view VALUES("4","Hol szoktál vásárolni leginkább?","Webáruház","1");
-INSERT INTO teszt_view VALUES("4","Hol szoktál vásárolni leginkább?","Turkáló","1");
-INSERT INTO teszt_view VALUES("4","Hol szoktál vásárolni leginkább?","Üzlet","1");
-INSERT INTO teszt_view VALUES("4","Hol szoktál vásárolni leginkább?","Piac","1");
-INSERT INTO teszt_view VALUES("4","Hol szoktál vásárolni leginkább?","Áruház","1");
-INSERT INTO teszt_view VALUES("4","Hol szoktál vásárolni leginkább?","Üzlet","1");
-INSERT INTO teszt_view VALUES("4","Hol szoktál vásárolni leginkább?","Áruház","1");
-INSERT INTO teszt_view VALUES("4","Hol szoktál vásárolni leginkább?","Turkáló","1");
-INSERT INTO teszt_view VALUES("4","Hol szoktál vásárolni leginkább?","Üzlet","1");
-INSERT INTO teszt_view VALUES("4","Hol szoktál vásárolni leginkább?","Üzlet","1");
-INSERT INTO teszt_view VALUES("4","Hol szoktál vásárolni leginkább?","Üzlet","1");
-INSERT INTO teszt_view VALUES("4","Hol szoktál vásárolni leginkább?","Áruház","1");
-INSERT INTO teszt_view VALUES("4","Hol szoktál vásárolni leginkább?","Áruház","1");
-INSERT INTO teszt_view VALUES("4","Hol szoktál vásárolni leginkább?","Turkáló","1");
-INSERT INTO teszt_view VALUES("4","Hol szoktál vásárolni leginkább?","Áruház","1");
-INSERT INTO teszt_view VALUES("4","Hol szoktál vásárolni leginkább?","Webáruház","1");
-INSERT INTO teszt_view VALUES("4","Hol szoktál vásárolni leginkább?","Turkáló","1");
-INSERT INTO teszt_view VALUES("4","Hol szoktál vásárolni leginkább?","Áruház","1");
-INSERT INTO teszt_view VALUES("4","Hol szoktál vásárolni leginkább?","Webáruház","1");
-INSERT INTO teszt_view VALUES("4","Hol szoktál vásárolni leginkább?","Piac","1");
-INSERT INTO teszt_view VALUES("4","Hol szoktál vásárolni leginkább?","Piac","1");
-INSERT INTO teszt_view VALUES("4","Hol szoktál vásárolni leginkább?","Üzlet","1");
-INSERT INTO teszt_view VALUES("4","Hol szoktál vásárolni leginkább?","Piac","1");
-INSERT INTO teszt_view VALUES("4","Hol szoktál vásárolni leginkább?","Webáruház","1");
-INSERT INTO teszt_view VALUES("4","Hol szoktál vásárolni leginkább?","Turkáló","1");
-INSERT INTO teszt_view VALUES("4","Hol szoktál vásárolni leginkább?","Üzlet","1");
-INSERT INTO teszt_view VALUES("4","Hol szoktál vásárolni leginkább?","Áruház","1");
-INSERT INTO teszt_view VALUES("4","Hol szoktál vásárolni leginkább?","Áruház","1");
-INSERT INTO teszt_view VALUES("4","Hol szoktál vásárolni leginkább?","Üzlet","1");
-INSERT INTO teszt_view VALUES("4","Hol szoktál vásárolni leginkább?","Piac","1");
-INSERT INTO teszt_view VALUES("4","Hol szoktál vásárolni leginkább?","Áruház","1");
-INSERT INTO teszt_view VALUES("4","Hol szoktál vásárolni leginkább?","Webáruház","1");
-INSERT INTO teszt_view VALUES("4","Hol szoktál vásárolni leginkább?","Áruház","1");
-INSERT INTO teszt_view VALUES("4","Hol szoktál vásárolni leginkább?","Online pláza","1");
-INSERT INTO teszt_view VALUES("4","Hol szoktál vásárolni leginkább?","Üzlet","1");
-INSERT INTO teszt_view VALUES("4","Hol szoktál vásárolni leginkább?","Áruház","1");
-INSERT INTO teszt_view VALUES("4","Hol szoktál vásárolni leginkább?","Piac","1");
-INSERT INTO teszt_view VALUES("4","Hol szoktál vásárolni leginkább?","Üzlet","1");
-INSERT INTO teszt_view VALUES("4","Hol szoktál vásárolni leginkább?","Webáruház","1");
-INSERT INTO teszt_view VALUES("4","Hol szoktál vásárolni leginkább?","Turkáló","1");
-INSERT INTO teszt_view VALUES("4","Hol szoktál vásárolni leginkább?","Üzlet","1");
-INSERT INTO teszt_view VALUES("4","Hol szoktál vásárolni leginkább?","Piac","1");
-INSERT INTO teszt_view VALUES("4","Hol szoktál vásárolni leginkább?","Áruház","1");
-INSERT INTO teszt_view VALUES("4","Hol szoktál vásárolni leginkább?","Webáruház","1");
-INSERT INTO teszt_view VALUES("4","Hol szoktál vásárolni leginkább?","Üzlet","1");
-INSERT INTO teszt_view VALUES("4","Hol szoktál vásárolni leginkább?","Üzlet","1");
-INSERT INTO teszt_view VALUES("4","Hol szoktál vásárolni leginkább?","Áruház","1");
-INSERT INTO teszt_view VALUES("4","Hol szoktál vásárolni leginkább?","Áruház","1");
-INSERT INTO teszt_view VALUES("4","Hol szoktál vásárolni leginkább?","Üzlet","1");
-INSERT INTO teszt_view VALUES("4","Hol szoktál vásárolni leginkább?","Piac","1");
-INSERT INTO teszt_view VALUES("4","Hol szoktál vásárolni leginkább?","Áruház","1");
-INSERT INTO teszt_view VALUES("4","Hol szoktál vásárolni leginkább?","Webáruház","1");
-INSERT INTO teszt_view VALUES("4","Hol szoktál vásárolni leginkább?","Online pláza","1");
-INSERT INTO teszt_view VALUES("4","Hol szoktál vásárolni leginkább?","Üzlet","1");
-INSERT INTO teszt_view VALUES("4","Hol szoktál vásárolni leginkább?","Áruház","1");
-INSERT INTO teszt_view VALUES("4","Hol szoktál vásárolni leginkább?","Webáruház","1");
-INSERT INTO teszt_view VALUES("4","Hol szoktál vásárolni leginkább?","Üzlet","1");
-INSERT INTO teszt_view VALUES("4","Hol szoktál vásárolni leginkább?","Turkáló","1");
-INSERT INTO teszt_view VALUES("4","Hol szoktál vásárolni leginkább?","Áruház","1");
-INSERT INTO teszt_view VALUES("4","Hol szoktál vásárolni leginkább?","Üzlet","1");
-INSERT INTO teszt_view VALUES("4","Hol szoktál vásárolni leginkább?","Áruház","1");
-INSERT INTO teszt_view VALUES("4","Hol szoktál vásárolni leginkább?","Áruház","1");
-INSERT INTO teszt_view VALUES("4","Hol szoktál vásárolni leginkább?","Webáruház","1");
-INSERT INTO teszt_view VALUES("4","Hol szoktál vásárolni leginkább?","Üzlet","1");
-INSERT INTO teszt_view VALUES("4","Hol szoktál vásárolni leginkább?","Üzlet","1");
-INSERT INTO teszt_view VALUES("4","Hol szoktál vásárolni leginkább?","Webáruház","1");
-INSERT INTO teszt_view VALUES("4","Hol szoktál vásárolni leginkább?","Üzlet","1");
-INSERT INTO teszt_view VALUES("4","Hol szoktál vásárolni leginkább?","Üzlet","1");
-INSERT INTO teszt_view VALUES("4","Hol szoktál vásárolni leginkább?","Áruház","1");
-INSERT INTO teszt_view VALUES("4","Hol szoktál vásárolni leginkább?","Áruház","1");
-INSERT INTO teszt_view VALUES("4","Hol szoktál vásárolni leginkább?","Turkáló","1");
-INSERT INTO teszt_view VALUES("4","Hol szoktál vásárolni leginkább?","Áruház","1");
-INSERT INTO teszt_view VALUES("4","Hol szoktál vásárolni leginkább?","Turkáló","1");
-INSERT INTO teszt_view VALUES("4","Hol szoktál vásárolni leginkább?","Üzlet","1");
-INSERT INTO teszt_view VALUES("4","Hol szoktál vásárolni leginkább?","Üzlet","1");
-INSERT INTO teszt_view VALUES("4","Hol szoktál vásárolni leginkább?","Turkáló","1");
-INSERT INTO teszt_view VALUES("4","Hol szoktál vásárolni leginkább?","Áruház","1");
-INSERT INTO teszt_view VALUES("4","Hol szoktál vásárolni leginkább?","Áruház","1");
-INSERT INTO teszt_view VALUES("4","Hol szoktál vásárolni leginkább?","Üzlet","1");
-INSERT INTO teszt_view VALUES("4","Hol szoktál vásárolni leginkább?","Piac","1");
-INSERT INTO teszt_view VALUES("4","Hol szoktál vásárolni leginkább?","Áruház","1");
-INSERT INTO teszt_view VALUES("4","Hol szoktál vásárolni leginkább?","Áruház","1");
-INSERT INTO teszt_view VALUES("4","Hol szoktál vásárolni leginkább?","Turkáló","1");
-INSERT INTO teszt_view VALUES("4","Hol szoktál vásárolni leginkább?","Üzlet","1");
-INSERT INTO teszt_view VALUES("4","Hol szoktál vásárolni leginkább?","Piac","1");
-INSERT INTO teszt_view VALUES("4","Hol szoktál vásárolni leginkább?","Áruház","1");
-INSERT INTO teszt_view VALUES("4","Hol szoktál vásárolni leginkább?","Webáruház","1");
-INSERT INTO teszt_view VALUES("4","Hol szoktál vásárolni leginkább?","Üzlet","1");
-INSERT INTO teszt_view VALUES("4","Hol szoktál vásárolni leginkább?","Piac","1");
-INSERT INTO teszt_view VALUES("4","Hol szoktál vásárolni leginkább?","Turkáló","1");
-INSERT INTO teszt_view VALUES("4","Hol szoktál vásárolni leginkább?","Üzlet","1");
-INSERT INTO teszt_view VALUES("4","Hol szoktál vásárolni leginkább?","Piac","1");
-INSERT INTO teszt_view VALUES("4","Hol szoktál vásárolni leginkább?","Áruház","1");
-INSERT INTO teszt_view VALUES("4","Hol szoktál vásárolni leginkább?","Üzlet","1");
-INSERT INTO teszt_view VALUES("4","Hol szoktál vásárolni leginkább?","Áruház","1");
-INSERT INTO teszt_view VALUES("4","Hol szoktál vásárolni leginkább?","Üzlet","1");
-INSERT INTO teszt_view VALUES("4","Hol szoktál vásárolni leginkább?","Áruház","1");
-INSERT INTO teszt_view VALUES("4","Hol szoktál vásárolni leginkább?","Turkáló","1");
-INSERT INTO teszt_view VALUES("4","Hol szoktál vásárolni leginkább?","Üzlet","1");
-INSERT INTO teszt_view VALUES("4","Hol szoktál vásárolni leginkább?","Áruház","1");
-INSERT INTO teszt_view VALUES("4","Hol szoktál vásárolni leginkább?","Üzlet","1");
-INSERT INTO teszt_view VALUES("4","Hol szoktál vásárolni leginkább?","Turkáló","1");
-INSERT INTO teszt_view VALUES("4","Hol szoktál vásárolni leginkább?","Piac","1");
-INSERT INTO teszt_view VALUES("4","Hol szoktál vásárolni leginkább?","Webáruház","1");
-INSERT INTO teszt_view VALUES("4","Hol szoktál vásárolni leginkább?","Online pláza","1");
-INSERT INTO teszt_view VALUES("4","Hol szoktál vásárolni leginkább?","Üzlet","1");
-INSERT INTO teszt_view VALUES("4","Hol szoktál vásárolni leginkább?","Üzlet","1");
-INSERT INTO teszt_view VALUES("4","Hol szoktál vásárolni leginkább?","Áruház","1");
-INSERT INTO teszt_view VALUES("4","Hol szoktál vásárolni leginkább?","Webáruház","1");
-INSERT INTO teszt_view VALUES("4","Hol szoktál vásárolni leginkább?","Áruház","1");
-INSERT INTO teszt_view VALUES("4","Hol szoktál vásárolni leginkább?","Piac","1");
-INSERT INTO teszt_view VALUES("4","Hol szoktál vásárolni leginkább?","Áruház","1");
-INSERT INTO teszt_view VALUES("4","Hol szoktál vásárolni leginkább?","Webáruház","1");
-INSERT INTO teszt_view VALUES("4","Hol szoktál vásárolni leginkább?","Üzlet","1");
-INSERT INTO teszt_view VALUES("4","Hol szoktál vásárolni leginkább?","Piac","1");
-INSERT INTO teszt_view VALUES("4","Hol szoktál vásárolni leginkább?","Áruház","1");
-INSERT INTO teszt_view VALUES("4","Hol szoktál vásárolni leginkább?","Áruház","1");
-INSERT INTO teszt_view VALUES("4","Hol szoktál vásárolni leginkább?","Üzlet","1");
-INSERT INTO teszt_view VALUES("4","Hol szoktál vásárolni leginkább?","Üzlet","1");
-INSERT INTO teszt_view VALUES("4","Hol szoktál vásárolni leginkább?","Üzlet","1");
-INSERT INTO teszt_view VALUES("4","Hol szoktál vásárolni leginkább?","Piac","1");
-INSERT INTO teszt_view VALUES("4","Hol szoktál vásárolni leginkább?","Áruház","1");
-INSERT INTO teszt_view VALUES("4","Hol szoktál vásárolni leginkább?","Webáruház","1");
-INSERT INTO teszt_view VALUES("4","Hol szoktál vásárolni leginkább?","Turkáló","1");
-INSERT INTO teszt_view VALUES("4","Hol szoktál vásárolni leginkább?","Üzlet","1");
-INSERT INTO teszt_view VALUES("4","Hol szoktál vásárolni leginkább?","Webáruház","1");
-INSERT INTO teszt_view VALUES("4","Hol szoktál vásárolni leginkább?","Üzlet","1");
-INSERT INTO teszt_view VALUES("4","Hol szoktál vásárolni leginkább?","Áruház","1");
-INSERT INTO teszt_view VALUES("4","Hol szoktál vásárolni leginkább?","Turkáló","1");
-INSERT INTO teszt_view VALUES("4","Hol szoktál vásárolni leginkább?","Áruház","1");
-INSERT INTO teszt_view VALUES("4","Hol szoktál vásárolni leginkább?","Üzlet","1");
-INSERT INTO teszt_view VALUES("4","Hol szoktál vásárolni leginkább?","Webáruház","1");
-INSERT INTO teszt_view VALUES("5","Mit vásároltál már interneten?","Műszaki cikkeket","1");
-INSERT INTO teszt_view VALUES("5","Mit vásároltál már interneten?","Ruházati cikkeket","1");
-INSERT INTO teszt_view VALUES("5","Mit vásároltál már interneten?","Könyveket","1");
-INSERT INTO teszt_view VALUES("5","Mit vásároltál már interneten?","Vonat, repülő stb. jegyeket","1");
-INSERT INTO teszt_view VALUES("5","Mit vásároltál már interneten?","Műszaki cikkeket","1");
-INSERT INTO teszt_view VALUES("5","Mit vásároltál már interneten?","Ruházati cikkeket","1");
-INSERT INTO teszt_view VALUES("5","Mit vásároltál már interneten?","Könyveket","1");
-INSERT INTO teszt_view VALUES("5","Mit vásároltál már interneten?","Szoftvereket","1");
-INSERT INTO teszt_view VALUES("5","Mit vásároltál már interneten?","Sport felszerelést","1");
-INSERT INTO teszt_view VALUES("5","Mit vásároltál már interneten?","Vonat, repülő stb. jegyeket","1");
-INSERT INTO teszt_view VALUES("5","Mit vásároltál már interneten?","Utazást","1");
-INSERT INTO teszt_view VALUES("5","Mit vásároltál már interneten?","Előfizetést valamire","1");
-INSERT INTO teszt_view VALUES("5","Mit vásároltál már interneten?","Műszaki cikkeket","1");
-INSERT INTO teszt_view VALUES("5","Mit vásároltál már interneten?","Könyveket","1");
-INSERT INTO teszt_view VALUES("5","Mit vásároltál már interneten?","Koncert, disco, rendezvény stb. jegyeket","1");
-INSERT INTO teszt_view VALUES("5","Mit vásároltál már interneten?","Műszaki cikkeket","1");
-INSERT INTO teszt_view VALUES("5","Mit vásároltál már interneten?","Konyhai kiegészítőket","1");
-INSERT INTO teszt_view VALUES("5","Mit vásároltál már interneten?","Szoftvereket","1");
-INSERT INTO teszt_view VALUES("5","Mit vásároltál már interneten?","Vonat, repülő stb. jegyeket","1");
-INSERT INTO teszt_view VALUES("5","Mit vásároltál már interneten?","Koncert, disco, rendezvény stb. jegyeket","1");
-INSERT INTO teszt_view VALUES("5","Mit vásároltál már interneten?","Műszaki cikkeket","1");
-INSERT INTO teszt_view VALUES("5","Mit vásároltál már interneten?","Műszaki cikkeket","1");
-INSERT INTO teszt_view VALUES("5","Mit vásároltál már interneten?","Ruházati cikkeket","1");
-INSERT INTO teszt_view VALUES("5","Mit vásároltál már interneten?","Konyhai kiegészítőket","1");
-INSERT INTO teszt_view VALUES("5","Mit vásároltál már interneten?","Háztartási eszközöket","1");
-INSERT INTO teszt_view VALUES("5","Mit vásároltál már interneten?","Élelmiszert","1");
-INSERT INTO teszt_view VALUES("5","Mit vásároltál már interneten?","Italt","1");
-INSERT INTO teszt_view VALUES("5","Mit vásároltál már interneten?","Könyveket","1");
-INSERT INTO teszt_view VALUES("5","Mit vásároltál már interneten?","Szoftvereket","1");
-INSERT INTO teszt_view VALUES("5","Mit vásároltál már interneten?","Sport felszerelést","1");
-INSERT INTO teszt_view VALUES("5","Mit vásároltál már interneten?","Vonat, repülő stb. jegyeket","1");
-INSERT INTO teszt_view VALUES("5","Mit vásároltál már interneten?","Koncert, disco, rendezvény stb. jegyeket","1");
-INSERT INTO teszt_view VALUES("5","Mit vásároltál már interneten?","Utazást","1");
-INSERT INTO teszt_view VALUES("5","Mit vásároltál már interneten?","Biztonságtechnikai eszközöket","1");
-INSERT INTO teszt_view VALUES("5","Mit vásároltál már interneten?","Előfizetést valamire","1");
-INSERT INTO teszt_view VALUES("5","Mit vásároltál már interneten?","Műszaki cikkeket","1");
-INSERT INTO teszt_view VALUES("5","Mit vásároltál már interneten?","Háztartási eszközöket","1");
-INSERT INTO teszt_view VALUES("5","Mit vásároltál már interneten?","Könyveket","1");
-INSERT INTO teszt_view VALUES("5","Mit vásároltál már interneten?","Sport felszerelést","1");
-INSERT INTO teszt_view VALUES("5","Mit vásároltál már interneten?","Vonat, repülő stb. jegyeket","1");
-INSERT INTO teszt_view VALUES("5","Mit vásároltál már interneten?","Utazást","1");
-INSERT INTO teszt_view VALUES("5","Mit vásároltál már interneten?","Előfizetést valamire","1");
-INSERT INTO teszt_view VALUES("5","Mit vásároltál már interneten?","Műszaki cikkeket","1");
-INSERT INTO teszt_view VALUES("5","Mit vásároltál már interneten?","Konyhai kiegészítőket","1");
-INSERT INTO teszt_view VALUES("5","Mit vásároltál már interneten?","Könyveket","1");
-INSERT INTO teszt_view VALUES("5","Mit vásároltál már interneten?","Műszaki cikkeket","1");
-INSERT INTO teszt_view VALUES("5","Mit vásároltál már interneten?","Ruházati cikkeket","1");
-INSERT INTO teszt_view VALUES("5","Mit vásároltál már interneten?","Könyveket","1");
-INSERT INTO teszt_view VALUES("5","Mit vásároltál már interneten?","Koncert, disco, rendezvény stb. jegyeket","1");
-INSERT INTO teszt_view VALUES("5","Mit vásároltál már interneten?","Műszaki cikkeket","1");
-INSERT INTO teszt_view VALUES("5","Mit vásároltál már interneten?","Vonat, repülő stb. jegyeket","1");
-INSERT INTO teszt_view VALUES("5","Mit vásároltál már interneten?","Koncert, disco, rendezvény stb. jegyeket","1");
-INSERT INTO teszt_view VALUES("5","Mit vásároltál már interneten?","Utazást","1");
-INSERT INTO teszt_view VALUES("5","Mit vásároltál már interneten?","Előfizetést valamire","1");
-INSERT INTO teszt_view VALUES("5","Mit vásároltál már interneten?","Műszaki cikkeket","1");
-INSERT INTO teszt_view VALUES("5","Mit vásároltál már interneten?","Műszaki cikkeket","1");
-INSERT INTO teszt_view VALUES("5","Mit vásároltál már interneten?","Ruházati cikkeket","1");
-INSERT INTO teszt_view VALUES("5","Mit vásároltál már interneten?","Konyhai kiegészítőket","1");
-INSERT INTO teszt_view VALUES("5","Mit vásároltál már interneten?","Háztartási eszközöket","1");
-INSERT INTO teszt_view VALUES("5","Mit vásároltál már interneten?","Élelmiszert","1");
-INSERT INTO teszt_view VALUES("5","Mit vásároltál már interneten?","Italt","1");
-INSERT INTO teszt_view VALUES("5","Mit vásároltál már interneten?","Könyveket","1");
-INSERT INTO teszt_view VALUES("5","Mit vásároltál már interneten?","Sport felszerelést","1");
-INSERT INTO teszt_view VALUES("5","Mit vásároltál már interneten?","Vonat, repülő stb. jegyeket","1");
-INSERT INTO teszt_view VALUES("5","Mit vásároltál már interneten?","Koncert, disco, rendezvény stb. jegyeket","1");
-INSERT INTO teszt_view VALUES("5","Mit vásároltál már interneten?","Utazást","1");
-INSERT INTO teszt_view VALUES("5","Mit vásároltál már interneten?","Biztonságtechnikai eszközöket","1");
-INSERT INTO teszt_view VALUES("5","Mit vásároltál már interneten?","Előfizetést valamire","1");
-INSERT INTO teszt_view VALUES("5","Mit vásároltál már interneten?","Műszaki cikkeket","1");
-INSERT INTO teszt_view VALUES("5","Mit vásároltál már interneten?","Műszaki cikkeket","1");
-INSERT INTO teszt_view VALUES("5","Mit vásároltál már interneten?","Ruházati cikkeket","1");
-INSERT INTO teszt_view VALUES("5","Mit vásároltál már interneten?","Utazást","1");
-INSERT INTO teszt_view VALUES("5","Mit vásároltál már interneten?","Műszaki cikkeket","1");
-INSERT INTO teszt_view VALUES("5","Mit vásároltál már interneten?","Könyveket","1");
-INSERT INTO teszt_view VALUES("5","Mit vásároltál már interneten?","Ruházati cikkeket","1");
-INSERT INTO teszt_view VALUES("5","Mit vásároltál már interneten?","Műszaki cikkeket","1");
-INSERT INTO teszt_view VALUES("5","Mit vásároltál már interneten?","Ruházati cikkeket","1");
-INSERT INTO teszt_view VALUES("5","Mit vásároltál már interneten?","Könyveket","1");
-INSERT INTO teszt_view VALUES("5","Mit vásároltál már interneten?","Vonat, repülő stb. jegyeket","1");
-INSERT INTO teszt_view VALUES("5","Mit vásároltál már interneten?","Előfizetést valamire","1");
-INSERT INTO teszt_view VALUES("5","Mit vásároltál már interneten?","Műszaki cikkeket","1");
-INSERT INTO teszt_view VALUES("5","Mit vásároltál már interneten?","Konyhai kiegészítőket","1");
-INSERT INTO teszt_view VALUES("5","Mit vásároltál már interneten?","Háztartási eszközöket","1");
-INSERT INTO teszt_view VALUES("5","Mit vásároltál már interneten?","Koncert, disco, rendezvény stb. jegyeket","1");
-INSERT INTO teszt_view VALUES("5","Mit vásároltál már interneten?","Utazást","1");
-INSERT INTO teszt_view VALUES("5","Mit vásároltál már interneten?","Könyveket","1");
-INSERT INTO teszt_view VALUES("5","Mit vásároltál már interneten?","Könyveket","1");
-INSERT INTO teszt_view VALUES("5","Mit vásároltál már interneten?","Műszaki cikkeket","1");
-INSERT INTO teszt_view VALUES("5","Mit vásároltál már interneten?","Ruházati cikkeket","1");
-INSERT INTO teszt_view VALUES("5","Mit vásároltál már interneten?","Konyhai kiegészítőket","1");
-INSERT INTO teszt_view VALUES("5","Mit vásároltál már interneten?","Élelmiszert","1");
-INSERT INTO teszt_view VALUES("5","Mit vásároltál már interneten?","Italt","1");
-INSERT INTO teszt_view VALUES("5","Mit vásároltál már interneten?","Könyveket","1");
-INSERT INTO teszt_view VALUES("5","Mit vásároltál már interneten?","Szoftvereket","1");
-INSERT INTO teszt_view VALUES("5","Mit vásároltál már interneten?","Vonat, repülő stb. jegyeket","1");
-INSERT INTO teszt_view VALUES("5","Mit vásároltál már interneten?","Előfizetést valamire","1");
-INSERT INTO teszt_view VALUES("5","Mit vásároltál már interneten?","Műszaki cikkeket","1");
-INSERT INTO teszt_view VALUES("5","Mit vásároltál már interneten?","Ruházati cikkeket","1");
-INSERT INTO teszt_view VALUES("5","Mit vásároltál már interneten?","Könyveket","1");
-INSERT INTO teszt_view VALUES("5","Mit vásároltál már interneten?","Vonat, repülő stb. jegyeket","1");
-INSERT INTO teszt_view VALUES("5","Mit vásároltál már interneten?","Utazást","1");
-INSERT INTO teszt_view VALUES("5","Mit vásároltál már interneten?","Előfizetést valamire","1");
-INSERT INTO teszt_view VALUES("5","Mit vásároltál már interneten?","Ruházati cikkeket","1");
-INSERT INTO teszt_view VALUES("5","Mit vásároltál már interneten?","Konyhai kiegészítőket","1");
-INSERT INTO teszt_view VALUES("5","Mit vásároltál már interneten?","Könyveket","1");
-INSERT INTO teszt_view VALUES("5","Mit vásároltál már interneten?","Koncert, disco, rendezvény stb. jegyeket","1");
-INSERT INTO teszt_view VALUES("5","Mit vásároltál már interneten?","Műszaki cikkeket","1");
-INSERT INTO teszt_view VALUES("5","Mit vásároltál már interneten?","Műszaki cikkeket","1");
-INSERT INTO teszt_view VALUES("5","Mit vásároltál már interneten?","Könyveket","1");
-INSERT INTO teszt_view VALUES("5","Mit vásároltál már interneten?","Vonat, repülő stb. jegyeket","1");
-INSERT INTO teszt_view VALUES("5","Mit vásároltál már interneten?","Utazást","1");
-INSERT INTO teszt_view VALUES("5","Mit vásároltál már interneten?","Műszaki cikkeket","1");
-INSERT INTO teszt_view VALUES("5","Mit vásároltál már interneten?","Ruházati cikkeket","1");
-INSERT INTO teszt_view VALUES("5","Mit vásároltál már interneten?","Konyhai kiegészítőket","1");
-INSERT INTO teszt_view VALUES("5","Mit vásároltál már interneten?","Könyveket","1");
-INSERT INTO teszt_view VALUES("5","Mit vásároltál már interneten?","Vonat, repülő stb. jegyeket","1");
-INSERT INTO teszt_view VALUES("5","Mit vásároltál már interneten?","Koncert, disco, rendezvény stb. jegyeket","1");
-INSERT INTO teszt_view VALUES("5","Mit vásároltál már interneten?","Műszaki cikkeket","1");
-INSERT INTO teszt_view VALUES("5","Mit vásároltál már interneten?","Ruházati cikkeket","1");
-INSERT INTO teszt_view VALUES("5","Mit vásároltál már interneten?","Ruházati cikkeket","1");
-INSERT INTO teszt_view VALUES("5","Mit vásároltál már interneten?","Vonat, repülő stb. jegyeket","1");
-INSERT INTO teszt_view VALUES("5","Mit vásároltál már interneten?","Előfizetést valamire","1");
-INSERT INTO teszt_view VALUES("5","Mit vásároltál már interneten?","Műszaki cikkeket","1");
-INSERT INTO teszt_view VALUES("5","Mit vásároltál már interneten?","Ruházati cikkeket","1");
-INSERT INTO teszt_view VALUES("5","Mit vásároltál már interneten?","Konyhai kiegészítőket","1");
-INSERT INTO teszt_view VALUES("5","Mit vásároltál már interneten?","Háztartási eszközöket","1");
-INSERT INTO teszt_view VALUES("5","Mit vásároltál már interneten?","Könyveket","1");
-INSERT INTO teszt_view VALUES("5","Mit vásároltál már interneten?","Sport felszerelést","1");
-INSERT INTO teszt_view VALUES("5","Mit vásároltál már interneten?","Vonat, repülő stb. jegyeket","1");
-INSERT INTO teszt_view VALUES("5","Mit vásároltál már interneten?","Utazást","1");
-INSERT INTO teszt_view VALUES("5","Mit vásároltál már interneten?","Biztonságtechnikai eszközöket","1");
-INSERT INTO teszt_view VALUES("5","Mit vásároltál már interneten?","Előfizetést valamire","1");
-INSERT INTO teszt_view VALUES("5","Mit vásároltál már interneten?","Sport felszerelést","1");
-INSERT INTO teszt_view VALUES("5","Mit vásároltál már interneten?","Műszaki cikkeket","1");
-INSERT INTO teszt_view VALUES("5","Mit vásároltál már interneten?","Ruházati cikkeket","1");
-INSERT INTO teszt_view VALUES("5","Mit vásároltál már interneten?","Szoftvereket","1");
-INSERT INTO teszt_view VALUES("5","Mit vásároltál már interneten?","Sport felszerelést","1");
-INSERT INTO teszt_view VALUES("5","Mit vásároltál már interneten?","Vonat, repülő stb. jegyeket","1");
-INSERT INTO teszt_view VALUES("5","Mit vásároltál már interneten?","Előfizetést valamire","1");
-INSERT INTO teszt_view VALUES("5","Mit vásároltál már interneten?","Műszaki cikkeket","1");
-INSERT INTO teszt_view VALUES("5","Mit vásároltál már interneten?","Könyveket","1");
-INSERT INTO teszt_view VALUES("5","Mit vásároltál már interneten?","Vonat, repülő stb. jegyeket","1");
-INSERT INTO teszt_view VALUES("5","Mit vásároltál már interneten?","Előfizetést valamire","1");
-INSERT INTO teszt_view VALUES("5","Mit vásároltál már interneten?","Műszaki cikkeket","1");
-INSERT INTO teszt_view VALUES("5","Mit vásároltál már interneten?","Háztartási eszközöket","1");
-INSERT INTO teszt_view VALUES("5","Mit vásároltál már interneten?","Vonat, repülő stb. jegyeket","1");
-INSERT INTO teszt_view VALUES("5","Mit vásároltál már interneten?","Koncert, disco, rendezvény stb. jegyeket","1");
-INSERT INTO teszt_view VALUES("5","Mit vásároltál már interneten?","Utazást","1");
-INSERT INTO teszt_view VALUES("5","Mit vásároltál már interneten?","Előfizetést valamire","1");
-INSERT INTO teszt_view VALUES("5","Mit vásároltál már interneten?","Műszaki cikkeket","1");
-INSERT INTO teszt_view VALUES("5","Mit vásároltál már interneten?","Ruházati cikkeket","1");
-INSERT INTO teszt_view VALUES("5","Mit vásároltál már interneten?","Háztartási eszközöket","1");
-INSERT INTO teszt_view VALUES("5","Mit vásároltál már interneten?","Könyveket","1");
-INSERT INTO teszt_view VALUES("5","Mit vásároltál már interneten?","Szoftvereket","1");
-INSERT INTO teszt_view VALUES("5","Mit vásároltál már interneten?","Vonat, repülő stb. jegyeket","1");
-INSERT INTO teszt_view VALUES("5","Mit vásároltál már interneten?","Koncert, disco, rendezvény stb. jegyeket","1");
-INSERT INTO teszt_view VALUES("5","Mit vásároltál már interneten?","Biztonságtechnikai eszközöket","1");
-INSERT INTO teszt_view VALUES("5","Mit vásároltál már interneten?","Előfizetést valamire","1");
-INSERT INTO teszt_view VALUES("5","Mit vásároltál már interneten?","Ruházati cikkeket","1");
-INSERT INTO teszt_view VALUES("5","Mit vásároltál már interneten?","Könyveket","1");
-INSERT INTO teszt_view VALUES("5","Mit vásároltál már interneten?","Koncert, disco, rendezvény stb. jegyeket","1");
-INSERT INTO teszt_view VALUES("5","Mit vásároltál már interneten?","Könyveket","1");
-INSERT INTO teszt_view VALUES("5","Mit vásároltál már interneten?","Könyveket","1");
-INSERT INTO teszt_view VALUES("5","Mit vásároltál már interneten?","Műszaki cikkeket","1");
-INSERT INTO teszt_view VALUES("5","Mit vásároltál már interneten?","Ruházati cikkeket","1");
-INSERT INTO teszt_view VALUES("5","Mit vásároltál már interneten?","Háztartási eszközöket","1");
-INSERT INTO teszt_view VALUES("5","Mit vásároltál már interneten?","Könyveket","1");
-INSERT INTO teszt_view VALUES("5","Mit vásároltál már interneten?","Ruházati cikkeket","1");
-INSERT INTO teszt_view VALUES("5","Mit vásároltál már interneten?","Vonat, repülő stb. jegyeket","1");
-INSERT INTO teszt_view VALUES("5","Mit vásároltál már interneten?","Ruházati cikkeket","1");
-INSERT INTO teszt_view VALUES("5","Mit vásároltál már interneten?","Vonat, repülő stb. jegyeket","1");
-INSERT INTO teszt_view VALUES("5","Mit vásároltál már interneten?","Könyveket","1");
-INSERT INTO teszt_view VALUES("5","Mit vásároltál már interneten?","Könyveket","1");
-INSERT INTO teszt_view VALUES("5","Mit vásároltál már interneten?","Konyhai kiegészítőket","1");
-INSERT INTO teszt_view VALUES("5","Mit vásároltál már interneten?","Háztartási eszközöket","1");
-INSERT INTO teszt_view VALUES("5","Mit vásároltál már interneten?","Élelmiszert","1");
-INSERT INTO teszt_view VALUES("5","Mit vásároltál már interneten?","Könyveket","1");
-INSERT INTO teszt_view VALUES("5","Mit vásároltál már interneten?","Koncert, disco, rendezvény stb. jegyeket","1");
-INSERT INTO teszt_view VALUES("5","Mit vásároltál már interneten?","Műszaki cikkeket","1");
-INSERT INTO teszt_view VALUES("5","Mit vásároltál már interneten?","Könyveket","1");
-INSERT INTO teszt_view VALUES("5","Mit vásároltál már interneten?","Vonat, repülő stb. jegyeket","1");
-INSERT INTO teszt_view VALUES("5","Mit vásároltál már interneten?","Műszaki cikkeket","1");
-INSERT INTO teszt_view VALUES("5","Mit vásároltál már interneten?","Ruházati cikkeket","1");
-INSERT INTO teszt_view VALUES("5","Mit vásároltál már interneten?","Könyveket","1");
-INSERT INTO teszt_view VALUES("5","Mit vásároltál már interneten?","Vonat, repülő stb. jegyeket","1");
-INSERT INTO teszt_view VALUES("5","Mit vásároltál már interneten?","Előfizetést valamire","1");
-INSERT INTO teszt_view VALUES("5","Mit vásároltál már interneten?","Műszaki cikkeket","1");
-INSERT INTO teszt_view VALUES("5","Mit vásároltál már interneten?","Könyveket","1");
-INSERT INTO teszt_view VALUES("5","Mit vásároltál már interneten?","Szoftvereket","1");
-INSERT INTO teszt_view VALUES("5","Mit vásároltál már interneten?","Élelmiszert","1");
-INSERT INTO teszt_view VALUES("5","Mit vásároltál már interneten?","Könyveket","1");
-INSERT INTO teszt_view VALUES("5","Mit vásároltál már interneten?","Vonat, repülő stb. jegyeket","1");
-INSERT INTO teszt_view VALUES("5","Mit vásároltál már interneten?","Koncert, disco, rendezvény stb. jegyeket","1");
-INSERT INTO teszt_view VALUES("5","Mit vásároltál már interneten?","Műszaki cikkeket","1");
-INSERT INTO teszt_view VALUES("5","Mit vásároltál már interneten?","Ruházati cikkeket","1");
-INSERT INTO teszt_view VALUES("5","Mit vásároltál már interneten?","Háztartási eszközöket","1");
-INSERT INTO teszt_view VALUES("5","Mit vásároltál már interneten?","Könyveket","1");
-INSERT INTO teszt_view VALUES("5","Mit vásároltál már interneten?","Szoftvereket","1");
-INSERT INTO teszt_view VALUES("5","Mit vásároltál már interneten?","Ruházati cikkeket","1");
-INSERT INTO teszt_view VALUES("5","Mit vásároltál már interneten?","Könyveket","1");
-INSERT INTO teszt_view VALUES("5","Mit vásároltál már interneten?","Vonat, repülő stb. jegyeket","1");
-INSERT INTO teszt_view VALUES("5","Mit vásároltál már interneten?","Koncert, disco, rendezvény stb. jegyeket","1");
-INSERT INTO teszt_view VALUES("5","Mit vásároltál már interneten?","Utazást","1");
-INSERT INTO teszt_view VALUES("5","Mit vásároltál már interneten?","Műszaki cikkeket","1");
-INSERT INTO teszt_view VALUES("5","Mit vásároltál már interneten?","Háztartási eszközöket","1");
-INSERT INTO teszt_view VALUES("5","Mit vásároltál már interneten?","Könyveket","1");
-INSERT INTO teszt_view VALUES("5","Mit vásároltál már interneten?","Szoftvereket","1");
-INSERT INTO teszt_view VALUES("5","Mit vásároltál már interneten?","Utazást","1");
-INSERT INTO teszt_view VALUES("5","Mit vásároltál már interneten?","Műszaki cikkeket","1");
-INSERT INTO teszt_view VALUES("5","Mit vásároltál már interneten?","Ruházati cikkeket","1");
-INSERT INTO teszt_view VALUES("5","Mit vásároltál már interneten?","Élelmiszert","1");
-INSERT INTO teszt_view VALUES("5","Mit vásároltál már interneten?","Italt","1");
-INSERT INTO teszt_view VALUES("5","Mit vásároltál már interneten?","Könyveket","1");
-INSERT INTO teszt_view VALUES("5","Mit vásároltál már interneten?","Vonat, repülő stb. jegyeket","1");
-INSERT INTO teszt_view VALUES("5","Mit vásároltál már interneten?","Koncert, disco, rendezvény stb. jegyeket","1");
-INSERT INTO teszt_view VALUES("5","Mit vásároltál már interneten?","Utazást","1");
-INSERT INTO teszt_view VALUES("5","Mit vásároltál már interneten?","Ruházati cikkeket","1");
-INSERT INTO teszt_view VALUES("5","Mit vásároltál már interneten?","Könyveket","1");
-INSERT INTO teszt_view VALUES("5","Mit vásároltál már interneten?","Vonat, repülő stb. jegyeket","1");
-INSERT INTO teszt_view VALUES("5","Mit vásároltál már interneten?","Koncert, disco, rendezvény stb. jegyeket","1");
-INSERT INTO teszt_view VALUES("5","Mit vásároltál már interneten?","Műszaki cikkeket","1");
-INSERT INTO teszt_view VALUES("5","Mit vásároltál már interneten?","Ruházati cikkeket","1");
-INSERT INTO teszt_view VALUES("5","Mit vásároltál már interneten?","Italt","1");
-INSERT INTO teszt_view VALUES("5","Mit vásároltál már interneten?","Vonat, repülő stb. jegyeket","1");
-INSERT INTO teszt_view VALUES("5","Mit vásároltál már interneten?","Koncert, disco, rendezvény stb. jegyeket","1");
-INSERT INTO teszt_view VALUES("5","Mit vásároltál már interneten?","Utazást","1");
-INSERT INTO teszt_view VALUES("5","Mit vásároltál már interneten?","Ruházati cikkeket","1");
-INSERT INTO teszt_view VALUES("5","Mit vásároltál már interneten?","Könyveket","1");
-INSERT INTO teszt_view VALUES("5","Mit vásároltál már interneten?","Előfizetést valamire","1");
-INSERT INTO teszt_view VALUES("5","Mit vásároltál már interneten?","Műszaki cikkeket","1");
-INSERT INTO teszt_view VALUES("5","Mit vásároltál már interneten?","Szoftvereket","1");
-INSERT INTO teszt_view VALUES("5","Mit vásároltál már interneten?","Előfizetést valamire","1");
-INSERT INTO teszt_view VALUES("5","Mit vásároltál már interneten?","Műszaki cikkeket","1");
-INSERT INTO teszt_view VALUES("5","Mit vásároltál már interneten?","Könyveket","1");
-INSERT INTO teszt_view VALUES("5","Mit vásároltál már interneten?","Előfizetést valamire","1");
-INSERT INTO teszt_view VALUES("5","Mit vásároltál már interneten?","Műszaki cikkeket","1");
-INSERT INTO teszt_view VALUES("5","Mit vásároltál már interneten?","Ruházati cikkeket","1");
-INSERT INTO teszt_view VALUES("5","Mit vásároltál már interneten?","Könyveket","1");
-INSERT INTO teszt_view VALUES("5","Mit vásároltál már interneten?","Vonat, repülő stb. jegyeket","1");
-INSERT INTO teszt_view VALUES("5","Mit vásároltál már interneten?","Koncert, disco, rendezvény stb. jegyeket","1");
-INSERT INTO teszt_view VALUES("5","Mit vásároltál már interneten?","Utazást","1");
-INSERT INTO teszt_view VALUES("5","Mit vásároltál már interneten?","Ruházati cikkeket","1");
-INSERT INTO teszt_view VALUES("5","Mit vásároltál már interneten?","Élelmiszert","1");
-INSERT INTO teszt_view VALUES("5","Mit vásároltál már interneten?","Italt","1");
-INSERT INTO teszt_view VALUES("5","Mit vásároltál már interneten?","Könyveket","1");
-INSERT INTO teszt_view VALUES("5","Mit vásároltál már interneten?","Vonat, repülő stb. jegyeket","1");
-INSERT INTO teszt_view VALUES("5","Mit vásároltál már interneten?","Koncert, disco, rendezvény stb. jegyeket","1");
-INSERT INTO teszt_view VALUES("5","Mit vásároltál már interneten?","Utazást","1");
-INSERT INTO teszt_view VALUES("5","Mit vásároltál már interneten?","Műszaki cikkeket","1");
-INSERT INTO teszt_view VALUES("5","Mit vásároltál már interneten?","Ruházati cikkeket","1");
-INSERT INTO teszt_view VALUES("5","Mit vásároltál már interneten?","Háztartási eszközöket","1");
-INSERT INTO teszt_view VALUES("5","Mit vásároltál már interneten?","Műszaki cikkeket","1");
-INSERT INTO teszt_view VALUES("5","Mit vásároltál már interneten?","Ruházati cikkeket","1");
-INSERT INTO teszt_view VALUES("5","Mit vásároltál már interneten?","Háztartási eszközöket","1");
-INSERT INTO teszt_view VALUES("5","Mit vásároltál már interneten?","Szoftvereket","1");
-INSERT INTO teszt_view VALUES("5","Mit vásároltál már interneten?","Előfizetést valamire","1");
-INSERT INTO teszt_view VALUES("5","Mit vásároltál már interneten?","Ruházati cikkeket","1");
-INSERT INTO teszt_view VALUES("5","Mit vásároltál már interneten?","Konyhai kiegészítőket","1");
-INSERT INTO teszt_view VALUES("5","Mit vásároltál már interneten?","Élelmiszert","1");
-INSERT INTO teszt_view VALUES("5","Mit vásároltál már interneten?","Könyveket","1");
-INSERT INTO teszt_view VALUES("5","Mit vásároltál már interneten?","Sport felszerelést","1");
-INSERT INTO teszt_view VALUES("5","Mit vásároltál már interneten?","Koncert, disco, rendezvény stb. jegyeket","1");
-INSERT INTO teszt_view VALUES("5","Mit vásároltál már interneten?","Utazást","1");
-INSERT INTO teszt_view VALUES("5","Mit vásároltál már interneten?","Konyhai kiegészítőket","1");
-INSERT INTO teszt_view VALUES("5","Mit vásároltál már interneten?","Műszaki cikkeket","1");
-INSERT INTO teszt_view VALUES("5","Mit vásároltál már interneten?","Ruházati cikkeket","1");
-INSERT INTO teszt_view VALUES("5","Mit vásároltál már interneten?","Műszaki cikkeket","1");
-INSERT INTO teszt_view VALUES("5","Mit vásároltál már interneten?","Ruházati cikkeket","1");
-INSERT INTO teszt_view VALUES("5","Mit vásároltál már interneten?","Konyhai kiegészítőket","1");
-INSERT INTO teszt_view VALUES("5","Mit vásároltál már interneten?","Vonat, repülő stb. jegyeket","1");
-INSERT INTO teszt_view VALUES("5","Mit vásároltál már interneten?","Műszaki cikkeket","1");
-INSERT INTO teszt_view VALUES("5","Mit vásároltál már interneten?","Konyhai kiegészítőket","1");
-INSERT INTO teszt_view VALUES("5","Mit vásároltál már interneten?","Háztartási eszközöket","1");
-INSERT INTO teszt_view VALUES("5","Mit vásároltál már interneten?","Italt","1");
-INSERT INTO teszt_view VALUES("5","Mit vásároltál már interneten?","Vonat, repülő stb. jegyeket","1");
-INSERT INTO teszt_view VALUES("5","Mit vásároltál már interneten?","Koncert, disco, rendezvény stb. jegyeket","1");
-INSERT INTO teszt_view VALUES("5","Mit vásároltál már interneten?","Utazást","1");
-INSERT INTO teszt_view VALUES("5","Mit vásároltál már interneten?","Ruházati cikkeket","1");
-INSERT INTO teszt_view VALUES("5","Mit vásároltál már interneten?","Konyhai kiegészítőket","1");
-INSERT INTO teszt_view VALUES("5","Mit vásároltál már interneten?","Háztartási eszközöket","1");
-INSERT INTO teszt_view VALUES("5","Mit vásároltál már interneten?","Könyveket","1");
-INSERT INTO teszt_view VALUES("5","Mit vásároltál már interneten?","Ruházati cikkeket","1");
-INSERT INTO teszt_view VALUES("5","Mit vásároltál már interneten?","Élelmiszert","1");
-INSERT INTO teszt_view VALUES("5","Mit vásároltál már interneten?","Italt","1");
-INSERT INTO teszt_view VALUES("5","Mit vásároltál már interneten?","Könyveket","1");
-INSERT INTO teszt_view VALUES("5","Mit vásároltál már interneten?","Műszaki cikkeket","1");
-INSERT INTO teszt_view VALUES("5","Mit vásároltál már interneten?","Vonat, repülő stb. jegyeket","1");
-INSERT INTO teszt_view VALUES("5","Mit vásároltál már interneten?","Előfizetést valamire","1");
-INSERT INTO teszt_view VALUES("5","Mit vásároltál már interneten?","Ruházati cikkeket","1");
-INSERT INTO teszt_view VALUES("5","Mit vásároltál már interneten?","Könyveket","1");
-INSERT INTO teszt_view VALUES("5","Mit vásároltál már interneten?","Műszaki cikkeket","1");
-INSERT INTO teszt_view VALUES("5","Mit vásároltál már interneten?","Műszaki cikkeket","1");
-INSERT INTO teszt_view VALUES("5","Mit vásároltál már interneten?","Könyveket","1");
-INSERT INTO teszt_view VALUES("5","Mit vásároltál már interneten?","Ruházati cikkeket","1");
-INSERT INTO teszt_view VALUES("5","Mit vásároltál már interneten?","Könyveket","1");
-INSERT INTO teszt_view VALUES("5","Mit vásároltál már interneten?","Sport felszerelést","1");
-INSERT INTO teszt_view VALUES("5","Mit vásároltál már interneten?","Műszaki cikkeket","1");
-INSERT INTO teszt_view VALUES("5","Mit vásároltál már interneten?","Műszaki cikkeket","1");
-INSERT INTO teszt_view VALUES("5","Mit vásároltál már interneten?","Ruházati cikkeket","1");
-INSERT INTO teszt_view VALUES("5","Mit vásároltál már interneten?","Műszaki cikkeket","1");
-INSERT INTO teszt_view VALUES("5","Mit vásároltál már interneten?","Ruházati cikkeket","1");
-INSERT INTO teszt_view VALUES("5","Mit vásároltál már interneten?","Műszaki cikkeket","1");
-INSERT INTO teszt_view VALUES("5","Mit vásároltál már interneten?","Ruházati cikkeket","1");
-INSERT INTO teszt_view VALUES("5","Mit vásároltál már interneten?","Élelmiszert","1");
-INSERT INTO teszt_view VALUES("5","Mit vásároltál már interneten?","Koncert, disco, rendezvény stb. jegyeket","1");
-INSERT INTO teszt_view VALUES("5","Mit vásároltál már interneten?","Műszaki cikkeket","1");
-INSERT INTO teszt_view VALUES("5","Mit vásároltál már interneten?","Ruházati cikkeket","1");
-INSERT INTO teszt_view VALUES("5","Mit vásároltál már interneten?","Konyhai kiegészítőket","1");
-INSERT INTO teszt_view VALUES("5","Mit vásároltál már interneten?","Háztartási eszközöket","1");
-INSERT INTO teszt_view VALUES("5","Mit vásároltál már interneten?","Élelmiszert","1");
-INSERT INTO teszt_view VALUES("5","Mit vásároltál már interneten?","Sport felszerelést","1");
-INSERT INTO teszt_view VALUES("5","Mit vásároltál már interneten?","Előfizetést valamire","1");
-INSERT INTO teszt_view VALUES("5","Mit vásároltál már interneten?","Vonat, repülő stb. jegyeket","1");
-INSERT INTO teszt_view VALUES("5","Mit vásároltál már interneten?","Műszaki cikkeket","1");
-INSERT INTO teszt_view VALUES("5","Mit vásároltál már interneten?","Könyveket","1");
-INSERT INTO teszt_view VALUES("5","Mit vásároltál már interneten?","Ruházati cikkeket","1");
-INSERT INTO teszt_view VALUES("5","Mit vásároltál már interneten?","Könyveket","1");
-INSERT INTO teszt_view VALUES("5","Mit vásároltál már interneten?","Koncert, disco, rendezvény stb. jegyeket","1");
-INSERT INTO teszt_view VALUES("5","Mit vásároltál már interneten?","Előfizetést valamire","1");
-INSERT INTO teszt_view VALUES("5","Mit vásároltál már interneten?","Könyveket","1");
-INSERT INTO teszt_view VALUES("5","Mit vásároltál már interneten?","Vonat, repülő stb. jegyeket","1");
-INSERT INTO teszt_view VALUES("5","Mit vásároltál már interneten?","Koncert, disco, rendezvény stb. jegyeket","1");
-INSERT INTO teszt_view VALUES("5","Mit vásároltál már interneten?","Műszaki cikkeket","1");
-INSERT INTO teszt_view VALUES("5","Mit vásároltál már interneten?","Ruházati cikkeket","1");
-INSERT INTO teszt_view VALUES("5","Mit vásároltál már interneten?","Háztartási eszközöket","1");
-INSERT INTO teszt_view VALUES("5","Mit vásároltál már interneten?","Műszaki cikkeket","1");
-INSERT INTO teszt_view VALUES("5","Mit vásároltál már interneten?","Ruházati cikkeket","1");
-INSERT INTO teszt_view VALUES("5","Mit vásároltál már interneten?","Műszaki cikkeket","1");
-INSERT INTO teszt_view VALUES("5","Mit vásároltál már interneten?","Ruházati cikkeket","1");
-INSERT INTO teszt_view VALUES("5","Mit vásároltál már interneten?","Konyhai kiegészítőket","1");
-INSERT INTO teszt_view VALUES("5","Mit vásároltál már interneten?","Háztartási eszközöket","1");
-INSERT INTO teszt_view VALUES("5","Mit vásároltál már interneten?","Vonat, repülő stb. jegyeket","1");
-INSERT INTO teszt_view VALUES("5","Mit vásároltál már interneten?","Műszaki cikkeket","1");
-INSERT INTO teszt_view VALUES("5","Mit vásároltál már interneten?","Könyveket","1");
-INSERT INTO teszt_view VALUES("5","Mit vásároltál már interneten?","Szoftvereket","1");
-INSERT INTO teszt_view VALUES("5","Mit vásároltál már interneten?","Utazást","1");
-INSERT INTO teszt_view VALUES("5","Mit vásároltál már interneten?","Műszaki cikkeket","1");
-INSERT INTO teszt_view VALUES("5","Mit vásároltál már interneten?","Ruházati cikkeket","1");
-INSERT INTO teszt_view VALUES("5","Mit vásároltál már interneten?","Könyveket","1");
-INSERT INTO teszt_view VALUES("5","Mit vásároltál már interneten?","Sport felszerelést","1");
-INSERT INTO teszt_view VALUES("5","Mit vásároltál már interneten?","Vonat, repülő stb. jegyeket","1");
-INSERT INTO teszt_view VALUES("5","Mit vásároltál már interneten?","Koncert, disco, rendezvény stb. jegyeket","1");
-INSERT INTO teszt_view VALUES("5","Mit vásároltál már interneten?","Előfizetést valamire","1");
-INSERT INTO teszt_view VALUES("5","Mit vásároltál már interneten?","Ruházati cikkeket","1");
-INSERT INTO teszt_view VALUES("5","Mit vásároltál már interneten?","Italt","1");
-INSERT INTO teszt_view VALUES("5","Mit vásároltál már interneten?","Koncert, disco, rendezvény stb. jegyeket","1");
-INSERT INTO teszt_view VALUES("5","Mit vásároltál már interneten?","Háztartási eszközöket","1");
-INSERT INTO teszt_view VALUES("5","Mit vásároltál már interneten?","Biztonságtechnikai eszközöket","1");
-INSERT INTO teszt_view VALUES("5","Mit vásároltál már interneten?","Előfizetést valamire","1");
-INSERT INTO teszt_view VALUES("5","Mit vásároltál már interneten?","Könyveket","1");
-INSERT INTO teszt_view VALUES("5","Mit vásároltál már interneten?","Utazást","1");
-INSERT INTO teszt_view VALUES("5","Mit vásároltál már interneten?","Műszaki cikkeket","1");
-INSERT INTO teszt_view VALUES("5","Mit vásároltál már interneten?","Könyveket","1");
-INSERT INTO teszt_view VALUES("5","Mit vásároltál már interneten?","Szoftvereket","1");
-INSERT INTO teszt_view VALUES("5","Mit vásároltál már interneten?","Koncert, disco, rendezvény stb. jegyeket","1");
-INSERT INTO teszt_view VALUES("5","Mit vásároltál már interneten?","Utazást","1");
-INSERT INTO teszt_view VALUES("5","Mit vásároltál már interneten?","Könyveket","1");
-INSERT INTO teszt_view VALUES("5","Mit vásároltál már interneten?","Könyveket","1");
-INSERT INTO teszt_view VALUES("5","Mit vásároltál már interneten?","Sport felszerelést","1");
-INSERT INTO teszt_view VALUES("5","Mit vásároltál már interneten?","Vonat, repülő stb. jegyeket","1");
-INSERT INTO teszt_view VALUES("5","Mit vásároltál már interneten?","Ruházati cikkeket","1");
-INSERT INTO teszt_view VALUES("5","Mit vásároltál már interneten?","Műszaki cikkeket","1");
-INSERT INTO teszt_view VALUES("5","Mit vásároltál már interneten?","Ruházati cikkeket","1");
-INSERT INTO teszt_view VALUES("5","Mit vásároltál már interneten?","Ruházati cikkeket","1");
-INSERT INTO teszt_view VALUES("5","Mit vásároltál már interneten?","Könyveket","1");
-INSERT INTO teszt_view VALUES("5","Mit vásároltál már interneten?","Ruházati cikkeket","1");
-INSERT INTO teszt_view VALUES("5","Mit vásároltál már interneten?","Koncert, disco, rendezvény stb. jegyeket","1");
-INSERT INTO teszt_view VALUES("5","Mit vásároltál már interneten?","Műszaki cikkeket","1");
-INSERT INTO teszt_view VALUES("5","Mit vásároltál már interneten?","Könyveket","1");
-INSERT INTO teszt_view VALUES("5","Mit vásároltál már interneten?","Vonat, repülő stb. jegyeket","1");
-INSERT INTO teszt_view VALUES("5","Mit vásároltál már interneten?","Koncert, disco, rendezvény stb. jegyeket","1");
-INSERT INTO teszt_view VALUES("5","Mit vásároltál már interneten?","Utazást","1");
-INSERT INTO teszt_view VALUES("5","Mit vásároltál már interneten?","Élelmiszert","1");
-INSERT INTO teszt_view VALUES("5","Mit vásároltál már interneten?","Sport felszerelést","1");
-INSERT INTO teszt_view VALUES("5","Mit vásároltál már interneten?","Utazást","1");
-INSERT INTO teszt_view VALUES("6","Hogy tájékozódsz egy célterméked tulajdonságairól általában?","Fórumokról, többek véleményét megnézem","1");
-INSERT INTO teszt_view VALUES("6","Hogy tájékozódsz egy célterméked tulajdonságairól általában?","Interneten rákeresek a termékleírásokra és megnézem a hozzászólásokat","1");
-INSERT INTO teszt_view VALUES("6","Hogy tájékozódsz egy célterméked tulajdonságairól általában?","Ismerőstől, akinek van már ilyen","1");
-INSERT INTO teszt_view VALUES("6","Hogy tájékozódsz egy célterméked tulajdonságairól általában?","Fórumokról, többek véleményét megnézem","1");
-INSERT INTO teszt_view VALUES("6","Hogy tájékozódsz egy célterméked tulajdonságairól általában?","Interneten rákeresek a termékleírásokra és megnézem a hozzászólásokat","1");
-INSERT INTO teszt_view VALUES("6","Hogy tájékozódsz egy célterméked tulajdonságairól általában?","Fórumokról, többek véleményét megnézem","1");
-INSERT INTO teszt_view VALUES("6","Hogy tájékozódsz egy célterméked tulajdonságairól általában?","Interneten rákeresek a termékleírásokra és megnézem a hozzászólásokat","1");
-INSERT INTO teszt_view VALUES("6","Hogy tájékozódsz egy célterméked tulajdonságairól általában?","Fórumokról, többek véleményét megnézem","1");
-INSERT INTO teszt_view VALUES("6","Hogy tájékozódsz egy célterméked tulajdonságairól általában?","Interneten rákeresek a termékleírásokra és megnézem a hozzászólásokat","1");
-INSERT INTO teszt_view VALUES("6","Hogy tájékozódsz egy célterméked tulajdonságairól általában?","Fórumokról, többek véleményét megnézem","1");
-INSERT INTO teszt_view VALUES("6","Hogy tájékozódsz egy célterméked tulajdonságairól általában?","Ismerőstől, akinek van már ilyen","1");
-INSERT INTO teszt_view VALUES("6","Hogy tájékozódsz egy célterméked tulajdonságairól általában?","Fórumokról, többek véleményét megnézem","1");
-INSERT INTO teszt_view VALUES("6","Hogy tájékozódsz egy célterméked tulajdonságairól általában?","Interneten rákeresek a termékleírásokra és megnézem a hozzászólásokat","1");
-INSERT INTO teszt_view VALUES("6","Hogy tájékozódsz egy célterméked tulajdonságairól általában?","Ismerőstől, akinek van már ilyen","1");
-INSERT INTO teszt_view VALUES("6","Hogy tájékozódsz egy célterméked tulajdonságairól általában?","Interneten rákeresek a termékleírásokra és megnézem a hozzászólásokat","1");
-INSERT INTO teszt_view VALUES("6","Hogy tájékozódsz egy célterméked tulajdonságairól általában?","Ismerőstől, akinek van már ilyen","1");
-INSERT INTO teszt_view VALUES("6","Hogy tájékozódsz egy célterméked tulajdonságairól általában?","Fórumokról, többek véleményét megnézem","1");
-INSERT INTO teszt_view VALUES("6","Hogy tájékozódsz egy célterméked tulajdonságairól általában?","Interneten rákeresek a termékleírásokra és megnézem a hozzászólásokat","1");
-INSERT INTO teszt_view VALUES("6","Hogy tájékozódsz egy célterméked tulajdonságairól általában?","Interneten rákeresek a termékleírásokra és megnézem a hozzászólásokat","1");
-INSERT INTO teszt_view VALUES("6","Hogy tájékozódsz egy célterméked tulajdonságairól általában?","Ismerőstől, akinek van már ilyen","1");
-INSERT INTO teszt_view VALUES("6","Hogy tájékozódsz egy célterméked tulajdonságairól általában?","Fórumokról, többek véleményét megnézem","1");
-INSERT INTO teszt_view VALUES("6","Hogy tájékozódsz egy célterméked tulajdonságairól általában?","Ismerőstől, akinek van már ilyen","1");
-INSERT INTO teszt_view VALUES("6","Hogy tájékozódsz egy célterméked tulajdonságairól általában?","Interneten rákeresek a termékleírásokra és megnézem a hozzászólásokat","1");
-INSERT INTO teszt_view VALUES("6","Hogy tájékozódsz egy célterméked tulajdonságairól általában?","Ismerőstől, akinek van már ilyen","1");
-INSERT INTO teszt_view VALUES("6","Hogy tájékozódsz egy célterméked tulajdonságairól általában?","Ismerőstől, akinek van már ilyen","1");
-INSERT INTO teszt_view VALUES("6","Hogy tájékozódsz egy célterméked tulajdonságairól általában?","Ismerőstől, akinek van már ilyen","1");
-INSERT INTO teszt_view VALUES("6","Hogy tájékozódsz egy célterméked tulajdonságairól általában?","Fórumokról, többek véleményét megnézem","1");
-INSERT INTO teszt_view VALUES("6","Hogy tájékozódsz egy célterméked tulajdonságairól általában?","Interneten rákeresek a termékleírásokra és megnézem a hozzászólásokat","1");
-INSERT INTO teszt_view VALUES("6","Hogy tájékozódsz egy célterméked tulajdonságairól általában?","Interneten rákeresek a termékleírásokra és megnézem a hozzászólásokat","1");
-INSERT INTO teszt_view VALUES("6","Hogy tájékozódsz egy célterméked tulajdonságairól általában?","Fórumokról, többek véleményét megnézem","1");
-INSERT INTO teszt_view VALUES("6","Hogy tájékozódsz egy célterméked tulajdonságairól általában?","Interneten rákeresek a termékleírásokra és megnézem a hozzászólásokat","1");
-INSERT INTO teszt_view VALUES("6","Hogy tájékozódsz egy célterméked tulajdonságairól általában?","Ismerőstől, akinek van már ilyen","1");
-INSERT INTO teszt_view VALUES("6","Hogy tájékozódsz egy célterméked tulajdonságairól általában?","Fórumokról, többek véleményét megnézem","1");
-INSERT INTO teszt_view VALUES("6","Hogy tájékozódsz egy célterméked tulajdonságairól általában?","Interneten rákeresek a termékleírásokra és megnézem a hozzászólásokat","1");
-INSERT INTO teszt_view VALUES("6","Hogy tájékozódsz egy célterméked tulajdonságairól általában?","Ismerőstől, akinek van már ilyen","1");
-INSERT INTO teszt_view VALUES("6","Hogy tájékozódsz egy célterméked tulajdonságairól általában?","Üzletek eladóitól, ahol árulják","1");
-INSERT INTO teszt_view VALUES("6","Hogy tájékozódsz egy célterméked tulajdonságairól általában?","Interneten rákeresek a termékleírásokra és megnézem a hozzászólásokat","1");
-INSERT INTO teszt_view VALUES("6","Hogy tájékozódsz egy célterméked tulajdonságairól általában?","Ismerőstől, akinek van már ilyen","1");
-INSERT INTO teszt_view VALUES("6","Hogy tájékozódsz egy célterméked tulajdonságairól általában?","Ismerőstől, akinek van már ilyen","1");
-INSERT INTO teszt_view VALUES("6","Hogy tájékozódsz egy célterméked tulajdonságairól általában?","Üzletek eladóitól, ahol árulják","1");
-INSERT INTO teszt_view VALUES("6","Hogy tájékozódsz egy célterméked tulajdonságairól általában?","Fórumokról, többek véleményét megnézem","1");
-INSERT INTO teszt_view VALUES("6","Hogy tájékozódsz egy célterméked tulajdonságairól általában?","Interneten rákeresek a termékleírásokra és megnézem a hozzászólásokat","1");
-INSERT INTO teszt_view VALUES("6","Hogy tájékozódsz egy célterméked tulajdonságairól általában?","Ismerőstől, akinek van már ilyen","1");
-INSERT INTO teszt_view VALUES("6","Hogy tájékozódsz egy célterméked tulajdonságairól általában?","Üzletek eladóitól, ahol árulják","1");
-INSERT INTO teszt_view VALUES("6","Hogy tájékozódsz egy célterméked tulajdonságairól általában?","Fórumokról, többek véleményét megnézem","1");
-INSERT INTO teszt_view VALUES("6","Hogy tájékozódsz egy célterméked tulajdonságairól általában?","Interneten rákeresek a termékleírásokra és megnézem a hozzászólásokat","1");
-INSERT INTO teszt_view VALUES("6","Hogy tájékozódsz egy célterméked tulajdonságairól általában?","Ismerőstől, akinek van már ilyen","1");
-INSERT INTO teszt_view VALUES("6","Hogy tájékozódsz egy célterméked tulajdonságairól általában?","Üzletek eladóitól, ahol árulják","1");
-INSERT INTO teszt_view VALUES("6","Hogy tájékozódsz egy célterméked tulajdonságairól általában?","Interneten rákeresek a termékleírásokra és megnézem a hozzászólásokat","1");
-INSERT INTO teszt_view VALUES("6","Hogy tájékozódsz egy célterméked tulajdonságairól általában?","Üzletek eladóitól, ahol árulják","1");
-INSERT INTO teszt_view VALUES("6","Hogy tájékozódsz egy célterméked tulajdonságairól általában?","Fórumokról, többek véleményét megnézem","1");
-INSERT INTO teszt_view VALUES("6","Hogy tájékozódsz egy célterméked tulajdonságairól általában?","Fórumokról, többek véleményét megnézem","1");
-INSERT INTO teszt_view VALUES("6","Hogy tájékozódsz egy célterméked tulajdonságairól általában?","Interneten rákeresek a termékleírásokra és megnézem a hozzászólásokat","1");
-INSERT INTO teszt_view VALUES("6","Hogy tájékozódsz egy célterméked tulajdonságairól általában?","Ismerőstől, akinek van már ilyen","1");
-INSERT INTO teszt_view VALUES("6","Hogy tájékozódsz egy célterméked tulajdonságairól általában?","Fórumokról, többek véleményét megnézem","1");
-INSERT INTO teszt_view VALUES("6","Hogy tájékozódsz egy célterméked tulajdonságairól általában?","Interneten rákeresek a termékleírásokra és megnézem a hozzászólásokat","1");
-INSERT INTO teszt_view VALUES("6","Hogy tájékozódsz egy célterméked tulajdonságairól általában?","Fórumokról, többek véleményét megnézem","1");
-INSERT INTO teszt_view VALUES("6","Hogy tájékozódsz egy célterméked tulajdonságairól általában?","Ismerőstől, akinek van már ilyen","1");
-INSERT INTO teszt_view VALUES("6","Hogy tájékozódsz egy célterméked tulajdonságairól általában?","Interneten rákeresek a termékleírásokra és megnézem a hozzászólásokat","1");
-INSERT INTO teszt_view VALUES("6","Hogy tájékozódsz egy célterméked tulajdonságairól általában?","Ismerőstől, akinek van már ilyen","1");
-INSERT INTO teszt_view VALUES("6","Hogy tájékozódsz egy célterméked tulajdonságairól általában?","Üzletek eladóitól, ahol árulják","1");
-INSERT INTO teszt_view VALUES("6","Hogy tájékozódsz egy célterméked tulajdonságairól általában?","Fórumokról, többek véleményét megnézem","1");
-INSERT INTO teszt_view VALUES("6","Hogy tájékozódsz egy célterméked tulajdonságairól általában?","Interneten rákeresek a termékleírásokra és megnézem a hozzászólásokat","1");
-INSERT INTO teszt_view VALUES("6","Hogy tájékozódsz egy célterméked tulajdonságairól általában?","Ismerőstől, akinek van már ilyen","1");
-INSERT INTO teszt_view VALUES("6","Hogy tájékozódsz egy célterméked tulajdonságairól általában?","Üzletek eladóitól, ahol árulják","1");
-INSERT INTO teszt_view VALUES("6","Hogy tájékozódsz egy célterméked tulajdonságairól általában?","Fórumokról, többek véleményét megnézem","1");
-INSERT INTO teszt_view VALUES("6","Hogy tájékozódsz egy célterméked tulajdonságairól általában?","Interneten rákeresek a termékleírásokra és megnézem a hozzászólásokat","1");
-INSERT INTO teszt_view VALUES("6","Hogy tájékozódsz egy célterméked tulajdonságairól általában?","Interneten rákeresek a termékleírásokra és megnézem a hozzászólásokat","1");
-INSERT INTO teszt_view VALUES("6","Hogy tájékozódsz egy célterméked tulajdonságairól általában?","Ismerőstől, akinek van már ilyen","1");
-INSERT INTO teszt_view VALUES("6","Hogy tájékozódsz egy célterméked tulajdonságairól általában?","Fórumokról, többek véleményét megnézem","1");
-INSERT INTO teszt_view VALUES("6","Hogy tájékozódsz egy célterméked tulajdonságairól általában?","Interneten rákeresek a termékleírásokra és megnézem a hozzászólásokat","1");
-INSERT INTO teszt_view VALUES("6","Hogy tájékozódsz egy célterméked tulajdonságairól általában?","Ismerőstől, akinek van már ilyen","1");
-INSERT INTO teszt_view VALUES("6","Hogy tájékozódsz egy célterméked tulajdonságairól általában?","Üzletek eladóitól, ahol árulják","1");
-INSERT INTO teszt_view VALUES("6","Hogy tájékozódsz egy célterméked tulajdonságairól általában?","Fórumokról, többek véleményét megnézem","1");
-INSERT INTO teszt_view VALUES("6","Hogy tájékozódsz egy célterméked tulajdonságairól általában?","Interneten rákeresek a termékleírásokra és megnézem a hozzászólásokat","1");
-INSERT INTO teszt_view VALUES("6","Hogy tájékozódsz egy célterméked tulajdonságairól általában?","Interneten rákeresek a termékleírásokra és megnézem a hozzászólásokat","1");
-INSERT INTO teszt_view VALUES("6","Hogy tájékozódsz egy célterméked tulajdonságairól általában?","Interneten rákeresek a termékleírásokra és megnézem a hozzászólásokat","1");
-INSERT INTO teszt_view VALUES("6","Hogy tájékozódsz egy célterméked tulajdonságairól általában?","Fórumokról, többek véleményét megnézem","1");
-INSERT INTO teszt_view VALUES("6","Hogy tájékozódsz egy célterméked tulajdonságairól általában?","Interneten rákeresek a termékleírásokra és megnézem a hozzászólásokat","1");
-INSERT INTO teszt_view VALUES("6","Hogy tájékozódsz egy célterméked tulajdonságairól általában?","Ismerőstől, akinek van már ilyen","1");
-INSERT INTO teszt_view VALUES("6","Hogy tájékozódsz egy célterméked tulajdonságairól általában?","Üzletek eladóitól, ahol árulják","1");
-INSERT INTO teszt_view VALUES("6","Hogy tájékozódsz egy célterméked tulajdonságairól általában?","Fórumokról, többek véleményét megnézem","1");
-INSERT INTO teszt_view VALUES("6","Hogy tájékozódsz egy célterméked tulajdonságairól általában?","Interneten rákeresek a termékleírásokra és megnézem a hozzászólásokat","1");
-INSERT INTO teszt_view VALUES("6","Hogy tájékozódsz egy célterméked tulajdonságairól általában?","Fórumokról, többek véleményét megnézem","1");
-INSERT INTO teszt_view VALUES("6","Hogy tájékozódsz egy célterméked tulajdonságairól általában?","Interneten rákeresek a termékleírásokra és megnézem a hozzászólásokat","1");
-INSERT INTO teszt_view VALUES("6","Hogy tájékozódsz egy célterméked tulajdonságairól általában?","Ismerőstől, akinek van már ilyen","1");
-INSERT INTO teszt_view VALUES("6","Hogy tájékozódsz egy célterméked tulajdonságairól általában?","Fórumokról, többek véleményét megnézem","1");
-INSERT INTO teszt_view VALUES("6","Hogy tájékozódsz egy célterméked tulajdonságairól általában?","Interneten rákeresek a termékleírásokra és megnézem a hozzászólásokat","1");
-INSERT INTO teszt_view VALUES("6","Hogy tájékozódsz egy célterméked tulajdonságairól általában?","Ismerőstől, akinek van már ilyen","1");
-INSERT INTO teszt_view VALUES("6","Hogy tájékozódsz egy célterméked tulajdonságairól általában?","Fórumokról, többek véleményét megnézem","1");
-INSERT INTO teszt_view VALUES("6","Hogy tájékozódsz egy célterméked tulajdonságairól általában?","Interneten rákeresek a termékleírásokra és megnézem a hozzászólásokat","1");
-INSERT INTO teszt_view VALUES("6","Hogy tájékozódsz egy célterméked tulajdonságairól általában?","Üzletek eladóitól, ahol árulják","1");
-INSERT INTO teszt_view VALUES("6","Hogy tájékozódsz egy célterméked tulajdonságairól általában?","Üzletek eladóitól, ahol árulják","1");
-INSERT INTO teszt_view VALUES("6","Hogy tájékozódsz egy célterméked tulajdonságairól általában?","Üzletek eladóitól, ahol árulják","1");
-INSERT INTO teszt_view VALUES("6","Hogy tájékozódsz egy célterméked tulajdonságairól általában?","Ismerőstől, akinek van már ilyen","1");
-INSERT INTO teszt_view VALUES("6","Hogy tájékozódsz egy célterméked tulajdonságairól általában?","Üzletek eladóitól, ahol árulják","1");
-INSERT INTO teszt_view VALUES("6","Hogy tájékozódsz egy célterméked tulajdonságairól általában?","Fórumokról, többek véleményét megnézem","1");
-INSERT INTO teszt_view VALUES("6","Hogy tájékozódsz egy célterméked tulajdonságairól általában?","Interneten rákeresek a termékleírásokra és megnézem a hozzászólásokat","1");
-INSERT INTO teszt_view VALUES("6","Hogy tájékozódsz egy célterméked tulajdonságairól általában?","Ismerőstől, akinek van már ilyen","1");
-INSERT INTO teszt_view VALUES("6","Hogy tájékozódsz egy célterméked tulajdonságairól általában?","Fórumokról, többek véleményét megnézem","1");
-INSERT INTO teszt_view VALUES("6","Hogy tájékozódsz egy célterméked tulajdonságairól általában?","Interneten rákeresek a termékleírásokra és megnézem a hozzászólásokat","1");
-INSERT INTO teszt_view VALUES("6","Hogy tájékozódsz egy célterméked tulajdonságairól általában?","Ismerőstől, akinek van már ilyen","1");
-INSERT INTO teszt_view VALUES("6","Hogy tájékozódsz egy célterméked tulajdonságairól általában?","Interneten rákeresek a termékleírásokra és megnézem a hozzászólásokat","1");
-INSERT INTO teszt_view VALUES("6","Hogy tájékozódsz egy célterméked tulajdonságairól általában?","Ismerőstől, akinek van már ilyen","1");
-INSERT INTO teszt_view VALUES("6","Hogy tájékozódsz egy célterméked tulajdonságairól általában?","Fórumokról, többek véleményét megnézem","1");
-INSERT INTO teszt_view VALUES("6","Hogy tájékozódsz egy célterméked tulajdonságairól általában?","Interneten rákeresek a termékleírásokra és megnézem a hozzászólásokat","1");
-INSERT INTO teszt_view VALUES("6","Hogy tájékozódsz egy célterméked tulajdonságairól általában?","Ismerőstől, akinek van már ilyen","1");
-INSERT INTO teszt_view VALUES("6","Hogy tájékozódsz egy célterméked tulajdonságairól általában?","Fórumokról, többek véleményét megnézem","1");
-INSERT INTO teszt_view VALUES("6","Hogy tájékozódsz egy célterméked tulajdonságairól általában?","Interneten rákeresek a termékleírásokra és megnézem a hozzászólásokat","1");
-INSERT INTO teszt_view VALUES("6","Hogy tájékozódsz egy célterméked tulajdonságairól általában?","Ismerőstől, akinek van már ilyen","1");
-INSERT INTO teszt_view VALUES("6","Hogy tájékozódsz egy célterméked tulajdonságairól általában?","Interneten rákeresek a termékleírásokra és megnézem a hozzászólásokat","1");
-INSERT INTO teszt_view VALUES("6","Hogy tájékozódsz egy célterméked tulajdonságairól általában?","Ismerőstől, akinek van már ilyen","1");
-INSERT INTO teszt_view VALUES("6","Hogy tájékozódsz egy célterméked tulajdonságairól általában?","Interneten rákeresek a termékleírásokra és megnézem a hozzászólásokat","1");
-INSERT INTO teszt_view VALUES("6","Hogy tájékozódsz egy célterméked tulajdonságairól általában?","Fórumokról, többek véleményét megnézem","1");
-INSERT INTO teszt_view VALUES("6","Hogy tájékozódsz egy célterméked tulajdonságairól általában?","Interneten rákeresek a termékleírásokra és megnézem a hozzászólásokat","1");
-INSERT INTO teszt_view VALUES("6","Hogy tájékozódsz egy célterméked tulajdonságairól általában?","Ismerőstől, akinek van már ilyen","1");
-INSERT INTO teszt_view VALUES("6","Hogy tájékozódsz egy célterméked tulajdonságairól általában?","Fórumokról, többek véleményét megnézem","1");
-INSERT INTO teszt_view VALUES("6","Hogy tájékozódsz egy célterméked tulajdonságairól általában?","Ismerőstől, akinek van már ilyen","1");
-INSERT INTO teszt_view VALUES("6","Hogy tájékozódsz egy célterméked tulajdonságairól általában?","Interneten rákeresek a termékleírásokra és megnézem a hozzászólásokat","1");
-INSERT INTO teszt_view VALUES("6","Hogy tájékozódsz egy célterméked tulajdonságairól általában?","Interneten rákeresek a termékleírásokra és megnézem a hozzászólásokat","1");
-INSERT INTO teszt_view VALUES("6","Hogy tájékozódsz egy célterméked tulajdonságairól általában?","Interneten rákeresek a termékleírásokra és megnézem a hozzászólásokat","1");
-INSERT INTO teszt_view VALUES("6","Hogy tájékozódsz egy célterméked tulajdonságairól általában?","Interneten rákeresek a termékleírásokra és megnézem a hozzászólásokat","1");
-INSERT INTO teszt_view VALUES("6","Hogy tájékozódsz egy célterméked tulajdonságairól általában?","Interneten rákeresek a termékleírásokra és megnézem a hozzászólásokat","1");
-INSERT INTO teszt_view VALUES("6","Hogy tájékozódsz egy célterméked tulajdonságairól általában?","Interneten rákeresek a termékleírásokra és megnézem a hozzászólásokat","1");
-INSERT INTO teszt_view VALUES("6","Hogy tájékozódsz egy célterméked tulajdonságairól általában?","Interneten rákeresek a termékleírásokra és megnézem a hozzászólásokat","1");
-INSERT INTO teszt_view VALUES("6","Hogy tájékozódsz egy célterméked tulajdonságairól általában?","Ismerőstől, akinek van már ilyen","1");
-INSERT INTO teszt_view VALUES("6","Hogy tájékozódsz egy célterméked tulajdonságairól általában?","Üzletek eladóitól, ahol árulják","1");
-INSERT INTO teszt_view VALUES("6","Hogy tájékozódsz egy célterméked tulajdonságairól általában?","Fórumokról, többek véleményét megnézem","1");
-INSERT INTO teszt_view VALUES("6","Hogy tájékozódsz egy célterméked tulajdonságairól általában?","Interneten rákeresek a termékleírásokra és megnézem a hozzászólásokat","1");
-INSERT INTO teszt_view VALUES("6","Hogy tájékozódsz egy célterméked tulajdonságairól általában?","Interneten rákeresek a termékleírásokra és megnézem a hozzászólásokat","1");
-INSERT INTO teszt_view VALUES("6","Hogy tájékozódsz egy célterméked tulajdonságairól általában?","Ismerőstől, akinek van már ilyen","1");
-INSERT INTO teszt_view VALUES("6","Hogy tájékozódsz egy célterméked tulajdonságairól általában?","Interneten rákeresek a termékleírásokra és megnézem a hozzászólásokat","1");
-INSERT INTO teszt_view VALUES("6","Hogy tájékozódsz egy célterméked tulajdonságairól általában?","Interneten rákeresek a termékleírásokra és megnézem a hozzászólásokat","1");
-INSERT INTO teszt_view VALUES("6","Hogy tájékozódsz egy célterméked tulajdonságairól általában?","Ismerőstől, akinek van már ilyen","1");
-INSERT INTO teszt_view VALUES("6","Hogy tájékozódsz egy célterméked tulajdonságairól általában?","Interneten rákeresek a termékleírásokra és megnézem a hozzászólásokat","1");
-INSERT INTO teszt_view VALUES("6","Hogy tájékozódsz egy célterméked tulajdonságairól általában?","Ismerőstől, akinek van már ilyen","1");
-INSERT INTO teszt_view VALUES("6","Hogy tájékozódsz egy célterméked tulajdonságairól általában?","Interneten rákeresek a termékleírásokra és megnézem a hozzászólásokat","1");
-INSERT INTO teszt_view VALUES("6","Hogy tájékozódsz egy célterméked tulajdonságairól általában?","Fórumokról, többek véleményét megnézem","1");
-INSERT INTO teszt_view VALUES("6","Hogy tájékozódsz egy célterméked tulajdonságairól általában?","Interneten rákeresek a termékleírásokra és megnézem a hozzászólásokat","1");
-INSERT INTO teszt_view VALUES("6","Hogy tájékozódsz egy célterméked tulajdonságairól általában?","Ismerőstől, akinek van már ilyen","1");
-INSERT INTO teszt_view VALUES("6","Hogy tájékozódsz egy célterméked tulajdonságairól általában?","Interneten rákeresek a termékleírásokra és megnézem a hozzászólásokat","1");
-INSERT INTO teszt_view VALUES("6","Hogy tájékozódsz egy célterméked tulajdonságairól általában?","Interneten rákeresek a termékleírásokra és megnézem a hozzászólásokat","1");
-INSERT INTO teszt_view VALUES("6","Hogy tájékozódsz egy célterméked tulajdonságairól általában?","Fórumokról, többek véleményét megnézem","1");
-INSERT INTO teszt_view VALUES("6","Hogy tájékozódsz egy célterméked tulajdonságairól általában?","Interneten rákeresek a termékleírásokra és megnézem a hozzászólásokat","1");
-INSERT INTO teszt_view VALUES("6","Hogy tájékozódsz egy célterméked tulajdonságairól általában?","Interneten rákeresek a termékleírásokra és megnézem a hozzászólásokat","1");
-INSERT INTO teszt_view VALUES("6","Hogy tájékozódsz egy célterméked tulajdonságairól általában?","Ismerőstől, akinek van már ilyen","1");
-INSERT INTO teszt_view VALUES("6","Hogy tájékozódsz egy célterméked tulajdonságairól általában?","Üzletek eladóitól, ahol árulják","1");
-INSERT INTO teszt_view VALUES("6","Hogy tájékozódsz egy célterméked tulajdonságairól általában?","Fórumokról, többek véleményét megnézem","1");
-INSERT INTO teszt_view VALUES("6","Hogy tájékozódsz egy célterméked tulajdonságairól általában?","Interneten rákeresek a termékleírásokra és megnézem a hozzászólásokat","1");
-INSERT INTO teszt_view VALUES("6","Hogy tájékozódsz egy célterméked tulajdonságairól általában?","Ismerőstől, akinek van már ilyen","1");
-INSERT INTO teszt_view VALUES("6","Hogy tájékozódsz egy célterméked tulajdonságairól általában?","Interneten rákeresek a termékleírásokra és megnézem a hozzászólásokat","1");
-INSERT INTO teszt_view VALUES("6","Hogy tájékozódsz egy célterméked tulajdonságairól általában?","Interneten rákeresek a termékleírásokra és megnézem a hozzászólásokat","1");
-INSERT INTO teszt_view VALUES("6","Hogy tájékozódsz egy célterméked tulajdonságairól általában?","Ismerőstől, akinek van már ilyen","1");
-INSERT INTO teszt_view VALUES("6","Hogy tájékozódsz egy célterméked tulajdonságairól általában?","Interneten rákeresek a termékleírásokra és megnézem a hozzászólásokat","1");
-INSERT INTO teszt_view VALUES("6","Hogy tájékozódsz egy célterméked tulajdonságairól általában?","Ismerőstől, akinek van már ilyen","1");
-INSERT INTO teszt_view VALUES("6","Hogy tájékozódsz egy célterméked tulajdonságairól általában?","Üzletek eladóitól, ahol árulják","1");
-INSERT INTO teszt_view VALUES("6","Hogy tájékozódsz egy célterméked tulajdonságairól általában?","Fórumokról, többek véleményét megnézem","1");
-INSERT INTO teszt_view VALUES("6","Hogy tájékozódsz egy célterméked tulajdonságairól általában?","Interneten rákeresek a termékleírásokra és megnézem a hozzászólásokat","1");
-INSERT INTO teszt_view VALUES("6","Hogy tájékozódsz egy célterméked tulajdonságairól általában?","Interneten rákeresek a termékleírásokra és megnézem a hozzászólásokat","1");
-INSERT INTO teszt_view VALUES("6","Hogy tájékozódsz egy célterméked tulajdonságairól általában?","Ismerőstől, akinek van már ilyen","1");
-INSERT INTO teszt_view VALUES("6","Hogy tájékozódsz egy célterméked tulajdonságairól általában?","Fórumokról, többek véleményét megnézem","1");
-INSERT INTO teszt_view VALUES("6","Hogy tájékozódsz egy célterméked tulajdonságairól általában?","Interneten rákeresek a termékleírásokra és megnézem a hozzászólásokat","1");
-INSERT INTO teszt_view VALUES("6","Hogy tájékozódsz egy célterméked tulajdonságairól általában?","Interneten rákeresek a termékleírásokra és megnézem a hozzászólásokat","1");
-INSERT INTO teszt_view VALUES("6","Hogy tájékozódsz egy célterméked tulajdonságairól általában?","Ismerőstől, akinek van már ilyen","1");
-INSERT INTO teszt_view VALUES("6","Hogy tájékozódsz egy célterméked tulajdonságairól általában?","Interneten rákeresek a termékleírásokra és megnézem a hozzászólásokat","1");
-INSERT INTO teszt_view VALUES("6","Hogy tájékozódsz egy célterméked tulajdonságairól általában?","Ismerőstől, akinek van már ilyen","1");
-INSERT INTO teszt_view VALUES("6","Hogy tájékozódsz egy célterméked tulajdonságairól általában?","Interneten rákeresek a termékleírásokra és megnézem a hozzászólásokat","1");
-INSERT INTO teszt_view VALUES("6","Hogy tájékozódsz egy célterméked tulajdonságairól általában?","Ismerőstől, akinek van már ilyen","1");
-INSERT INTO teszt_view VALUES("6","Hogy tájékozódsz egy célterméked tulajdonságairól általában?","Üzletek eladóitól, ahol árulják","1");
-INSERT INTO teszt_view VALUES("6","Hogy tájékozódsz egy célterméked tulajdonságairól általában?","Interneten rákeresek a termékleírásokra és megnézem a hozzászólásokat","1");
-INSERT INTO teszt_view VALUES("6","Hogy tájékozódsz egy célterméked tulajdonságairól általában?","Ismerőstől, akinek van már ilyen","1");
-INSERT INTO teszt_view VALUES("6","Hogy tájékozódsz egy célterméked tulajdonságairól általában?","Interneten rákeresek a termékleírásokra és megnézem a hozzászólásokat","1");
-INSERT INTO teszt_view VALUES("6","Hogy tájékozódsz egy célterméked tulajdonságairól általában?","Ismerőstől, akinek van már ilyen","1");
-INSERT INTO teszt_view VALUES("6","Hogy tájékozódsz egy célterméked tulajdonságairól általában?","Fórumokról, többek véleményét megnézem","1");
-INSERT INTO teszt_view VALUES("6","Hogy tájékozódsz egy célterméked tulajdonságairól általában?","Ismerőstől, akinek van már ilyen","1");
-INSERT INTO teszt_view VALUES("6","Hogy tájékozódsz egy célterméked tulajdonságairól általában?","Fórumokról, többek véleményét megnézem","1");
-INSERT INTO teszt_view VALUES("6","Hogy tájékozódsz egy célterméked tulajdonságairól általában?","Interneten rákeresek a termékleírásokra és megnézem a hozzászólásokat","1");
-INSERT INTO teszt_view VALUES("6","Hogy tájékozódsz egy célterméked tulajdonságairól általában?","Interneten rákeresek a termékleírásokra és megnézem a hozzászólásokat","1");
-INSERT INTO teszt_view VALUES("6","Hogy tájékozódsz egy célterméked tulajdonságairól általában?","Ismerőstől, akinek van már ilyen","1");
-INSERT INTO teszt_view VALUES("6","Hogy tájékozódsz egy célterméked tulajdonságairól általában?","Interneten rákeresek a termékleírásokra és megnézem a hozzászólásokat","1");
-INSERT INTO teszt_view VALUES("6","Hogy tájékozódsz egy célterméked tulajdonságairól általában?","Ismerőstől, akinek van már ilyen","1");
-INSERT INTO teszt_view VALUES("6","Hogy tájékozódsz egy célterméked tulajdonságairól általában?","Interneten rákeresek a termékleírásokra és megnézem a hozzászólásokat","1");
-INSERT INTO teszt_view VALUES("6","Hogy tájékozódsz egy célterméked tulajdonságairól általában?","Üzletek eladóitól, ahol árulják","1");
-INSERT INTO teszt_view VALUES("6","Hogy tájékozódsz egy célterméked tulajdonságairól általában?","Fórumokról, többek véleményét megnézem","1");
-INSERT INTO teszt_view VALUES("6","Hogy tájékozódsz egy célterméked tulajdonságairól általában?","Fórumokról, többek véleményét megnézem","1");
-INSERT INTO teszt_view VALUES("6","Hogy tájékozódsz egy célterméked tulajdonságairól általában?","Interneten rákeresek a termékleírásokra és megnézem a hozzászólásokat","1");
-INSERT INTO teszt_view VALUES("6","Hogy tájékozódsz egy célterméked tulajdonságairól általában?","Fórumokról, többek véleményét megnézem","1");
-INSERT INTO teszt_view VALUES("6","Hogy tájékozódsz egy célterméked tulajdonságairól általában?","Interneten rákeresek a termékleírásokra és megnézem a hozzászólásokat","1");
-INSERT INTO teszt_view VALUES("6","Hogy tájékozódsz egy célterméked tulajdonságairól általában?","Interneten rákeresek a termékleírásokra és megnézem a hozzászólásokat","1");
-INSERT INTO teszt_view VALUES("6","Hogy tájékozódsz egy célterméked tulajdonságairól általában?","Interneten rákeresek a termékleírásokra és megnézem a hozzászólásokat","1");
-INSERT INTO teszt_view VALUES("6","Hogy tájékozódsz egy célterméked tulajdonságairól általában?","Üzletek eladóitól, ahol árulják","1");
-INSERT INTO teszt_view VALUES("6","Hogy tájékozódsz egy célterméked tulajdonságairól általában?","Fórumokról, többek véleményét megnézem","1");
-INSERT INTO teszt_view VALUES("6","Hogy tájékozódsz egy célterméked tulajdonságairól általában?","Interneten rákeresek a termékleírásokra és megnézem a hozzászólásokat","1");
-INSERT INTO teszt_view VALUES("6","Hogy tájékozódsz egy célterméked tulajdonságairól általában?","Interneten rákeresek a termékleírásokra és megnézem a hozzászólásokat","1");
-INSERT INTO teszt_view VALUES("6","Hogy tájékozódsz egy célterméked tulajdonságairól általában?","Ismerőstől, akinek van már ilyen","1");
-INSERT INTO teszt_view VALUES("6","Hogy tájékozódsz egy célterméked tulajdonságairól általában?","Fórumokról, többek véleményét megnézem","1");
-INSERT INTO teszt_view VALUES("6","Hogy tájékozódsz egy célterméked tulajdonságairól általában?","Interneten rákeresek a termékleírásokra és megnézem a hozzászólásokat","1");
-INSERT INTO teszt_view VALUES("6","Hogy tájékozódsz egy célterméked tulajdonságairól általában?","Ismerőstől, akinek van már ilyen","1");
-INSERT INTO teszt_view VALUES("6","Hogy tájékozódsz egy célterméked tulajdonságairól általában?","Fórumokról, többek véleményét megnézem","1");
-INSERT INTO teszt_view VALUES("6","Hogy tájékozódsz egy célterméked tulajdonságairól általában?","Interneten rákeresek a termékleírásokra és megnézem a hozzászólásokat","1");
-INSERT INTO teszt_view VALUES("6","Hogy tájékozódsz egy célterméked tulajdonságairól általában?","Üzletek eladóitól, ahol árulják","1");
-INSERT INTO teszt_view VALUES("6","Hogy tájékozódsz egy célterméked tulajdonságairól általában?","Interneten rákeresek a termékleírásokra és megnézem a hozzászólásokat","1");
-INSERT INTO teszt_view VALUES("7","Ha ismerősöd hamarabb megszerezné azt a terméket, szolgáltatást, amit te is szeretnél, akkor mit tennél?","Gratulálnék neki és még inkább meg akarnám szerezni","1");
-INSERT INTO teszt_view VALUES("7","Ha ismerősöd hamarabb megszerezné azt a terméket, szolgáltatást, amit te is szeretnél, akkor mit tennél?","Meg akarnám szerezni, de már egy jobb, újabb, drágább változatban","1");
-INSERT INTO teszt_view VALUES("7","Ha ismerősöd hamarabb megszerezné azt a terméket, szolgáltatást, amit te is szeretnél, akkor mit tennél?","Gratulálnék neki és még inkább meg akarnám szerezni","1");
-INSERT INTO teszt_view VALUES("7","Ha ismerősöd hamarabb megszerezné azt a terméket, szolgáltatást, amit te is szeretnél, akkor mit tennél?","Meg akarnám szerezni, de már egy jobb, újabb, drágább változatban","1");
-INSERT INTO teszt_view VALUES("7","Ha ismerősöd hamarabb megszerezné azt a terméket, szolgáltatást, amit te is szeretnél, akkor mit tennél?","Meg akarnám szerezni, de már egy jobb, újabb, drágább változatban","1");
-INSERT INTO teszt_view VALUES("7","Ha ismerősöd hamarabb megszerezné azt a terméket, szolgáltatást, amit te is szeretnél, akkor mit tennél?","Gratulálnék neki és még inkább meg akarnám szerezni","1");
-INSERT INTO teszt_view VALUES("7","Ha ismerősöd hamarabb megszerezné azt a terméket, szolgáltatást, amit te is szeretnél, akkor mit tennél?","Gratulálnék neki és még inkább meg akarnám szerezni","1");
-INSERT INTO teszt_view VALUES("7","Ha ismerősöd hamarabb megszerezné azt a terméket, szolgáltatást, amit te is szeretnél, akkor mit tennél?","Gratulálnék neki és még inkább meg akarnám szerezni","1");
-INSERT INTO teszt_view VALUES("7","Ha ismerősöd hamarabb megszerezné azt a terméket, szolgáltatást, amit te is szeretnél, akkor mit tennél?","Gratulálnék neki és még inkább meg akarnám szerezni","1");
-INSERT INTO teszt_view VALUES("7","Ha ismerősöd hamarabb megszerezné azt a terméket, szolgáltatást, amit te is szeretnél, akkor mit tennél?","Gratulálnék neki és még inkább meg akarnám szerezni","1");
-INSERT INTO teszt_view VALUES("7","Ha ismerősöd hamarabb megszerezné azt a terméket, szolgáltatást, amit te is szeretnél, akkor mit tennél?","Gratulálnék neki és még inkább meg akarnám szerezni","1");
-INSERT INTO teszt_view VALUES("7","Ha ismerősöd hamarabb megszerezné azt a terméket, szolgáltatást, amit te is szeretnél, akkor mit tennél?","Gratulálnék neki és még inkább meg akarnám szerezni","1");
-INSERT INTO teszt_view VALUES("7","Ha ismerősöd hamarabb megszerezné azt a terméket, szolgáltatást, amit te is szeretnél, akkor mit tennél?","Gratulálnék neki és még inkább meg akarnám szerezni","1");
-INSERT INTO teszt_view VALUES("7","Ha ismerősöd hamarabb megszerezné azt a terméket, szolgáltatást, amit te is szeretnél, akkor mit tennél?","Gratulálnék neki és még inkább meg akarnám szerezni","1");
-INSERT INTO teszt_view VALUES("7","Ha ismerősöd hamarabb megszerezné azt a terméket, szolgáltatást, amit te is szeretnél, akkor mit tennél?","Gratulálnék neki és még inkább meg akarnám szerezni","1");
-INSERT INTO teszt_view VALUES("7","Ha ismerősöd hamarabb megszerezné azt a terméket, szolgáltatást, amit te is szeretnél, akkor mit tennél?","Gratulálnék neki és még inkább meg akarnám szerezni","1");
-INSERT INTO teszt_view VALUES("7","Ha ismerősöd hamarabb megszerezné azt a terméket, szolgáltatást, amit te is szeretnél, akkor mit tennél?","Gratulálnék neki és még inkább meg akarnám szerezni","1");
-INSERT INTO teszt_view VALUES("7","Ha ismerősöd hamarabb megszerezné azt a terméket, szolgáltatást, amit te is szeretnél, akkor mit tennél?","Gratulálnék neki és még inkább meg akarnám szerezni","1");
-INSERT INTO teszt_view VALUES("7","Ha ismerősöd hamarabb megszerezné azt a terméket, szolgáltatást, amit te is szeretnél, akkor mit tennél?","Gratulálnék neki és még inkább meg akarnám szerezni","1");
-INSERT INTO teszt_view VALUES("7","Ha ismerősöd hamarabb megszerezné azt a terméket, szolgáltatást, amit te is szeretnél, akkor mit tennél?","Meg akarnám szerezni, de már egy jobb, újabb, drágább változatban","1");
-INSERT INTO teszt_view VALUES("7","Ha ismerősöd hamarabb megszerezné azt a terméket, szolgáltatást, amit te is szeretnél, akkor mit tennél?","Irigykednék rá, de már nem érdekelne a termék, szolgáltatás","1");
-INSERT INTO teszt_view VALUES("7","Ha ismerősöd hamarabb megszerezné azt a terméket, szolgáltatást, amit te is szeretnél, akkor mit tennél?","Gratulálnék neki és még inkább meg akarnám szerezni","1");
-INSERT INTO teszt_view VALUES("7","Ha ismerősöd hamarabb megszerezné azt a terméket, szolgáltatást, amit te is szeretnél, akkor mit tennél?","Gratulálnék neki és még inkább meg akarnám szerezni","1");
-INSERT INTO teszt_view VALUES("7","Ha ismerősöd hamarabb megszerezné azt a terméket, szolgáltatást, amit te is szeretnél, akkor mit tennél?","Irigykednék rá, de már nem érdekelne a termék, szolgáltatás","1");
-INSERT INTO teszt_view VALUES("7","Ha ismerősöd hamarabb megszerezné azt a terméket, szolgáltatást, amit te is szeretnél, akkor mit tennél?","Gratulálnék neki és még inkább meg akarnám szerezni","1");
-INSERT INTO teszt_view VALUES("7","Ha ismerősöd hamarabb megszerezné azt a terméket, szolgáltatást, amit te is szeretnél, akkor mit tennél?","Gratulálnék neki és még inkább meg akarnám szerezni","1");
-INSERT INTO teszt_view VALUES("7","Ha ismerősöd hamarabb megszerezné azt a terméket, szolgáltatást, amit te is szeretnél, akkor mit tennél?","Gratulálnék neki és még inkább meg akarnám szerezni","1");
-INSERT INTO teszt_view VALUES("7","Ha ismerősöd hamarabb megszerezné azt a terméket, szolgáltatást, amit te is szeretnél, akkor mit tennél?","Gratulálnék neki és még inkább meg akarnám szerezni","1");
-INSERT INTO teszt_view VALUES("7","Ha ismerősöd hamarabb megszerezné azt a terméket, szolgáltatást, amit te is szeretnél, akkor mit tennél?","Gratulálnék neki és még inkább meg akarnám szerezni","1");
-INSERT INTO teszt_view VALUES("7","Ha ismerősöd hamarabb megszerezné azt a terméket, szolgáltatást, amit te is szeretnél, akkor mit tennél?","Gratulálnék neki és még inkább meg akarnám szerezni","1");
-INSERT INTO teszt_view VALUES("7","Ha ismerősöd hamarabb megszerezné azt a terméket, szolgáltatást, amit te is szeretnél, akkor mit tennél?","Gratulálnék neki és még inkább meg akarnám szerezni","1");
-INSERT INTO teszt_view VALUES("7","Ha ismerősöd hamarabb megszerezné azt a terméket, szolgáltatást, amit te is szeretnél, akkor mit tennél?","Gratulálnék neki és még inkább meg akarnám szerezni","1");
-INSERT INTO teszt_view VALUES("7","Ha ismerősöd hamarabb megszerezné azt a terméket, szolgáltatást, amit te is szeretnél, akkor mit tennél?","Gratulálnék neki és még inkább meg akarnám szerezni","1");
-INSERT INTO teszt_view VALUES("7","Ha ismerősöd hamarabb megszerezné azt a terméket, szolgáltatást, amit te is szeretnél, akkor mit tennél?","Gratulálnék neki és még inkább meg akarnám szerezni","1");
-INSERT INTO teszt_view VALUES("7","Ha ismerősöd hamarabb megszerezné azt a terméket, szolgáltatást, amit te is szeretnél, akkor mit tennél?","Meg akarnám szerezni, de már egy jobb, újabb, drágább változatban","1");
-INSERT INTO teszt_view VALUES("7","Ha ismerősöd hamarabb megszerezné azt a terméket, szolgáltatást, amit te is szeretnél, akkor mit tennél?","Gratulálnék neki és még inkább meg akarnám szerezni","1");
-INSERT INTO teszt_view VALUES("7","Ha ismerősöd hamarabb megszerezné azt a terméket, szolgáltatást, amit te is szeretnél, akkor mit tennél?","Gratulálnék neki és még inkább meg akarnám szerezni","1");
-INSERT INTO teszt_view VALUES("7","Ha ismerősöd hamarabb megszerezné azt a terméket, szolgáltatást, amit te is szeretnél, akkor mit tennél?","Gratulálnék neki és még inkább meg akarnám szerezni","1");
-INSERT INTO teszt_view VALUES("7","Ha ismerősöd hamarabb megszerezné azt a terméket, szolgáltatást, amit te is szeretnél, akkor mit tennél?","Irigykednék rá, de már nem érdekelne a termék, szolgáltatás","1");
-INSERT INTO teszt_view VALUES("7","Ha ismerősöd hamarabb megszerezné azt a terméket, szolgáltatást, amit te is szeretnél, akkor mit tennél?","Irigykednék rá, de már nem érdekelne a termék, szolgáltatás","1");
-INSERT INTO teszt_view VALUES("7","Ha ismerősöd hamarabb megszerezné azt a terméket, szolgáltatást, amit te is szeretnél, akkor mit tennél?","Gratulálnék neki és még inkább meg akarnám szerezni","1");
-INSERT INTO teszt_view VALUES("7","Ha ismerősöd hamarabb megszerezné azt a terméket, szolgáltatást, amit te is szeretnél, akkor mit tennél?","Gratulálnék neki és még inkább meg akarnám szerezni","1");
-INSERT INTO teszt_view VALUES("7","Ha ismerősöd hamarabb megszerezné azt a terméket, szolgáltatást, amit te is szeretnél, akkor mit tennél?","Gratulálnék neki és még inkább meg akarnám szerezni","1");
-INSERT INTO teszt_view VALUES("7","Ha ismerősöd hamarabb megszerezné azt a terméket, szolgáltatást, amit te is szeretnél, akkor mit tennél?","Irigykednék rá, de már nem érdekelne a termék, szolgáltatás","1");
-INSERT INTO teszt_view VALUES("7","Ha ismerősöd hamarabb megszerezné azt a terméket, szolgáltatást, amit te is szeretnél, akkor mit tennél?","Irigykednék rá, de már nem érdekelne a termék, szolgáltatás","1");
-INSERT INTO teszt_view VALUES("7","Ha ismerősöd hamarabb megszerezné azt a terméket, szolgáltatást, amit te is szeretnél, akkor mit tennél?","Gratulálnék neki és még inkább meg akarnám szerezni","1");
-INSERT INTO teszt_view VALUES("7","Ha ismerősöd hamarabb megszerezné azt a terméket, szolgáltatást, amit te is szeretnél, akkor mit tennél?","Gratulálnék neki és még inkább meg akarnám szerezni","1");
-INSERT INTO teszt_view VALUES("7","Ha ismerősöd hamarabb megszerezné azt a terméket, szolgáltatást, amit te is szeretnél, akkor mit tennél?","Gratulálnék neki és még inkább meg akarnám szerezni","1");
-INSERT INTO teszt_view VALUES("7","Ha ismerősöd hamarabb megszerezné azt a terméket, szolgáltatást, amit te is szeretnél, akkor mit tennél?","Gratulálnék neki és még inkább meg akarnám szerezni","1");
-INSERT INTO teszt_view VALUES("7","Ha ismerősöd hamarabb megszerezné azt a terméket, szolgáltatást, amit te is szeretnél, akkor mit tennél?","Meg akarnám szerezni, de már egy jobb, újabb, drágább változatban","1");
-INSERT INTO teszt_view VALUES("7","Ha ismerősöd hamarabb megszerezné azt a terméket, szolgáltatást, amit te is szeretnél, akkor mit tennél?","Gratulálnék neki és még inkább meg akarnám szerezni","1");
-INSERT INTO teszt_view VALUES("7","Ha ismerősöd hamarabb megszerezné azt a terméket, szolgáltatást, amit te is szeretnél, akkor mit tennél?","Irigykednék rá, de már nem érdekelne a termék, szolgáltatás","1");
-INSERT INTO teszt_view VALUES("7","Ha ismerősöd hamarabb megszerezné azt a terméket, szolgáltatást, amit te is szeretnél, akkor mit tennél?","Gratulálnék neki és még inkább meg akarnám szerezni","1");
-INSERT INTO teszt_view VALUES("7","Ha ismerősöd hamarabb megszerezné azt a terméket, szolgáltatást, amit te is szeretnél, akkor mit tennél?","Irigykednék rá, de már nem érdekelne a termék, szolgáltatás","1");
-INSERT INTO teszt_view VALUES("7","Ha ismerősöd hamarabb megszerezné azt a terméket, szolgáltatást, amit te is szeretnél, akkor mit tennél?","Gratulálnék neki és még inkább meg akarnám szerezni","1");
-INSERT INTO teszt_view VALUES("7","Ha ismerősöd hamarabb megszerezné azt a terméket, szolgáltatást, amit te is szeretnél, akkor mit tennél?","Gratulálnék neki és még inkább meg akarnám szerezni","1");
-INSERT INTO teszt_view VALUES("7","Ha ismerősöd hamarabb megszerezné azt a terméket, szolgáltatást, amit te is szeretnél, akkor mit tennél?","Gratulálnék neki és még inkább meg akarnám szerezni","1");
-INSERT INTO teszt_view VALUES("7","Ha ismerősöd hamarabb megszerezné azt a terméket, szolgáltatást, amit te is szeretnél, akkor mit tennél?","Gratulálnék neki és még inkább meg akarnám szerezni","1");
-INSERT INTO teszt_view VALUES("7","Ha ismerősöd hamarabb megszerezné azt a terméket, szolgáltatást, amit te is szeretnél, akkor mit tennél?","Gratulálnék neki és még inkább meg akarnám szerezni","1");
-INSERT INTO teszt_view VALUES("7","Ha ismerősöd hamarabb megszerezné azt a terméket, szolgáltatást, amit te is szeretnél, akkor mit tennél?","Gratulálnék neki és még inkább meg akarnám szerezni","1");
-INSERT INTO teszt_view VALUES("7","Ha ismerősöd hamarabb megszerezné azt a terméket, szolgáltatást, amit te is szeretnél, akkor mit tennél?","Gratulálnék neki és még inkább meg akarnám szerezni","1");
-INSERT INTO teszt_view VALUES("7","Ha ismerősöd hamarabb megszerezné azt a terméket, szolgáltatást, amit te is szeretnél, akkor mit tennél?","Gratulálnék neki és még inkább meg akarnám szerezni","1");
-INSERT INTO teszt_view VALUES("7","Ha ismerősöd hamarabb megszerezné azt a terméket, szolgáltatást, amit te is szeretnél, akkor mit tennél?","Gratulálnék neki és még inkább meg akarnám szerezni","1");
-INSERT INTO teszt_view VALUES("7","Ha ismerősöd hamarabb megszerezné azt a terméket, szolgáltatást, amit te is szeretnél, akkor mit tennél?","Gratulálnék neki és még inkább meg akarnám szerezni","1");
-INSERT INTO teszt_view VALUES("7","Ha ismerősöd hamarabb megszerezné azt a terméket, szolgáltatást, amit te is szeretnél, akkor mit tennél?","Gratulálnék neki és még inkább meg akarnám szerezni","1");
-INSERT INTO teszt_view VALUES("7","Ha ismerősöd hamarabb megszerezné azt a terméket, szolgáltatást, amit te is szeretnél, akkor mit tennél?","Gratulálnék neki és még inkább meg akarnám szerezni","1");
-INSERT INTO teszt_view VALUES("7","Ha ismerősöd hamarabb megszerezné azt a terméket, szolgáltatást, amit te is szeretnél, akkor mit tennél?","Gratulálnék neki és még inkább meg akarnám szerezni","1");
-INSERT INTO teszt_view VALUES("7","Ha ismerősöd hamarabb megszerezné azt a terméket, szolgáltatást, amit te is szeretnél, akkor mit tennél?","Gratulálnék neki és még inkább meg akarnám szerezni","1");
-INSERT INTO teszt_view VALUES("7","Ha ismerősöd hamarabb megszerezné azt a terméket, szolgáltatást, amit te is szeretnél, akkor mit tennél?","Gratulálnék neki és még inkább meg akarnám szerezni","1");
-INSERT INTO teszt_view VALUES("7","Ha ismerősöd hamarabb megszerezné azt a terméket, szolgáltatást, amit te is szeretnél, akkor mit tennél?","Gratulálnék neki és még inkább meg akarnám szerezni","1");
-INSERT INTO teszt_view VALUES("7","Ha ismerősöd hamarabb megszerezné azt a terméket, szolgáltatást, amit te is szeretnél, akkor mit tennél?","Gratulálnék neki és még inkább meg akarnám szerezni","1");
-INSERT INTO teszt_view VALUES("7","Ha ismerősöd hamarabb megszerezné azt a terméket, szolgáltatást, amit te is szeretnél, akkor mit tennél?","Gratulálnék neki és még inkább meg akarnám szerezni","1");
-INSERT INTO teszt_view VALUES("7","Ha ismerősöd hamarabb megszerezné azt a terméket, szolgáltatást, amit te is szeretnél, akkor mit tennél?","Meg akarnám szerezni, de már egy jobb, újabb, drágább változatban","1");
-INSERT INTO teszt_view VALUES("7","Ha ismerősöd hamarabb megszerezné azt a terméket, szolgáltatást, amit te is szeretnél, akkor mit tennél?","Gratulálnék neki és még inkább meg akarnám szerezni","1");
-INSERT INTO teszt_view VALUES("7","Ha ismerősöd hamarabb megszerezné azt a terméket, szolgáltatást, amit te is szeretnél, akkor mit tennél?","Gratulálnék neki és még inkább meg akarnám szerezni","1");
-INSERT INTO teszt_view VALUES("7","Ha ismerősöd hamarabb megszerezné azt a terméket, szolgáltatást, amit te is szeretnél, akkor mit tennél?","Gratulálnék neki és még inkább meg akarnám szerezni","1");
-INSERT INTO teszt_view VALUES("7","Ha ismerősöd hamarabb megszerezné azt a terméket, szolgáltatást, amit te is szeretnél, akkor mit tennél?","Gratulálnék neki és még inkább meg akarnám szerezni","1");
-INSERT INTO teszt_view VALUES("7","Ha ismerősöd hamarabb megszerezné azt a terméket, szolgáltatást, amit te is szeretnél, akkor mit tennél?","Gratulálnék neki és még inkább meg akarnám szerezni","1");
-INSERT INTO teszt_view VALUES("7","Ha ismerősöd hamarabb megszerezné azt a terméket, szolgáltatást, amit te is szeretnél, akkor mit tennél?","Meg akarnám szerezni, de már egy jobb, újabb, drágább változatban","1");
-INSERT INTO teszt_view VALUES("7","Ha ismerősöd hamarabb megszerezné azt a terméket, szolgáltatást, amit te is szeretnél, akkor mit tennél?","Irigykednék rá, de már nem érdekelne a termék, szolgáltatás","1");
-INSERT INTO teszt_view VALUES("7","Ha ismerősöd hamarabb megszerezné azt a terméket, szolgáltatást, amit te is szeretnél, akkor mit tennél?","Gratulálnék neki és még inkább meg akarnám szerezni","1");
-INSERT INTO teszt_view VALUES("7","Ha ismerősöd hamarabb megszerezné azt a terméket, szolgáltatást, amit te is szeretnél, akkor mit tennél?","Gratulálnék neki és még inkább meg akarnám szerezni","1");
-INSERT INTO teszt_view VALUES("7","Ha ismerősöd hamarabb megszerezné azt a terméket, szolgáltatást, amit te is szeretnél, akkor mit tennél?","Gratulálnék neki és még inkább meg akarnám szerezni","1");
-INSERT INTO teszt_view VALUES("7","Ha ismerősöd hamarabb megszerezné azt a terméket, szolgáltatást, amit te is szeretnél, akkor mit tennél?","Irigykednék rá, de már nem érdekelne a termék, szolgáltatás","1");
-INSERT INTO teszt_view VALUES("7","Ha ismerősöd hamarabb megszerezné azt a terméket, szolgáltatást, amit te is szeretnél, akkor mit tennél?","Gratulálnék neki és még inkább meg akarnám szerezni","1");
-INSERT INTO teszt_view VALUES("7","Ha ismerősöd hamarabb megszerezné azt a terméket, szolgáltatást, amit te is szeretnél, akkor mit tennél?","Gratulálnék neki és még inkább meg akarnám szerezni","1");
-INSERT INTO teszt_view VALUES("7","Ha ismerősöd hamarabb megszerezné azt a terméket, szolgáltatást, amit te is szeretnél, akkor mit tennél?","Gratulálnék neki és még inkább meg akarnám szerezni","1");
-INSERT INTO teszt_view VALUES("7","Ha ismerősöd hamarabb megszerezné azt a terméket, szolgáltatást, amit te is szeretnél, akkor mit tennél?","Gratulálnék neki és még inkább meg akarnám szerezni","1");
-INSERT INTO teszt_view VALUES("7","Ha ismerősöd hamarabb megszerezné azt a terméket, szolgáltatást, amit te is szeretnél, akkor mit tennél?","Gratulálnék neki és még inkább meg akarnám szerezni","1");
-INSERT INTO teszt_view VALUES("7","Ha ismerősöd hamarabb megszerezné azt a terméket, szolgáltatást, amit te is szeretnél, akkor mit tennél?","Gratulálnék neki és még inkább meg akarnám szerezni","1");
-INSERT INTO teszt_view VALUES("7","Ha ismerősöd hamarabb megszerezné azt a terméket, szolgáltatást, amit te is szeretnél, akkor mit tennél?","Gratulálnék neki és még inkább meg akarnám szerezni","1");
-INSERT INTO teszt_view VALUES("7","Ha ismerősöd hamarabb megszerezné azt a terméket, szolgáltatást, amit te is szeretnél, akkor mit tennél?","Gratulálnék neki és még inkább meg akarnám szerezni","1");
-INSERT INTO teszt_view VALUES("7","Ha ismerősöd hamarabb megszerezné azt a terméket, szolgáltatást, amit te is szeretnél, akkor mit tennél?","Irigykednék rá, de már nem érdekelne a termék, szolgáltatás","1");
-INSERT INTO teszt_view VALUES("7","Ha ismerősöd hamarabb megszerezné azt a terméket, szolgáltatást, amit te is szeretnél, akkor mit tennél?","Irigykednék rá, de már nem érdekelne a termék, szolgáltatás","1");
-INSERT INTO teszt_view VALUES("7","Ha ismerősöd hamarabb megszerezné azt a terméket, szolgáltatást, amit te is szeretnél, akkor mit tennél?","Gratulálnék neki és még inkább meg akarnám szerezni","1");
-INSERT INTO teszt_view VALUES("7","Ha ismerősöd hamarabb megszerezné azt a terméket, szolgáltatást, amit te is szeretnél, akkor mit tennél?","Irigykednék rá, de már nem érdekelne a termék, szolgáltatás","1");
-INSERT INTO teszt_view VALUES("7","Ha ismerősöd hamarabb megszerezné azt a terméket, szolgáltatást, amit te is szeretnél, akkor mit tennél?","Gratulálnék neki és még inkább meg akarnám szerezni","1");
-INSERT INTO teszt_view VALUES("7","Ha ismerősöd hamarabb megszerezné azt a terméket, szolgáltatást, amit te is szeretnél, akkor mit tennél?","Gratulálnék neki és még inkább meg akarnám szerezni","1");
-INSERT INTO teszt_view VALUES("7","Ha ismerősöd hamarabb megszerezné azt a terméket, szolgáltatást, amit te is szeretnél, akkor mit tennél?","Irigykednék rá, de már nem érdekelne a termék, szolgáltatás","1");
-INSERT INTO teszt_view VALUES("7","Ha ismerősöd hamarabb megszerezné azt a terméket, szolgáltatást, amit te is szeretnél, akkor mit tennél?","Gratulálnék neki és még inkább meg akarnám szerezni","1");
-INSERT INTO teszt_view VALUES("7","Ha ismerősöd hamarabb megszerezné azt a terméket, szolgáltatást, amit te is szeretnél, akkor mit tennél?","Gratulálnék neki és még inkább meg akarnám szerezni","1");
-INSERT INTO teszt_view VALUES("7","Ha ismerősöd hamarabb megszerezné azt a terméket, szolgáltatást, amit te is szeretnél, akkor mit tennél?","Irigykednék rá, de már nem érdekelne a termék, szolgáltatás","1");
-INSERT INTO teszt_view VALUES("7","Ha ismerősöd hamarabb megszerezné azt a terméket, szolgáltatást, amit te is szeretnél, akkor mit tennél?","Gratulálnék neki és még inkább meg akarnám szerezni","1");
-INSERT INTO teszt_view VALUES("8","Ha te szereznél meg egy terméket, szolgáltatást hamarabb, akkor mit tennél?","Csak közelebbi ismerőseimnek dicsekednék el vele","1");
-INSERT INTO teszt_view VALUES("8","Ha te szereznél meg egy terméket, szolgáltatást hamarabb, akkor mit tennél?","Csak közelebbi ismerőseimnek dicsekednék el vele","1");
-INSERT INTO teszt_view VALUES("8","Ha te szereznél meg egy terméket, szolgáltatást hamarabb, akkor mit tennél?","Csak annak mondanám el, akit érdekel","1");
-INSERT INTO teszt_view VALUES("8","Ha te szereznél meg egy terméket, szolgáltatást hamarabb, akkor mit tennél?","Csak annak mondanám el, akit érdekel","1");
-INSERT INTO teszt_view VALUES("8","Ha te szereznél meg egy terméket, szolgáltatást hamarabb, akkor mit tennél?","Csak annak mondanám el, akit érdekel","1");
-INSERT INTO teszt_view VALUES("8","Ha te szereznél meg egy terméket, szolgáltatást hamarabb, akkor mit tennél?","Csak annak mondanám el, akit érdekel","1");
-INSERT INTO teszt_view VALUES("8","Ha te szereznél meg egy terméket, szolgáltatást hamarabb, akkor mit tennél?","Csak annak mondanám el, akit érdekel","1");
-INSERT INTO teszt_view VALUES("8","Ha te szereznél meg egy terméket, szolgáltatást hamarabb, akkor mit tennél?","Csak annak mondanám el, akit érdekel","1");
-INSERT INTO teszt_view VALUES("8","Ha te szereznél meg egy terméket, szolgáltatást hamarabb, akkor mit tennél?","Csak közelebbi ismerőseimnek dicsekednék el vele","1");
-INSERT INTO teszt_view VALUES("8","Ha te szereznél meg egy terméket, szolgáltatást hamarabb, akkor mit tennél?","Csak annak mondanám el, akit érdekel","1");
-INSERT INTO teszt_view VALUES("8","Ha te szereznél meg egy terméket, szolgáltatást hamarabb, akkor mit tennél?","Csak annak mondanám el, akit érdekel","1");
-INSERT INTO teszt_view VALUES("8","Ha te szereznél meg egy terméket, szolgáltatást hamarabb, akkor mit tennél?","Csak annak mondanám el, akit érdekel","1");
-INSERT INTO teszt_view VALUES("8","Ha te szereznél meg egy terméket, szolgáltatást hamarabb, akkor mit tennél?","Büszkén elmondanám mindenkinek ","1");
-INSERT INTO teszt_view VALUES("8","Ha te szereznél meg egy terméket, szolgáltatást hamarabb, akkor mit tennél?","Büszkén elmondanám mindenkinek ","1");
-INSERT INTO teszt_view VALUES("8","Ha te szereznél meg egy terméket, szolgáltatást hamarabb, akkor mit tennél?","Csak közelebbi ismerőseimnek dicsekednék el vele","1");
-INSERT INTO teszt_view VALUES("8","Ha te szereznél meg egy terméket, szolgáltatást hamarabb, akkor mit tennél?","Csak annak mondanám el, akit érdekel","1");
-INSERT INTO teszt_view VALUES("8","Ha te szereznél meg egy terméket, szolgáltatást hamarabb, akkor mit tennél?","Csak annak mondanám el, akit érdekel","1");
-INSERT INTO teszt_view VALUES("8","Ha te szereznél meg egy terméket, szolgáltatást hamarabb, akkor mit tennél?","Csak annak mondanám el, akit érdekel","1");
-INSERT INTO teszt_view VALUES("8","Ha te szereznél meg egy terméket, szolgáltatást hamarabb, akkor mit tennél?","Csak annak mondanám el, akit érdekel","1");
-INSERT INTO teszt_view VALUES("8","Ha te szereznél meg egy terméket, szolgáltatást hamarabb, akkor mit tennél?","Csak annak mondanám el, akit érdekel","1");
-INSERT INTO teszt_view VALUES("8","Ha te szereznél meg egy terméket, szolgáltatást hamarabb, akkor mit tennél?","Csak annak mondanám el, akit érdekel","1");
-INSERT INTO teszt_view VALUES("8","Ha te szereznél meg egy terméket, szolgáltatást hamarabb, akkor mit tennél?","Csak annak mondanám el, akit érdekel","1");
-INSERT INTO teszt_view VALUES("8","Ha te szereznél meg egy terméket, szolgáltatást hamarabb, akkor mit tennél?","Csak közelebbi ismerőseimnek dicsekednék el vele","1");
-INSERT INTO teszt_view VALUES("8","Ha te szereznél meg egy terméket, szolgáltatást hamarabb, akkor mit tennél?","Büszkén elmondanám mindenkinek ","1");
-INSERT INTO teszt_view VALUES("8","Ha te szereznél meg egy terméket, szolgáltatást hamarabb, akkor mit tennél?","Büszkén elmondanám mindenkinek ","1");
-INSERT INTO teszt_view VALUES("8","Ha te szereznél meg egy terméket, szolgáltatást hamarabb, akkor mit tennél?","Büszkén elmondanám mindenkinek ","1");
-INSERT INTO teszt_view VALUES("8","Ha te szereznél meg egy terméket, szolgáltatást hamarabb, akkor mit tennél?","Csak annak mondanám el, akit érdekel","1");
-INSERT INTO teszt_view VALUES("8","Ha te szereznél meg egy terméket, szolgáltatást hamarabb, akkor mit tennél?","Csak közelebbi ismerőseimnek dicsekednék el vele","1");
-INSERT INTO teszt_view VALUES("8","Ha te szereznél meg egy terméket, szolgáltatást hamarabb, akkor mit tennél?","Csak annak mondanám el, akit érdekel","1");
-INSERT INTO teszt_view VALUES("8","Ha te szereznél meg egy terméket, szolgáltatást hamarabb, akkor mit tennél?","Csak annak mondanám el, akit érdekel","1");
-INSERT INTO teszt_view VALUES("8","Ha te szereznél meg egy terméket, szolgáltatást hamarabb, akkor mit tennél?","Csak közelebbi ismerőseimnek dicsekednék el vele","1");
-INSERT INTO teszt_view VALUES("8","Ha te szereznél meg egy terméket, szolgáltatást hamarabb, akkor mit tennél?","Csak annak mondanám el, akit érdekel","1");
-INSERT INTO teszt_view VALUES("8","Ha te szereznél meg egy terméket, szolgáltatást hamarabb, akkor mit tennél?","Csak annak mondanám el, akit érdekel","1");
-INSERT INTO teszt_view VALUES("8","Ha te szereznél meg egy terméket, szolgáltatást hamarabb, akkor mit tennél?","Csak annak mondanám el, akit érdekel","1");
-INSERT INTO teszt_view VALUES("8","Ha te szereznél meg egy terméket, szolgáltatást hamarabb, akkor mit tennél?","Csak annak mondanám el, akit érdekel","1");
-INSERT INTO teszt_view VALUES("8","Ha te szereznél meg egy terméket, szolgáltatást hamarabb, akkor mit tennél?","Csak annak mondanám el, akit érdekel","1");
-INSERT INTO teszt_view VALUES("8","Ha te szereznél meg egy terméket, szolgáltatást hamarabb, akkor mit tennél?","Csak közelebbi ismerőseimnek dicsekednék el vele","1");
-INSERT INTO teszt_view VALUES("8","Ha te szereznél meg egy terméket, szolgáltatást hamarabb, akkor mit tennél?","Csak annak mondanám el, akit érdekel","1");
-INSERT INTO teszt_view VALUES("8","Ha te szereznél meg egy terméket, szolgáltatást hamarabb, akkor mit tennél?","Csak annak mondanám el, akit érdekel","1");
-INSERT INTO teszt_view VALUES("8","Ha te szereznél meg egy terméket, szolgáltatást hamarabb, akkor mit tennél?","Csak annak mondanám el, akit érdekel","1");
-INSERT INTO teszt_view VALUES("8","Ha te szereznél meg egy terméket, szolgáltatást hamarabb, akkor mit tennél?","Csak annak mondanám el, akit érdekel","1");
-INSERT INTO teszt_view VALUES("8","Ha te szereznél meg egy terméket, szolgáltatást hamarabb, akkor mit tennél?","Büszkén elmondanám mindenkinek ","1");
-INSERT INTO teszt_view VALUES("8","Ha te szereznél meg egy terméket, szolgáltatást hamarabb, akkor mit tennél?","Büszkén elmondanám mindenkinek ","1");
-INSERT INTO teszt_view VALUES("8","Ha te szereznél meg egy terméket, szolgáltatást hamarabb, akkor mit tennél?","Büszkén elmondanám mindenkinek ","1");
-INSERT INTO teszt_view VALUES("8","Ha te szereznél meg egy terméket, szolgáltatást hamarabb, akkor mit tennél?","Csak közelebbi ismerőseimnek dicsekednék el vele","1");
-INSERT INTO teszt_view VALUES("8","Ha te szereznél meg egy terméket, szolgáltatást hamarabb, akkor mit tennél?","Csak annak mondanám el, akit érdekel","1");
-INSERT INTO teszt_view VALUES("8","Ha te szereznél meg egy terméket, szolgáltatást hamarabb, akkor mit tennél?","Csak annak mondanám el, akit érdekel","1");
-INSERT INTO teszt_view VALUES("8","Ha te szereznél meg egy terméket, szolgáltatást hamarabb, akkor mit tennél?","Csak annak mondanám el, akit érdekel","1");
-INSERT INTO teszt_view VALUES("8","Ha te szereznél meg egy terméket, szolgáltatást hamarabb, akkor mit tennél?","Csak közelebbi ismerőseimnek dicsekednék el vele","1");
-INSERT INTO teszt_view VALUES("8","Ha te szereznél meg egy terméket, szolgáltatást hamarabb, akkor mit tennél?","Csak annak mondanám el, akit érdekel","1");
-INSERT INTO teszt_view VALUES("8","Ha te szereznél meg egy terméket, szolgáltatást hamarabb, akkor mit tennél?","Csak annak mondanám el, akit érdekel","1");
-INSERT INTO teszt_view VALUES("8","Ha te szereznél meg egy terméket, szolgáltatást hamarabb, akkor mit tennél?","Csak annak mondanám el, akit érdekel","1");
-INSERT INTO teszt_view VALUES("8","Ha te szereznél meg egy terméket, szolgáltatást hamarabb, akkor mit tennél?","Csak közelebbi ismerőseimnek dicsekednék el vele","1");
-INSERT INTO teszt_view VALUES("8","Ha te szereznél meg egy terméket, szolgáltatást hamarabb, akkor mit tennél?","Csak annak mondanám el, akit érdekel","1");
-INSERT INTO teszt_view VALUES("8","Ha te szereznél meg egy terméket, szolgáltatást hamarabb, akkor mit tennél?","Csak annak mondanám el, akit érdekel","1");
-INSERT INTO teszt_view VALUES("8","Ha te szereznél meg egy terméket, szolgáltatást hamarabb, akkor mit tennél?","Büszkén elmondanám mindenkinek ","1");
-INSERT INTO teszt_view VALUES("8","Ha te szereznél meg egy terméket, szolgáltatást hamarabb, akkor mit tennél?","Csak annak mondanám el, akit érdekel","1");
-INSERT INTO teszt_view VALUES("8","Ha te szereznél meg egy terméket, szolgáltatást hamarabb, akkor mit tennél?","Csak annak mondanám el, akit érdekel","1");
-INSERT INTO teszt_view VALUES("8","Ha te szereznél meg egy terméket, szolgáltatást hamarabb, akkor mit tennél?","Csak annak mondanám el, akit érdekel","1");
-INSERT INTO teszt_view VALUES("8","Ha te szereznél meg egy terméket, szolgáltatást hamarabb, akkor mit tennél?","Csak közelebbi ismerőseimnek dicsekednék el vele","1");
-INSERT INTO teszt_view VALUES("8","Ha te szereznél meg egy terméket, szolgáltatást hamarabb, akkor mit tennél?","Büszkén elmondanám mindenkinek ","1");
-INSERT INTO teszt_view VALUES("8","Ha te szereznél meg egy terméket, szolgáltatást hamarabb, akkor mit tennél?","Csak annak mondanám el, akit érdekel","1");
-INSERT INTO teszt_view VALUES("8","Ha te szereznél meg egy terméket, szolgáltatást hamarabb, akkor mit tennél?","Eltitkolnám","1");
-INSERT INTO teszt_view VALUES("8","Ha te szereznél meg egy terméket, szolgáltatást hamarabb, akkor mit tennél?","Csak annak mondanám el, akit érdekel","1");
-INSERT INTO teszt_view VALUES("8","Ha te szereznél meg egy terméket, szolgáltatást hamarabb, akkor mit tennél?","Csak annak mondanám el, akit érdekel","1");
-INSERT INTO teszt_view VALUES("8","Ha te szereznél meg egy terméket, szolgáltatást hamarabb, akkor mit tennél?","Csak közelebbi ismerőseimnek dicsekednék el vele","1");
-INSERT INTO teszt_view VALUES("8","Ha te szereznél meg egy terméket, szolgáltatást hamarabb, akkor mit tennél?","Csak annak mondanám el, akit érdekel","1");
-INSERT INTO teszt_view VALUES("8","Ha te szereznél meg egy terméket, szolgáltatást hamarabb, akkor mit tennél?","Csak annak mondanám el, akit érdekel","1");
-INSERT INTO teszt_view VALUES("8","Ha te szereznél meg egy terméket, szolgáltatást hamarabb, akkor mit tennél?","Büszkén elmondanám mindenkinek ","1");
-INSERT INTO teszt_view VALUES("8","Ha te szereznél meg egy terméket, szolgáltatást hamarabb, akkor mit tennél?","Büszkén elmondanám mindenkinek ","1");
-INSERT INTO teszt_view VALUES("8","Ha te szereznél meg egy terméket, szolgáltatást hamarabb, akkor mit tennél?","Büszkén elmondanám mindenkinek ","1");
-INSERT INTO teszt_view VALUES("8","Ha te szereznél meg egy terméket, szolgáltatást hamarabb, akkor mit tennél?","Eltitkolnám","1");
-INSERT INTO teszt_view VALUES("8","Ha te szereznél meg egy terméket, szolgáltatást hamarabb, akkor mit tennél?","Büszkén elmondanám mindenkinek ","1");
-INSERT INTO teszt_view VALUES("8","Ha te szereznél meg egy terméket, szolgáltatást hamarabb, akkor mit tennél?","Csak annak mondanám el, akit érdekel","1");
-INSERT INTO teszt_view VALUES("8","Ha te szereznél meg egy terméket, szolgáltatást hamarabb, akkor mit tennél?","Csak annak mondanám el, akit érdekel","1");
-INSERT INTO teszt_view VALUES("8","Ha te szereznél meg egy terméket, szolgáltatást hamarabb, akkor mit tennél?","Csak annak mondanám el, akit érdekel","1");
-INSERT INTO teszt_view VALUES("8","Ha te szereznél meg egy terméket, szolgáltatást hamarabb, akkor mit tennél?","Csak annak mondanám el, akit érdekel","1");
-INSERT INTO teszt_view VALUES("8","Ha te szereznél meg egy terméket, szolgáltatást hamarabb, akkor mit tennél?","Büszkén elmondanám mindenkinek ","1");
-INSERT INTO teszt_view VALUES("8","Ha te szereznél meg egy terméket, szolgáltatást hamarabb, akkor mit tennél?","Csak annak mondanám el, akit érdekel","1");
-INSERT INTO teszt_view VALUES("8","Ha te szereznél meg egy terméket, szolgáltatást hamarabb, akkor mit tennél?","Büszkén elmondanám mindenkinek ","1");
-INSERT INTO teszt_view VALUES("8","Ha te szereznél meg egy terméket, szolgáltatást hamarabb, akkor mit tennél?","Csak annak mondanám el, akit érdekel","1");
-INSERT INTO teszt_view VALUES("8","Ha te szereznél meg egy terméket, szolgáltatást hamarabb, akkor mit tennél?","Csak annak mondanám el, akit érdekel","1");
-INSERT INTO teszt_view VALUES("8","Ha te szereznél meg egy terméket, szolgáltatást hamarabb, akkor mit tennél?","Csak annak mondanám el, akit érdekel","1");
-INSERT INTO teszt_view VALUES("8","Ha te szereznél meg egy terméket, szolgáltatást hamarabb, akkor mit tennél?","Csak annak mondanám el, akit érdekel","1");
-INSERT INTO teszt_view VALUES("8","Ha te szereznél meg egy terméket, szolgáltatást hamarabb, akkor mit tennél?","Csak annak mondanám el, akit érdekel","1");
-INSERT INTO teszt_view VALUES("8","Ha te szereznél meg egy terméket, szolgáltatást hamarabb, akkor mit tennél?","Csak közelebbi ismerőseimnek dicsekednék el vele","1");
-INSERT INTO teszt_view VALUES("8","Ha te szereznél meg egy terméket, szolgáltatást hamarabb, akkor mit tennél?","Csak annak mondanám el, akit érdekel","1");
-INSERT INTO teszt_view VALUES("8","Ha te szereznél meg egy terméket, szolgáltatást hamarabb, akkor mit tennél?","Csak annak mondanám el, akit érdekel","1");
-INSERT INTO teszt_view VALUES("8","Ha te szereznél meg egy terméket, szolgáltatást hamarabb, akkor mit tennél?","Büszkén elmondanám mindenkinek ","1");
-INSERT INTO teszt_view VALUES("8","Ha te szereznél meg egy terméket, szolgáltatást hamarabb, akkor mit tennél?","Csak közelebbi ismerőseimnek dicsekednék el vele","1");
-INSERT INTO teszt_view VALUES("8","Ha te szereznél meg egy terméket, szolgáltatást hamarabb, akkor mit tennél?","Csak közelebbi ismerőseimnek dicsekednék el vele","1");
-INSERT INTO teszt_view VALUES("8","Ha te szereznél meg egy terméket, szolgáltatást hamarabb, akkor mit tennél?","Csak közelebbi ismerőseimnek dicsekednék el vele","1");
-INSERT INTO teszt_view VALUES("8","Ha te szereznél meg egy terméket, szolgáltatást hamarabb, akkor mit tennél?","Csak annak mondanám el, akit érdekel","1");
-INSERT INTO teszt_view VALUES("8","Ha te szereznél meg egy terméket, szolgáltatást hamarabb, akkor mit tennél?","Csak közelebbi ismerőseimnek dicsekednék el vele","1");
-INSERT INTO teszt_view VALUES("8","Ha te szereznél meg egy terméket, szolgáltatást hamarabb, akkor mit tennél?","Csak annak mondanám el, akit érdekel","1");
-INSERT INTO teszt_view VALUES("8","Ha te szereznél meg egy terméket, szolgáltatást hamarabb, akkor mit tennél?","Csak annak mondanám el, akit érdekel","1");
-INSERT INTO teszt_view VALUES("8","Ha te szereznél meg egy terméket, szolgáltatást hamarabb, akkor mit tennél?","Csak annak mondanám el, akit érdekel","1");
-INSERT INTO teszt_view VALUES("8","Ha te szereznél meg egy terméket, szolgáltatást hamarabb, akkor mit tennél?","Csak közelebbi ismerőseimnek dicsekednék el vele","1");
-INSERT INTO teszt_view VALUES("8","Ha te szereznél meg egy terméket, szolgáltatást hamarabb, akkor mit tennél?","Csak közelebbi ismerőseimnek dicsekednék el vele","1");
-INSERT INTO teszt_view VALUES("8","Ha te szereznél meg egy terméket, szolgáltatást hamarabb, akkor mit tennél?","Csak annak mondanám el, akit érdekel","1");
-INSERT INTO teszt_view VALUES("8","Ha te szereznél meg egy terméket, szolgáltatást hamarabb, akkor mit tennél?","Csak annak mondanám el, akit érdekel","1");
-INSERT INTO teszt_view VALUES("8","Ha te szereznél meg egy terméket, szolgáltatást hamarabb, akkor mit tennél?","Csak annak mondanám el, akit érdekel","1");
-INSERT INTO teszt_view VALUES("8","Ha te szereznél meg egy terméket, szolgáltatást hamarabb, akkor mit tennél?","Csak annak mondanám el, akit érdekel","1");
-INSERT INTO teszt_view VALUES("9","Ha megtudod, hogy ismerősöd egy olyan terméket akar venni, amelyre te is vágytál régen, csak már elfelejtetted, akkor mit tennél?","Bíztatnám, hogy jó ötlet","1");
-INSERT INTO teszt_view VALUES("9","Ha megtudod, hogy ismerősöd egy olyan terméket akar venni, amelyre te is vágytál régen, csak már elfelejtetted, akkor mit tennél?","Bíztatnám, hogy jó ötlet","1");
-INSERT INTO teszt_view VALUES("9","Ha megtudod, hogy ismerősöd egy olyan terméket akar venni, amelyre te is vágytál régen, csak már elfelejtetted, akkor mit tennél?","Bíztatnám, hogy jó ötlet","1");
-INSERT INTO teszt_view VALUES("9","Ha megtudod, hogy ismerősöd egy olyan terméket akar venni, amelyre te is vágytál régen, csak már elfelejtetted, akkor mit tennél?","Én is meg akarnám venni","1");
-INSERT INTO teszt_view VALUES("9","Ha megtudod, hogy ismerősöd egy olyan terméket akar venni, amelyre te is vágytál régen, csak már elfelejtetted, akkor mit tennél?","Jobbat ajánlanék neki","1");
-INSERT INTO teszt_view VALUES("9","Ha megtudod, hogy ismerősöd egy olyan terméket akar venni, amelyre te is vágytál régen, csak már elfelejtetted, akkor mit tennél?","Bíztatnám, hogy jó ötlet","1");
-INSERT INTO teszt_view VALUES("9","Ha megtudod, hogy ismerősöd egy olyan terméket akar venni, amelyre te is vágytál régen, csak már elfelejtetted, akkor mit tennél?","Jobbat ajánlanék neki","1");
-INSERT INTO teszt_view VALUES("9","Ha megtudod, hogy ismerősöd egy olyan terméket akar venni, amelyre te is vágytál régen, csak már elfelejtetted, akkor mit tennél?","Bíztatnám, hogy jó ötlet","1");
-INSERT INTO teszt_view VALUES("9","Ha megtudod, hogy ismerősöd egy olyan terméket akar venni, amelyre te is vágytál régen, csak már elfelejtetted, akkor mit tennél?","Bíztatnám, hogy jó ötlet","1");
-INSERT INTO teszt_view VALUES("9","Ha megtudod, hogy ismerősöd egy olyan terméket akar venni, amelyre te is vágytál régen, csak már elfelejtetted, akkor mit tennél?","Nem érdekelne","1");
-INSERT INTO teszt_view VALUES("9","Ha megtudod, hogy ismerősöd egy olyan terméket akar venni, amelyre te is vágytál régen, csak már elfelejtetted, akkor mit tennél?","Nem érdekelne","1");
-INSERT INTO teszt_view VALUES("9","Ha megtudod, hogy ismerősöd egy olyan terméket akar venni, amelyre te is vágytál régen, csak már elfelejtetted, akkor mit tennél?","Bíztatnám, hogy jó ötlet","1");
-INSERT INTO teszt_view VALUES("9","Ha megtudod, hogy ismerősöd egy olyan terméket akar venni, amelyre te is vágytál régen, csak már elfelejtetted, akkor mit tennél?","Bíztatnám, hogy jó ötlet","1");
-INSERT INTO teszt_view VALUES("9","Ha megtudod, hogy ismerősöd egy olyan terméket akar venni, amelyre te is vágytál régen, csak már elfelejtetted, akkor mit tennél?","Bíztatnám, hogy jó ötlet","1");
-INSERT INTO teszt_view VALUES("9","Ha megtudod, hogy ismerősöd egy olyan terméket akar venni, amelyre te is vágytál régen, csak már elfelejtetted, akkor mit tennél?","Bíztatnám, hogy jó ötlet","1");
-INSERT INTO teszt_view VALUES("9","Ha megtudod, hogy ismerősöd egy olyan terméket akar venni, amelyre te is vágytál régen, csak már elfelejtetted, akkor mit tennél?","Bíztatnám, hogy jó ötlet","1");
-INSERT INTO teszt_view VALUES("9","Ha megtudod, hogy ismerősöd egy olyan terméket akar venni, amelyre te is vágytál régen, csak már elfelejtetted, akkor mit tennél?","Bíztatnám, hogy jó ötlet","1");
-INSERT INTO teszt_view VALUES("9","Ha megtudod, hogy ismerősöd egy olyan terméket akar venni, amelyre te is vágytál régen, csak már elfelejtetted, akkor mit tennél?","Bíztatnám, hogy jó ötlet","1");
-INSERT INTO teszt_view VALUES("9","Ha megtudod, hogy ismerősöd egy olyan terméket akar venni, amelyre te is vágytál régen, csak már elfelejtetted, akkor mit tennél?","Bíztatnám, hogy jó ötlet","1");
-INSERT INTO teszt_view VALUES("9","Ha megtudod, hogy ismerősöd egy olyan terméket akar venni, amelyre te is vágytál régen, csak már elfelejtetted, akkor mit tennél?","Bíztatnám, hogy jó ötlet","1");
-INSERT INTO teszt_view VALUES("9","Ha megtudod, hogy ismerősöd egy olyan terméket akar venni, amelyre te is vágytál régen, csak már elfelejtetted, akkor mit tennél?","Bíztatnám, hogy jó ötlet","1");
-INSERT INTO teszt_view VALUES("9","Ha megtudod, hogy ismerősöd egy olyan terméket akar venni, amelyre te is vágytál régen, csak már elfelejtetted, akkor mit tennél?","Bíztatnám, hogy jó ötlet","1");
-INSERT INTO teszt_view VALUES("9","Ha megtudod, hogy ismerősöd egy olyan terméket akar venni, amelyre te is vágytál régen, csak már elfelejtetted, akkor mit tennél?","Bíztatnám, hogy jó ötlet","1");
-INSERT INTO teszt_view VALUES("9","Ha megtudod, hogy ismerősöd egy olyan terméket akar venni, amelyre te is vágytál régen, csak már elfelejtetted, akkor mit tennél?","Én is meg akarnám venni","1");
-INSERT INTO teszt_view VALUES("9","Ha megtudod, hogy ismerősöd egy olyan terméket akar venni, amelyre te is vágytál régen, csak már elfelejtetted, akkor mit tennél?","Nem érdekelne","1");
-INSERT INTO teszt_view VALUES("9","Ha megtudod, hogy ismerősöd egy olyan terméket akar venni, amelyre te is vágytál régen, csak már elfelejtetted, akkor mit tennél?","Bíztatnám, hogy jó ötlet","1");
-INSERT INTO teszt_view VALUES("9","Ha megtudod, hogy ismerősöd egy olyan terméket akar venni, amelyre te is vágytál régen, csak már elfelejtetted, akkor mit tennél?","Nem érdekelne","1");
-INSERT INTO teszt_view VALUES("9","Ha megtudod, hogy ismerősöd egy olyan terméket akar venni, amelyre te is vágytál régen, csak már elfelejtetted, akkor mit tennél?","Jobbat ajánlanék neki","1");
-INSERT INTO teszt_view VALUES("9","Ha megtudod, hogy ismerősöd egy olyan terméket akar venni, amelyre te is vágytál régen, csak már elfelejtetted, akkor mit tennél?","Jobbat ajánlanék neki","1");
-INSERT INTO teszt_view VALUES("9","Ha megtudod, hogy ismerősöd egy olyan terméket akar venni, amelyre te is vágytál régen, csak már elfelejtetted, akkor mit tennél?","Bíztatnám, hogy jó ötlet","1");
-INSERT INTO teszt_view VALUES("9","Ha megtudod, hogy ismerősöd egy olyan terméket akar venni, amelyre te is vágytál régen, csak már elfelejtetted, akkor mit tennél?","Jobbat ajánlanék neki","1");
-INSERT INTO teszt_view VALUES("9","Ha megtudod, hogy ismerősöd egy olyan terméket akar venni, amelyre te is vágytál régen, csak már elfelejtetted, akkor mit tennél?","Bíztatnám, hogy jó ötlet","1");
-INSERT INTO teszt_view VALUES("9","Ha megtudod, hogy ismerősöd egy olyan terméket akar venni, amelyre te is vágytál régen, csak már elfelejtetted, akkor mit tennél?","Bíztatnám, hogy jó ötlet","1");
-INSERT INTO teszt_view VALUES("9","Ha megtudod, hogy ismerősöd egy olyan terméket akar venni, amelyre te is vágytál régen, csak már elfelejtetted, akkor mit tennél?","Bíztatnám, hogy jó ötlet","1");
-INSERT INTO teszt_view VALUES("9","Ha megtudod, hogy ismerősöd egy olyan terméket akar venni, amelyre te is vágytál régen, csak már elfelejtetted, akkor mit tennél?","Bíztatnám, hogy jó ötlet","1");
-INSERT INTO teszt_view VALUES("9","Ha megtudod, hogy ismerősöd egy olyan terméket akar venni, amelyre te is vágytál régen, csak már elfelejtetted, akkor mit tennél?","Én is meg akarnám venni","1");
-INSERT INTO teszt_view VALUES("9","Ha megtudod, hogy ismerősöd egy olyan terméket akar venni, amelyre te is vágytál régen, csak már elfelejtetted, akkor mit tennél?","Jobbat ajánlanék neki","1");
-INSERT INTO teszt_view VALUES("9","Ha megtudod, hogy ismerősöd egy olyan terméket akar venni, amelyre te is vágytál régen, csak már elfelejtetted, akkor mit tennél?","Bíztatnám, hogy jó ötlet","1");
-INSERT INTO teszt_view VALUES("9","Ha megtudod, hogy ismerősöd egy olyan terméket akar venni, amelyre te is vágytál régen, csak már elfelejtetted, akkor mit tennél?","Bíztatnám, hogy jó ötlet","1");
-INSERT INTO teszt_view VALUES("9","Ha megtudod, hogy ismerősöd egy olyan terméket akar venni, amelyre te is vágytál régen, csak már elfelejtetted, akkor mit tennél?","Bíztatnám, hogy jó ötlet","1");
-INSERT INTO teszt_view VALUES("9","Ha megtudod, hogy ismerősöd egy olyan terméket akar venni, amelyre te is vágytál régen, csak már elfelejtetted, akkor mit tennél?","Bíztatnám, hogy jó ötlet","1");
-INSERT INTO teszt_view VALUES("9","Ha megtudod, hogy ismerősöd egy olyan terméket akar venni, amelyre te is vágytál régen, csak már elfelejtetted, akkor mit tennél?","Bíztatnám, hogy jó ötlet","1");
-INSERT INTO teszt_view VALUES("9","Ha megtudod, hogy ismerősöd egy olyan terméket akar venni, amelyre te is vágytál régen, csak már elfelejtetted, akkor mit tennél?","Bíztatnám, hogy jó ötlet","1");
-INSERT INTO teszt_view VALUES("9","Ha megtudod, hogy ismerősöd egy olyan terméket akar venni, amelyre te is vágytál régen, csak már elfelejtetted, akkor mit tennél?","Bíztatnám, hogy jó ötlet","1");
-INSERT INTO teszt_view VALUES("9","Ha megtudod, hogy ismerősöd egy olyan terméket akar venni, amelyre te is vágytál régen, csak már elfelejtetted, akkor mit tennél?","Nem érdekelne","1");
-INSERT INTO teszt_view VALUES("9","Ha megtudod, hogy ismerősöd egy olyan terméket akar venni, amelyre te is vágytál régen, csak már elfelejtetted, akkor mit tennél?","Bíztatnám, hogy jó ötlet","1");
-INSERT INTO teszt_view VALUES("9","Ha megtudod, hogy ismerősöd egy olyan terméket akar venni, amelyre te is vágytál régen, csak már elfelejtetted, akkor mit tennél?","Jobbat ajánlanék neki","1");
-INSERT INTO teszt_view VALUES("9","Ha megtudod, hogy ismerősöd egy olyan terméket akar venni, amelyre te is vágytál régen, csak már elfelejtetted, akkor mit tennél?","Bíztatnám, hogy jó ötlet","1");
-INSERT INTO teszt_view VALUES("9","Ha megtudod, hogy ismerősöd egy olyan terméket akar venni, amelyre te is vágytál régen, csak már elfelejtetted, akkor mit tennél?","Én is meg akarnám venni","1");
-INSERT INTO teszt_view VALUES("9","Ha megtudod, hogy ismerősöd egy olyan terméket akar venni, amelyre te is vágytál régen, csak már elfelejtetted, akkor mit tennél?","Bíztatnám, hogy jó ötlet","1");
-INSERT INTO teszt_view VALUES("9","Ha megtudod, hogy ismerősöd egy olyan terméket akar venni, amelyre te is vágytál régen, csak már elfelejtetted, akkor mit tennél?","Bíztatnám, hogy jó ötlet","1");
-INSERT INTO teszt_view VALUES("9","Ha megtudod, hogy ismerősöd egy olyan terméket akar venni, amelyre te is vágytál régen, csak már elfelejtetted, akkor mit tennél?","Bíztatnám, hogy jó ötlet","1");
-INSERT INTO teszt_view VALUES("9","Ha megtudod, hogy ismerősöd egy olyan terméket akar venni, amelyre te is vágytál régen, csak már elfelejtetted, akkor mit tennél?","Bíztatnám, hogy jó ötlet","1");
-INSERT INTO teszt_view VALUES("9","Ha megtudod, hogy ismerősöd egy olyan terméket akar venni, amelyre te is vágytál régen, csak már elfelejtetted, akkor mit tennél?","Jobbat ajánlanék neki","1");
-INSERT INTO teszt_view VALUES("9","Ha megtudod, hogy ismerősöd egy olyan terméket akar venni, amelyre te is vágytál régen, csak már elfelejtetted, akkor mit tennél?","Nem érdekelne","1");
-INSERT INTO teszt_view VALUES("9","Ha megtudod, hogy ismerősöd egy olyan terméket akar venni, amelyre te is vágytál régen, csak már elfelejtetted, akkor mit tennél?","Bíztatnám, hogy jó ötlet","1");
-INSERT INTO teszt_view VALUES("9","Ha megtudod, hogy ismerősöd egy olyan terméket akar venni, amelyre te is vágytál régen, csak már elfelejtetted, akkor mit tennél?","Bíztatnám, hogy jó ötlet","1");
-INSERT INTO teszt_view VALUES("9","Ha megtudod, hogy ismerősöd egy olyan terméket akar venni, amelyre te is vágytál régen, csak már elfelejtetted, akkor mit tennél?","Bíztatnám, hogy jó ötlet","1");
-INSERT INTO teszt_view VALUES("9","Ha megtudod, hogy ismerősöd egy olyan terméket akar venni, amelyre te is vágytál régen, csak már elfelejtetted, akkor mit tennél?","Jobbat ajánlanék neki","1");
-INSERT INTO teszt_view VALUES("9","Ha megtudod, hogy ismerősöd egy olyan terméket akar venni, amelyre te is vágytál régen, csak már elfelejtetted, akkor mit tennél?","Bíztatnám, hogy jó ötlet","1");
-INSERT INTO teszt_view VALUES("9","Ha megtudod, hogy ismerősöd egy olyan terméket akar venni, amelyre te is vágytál régen, csak már elfelejtetted, akkor mit tennél?","Bíztatnám, hogy jó ötlet","1");
-INSERT INTO teszt_view VALUES("9","Ha megtudod, hogy ismerősöd egy olyan terméket akar venni, amelyre te is vágytál régen, csak már elfelejtetted, akkor mit tennél?","Bíztatnám, hogy jó ötlet","1");
-INSERT INTO teszt_view VALUES("9","Ha megtudod, hogy ismerősöd egy olyan terméket akar venni, amelyre te is vágytál régen, csak már elfelejtetted, akkor mit tennél?","Én is meg akarnám venni","1");
-INSERT INTO teszt_view VALUES("9","Ha megtudod, hogy ismerősöd egy olyan terméket akar venni, amelyre te is vágytál régen, csak már elfelejtetted, akkor mit tennél?","Bíztatnám, hogy jó ötlet","1");
-INSERT INTO teszt_view VALUES("9","Ha megtudod, hogy ismerősöd egy olyan terméket akar venni, amelyre te is vágytál régen, csak már elfelejtetted, akkor mit tennél?","Bíztatnám, hogy jó ötlet","1");
-INSERT INTO teszt_view VALUES("9","Ha megtudod, hogy ismerősöd egy olyan terméket akar venni, amelyre te is vágytál régen, csak már elfelejtetted, akkor mit tennél?","Bíztatnám, hogy jó ötlet","1");
-INSERT INTO teszt_view VALUES("9","Ha megtudod, hogy ismerősöd egy olyan terméket akar venni, amelyre te is vágytál régen, csak már elfelejtetted, akkor mit tennél?","Bíztatnám, hogy jó ötlet","1");
-INSERT INTO teszt_view VALUES("9","Ha megtudod, hogy ismerősöd egy olyan terméket akar venni, amelyre te is vágytál régen, csak már elfelejtetted, akkor mit tennél?","Bíztatnám, hogy jó ötlet","1");
-INSERT INTO teszt_view VALUES("9","Ha megtudod, hogy ismerősöd egy olyan terméket akar venni, amelyre te is vágytál régen, csak már elfelejtetted, akkor mit tennél?","Nem érdekelne","1");
-INSERT INTO teszt_view VALUES("9","Ha megtudod, hogy ismerősöd egy olyan terméket akar venni, amelyre te is vágytál régen, csak már elfelejtetted, akkor mit tennél?","Bíztatnám, hogy jó ötlet","1");
-INSERT INTO teszt_view VALUES("9","Ha megtudod, hogy ismerősöd egy olyan terméket akar venni, amelyre te is vágytál régen, csak már elfelejtetted, akkor mit tennél?","Bíztatnám, hogy jó ötlet","1");
-INSERT INTO teszt_view VALUES("9","Ha megtudod, hogy ismerősöd egy olyan terméket akar venni, amelyre te is vágytál régen, csak már elfelejtetted, akkor mit tennél?","Bíztatnám, hogy jó ötlet","1");
-INSERT INTO teszt_view VALUES("9","Ha megtudod, hogy ismerősöd egy olyan terméket akar venni, amelyre te is vágytál régen, csak már elfelejtetted, akkor mit tennél?","Bíztatnám, hogy jó ötlet","1");
-INSERT INTO teszt_view VALUES("9","Ha megtudod, hogy ismerősöd egy olyan terméket akar venni, amelyre te is vágytál régen, csak már elfelejtetted, akkor mit tennél?","Én is meg akarnám venni","1");
-INSERT INTO teszt_view VALUES("9","Ha megtudod, hogy ismerősöd egy olyan terméket akar venni, amelyre te is vágytál régen, csak már elfelejtetted, akkor mit tennél?","Bíztatnám, hogy jó ötlet","1");
-INSERT INTO teszt_view VALUES("9","Ha megtudod, hogy ismerősöd egy olyan terméket akar venni, amelyre te is vágytál régen, csak már elfelejtetted, akkor mit tennél?","Nem érdekelne","1");
-INSERT INTO teszt_view VALUES("9","Ha megtudod, hogy ismerősöd egy olyan terméket akar venni, amelyre te is vágytál régen, csak már elfelejtetted, akkor mit tennél?","Jobbat ajánlanék neki","1");
-INSERT INTO teszt_view VALUES("9","Ha megtudod, hogy ismerősöd egy olyan terméket akar venni, amelyre te is vágytál régen, csak már elfelejtetted, akkor mit tennél?","Bíztatnám, hogy jó ötlet","1");
-INSERT INTO teszt_view VALUES("9","Ha megtudod, hogy ismerősöd egy olyan terméket akar venni, amelyre te is vágytál régen, csak már elfelejtetted, akkor mit tennél?","Bíztatnám, hogy jó ötlet","1");
-INSERT INTO teszt_view VALUES("9","Ha megtudod, hogy ismerősöd egy olyan terméket akar venni, amelyre te is vágytál régen, csak már elfelejtetted, akkor mit tennél?","Bíztatnám, hogy jó ötlet","1");
-INSERT INTO teszt_view VALUES("9","Ha megtudod, hogy ismerősöd egy olyan terméket akar venni, amelyre te is vágytál régen, csak már elfelejtetted, akkor mit tennél?","Jobbat ajánlanék neki","1");
-INSERT INTO teszt_view VALUES("9","Ha megtudod, hogy ismerősöd egy olyan terméket akar venni, amelyre te is vágytál régen, csak már elfelejtetted, akkor mit tennél?","Bíztatnám, hogy jó ötlet","1");
-INSERT INTO teszt_view VALUES("9","Ha megtudod, hogy ismerősöd egy olyan terméket akar venni, amelyre te is vágytál régen, csak már elfelejtetted, akkor mit tennél?","Bíztatnám, hogy jó ötlet","1");
-INSERT INTO teszt_view VALUES("9","Ha megtudod, hogy ismerősöd egy olyan terméket akar venni, amelyre te is vágytál régen, csak már elfelejtetted, akkor mit tennél?","Bíztatnám, hogy jó ötlet","1");
-INSERT INTO teszt_view VALUES("9","Ha megtudod, hogy ismerősöd egy olyan terméket akar venni, amelyre te is vágytál régen, csak már elfelejtetted, akkor mit tennél?","Nem érdekelne","1");
-INSERT INTO teszt_view VALUES("9","Ha megtudod, hogy ismerősöd egy olyan terméket akar venni, amelyre te is vágytál régen, csak már elfelejtetted, akkor mit tennél?","Bíztatnám, hogy jó ötlet","1");
-INSERT INTO teszt_view VALUES("9","Ha megtudod, hogy ismerősöd egy olyan terméket akar venni, amelyre te is vágytál régen, csak már elfelejtetted, akkor mit tennél?","Bíztatnám, hogy jó ötlet","1");
-INSERT INTO teszt_view VALUES("9","Ha megtudod, hogy ismerősöd egy olyan terméket akar venni, amelyre te is vágytál régen, csak már elfelejtetted, akkor mit tennél?","Bíztatnám, hogy jó ötlet","1");
-INSERT INTO teszt_view VALUES("9","Ha megtudod, hogy ismerősöd egy olyan terméket akar venni, amelyre te is vágytál régen, csak már elfelejtetted, akkor mit tennél?","Nem érdekelne","1");
-INSERT INTO teszt_view VALUES("9","Ha megtudod, hogy ismerősöd egy olyan terméket akar venni, amelyre te is vágytál régen, csak már elfelejtetted, akkor mit tennél?","Bíztatnám, hogy jó ötlet","1");
-INSERT INTO teszt_view VALUES("9","Ha megtudod, hogy ismerősöd egy olyan terméket akar venni, amelyre te is vágytál régen, csak már elfelejtetted, akkor mit tennél?","Bíztatnám, hogy jó ötlet","1");
-INSERT INTO teszt_view VALUES("9","Ha megtudod, hogy ismerősöd egy olyan terméket akar venni, amelyre te is vágytál régen, csak már elfelejtetted, akkor mit tennél?","Bíztatnám, hogy jó ötlet","1");
-INSERT INTO teszt_view VALUES("9","Ha megtudod, hogy ismerősöd egy olyan terméket akar venni, amelyre te is vágytál régen, csak már elfelejtetted, akkor mit tennél?","Jobbat ajánlanék neki","1");
-INSERT INTO teszt_view VALUES("9","Ha megtudod, hogy ismerősöd egy olyan terméket akar venni, amelyre te is vágytál régen, csak már elfelejtetted, akkor mit tennél?","Bíztatnám, hogy jó ötlet","1");
-INSERT INTO teszt_view VALUES("9","Ha megtudod, hogy ismerősöd egy olyan terméket akar venni, amelyre te is vágytál régen, csak már elfelejtetted, akkor mit tennél?","Bíztatnám, hogy jó ötlet","1");
-INSERT INTO teszt_view VALUES("9","Ha megtudod, hogy ismerősöd egy olyan terméket akar venni, amelyre te is vágytál régen, csak már elfelejtetted, akkor mit tennél?","Bíztatnám, hogy jó ötlet","1");
-INSERT INTO teszt_view VALUES("9","Ha megtudod, hogy ismerősöd egy olyan terméket akar venni, amelyre te is vágytál régen, csak már elfelejtetted, akkor mit tennél?","Jobbat ajánlanék neki","1");
-INSERT INTO teszt_view VALUES("9","Ha megtudod, hogy ismerősöd egy olyan terméket akar venni, amelyre te is vágytál régen, csak már elfelejtetted, akkor mit tennél?","Én is meg akarnám venni","1");
-INSERT INTO teszt_view VALUES("9","Ha megtudod, hogy ismerősöd egy olyan terméket akar venni, amelyre te is vágytál régen, csak már elfelejtetted, akkor mit tennél?","Bíztatnám, hogy jó ötlet","1");
-INSERT INTO teszt_view VALUES("9","Ha megtudod, hogy ismerősöd egy olyan terméket akar venni, amelyre te is vágytál régen, csak már elfelejtetted, akkor mit tennél?","Én is meg akarnám venni","1");
-INSERT INTO teszt_view VALUES("9","Ha megtudod, hogy ismerősöd egy olyan terméket akar venni, amelyre te is vágytál régen, csak már elfelejtetted, akkor mit tennél?","Bíztatnám, hogy jó ötlet","1");
-INSERT INTO teszt_view VALUES("9","Ha megtudod, hogy ismerősöd egy olyan terméket akar venni, amelyre te is vágytál régen, csak már elfelejtetted, akkor mit tennél?","Bíztatnám, hogy jó ötlet","1");
-INSERT INTO teszt_view VALUES("9","Ha megtudod, hogy ismerősöd egy olyan terméket akar venni, amelyre te is vágytál régen, csak már elfelejtetted, akkor mit tennél?","Bíztatnám, hogy jó ötlet","1");
-INSERT INTO teszt_view VALUES("9","Ha megtudod, hogy ismerősöd egy olyan terméket akar venni, amelyre te is vágytál régen, csak már elfelejtetted, akkor mit tennél?","Jobbat ajánlanék neki","1");
-INSERT INTO teszt_view VALUES("10","Ha tudod, hogy egy barátod mire vágyik és ajándékot akarnál venni, de túl drága, megosztanád barátod ismerőseivel, hogy szálljanak be a költségekbe?","Igen, de csak azokkal, akikre tudom, hogy számítok is","1");
-INSERT INTO teszt_view VALUES("10","Ha tudod, hogy egy barátod mire vágyik és ajándékot akarnál venni, de túl drága, megosztanád barátod ismerőseivel, hogy szálljanak be a költségekbe?","Igen, de csak azokkal, akikre tudom, hogy számítok is","1");
-INSERT INTO teszt_view VALUES("10","Ha tudod, hogy egy barátod mire vágyik és ajándékot akarnál venni, de túl drága, megosztanád barátod ismerőseivel, hogy szálljanak be a költségekbe?","Nem, inkább olcsóbb ajándékot néznék","1");
-INSERT INTO teszt_view VALUES("10","Ha tudod, hogy egy barátod mire vágyik és ajándékot akarnál venni, de túl drága, megosztanád barátod ismerőseivel, hogy szálljanak be a költségekbe?","Igen, de csak azokkal, akikre tudom, hogy számítok is","1");
-INSERT INTO teszt_view VALUES("10","Ha tudod, hogy egy barátod mire vágyik és ajándékot akarnál venni, de túl drága, megosztanád barátod ismerőseivel, hogy szálljanak be a költségekbe?","Igen, de csak azokkal, akikre tudom, hogy számítok is","1");
-INSERT INTO teszt_view VALUES("10","Ha tudod, hogy egy barátod mire vágyik és ajándékot akarnál venni, de túl drága, megosztanád barátod ismerőseivel, hogy szálljanak be a költségekbe?","Igen, de csak azokkal, akikre tudom, hogy számítok is","1");
-INSERT INTO teszt_view VALUES("10","Ha tudod, hogy egy barátod mire vágyik és ajándékot akarnál venni, de túl drága, megosztanád barátod ismerőseivel, hogy szálljanak be a költségekbe?","Igen, de csak azokkal, akikre tudom, hogy számítok is","1");
-INSERT INTO teszt_view VALUES("10","Ha tudod, hogy egy barátod mire vágyik és ajándékot akarnál venni, de túl drága, megosztanád barátod ismerőseivel, hogy szálljanak be a költségekbe?","Nem, de adnék barátomnak pénzt bele. ","1");
-INSERT INTO teszt_view VALUES("10","Ha tudod, hogy egy barátod mire vágyik és ajándékot akarnál venni, de túl drága, megosztanád barátod ismerőseivel, hogy szálljanak be a költségekbe?","Nem, inkább olcsóbb ajándékot néznék","1");
-INSERT INTO teszt_view VALUES("10","Ha tudod, hogy egy barátod mire vágyik és ajándékot akarnál venni, de túl drága, megosztanád barátod ismerőseivel, hogy szálljanak be a költségekbe?","Igen, de csak azokkal, akikre tudom, hogy számítok is","1");
-INSERT INTO teszt_view VALUES("10","Ha tudod, hogy egy barátod mire vágyik és ajándékot akarnál venni, de túl drága, megosztanád barátod ismerőseivel, hogy szálljanak be a költségekbe?","Igen, de csak azokkal, akikre tudom, hogy számítok is","1");
-INSERT INTO teszt_view VALUES("10","Ha tudod, hogy egy barátod mire vágyik és ajándékot akarnál venni, de túl drága, megosztanád barátod ismerőseivel, hogy szálljanak be a költségekbe?","Igen, mindenkivel","1");
-INSERT INTO teszt_view VALUES("10","Ha tudod, hogy egy barátod mire vágyik és ajándékot akarnál venni, de túl drága, megosztanád barátod ismerőseivel, hogy szálljanak be a költségekbe?","Igen, de csak azokkal, akikre tudom, hogy számítok is","1");
-INSERT INTO teszt_view VALUES("10","Ha tudod, hogy egy barátod mire vágyik és ajándékot akarnál venni, de túl drága, megosztanád barátod ismerőseivel, hogy szálljanak be a költségekbe?","Nem, inkább olcsóbb ajándékot néznék","1");
-INSERT INTO teszt_view VALUES("10","Ha tudod, hogy egy barátod mire vágyik és ajándékot akarnál venni, de túl drága, megosztanád barátod ismerőseivel, hogy szálljanak be a költségekbe?","Igen, de csak azokkal, akikre tudom, hogy számítok is","1");
-INSERT INTO teszt_view VALUES("10","Ha tudod, hogy egy barátod mire vágyik és ajándékot akarnál venni, de túl drága, megosztanád barátod ismerőseivel, hogy szálljanak be a költségekbe?","Nem, inkább olcsóbb ajándékot néznék","1");
-INSERT INTO teszt_view VALUES("10","Ha tudod, hogy egy barátod mire vágyik és ajándékot akarnál venni, de túl drága, megosztanád barátod ismerőseivel, hogy szálljanak be a költségekbe?","Igen, mindenkivel","1");
-INSERT INTO teszt_view VALUES("10","Ha tudod, hogy egy barátod mire vágyik és ajándékot akarnál venni, de túl drága, megosztanád barátod ismerőseivel, hogy szálljanak be a költségekbe?","Igen, mindenkivel","1");
-INSERT INTO teszt_view VALUES("10","Ha tudod, hogy egy barátod mire vágyik és ajándékot akarnál venni, de túl drága, megosztanád barátod ismerőseivel, hogy szálljanak be a költségekbe?","Igen, de csak azokkal, akikre tudom, hogy számítok is","1");
-INSERT INTO teszt_view VALUES("10","Ha tudod, hogy egy barátod mire vágyik és ajándékot akarnál venni, de túl drága, megosztanád barátod ismerőseivel, hogy szálljanak be a költségekbe?","Igen, de csak azokkal, akikre tudom, hogy számítok is","1");
-INSERT INTO teszt_view VALUES("10","Ha tudod, hogy egy barátod mire vágyik és ajándékot akarnál venni, de túl drága, megosztanád barátod ismerőseivel, hogy szálljanak be a költségekbe?","Igen, de csak azokkal, akikre tudom, hogy számítok is","1");
-INSERT INTO teszt_view VALUES("10","Ha tudod, hogy egy barátod mire vágyik és ajándékot akarnál venni, de túl drága, megosztanád barátod ismerőseivel, hogy szálljanak be a költségekbe?","Igen, de csak azokkal, akikre tudom, hogy számítok is","1");
-INSERT INTO teszt_view VALUES("10","Ha tudod, hogy egy barátod mire vágyik és ajándékot akarnál venni, de túl drága, megosztanád barátod ismerőseivel, hogy szálljanak be a költségekbe?","Igen, mindenkivel","1");
-INSERT INTO teszt_view VALUES("10","Ha tudod, hogy egy barátod mire vágyik és ajándékot akarnál venni, de túl drága, megosztanád barátod ismerőseivel, hogy szálljanak be a költségekbe?","Igen, de csak azokkal, akikre tudom, hogy számítok is","1");
-INSERT INTO teszt_view VALUES("10","Ha tudod, hogy egy barátod mire vágyik és ajándékot akarnál venni, de túl drága, megosztanád barátod ismerőseivel, hogy szálljanak be a költségekbe?","Igen, de csak azokkal, akikre tudom, hogy számítok is","1");
-INSERT INTO teszt_view VALUES("10","Ha tudod, hogy egy barátod mire vágyik és ajándékot akarnál venni, de túl drága, megosztanád barátod ismerőseivel, hogy szálljanak be a költségekbe?","Nem, inkább olcsóbb ajándékot néznék","1");
-INSERT INTO teszt_view VALUES("10","Ha tudod, hogy egy barátod mire vágyik és ajándékot akarnál venni, de túl drága, megosztanád barátod ismerőseivel, hogy szálljanak be a költségekbe?","Igen, de csak azokkal, akikre tudom, hogy számítok is","1");
-INSERT INTO teszt_view VALUES("10","Ha tudod, hogy egy barátod mire vágyik és ajándékot akarnál venni, de túl drága, megosztanád barátod ismerőseivel, hogy szálljanak be a költségekbe?","Igen, de csak azokkal, akikre tudom, hogy számítok is","1");
-INSERT INTO teszt_view VALUES("10","Ha tudod, hogy egy barátod mire vágyik és ajándékot akarnál venni, de túl drága, megosztanád barátod ismerőseivel, hogy szálljanak be a költségekbe?","Igen, mindenkivel","1");
-INSERT INTO teszt_view VALUES("10","Ha tudod, hogy egy barátod mire vágyik és ajándékot akarnál venni, de túl drága, megosztanád barátod ismerőseivel, hogy szálljanak be a költségekbe?","Igen, de csak azokkal, akikre tudom, hogy számítok is","1");
-INSERT INTO teszt_view VALUES("10","Ha tudod, hogy egy barátod mire vágyik és ajándékot akarnál venni, de túl drága, megosztanád barátod ismerőseivel, hogy szálljanak be a költségekbe?","Igen, de csak azokkal, akikre tudom, hogy számítok is","1");
-INSERT INTO teszt_view VALUES("10","Ha tudod, hogy egy barátod mire vágyik és ajándékot akarnál venni, de túl drága, megosztanád barátod ismerőseivel, hogy szálljanak be a költségekbe?","Igen, de csak azokkal, akikre tudom, hogy számítok is","1");
-INSERT INTO teszt_view VALUES("10","Ha tudod, hogy egy barátod mire vágyik és ajándékot akarnál venni, de túl drága, megosztanád barátod ismerőseivel, hogy szálljanak be a költségekbe?","Igen, mindenkivel","1");
-INSERT INTO teszt_view VALUES("10","Ha tudod, hogy egy barátod mire vágyik és ajándékot akarnál venni, de túl drága, megosztanád barátod ismerőseivel, hogy szálljanak be a költségekbe?","Igen, de csak azokkal, akikre tudom, hogy számítok is","1");
-INSERT INTO teszt_view VALUES("10","Ha tudod, hogy egy barátod mire vágyik és ajándékot akarnál venni, de túl drága, megosztanád barátod ismerőseivel, hogy szálljanak be a költségekbe?","Igen, de csak azokkal, akikre tudom, hogy számítok is","1");
-INSERT INTO teszt_view VALUES("10","Ha tudod, hogy egy barátod mire vágyik és ajándékot akarnál venni, de túl drága, megosztanád barátod ismerőseivel, hogy szálljanak be a költségekbe?","Nem, inkább olcsóbb ajándékot néznék","1");
-INSERT INTO teszt_view VALUES("10","Ha tudod, hogy egy barátod mire vágyik és ajándékot akarnál venni, de túl drága, megosztanád barátod ismerőseivel, hogy szálljanak be a költségekbe?","Igen, de csak azokkal, akikre tudom, hogy számítok is","1");
-INSERT INTO teszt_view VALUES("10","Ha tudod, hogy egy barátod mire vágyik és ajándékot akarnál venni, de túl drága, megosztanád barátod ismerőseivel, hogy szálljanak be a költségekbe?","Nem, inkább olcsóbb ajándékot néznék","1");
-INSERT INTO teszt_view VALUES("10","Ha tudod, hogy egy barátod mire vágyik és ajándékot akarnál venni, de túl drága, megosztanád barátod ismerőseivel, hogy szálljanak be a költségekbe?","Igen, de csak azokkal, akikre tudom, hogy számítok is","1");
-INSERT INTO teszt_view VALUES("10","Ha tudod, hogy egy barátod mire vágyik és ajándékot akarnál venni, de túl drága, megosztanád barátod ismerőseivel, hogy szálljanak be a költségekbe?","Igen, de csak azokkal, akikre tudom, hogy számítok is","1");
-INSERT INTO teszt_view VALUES("10","Ha tudod, hogy egy barátod mire vágyik és ajándékot akarnál venni, de túl drága, megosztanád barátod ismerőseivel, hogy szálljanak be a költségekbe?","Igen, de csak azokkal, akikre tudom, hogy számítok is","1");
-INSERT INTO teszt_view VALUES("10","Ha tudod, hogy egy barátod mire vágyik és ajándékot akarnál venni, de túl drága, megosztanád barátod ismerőseivel, hogy szálljanak be a költségekbe?","Igen, de csak azokkal, akikre tudom, hogy számítok is","1");
-INSERT INTO teszt_view VALUES("10","Ha tudod, hogy egy barátod mire vágyik és ajándékot akarnál venni, de túl drága, megosztanád barátod ismerőseivel, hogy szálljanak be a költségekbe?","Igen, de csak azokkal, akikre tudom, hogy számítok is","1");
-INSERT INTO teszt_view VALUES("10","Ha tudod, hogy egy barátod mire vágyik és ajándékot akarnál venni, de túl drága, megosztanád barátod ismerőseivel, hogy szálljanak be a költségekbe?","Igen, de csak azokkal, akikre tudom, hogy számítok is","1");
-INSERT INTO teszt_view VALUES("10","Ha tudod, hogy egy barátod mire vágyik és ajándékot akarnál venni, de túl drága, megosztanád barátod ismerőseivel, hogy szálljanak be a költségekbe?","Nem, inkább olcsóbb ajándékot néznék","1");
-INSERT INTO teszt_view VALUES("10","Ha tudod, hogy egy barátod mire vágyik és ajándékot akarnál venni, de túl drága, megosztanád barátod ismerőseivel, hogy szálljanak be a költségekbe?","Nem, inkább olcsóbb ajándékot néznék","1");
-INSERT INTO teszt_view VALUES("10","Ha tudod, hogy egy barátod mire vágyik és ajándékot akarnál venni, de túl drága, megosztanád barátod ismerőseivel, hogy szálljanak be a költségekbe?","Igen, de csak azokkal, akikre tudom, hogy számítok is","1");
-INSERT INTO teszt_view VALUES("10","Ha tudod, hogy egy barátod mire vágyik és ajándékot akarnál venni, de túl drága, megosztanád barátod ismerőseivel, hogy szálljanak be a költségekbe?","Igen, de csak azokkal, akikre tudom, hogy számítok is","1");
-INSERT INTO teszt_view VALUES("10","Ha tudod, hogy egy barátod mire vágyik és ajándékot akarnál venni, de túl drága, megosztanád barátod ismerőseivel, hogy szálljanak be a költségekbe?","Igen, de csak azokkal, akikre tudom, hogy számítok is","1");
-INSERT INTO teszt_view VALUES("10","Ha tudod, hogy egy barátod mire vágyik és ajándékot akarnál venni, de túl drága, megosztanád barátod ismerőseivel, hogy szálljanak be a költségekbe?","Igen, de csak azokkal, akikre tudom, hogy számítok is","1");
-INSERT INTO teszt_view VALUES("10","Ha tudod, hogy egy barátod mire vágyik és ajándékot akarnál venni, de túl drága, megosztanád barátod ismerőseivel, hogy szálljanak be a költségekbe?","Igen, de csak azokkal, akikre tudom, hogy számítok is","1");
-INSERT INTO teszt_view VALUES("10","Ha tudod, hogy egy barátod mire vágyik és ajándékot akarnál venni, de túl drága, megosztanád barátod ismerőseivel, hogy szálljanak be a költségekbe?","Igen, de csak azokkal, akikre tudom, hogy számítok is","1");
-INSERT INTO teszt_view VALUES("10","Ha tudod, hogy egy barátod mire vágyik és ajándékot akarnál venni, de túl drága, megosztanád barátod ismerőseivel, hogy szálljanak be a költségekbe?","Igen, de csak azokkal, akikre tudom, hogy számítok is","1");
-INSERT INTO teszt_view VALUES("10","Ha tudod, hogy egy barátod mire vágyik és ajándékot akarnál venni, de túl drága, megosztanád barátod ismerőseivel, hogy szálljanak be a költségekbe?","Igen, de csak azokkal, akikre tudom, hogy számítok is","1");
-INSERT INTO teszt_view VALUES("10","Ha tudod, hogy egy barátod mire vágyik és ajándékot akarnál venni, de túl drága, megosztanád barátod ismerőseivel, hogy szálljanak be a költségekbe?","Igen, de csak azokkal, akikre tudom, hogy számítok is","1");
-INSERT INTO teszt_view VALUES("10","Ha tudod, hogy egy barátod mire vágyik és ajándékot akarnál venni, de túl drága, megosztanád barátod ismerőseivel, hogy szálljanak be a költségekbe?","Igen, de csak azokkal, akikre tudom, hogy számítok is","1");
-INSERT INTO teszt_view VALUES("10","Ha tudod, hogy egy barátod mire vágyik és ajándékot akarnál venni, de túl drága, megosztanád barátod ismerőseivel, hogy szálljanak be a költségekbe?","Igen, de csak azokkal, akikre tudom, hogy számítok is","1");
-INSERT INTO teszt_view VALUES("10","Ha tudod, hogy egy barátod mire vágyik és ajándékot akarnál venni, de túl drága, megosztanád barátod ismerőseivel, hogy szálljanak be a költségekbe?","Igen, de csak azokkal, akikre tudom, hogy számítok is","1");
-INSERT INTO teszt_view VALUES("10","Ha tudod, hogy egy barátod mire vágyik és ajándékot akarnál venni, de túl drága, megosztanád barátod ismerőseivel, hogy szálljanak be a költségekbe?","Nem, inkább olcsóbb ajándékot néznék","1");
-INSERT INTO teszt_view VALUES("10","Ha tudod, hogy egy barátod mire vágyik és ajándékot akarnál venni, de túl drága, megosztanád barátod ismerőseivel, hogy szálljanak be a költségekbe?","Igen, de csak azokkal, akikre tudom, hogy számítok is","1");
-INSERT INTO teszt_view VALUES("10","Ha tudod, hogy egy barátod mire vágyik és ajándékot akarnál venni, de túl drága, megosztanád barátod ismerőseivel, hogy szálljanak be a költségekbe?","Igen, de csak azokkal, akikre tudom, hogy számítok is","1");
-INSERT INTO teszt_view VALUES("10","Ha tudod, hogy egy barátod mire vágyik és ajándékot akarnál venni, de túl drága, megosztanád barátod ismerőseivel, hogy szálljanak be a költségekbe?","Nem, inkább olcsóbb ajándékot néznék","1");
-INSERT INTO teszt_view VALUES("10","Ha tudod, hogy egy barátod mire vágyik és ajándékot akarnál venni, de túl drága, megosztanád barátod ismerőseivel, hogy szálljanak be a költségekbe?","Igen, de csak azokkal, akikre tudom, hogy számítok is","1");
-INSERT INTO teszt_view VALUES("10","Ha tudod, hogy egy barátod mire vágyik és ajándékot akarnál venni, de túl drága, megosztanád barátod ismerőseivel, hogy szálljanak be a költségekbe?","Nem, inkább olcsóbb ajándékot néznék","1");
-INSERT INTO teszt_view VALUES("10","Ha tudod, hogy egy barátod mire vágyik és ajándékot akarnál venni, de túl drága, megosztanád barátod ismerőseivel, hogy szálljanak be a költségekbe?","Igen, de csak azokkal, akikre tudom, hogy számítok is","1");
-INSERT INTO teszt_view VALUES("10","Ha tudod, hogy egy barátod mire vágyik és ajándékot akarnál venni, de túl drága, megosztanád barátod ismerőseivel, hogy szálljanak be a költségekbe?","Igen, de csak azokkal, akikre tudom, hogy számítok is","1");
-INSERT INTO teszt_view VALUES("10","Ha tudod, hogy egy barátod mire vágyik és ajándékot akarnál venni, de túl drága, megosztanád barátod ismerőseivel, hogy szálljanak be a költségekbe?","Igen, de csak azokkal, akikre tudom, hogy számítok is","1");
-INSERT INTO teszt_view VALUES("10","Ha tudod, hogy egy barátod mire vágyik és ajándékot akarnál venni, de túl drága, megosztanád barátod ismerőseivel, hogy szálljanak be a költségekbe?","Nem, inkább olcsóbb ajándékot néznék","1");
-INSERT INTO teszt_view VALUES("10","Ha tudod, hogy egy barátod mire vágyik és ajándékot akarnál venni, de túl drága, megosztanád barátod ismerőseivel, hogy szálljanak be a költségekbe?","Igen, de csak azokkal, akikre tudom, hogy számítok is","1");
-INSERT INTO teszt_view VALUES("10","Ha tudod, hogy egy barátod mire vágyik és ajándékot akarnál venni, de túl drága, megosztanád barátod ismerőseivel, hogy szálljanak be a költségekbe?","Igen, de csak azokkal, akikre tudom, hogy számítok is","1");
-INSERT INTO teszt_view VALUES("10","Ha tudod, hogy egy barátod mire vágyik és ajándékot akarnál venni, de túl drága, megosztanád barátod ismerőseivel, hogy szálljanak be a költségekbe?","Igen, de csak azokkal, akikre tudom, hogy számítok is","1");
-INSERT INTO teszt_view VALUES("10","Ha tudod, hogy egy barátod mire vágyik és ajándékot akarnál venni, de túl drága, megosztanád barátod ismerőseivel, hogy szálljanak be a költségekbe?","Igen, de csak azokkal, akikre tudom, hogy számítok is","1");
-INSERT INTO teszt_view VALUES("10","Ha tudod, hogy egy barátod mire vágyik és ajándékot akarnál venni, de túl drága, megosztanád barátod ismerőseivel, hogy szálljanak be a költségekbe?","Igen, de csak azokkal, akikre tudom, hogy számítok is","1");
-INSERT INTO teszt_view VALUES("10","Ha tudod, hogy egy barátod mire vágyik és ajándékot akarnál venni, de túl drága, megosztanád barátod ismerőseivel, hogy szálljanak be a költségekbe?","Igen, de csak azokkal, akikre tudom, hogy számítok is","1");
-INSERT INTO teszt_view VALUES("10","Ha tudod, hogy egy barátod mire vágyik és ajándékot akarnál venni, de túl drága, megosztanád barátod ismerőseivel, hogy szálljanak be a költségekbe?","Nem, inkább olcsóbb ajándékot néznék","1");
-INSERT INTO teszt_view VALUES("10","Ha tudod, hogy egy barátod mire vágyik és ajándékot akarnál venni, de túl drága, megosztanád barátod ismerőseivel, hogy szálljanak be a költségekbe?","Igen, de csak azokkal, akikre tudom, hogy számítok is","1");
-INSERT INTO teszt_view VALUES("10","Ha tudod, hogy egy barátod mire vágyik és ajándékot akarnál venni, de túl drága, megosztanád barátod ismerőseivel, hogy szálljanak be a költségekbe?","Igen, de csak azokkal, akikre tudom, hogy számítok is","1");
-INSERT INTO teszt_view VALUES("10","Ha tudod, hogy egy barátod mire vágyik és ajándékot akarnál venni, de túl drága, megosztanád barátod ismerőseivel, hogy szálljanak be a költségekbe?","Igen, de csak azokkal, akikre tudom, hogy számítok is","1");
-INSERT INTO teszt_view VALUES("10","Ha tudod, hogy egy barátod mire vágyik és ajándékot akarnál venni, de túl drága, megosztanád barátod ismerőseivel, hogy szálljanak be a költségekbe?","Igen, de csak azokkal, akikre tudom, hogy számítok is","1");
-INSERT INTO teszt_view VALUES("10","Ha tudod, hogy egy barátod mire vágyik és ajándékot akarnál venni, de túl drága, megosztanád barátod ismerőseivel, hogy szálljanak be a költségekbe?","Nem, de adnék barátomnak pénzt bele. ","1");
-INSERT INTO teszt_view VALUES("10","Ha tudod, hogy egy barátod mire vágyik és ajándékot akarnál venni, de túl drága, megosztanád barátod ismerőseivel, hogy szálljanak be a költségekbe?","Igen, de csak azokkal, akikre tudom, hogy számítok is","1");
-INSERT INTO teszt_view VALUES("10","Ha tudod, hogy egy barátod mire vágyik és ajándékot akarnál venni, de túl drága, megosztanád barátod ismerőseivel, hogy szálljanak be a költségekbe?","Igen, de csak azokkal, akikre tudom, hogy számítok is","1");
-INSERT INTO teszt_view VALUES("10","Ha tudod, hogy egy barátod mire vágyik és ajándékot akarnál venni, de túl drága, megosztanád barátod ismerőseivel, hogy szálljanak be a költségekbe?","Igen, de csak azokkal, akikre tudom, hogy számítok is","1");
-INSERT INTO teszt_view VALUES("10","Ha tudod, hogy egy barátod mire vágyik és ajándékot akarnál venni, de túl drága, megosztanád barátod ismerőseivel, hogy szálljanak be a költségekbe?","Igen, de csak azokkal, akikre tudom, hogy számítok is","1");
-INSERT INTO teszt_view VALUES("10","Ha tudod, hogy egy barátod mire vágyik és ajándékot akarnál venni, de túl drága, megosztanád barátod ismerőseivel, hogy szálljanak be a költségekbe?","Nem, inkább olcsóbb ajándékot néznék","1");
-INSERT INTO teszt_view VALUES("10","Ha tudod, hogy egy barátod mire vágyik és ajándékot akarnál venni, de túl drága, megosztanád barátod ismerőseivel, hogy szálljanak be a költségekbe?","Igen, de csak azokkal, akikre tudom, hogy számítok is","1");
-INSERT INTO teszt_view VALUES("10","Ha tudod, hogy egy barátod mire vágyik és ajándékot akarnál venni, de túl drága, megosztanád barátod ismerőseivel, hogy szálljanak be a költségekbe?","Igen, mindenkivel","1");
-INSERT INTO teszt_view VALUES("10","Ha tudod, hogy egy barátod mire vágyik és ajándékot akarnál venni, de túl drága, megosztanád barátod ismerőseivel, hogy szálljanak be a költségekbe?","Nem, inkább olcsóbb ajándékot néznék","1");
-INSERT INTO teszt_view VALUES("10","Ha tudod, hogy egy barátod mire vágyik és ajándékot akarnál venni, de túl drága, megosztanád barátod ismerőseivel, hogy szálljanak be a költségekbe?","Nem, de adnék barátomnak pénzt bele. ","1");
-INSERT INTO teszt_view VALUES("10","Ha tudod, hogy egy barátod mire vágyik és ajándékot akarnál venni, de túl drága, megosztanád barátod ismerőseivel, hogy szálljanak be a költségekbe?","Igen, de csak azokkal, akikre tudom, hogy számítok is","1");
-INSERT INTO teszt_view VALUES("10","Ha tudod, hogy egy barátod mire vágyik és ajándékot akarnál venni, de túl drága, megosztanád barátod ismerőseivel, hogy szálljanak be a költségekbe?","Igen, de csak azokkal, akikre tudom, hogy számítok is","1");
-INSERT INTO teszt_view VALUES("10","Ha tudod, hogy egy barátod mire vágyik és ajándékot akarnál venni, de túl drága, megosztanád barátod ismerőseivel, hogy szálljanak be a költségekbe?","Igen, de csak azokkal, akikre tudom, hogy számítok is","1");
-INSERT INTO teszt_view VALUES("10","Ha tudod, hogy egy barátod mire vágyik és ajándékot akarnál venni, de túl drága, megosztanád barátod ismerőseivel, hogy szálljanak be a költségekbe?","Igen, de csak azokkal, akikre tudom, hogy számítok is","1");
-INSERT INTO teszt_view VALUES("10","Ha tudod, hogy egy barátod mire vágyik és ajándékot akarnál venni, de túl drága, megosztanád barátod ismerőseivel, hogy szálljanak be a költségekbe?","Igen, de csak azokkal, akikre tudom, hogy számítok is","1");
-INSERT INTO teszt_view VALUES("10","Ha tudod, hogy egy barátod mire vágyik és ajándékot akarnál venni, de túl drága, megosztanád barátod ismerőseivel, hogy szálljanak be a költségekbe?","Nem, de adnék barátomnak pénzt bele. ","1");
-INSERT INTO teszt_view VALUES("10","Ha tudod, hogy egy barátod mire vágyik és ajándékot akarnál venni, de túl drága, megosztanád barátod ismerőseivel, hogy szálljanak be a költségekbe?","Igen, de csak azokkal, akikre tudom, hogy számítok is","1");
-INSERT INTO teszt_view VALUES("10","Ha tudod, hogy egy barátod mire vágyik és ajándékot akarnál venni, de túl drága, megosztanád barátod ismerőseivel, hogy szálljanak be a költségekbe?","Igen, mindenkivel","1");
-INSERT INTO teszt_view VALUES("10","Ha tudod, hogy egy barátod mire vágyik és ajándékot akarnál venni, de túl drága, megosztanád barátod ismerőseivel, hogy szálljanak be a költségekbe?","Igen, mindenkivel","1");
-INSERT INTO teszt_view VALUES("10","Ha tudod, hogy egy barátod mire vágyik és ajándékot akarnál venni, de túl drága, megosztanád barátod ismerőseivel, hogy szálljanak be a költségekbe?","Igen, de csak azokkal, akikre tudom, hogy számítok is","1");
-INSERT INTO teszt_view VALUES("10","Ha tudod, hogy egy barátod mire vágyik és ajándékot akarnál venni, de túl drága, megosztanád barátod ismerőseivel, hogy szálljanak be a költségekbe?","Igen, de csak azokkal, akikre tudom, hogy számítok is","1");
-INSERT INTO teszt_view VALUES("10","Ha tudod, hogy egy barátod mire vágyik és ajándékot akarnál venni, de túl drága, megosztanád barátod ismerőseivel, hogy szálljanak be a költségekbe?","Igen, de csak azokkal, akikre tudom, hogy számítok is","1");
-INSERT INTO teszt_view VALUES("10","Ha tudod, hogy egy barátod mire vágyik és ajándékot akarnál venni, de túl drága, megosztanád barátod ismerőseivel, hogy szálljanak be a költségekbe?","Igen, de csak azokkal, akikre tudom, hogy számítok is","1");
-INSERT INTO teszt_view VALUES("10","Ha tudod, hogy egy barátod mire vágyik és ajándékot akarnál venni, de túl drága, megosztanád barátod ismerőseivel, hogy szálljanak be a költségekbe?","Nem, de adnék barátomnak pénzt bele. ","1");
-INSERT INTO teszt_view VALUES("11","Szeretnéd tudni ismerőseidnek céljait, azt, hogy mit tartanak a legjobb márkának, terméknek, együttesnek, utazásnak stb. ","igen","1");
-INSERT INTO teszt_view VALUES("11","Szeretnéd tudni ismerőseidnek céljait, azt, hogy mit tartanak a legjobb márkának, terméknek, együttesnek, utazásnak stb. ","igen","1");
-INSERT INTO teszt_view VALUES("11","Szeretnéd tudni ismerőseidnek céljait, azt, hogy mit tartanak a legjobb márkának, terméknek, együttesnek, utazásnak stb. ","igen","1");
-INSERT INTO teszt_view VALUES("11","Szeretnéd tudni ismerőseidnek céljait, azt, hogy mit tartanak a legjobb márkának, terméknek, együttesnek, utazásnak stb. ","igen","1");
-INSERT INTO teszt_view VALUES("11","Szeretnéd tudni ismerőseidnek céljait, azt, hogy mit tartanak a legjobb márkának, terméknek, együttesnek, utazásnak stb. ","igen","1");
-INSERT INTO teszt_view VALUES("11","Szeretnéd tudni ismerőseidnek céljait, azt, hogy mit tartanak a legjobb márkának, terméknek, együttesnek, utazásnak stb. ","igen","1");
-INSERT INTO teszt_view VALUES("11","Szeretnéd tudni ismerőseidnek céljait, azt, hogy mit tartanak a legjobb márkának, terméknek, együttesnek, utazásnak stb. ","igen","1");
-INSERT INTO teszt_view VALUES("11","Szeretnéd tudni ismerőseidnek céljait, azt, hogy mit tartanak a legjobb márkának, terméknek, együttesnek, utazásnak stb. ","igen","1");
-INSERT INTO teszt_view VALUES("11","Szeretnéd tudni ismerőseidnek céljait, azt, hogy mit tartanak a legjobb márkának, terméknek, együttesnek, utazásnak stb. ","nem","1");
-INSERT INTO teszt_view VALUES("11","Szeretnéd tudni ismerőseidnek céljait, azt, hogy mit tartanak a legjobb márkának, terméknek, együttesnek, utazásnak stb. ","nem","1");
-INSERT INTO teszt_view VALUES("11","Szeretnéd tudni ismerőseidnek céljait, azt, hogy mit tartanak a legjobb márkának, terméknek, együttesnek, utazásnak stb. ","nem","1");
-INSERT INTO teszt_view VALUES("11","Szeretnéd tudni ismerőseidnek céljait, azt, hogy mit tartanak a legjobb márkának, terméknek, együttesnek, utazásnak stb. ","nem","1");
-INSERT INTO teszt_view VALUES("11","Szeretnéd tudni ismerőseidnek céljait, azt, hogy mit tartanak a legjobb márkának, terméknek, együttesnek, utazásnak stb. ","igen","1");
-INSERT INTO teszt_view VALUES("11","Szeretnéd tudni ismerőseidnek céljait, azt, hogy mit tartanak a legjobb márkának, terméknek, együttesnek, utazásnak stb. ","nem","1");
-INSERT INTO teszt_view VALUES("11","Szeretnéd tudni ismerőseidnek céljait, azt, hogy mit tartanak a legjobb márkának, terméknek, együttesnek, utazásnak stb. ","igen","1");
-INSERT INTO teszt_view VALUES("11","Szeretnéd tudni ismerőseidnek céljait, azt, hogy mit tartanak a legjobb márkának, terméknek, együttesnek, utazásnak stb. ","igen","1");
-INSERT INTO teszt_view VALUES("11","Szeretnéd tudni ismerőseidnek céljait, azt, hogy mit tartanak a legjobb márkának, terméknek, együttesnek, utazásnak stb. ","nem","1");
-INSERT INTO teszt_view VALUES("11","Szeretnéd tudni ismerőseidnek céljait, azt, hogy mit tartanak a legjobb márkának, terméknek, együttesnek, utazásnak stb. ","igen","1");
-INSERT INTO teszt_view VALUES("11","Szeretnéd tudni ismerőseidnek céljait, azt, hogy mit tartanak a legjobb márkának, terméknek, együttesnek, utazásnak stb. ","igen","1");
-INSERT INTO teszt_view VALUES("11","Szeretnéd tudni ismerőseidnek céljait, azt, hogy mit tartanak a legjobb márkának, terméknek, együttesnek, utazásnak stb. ","igen","1");
-INSERT INTO teszt_view VALUES("11","Szeretnéd tudni ismerőseidnek céljait, azt, hogy mit tartanak a legjobb márkának, terméknek, együttesnek, utazásnak stb. ","nem","1");
-INSERT INTO teszt_view VALUES("11","Szeretnéd tudni ismerőseidnek céljait, azt, hogy mit tartanak a legjobb márkának, terméknek, együttesnek, utazásnak stb. ","igen","1");
-INSERT INTO teszt_view VALUES("11","Szeretnéd tudni ismerőseidnek céljait, azt, hogy mit tartanak a legjobb márkának, terméknek, együttesnek, utazásnak stb. ","nem","1");
-INSERT INTO teszt_view VALUES("11","Szeretnéd tudni ismerőseidnek céljait, azt, hogy mit tartanak a legjobb márkának, terméknek, együttesnek, utazásnak stb. ","igen","1");
-INSERT INTO teszt_view VALUES("11","Szeretnéd tudni ismerőseidnek céljait, azt, hogy mit tartanak a legjobb márkának, terméknek, együttesnek, utazásnak stb. ","igen","1");
-INSERT INTO teszt_view VALUES("11","Szeretnéd tudni ismerőseidnek céljait, azt, hogy mit tartanak a legjobb márkának, terméknek, együttesnek, utazásnak stb. ","igen","1");
-INSERT INTO teszt_view VALUES("11","Szeretnéd tudni ismerőseidnek céljait, azt, hogy mit tartanak a legjobb márkának, terméknek, együttesnek, utazásnak stb. ","igen","1");
-INSERT INTO teszt_view VALUES("11","Szeretnéd tudni ismerőseidnek céljait, azt, hogy mit tartanak a legjobb márkának, terméknek, együttesnek, utazásnak stb. ","igen","1");
-INSERT INTO teszt_view VALUES("11","Szeretnéd tudni ismerőseidnek céljait, azt, hogy mit tartanak a legjobb márkának, terméknek, együttesnek, utazásnak stb. ","nem","1");
-INSERT INTO teszt_view VALUES("11","Szeretnéd tudni ismerőseidnek céljait, azt, hogy mit tartanak a legjobb márkának, terméknek, együttesnek, utazásnak stb. ","igen","1");
-INSERT INTO teszt_view VALUES("11","Szeretnéd tudni ismerőseidnek céljait, azt, hogy mit tartanak a legjobb márkának, terméknek, együttesnek, utazásnak stb. ","igen","1");
-INSERT INTO teszt_view VALUES("11","Szeretnéd tudni ismerőseidnek céljait, azt, hogy mit tartanak a legjobb márkának, terméknek, együttesnek, utazásnak stb. ","nem","1");
-INSERT INTO teszt_view VALUES("11","Szeretnéd tudni ismerőseidnek céljait, azt, hogy mit tartanak a legjobb márkának, terméknek, együttesnek, utazásnak stb. ","igen","1");
-INSERT INTO teszt_view VALUES("11","Szeretnéd tudni ismerőseidnek céljait, azt, hogy mit tartanak a legjobb márkának, terméknek, együttesnek, utazásnak stb. ","nem","1");
-INSERT INTO teszt_view VALUES("11","Szeretnéd tudni ismerőseidnek céljait, azt, hogy mit tartanak a legjobb márkának, terméknek, együttesnek, utazásnak stb. ","igen","1");
-INSERT INTO teszt_view VALUES("11","Szeretnéd tudni ismerőseidnek céljait, azt, hogy mit tartanak a legjobb márkának, terméknek, együttesnek, utazásnak stb. ","igen","1");
-INSERT INTO teszt_view VALUES("11","Szeretnéd tudni ismerőseidnek céljait, azt, hogy mit tartanak a legjobb márkának, terméknek, együttesnek, utazásnak stb. ","nem","1");
-INSERT INTO teszt_view VALUES("11","Szeretnéd tudni ismerőseidnek céljait, azt, hogy mit tartanak a legjobb márkának, terméknek, együttesnek, utazásnak stb. ","igen","1");
-INSERT INTO teszt_view VALUES("11","Szeretnéd tudni ismerőseidnek céljait, azt, hogy mit tartanak a legjobb márkának, terméknek, együttesnek, utazásnak stb. ","nem","1");
-INSERT INTO teszt_view VALUES("11","Szeretnéd tudni ismerőseidnek céljait, azt, hogy mit tartanak a legjobb márkának, terméknek, együttesnek, utazásnak stb. ","igen","1");
-INSERT INTO teszt_view VALUES("11","Szeretnéd tudni ismerőseidnek céljait, azt, hogy mit tartanak a legjobb márkának, terméknek, együttesnek, utazásnak stb. ","igen","1");
-INSERT INTO teszt_view VALUES("11","Szeretnéd tudni ismerőseidnek céljait, azt, hogy mit tartanak a legjobb márkának, terméknek, együttesnek, utazásnak stb. ","igen","1");
-INSERT INTO teszt_view VALUES("11","Szeretnéd tudni ismerőseidnek céljait, azt, hogy mit tartanak a legjobb márkának, terméknek, együttesnek, utazásnak stb. ","igen","1");
-INSERT INTO teszt_view VALUES("11","Szeretnéd tudni ismerőseidnek céljait, azt, hogy mit tartanak a legjobb márkának, terméknek, együttesnek, utazásnak stb. ","igen","1");
-INSERT INTO teszt_view VALUES("11","Szeretnéd tudni ismerőseidnek céljait, azt, hogy mit tartanak a legjobb márkának, terméknek, együttesnek, utazásnak stb. ","igen","1");
-INSERT INTO teszt_view VALUES("11","Szeretnéd tudni ismerőseidnek céljait, azt, hogy mit tartanak a legjobb márkának, terméknek, együttesnek, utazásnak stb. ","igen","1");
-INSERT INTO teszt_view VALUES("11","Szeretnéd tudni ismerőseidnek céljait, azt, hogy mit tartanak a legjobb márkának, terméknek, együttesnek, utazásnak stb. ","nem","1");
-INSERT INTO teszt_view VALUES("11","Szeretnéd tudni ismerőseidnek céljait, azt, hogy mit tartanak a legjobb márkának, terméknek, együttesnek, utazásnak stb. ","nem","1");
-INSERT INTO teszt_view VALUES("11","Szeretnéd tudni ismerőseidnek céljait, azt, hogy mit tartanak a legjobb márkának, terméknek, együttesnek, utazásnak stb. ","nem","1");
-INSERT INTO teszt_view VALUES("11","Szeretnéd tudni ismerőseidnek céljait, azt, hogy mit tartanak a legjobb márkának, terméknek, együttesnek, utazásnak stb. ","igen","1");
-INSERT INTO teszt_view VALUES("11","Szeretnéd tudni ismerőseidnek céljait, azt, hogy mit tartanak a legjobb márkának, terméknek, együttesnek, utazásnak stb. ","igen","1");
-INSERT INTO teszt_view VALUES("11","Szeretnéd tudni ismerőseidnek céljait, azt, hogy mit tartanak a legjobb márkának, terméknek, együttesnek, utazásnak stb. ","igen","1");
-INSERT INTO teszt_view VALUES("11","Szeretnéd tudni ismerőseidnek céljait, azt, hogy mit tartanak a legjobb márkának, terméknek, együttesnek, utazásnak stb. ","igen","1");
-INSERT INTO teszt_view VALUES("11","Szeretnéd tudni ismerőseidnek céljait, azt, hogy mit tartanak a legjobb márkának, terméknek, együttesnek, utazásnak stb. ","igen","1");
-INSERT INTO teszt_view VALUES("11","Szeretnéd tudni ismerőseidnek céljait, azt, hogy mit tartanak a legjobb márkának, terméknek, együttesnek, utazásnak stb. ","igen","1");
-INSERT INTO teszt_view VALUES("11","Szeretnéd tudni ismerőseidnek céljait, azt, hogy mit tartanak a legjobb márkának, terméknek, együttesnek, utazásnak stb. ","igen","1");
-INSERT INTO teszt_view VALUES("11","Szeretnéd tudni ismerőseidnek céljait, azt, hogy mit tartanak a legjobb márkának, terméknek, együttesnek, utazásnak stb. ","igen","1");
-INSERT INTO teszt_view VALUES("11","Szeretnéd tudni ismerőseidnek céljait, azt, hogy mit tartanak a legjobb márkának, terméknek, együttesnek, utazásnak stb. ","nem","1");
-INSERT INTO teszt_view VALUES("11","Szeretnéd tudni ismerőseidnek céljait, azt, hogy mit tartanak a legjobb márkának, terméknek, együttesnek, utazásnak stb. ","nem","1");
-INSERT INTO teszt_view VALUES("11","Szeretnéd tudni ismerőseidnek céljait, azt, hogy mit tartanak a legjobb márkának, terméknek, együttesnek, utazásnak stb. ","nem","1");
-INSERT INTO teszt_view VALUES("11","Szeretnéd tudni ismerőseidnek céljait, azt, hogy mit tartanak a legjobb márkának, terméknek, együttesnek, utazásnak stb. ","igen","1");
-INSERT INTO teszt_view VALUES("11","Szeretnéd tudni ismerőseidnek céljait, azt, hogy mit tartanak a legjobb márkának, terméknek, együttesnek, utazásnak stb. ","igen","1");
-INSERT INTO teszt_view VALUES("11","Szeretnéd tudni ismerőseidnek céljait, azt, hogy mit tartanak a legjobb márkának, terméknek, együttesnek, utazásnak stb. ","nem","1");
-INSERT INTO teszt_view VALUES("11","Szeretnéd tudni ismerőseidnek céljait, azt, hogy mit tartanak a legjobb márkának, terméknek, együttesnek, utazásnak stb. ","igen","1");
-INSERT INTO teszt_view VALUES("11","Szeretnéd tudni ismerőseidnek céljait, azt, hogy mit tartanak a legjobb márkának, terméknek, együttesnek, utazásnak stb. ","nem","1");
-INSERT INTO teszt_view VALUES("11","Szeretnéd tudni ismerőseidnek céljait, azt, hogy mit tartanak a legjobb márkának, terméknek, együttesnek, utazásnak stb. ","igen","1");
-INSERT INTO teszt_view VALUES("11","Szeretnéd tudni ismerőseidnek céljait, azt, hogy mit tartanak a legjobb márkának, terméknek, együttesnek, utazásnak stb. ","igen","1");
-INSERT INTO teszt_view VALUES("11","Szeretnéd tudni ismerőseidnek céljait, azt, hogy mit tartanak a legjobb márkának, terméknek, együttesnek, utazásnak stb. ","igen","1");
-INSERT INTO teszt_view VALUES("11","Szeretnéd tudni ismerőseidnek céljait, azt, hogy mit tartanak a legjobb márkának, terméknek, együttesnek, utazásnak stb. ","nem","1");
-INSERT INTO teszt_view VALUES("11","Szeretnéd tudni ismerőseidnek céljait, azt, hogy mit tartanak a legjobb márkának, terméknek, együttesnek, utazásnak stb. ","igen","1");
-INSERT INTO teszt_view VALUES("11","Szeretnéd tudni ismerőseidnek céljait, azt, hogy mit tartanak a legjobb márkának, terméknek, együttesnek, utazásnak stb. ","igen","1");
-INSERT INTO teszt_view VALUES("11","Szeretnéd tudni ismerőseidnek céljait, azt, hogy mit tartanak a legjobb márkának, terméknek, együttesnek, utazásnak stb. ","igen","1");
-INSERT INTO teszt_view VALUES("11","Szeretnéd tudni ismerőseidnek céljait, azt, hogy mit tartanak a legjobb márkának, terméknek, együttesnek, utazásnak stb. ","igen","1");
-INSERT INTO teszt_view VALUES("11","Szeretnéd tudni ismerőseidnek céljait, azt, hogy mit tartanak a legjobb márkának, terméknek, együttesnek, utazásnak stb. ","igen","1");
-INSERT INTO teszt_view VALUES("11","Szeretnéd tudni ismerőseidnek céljait, azt, hogy mit tartanak a legjobb márkának, terméknek, együttesnek, utazásnak stb. ","igen","1");
-INSERT INTO teszt_view VALUES("11","Szeretnéd tudni ismerőseidnek céljait, azt, hogy mit tartanak a legjobb márkának, terméknek, együttesnek, utazásnak stb. ","nem","1");
-INSERT INTO teszt_view VALUES("11","Szeretnéd tudni ismerőseidnek céljait, azt, hogy mit tartanak a legjobb márkának, terméknek, együttesnek, utazásnak stb. ","igen","1");
-INSERT INTO teszt_view VALUES("11","Szeretnéd tudni ismerőseidnek céljait, azt, hogy mit tartanak a legjobb márkának, terméknek, együttesnek, utazásnak stb. ","nem","1");
-INSERT INTO teszt_view VALUES("11","Szeretnéd tudni ismerőseidnek céljait, azt, hogy mit tartanak a legjobb márkának, terméknek, együttesnek, utazásnak stb. ","igen","1");
-INSERT INTO teszt_view VALUES("11","Szeretnéd tudni ismerőseidnek céljait, azt, hogy mit tartanak a legjobb márkának, terméknek, együttesnek, utazásnak stb. ","igen","1");
-INSERT INTO teszt_view VALUES("11","Szeretnéd tudni ismerőseidnek céljait, azt, hogy mit tartanak a legjobb márkának, terméknek, együttesnek, utazásnak stb. ","nem","1");
-INSERT INTO teszt_view VALUES("11","Szeretnéd tudni ismerőseidnek céljait, azt, hogy mit tartanak a legjobb márkának, terméknek, együttesnek, utazásnak stb. ","igen","1");
-INSERT INTO teszt_view VALUES("11","Szeretnéd tudni ismerőseidnek céljait, azt, hogy mit tartanak a legjobb márkának, terméknek, együttesnek, utazásnak stb. ","nem","1");
-INSERT INTO teszt_view VALUES("11","Szeretnéd tudni ismerőseidnek céljait, azt, hogy mit tartanak a legjobb márkának, terméknek, együttesnek, utazásnak stb. ","igen","1");
-INSERT INTO teszt_view VALUES("11","Szeretnéd tudni ismerőseidnek céljait, azt, hogy mit tartanak a legjobb márkának, terméknek, együttesnek, utazásnak stb. ","igen","1");
-INSERT INTO teszt_view VALUES("11","Szeretnéd tudni ismerőseidnek céljait, azt, hogy mit tartanak a legjobb márkának, terméknek, együttesnek, utazásnak stb. ","igen","1");
-INSERT INTO teszt_view VALUES("11","Szeretnéd tudni ismerőseidnek céljait, azt, hogy mit tartanak a legjobb márkának, terméknek, együttesnek, utazásnak stb. ","nem","1");
-INSERT INTO teszt_view VALUES("11","Szeretnéd tudni ismerőseidnek céljait, azt, hogy mit tartanak a legjobb márkának, terméknek, együttesnek, utazásnak stb. ","igen","1");
-INSERT INTO teszt_view VALUES("11","Szeretnéd tudni ismerőseidnek céljait, azt, hogy mit tartanak a legjobb márkának, terméknek, együttesnek, utazásnak stb. ","igen","1");
-INSERT INTO teszt_view VALUES("11","Szeretnéd tudni ismerőseidnek céljait, azt, hogy mit tartanak a legjobb márkának, terméknek, együttesnek, utazásnak stb. ","igen","1");
-INSERT INTO teszt_view VALUES("11","Szeretnéd tudni ismerőseidnek céljait, azt, hogy mit tartanak a legjobb márkának, terméknek, együttesnek, utazásnak stb. ","igen","1");
-INSERT INTO teszt_view VALUES("11","Szeretnéd tudni ismerőseidnek céljait, azt, hogy mit tartanak a legjobb márkának, terméknek, együttesnek, utazásnak stb. ","igen","1");
-INSERT INTO teszt_view VALUES("11","Szeretnéd tudni ismerőseidnek céljait, azt, hogy mit tartanak a legjobb márkának, terméknek, együttesnek, utazásnak stb. ","igen","1");
-INSERT INTO teszt_view VALUES("11","Szeretnéd tudni ismerőseidnek céljait, azt, hogy mit tartanak a legjobb márkának, terméknek, együttesnek, utazásnak stb. ","igen","1");
-INSERT INTO teszt_view VALUES("11","Szeretnéd tudni ismerőseidnek céljait, azt, hogy mit tartanak a legjobb márkának, terméknek, együttesnek, utazásnak stb. ","igen","1");
-INSERT INTO teszt_view VALUES("11","Szeretnéd tudni ismerőseidnek céljait, azt, hogy mit tartanak a legjobb márkának, terméknek, együttesnek, utazásnak stb. ","nem","1");
-INSERT INTO teszt_view VALUES("11","Szeretnéd tudni ismerőseidnek céljait, azt, hogy mit tartanak a legjobb márkának, terméknek, együttesnek, utazásnak stb. ","igen","1");
-INSERT INTO teszt_view VALUES("11","Szeretnéd tudni ismerőseidnek céljait, azt, hogy mit tartanak a legjobb márkának, terméknek, együttesnek, utazásnak stb. ","igen","1");
-INSERT INTO teszt_view VALUES("11","Szeretnéd tudni ismerőseidnek céljait, azt, hogy mit tartanak a legjobb márkának, terméknek, együttesnek, utazásnak stb. ","nem","1");
-INSERT INTO teszt_view VALUES("11","Szeretnéd tudni ismerőseidnek céljait, azt, hogy mit tartanak a legjobb márkának, terméknek, együttesnek, utazásnak stb. ","igen","1");
-INSERT INTO teszt_view VALUES("11","Szeretnéd tudni ismerőseidnek céljait, azt, hogy mit tartanak a legjobb márkának, terméknek, együttesnek, utazásnak stb. ","igen","1");
-INSERT INTO teszt_view VALUES("11","Szeretnéd tudni ismerőseidnek céljait, azt, hogy mit tartanak a legjobb márkának, terméknek, együttesnek, utazásnak stb. ","igen","1");
-INSERT INTO teszt_view VALUES("11","Szeretnéd tudni ismerőseidnek céljait, azt, hogy mit tartanak a legjobb márkának, terméknek, együttesnek, utazásnak stb. ","nem","1");
-INSERT INTO teszt_view VALUES("11","Szeretnéd tudni ismerőseidnek céljait, azt, hogy mit tartanak a legjobb márkának, terméknek, együttesnek, utazásnak stb. ","igen","1");
-INSERT INTO teszt_view VALUES("12","Saját céljaidat megosztanád ismerőseiddel abban a reményben, hogy összefogva segítenek neked?","igen","1");
-INSERT INTO teszt_view VALUES("12","Saját céljaidat megosztanád ismerőseiddel abban a reményben, hogy összefogva segítenek neked?","igen","1");
-INSERT INTO teszt_view VALUES("12","Saját céljaidat megosztanád ismerőseiddel abban a reményben, hogy összefogva segítenek neked?","igen","1");
-INSERT INTO teszt_view VALUES("12","Saját céljaidat megosztanád ismerőseiddel abban a reményben, hogy összefogva segítenek neked?","igen","1");
-INSERT INTO teszt_view VALUES("12","Saját céljaidat megosztanád ismerőseiddel abban a reményben, hogy összefogva segítenek neked?","igen","1");
-INSERT INTO teszt_view VALUES("12","Saját céljaidat megosztanád ismerőseiddel abban a reményben, hogy összefogva segítenek neked?","igen","1");
-INSERT INTO teszt_view VALUES("12","Saját céljaidat megosztanád ismerőseiddel abban a reményben, hogy összefogva segítenek neked?","igen","1");
-INSERT INTO teszt_view VALUES("12","Saját céljaidat megosztanád ismerőseiddel abban a reményben, hogy összefogva segítenek neked?","nem","1");
-INSERT INTO teszt_view VALUES("12","Saját céljaidat megosztanád ismerőseiddel abban a reményben, hogy összefogva segítenek neked?","nem","1");
-INSERT INTO teszt_view VALUES("12","Saját céljaidat megosztanád ismerőseiddel abban a reményben, hogy összefogva segítenek neked?","nem","1");
-INSERT INTO teszt_view VALUES("12","Saját céljaidat megosztanád ismerőseiddel abban a reményben, hogy összefogva segítenek neked?","nem","1");
-INSERT INTO teszt_view VALUES("12","Saját céljaidat megosztanád ismerőseiddel abban a reményben, hogy összefogva segítenek neked?","nem","1");
-INSERT INTO teszt_view VALUES("12","Saját céljaidat megosztanád ismerőseiddel abban a reményben, hogy összefogva segítenek neked?","igen","1");
-INSERT INTO teszt_view VALUES("12","Saját céljaidat megosztanád ismerőseiddel abban a reményben, hogy összefogva segítenek neked?","nem","1");
-INSERT INTO teszt_view VALUES("12","Saját céljaidat megosztanád ismerőseiddel abban a reményben, hogy összefogva segítenek neked?","igen","1");
-INSERT INTO teszt_view VALUES("12","Saját céljaidat megosztanád ismerőseiddel abban a reményben, hogy összefogva segítenek neked?","igen","1");
-INSERT INTO teszt_view VALUES("12","Saját céljaidat megosztanád ismerőseiddel abban a reményben, hogy összefogva segítenek neked?","nem","1");
-INSERT INTO teszt_view VALUES("12","Saját céljaidat megosztanád ismerőseiddel abban a reményben, hogy összefogva segítenek neked?","igen","1");
-INSERT INTO teszt_view VALUES("12","Saját céljaidat megosztanád ismerőseiddel abban a reményben, hogy összefogva segítenek neked?","igen","1");
-INSERT INTO teszt_view VALUES("12","Saját céljaidat megosztanád ismerőseiddel abban a reményben, hogy összefogva segítenek neked?","igen","1");
-INSERT INTO teszt_view VALUES("12","Saját céljaidat megosztanád ismerőseiddel abban a reményben, hogy összefogva segítenek neked?","nem","1");
-INSERT INTO teszt_view VALUES("12","Saját céljaidat megosztanád ismerőseiddel abban a reményben, hogy összefogva segítenek neked?","igen","1");
-INSERT INTO teszt_view VALUES("12","Saját céljaidat megosztanád ismerőseiddel abban a reményben, hogy összefogva segítenek neked?","nem","1");
-INSERT INTO teszt_view VALUES("12","Saját céljaidat megosztanád ismerőseiddel abban a reményben, hogy összefogva segítenek neked?","igen","1");
-INSERT INTO teszt_view VALUES("12","Saját céljaidat megosztanád ismerőseiddel abban a reményben, hogy összefogva segítenek neked?","igen","1");
-INSERT INTO teszt_view VALUES("12","Saját céljaidat megosztanád ismerőseiddel abban a reményben, hogy összefogva segítenek neked?","igen","1");
-INSERT INTO teszt_view VALUES("12","Saját céljaidat megosztanád ismerőseiddel abban a reményben, hogy összefogva segítenek neked?","igen","1");
-INSERT INTO teszt_view VALUES("12","Saját céljaidat megosztanád ismerőseiddel abban a reményben, hogy összefogva segítenek neked?","igen","1");
-INSERT INTO teszt_view VALUES("12","Saját céljaidat megosztanád ismerőseiddel abban a reményben, hogy összefogva segítenek neked?","igen","1");
-INSERT INTO teszt_view VALUES("12","Saját céljaidat megosztanád ismerőseiddel abban a reményben, hogy összefogva segítenek neked?","igen","1");
-INSERT INTO teszt_view VALUES("12","Saját céljaidat megosztanád ismerőseiddel abban a reményben, hogy összefogva segítenek neked?","nem","1");
-INSERT INTO teszt_view VALUES("12","Saját céljaidat megosztanád ismerőseiddel abban a reményben, hogy összefogva segítenek neked?","nem","1");
-INSERT INTO teszt_view VALUES("12","Saját céljaidat megosztanád ismerőseiddel abban a reményben, hogy összefogva segítenek neked?","igen","1");
-INSERT INTO teszt_view VALUES("12","Saját céljaidat megosztanád ismerőseiddel abban a reményben, hogy összefogva segítenek neked?","nem","1");
-INSERT INTO teszt_view VALUES("12","Saját céljaidat megosztanád ismerőseiddel abban a reményben, hogy összefogva segítenek neked?","igen","1");
-INSERT INTO teszt_view VALUES("12","Saját céljaidat megosztanád ismerőseiddel abban a reményben, hogy összefogva segítenek neked?","nem","1");
-INSERT INTO teszt_view VALUES("12","Saját céljaidat megosztanád ismerőseiddel abban a reményben, hogy összefogva segítenek neked?","nem","1");
-INSERT INTO teszt_view VALUES("12","Saját céljaidat megosztanád ismerőseiddel abban a reményben, hogy összefogva segítenek neked?","igen","1");
-INSERT INTO teszt_view VALUES("12","Saját céljaidat megosztanád ismerőseiddel abban a reményben, hogy összefogva segítenek neked?","nem","1");
-INSERT INTO teszt_view VALUES("12","Saját céljaidat megosztanád ismerőseiddel abban a reményben, hogy összefogva segítenek neked?","igen","1");
-INSERT INTO teszt_view VALUES("12","Saját céljaidat megosztanád ismerőseiddel abban a reményben, hogy összefogva segítenek neked?","igen","1");
-INSERT INTO teszt_view VALUES("12","Saját céljaidat megosztanád ismerőseiddel abban a reményben, hogy összefogva segítenek neked?","igen","1");
-INSERT INTO teszt_view VALUES("12","Saját céljaidat megosztanád ismerőseiddel abban a reményben, hogy összefogva segítenek neked?","igen","1");
-INSERT INTO teszt_view VALUES("12","Saját céljaidat megosztanád ismerőseiddel abban a reményben, hogy összefogva segítenek neked?","igen","1");
-INSERT INTO teszt_view VALUES("12","Saját céljaidat megosztanád ismerőseiddel abban a reményben, hogy összefogva segítenek neked?","igen","1");
-INSERT INTO teszt_view VALUES("12","Saját céljaidat megosztanád ismerőseiddel abban a reményben, hogy összefogva segítenek neked?","nem","1");
-INSERT INTO teszt_view VALUES("12","Saját céljaidat megosztanád ismerőseiddel abban a reményben, hogy összefogva segítenek neked?","nem","1");
-INSERT INTO teszt_view VALUES("12","Saját céljaidat megosztanád ismerőseiddel abban a reményben, hogy összefogva segítenek neked?","nem","1");
-INSERT INTO teszt_view VALUES("12","Saját céljaidat megosztanád ismerőseiddel abban a reményben, hogy összefogva segítenek neked?","nem","1");
-INSERT INTO teszt_view VALUES("12","Saját céljaidat megosztanád ismerőseiddel abban a reményben, hogy összefogva segítenek neked?","nem","1");
-INSERT INTO teszt_view VALUES("12","Saját céljaidat megosztanád ismerőseiddel abban a reményben, hogy összefogva segítenek neked?","igen","1");
-INSERT INTO teszt_view VALUES("12","Saját céljaidat megosztanád ismerőseiddel abban a reményben, hogy összefogva segítenek neked?","igen","1");
-INSERT INTO teszt_view VALUES("12","Saját céljaidat megosztanád ismerőseiddel abban a reményben, hogy összefogva segítenek neked?","igen","1");
-INSERT INTO teszt_view VALUES("12","Saját céljaidat megosztanád ismerőseiddel abban a reményben, hogy összefogva segítenek neked?","igen","1");
-INSERT INTO teszt_view VALUES("12","Saját céljaidat megosztanád ismerőseiddel abban a reményben, hogy összefogva segítenek neked?","igen","1");
-INSERT INTO teszt_view VALUES("12","Saját céljaidat megosztanád ismerőseiddel abban a reményben, hogy összefogva segítenek neked?","igen","1");
-INSERT INTO teszt_view VALUES("12","Saját céljaidat megosztanád ismerőseiddel abban a reményben, hogy összefogva segítenek neked?","igen","1");
-INSERT INTO teszt_view VALUES("12","Saját céljaidat megosztanád ismerőseiddel abban a reményben, hogy összefogva segítenek neked?","igen","1");
-INSERT INTO teszt_view VALUES("12","Saját céljaidat megosztanád ismerőseiddel abban a reményben, hogy összefogva segítenek neked?","nem","1");
-INSERT INTO teszt_view VALUES("12","Saját céljaidat megosztanád ismerőseiddel abban a reményben, hogy összefogva segítenek neked?","nem","1");
-INSERT INTO teszt_view VALUES("12","Saját céljaidat megosztanád ismerőseiddel abban a reményben, hogy összefogva segítenek neked?","igen","1");
-INSERT INTO teszt_view VALUES("12","Saját céljaidat megosztanád ismerőseiddel abban a reményben, hogy összefogva segítenek neked?","nem","1");
-INSERT INTO teszt_view VALUES("12","Saját céljaidat megosztanád ismerőseiddel abban a reményben, hogy összefogva segítenek neked?","nem","1");
-INSERT INTO teszt_view VALUES("12","Saját céljaidat megosztanád ismerőseiddel abban a reményben, hogy összefogva segítenek neked?","igen","1");
-INSERT INTO teszt_view VALUES("12","Saját céljaidat megosztanád ismerőseiddel abban a reményben, hogy összefogva segítenek neked?","nem","1");
-INSERT INTO teszt_view VALUES("12","Saját céljaidat megosztanád ismerőseiddel abban a reményben, hogy összefogva segítenek neked?","nem","1");
-INSERT INTO teszt_view VALUES("12","Saját céljaidat megosztanád ismerőseiddel abban a reményben, hogy összefogva segítenek neked?","igen","1");
-INSERT INTO teszt_view VALUES("12","Saját céljaidat megosztanád ismerőseiddel abban a reményben, hogy összefogva segítenek neked?","igen","1");
-INSERT INTO teszt_view VALUES("12","Saját céljaidat megosztanád ismerőseiddel abban a reményben, hogy összefogva segítenek neked?","nem","1");
-INSERT INTO teszt_view VALUES("12","Saját céljaidat megosztanád ismerőseiddel abban a reményben, hogy összefogva segítenek neked?","igen","1");
-INSERT INTO teszt_view VALUES("12","Saját céljaidat megosztanád ismerőseiddel abban a reményben, hogy összefogva segítenek neked?","igen","1");
-INSERT INTO teszt_view VALUES("12","Saját céljaidat megosztanád ismerőseiddel abban a reményben, hogy összefogva segítenek neked?","igen","1");
-INSERT INTO teszt_view VALUES("12","Saját céljaidat megosztanád ismerőseiddel abban a reményben, hogy összefogva segítenek neked?","igen","1");
-INSERT INTO teszt_view VALUES("12","Saját céljaidat megosztanád ismerőseiddel abban a reményben, hogy összefogva segítenek neked?","igen","1");
-INSERT INTO teszt_view VALUES("12","Saját céljaidat megosztanád ismerőseiddel abban a reményben, hogy összefogva segítenek neked?","igen","1");
-INSERT INTO teszt_view VALUES("12","Saját céljaidat megosztanád ismerőseiddel abban a reményben, hogy összefogva segítenek neked?","nem","1");
-INSERT INTO teszt_view VALUES("12","Saját céljaidat megosztanád ismerőseiddel abban a reményben, hogy összefogva segítenek neked?","igen","1");
-INSERT INTO teszt_view VALUES("12","Saját céljaidat megosztanád ismerőseiddel abban a reményben, hogy összefogva segítenek neked?","igen","1");
-INSERT INTO teszt_view VALUES("12","Saját céljaidat megosztanád ismerőseiddel abban a reményben, hogy összefogva segítenek neked?","igen","1");
-INSERT INTO teszt_view VALUES("12","Saját céljaidat megosztanád ismerőseiddel abban a reményben, hogy összefogva segítenek neked?","igen","1");
-INSERT INTO teszt_view VALUES("12","Saját céljaidat megosztanád ismerőseiddel abban a reményben, hogy összefogva segítenek neked?","igen","1");
-INSERT INTO teszt_view VALUES("12","Saját céljaidat megosztanád ismerőseiddel abban a reményben, hogy összefogva segítenek neked?","igen","1");
-INSERT INTO teszt_view VALUES("12","Saját céljaidat megosztanád ismerőseiddel abban a reményben, hogy összefogva segítenek neked?","nem","1");
-INSERT INTO teszt_view VALUES("12","Saját céljaidat megosztanád ismerőseiddel abban a reményben, hogy összefogva segítenek neked?","igen","1");
-INSERT INTO teszt_view VALUES("12","Saját céljaidat megosztanád ismerőseiddel abban a reményben, hogy összefogva segítenek neked?","igen","1");
-INSERT INTO teszt_view VALUES("12","Saját céljaidat megosztanád ismerőseiddel abban a reményben, hogy összefogva segítenek neked?","igen","1");
-INSERT INTO teszt_view VALUES("12","Saját céljaidat megosztanád ismerőseiddel abban a reményben, hogy összefogva segítenek neked?","nem","1");
-INSERT INTO teszt_view VALUES("12","Saját céljaidat megosztanád ismerőseiddel abban a reményben, hogy összefogva segítenek neked?","igen","1");
-INSERT INTO teszt_view VALUES("12","Saját céljaidat megosztanád ismerőseiddel abban a reményben, hogy összefogva segítenek neked?","igen","1");
-INSERT INTO teszt_view VALUES("12","Saját céljaidat megosztanád ismerőseiddel abban a reményben, hogy összefogva segítenek neked?","igen","1");
-INSERT INTO teszt_view VALUES("12","Saját céljaidat megosztanád ismerőseiddel abban a reményben, hogy összefogva segítenek neked?","nem","1");
-INSERT INTO teszt_view VALUES("12","Saját céljaidat megosztanád ismerőseiddel abban a reményben, hogy összefogva segítenek neked?","igen","1");
-INSERT INTO teszt_view VALUES("12","Saját céljaidat megosztanád ismerőseiddel abban a reményben, hogy összefogva segítenek neked?","igen","1");
-INSERT INTO teszt_view VALUES("12","Saját céljaidat megosztanád ismerőseiddel abban a reményben, hogy összefogva segítenek neked?","igen","1");
-INSERT INTO teszt_view VALUES("12","Saját céljaidat megosztanád ismerőseiddel abban a reményben, hogy összefogva segítenek neked?","nem","1");
-INSERT INTO teszt_view VALUES("12","Saját céljaidat megosztanád ismerőseiddel abban a reményben, hogy összefogva segítenek neked?","nem","1");
-INSERT INTO teszt_view VALUES("12","Saját céljaidat megosztanád ismerőseiddel abban a reményben, hogy összefogva segítenek neked?","igen","1");
-INSERT INTO teszt_view VALUES("12","Saját céljaidat megosztanád ismerőseiddel abban a reményben, hogy összefogva segítenek neked?","igen","1");
-INSERT INTO teszt_view VALUES("12","Saját céljaidat megosztanád ismerőseiddel abban a reményben, hogy összefogva segítenek neked?","nem","1");
-INSERT INTO teszt_view VALUES("12","Saját céljaidat megosztanád ismerőseiddel abban a reményben, hogy összefogva segítenek neked?","nem","1");
-INSERT INTO teszt_view VALUES("12","Saját céljaidat megosztanád ismerőseiddel abban a reményben, hogy összefogva segítenek neked?","nem","1");
-INSERT INTO teszt_view VALUES("12","Saját céljaidat megosztanád ismerőseiddel abban a reményben, hogy összefogva segítenek neked?","igen","1");
-INSERT INTO teszt_view VALUES("12","Saját céljaidat megosztanád ismerőseiddel abban a reményben, hogy összefogva segítenek neked?","nem","1");
-INSERT INTO teszt_view VALUES("12","Saját céljaidat megosztanád ismerőseiddel abban a reményben, hogy összefogva segítenek neked?","igen","1");
-INSERT INTO teszt_view VALUES("13","Mondd el véleményed egy mondatban, mit hiányolsz a közösségi oldalakon?","","1");
-INSERT INTO teszt_view VALUES("13","Mondd el véleményed egy mondatban, mit hiányolsz a közösségi oldalakon?","","1");
-INSERT INTO teszt_view VALUES("13","Mondd el véleményed egy mondatban, mit hiányolsz a közösségi oldalakon?","","1");
-INSERT INTO teszt_view VALUES("13","Mondd el véleményed egy mondatban, mit hiányolsz a közösségi oldalakon?","","1");
-INSERT INTO teszt_view VALUES("13","Mondd el véleményed egy mondatban, mit hiányolsz a közösségi oldalakon?","","1");
-INSERT INTO teszt_view VALUES("13","Mondd el véleményed egy mondatban, mit hiányolsz a közösségi oldalakon?","","1");
-INSERT INTO teszt_view VALUES("13","Mondd el véleményed egy mondatban, mit hiányolsz a közösségi oldalakon?","","1");
-INSERT INTO teszt_view VALUES("13","Mondd el véleményed egy mondatban, mit hiányolsz a közösségi oldalakon?","","1");
-INSERT INTO teszt_view VALUES("13","Mondd el véleményed egy mondatban, mit hiányolsz a közösségi oldalakon?","","1");
-INSERT INTO teszt_view VALUES("13","Mondd el véleményed egy mondatban, mit hiányolsz a közösségi oldalakon?","","1");
-INSERT INTO teszt_view VALUES("13","Mondd el véleményed egy mondatban, mit hiányolsz a közösségi oldalakon?","","1");
-INSERT INTO teszt_view VALUES("13","Mondd el véleményed egy mondatban, mit hiányolsz a közösségi oldalakon?","","1");
-INSERT INTO teszt_view VALUES("13","Mondd el véleményed egy mondatban, mit hiányolsz a közösségi oldalakon?","","1");
-INSERT INTO teszt_view VALUES("13","Mondd el véleményed egy mondatban, mit hiányolsz a közösségi oldalakon?","","1");
-INSERT INTO teszt_view VALUES("13","Mondd el véleményed egy mondatban, mit hiányolsz a közösségi oldalakon?","","1");
-INSERT INTO teszt_view VALUES("13","Mondd el véleményed egy mondatban, mit hiányolsz a közösségi oldalakon?","","1");
-INSERT INTO teszt_view VALUES("13","Mondd el véleményed egy mondatban, mit hiányolsz a közösségi oldalakon?","","1");
-INSERT INTO teszt_view VALUES("13","Mondd el véleményed egy mondatban, mit hiányolsz a közösségi oldalakon?","","1");
-INSERT INTO teszt_view VALUES("13","Mondd el véleményed egy mondatban, mit hiányolsz a közösségi oldalakon?","","1");
-INSERT INTO teszt_view VALUES("13","Mondd el véleményed egy mondatban, mit hiányolsz a közösségi oldalakon?","","1");
-INSERT INTO teszt_view VALUES("13","Mondd el véleményed egy mondatban, mit hiányolsz a közösségi oldalakon?","","1");
-INSERT INTO teszt_view VALUES("13","Mondd el véleményed egy mondatban, mit hiányolsz a közösségi oldalakon?","","1");
-INSERT INTO teszt_view VALUES("13","Mondd el véleményed egy mondatban, mit hiányolsz a közösségi oldalakon?","","1");
-INSERT INTO teszt_view VALUES("13","Mondd el véleményed egy mondatban, mit hiányolsz a közösségi oldalakon?","","1");
-INSERT INTO teszt_view VALUES("13","Mondd el véleményed egy mondatban, mit hiányolsz a közösségi oldalakon?","","1");
-INSERT INTO teszt_view VALUES("13","Mondd el véleményed egy mondatban, mit hiányolsz a közösségi oldalakon?","","1");
-INSERT INTO teszt_view VALUES("13","Mondd el véleményed egy mondatban, mit hiányolsz a közösségi oldalakon?","","1");
-INSERT INTO teszt_view VALUES("13","Mondd el véleményed egy mondatban, mit hiányolsz a közösségi oldalakon?","","1");
-INSERT INTO teszt_view VALUES("13","Mondd el véleményed egy mondatban, mit hiányolsz a közösségi oldalakon?","","1");
-INSERT INTO teszt_view VALUES("13","Mondd el véleményed egy mondatban, mit hiányolsz a közösségi oldalakon?","","1");
-INSERT INTO teszt_view VALUES("13","Mondd el véleményed egy mondatban, mit hiányolsz a közösségi oldalakon?","","1");
-INSERT INTO teszt_view VALUES("13","Mondd el véleményed egy mondatban, mit hiányolsz a közösségi oldalakon?","","1");
-INSERT INTO teszt_view VALUES("13","Mondd el véleményed egy mondatban, mit hiányolsz a közösségi oldalakon?","","1");
-INSERT INTO teszt_view VALUES("13","Mondd el véleményed egy mondatban, mit hiányolsz a közösségi oldalakon?","","1");
-INSERT INTO teszt_view VALUES("13","Mondd el véleményed egy mondatban, mit hiányolsz a közösségi oldalakon?","","1");
-INSERT INTO teszt_view VALUES("13","Mondd el véleményed egy mondatban, mit hiányolsz a közösségi oldalakon?","","1");
-INSERT INTO teszt_view VALUES("13","Mondd el véleményed egy mondatban, mit hiányolsz a közösségi oldalakon?","","1");
-INSERT INTO teszt_view VALUES("13","Mondd el véleményed egy mondatban, mit hiányolsz a közösségi oldalakon?","","1");
-INSERT INTO teszt_view VALUES("13","Mondd el véleményed egy mondatban, mit hiányolsz a közösségi oldalakon?","","1");
-INSERT INTO teszt_view VALUES("13","Mondd el véleményed egy mondatban, mit hiányolsz a közösségi oldalakon?","","1");
-INSERT INTO teszt_view VALUES("13","Mondd el véleményed egy mondatban, mit hiányolsz a közösségi oldalakon?","","1");
-INSERT INTO teszt_view VALUES("13","Mondd el véleményed egy mondatban, mit hiányolsz a közösségi oldalakon?","","1");
-INSERT INTO teszt_view VALUES("13","Mondd el véleményed egy mondatban, mit hiányolsz a közösségi oldalakon?","","1");
-INSERT INTO teszt_view VALUES("13","Mondd el véleményed egy mondatban, mit hiányolsz a közösségi oldalakon?","","1");
-INSERT INTO teszt_view VALUES("13","Mondd el véleményed egy mondatban, mit hiányolsz a közösségi oldalakon?","","1");
-INSERT INTO teszt_view VALUES("13","Mondd el véleményed egy mondatban, mit hiányolsz a közösségi oldalakon?","","1");
-INSERT INTO teszt_view VALUES("13","Mondd el véleményed egy mondatban, mit hiányolsz a közösségi oldalakon?","","1");
-INSERT INTO teszt_view VALUES("13","Mondd el véleményed egy mondatban, mit hiányolsz a közösségi oldalakon?","","1");
-INSERT INTO teszt_view VALUES("13","Mondd el véleményed egy mondatban, mit hiányolsz a közösségi oldalakon?","","1");
-INSERT INTO teszt_view VALUES("13","Mondd el véleményed egy mondatban, mit hiányolsz a közösségi oldalakon?","","1");
-INSERT INTO teszt_view VALUES("13","Mondd el véleményed egy mondatban, mit hiányolsz a közösségi oldalakon?","","1");
-INSERT INTO teszt_view VALUES("13","Mondd el véleményed egy mondatban, mit hiányolsz a közösségi oldalakon?","","1");
-INSERT INTO teszt_view VALUES("13","Mondd el véleményed egy mondatban, mit hiányolsz a közösségi oldalakon?","","1");
-INSERT INTO teszt_view VALUES("13","Mondd el véleményed egy mondatban, mit hiányolsz a közösségi oldalakon?","","1");
-INSERT INTO teszt_view VALUES("13","Mondd el véleményed egy mondatban, mit hiányolsz a közösségi oldalakon?","","1");
-INSERT INTO teszt_view VALUES("13","Mondd el véleményed egy mondatban, mit hiányolsz a közösségi oldalakon?","","1");
-INSERT INTO teszt_view VALUES("13","Mondd el véleményed egy mondatban, mit hiányolsz a közösségi oldalakon?","","1");
-INSERT INTO teszt_view VALUES("13","Mondd el véleményed egy mondatban, mit hiányolsz a közösségi oldalakon?","","1");
-INSERT INTO teszt_view VALUES("13","Mondd el véleményed egy mondatban, mit hiányolsz a közösségi oldalakon?","","1");
-INSERT INTO teszt_view VALUES("13","Mondd el véleményed egy mondatban, mit hiányolsz a közösségi oldalakon?","","1");
-INSERT INTO teszt_view VALUES("13","Mondd el véleményed egy mondatban, mit hiányolsz a közösségi oldalakon?","","1");
-INSERT INTO teszt_view VALUES("13","Mondd el véleményed egy mondatban, mit hiányolsz a közösségi oldalakon?","","1");
-INSERT INTO teszt_view VALUES("13","Mondd el véleményed egy mondatban, mit hiányolsz a közösségi oldalakon?","","1");
-INSERT INTO teszt_view VALUES("13","Mondd el véleményed egy mondatban, mit hiányolsz a közösségi oldalakon?","","1");
-INSERT INTO teszt_view VALUES("13","Mondd el véleményed egy mondatban, mit hiányolsz a közösségi oldalakon?","","1");
-INSERT INTO teszt_view VALUES("13","Mondd el véleményed egy mondatban, mit hiányolsz a közösségi oldalakon?","","1");
-INSERT INTO teszt_view VALUES("13","Mondd el véleményed egy mondatban, mit hiányolsz a közösségi oldalakon?","","1");
-INSERT INTO teszt_view VALUES("13","Mondd el véleményed egy mondatban, mit hiányolsz a közösségi oldalakon?","","1");
-INSERT INTO teszt_view VALUES("13","Mondd el véleményed egy mondatban, mit hiányolsz a közösségi oldalakon?","","1");
-INSERT INTO teszt_view VALUES("13","Mondd el véleményed egy mondatban, mit hiányolsz a közösségi oldalakon?","","1");
-INSERT INTO teszt_view VALUES("13","Mondd el véleményed egy mondatban, mit hiányolsz a közösségi oldalakon?","","1");
-INSERT INTO teszt_view VALUES("13","Mondd el véleményed egy mondatban, mit hiányolsz a közösségi oldalakon?","","1");
-INSERT INTO teszt_view VALUES("13","Mondd el véleményed egy mondatban, mit hiányolsz a közösségi oldalakon?","","1");
-INSERT INTO teszt_view VALUES("13","Mondd el véleményed egy mondatban, mit hiányolsz a közösségi oldalakon?","","1");
-INSERT INTO teszt_view VALUES("13","Mondd el véleményed egy mondatban, mit hiányolsz a közösségi oldalakon?","","1");
-INSERT INTO teszt_view VALUES("13","Mondd el véleményed egy mondatban, mit hiányolsz a közösségi oldalakon?","","1");
-INSERT INTO teszt_view VALUES("13","Mondd el véleményed egy mondatban, mit hiányolsz a közösségi oldalakon?","","1");
-INSERT INTO teszt_view VALUES("13","Mondd el véleményed egy mondatban, mit hiányolsz a közösségi oldalakon?","","1");
-INSERT INTO teszt_view VALUES("13","Mondd el véleményed egy mondatban, mit hiányolsz a közösségi oldalakon?","","1");
-INSERT INTO teszt_view VALUES("13","Mondd el véleményed egy mondatban, mit hiányolsz a közösségi oldalakon?","","1");
-INSERT INTO teszt_view VALUES("13","Mondd el véleményed egy mondatban, mit hiányolsz a közösségi oldalakon?","","1");
-INSERT INTO teszt_view VALUES("13","Mondd el véleményed egy mondatban, mit hiányolsz a közösségi oldalakon?","","1");
-INSERT INTO teszt_view VALUES("13","Mondd el véleményed egy mondatban, mit hiányolsz a közösségi oldalakon?","","1");
-INSERT INTO teszt_view VALUES("13","Mondd el véleményed egy mondatban, mit hiányolsz a közösségi oldalakon?","","1");
-INSERT INTO teszt_view VALUES("13","Mondd el véleményed egy mondatban, mit hiányolsz a közösségi oldalakon?","","1");
-INSERT INTO teszt_view VALUES("13","Mondd el véleményed egy mondatban, mit hiányolsz a közösségi oldalakon?","","1");
-INSERT INTO teszt_view VALUES("13","Mondd el véleményed egy mondatban, mit hiányolsz a közösségi oldalakon?","","1");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","A termékre leadott értékelések összesített eredménye","4");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","A termékhez fűződő hozzászólások","4");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Hányan akarják megszerezni","2");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Hány embernek van már meg","2");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Ismerőseim közül hányan tartják jó ötletnek","3");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Ha látom, hogy költségvetésemet ez hogy alakítja","5");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Ha tudom, hogy költségvetésembe mikorra tudom beütemezni","4");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","A termékre leadott értékelések összesített eredménye","3");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","A termékhez fűződő hozzászólások","3");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Hányan akarják megszerezni","3");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Hány embernek van már meg","3");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Ismerőseim közül hányan tartják jó ötletnek","3");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Ha látom, hogy költségvetésemet ez hogy alakítja","3");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Ha tudom, hogy költségvetésembe mikorra tudom beütemezni","3");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","A termékre leadott értékelések összesített eredménye","5");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","A termékhez fűződő hozzászólások","5");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Hányan akarják megszerezni","1");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Hány embernek van már meg","1");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Ismerőseim közül hányan tartják jó ötletnek","3");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Ha látom, hogy költségvetésemet ez hogy alakítja","4");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Ha tudom, hogy költségvetésembe mikorra tudom beütemezni","4");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","A termékre leadott értékelések összesített eredménye","4");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","A termékhez fűződő hozzászólások","5");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Hányan akarják megszerezni","2");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Hány embernek van már meg","2");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Ismerőseim közül hányan tartják jó ötletnek","2");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Ha látom, hogy költségvetésemet ez hogy alakítja","2");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Ha tudom, hogy költségvetésembe mikorra tudom beütemezni","2");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","A termékre leadott értékelések összesített eredménye","4");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","A termékhez fűződő hozzászólások","5");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Hányan akarják megszerezni","2");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Hány embernek van már meg","4");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Ismerőseim közül hányan tartják jó ötletnek","3");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Ha látom, hogy költségvetésemet ez hogy alakítja","3");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Ha tudom, hogy költségvetésembe mikorra tudom beütemezni","5");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","A termékre leadott értékelések összesített eredménye","5");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","A termékhez fűződő hozzászólások","4");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Hányan akarják megszerezni","1");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Hány embernek van már meg","1");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Ismerőseim közül hányan tartják jó ötletnek","4");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Ha látom, hogy költségvetésemet ez hogy alakítja","5");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Ha tudom, hogy költségvetésembe mikorra tudom beütemezni","3");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","A termékre leadott értékelések összesített eredménye","5");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","A termékhez fűződő hozzászólások","4");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Hányan akarják megszerezni","5");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Hány embernek van már meg","5");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Ismerőseim közül hányan tartják jó ötletnek","5");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Ha látom, hogy költségvetésemet ez hogy alakítja","3");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Ha tudom, hogy költségvetésembe mikorra tudom beütemezni","3");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","A termékre leadott értékelések összesített eredménye","2");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","A termékhez fűződő hozzászólások","4");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Hányan akarják megszerezni","1");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Hány embernek van már meg","1");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Ismerőseim közül hányan tartják jó ötletnek","1");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Ha látom, hogy költségvetésemet ez hogy alakítja","5");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Ha tudom, hogy költségvetésembe mikorra tudom beütemezni","4");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","A termékre leadott értékelések összesített eredménye","3");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","A termékhez fűződő hozzászólások","5");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Hányan akarják megszerezni","2");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Hány embernek van már meg","2");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Ismerőseim közül hányan tartják jó ötletnek","2");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Ha látom, hogy költségvetésemet ez hogy alakítja","4");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Ha tudom, hogy költségvetésembe mikorra tudom beütemezni","5");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","A termékre leadott értékelések összesített eredménye","5");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","A termékhez fűződő hozzászólások","5");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Hányan akarják megszerezni","1");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Hány embernek van már meg","1");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Ismerőseim közül hányan tartják jó ötletnek","1");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Ha látom, hogy költségvetésemet ez hogy alakítja","5");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Ha tudom, hogy költségvetésembe mikorra tudom beütemezni","5");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Ismerőseim közül hányan tartják jó ötletnek","5");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","A termékre leadott értékelések összesített eredménye","4");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","A termékhez fűződő hozzászólások","3");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Hányan akarják megszerezni","3");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Hány embernek van már meg","1");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Ismerőseim közül hányan tartják jó ötletnek","3");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Ha látom, hogy költségvetésemet ez hogy alakítja","3");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Ha tudom, hogy költségvetésembe mikorra tudom beütemezni","5");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","A termékre leadott értékelések összesített eredménye","1");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","A termékhez fűződő hozzászólások","2");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Hányan akarják megszerezni","3");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Hány embernek van már meg","4");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Ismerőseim közül hányan tartják jó ötletnek","4");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Ha látom, hogy költségvetésemet ez hogy alakítja","4");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Ha tudom, hogy költségvetésembe mikorra tudom beütemezni","4");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","A termékre leadott értékelések összesített eredménye","3");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","A termékhez fűződő hozzászólások","4");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Hányan akarják megszerezni","2");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Hány embernek van már meg","2");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Ismerőseim közül hányan tartják jó ötletnek","5");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Ha látom, hogy költségvetésemet ez hogy alakítja","4");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Ha tudom, hogy költségvetésembe mikorra tudom beütemezni","3");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","A termékre leadott értékelések összesített eredménye","1");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","A termékhez fűződő hozzászólások","5");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Hányan akarják megszerezni","1");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Hány embernek van már meg","1");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Ismerőseim közül hányan tartják jó ötletnek","5");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Ha látom, hogy költségvetésemet ez hogy alakítja","1");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Ha tudom, hogy költségvetésembe mikorra tudom beütemezni","1");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","A termékre leadott értékelések összesített eredménye","4");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","A termékhez fűződő hozzászólások","4");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Hányan akarják megszerezni","2");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Hány embernek van már meg","2");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Ismerőseim közül hányan tartják jó ötletnek","3");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Ha látom, hogy költségvetésemet ez hogy alakítja","1");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Ha tudom, hogy költségvetésembe mikorra tudom beütemezni","1");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","A termékre leadott értékelések összesített eredménye","5");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","A termékhez fűződő hozzászólások","5");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Hányan akarják megszerezni","1");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Hány embernek van már meg","1");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Ismerőseim közül hányan tartják jó ötletnek","5");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Ha látom, hogy költségvetésemet ez hogy alakítja","4");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Ha tudom, hogy költségvetésembe mikorra tudom beütemezni","5");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","A termékre leadott értékelések összesített eredménye","5");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","A termékhez fűződő hozzászólások","2");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Hányan akarják megszerezni","2");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Hány embernek van már meg","2");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Ismerőseim közül hányan tartják jó ötletnek","2");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Ha látom, hogy költségvetésemet ez hogy alakítja","2");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Ha tudom, hogy költségvetésembe mikorra tudom beütemezni","2");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","A termékre leadott értékelések összesített eredménye","2");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","A termékhez fűződő hozzászólások","2");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Hányan akarják megszerezni","1");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Hány embernek van már meg","1");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Ismerőseim közül hányan tartják jó ötletnek","5");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Ha látom, hogy költségvetésemet ez hogy alakítja","3");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Ha tudom, hogy költségvetésembe mikorra tudom beütemezni","5");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","A termékre leadott értékelések összesített eredménye","4");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","A termékhez fűződő hozzászólások","4");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Hányan akarják megszerezni","2");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Hány embernek van már meg","3");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Ismerőseim közül hányan tartják jó ötletnek","3");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Ha látom, hogy költségvetésemet ez hogy alakítja","4");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Ha tudom, hogy költségvetésembe mikorra tudom beütemezni","4");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","A termékre leadott értékelések összesített eredménye","5");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","A termékhez fűződő hozzászólások","5");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Hányan akarják megszerezni","1");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Hány embernek van már meg","1");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Ismerőseim közül hányan tartják jó ötletnek","3");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Ha látom, hogy költségvetésemet ez hogy alakítja","5");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Ha tudom, hogy költségvetésembe mikorra tudom beütemezni","5");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","A termékre leadott értékelések összesített eredménye","4");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","A termékhez fűződő hozzászólások","5");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Hányan akarják megszerezni","3");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Hány embernek van már meg","2");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Ismerőseim közül hányan tartják jó ötletnek","2");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Ha látom, hogy költségvetésemet ez hogy alakítja","4");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Ha tudom, hogy költségvetésembe mikorra tudom beütemezni","4");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","A termékre leadott értékelések összesített eredménye","1");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","A termékhez fűződő hozzászólások","4");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Hányan akarják megszerezni","1");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Hány embernek van már meg","1");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Ismerőseim közül hányan tartják jó ötletnek","1");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Ha látom, hogy költségvetésemet ez hogy alakítja","4");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Ha tudom, hogy költségvetésembe mikorra tudom beütemezni","4");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","A termékre leadott értékelések összesített eredménye","3");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","A termékhez fűződő hozzászólások","3");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Hányan akarják megszerezni","3");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Hány embernek van már meg","2");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Ismerőseim közül hányan tartják jó ötletnek","2");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Ha látom, hogy költségvetésemet ez hogy alakítja","1");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","A termékre leadott értékelések összesített eredménye","4");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","A termékhez fűződő hozzászólások","4");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Hányan akarják megszerezni","3");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Hány embernek van már meg","3");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Ismerőseim közül hányan tartják jó ötletnek","4");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Ha látom, hogy költségvetésemet ez hogy alakítja","4");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Ha tudom, hogy költségvetésembe mikorra tudom beütemezni","2");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","A termékre leadott értékelések összesített eredménye","3");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","A termékhez fűződő hozzászólások","4");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Hányan akarják megszerezni","2");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Hány embernek van már meg","2");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Ismerőseim közül hányan tartják jó ötletnek","3");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Ha látom, hogy költségvetésemet ez hogy alakítja","3");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Ha tudom, hogy költségvetésembe mikorra tudom beütemezni","3");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","A termékre leadott értékelések összesített eredménye","3");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","A termékhez fűződő hozzászólások","3");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Hányan akarják megszerezni","4");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Hány embernek van már meg","4");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Ismerőseim közül hányan tartják jó ötletnek","4");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Ha látom, hogy költségvetésemet ez hogy alakítja","5");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Ha tudom, hogy költségvetésembe mikorra tudom beütemezni","5");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","A termékre leadott értékelések összesített eredménye","4");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","A termékhez fűződő hozzászólások","4");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Hányan akarják megszerezni","2");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Hány embernek van már meg","2");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Ismerőseim közül hányan tartják jó ötletnek","3");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Ha látom, hogy költségvetésemet ez hogy alakítja","3");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Ha tudom, hogy költségvetésembe mikorra tudom beütemezni","4");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","A termékre leadott értékelések összesített eredménye","3");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","A termékhez fűződő hozzászólások","4");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Hányan akarják megszerezni","4");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Hány embernek van már meg","4");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Ismerőseim közül hányan tartják jó ötletnek","5");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Ha látom, hogy költségvetésemet ez hogy alakítja","5");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Ha tudom, hogy költségvetésembe mikorra tudom beütemezni","5");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","A termékre leadott értékelések összesített eredménye","3");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","A termékhez fűződő hozzászólások","4");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Hányan akarják megszerezni","1");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Hány embernek van már meg","1");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Ismerőseim közül hányan tartják jó ötletnek","3");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Ha látom, hogy költségvetésemet ez hogy alakítja","5");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Ha tudom, hogy költségvetésembe mikorra tudom beütemezni","5");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","A termékre leadott értékelések összesített eredménye","5");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","A termékhez fűződő hozzászólások","5");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Hányan akarják megszerezni","3");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Hány embernek van már meg","4");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Ismerőseim közül hányan tartják jó ötletnek","4");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Ha látom, hogy költségvetésemet ez hogy alakítja","4");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Ha tudom, hogy költségvetésembe mikorra tudom beütemezni","4");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","A termékre leadott értékelések összesített eredménye","5");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","A termékhez fűződő hozzászólások","5");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Hányan akarják megszerezni","1");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Hány embernek van már meg","1");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Ismerőseim közül hányan tartják jó ötletnek","3");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Ha látom, hogy költségvetésemet ez hogy alakítja","4");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Ha tudom, hogy költségvetésembe mikorra tudom beütemezni","5");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","A termékre leadott értékelések összesített eredménye","4");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","A termékhez fűződő hozzászólások","4");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Hányan akarják megszerezni","1");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Hány embernek van már meg","1");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Ismerőseim közül hányan tartják jó ötletnek","3");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Ha látom, hogy költségvetésemet ez hogy alakítja","5");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Ha tudom, hogy költségvetésembe mikorra tudom beütemezni","5");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","A termékre leadott értékelések összesített eredménye","4");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","A termékhez fűződő hozzászólások","4");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Hányan akarják megszerezni","1");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Hány embernek van már meg","2");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Ismerőseim közül hányan tartják jó ötletnek","3");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Ha látom, hogy költségvetésemet ez hogy alakítja","3");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Ha tudom, hogy költségvetésembe mikorra tudom beütemezni","3");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","A termékre leadott értékelések összesített eredménye","5");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","A termékhez fűződő hozzászólások","4");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Hányan akarják megszerezni","1");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Hány embernek van már meg","2");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Ismerőseim közül hányan tartják jó ötletnek","4");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Ha látom, hogy költségvetésemet ez hogy alakítja","3");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Ha tudom, hogy költségvetésembe mikorra tudom beütemezni","4");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","A termékre leadott értékelések összesített eredménye","1");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","A termékhez fűződő hozzászólások","3");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Hányan akarják megszerezni","1");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Hány embernek van már meg","1");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Ismerőseim közül hányan tartják jó ötletnek","1");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Ha látom, hogy költségvetésemet ez hogy alakítja","4");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Ha tudom, hogy költségvetésembe mikorra tudom beütemezni","4");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","A termékhez fűződő hozzászólások","5");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Hányan akarják megszerezni","2");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Hány embernek van már meg","3");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Ismerőseim közül hányan tartják jó ötletnek","2");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Ha látom, hogy költségvetésemet ez hogy alakítja","4");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Ha tudom, hogy költségvetésembe mikorra tudom beütemezni","4");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","A termékre leadott értékelések összesített eredménye","4");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","A termékhez fűződő hozzászólások","4");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Hányan akarják megszerezni","1");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Hány embernek van már meg","1");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Ismerőseim közül hányan tartják jó ötletnek","2");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Ha látom, hogy költségvetésemet ez hogy alakítja","3");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Ha tudom, hogy költségvetésembe mikorra tudom beütemezni","3");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","A termékre leadott értékelések összesített eredménye","3");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","A termékhez fűződő hozzászólások","5");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Hányan akarják megszerezni","2");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Hány embernek van már meg","3");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Ismerőseim közül hányan tartják jó ötletnek","3");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Ha látom, hogy költségvetésemet ez hogy alakítja","5");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Ha tudom, hogy költségvetésembe mikorra tudom beütemezni","5");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","A termékre leadott értékelések összesített eredménye","5");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","A termékhez fűződő hozzászólások","5");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Hányan akarják megszerezni","1");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Hány embernek van már meg","1");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Ha látom, hogy költségvetésemet ez hogy alakítja","3");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Ha tudom, hogy költségvetésembe mikorra tudom beütemezni","3");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","A termékre leadott értékelések összesített eredménye","5");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","A termékhez fűződő hozzászólások","5");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Hányan akarják megszerezni","1");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Hány embernek van már meg","1");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Ha látom, hogy költségvetésemet ez hogy alakítja","3");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Ha tudom, hogy költségvetésembe mikorra tudom beütemezni","3");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","A termékre leadott értékelések összesített eredménye","5");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","A termékhez fűződő hozzászólások","5");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Hányan akarják megszerezni","3");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Hány embernek van már meg","4");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Ismerőseim közül hányan tartják jó ötletnek","5");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Ha látom, hogy költségvetésemet ez hogy alakítja","4");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Ha tudom, hogy költségvetésembe mikorra tudom beütemezni","4");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","A termékre leadott értékelések összesített eredménye","5");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","A termékhez fűződő hozzászólások","5");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Hányan akarják megszerezni","3");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Hány embernek van már meg","4");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Ismerőseim közül hányan tartják jó ötletnek","5");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Ha látom, hogy költségvetésemet ez hogy alakítja","4");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Ha tudom, hogy költségvetésembe mikorra tudom beütemezni","4");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","A termékre leadott értékelések összesített eredménye","5");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","A termékhez fűződő hozzászólások","5");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Hányan akarják megszerezni","3");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Hány embernek van már meg","4");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Ismerőseim közül hányan tartják jó ötletnek","5");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Ha látom, hogy költségvetésemet ez hogy alakítja","4");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Ha tudom, hogy költségvetésembe mikorra tudom beütemezni","4");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","A termékre leadott értékelések összesített eredménye","4");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","A termékhez fűződő hozzászólások","3");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Hányan akarják megszerezni","2");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Hány embernek van már meg","3");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Ismerőseim közül hányan tartják jó ötletnek","4");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Ha látom, hogy költségvetésemet ez hogy alakítja","3");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Ha tudom, hogy költségvetésembe mikorra tudom beütemezni","3");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","A termékre leadott értékelések összesített eredménye","4");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","A termékhez fűződő hozzászólások","4");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Hányan akarják megszerezni","3");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Hány embernek van már meg","2");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Ismerőseim közül hányan tartják jó ötletnek","1");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Ha látom, hogy költségvetésemet ez hogy alakítja","4");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Ha tudom, hogy költségvetésembe mikorra tudom beütemezni","4");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","A termékre leadott értékelések összesített eredménye","4");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","A termékhez fűződő hozzászólások","3");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Hányan akarják megszerezni","2");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Hány embernek van már meg","2");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Ismerőseim közül hányan tartják jó ötletnek","3");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Ha látom, hogy költségvetésemet ez hogy alakítja","4");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Ha tudom, hogy költségvetésembe mikorra tudom beütemezni","3");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","A termékre leadott értékelések összesített eredménye","4");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","A termékhez fűződő hozzászólások","4");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Hányan akarják megszerezni","2");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Hány embernek van már meg","2");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Ismerőseim közül hányan tartják jó ötletnek","4");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Ha látom, hogy költségvetésemet ez hogy alakítja","4");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Ha tudom, hogy költségvetésembe mikorra tudom beütemezni","4");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","A termékre leadott értékelések összesített eredménye","4");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","A termékhez fűződő hozzászólások","5");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Hányan akarják megszerezni","4");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Hány embernek van már meg","5");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Ismerőseim közül hányan tartják jó ötletnek","2");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Ha látom, hogy költségvetésemet ez hogy alakítja","5");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Ha tudom, hogy költségvetésembe mikorra tudom beütemezni","5");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","A termékre leadott értékelések összesített eredménye","4");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Hányan akarják megszerezni","2");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Hány embernek van már meg","1");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Ha látom, hogy költségvetésemet ez hogy alakítja","3");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Ha tudom, hogy költségvetésembe mikorra tudom beütemezni","5");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","A termékre leadott értékelések összesített eredménye","5");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","A termékhez fűződő hozzászólások","5");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Hányan akarják megszerezni","2");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Hány embernek van már meg","2");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Ismerőseim közül hányan tartják jó ötletnek","5");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Ha látom, hogy költségvetésemet ez hogy alakítja","5");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Ha tudom, hogy költségvetésembe mikorra tudom beütemezni","5");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","A termékre leadott értékelések összesített eredménye","4");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","A termékhez fűződő hozzászólások","4");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Hányan akarják megszerezni","1");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Hány embernek van már meg","1");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Ismerőseim közül hányan tartják jó ötletnek","4");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Ha látom, hogy költségvetésemet ez hogy alakítja","4");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Ha tudom, hogy költségvetésembe mikorra tudom beütemezni","4");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","A termékre leadott értékelések összesített eredménye","4");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","A termékhez fűződő hozzászólások","4");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Hányan akarják megszerezni","3");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Hány embernek van már meg","2");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Ismerőseim közül hányan tartják jó ötletnek","4");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Ha látom, hogy költségvetésemet ez hogy alakítja","5");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Ha tudom, hogy költségvetésembe mikorra tudom beütemezni","5");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","A termékre leadott értékelések összesített eredménye","5");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","A termékhez fűződő hozzászólások","5");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Hányan akarják megszerezni","2");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Hány embernek van már meg","2");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Ismerőseim közül hányan tartják jó ötletnek","2");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Ha látom, hogy költségvetésemet ez hogy alakítja","3");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Ha tudom, hogy költségvetésembe mikorra tudom beütemezni","3");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","A termékre leadott értékelések összesített eredménye","4");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","A termékhez fűződő hozzászólások","4");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Hányan akarják megszerezni","2");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Hány embernek van már meg","3");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Ismerőseim közül hányan tartják jó ötletnek","4");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Ha látom, hogy költségvetésemet ez hogy alakítja","3");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Ha tudom, hogy költségvetésembe mikorra tudom beütemezni","2");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","A termékre leadott értékelések összesített eredménye","4");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","A termékhez fűződő hozzászólások","4");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Hányan akarják megszerezni","1");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Hány embernek van már meg","1");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Ismerőseim közül hányan tartják jó ötletnek","2");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Ha látom, hogy költségvetésemet ez hogy alakítja","3");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Ha tudom, hogy költségvetésembe mikorra tudom beütemezni","3");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","A termékre leadott értékelések összesített eredménye","4");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","A termékhez fűződő hozzászólások","4");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Hányan akarják megszerezni","2");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Hány embernek van már meg","2");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Ismerőseim közül hányan tartják jó ötletnek","4");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Ha látom, hogy költségvetésemet ez hogy alakítja","3");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Ha tudom, hogy költségvetésembe mikorra tudom beütemezni","3");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","A termékre leadott értékelések összesített eredménye","3");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","A termékhez fűződő hozzászólások","3");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Hányan akarják megszerezni","2");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Hány embernek van már meg","1");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Ismerőseim közül hányan tartják jó ötletnek","4");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Ha látom, hogy költségvetésemet ez hogy alakítja","4");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Ha tudom, hogy költségvetésembe mikorra tudom beütemezni","4");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","A termékre leadott értékelések összesített eredménye","2");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","A termékhez fűződő hozzászólások","4");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Hányan akarják megszerezni","2");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Hány embernek van már meg","1");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Ismerőseim közül hányan tartják jó ötletnek","2");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Ha látom, hogy költségvetésemet ez hogy alakítja","4");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Ha tudom, hogy költségvetésembe mikorra tudom beütemezni","4");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","A termékre leadott értékelések összesített eredménye","3");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","A termékhez fűződő hozzászólások","3");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Hányan akarják megszerezni","2");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Hány embernek van már meg","2");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Ismerőseim közül hányan tartják jó ötletnek","2");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Ha látom, hogy költségvetésemet ez hogy alakítja","3");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Ha tudom, hogy költségvetésembe mikorra tudom beütemezni","3");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","A termékre leadott értékelések összesített eredménye","4");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","A termékhez fűződő hozzászólások","4");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Hányan akarják megszerezni","4");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Hány embernek van már meg","3");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Ismerőseim közül hányan tartják jó ötletnek","4");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Ha látom, hogy költségvetésemet ez hogy alakítja","3");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Ha tudom, hogy költségvetésembe mikorra tudom beütemezni","3");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","A termékre leadott értékelések összesített eredménye","4");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","A termékhez fűződő hozzászólások","4");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Hányan akarják megszerezni","1");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Hány embernek van már meg","1");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Ismerőseim közül hányan tartják jó ötletnek","4");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Ha látom, hogy költségvetésemet ez hogy alakítja","5");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Ha tudom, hogy költségvetésembe mikorra tudom beütemezni","4");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Ha tudom, hogy költségvetésembe mikorra tudom beütemezni","5");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","A termékre leadott értékelések összesített eredménye","2");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","A termékhez fűződő hozzászólások","5");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Hányan akarják megszerezni","1");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Hány embernek van már meg","1");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Ismerőseim közül hányan tartják jó ötletnek","3");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Ha látom, hogy költségvetésemet ez hogy alakítja","5");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Ha tudom, hogy költségvetésembe mikorra tudom beütemezni","5");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","A termékre leadott értékelések összesített eredménye","1");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","A termékhez fűződő hozzászólások","3");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Hányan akarják megszerezni","1");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Hány embernek van már meg","1");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Ismerőseim közül hányan tartják jó ötletnek","3");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Ha látom, hogy költségvetésemet ez hogy alakítja","5");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Ha tudom, hogy költségvetésembe mikorra tudom beütemezni","4");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","A termékre leadott értékelések összesített eredménye","3");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","A termékhez fűződő hozzászólások","3");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Hányan akarják megszerezni","4");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Hány embernek van már meg","4");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Ismerőseim közül hányan tartják jó ötletnek","4");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Ha látom, hogy költségvetésemet ez hogy alakítja","4");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Ha tudom, hogy költségvetésembe mikorra tudom beütemezni","3");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","A termékre leadott értékelések összesített eredménye","5");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","A termékhez fűződő hozzászólások","3");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Hányan akarják megszerezni","1");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Hány embernek van már meg","3");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Ismerőseim közül hányan tartják jó ötletnek","3");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Ha látom, hogy költségvetésemet ez hogy alakítja","4");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Ha tudom, hogy költségvetésembe mikorra tudom beütemezni","4");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","A termékre leadott értékelések összesített eredménye","2");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","A termékhez fűződő hozzászólások","3");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Hányan akarják megszerezni","1");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Hány embernek van már meg","3");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Ismerőseim közül hányan tartják jó ötletnek","4");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Ha látom, hogy költségvetésemet ez hogy alakítja","4");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Ha tudom, hogy költségvetésembe mikorra tudom beütemezni","4");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","A termékre leadott értékelések összesített eredménye","3");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","A termékhez fűződő hozzászólások","4");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Hányan akarják megszerezni","3");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Hány embernek van már meg","3");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Ismerőseim közül hányan tartják jó ötletnek","3");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Ha látom, hogy költségvetésemet ez hogy alakítja","3");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Ha tudom, hogy költségvetésembe mikorra tudom beütemezni","3");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","A termékre leadott értékelések összesített eredménye","3");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","A termékhez fűződő hozzászólások","3");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Hányan akarják megszerezni","4");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Hány embernek van már meg","3");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Ismerőseim közül hányan tartják jó ötletnek","3");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Ha látom, hogy költségvetésemet ez hogy alakítja","4");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Ha tudom, hogy költségvetésembe mikorra tudom beütemezni","5");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","A termékre leadott értékelések összesített eredménye","4");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","A termékhez fűződő hozzászólások","5");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Hányan akarják megszerezni","4");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Hány embernek van már meg","5");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Ismerőseim közül hányan tartják jó ötletnek","4");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Ha látom, hogy költségvetésemet ez hogy alakítja","4");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Ha tudom, hogy költségvetésembe mikorra tudom beütemezni","4");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","A termékre leadott értékelések összesített eredménye","4");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","A termékhez fűződő hozzászólások","4");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Hányan akarják megszerezni","4");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Hány embernek van már meg","4");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Ismerőseim közül hányan tartják jó ötletnek","5");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Ha látom, hogy költségvetésemet ez hogy alakítja","5");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Ha tudom, hogy költségvetésembe mikorra tudom beütemezni","5");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","A termékre leadott értékelések összesített eredménye","5");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","A termékhez fűződő hozzászólások","5");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Hányan akarják megszerezni","1");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Hány embernek van már meg","2");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Ismerőseim közül hányan tartják jó ötletnek","1");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Ha látom, hogy költségvetésemet ez hogy alakítja","5");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Ha tudom, hogy költségvetésembe mikorra tudom beütemezni","4");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","A termékre leadott értékelések összesített eredménye","5");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","A termékhez fűződő hozzászólások","5");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Hányan akarják megszerezni","2");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Hány embernek van már meg","1");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Ismerőseim közül hányan tartják jó ötletnek","4");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Ha látom, hogy költségvetésemet ez hogy alakítja","3");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Ha tudom, hogy költségvetésembe mikorra tudom beütemezni","3");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","A termékre leadott értékelések összesített eredménye","4");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","A termékhez fűződő hozzászólások","4");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Hányan akarják megszerezni","4");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Hány embernek van már meg","5");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Ismerőseim közül hányan tartják jó ötletnek","5");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Ha látom, hogy költségvetésemet ez hogy alakítja","5");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Ha tudom, hogy költségvetésembe mikorra tudom beütemezni","5");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","A termékre leadott értékelések összesített eredménye","3");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","A termékhez fűződő hozzászólások","3");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Hányan akarják megszerezni","2");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Hány embernek van már meg","2");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Ismerőseim közül hányan tartják jó ötletnek","3");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Ha látom, hogy költségvetésemet ez hogy alakítja","4");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Ha tudom, hogy költségvetésembe mikorra tudom beütemezni","5");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","A termékre leadott értékelések összesített eredménye","4");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","A termékhez fűződő hozzászólások","5");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Hányan akarják megszerezni","5");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Hány embernek van már meg","4");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Ismerőseim közül hányan tartják jó ötletnek","5");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Ha látom, hogy költségvetésemet ez hogy alakítja","5");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Ha tudom, hogy költségvetésembe mikorra tudom beütemezni","5");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","A termékre leadott értékelések összesített eredménye","3");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","A termékhez fűződő hozzászólások","4");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Hányan akarják megszerezni","5");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Hány embernek van már meg","4");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Ismerőseim közül hányan tartják jó ötletnek","5");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Ha látom, hogy költségvetésemet ez hogy alakítja","5");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Ha tudom, hogy költségvetésembe mikorra tudom beütemezni","4");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","A termékre leadott értékelések összesített eredménye","5");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","A termékhez fűződő hozzászólások","4");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Hányan akarják megszerezni","4");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Hány embernek van már meg","3");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Ismerőseim közül hányan tartják jó ötletnek","4");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Ha látom, hogy költségvetésemet ez hogy alakítja","5");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Ha tudom, hogy költségvetésembe mikorra tudom beütemezni","5");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","A termékre leadott értékelések összesített eredménye","5");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","A termékhez fűződő hozzászólások","5");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Hányan akarják megszerezni","3");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Hány embernek van már meg","3");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Ismerőseim közül hányan tartják jó ötletnek","3");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Ha látom, hogy költségvetésemet ez hogy alakítja","5");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Ha tudom, hogy költségvetésembe mikorra tudom beütemezni","5");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","A termékre leadott értékelések összesített eredménye","5");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","A termékhez fűződő hozzászólások","5");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Hányan akarják megszerezni","1");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Hány embernek van már meg","1");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Ismerőseim közül hányan tartják jó ötletnek","3");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Ha látom, hogy költségvetésemet ez hogy alakítja","5");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Ha tudom, hogy költségvetésembe mikorra tudom beütemezni","5");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","A termékre leadott értékelések összesített eredménye","1");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","A termékhez fűződő hozzászólások","4");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Hányan akarják megszerezni","1");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Hány embernek van már meg","1");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Ismerőseim közül hányan tartják jó ötletnek","4");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Ha látom, hogy költségvetésemet ez hogy alakítja","5");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Ha tudom, hogy költségvetésembe mikorra tudom beütemezni","5");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","A termékre leadott értékelések összesített eredménye","4");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","A termékhez fűződő hozzászólások","4");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Hányan akarják megszerezni","2");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Hány embernek van már meg","4");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Ismerőseim közül hányan tartják jó ötletnek","4");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Ha látom, hogy költségvetésemet ez hogy alakítja","5");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Ha tudom, hogy költségvetésembe mikorra tudom beütemezni","5");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","A termékre leadott értékelések összesített eredménye","3");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","A termékhez fűződő hozzászólások","3");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Hányan akarják megszerezni","3");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Hány embernek van már meg","3");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Ismerőseim közül hányan tartják jó ötletnek","3");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Ha látom, hogy költségvetésemet ez hogy alakítja","4");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Ha tudom, hogy költségvetésembe mikorra tudom beütemezni","5");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","A termékre leadott értékelések összesített eredménye","5");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","A termékhez fűződő hozzászólások","5");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Hányan akarják megszerezni","2");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Hány embernek van már meg","2");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Ismerőseim közül hányan tartják jó ötletnek","5");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Ha látom, hogy költségvetésemet ez hogy alakítja","3");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Ha tudom, hogy költségvetésembe mikorra tudom beütemezni","3");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","A termékre leadott értékelések összesített eredménye","4");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","A termékhez fűződő hozzászólások","4");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Hányan akarják megszerezni","1");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Hány embernek van már meg","1");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Ismerőseim közül hányan tartják jó ötletnek","4");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Ha látom, hogy költségvetésemet ez hogy alakítja","4");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Ha tudom, hogy költségvetésembe mikorra tudom beütemezni","5");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","A termékre leadott értékelések összesített eredménye","4");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","A termékhez fűződő hozzászólások","3");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Hányan akarják megszerezni","2");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Hány embernek van már meg","2");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Ismerőseim közül hányan tartják jó ötletnek","3");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Ha látom, hogy költségvetésemet ez hogy alakítja","4");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Ha tudom, hogy költségvetésembe mikorra tudom beütemezni","4");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","A termékre leadott értékelések összesített eredménye","3");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","A termékhez fűződő hozzászólások","5");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Hányan akarják megszerezni","1");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Hány embernek van már meg","1");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Ismerőseim közül hányan tartják jó ötletnek","1");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Ha látom, hogy költségvetésemet ez hogy alakítja","5");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Ha tudom, hogy költségvetésembe mikorra tudom beütemezni","5");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","A termékre leadott értékelések összesített eredménye","4");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","A termékhez fűződő hozzászólások","5");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Hányan akarják megszerezni","2");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Hány embernek van már meg","2");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Ismerőseim közül hányan tartják jó ötletnek","4");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Ha látom, hogy költségvetésemet ez hogy alakítja","2");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Ha tudom, hogy költségvetésembe mikorra tudom beütemezni","5");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","A termékre leadott értékelések összesített eredménye","4");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","A termékhez fűződő hozzászólások","5");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Hányan akarják megszerezni","4");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Hány embernek van már meg","4");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Ismerőseim közül hányan tartják jó ötletnek","5");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Ha látom, hogy költségvetésemet ez hogy alakítja","5");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Ha tudom, hogy költségvetésembe mikorra tudom beütemezni","5");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","A termékre leadott értékelések összesített eredménye","4");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","A termékhez fűződő hozzászólások","3");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Hányan akarják megszerezni","1");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Hány embernek van már meg","1");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Ismerőseim közül hányan tartják jó ötletnek","3");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Ha látom, hogy költségvetésemet ez hogy alakítja","5");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Ha tudom, hogy költségvetésembe mikorra tudom beütemezni","5");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","A termékre leadott értékelések összesített eredménye","5");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","A termékhez fűződő hozzászólások","5");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Hányan akarják megszerezni","3");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Hány embernek van már meg","3");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Ismerőseim közül hányan tartják jó ötletnek","4");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Ha látom, hogy költségvetésemet ez hogy alakítja","5");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Ha tudom, hogy költségvetésembe mikorra tudom beütemezni","5");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","A termékre leadott értékelések összesített eredménye","3");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","A termékhez fűződő hozzászólások","4");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Hányan akarják megszerezni","1");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Hány embernek van már meg","2");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Ismerőseim közül hányan tartják jó ötletnek","4");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Ha látom, hogy költségvetésemet ez hogy alakítja","4");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Ha tudom, hogy költségvetésembe mikorra tudom beütemezni","5");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","A termékre leadott értékelések összesített eredménye","2");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","A termékhez fűződő hozzászólások","3");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Hányan akarják megszerezni","3");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Hány embernek van már meg","3");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Ismerőseim közül hányan tartják jó ötletnek","3");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Ha látom, hogy költségvetésemet ez hogy alakítja","3");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Ha tudom, hogy költségvetésembe mikorra tudom beütemezni","3");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","A termékre leadott értékelések összesített eredménye","5");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","A termékhez fűződő hozzászólások","5");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Hányan akarják megszerezni","1");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Hány embernek van már meg","1");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Ismerőseim közül hányan tartják jó ötletnek","4");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Ha látom, hogy költségvetésemet ez hogy alakítja","5");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Ha tudom, hogy költségvetésembe mikorra tudom beütemezni","5");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","A termékre leadott értékelések összesített eredménye","3");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","A termékhez fűződő hozzászólások","5");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Hányan akarják megszerezni","1");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Hány embernek van már meg","1");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Ismerőseim közül hányan tartják jó ötletnek","2");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Ha látom, hogy költségvetésemet ez hogy alakítja","5");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Ha tudom, hogy költségvetésembe mikorra tudom beütemezni","5");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","A termékre leadott értékelések összesített eredménye","5");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","A termékhez fűződő hozzászólások","5");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Hányan akarják megszerezni","1");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Hány embernek van már meg","1");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Ismerőseim közül hányan tartják jó ötletnek","4");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Ha látom, hogy költségvetésemet ez hogy alakítja","5");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Ha tudom, hogy költségvetésembe mikorra tudom beütemezni","5");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","A termékre leadott értékelések összesített eredménye","4");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","A termékhez fűződő hozzászólások","5");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Hányan akarják megszerezni","2");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Hány embernek van már meg","3");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Ismerőseim közül hányan tartják jó ötletnek","4");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Ha látom, hogy költségvetésemet ez hogy alakítja","4");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Ha tudom, hogy költségvetésembe mikorra tudom beütemezni","4");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","A termékre leadott értékelések összesített eredménye","5");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","A termékhez fűződő hozzászólások","4");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Hányan akarják megszerezni","1");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Hány embernek van már meg","1");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Ismerőseim közül hányan tartják jó ötletnek","1");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Ha látom, hogy költségvetésemet ez hogy alakítja","1");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Ha tudom, hogy költségvetésembe mikorra tudom beütemezni","3");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","A termékre leadott értékelések összesített eredménye","5");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","A termékhez fűződő hozzászólások","5");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Hányan akarják megszerezni","2");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Hány embernek van már meg","5");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Ismerőseim közül hányan tartják jó ötletnek","4");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Ha látom, hogy költségvetésemet ez hogy alakítja","4");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Ha tudom, hogy költségvetésembe mikorra tudom beütemezni","5");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","A termékre leadott értékelések összesített eredménye","3");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","A termékhez fűződő hozzászólások","4");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Hányan akarják megszerezni","1");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Hány embernek van már meg","2");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Ismerőseim közül hányan tartják jó ötletnek","2");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Ha látom, hogy költségvetésemet ez hogy alakítja","4");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Ha tudom, hogy költségvetésembe mikorra tudom beütemezni","4");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","A termékre leadott értékelések összesített eredménye","4");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","A termékhez fűződő hozzászólások","5");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Hányan akarják megszerezni","3");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Hány embernek van már meg","1");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Ismerőseim közül hányan tartják jó ötletnek","3");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Ha látom, hogy költségvetésemet ez hogy alakítja","4");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Ha tudom, hogy költségvetésembe mikorra tudom beütemezni","2");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","A termékre leadott értékelések összesített eredménye","3");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","A termékhez fűződő hozzászólások","5");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Hányan akarják megszerezni","3");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Hány embernek van már meg","5");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Ismerőseim közül hányan tartják jó ötletnek","5");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Ha látom, hogy költségvetésemet ez hogy alakítja","3");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Ha tudom, hogy költségvetésembe mikorra tudom beütemezni","3");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","A termékre leadott értékelések összesített eredménye","1");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","A termékhez fűződő hozzászólások","1");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Hányan akarják megszerezni","5");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Hány embernek van már meg","5");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Ismerőseim közül hányan tartják jó ötletnek","5");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Ha látom, hogy költségvetésemet ez hogy alakítja","5");
-INSERT INTO teszt_view VALUES("14","Ha akarnál venni egy terméket akkor melyik válasz mennyire segítene ill. befolyásolna a döntésben? Rangsorold a válaszokat! (1 legrosszabb - 5 legjobb)  	","Ha tudom, hogy költségvetésembe mikorra tudom beütemezni","5");
-INSERT INTO teszt_view VALUES("15","Melyiknek örülnél a legjobban, ha a kinézett termékre, szolgáltatásra jobb ajánlatot kapnál?","Ha ugyanaz az árkategória jobb minőségben","1");
-INSERT INTO teszt_view VALUES("15","Melyiknek örülnél a legjobban, ha a kinézett termékre, szolgáltatásra jobb ajánlatot kapnál?","Ha jobb a minősége és több funkciót tartalmaz","1");
-INSERT INTO teszt_view VALUES("15","Melyiknek örülnél a legjobban, ha a kinézett termékre, szolgáltatásra jobb ajánlatot kapnál?","Ha jobb a minősége és több funkciót tartalmaz","1");
-INSERT INTO teszt_view VALUES("15","Melyiknek örülnél a legjobban, ha a kinézett termékre, szolgáltatásra jobb ajánlatot kapnál?","Ha jobb a minősége és több funkciót tartalmaz","1");
-INSERT INTO teszt_view VALUES("15","Melyiknek örülnél a legjobban, ha a kinézett termékre, szolgáltatásra jobb ajánlatot kapnál?","Ha ugyanaz a minőségkategória olcsóbb áron","1");
-INSERT INTO teszt_view VALUES("15","Melyiknek örülnél a legjobban, ha a kinézett termékre, szolgáltatásra jobb ajánlatot kapnál?","Ha ugyanaz az árkategória jobb minőségben","1");
-INSERT INTO teszt_view VALUES("15","Melyiknek örülnél a legjobban, ha a kinézett termékre, szolgáltatásra jobb ajánlatot kapnál?","Ha ugyanaz az árkategória jobb minőségben","1");
-INSERT INTO teszt_view VALUES("15","Melyiknek örülnél a legjobban, ha a kinézett termékre, szolgáltatásra jobb ajánlatot kapnál?","Ha ugyanaz az árkategória jobb minőségben","1");
-INSERT INTO teszt_view VALUES("15","Melyiknek örülnél a legjobban, ha a kinézett termékre, szolgáltatásra jobb ajánlatot kapnál?","Ha ugyanaz az árkategória jobb minőségben","1");
-INSERT INTO teszt_view VALUES("15","Melyiknek örülnél a legjobban, ha a kinézett termékre, szolgáltatásra jobb ajánlatot kapnál?","Ha jobb a minősége és több funkciót tartalmaz","1");
-INSERT INTO teszt_view VALUES("15","Melyiknek örülnél a legjobban, ha a kinézett termékre, szolgáltatásra jobb ajánlatot kapnál?","Ha ugyanaz az árkategória jobb minőségben","1");
-INSERT INTO teszt_view VALUES("15","Melyiknek örülnél a legjobban, ha a kinézett termékre, szolgáltatásra jobb ajánlatot kapnál?","Ha ugyanaz az árkategória jobb minőségben","1");
-INSERT INTO teszt_view VALUES("15","Melyiknek örülnél a legjobban, ha a kinézett termékre, szolgáltatásra jobb ajánlatot kapnál?","Ha jobb a minősége és több funkciót tartalmaz","1");
-INSERT INTO teszt_view VALUES("15","Melyiknek örülnél a legjobban, ha a kinézett termékre, szolgáltatásra jobb ajánlatot kapnál?","Ha jobb a minősége és több funkciót tartalmaz","1");
-INSERT INTO teszt_view VALUES("15","Melyiknek örülnél a legjobban, ha a kinézett termékre, szolgáltatásra jobb ajánlatot kapnál?","Ha ugyanaz az árkategória jobb minőségben","1");
-INSERT INTO teszt_view VALUES("15","Melyiknek örülnél a legjobban, ha a kinézett termékre, szolgáltatásra jobb ajánlatot kapnál?","Ha ugyanaz a minőségkategória olcsóbb áron","1");
-INSERT INTO teszt_view VALUES("15","Melyiknek örülnél a legjobban, ha a kinézett termékre, szolgáltatásra jobb ajánlatot kapnál?","Ha ugyanaz a minőségkategória olcsóbb áron","1");
-INSERT INTO teszt_view VALUES("15","Melyiknek örülnél a legjobban, ha a kinézett termékre, szolgáltatásra jobb ajánlatot kapnál?","Ha jobb a minősége és több funkciót tartalmaz","1");
-INSERT INTO teszt_view VALUES("15","Melyiknek örülnél a legjobban, ha a kinézett termékre, szolgáltatásra jobb ajánlatot kapnál?","Ha ugyanaz az árkategória jobb minőségben","1");
-INSERT INTO teszt_view VALUES("15","Melyiknek örülnél a legjobban, ha a kinézett termékre, szolgáltatásra jobb ajánlatot kapnál?","Ha ugyanaz az árkategória jobb minőségben","1");
-INSERT INTO teszt_view VALUES("15","Melyiknek örülnél a legjobban, ha a kinézett termékre, szolgáltatásra jobb ajánlatot kapnál?","Ha jobb a minősége és több funkciót tartalmaz","1");
-INSERT INTO teszt_view VALUES("15","Melyiknek örülnél a legjobban, ha a kinézett termékre, szolgáltatásra jobb ajánlatot kapnál?","Ha ugyanaz a minőségkategória olcsóbb áron","1");
-INSERT INTO teszt_view VALUES("15","Melyiknek örülnél a legjobban, ha a kinézett termékre, szolgáltatásra jobb ajánlatot kapnál?","Ha jobb a minősége és több funkciót tartalmaz","1");
-INSERT INTO teszt_view VALUES("15","Melyiknek örülnél a legjobban, ha a kinézett termékre, szolgáltatásra jobb ajánlatot kapnál?","Ha ugyanaz az árkategória jobb minőségben","1");
-INSERT INTO teszt_view VALUES("15","Melyiknek örülnél a legjobban, ha a kinézett termékre, szolgáltatásra jobb ajánlatot kapnál?","Ha ugyanaz a minőségkategória olcsóbb áron","1");
-INSERT INTO teszt_view VALUES("15","Melyiknek örülnél a legjobban, ha a kinézett termékre, szolgáltatásra jobb ajánlatot kapnál?","Ha ugyanaz az árkategória jobb minőségben","1");
-INSERT INTO teszt_view VALUES("15","Melyiknek örülnél a legjobban, ha a kinézett termékre, szolgáltatásra jobb ajánlatot kapnál?","Ha ugyanaz az árkategória jobb minőségben","1");
-INSERT INTO teszt_view VALUES("15","Melyiknek örülnél a legjobban, ha a kinézett termékre, szolgáltatásra jobb ajánlatot kapnál?","Ha ugyanaz a minőségkategória olcsóbb áron","1");
-INSERT INTO teszt_view VALUES("15","Melyiknek örülnél a legjobban, ha a kinézett termékre, szolgáltatásra jobb ajánlatot kapnál?","Ha ugyanaz az árkategória jobb minőségben","1");
-INSERT INTO teszt_view VALUES("15","Melyiknek örülnél a legjobban, ha a kinézett termékre, szolgáltatásra jobb ajánlatot kapnál?","Ha jobb a minősége és több funkciót tartalmaz","1");
-INSERT INTO teszt_view VALUES("15","Melyiknek örülnél a legjobban, ha a kinézett termékre, szolgáltatásra jobb ajánlatot kapnál?","Ha ugyanaz az árkategória jobb minőségben","1");
-INSERT INTO teszt_view VALUES("15","Melyiknek örülnél a legjobban, ha a kinézett termékre, szolgáltatásra jobb ajánlatot kapnál?","Ha ugyanaz a minőségkategória olcsóbb áron","1");
-INSERT INTO teszt_view VALUES("15","Melyiknek örülnél a legjobban, ha a kinézett termékre, szolgáltatásra jobb ajánlatot kapnál?","Ha ugyanaz a minőségkategória olcsóbb áron","1");
-INSERT INTO teszt_view VALUES("15","Melyiknek örülnél a legjobban, ha a kinézett termékre, szolgáltatásra jobb ajánlatot kapnál?","Ha jobb a minősége és több funkciót tartalmaz","1");
-INSERT INTO teszt_view VALUES("15","Melyiknek örülnél a legjobban, ha a kinézett termékre, szolgáltatásra jobb ajánlatot kapnál?","Ha jobb a minősége és több funkciót tartalmaz","1");
-INSERT INTO teszt_view VALUES("15","Melyiknek örülnél a legjobban, ha a kinézett termékre, szolgáltatásra jobb ajánlatot kapnál?","Ha ugyanaz a minőségkategória olcsóbb áron","1");
-INSERT INTO teszt_view VALUES("15","Melyiknek örülnél a legjobban, ha a kinézett termékre, szolgáltatásra jobb ajánlatot kapnál?","Ha ugyanaz az árkategória jobb minőségben","1");
-INSERT INTO teszt_view VALUES("15","Melyiknek örülnél a legjobban, ha a kinézett termékre, szolgáltatásra jobb ajánlatot kapnál?","Ha ugyanaz a minőségkategória olcsóbb áron","1");
-INSERT INTO teszt_view VALUES("15","Melyiknek örülnél a legjobban, ha a kinézett termékre, szolgáltatásra jobb ajánlatot kapnál?","Ha ugyanaz a minőségkategória olcsóbb áron","1");
-INSERT INTO teszt_view VALUES("15","Melyiknek örülnél a legjobban, ha a kinézett termékre, szolgáltatásra jobb ajánlatot kapnál?","Ha ugyanaz a minőségkategória olcsóbb áron","1");
-INSERT INTO teszt_view VALUES("15","Melyiknek örülnél a legjobban, ha a kinézett termékre, szolgáltatásra jobb ajánlatot kapnál?","Ha ugyanaz a minőségkategória olcsóbb áron","1");
-INSERT INTO teszt_view VALUES("15","Melyiknek örülnél a legjobban, ha a kinézett termékre, szolgáltatásra jobb ajánlatot kapnál?","Ha ugyanaz a minőségkategória olcsóbb áron","1");
-INSERT INTO teszt_view VALUES("15","Melyiknek örülnél a legjobban, ha a kinézett termékre, szolgáltatásra jobb ajánlatot kapnál?","Ha ugyanaz a minőségkategória olcsóbb áron","1");
-INSERT INTO teszt_view VALUES("15","Melyiknek örülnél a legjobban, ha a kinézett termékre, szolgáltatásra jobb ajánlatot kapnál?","Ha ugyanaz a minőségkategória olcsóbb áron","1");
-INSERT INTO teszt_view VALUES("15","Melyiknek örülnél a legjobban, ha a kinézett termékre, szolgáltatásra jobb ajánlatot kapnál?","Ha ugyanaz a minőségkategória olcsóbb áron","1");
-INSERT INTO teszt_view VALUES("15","Melyiknek örülnél a legjobban, ha a kinézett termékre, szolgáltatásra jobb ajánlatot kapnál?","Ha ugyanaz az árkategória jobb minőségben","1");
-INSERT INTO teszt_view VALUES("15","Melyiknek örülnél a legjobban, ha a kinézett termékre, szolgáltatásra jobb ajánlatot kapnál?","Ha jobb a minősége és több funkciót tartalmaz","1");
-INSERT INTO teszt_view VALUES("15","Melyiknek örülnél a legjobban, ha a kinézett termékre, szolgáltatásra jobb ajánlatot kapnál?","Ha ugyanaz az árkategória jobb minőségben","1");
-INSERT INTO teszt_view VALUES("15","Melyiknek örülnél a legjobban, ha a kinézett termékre, szolgáltatásra jobb ajánlatot kapnál?","Ha ugyanaz az árkategória jobb minőségben","1");
-INSERT INTO teszt_view VALUES("15","Melyiknek örülnél a legjobban, ha a kinézett termékre, szolgáltatásra jobb ajánlatot kapnál?","Ha ugyanaz a minőségkategória olcsóbb áron","1");
-INSERT INTO teszt_view VALUES("15","Melyiknek örülnél a legjobban, ha a kinézett termékre, szolgáltatásra jobb ajánlatot kapnál?","Ha ugyanaz a minőségkategória olcsóbb áron","1");
-INSERT INTO teszt_view VALUES("15","Melyiknek örülnél a legjobban, ha a kinézett termékre, szolgáltatásra jobb ajánlatot kapnál?","Ha ugyanaz a minőségkategória olcsóbb áron","1");
-INSERT INTO teszt_view VALUES("15","Melyiknek örülnél a legjobban, ha a kinézett termékre, szolgáltatásra jobb ajánlatot kapnál?","Ha ugyanaz az árkategória jobb minőségben","1");
-INSERT INTO teszt_view VALUES("15","Melyiknek örülnél a legjobban, ha a kinézett termékre, szolgáltatásra jobb ajánlatot kapnál?","Ha ugyanaz az árkategória jobb minőségben","1");
-INSERT INTO teszt_view VALUES("15","Melyiknek örülnél a legjobban, ha a kinézett termékre, szolgáltatásra jobb ajánlatot kapnál?","Ha jobb a minősége és több funkciót tartalmaz","1");
-INSERT INTO teszt_view VALUES("15","Melyiknek örülnél a legjobban, ha a kinézett termékre, szolgáltatásra jobb ajánlatot kapnál?","Ha ugyanaz a minőségkategória olcsóbb áron","1");
-INSERT INTO teszt_view VALUES("15","Melyiknek örülnél a legjobban, ha a kinézett termékre, szolgáltatásra jobb ajánlatot kapnál?","Ha ugyanaz a minőségkategória olcsóbb áron","1");
-INSERT INTO teszt_view VALUES("15","Melyiknek örülnél a legjobban, ha a kinézett termékre, szolgáltatásra jobb ajánlatot kapnál?","Ha ugyanaz az árkategória jobb minőségben","1");
-INSERT INTO teszt_view VALUES("15","Melyiknek örülnél a legjobban, ha a kinézett termékre, szolgáltatásra jobb ajánlatot kapnál?","Ha ugyanaz a minőségkategória olcsóbb áron","1");
-INSERT INTO teszt_view VALUES("15","Melyiknek örülnél a legjobban, ha a kinézett termékre, szolgáltatásra jobb ajánlatot kapnál?","Ha ugyanaz az árkategória jobb minőségben","1");
-INSERT INTO teszt_view VALUES("15","Melyiknek örülnél a legjobban, ha a kinézett termékre, szolgáltatásra jobb ajánlatot kapnál?","Ha ugyanaz az árkategória jobb minőségben","1");
-INSERT INTO teszt_view VALUES("15","Melyiknek örülnél a legjobban, ha a kinézett termékre, szolgáltatásra jobb ajánlatot kapnál?","Ha jobb a minősége és több funkciót tartalmaz","1");
-INSERT INTO teszt_view VALUES("15","Melyiknek örülnél a legjobban, ha a kinézett termékre, szolgáltatásra jobb ajánlatot kapnál?","Ha ugyanaz az árkategória jobb minőségben","1");
-INSERT INTO teszt_view VALUES("15","Melyiknek örülnél a legjobban, ha a kinézett termékre, szolgáltatásra jobb ajánlatot kapnál?","Ha ugyanaz a minőségkategória olcsóbb áron","1");
-INSERT INTO teszt_view VALUES("15","Melyiknek örülnél a legjobban, ha a kinézett termékre, szolgáltatásra jobb ajánlatot kapnál?","Ha ugyanaz a minőségkategória olcsóbb áron","1");
-INSERT INTO teszt_view VALUES("15","Melyiknek örülnél a legjobban, ha a kinézett termékre, szolgáltatásra jobb ajánlatot kapnál?","Ha jobb a minősége és több funkciót tartalmaz","1");
-INSERT INTO teszt_view VALUES("15","Melyiknek örülnél a legjobban, ha a kinézett termékre, szolgáltatásra jobb ajánlatot kapnál?","Ha jobb a minősége és több funkciót tartalmaz","1");
-INSERT INTO teszt_view VALUES("15","Melyiknek örülnél a legjobban, ha a kinézett termékre, szolgáltatásra jobb ajánlatot kapnál?","Ha ugyanaz a minőségkategória olcsóbb áron","1");
-INSERT INTO teszt_view VALUES("15","Melyiknek örülnél a legjobban, ha a kinézett termékre, szolgáltatásra jobb ajánlatot kapnál?","Ha jobb a minősége és több funkciót tartalmaz","1");
-INSERT INTO teszt_view VALUES("15","Melyiknek örülnél a legjobban, ha a kinézett termékre, szolgáltatásra jobb ajánlatot kapnál?","Ha ugyanaz az árkategória jobb minőségben","1");
-INSERT INTO teszt_view VALUES("15","Melyiknek örülnél a legjobban, ha a kinézett termékre, szolgáltatásra jobb ajánlatot kapnál?","Ha jobb a minősége és több funkciót tartalmaz","1");
-INSERT INTO teszt_view VALUES("15","Melyiknek örülnél a legjobban, ha a kinézett termékre, szolgáltatásra jobb ajánlatot kapnál?","Ha olcsóbb, még ha kevesebbet is tud vagy kicsit rosszabb a minősége","1");
-INSERT INTO teszt_view VALUES("15","Melyiknek örülnél a legjobban, ha a kinézett termékre, szolgáltatásra jobb ajánlatot kapnál?","Ha ugyanaz az árkategória jobb minőségben","1");
-INSERT INTO teszt_view VALUES("15","Melyiknek örülnél a legjobban, ha a kinézett termékre, szolgáltatásra jobb ajánlatot kapnál?","Ha ugyanaz a minőségkategória olcsóbb áron","1");
-INSERT INTO teszt_view VALUES("15","Melyiknek örülnél a legjobban, ha a kinézett termékre, szolgáltatásra jobb ajánlatot kapnál?","Ha ugyanaz a minőségkategória olcsóbb áron","1");
-INSERT INTO teszt_view VALUES("15","Melyiknek örülnél a legjobban, ha a kinézett termékre, szolgáltatásra jobb ajánlatot kapnál?","Ha ugyanaz a minőségkategória olcsóbb áron","1");
-INSERT INTO teszt_view VALUES("15","Melyiknek örülnél a legjobban, ha a kinézett termékre, szolgáltatásra jobb ajánlatot kapnál?","Ha jobb a minősége és több funkciót tartalmaz","1");
-INSERT INTO teszt_view VALUES("15","Melyiknek örülnél a legjobban, ha a kinézett termékre, szolgáltatásra jobb ajánlatot kapnál?","Ha ugyanaz a minőségkategória olcsóbb áron","1");
-INSERT INTO teszt_view VALUES("15","Melyiknek örülnél a legjobban, ha a kinézett termékre, szolgáltatásra jobb ajánlatot kapnál?","Ha ugyanaz a minőségkategória olcsóbb áron","1");
-INSERT INTO teszt_view VALUES("15","Melyiknek örülnél a legjobban, ha a kinézett termékre, szolgáltatásra jobb ajánlatot kapnál?","Ha ugyanaz a minőségkategória olcsóbb áron","1");
-INSERT INTO teszt_view VALUES("15","Melyiknek örülnél a legjobban, ha a kinézett termékre, szolgáltatásra jobb ajánlatot kapnál?","Ha ugyanaz az árkategória jobb minőségben","1");
-INSERT INTO teszt_view VALUES("15","Melyiknek örülnél a legjobban, ha a kinézett termékre, szolgáltatásra jobb ajánlatot kapnál?","Ha ugyanaz a minőségkategória olcsóbb áron","1");
-INSERT INTO teszt_view VALUES("15","Melyiknek örülnél a legjobban, ha a kinézett termékre, szolgáltatásra jobb ajánlatot kapnál?","Ha ugyanaz az árkategória jobb minőségben","1");
-INSERT INTO teszt_view VALUES("15","Melyiknek örülnél a legjobban, ha a kinézett termékre, szolgáltatásra jobb ajánlatot kapnál?","Ha ugyanaz az árkategória jobb minőségben","1");
-INSERT INTO teszt_view VALUES("15","Melyiknek örülnél a legjobban, ha a kinézett termékre, szolgáltatásra jobb ajánlatot kapnál?","Ha ugyanaz a minőségkategória olcsóbb áron","1");
-INSERT INTO teszt_view VALUES("15","Melyiknek örülnél a legjobban, ha a kinézett termékre, szolgáltatásra jobb ajánlatot kapnál?","Ha ugyanaz a minőségkategória olcsóbb áron","1");
-INSERT INTO teszt_view VALUES("15","Melyiknek örülnél a legjobban, ha a kinézett termékre, szolgáltatásra jobb ajánlatot kapnál?","Ha ugyanaz az árkategória jobb minőségben","1");
-INSERT INTO teszt_view VALUES("15","Melyiknek örülnél a legjobban, ha a kinézett termékre, szolgáltatásra jobb ajánlatot kapnál?","Ha ugyanaz a minőségkategória olcsóbb áron","1");
-INSERT INTO teszt_view VALUES("15","Melyiknek örülnél a legjobban, ha a kinézett termékre, szolgáltatásra jobb ajánlatot kapnál?","Ha ugyanaz a minőségkategória olcsóbb áron","1");
-INSERT INTO teszt_view VALUES("15","Melyiknek örülnél a legjobban, ha a kinézett termékre, szolgáltatásra jobb ajánlatot kapnál?","Ha ugyanaz az árkategória jobb minőségben","1");
-INSERT INTO teszt_view VALUES("15","Melyiknek örülnél a legjobban, ha a kinézett termékre, szolgáltatásra jobb ajánlatot kapnál?","Ha ugyanaz az árkategória jobb minőségben","1");
-INSERT INTO teszt_view VALUES("15","Melyiknek örülnél a legjobban, ha a kinézett termékre, szolgáltatásra jobb ajánlatot kapnál?","Ha ugyanaz az árkategória jobb minőségben","1");
-INSERT INTO teszt_view VALUES("15","Melyiknek örülnél a legjobban, ha a kinézett termékre, szolgáltatásra jobb ajánlatot kapnál?","Ha ugyanaz a minőségkategória olcsóbb áron","1");
-INSERT INTO teszt_view VALUES("15","Melyiknek örülnél a legjobban, ha a kinézett termékre, szolgáltatásra jobb ajánlatot kapnál?","Ha ugyanaz az árkategória jobb minőségben","1");
-INSERT INTO teszt_view VALUES("15","Melyiknek örülnél a legjobban, ha a kinézett termékre, szolgáltatásra jobb ajánlatot kapnál?","Ha jobb a minősége és több funkciót tartalmaz","1");
-INSERT INTO teszt_view VALUES("15","Melyiknek örülnél a legjobban, ha a kinézett termékre, szolgáltatásra jobb ajánlatot kapnál?","Ha jobb a minősége és több funkciót tartalmaz","1");
-INSERT INTO teszt_view VALUES("15","Melyiknek örülnél a legjobban, ha a kinézett termékre, szolgáltatásra jobb ajánlatot kapnál?","Ha ugyanaz az árkategória jobb minőségben","1");
-INSERT INTO teszt_view VALUES("15","Melyiknek örülnél a legjobban, ha a kinézett termékre, szolgáltatásra jobb ajánlatot kapnál?","Ha ugyanaz az árkategória jobb minőségben","1");
-INSERT INTO teszt_view VALUES("15","Melyiknek örülnél a legjobban, ha a kinézett termékre, szolgáltatásra jobb ajánlatot kapnál?","Ha ugyanaz a minőségkategória olcsóbb áron","1");
-INSERT INTO teszt_view VALUES("15","Melyiknek örülnél a legjobban, ha a kinézett termékre, szolgáltatásra jobb ajánlatot kapnál?","Ha olcsóbb, még ha kevesebbet is tud vagy kicsit rosszabb a minősége","1");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Ismerőseim csoportosítása pl. család, kollégák, barátok stb.","1");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Ismerősök keresése, róluk információ szerzés","5");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Kapcsolattartás ismerősök között","4");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Üzenőfal, napi aktivitás mutatása","4");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Alkalmazások","2");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Like funkció","4");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Mindenhez hozzá lehet szólni","4");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Chat funkció","4");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Ismerőseim csoportosítása pl. család, kollégák, barátok stb.","4");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Ismerősök keresése, róluk információ szerzés","2");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Kapcsolattartás ismerősök között","3");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Üzenőfal, napi aktivitás mutatása","5");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Alkalmazások","2");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Like funkció","3");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Mindenhez hozzá lehet szólni","5");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Chat funkció","5");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Ismerőseim csoportosítása pl. család, kollégák, barátok stb.","3");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Ismerősök keresése, róluk információ szerzés","3");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Kapcsolattartás ismerősök között","3");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Üzenőfal, napi aktivitás mutatása","5");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Alkalmazások","1");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Like funkció","1");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Mindenhez hozzá lehet szólni","1");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Chat funkció","1");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Ismerőseim csoportosítása pl. család, kollégák, barátok stb.","2");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Ismerősök keresése, róluk információ szerzés","2");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Kapcsolattartás ismerősök között","3");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Üzenőfal, napi aktivitás mutatása","2");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Alkalmazások","1");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Like funkció","2");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Mindenhez hozzá lehet szólni","4");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Chat funkció","4");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Ismerőseim csoportosítása pl. család, kollégák, barátok stb.","3");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Ismerősök keresése, róluk információ szerzés","3");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Kapcsolattartás ismerősök között","3");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Üzenőfal, napi aktivitás mutatása","3");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Alkalmazások","1");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Like funkció","2");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Mindenhez hozzá lehet szólni","3");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Chat funkció","3");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Ismerőseim csoportosítása pl. család, kollégák, barátok stb.","5");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Ismerősök keresése, róluk információ szerzés","3");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Kapcsolattartás ismerősök között","4");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Üzenőfal, napi aktivitás mutatása","3");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Alkalmazások","4");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Like funkció","3");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Mindenhez hozzá lehet szólni","3");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Chat funkció","4");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Ismerőseim csoportosítása pl. család, kollégák, barátok stb.","1");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Ismerősök keresése, róluk információ szerzés","3");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Kapcsolattartás ismerősök között","5");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Üzenőfal, napi aktivitás mutatása","2");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Alkalmazások","1");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Like funkció","3");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Mindenhez hozzá lehet szólni","3");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Chat funkció","1");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Ismerőseim csoportosítása pl. család, kollégák, barátok stb.","3");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Ismerősök keresése, róluk információ szerzés","4");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Kapcsolattartás ismerősök között","4");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Üzenőfal, napi aktivitás mutatása","3");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Alkalmazások","4");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Like funkció","3");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Mindenhez hozzá lehet szólni","3");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Chat funkció","4");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Ismerőseim csoportosítása pl. család, kollégák, barátok stb.","5");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Ismerősök keresése, róluk információ szerzés","4");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Kapcsolattartás ismerősök között","3");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Üzenőfal, napi aktivitás mutatása","3");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Alkalmazások","2");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Like funkció","2");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Mindenhez hozzá lehet szólni","2");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Chat funkció","1");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Ismerőseim csoportosítása pl. család, kollégák, barátok stb.","5");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Ismerősök keresése, róluk információ szerzés","5");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Kapcsolattartás ismerősök között","5");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Üzenőfal, napi aktivitás mutatása","5");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Alkalmazások","5");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Like funkció","5");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Mindenhez hozzá lehet szólni","5");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Chat funkció","5");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Ismerőseim csoportosítása pl. család, kollégák, barátok stb.","2");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Ismerősök keresése, róluk információ szerzés","3");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Kapcsolattartás ismerősök között","5");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Üzenőfal, napi aktivitás mutatása","5");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Alkalmazások","1");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Like funkció","1");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Mindenhez hozzá lehet szólni","2");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Chat funkció","1");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Ismerőseim csoportosítása pl. család, kollégák, barátok stb.","2");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Ismerősök keresése, róluk információ szerzés","2");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Kapcsolattartás ismerősök között","2");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Üzenőfal, napi aktivitás mutatása","2");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Alkalmazások","2");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Like funkció","2");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Mindenhez hozzá lehet szólni","3");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Chat funkció","5");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Ismerőseim csoportosítása pl. család, kollégák, barátok stb.","1");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Ismerősök keresése, róluk információ szerzés","3");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Kapcsolattartás ismerősök között","5");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Üzenőfal, napi aktivitás mutatása","1");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Alkalmazások","1");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Like funkció","1");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Mindenhez hozzá lehet szólni","1");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Chat funkció","3");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Ismerőseim csoportosítása pl. család, kollégák, barátok stb.","3");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Ismerősök keresése, róluk információ szerzés","3");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Kapcsolattartás ismerősök között","4");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Üzenőfal, napi aktivitás mutatása","2");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Alkalmazások","1");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Like funkció","3");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Mindenhez hozzá lehet szólni","1");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Chat funkció","4");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Ismerőseim csoportosítása pl. család, kollégák, barátok stb.","3");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Ismerősök keresése, róluk információ szerzés","3");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Kapcsolattartás ismerősök között","5");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Üzenőfal, napi aktivitás mutatása","4");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Alkalmazások","4");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Like funkció","2");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Mindenhez hozzá lehet szólni","5");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Chat funkció","3");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Ismerőseim csoportosítása pl. család, kollégák, barátok stb.","5");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Ismerősök keresése, róluk információ szerzés","5");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Kapcsolattartás ismerősök között","5");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Üzenőfal, napi aktivitás mutatása","3");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Alkalmazások","3");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Like funkció","3");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Mindenhez hozzá lehet szólni","3");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Chat funkció","3");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Ismerőseim csoportosítása pl. család, kollégák, barátok stb.","5");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Ismerősök keresése, róluk információ szerzés","4");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Kapcsolattartás ismerősök között","5");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Üzenőfal, napi aktivitás mutatása","3");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Alkalmazások","1");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Like funkció","1");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Mindenhez hozzá lehet szólni","1");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Chat funkció","1");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Ismerőseim csoportosítása pl. család, kollégák, barátok stb.","5");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Ismerősök keresése, róluk információ szerzés","4");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Kapcsolattartás ismerősök között","5");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Üzenőfal, napi aktivitás mutatása","3");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Alkalmazások","1");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Like funkció","3");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Mindenhez hozzá lehet szólni","5");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Chat funkció","3");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Ismerőseim csoportosítása pl. család, kollégák, barátok stb.","1");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Ismerősök keresése, róluk információ szerzés","2");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Kapcsolattartás ismerősök között","3");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Üzenőfal, napi aktivitás mutatása","1");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Alkalmazások","3");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Like funkció","1");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Mindenhez hozzá lehet szólni","3");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Chat funkció","4");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Ismerőseim csoportosítása pl. család, kollégák, barátok stb.","4");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Ismerősök keresése, róluk információ szerzés","3");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Kapcsolattartás ismerősök között","5");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Üzenőfal, napi aktivitás mutatása","5");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Alkalmazások","3");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Like funkció","4");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Mindenhez hozzá lehet szólni","5");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Chat funkció","5");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Ismerőseim csoportosítása pl. család, kollégák, barátok stb.","5");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Ismerősök keresése, róluk információ szerzés","5");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Kapcsolattartás ismerősök között","5");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Üzenőfal, napi aktivitás mutatása","4");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Alkalmazások","1");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Like funkció","3");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Mindenhez hozzá lehet szólni","3");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Chat funkció","3");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Ismerősök keresése, róluk információ szerzés","4");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Kapcsolattartás ismerősök között","4");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Üzenőfal, napi aktivitás mutatása","3");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Alkalmazások","3");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Like funkció","2");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Mindenhez hozzá lehet szólni","1");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Ismerőseim csoportosítása pl. család, kollégák, barátok stb.","3");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Ismerősök keresése, róluk információ szerzés","5");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Kapcsolattartás ismerősök között","4");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Üzenőfal, napi aktivitás mutatása","2");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Alkalmazások","1");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Like funkció","1");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Mindenhez hozzá lehet szólni","1");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Chat funkció","4");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Ismerőseim csoportosítása pl. család, kollégák, barátok stb.","3");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Ismerősök keresése, róluk információ szerzés","4");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Kapcsolattartás ismerősök között","5");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Üzenőfal, napi aktivitás mutatása","4");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Alkalmazások","3");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Like funkció","3");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Mindenhez hozzá lehet szólni","3");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Chat funkció","4");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Ismerőseim csoportosítása pl. család, kollégák, barátok stb.","3");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Ismerősök keresése, róluk információ szerzés","4");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Kapcsolattartás ismerősök között","4");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Üzenőfal, napi aktivitás mutatása","4");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Alkalmazások","4");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Like funkció","4");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Mindenhez hozzá lehet szólni","5");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Chat funkció","5");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Ismerőseim csoportosítása pl. család, kollégák, barátok stb.","2");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Ismerősök keresése, róluk információ szerzés","4");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Kapcsolattartás ismerősök között","5");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Üzenőfal, napi aktivitás mutatása","3");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Alkalmazások","2");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Like funkció","3");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Mindenhez hozzá lehet szólni","4");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Chat funkció","5");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Ismerőseim csoportosítása pl. család, kollégák, barátok stb.","4");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Ismerősök keresése, róluk információ szerzés","4");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Kapcsolattartás ismerősök között","5");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Üzenőfal, napi aktivitás mutatása","3");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Alkalmazások","2");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Like funkció","3");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Mindenhez hozzá lehet szólni","3");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Chat funkció","5");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Ismerőseim csoportosítása pl. család, kollégák, barátok stb.","4");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Ismerősök keresése, róluk információ szerzés","3");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Kapcsolattartás ismerősök között","2");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Üzenőfal, napi aktivitás mutatása","2");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Alkalmazások","1");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Like funkció","1");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Mindenhez hozzá lehet szólni","2");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Chat funkció","5");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Ismerőseim csoportosítása pl. család, kollégák, barátok stb.","3");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Ismerősök keresése, róluk információ szerzés","5");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Kapcsolattartás ismerősök között","5");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Üzenőfal, napi aktivitás mutatása","5");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Alkalmazások","3");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Like funkció","4");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Mindenhez hozzá lehet szólni","4");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Chat funkció","4");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Ismerőseim csoportosítása pl. család, kollégák, barátok stb.","3");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Ismerősök keresése, róluk információ szerzés","4");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Kapcsolattartás ismerősök között","4");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Üzenőfal, napi aktivitás mutatása","4");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Alkalmazások","2");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Like funkció","3");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Mindenhez hozzá lehet szólni","4");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Chat funkció","5");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Ismerőseim csoportosítása pl. család, kollégák, barátok stb.","4");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Ismerősök keresése, róluk információ szerzés","4");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Kapcsolattartás ismerősök között","5");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Üzenőfal, napi aktivitás mutatása","4");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Alkalmazások","2");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Like funkció","4");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Mindenhez hozzá lehet szólni","2");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Chat funkció","5");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Ismerőseim csoportosítása pl. család, kollégák, barátok stb.","3");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Ismerősök keresése, róluk információ szerzés","5");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Kapcsolattartás ismerősök között","5");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Üzenőfal, napi aktivitás mutatása","2");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Alkalmazások","1");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Like funkció","1");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Mindenhez hozzá lehet szólni","1");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Chat funkció","4");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Ismerőseim csoportosítása pl. család, kollégák, barátok stb.","4");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Ismerősök keresése, róluk információ szerzés","5");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Kapcsolattartás ismerősök között","4");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Üzenőfal, napi aktivitás mutatása","3");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Alkalmazások","2");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Like funkció","2");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Mindenhez hozzá lehet szólni","3");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Chat funkció","4");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Ismerőseim csoportosítása pl. család, kollégák, barátok stb.","1");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Ismerősök keresése, róluk információ szerzés","5");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Kapcsolattartás ismerősök között","5");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Üzenőfal, napi aktivitás mutatása","3");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Alkalmazások","1");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Like funkció","2");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Mindenhez hozzá lehet szólni","4");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Chat funkció","5");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Ismerőseim csoportosítása pl. család, kollégák, barátok stb.","4");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Ismerősök keresése, róluk információ szerzés","5");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Kapcsolattartás ismerősök között","4");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Üzenőfal, napi aktivitás mutatása","3");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Alkalmazások","3");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Like funkció","4");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Mindenhez hozzá lehet szólni","2");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Chat funkció","5");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Ismerőseim csoportosítása pl. család, kollégák, barátok stb.","2");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Ismerősök keresése, róluk információ szerzés","5");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Kapcsolattartás ismerősök között","5");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Üzenőfal, napi aktivitás mutatása","5");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Alkalmazások","4");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Like funkció","5");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Mindenhez hozzá lehet szólni","3");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Chat funkció","5");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Ismerőseim csoportosítása pl. család, kollégák, barátok stb.","1");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Ismerősök keresése, róluk információ szerzés","4");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Kapcsolattartás ismerősök között","5");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Üzenőfal, napi aktivitás mutatása","1");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Alkalmazások","1");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Like funkció","2");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Mindenhez hozzá lehet szólni","2");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Chat funkció","3");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Ismerőseim csoportosítása pl. család, kollégák, barátok stb.","4");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Ismerősök keresése, róluk információ szerzés","5");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Kapcsolattartás ismerősök között","5");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Üzenőfal, napi aktivitás mutatása","4");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Alkalmazások","1");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Like funkció","1");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Mindenhez hozzá lehet szólni","1");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Chat funkció","4");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Ismerőseim csoportosítása pl. család, kollégák, barátok stb.","4");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Ismerősök keresése, róluk információ szerzés","5");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Kapcsolattartás ismerősök között","5");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Üzenőfal, napi aktivitás mutatása","4");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Alkalmazások","1");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Like funkció","1");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Mindenhez hozzá lehet szólni","1");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Chat funkció","4");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Ismerőseim csoportosítása pl. család, kollégák, barátok stb.","4");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Ismerősök keresése, róluk információ szerzés","5");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Kapcsolattartás ismerősök között","4");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Üzenőfal, napi aktivitás mutatása","5");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Alkalmazások","5");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Like funkció","5");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Mindenhez hozzá lehet szólni","4");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Chat funkció","5");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Ismerőseim csoportosítása pl. család, kollégák, barátok stb.","4");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Ismerősök keresése, róluk információ szerzés","5");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Kapcsolattartás ismerősök között","4");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Üzenőfal, napi aktivitás mutatása","5");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Alkalmazások","5");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Like funkció","5");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Mindenhez hozzá lehet szólni","4");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Chat funkció","5");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Ismerőseim csoportosítása pl. család, kollégák, barátok stb.","4");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Ismerősök keresése, róluk információ szerzés","5");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Kapcsolattartás ismerősök között","4");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Üzenőfal, napi aktivitás mutatása","5");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Alkalmazások","5");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Like funkció","5");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Mindenhez hozzá lehet szólni","4");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Chat funkció","5");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Ismerőseim csoportosítása pl. család, kollégák, barátok stb.","2");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Ismerősök keresése, róluk információ szerzés","4");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Kapcsolattartás ismerősök között","5");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Üzenőfal, napi aktivitás mutatása","5");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Alkalmazások","2");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Like funkció","3");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Mindenhez hozzá lehet szólni","3");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Chat funkció","3");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Ismerősök keresése, róluk információ szerzés","5");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Kapcsolattartás ismerősök között","5");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Üzenőfal, napi aktivitás mutatása","4");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Alkalmazások","1");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Like funkció","2");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Mindenhez hozzá lehet szólni","2");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Chat funkció","5");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Ismerőseim csoportosítása pl. család, kollégák, barátok stb.","3");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Ismerősök keresése, róluk információ szerzés","4");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Kapcsolattartás ismerősök között","4");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Üzenőfal, napi aktivitás mutatása","3");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Alkalmazások","1");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Like funkció","3");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Mindenhez hozzá lehet szólni","2");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Chat funkció","2");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Ismerőseim csoportosítása pl. család, kollégák, barátok stb.","3");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Ismerősök keresése, róluk információ szerzés","5");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Kapcsolattartás ismerősök között","5");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Üzenőfal, napi aktivitás mutatása","4");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Alkalmazások","2");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Like funkció","3");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Mindenhez hozzá lehet szólni","3");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Chat funkció","4");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Ismerőseim csoportosítása pl. család, kollégák, barátok stb.","4");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Ismerősök keresése, róluk információ szerzés","2");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Kapcsolattartás ismerősök között","5");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Üzenőfal, napi aktivitás mutatása","5");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Alkalmazások","4");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Like funkció","5");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Mindenhez hozzá lehet szólni","5");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Chat funkció","5");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Ismerőseim csoportosítása pl. család, kollégák, barátok stb.","2");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Kapcsolattartás ismerősök között","4");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Üzenőfal, napi aktivitás mutatása","5");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Alkalmazások","1");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Like funkció","3");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Mindenhez hozzá lehet szólni","1");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Ismerőseim csoportosítása pl. család, kollégák, barátok stb.","2");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Ismerősök keresése, róluk információ szerzés","5");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Kapcsolattartás ismerősök között","5");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Üzenőfal, napi aktivitás mutatása","4");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Alkalmazások","1");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Like funkció","5");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Mindenhez hozzá lehet szólni","4");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Chat funkció","5");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Ismerőseim csoportosítása pl. család, kollégák, barátok stb.","3");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Ismerősök keresése, róluk információ szerzés","4");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Kapcsolattartás ismerősök között","5");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Üzenőfal, napi aktivitás mutatása","3");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Alkalmazások","2");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Like funkció","4");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Mindenhez hozzá lehet szólni","4");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Chat funkció","4");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Ismerőseim csoportosítása pl. család, kollégák, barátok stb.","4");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Ismerősök keresése, róluk információ szerzés","2");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Kapcsolattartás ismerősök között","5");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Üzenőfal, napi aktivitás mutatása","3");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Alkalmazások","3");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Like funkció","5");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Mindenhez hozzá lehet szólni","2");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Chat funkció","4");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Ismerőseim csoportosítása pl. család, kollégák, barátok stb.","4");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Ismerősök keresése, róluk információ szerzés","5");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Kapcsolattartás ismerősök között","5");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Üzenőfal, napi aktivitás mutatása","5");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Alkalmazások","4");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Like funkció","5");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Mindenhez hozzá lehet szólni","5");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Chat funkció","4");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Ismerőseim csoportosítása pl. család, kollégák, barátok stb.","3");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Ismerősök keresése, róluk információ szerzés","5");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Kapcsolattartás ismerősök között","5");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Üzenőfal, napi aktivitás mutatása","3");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Alkalmazások","1");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Like funkció","3");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Mindenhez hozzá lehet szólni","3");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Chat funkció","5");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Ismerőseim csoportosítása pl. család, kollégák, barátok stb.","3");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Ismerősök keresése, róluk információ szerzés","2");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Kapcsolattartás ismerősök között","2");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Üzenőfal, napi aktivitás mutatása","1");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Alkalmazások","1");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Like funkció","1");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Mindenhez hozzá lehet szólni","1");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Chat funkció","1");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Ismerőseim csoportosítása pl. család, kollégák, barátok stb.","4");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Ismerősök keresése, róluk információ szerzés","4");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Kapcsolattartás ismerősök között","3");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Üzenőfal, napi aktivitás mutatása","3");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Alkalmazások","3");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Like funkció","2");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Mindenhez hozzá lehet szólni","3");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Chat funkció","2");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Ismerőseim csoportosítása pl. család, kollégák, barátok stb.","1");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Ismerősök keresése, róluk információ szerzés","1");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Kapcsolattartás ismerősök között","1");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Üzenőfal, napi aktivitás mutatása","1");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Alkalmazások","1");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Like funkció","1");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Mindenhez hozzá lehet szólni","1");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Chat funkció","1");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Ismerőseim csoportosítása pl. család, kollégák, barátok stb.","1");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Ismerősök keresése, róluk információ szerzés","4");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Kapcsolattartás ismerősök között","4");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Üzenőfal, napi aktivitás mutatása","1");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Alkalmazások","1");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Like funkció","2");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Mindenhez hozzá lehet szólni","2");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Chat funkció","4");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Ismerőseim csoportosítása pl. család, kollégák, barátok stb.","4");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Ismerősök keresése, róluk információ szerzés","4");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Kapcsolattartás ismerősök között","5");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Üzenőfal, napi aktivitás mutatása","4");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Alkalmazások","4");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Like funkció","5");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Mindenhez hozzá lehet szólni","4");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Chat funkció","4");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Ismerőseim csoportosítása pl. család, kollégák, barátok stb.","3");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Ismerősök keresése, róluk információ szerzés","4");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Kapcsolattartás ismerősök között","5");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Üzenőfal, napi aktivitás mutatása","2");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Alkalmazások","2");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Like funkció","2");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Mindenhez hozzá lehet szólni","5");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Chat funkció","4");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Ismerőseim csoportosítása pl. család, kollégák, barátok stb.","3");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Ismerősök keresése, róluk információ szerzés","3");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Kapcsolattartás ismerősök között","4");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Üzenőfal, napi aktivitás mutatása","2");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Alkalmazások","1");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Like funkció","1");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Mindenhez hozzá lehet szólni","3");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Chat funkció","4");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Alkalmazások","5");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Ismerőseim csoportosítása pl. család, kollégák, barátok stb.","4");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Ismerősök keresése, róluk információ szerzés","4");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Kapcsolattartás ismerősök között","4");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Üzenőfal, napi aktivitás mutatása","2");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Alkalmazások","4");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Like funkció","5");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Mindenhez hozzá lehet szólni","5");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Chat funkció","5");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Ismerőseim csoportosítása pl. család, kollégák, barátok stb.","5");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Ismerősök keresése, róluk információ szerzés","4");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Kapcsolattartás ismerősök között","5");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Üzenőfal, napi aktivitás mutatása","4");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Alkalmazások","5");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Like funkció","4");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Mindenhez hozzá lehet szólni","5");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Chat funkció","4");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Ismerőseim csoportosítása pl. család, kollégák, barátok stb.","3");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Ismerősök keresése, róluk információ szerzés","2");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Kapcsolattartás ismerősök között","4");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Üzenőfal, napi aktivitás mutatása","4");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Alkalmazások","2");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Like funkció","3");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Mindenhez hozzá lehet szólni","3");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Chat funkció","1");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Ismerőseim csoportosítása pl. család, kollégák, barátok stb.","5");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Ismerősök keresése, róluk információ szerzés","5");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Kapcsolattartás ismerősök között","5");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Üzenőfal, napi aktivitás mutatása","4");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Alkalmazások","3");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Like funkció","5");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Mindenhez hozzá lehet szólni","5");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Chat funkció","5");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Ismerőseim csoportosítása pl. család, kollégák, barátok stb.","4");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Ismerősök keresése, róluk információ szerzés","2");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Kapcsolattartás ismerősök között","3");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Üzenőfal, napi aktivitás mutatása","2");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Alkalmazások","1");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Like funkció","3");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Mindenhez hozzá lehet szólni","2");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Chat funkció","2");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Ismerőseim csoportosítása pl. család, kollégák, barátok stb.","5");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Ismerősök keresése, róluk információ szerzés","5");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Kapcsolattartás ismerősök között","5");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Üzenőfal, napi aktivitás mutatása","5");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Alkalmazások","4");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Like funkció","5");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Mindenhez hozzá lehet szólni","5");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Chat funkció","5");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Ismerőseim csoportosítása pl. család, kollégák, barátok stb.","4");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Ismerősök keresése, róluk információ szerzés","4");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Kapcsolattartás ismerősök között","5");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Üzenőfal, napi aktivitás mutatása","4");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Alkalmazások","3");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Like funkció","3");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Mindenhez hozzá lehet szólni","4");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Chat funkció","4");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Ismerőseim csoportosítása pl. család, kollégák, barátok stb.","4");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Ismerősök keresése, róluk információ szerzés","4");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Kapcsolattartás ismerősök között","4");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Üzenőfal, napi aktivitás mutatása","4");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Alkalmazások","5");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Like funkció","4");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Mindenhez hozzá lehet szólni","4");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Chat funkció","4");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Ismerőseim csoportosítása pl. család, kollégák, barátok stb.","3");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Ismerősök keresése, róluk információ szerzés","4");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Kapcsolattartás ismerősök között","4");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Üzenőfal, napi aktivitás mutatása","4");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Alkalmazások","4");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Like funkció","4");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Mindenhez hozzá lehet szólni","4");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Chat funkció","4");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Ismerőseim csoportosítása pl. család, kollégák, barátok stb.","5");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Ismerősök keresése, róluk információ szerzés","5");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Kapcsolattartás ismerősök között","5");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Üzenőfal, napi aktivitás mutatása","5");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Alkalmazások","2");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Like funkció","1");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Mindenhez hozzá lehet szólni","5");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Chat funkció","1");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Ismerőseim csoportosítása pl. család, kollégák, barátok stb.","1");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Ismerősök keresése, róluk információ szerzés","2");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Kapcsolattartás ismerősök között","5");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Üzenőfal, napi aktivitás mutatása","5");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Alkalmazások","1");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Like funkció","1");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Mindenhez hozzá lehet szólni","5");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Chat funkció","5");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Ismerőseim csoportosítása pl. család, kollégák, barátok stb.","5");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Ismerősök keresése, róluk információ szerzés","4");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Kapcsolattartás ismerősök között","4");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Üzenőfal, napi aktivitás mutatása","4");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Alkalmazások","3");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Like funkció","4");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Mindenhez hozzá lehet szólni","4");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Chat funkció","4");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Ismerőseim csoportosítása pl. család, kollégák, barátok stb.","1");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Ismerősök keresése, róluk információ szerzés","2");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Kapcsolattartás ismerősök között","5");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Üzenőfal, napi aktivitás mutatása","2");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Alkalmazások","2");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Like funkció","3");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Mindenhez hozzá lehet szólni","4");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Chat funkció","5");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Ismerőseim csoportosítása pl. család, kollégák, barátok stb.","4");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Ismerősök keresése, róluk információ szerzés","4");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Kapcsolattartás ismerősök között","4");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Üzenőfal, napi aktivitás mutatása","4");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Alkalmazások","4");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Like funkció","4");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Mindenhez hozzá lehet szólni","4");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Chat funkció","4");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Ismerőseim csoportosítása pl. család, kollégák, barátok stb.","5");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Ismerősök keresése, róluk információ szerzés","2");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Kapcsolattartás ismerősök között","5");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Üzenőfal, napi aktivitás mutatása","5");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Alkalmazások","5");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Like funkció","5");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Mindenhez hozzá lehet szólni","5");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Chat funkció","5");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Ismerőseim csoportosítása pl. család, kollégák, barátok stb.","4");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Ismerősök keresése, róluk információ szerzés","4");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Kapcsolattartás ismerősök között","3");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Üzenőfal, napi aktivitás mutatása","3");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Alkalmazások","2");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Like funkció","2");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Mindenhez hozzá lehet szólni","2");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Chat funkció","2");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Ismerőseim csoportosítása pl. család, kollégák, barátok stb.","4");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Ismerősök keresése, róluk információ szerzés","4");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Kapcsolattartás ismerősök között","3");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Üzenőfal, napi aktivitás mutatása","5");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Alkalmazások","5");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Like funkció","5");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Mindenhez hozzá lehet szólni","5");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Chat funkció","3");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Ismerőseim csoportosítása pl. család, kollégák, barátok stb.","5");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Ismerősök keresése, róluk információ szerzés","5");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Kapcsolattartás ismerősök között","5");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Üzenőfal, napi aktivitás mutatása","5");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Alkalmazások","5");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Like funkció","3");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Mindenhez hozzá lehet szólni","5");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Chat funkció","5");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Ismerőseim csoportosítása pl. család, kollégák, barátok stb.","4");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Ismerősök keresése, róluk információ szerzés","5");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Kapcsolattartás ismerősök között","5");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Üzenőfal, napi aktivitás mutatása","3");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Alkalmazások","5");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Like funkció","4");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Mindenhez hozzá lehet szólni","5");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Chat funkció","5");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Ismerőseim csoportosítása pl. család, kollégák, barátok stb.","4");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Ismerősök keresése, róluk információ szerzés","3");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Kapcsolattartás ismerősök között","5");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Üzenőfal, napi aktivitás mutatása","4");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Alkalmazások","3");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Like funkció","4");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Mindenhez hozzá lehet szólni","4");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Chat funkció","4");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Ismerőseim csoportosítása pl. család, kollégák, barátok stb.","3");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Ismerősök keresése, róluk információ szerzés","2");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Kapcsolattartás ismerősök között","3");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Üzenőfal, napi aktivitás mutatása","3");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Alkalmazások","4");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Like funkció","4");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Mindenhez hozzá lehet szólni","4");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Chat funkció","4");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Ismerőseim csoportosítása pl. család, kollégák, barátok stb.","4");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Ismerősök keresése, róluk információ szerzés","4");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Kapcsolattartás ismerősök között","5");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Üzenőfal, napi aktivitás mutatása","5");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Alkalmazások","3");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Like funkció","3");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Mindenhez hozzá lehet szólni","4");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Chat funkció","4");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Ismerőseim csoportosítása pl. család, kollégák, barátok stb.","3");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Ismerősök keresése, róluk információ szerzés","4");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Kapcsolattartás ismerősök között","5");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Üzenőfal, napi aktivitás mutatása","1");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Alkalmazások","3");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Like funkció","4");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Mindenhez hozzá lehet szólni","4");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Chat funkció","4");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Ismerőseim csoportosítása pl. család, kollégák, barátok stb.","4");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Ismerősök keresése, róluk információ szerzés","2");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Kapcsolattartás ismerősök között","3");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Üzenőfal, napi aktivitás mutatása","3");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Alkalmazások","4");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Like funkció","2");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Mindenhez hozzá lehet szólni","1");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Chat funkció","1");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Ismerőseim csoportosítása pl. család, kollégák, barátok stb.","2");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Ismerősök keresése, róluk információ szerzés","3");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Kapcsolattartás ismerősök között","5");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Üzenőfal, napi aktivitás mutatása","5");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Alkalmazások","2");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Like funkció","3");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Mindenhez hozzá lehet szólni","5");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Chat funkció","4");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Ismerőseim csoportosítása pl. család, kollégák, barátok stb.","1");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Ismerősök keresése, róluk információ szerzés","5");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Kapcsolattartás ismerősök között","5");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Üzenőfal, napi aktivitás mutatása","5");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Alkalmazások","1");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Like funkció","5");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Mindenhez hozzá lehet szólni","4");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Chat funkció","5");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Ismerőseim csoportosítása pl. család, kollégák, barátok stb.","5");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Ismerősök keresése, róluk információ szerzés","3");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Kapcsolattartás ismerősök között","5");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Üzenőfal, napi aktivitás mutatása","5");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Alkalmazások","3");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Like funkció","5");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Mindenhez hozzá lehet szólni","5");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Chat funkció","5");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Ismerőseim csoportosítása pl. család, kollégák, barátok stb.","5");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Ismerősök keresése, róluk információ szerzés","4");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Kapcsolattartás ismerősök között","5");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Üzenőfal, napi aktivitás mutatása","3");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Alkalmazások","1");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Like funkció","1");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Mindenhez hozzá lehet szólni","1");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Chat funkció","3");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Ismerőseim csoportosítása pl. család, kollégák, barátok stb.","5");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Ismerősök keresése, róluk információ szerzés","4");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Kapcsolattartás ismerősök között","5");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Üzenőfal, napi aktivitás mutatása","5");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Alkalmazások","4");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Like funkció","5");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Mindenhez hozzá lehet szólni","5");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Chat funkció","5");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Ismerőseim csoportosítása pl. család, kollégák, barátok stb.","5");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Ismerősök keresése, róluk információ szerzés","4");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Kapcsolattartás ismerősök között","5");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Üzenőfal, napi aktivitás mutatása","3");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Alkalmazások","2");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Like funkció","3");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Mindenhez hozzá lehet szólni","4");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Chat funkció","5");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Ismerőseim csoportosítása pl. család, kollégák, barátok stb.","2");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Ismerősök keresése, róluk információ szerzés","3");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Kapcsolattartás ismerősök között","3");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Üzenőfal, napi aktivitás mutatása","3");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Alkalmazások","3");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Like funkció","3");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Mindenhez hozzá lehet szólni","3");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Chat funkció","3");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Ismerőseim csoportosítása pl. család, kollégák, barátok stb.","2");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Ismerősök keresése, róluk információ szerzés","5");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Kapcsolattartás ismerősök között","5");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Üzenőfal, napi aktivitás mutatása","3");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Alkalmazások","1");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Like funkció","3");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Mindenhez hozzá lehet szólni","4");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Chat funkció","2");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Ismerőseim csoportosítása pl. család, kollégák, barátok stb.","3");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Ismerősök keresése, róluk információ szerzés","3");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Kapcsolattartás ismerősök között","5");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Üzenőfal, napi aktivitás mutatása","1");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Alkalmazások","2");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Like funkció","2");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Mindenhez hozzá lehet szólni","1");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Chat funkció","4");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Ismerőseim csoportosítása pl. család, kollégák, barátok stb.","1");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Ismerősök keresése, róluk információ szerzés","3");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Kapcsolattartás ismerősök között","4");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Üzenőfal, napi aktivitás mutatása","5");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Alkalmazások","3");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Like funkció","4");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Mindenhez hozzá lehet szólni","4");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Chat funkció","4");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Ismerőseim csoportosítása pl. család, kollégák, barátok stb.","5");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Ismerősök keresése, róluk információ szerzés","4");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Kapcsolattartás ismerősök között","5");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Üzenőfal, napi aktivitás mutatása","3");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Alkalmazások","1");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Like funkció","2");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Mindenhez hozzá lehet szólni","2");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Chat funkció","4");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Ismerőseim csoportosítása pl. család, kollégák, barátok stb.","5");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Ismerősök keresése, róluk információ szerzés","5");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Kapcsolattartás ismerősök között","5");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Üzenőfal, napi aktivitás mutatása","3");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Alkalmazások","3");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Like funkció","5");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Mindenhez hozzá lehet szólni","5");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Chat funkció","5");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Ismerőseim csoportosítása pl. család, kollégák, barátok stb.","1");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Ismerősök keresése, róluk információ szerzés","5");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Kapcsolattartás ismerősök között","5");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Üzenőfal, napi aktivitás mutatása","3");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Alkalmazások","2");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Like funkció","2");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Mindenhez hozzá lehet szólni","2");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Chat funkció","5");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Ismerőseim csoportosítása pl. család, kollégák, barátok stb.","3");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Ismerősök keresése, róluk információ szerzés","4");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Kapcsolattartás ismerősök között","5");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Üzenőfal, napi aktivitás mutatása","4");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Alkalmazások","2");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Like funkció","2");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Mindenhez hozzá lehet szólni","4");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Chat funkció","5");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Ismerőseim csoportosítása pl. család, kollégák, barátok stb.","1");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Ismerősök keresése, róluk információ szerzés","4");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Kapcsolattartás ismerősök között","5");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Üzenőfal, napi aktivitás mutatása","3");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Alkalmazások","4");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Like funkció","2");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Mindenhez hozzá lehet szólni","4");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Chat funkció","5");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Ismerőseim csoportosítása pl. család, kollégák, barátok stb.","5");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Ismerősök keresése, róluk információ szerzés","5");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Kapcsolattartás ismerősök között","5");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Üzenőfal, napi aktivitás mutatása","1");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Alkalmazások","1");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Like funkció","1");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Mindenhez hozzá lehet szólni","1");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Chat funkció","5");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Ismerőseim csoportosítása pl. család, kollégák, barátok stb.","2");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Ismerősök keresése, róluk információ szerzés","3");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Kapcsolattartás ismerősök között","4");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Üzenőfal, napi aktivitás mutatása","4");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Alkalmazások","4");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Like funkció","4");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Mindenhez hozzá lehet szólni","3");
-INSERT INTO teszt_view VALUES("16","Értékeld a közösségi oldalak néhány funkcióját. (1 legrosszabb - 5 legjobb)","Chat funkció","4");
-INSERT INTO teszt_view VALUES("17","Használsz-e valamilyen célkitűzéseid tároló, összefogó táblázatot, parafa táblát vagy naptárt?","nem","1");
-INSERT INTO teszt_view VALUES("17","Használsz-e valamilyen célkitűzéseid tároló, összefogó táblázatot, parafa táblát vagy naptárt?","igen","1");
-INSERT INTO teszt_view VALUES("17","Használsz-e valamilyen célkitűzéseid tároló, összefogó táblázatot, parafa táblát vagy naptárt?","nem","1");
-INSERT INTO teszt_view VALUES("17","Használsz-e valamilyen célkitűzéseid tároló, összefogó táblázatot, parafa táblát vagy naptárt?","nem","1");
-INSERT INTO teszt_view VALUES("17","Használsz-e valamilyen célkitűzéseid tároló, összefogó táblázatot, parafa táblát vagy naptárt?","igen","1");
-INSERT INTO teszt_view VALUES("17","Használsz-e valamilyen célkitűzéseid tároló, összefogó táblázatot, parafa táblát vagy naptárt?","igen","1");
-INSERT INTO teszt_view VALUES("17","Használsz-e valamilyen célkitűzéseid tároló, összefogó táblázatot, parafa táblát vagy naptárt?","igen","1");
-INSERT INTO teszt_view VALUES("17","Használsz-e valamilyen célkitűzéseid tároló, összefogó táblázatot, parafa táblát vagy naptárt?","igen","1");
-INSERT INTO teszt_view VALUES("17","Használsz-e valamilyen célkitűzéseid tároló, összefogó táblázatot, parafa táblát vagy naptárt?","nem","1");
-INSERT INTO teszt_view VALUES("17","Használsz-e valamilyen célkitűzéseid tároló, összefogó táblázatot, parafa táblát vagy naptárt?","nem","1");
-INSERT INTO teszt_view VALUES("17","Használsz-e valamilyen célkitűzéseid tároló, összefogó táblázatot, parafa táblát vagy naptárt?","nem","1");
-INSERT INTO teszt_view VALUES("17","Használsz-e valamilyen célkitűzéseid tároló, összefogó táblázatot, parafa táblát vagy naptárt?","nem","1");
-INSERT INTO teszt_view VALUES("17","Használsz-e valamilyen célkitűzéseid tároló, összefogó táblázatot, parafa táblát vagy naptárt?","igen","1");
-INSERT INTO teszt_view VALUES("17","Használsz-e valamilyen célkitűzéseid tároló, összefogó táblázatot, parafa táblát vagy naptárt?","igen","1");
-INSERT INTO teszt_view VALUES("17","Használsz-e valamilyen célkitűzéseid tároló, összefogó táblázatot, parafa táblát vagy naptárt?","nem","1");
-INSERT INTO teszt_view VALUES("17","Használsz-e valamilyen célkitűzéseid tároló, összefogó táblázatot, parafa táblát vagy naptárt?","nem","1");
-INSERT INTO teszt_view VALUES("17","Használsz-e valamilyen célkitűzéseid tároló, összefogó táblázatot, parafa táblát vagy naptárt?","igen","1");
-INSERT INTO teszt_view VALUES("17","Használsz-e valamilyen célkitűzéseid tároló, összefogó táblázatot, parafa táblát vagy naptárt?","nem","1");
-INSERT INTO teszt_view VALUES("17","Használsz-e valamilyen célkitűzéseid tároló, összefogó táblázatot, parafa táblát vagy naptárt?","nem","1");
-INSERT INTO teszt_view VALUES("17","Használsz-e valamilyen célkitűzéseid tároló, összefogó táblázatot, parafa táblát vagy naptárt?","igen","1");
-INSERT INTO teszt_view VALUES("17","Használsz-e valamilyen célkitűzéseid tároló, összefogó táblázatot, parafa táblát vagy naptárt?","igen","1");
-INSERT INTO teszt_view VALUES("17","Használsz-e valamilyen célkitűzéseid tároló, összefogó táblázatot, parafa táblát vagy naptárt?","igen","1");
-INSERT INTO teszt_view VALUES("17","Használsz-e valamilyen célkitűzéseid tároló, összefogó táblázatot, parafa táblát vagy naptárt?","igen","1");
-INSERT INTO teszt_view VALUES("17","Használsz-e valamilyen célkitűzéseid tároló, összefogó táblázatot, parafa táblát vagy naptárt?","igen","1");
-INSERT INTO teszt_view VALUES("17","Használsz-e valamilyen célkitűzéseid tároló, összefogó táblázatot, parafa táblát vagy naptárt?","igen","1");
-INSERT INTO teszt_view VALUES("17","Használsz-e valamilyen célkitűzéseid tároló, összefogó táblázatot, parafa táblát vagy naptárt?","nem","1");
-INSERT INTO teszt_view VALUES("17","Használsz-e valamilyen célkitűzéseid tároló, összefogó táblázatot, parafa táblát vagy naptárt?","igen","1");
-INSERT INTO teszt_view VALUES("17","Használsz-e valamilyen célkitűzéseid tároló, összefogó táblázatot, parafa táblát vagy naptárt?","igen","1");
-INSERT INTO teszt_view VALUES("17","Használsz-e valamilyen célkitűzéseid tároló, összefogó táblázatot, parafa táblát vagy naptárt?","igen","1");
-INSERT INTO teszt_view VALUES("17","Használsz-e valamilyen célkitűzéseid tároló, összefogó táblázatot, parafa táblát vagy naptárt?","nem","1");
-INSERT INTO teszt_view VALUES("17","Használsz-e valamilyen célkitűzéseid tároló, összefogó táblázatot, parafa táblát vagy naptárt?","igen","1");
-INSERT INTO teszt_view VALUES("17","Használsz-e valamilyen célkitűzéseid tároló, összefogó táblázatot, parafa táblát vagy naptárt?","nem","1");
-INSERT INTO teszt_view VALUES("17","Használsz-e valamilyen célkitűzéseid tároló, összefogó táblázatot, parafa táblát vagy naptárt?","igen","1");
-INSERT INTO teszt_view VALUES("17","Használsz-e valamilyen célkitűzéseid tároló, összefogó táblázatot, parafa táblát vagy naptárt?","nem","1");
-INSERT INTO teszt_view VALUES("17","Használsz-e valamilyen célkitűzéseid tároló, összefogó táblázatot, parafa táblát vagy naptárt?","nem","1");
-INSERT INTO teszt_view VALUES("17","Használsz-e valamilyen célkitűzéseid tároló, összefogó táblázatot, parafa táblát vagy naptárt?","igen","1");
-INSERT INTO teszt_view VALUES("17","Használsz-e valamilyen célkitűzéseid tároló, összefogó táblázatot, parafa táblát vagy naptárt?","nem","1");
-INSERT INTO teszt_view VALUES("17","Használsz-e valamilyen célkitűzéseid tároló, összefogó táblázatot, parafa táblát vagy naptárt?","igen","1");
-INSERT INTO teszt_view VALUES("17","Használsz-e valamilyen célkitűzéseid tároló, összefogó táblázatot, parafa táblát vagy naptárt?","igen","1");
-INSERT INTO teszt_view VALUES("17","Használsz-e valamilyen célkitűzéseid tároló, összefogó táblázatot, parafa táblát vagy naptárt?","igen","1");
-INSERT INTO teszt_view VALUES("17","Használsz-e valamilyen célkitűzéseid tároló, összefogó táblázatot, parafa táblát vagy naptárt?","igen","1");
-INSERT INTO teszt_view VALUES("17","Használsz-e valamilyen célkitűzéseid tároló, összefogó táblázatot, parafa táblát vagy naptárt?","igen","1");
-INSERT INTO teszt_view VALUES("17","Használsz-e valamilyen célkitűzéseid tároló, összefogó táblázatot, parafa táblát vagy naptárt?","igen","1");
-INSERT INTO teszt_view VALUES("17","Használsz-e valamilyen célkitűzéseid tároló, összefogó táblázatot, parafa táblát vagy naptárt?","igen","1");
-INSERT INTO teszt_view VALUES("17","Használsz-e valamilyen célkitűzéseid tároló, összefogó táblázatot, parafa táblát vagy naptárt?","nem","1");
-INSERT INTO teszt_view VALUES("17","Használsz-e valamilyen célkitűzéseid tároló, összefogó táblázatot, parafa táblát vagy naptárt?","nem","1");
-INSERT INTO teszt_view VALUES("17","Használsz-e valamilyen célkitűzéseid tároló, összefogó táblázatot, parafa táblát vagy naptárt?","nem","1");
-INSERT INTO teszt_view VALUES("17","Használsz-e valamilyen célkitűzéseid tároló, összefogó táblázatot, parafa táblát vagy naptárt?","nem","1");
-INSERT INTO teszt_view VALUES("17","Használsz-e valamilyen célkitűzéseid tároló, összefogó táblázatot, parafa táblát vagy naptárt?","igen","1");
-INSERT INTO teszt_view VALUES("17","Használsz-e valamilyen célkitűzéseid tároló, összefogó táblázatot, parafa táblát vagy naptárt?","igen","1");
-INSERT INTO teszt_view VALUES("17","Használsz-e valamilyen célkitűzéseid tároló, összefogó táblázatot, parafa táblát vagy naptárt?","igen","1");
-INSERT INTO teszt_view VALUES("17","Használsz-e valamilyen célkitűzéseid tároló, összefogó táblázatot, parafa táblát vagy naptárt?","igen","1");
-INSERT INTO teszt_view VALUES("17","Használsz-e valamilyen célkitűzéseid tároló, összefogó táblázatot, parafa táblát vagy naptárt?","nem","1");
-INSERT INTO teszt_view VALUES("17","Használsz-e valamilyen célkitűzéseid tároló, összefogó táblázatot, parafa táblát vagy naptárt?","igen","1");
-INSERT INTO teszt_view VALUES("17","Használsz-e valamilyen célkitűzéseid tároló, összefogó táblázatot, parafa táblát vagy naptárt?","igen","1");
-INSERT INTO teszt_view VALUES("17","Használsz-e valamilyen célkitűzéseid tároló, összefogó táblázatot, parafa táblát vagy naptárt?","nem","1");
-INSERT INTO teszt_view VALUES("17","Használsz-e valamilyen célkitűzéseid tároló, összefogó táblázatot, parafa táblát vagy naptárt?","igen","1");
-INSERT INTO teszt_view VALUES("17","Használsz-e valamilyen célkitűzéseid tároló, összefogó táblázatot, parafa táblát vagy naptárt?","nem","1");
-INSERT INTO teszt_view VALUES("17","Használsz-e valamilyen célkitűzéseid tároló, összefogó táblázatot, parafa táblát vagy naptárt?","igen","1");
-INSERT INTO teszt_view VALUES("17","Használsz-e valamilyen célkitűzéseid tároló, összefogó táblázatot, parafa táblát vagy naptárt?","igen","1");
-INSERT INTO teszt_view VALUES("17","Használsz-e valamilyen célkitűzéseid tároló, összefogó táblázatot, parafa táblát vagy naptárt?","nem","1");
-INSERT INTO teszt_view VALUES("17","Használsz-e valamilyen célkitűzéseid tároló, összefogó táblázatot, parafa táblát vagy naptárt?","nem","1");
-INSERT INTO teszt_view VALUES("17","Használsz-e valamilyen célkitűzéseid tároló, összefogó táblázatot, parafa táblát vagy naptárt?","nem","1");
-INSERT INTO teszt_view VALUES("17","Használsz-e valamilyen célkitűzéseid tároló, összefogó táblázatot, parafa táblát vagy naptárt?","nem","1");
-INSERT INTO teszt_view VALUES("17","Használsz-e valamilyen célkitűzéseid tároló, összefogó táblázatot, parafa táblát vagy naptárt?","igen","1");
-INSERT INTO teszt_view VALUES("17","Használsz-e valamilyen célkitűzéseid tároló, összefogó táblázatot, parafa táblát vagy naptárt?","nem","1");
-INSERT INTO teszt_view VALUES("17","Használsz-e valamilyen célkitűzéseid tároló, összefogó táblázatot, parafa táblát vagy naptárt?","igen","1");
-INSERT INTO teszt_view VALUES("17","Használsz-e valamilyen célkitűzéseid tároló, összefogó táblázatot, parafa táblát vagy naptárt?","igen","1");
-INSERT INTO teszt_view VALUES("17","Használsz-e valamilyen célkitűzéseid tároló, összefogó táblázatot, parafa táblát vagy naptárt?","nem","1");
-INSERT INTO teszt_view VALUES("17","Használsz-e valamilyen célkitűzéseid tároló, összefogó táblázatot, parafa táblát vagy naptárt?","nem","1");
-INSERT INTO teszt_view VALUES("17","Használsz-e valamilyen célkitűzéseid tároló, összefogó táblázatot, parafa táblát vagy naptárt?","igen","1");
-INSERT INTO teszt_view VALUES("17","Használsz-e valamilyen célkitűzéseid tároló, összefogó táblázatot, parafa táblát vagy naptárt?","igen","1");
-INSERT INTO teszt_view VALUES("17","Használsz-e valamilyen célkitűzéseid tároló, összefogó táblázatot, parafa táblát vagy naptárt?","nem","1");
-INSERT INTO teszt_view VALUES("17","Használsz-e valamilyen célkitűzéseid tároló, összefogó táblázatot, parafa táblát vagy naptárt?","igen","1");
-INSERT INTO teszt_view VALUES("17","Használsz-e valamilyen célkitűzéseid tároló, összefogó táblázatot, parafa táblát vagy naptárt?","igen","1");
-INSERT INTO teszt_view VALUES("17","Használsz-e valamilyen célkitűzéseid tároló, összefogó táblázatot, parafa táblát vagy naptárt?","igen","1");
-INSERT INTO teszt_view VALUES("17","Használsz-e valamilyen célkitűzéseid tároló, összefogó táblázatot, parafa táblát vagy naptárt?","igen","1");
-INSERT INTO teszt_view VALUES("17","Használsz-e valamilyen célkitűzéseid tároló, összefogó táblázatot, parafa táblát vagy naptárt?","igen","1");
-INSERT INTO teszt_view VALUES("17","Használsz-e valamilyen célkitűzéseid tároló, összefogó táblázatot, parafa táblát vagy naptárt?","igen","1");
-INSERT INTO teszt_view VALUES("17","Használsz-e valamilyen célkitűzéseid tároló, összefogó táblázatot, parafa táblát vagy naptárt?","igen","1");
-INSERT INTO teszt_view VALUES("17","Használsz-e valamilyen célkitűzéseid tároló, összefogó táblázatot, parafa táblát vagy naptárt?","nem","1");
-INSERT INTO teszt_view VALUES("17","Használsz-e valamilyen célkitűzéseid tároló, összefogó táblázatot, parafa táblát vagy naptárt?","nem","1");
-INSERT INTO teszt_view VALUES("17","Használsz-e valamilyen célkitűzéseid tároló, összefogó táblázatot, parafa táblát vagy naptárt?","nem","1");
-INSERT INTO teszt_view VALUES("17","Használsz-e valamilyen célkitűzéseid tároló, összefogó táblázatot, parafa táblát vagy naptárt?","nem","1");
-INSERT INTO teszt_view VALUES("17","Használsz-e valamilyen célkitűzéseid tároló, összefogó táblázatot, parafa táblát vagy naptárt?","igen","1");
-INSERT INTO teszt_view VALUES("17","Használsz-e valamilyen célkitűzéseid tároló, összefogó táblázatot, parafa táblát vagy naptárt?","nem","1");
-INSERT INTO teszt_view VALUES("17","Használsz-e valamilyen célkitűzéseid tároló, összefogó táblázatot, parafa táblát vagy naptárt?","nem","1");
-INSERT INTO teszt_view VALUES("17","Használsz-e valamilyen célkitűzéseid tároló, összefogó táblázatot, parafa táblát vagy naptárt?","nem","1");
-INSERT INTO teszt_view VALUES("17","Használsz-e valamilyen célkitűzéseid tároló, összefogó táblázatot, parafa táblát vagy naptárt?","nem","1");
-INSERT INTO teszt_view VALUES("17","Használsz-e valamilyen célkitűzéseid tároló, összefogó táblázatot, parafa táblát vagy naptárt?","nem","1");
-INSERT INTO teszt_view VALUES("17","Használsz-e valamilyen célkitűzéseid tároló, összefogó táblázatot, parafa táblát vagy naptárt?","nem","1");
-INSERT INTO teszt_view VALUES("17","Használsz-e valamilyen célkitűzéseid tároló, összefogó táblázatot, parafa táblát vagy naptárt?","igen","1");
-INSERT INTO teszt_view VALUES("17","Használsz-e valamilyen célkitűzéseid tároló, összefogó táblázatot, parafa táblát vagy naptárt?","nem","1");
-INSERT INTO teszt_view VALUES("17","Használsz-e valamilyen célkitűzéseid tároló, összefogó táblázatot, parafa táblát vagy naptárt?","igen","1");
-INSERT INTO teszt_view VALUES("17","Használsz-e valamilyen célkitűzéseid tároló, összefogó táblázatot, parafa táblát vagy naptárt?","igen","1");
-INSERT INTO teszt_view VALUES("17","Használsz-e valamilyen célkitűzéseid tároló, összefogó táblázatot, parafa táblát vagy naptárt?","igen","1");
-INSERT INTO teszt_view VALUES("17","Használsz-e valamilyen célkitűzéseid tároló, összefogó táblázatot, parafa táblát vagy naptárt?","nem","1");
-INSERT INTO teszt_view VALUES("17","Használsz-e valamilyen célkitűzéseid tároló, összefogó táblázatot, parafa táblát vagy naptárt?","igen","1");
-INSERT INTO teszt_view VALUES("17","Használsz-e valamilyen célkitűzéseid tároló, összefogó táblázatot, parafa táblát vagy naptárt?","nem","1");
-INSERT INTO teszt_view VALUES("17","Használsz-e valamilyen célkitűzéseid tároló, összefogó táblázatot, parafa táblát vagy naptárt?","igen","1");
-INSERT INTO teszt_view VALUES("17","Használsz-e valamilyen célkitűzéseid tároló, összefogó táblázatot, parafa táblát vagy naptárt?","igen","1");
-INSERT INTO teszt_view VALUES("17","Használsz-e valamilyen célkitűzéseid tároló, összefogó táblázatot, parafa táblát vagy naptárt?","nem","1");
-INSERT INTO teszt_view VALUES("17","Használsz-e valamilyen célkitűzéseid tároló, összefogó táblázatot, parafa táblát vagy naptárt?","igen","1");
-INSERT INTO teszt_view VALUES("17","Használsz-e valamilyen célkitűzéseid tároló, összefogó táblázatot, parafa táblát vagy naptárt?","igen","1");
-INSERT INTO teszt_view VALUES("18","Ha használsz valamilyen naptárat, akkor mit követsz vele?	","Névnapokat, ünnepnapokat","1");
-INSERT INTO teszt_view VALUES("18","Ha használsz valamilyen naptárat, akkor mit követsz vele?	","Születésnapokat","1");
-INSERT INTO teszt_view VALUES("18","Ha használsz valamilyen naptárat, akkor mit követsz vele?	","Családi eseményeket","1");
-INSERT INTO teszt_view VALUES("18","Ha használsz valamilyen naptárat, akkor mit követsz vele?	","Születésnapokat","1");
-INSERT INTO teszt_view VALUES("18","Ha használsz valamilyen naptárat, akkor mit követsz vele?	","Vagyonod alakulását","1");
-INSERT INTO teszt_view VALUES("18","Ha használsz valamilyen naptárat, akkor mit követsz vele?	","Névnapokat, ünnepnapokat","1");
-INSERT INTO teszt_view VALUES("18","Ha használsz valamilyen naptárat, akkor mit követsz vele?	","Születésnapokat","1");
-INSERT INTO teszt_view VALUES("18","Ha használsz valamilyen naptárat, akkor mit követsz vele?	","Családi eseményeket","1");
-INSERT INTO teszt_view VALUES("18","Ha használsz valamilyen naptárat, akkor mit követsz vele?	","Hétköznapi teendőket","1");
-INSERT INTO teszt_view VALUES("18","Ha használsz valamilyen naptárat, akkor mit követsz vele?	","Névnapokat, ünnepnapokat","1");
-INSERT INTO teszt_view VALUES("18","Ha használsz valamilyen naptárat, akkor mit követsz vele?	","Születésnapokat","1");
-INSERT INTO teszt_view VALUES("18","Ha használsz valamilyen naptárat, akkor mit követsz vele?	","Családi eseményeket","1");
-INSERT INTO teszt_view VALUES("18","Ha használsz valamilyen naptárat, akkor mit követsz vele?	","Névnapokat, ünnepnapokat","1");
-INSERT INTO teszt_view VALUES("18","Ha használsz valamilyen naptárat, akkor mit követsz vele?	","Születésnapokat","1");
-INSERT INTO teszt_view VALUES("18","Ha használsz valamilyen naptárat, akkor mit követsz vele?	","Családi eseményeket","1");
-INSERT INTO teszt_view VALUES("18","Ha használsz valamilyen naptárat, akkor mit követsz vele?	","Baráti programokat","1");
-INSERT INTO teszt_view VALUES("18","Ha használsz valamilyen naptárat, akkor mit követsz vele?	","Névnapokat, ünnepnapokat","1");
-INSERT INTO teszt_view VALUES("18","Ha használsz valamilyen naptárat, akkor mit követsz vele?	","Születésnapokat","1");
-INSERT INTO teszt_view VALUES("18","Ha használsz valamilyen naptárat, akkor mit követsz vele?	","Hétköznapi teendőket","1");
-INSERT INTO teszt_view VALUES("18","Ha használsz valamilyen naptárat, akkor mit követsz vele?	","Névnapokat, ünnepnapokat","1");
-INSERT INTO teszt_view VALUES("18","Ha használsz valamilyen naptárat, akkor mit követsz vele?	","Születésnapokat","1");
-INSERT INTO teszt_view VALUES("18","Ha használsz valamilyen naptárat, akkor mit követsz vele?	","Családi eseményeket","1");
-INSERT INTO teszt_view VALUES("18","Ha használsz valamilyen naptárat, akkor mit követsz vele?	","Baráti programokat","1");
-INSERT INTO teszt_view VALUES("18","Ha használsz valamilyen naptárat, akkor mit követsz vele?	","Hétköznapi teendőket","1");
-INSERT INTO teszt_view VALUES("18","Ha használsz valamilyen naptárat, akkor mit követsz vele?	","Születésnapokat","1");
-INSERT INTO teszt_view VALUES("18","Ha használsz valamilyen naptárat, akkor mit követsz vele?	","Hétköznapi teendőket","1");
-INSERT INTO teszt_view VALUES("18","Ha használsz valamilyen naptárat, akkor mit követsz vele?	","Hétköznapi teendőket","1");
-INSERT INTO teszt_view VALUES("18","Ha használsz valamilyen naptárat, akkor mit követsz vele?	","Névnapokat, ünnepnapokat","1");
-INSERT INTO teszt_view VALUES("18","Ha használsz valamilyen naptárat, akkor mit követsz vele?	","egyértelműen első számú","1");
-INSERT INTO teszt_view VALUES("18","Ha használsz valamilyen naptárat, akkor mit követsz vele?	","Névnapokat, ünnepnapokat","1");
-INSERT INTO teszt_view VALUES("18","Ha használsz valamilyen naptárat, akkor mit követsz vele?	","Születésnapokat","1");
-INSERT INTO teszt_view VALUES("18","Ha használsz valamilyen naptárat, akkor mit követsz vele?	","Családi eseményeket","1");
-INSERT INTO teszt_view VALUES("18","Ha használsz valamilyen naptárat, akkor mit követsz vele?	","Névnapokat, ünnepnapokat","1");
-INSERT INTO teszt_view VALUES("18","Ha használsz valamilyen naptárat, akkor mit követsz vele?	","Születésnapokat","1");
-INSERT INTO teszt_view VALUES("18","Ha használsz valamilyen naptárat, akkor mit követsz vele?	","Családi eseményeket","1");
-INSERT INTO teszt_view VALUES("18","Ha használsz valamilyen naptárat, akkor mit követsz vele?	","Érdeklődési körödbe tartozó rendezvényeket","1");
-INSERT INTO teszt_view VALUES("18","Ha használsz valamilyen naptárat, akkor mit követsz vele?	","Baráti programokat","1");
-INSERT INTO teszt_view VALUES("18","Ha használsz valamilyen naptárat, akkor mit követsz vele?	","Hétköznapi teendőket","1");
-INSERT INTO teszt_view VALUES("18","Ha használsz valamilyen naptárat, akkor mit követsz vele?	","Névnapokat, ünnepnapokat","1");
-INSERT INTO teszt_view VALUES("18","Ha használsz valamilyen naptárat, akkor mit követsz vele?	","Születésnapokat","1");
-INSERT INTO teszt_view VALUES("18","Ha használsz valamilyen naptárat, akkor mit követsz vele?	","Családi eseményeket","1");
-INSERT INTO teszt_view VALUES("18","Ha használsz valamilyen naptárat, akkor mit követsz vele?	","Céges rendezvényeket","1");
-INSERT INTO teszt_view VALUES("18","Ha használsz valamilyen naptárat, akkor mit követsz vele?	","Hétköznapi teendőket","1");
-INSERT INTO teszt_view VALUES("18","Ha használsz valamilyen naptárat, akkor mit követsz vele?	","Névnapokat, ünnepnapokat","1");
-INSERT INTO teszt_view VALUES("18","Ha használsz valamilyen naptárat, akkor mit követsz vele?	","Születésnapokat","1");
-INSERT INTO teszt_view VALUES("18","Ha használsz valamilyen naptárat, akkor mit követsz vele?	","Családi eseményeket","1");
-INSERT INTO teszt_view VALUES("18","Ha használsz valamilyen naptárat, akkor mit követsz vele?	","Céges rendezvényeket","1");
-INSERT INTO teszt_view VALUES("18","Ha használsz valamilyen naptárat, akkor mit követsz vele?	","Érdeklődési körödbe tartozó rendezvényeket","1");
-INSERT INTO teszt_view VALUES("18","Ha használsz valamilyen naptárat, akkor mit követsz vele?	","Baráti programokat","1");
-INSERT INTO teszt_view VALUES("18","Ha használsz valamilyen naptárat, akkor mit követsz vele?	","Hétköznapi teendőket","1");
-INSERT INTO teszt_view VALUES("18","Ha használsz valamilyen naptárat, akkor mit követsz vele?	","Névnapokat, ünnepnapokat","1");
-INSERT INTO teszt_view VALUES("18","Ha használsz valamilyen naptárat, akkor mit követsz vele?	","Születésnapokat","1");
-INSERT INTO teszt_view VALUES("18","Ha használsz valamilyen naptárat, akkor mit követsz vele?	","Családi eseményeket","1");
-INSERT INTO teszt_view VALUES("18","Ha használsz valamilyen naptárat, akkor mit követsz vele?	","Céges rendezvényeket","1");
-INSERT INTO teszt_view VALUES("18","Ha használsz valamilyen naptárat, akkor mit követsz vele?	","Érdeklődési körödbe tartozó rendezvényeket","1");
-INSERT INTO teszt_view VALUES("18","Ha használsz valamilyen naptárat, akkor mit követsz vele?	","Baráti programokat","1");
-INSERT INTO teszt_view VALUES("18","Ha használsz valamilyen naptárat, akkor mit követsz vele?	","Hétköznapi teendőket","1");
-INSERT INTO teszt_view VALUES("18","Ha használsz valamilyen naptárat, akkor mit követsz vele?	","Hétköznapi teendőket","1");
-INSERT INTO teszt_view VALUES("18","Ha használsz valamilyen naptárat, akkor mit követsz vele?	","Kiadásaid rendszerességét","1");
-INSERT INTO teszt_view VALUES("18","Ha használsz valamilyen naptárat, akkor mit követsz vele?	","egyértelműen első számú","1");
-INSERT INTO teszt_view VALUES("18","Ha használsz valamilyen naptárat, akkor mit követsz vele?	","Névnapokat, ünnepnapokat","1");
-INSERT INTO teszt_view VALUES("18","Ha használsz valamilyen naptárat, akkor mit követsz vele?	","Születésnapokat","1");
-INSERT INTO teszt_view VALUES("18","Ha használsz valamilyen naptárat, akkor mit követsz vele?	","Családi eseményeket","1");
-INSERT INTO teszt_view VALUES("18","Ha használsz valamilyen naptárat, akkor mit követsz vele?	","Céges rendezvényeket","1");
-INSERT INTO teszt_view VALUES("18","Ha használsz valamilyen naptárat, akkor mit követsz vele?	","Baráti programokat","1");
-INSERT INTO teszt_view VALUES("18","Ha használsz valamilyen naptárat, akkor mit követsz vele?	","Hétköznapi teendőket","1");
-INSERT INTO teszt_view VALUES("18","Ha használsz valamilyen naptárat, akkor mit követsz vele?	","egyértelműen első számú","1");
-INSERT INTO teszt_view VALUES("18","Ha használsz valamilyen naptárat, akkor mit követsz vele?	","Névnapokat, ünnepnapokat","1");
-INSERT INTO teszt_view VALUES("18","Ha használsz valamilyen naptárat, akkor mit követsz vele?	","Születésnapokat","1");
-INSERT INTO teszt_view VALUES("18","Ha használsz valamilyen naptárat, akkor mit követsz vele?	","Családi eseményeket","1");
-INSERT INTO teszt_view VALUES("18","Ha használsz valamilyen naptárat, akkor mit követsz vele?	","Céges rendezvényeket","1");
-INSERT INTO teszt_view VALUES("18","Ha használsz valamilyen naptárat, akkor mit követsz vele?	","Érdeklődési körödbe tartozó rendezvényeket","1");
-INSERT INTO teszt_view VALUES("18","Ha használsz valamilyen naptárat, akkor mit követsz vele?	","Baráti programokat","1");
-INSERT INTO teszt_view VALUES("18","Ha használsz valamilyen naptárat, akkor mit követsz vele?	","Hétköznapi teendőket","1");
-INSERT INTO teszt_view VALUES("18","Ha használsz valamilyen naptárat, akkor mit követsz vele?	","Névnapokat, ünnepnapokat","1");
-INSERT INTO teszt_view VALUES("18","Ha használsz valamilyen naptárat, akkor mit követsz vele?	","Születésnapokat","1");
-INSERT INTO teszt_view VALUES("18","Ha használsz valamilyen naptárat, akkor mit követsz vele?	","Családi eseményeket","1");
-INSERT INTO teszt_view VALUES("18","Ha használsz valamilyen naptárat, akkor mit követsz vele?	","Hétköznapi teendőket","1");
-INSERT INTO teszt_view VALUES("18","Ha használsz valamilyen naptárat, akkor mit követsz vele?	","Névnapokat, ünnepnapokat","1");
-INSERT INTO teszt_view VALUES("18","Ha használsz valamilyen naptárat, akkor mit követsz vele?	","Születésnapokat","1");
-INSERT INTO teszt_view VALUES("18","Ha használsz valamilyen naptárat, akkor mit követsz vele?	","Családi eseményeket","1");
-INSERT INTO teszt_view VALUES("18","Ha használsz valamilyen naptárat, akkor mit követsz vele?	","Céges rendezvényeket","1");
-INSERT INTO teszt_view VALUES("18","Ha használsz valamilyen naptárat, akkor mit követsz vele?	","Baráti programokat","1");
-INSERT INTO teszt_view VALUES("18","Ha használsz valamilyen naptárat, akkor mit követsz vele?	","Hétköznapi teendőket","1");
-INSERT INTO teszt_view VALUES("18","Ha használsz valamilyen naptárat, akkor mit követsz vele?	","Névnapokat, ünnepnapokat","1");
-INSERT INTO teszt_view VALUES("18","Ha használsz valamilyen naptárat, akkor mit követsz vele?	","Születésnapokat","1");
-INSERT INTO teszt_view VALUES("18","Ha használsz valamilyen naptárat, akkor mit követsz vele?	","Családi eseményeket","1");
-INSERT INTO teszt_view VALUES("18","Ha használsz valamilyen naptárat, akkor mit követsz vele?	","Baráti programokat","1");
-INSERT INTO teszt_view VALUES("18","Ha használsz valamilyen naptárat, akkor mit követsz vele?	","Névnapokat, ünnepnapokat","1");
-INSERT INTO teszt_view VALUES("18","Ha használsz valamilyen naptárat, akkor mit követsz vele?	","Születésnapokat","1");
-INSERT INTO teszt_view VALUES("18","Ha használsz valamilyen naptárat, akkor mit követsz vele?	","Családi eseményeket","1");
-INSERT INTO teszt_view VALUES("18","Ha használsz valamilyen naptárat, akkor mit követsz vele?	","Kiadásaid rendszerességét","1");
-INSERT INTO teszt_view VALUES("18","Ha használsz valamilyen naptárat, akkor mit követsz vele?	","Névnapokat, ünnepnapokat","1");
-INSERT INTO teszt_view VALUES("18","Ha használsz valamilyen naptárat, akkor mit követsz vele?	","Születésnapokat","1");
-INSERT INTO teszt_view VALUES("18","Ha használsz valamilyen naptárat, akkor mit követsz vele?	","Családi eseményeket","1");
-INSERT INTO teszt_view VALUES("18","Ha használsz valamilyen naptárat, akkor mit követsz vele?	","Baráti programokat","1");
-INSERT INTO teszt_view VALUES("18","Ha használsz valamilyen naptárat, akkor mit követsz vele?	","Névnapokat, ünnepnapokat","1");
-INSERT INTO teszt_view VALUES("18","Ha használsz valamilyen naptárat, akkor mit követsz vele?	","Születésnapokat","1");
-INSERT INTO teszt_view VALUES("18","Ha használsz valamilyen naptárat, akkor mit követsz vele?	","Családi eseményeket","1");
-INSERT INTO teszt_view VALUES("18","Ha használsz valamilyen naptárat, akkor mit követsz vele?	","Céges rendezvényeket","1");
-INSERT INTO teszt_view VALUES("18","Ha használsz valamilyen naptárat, akkor mit követsz vele?	","Érdeklődési körödbe tartozó rendezvényeket","1");
-INSERT INTO teszt_view VALUES("18","Ha használsz valamilyen naptárat, akkor mit követsz vele?	","Baráti programokat","1");
-INSERT INTO teszt_view VALUES("18","Ha használsz valamilyen naptárat, akkor mit követsz vele?	","Hétköznapi teendőket","1");
-INSERT INTO teszt_view VALUES("18","Ha használsz valamilyen naptárat, akkor mit követsz vele?	","egyértelműen első számú","1");
-INSERT INTO teszt_view VALUES("18","Ha használsz valamilyen naptárat, akkor mit követsz vele?	","Névnapokat, ünnepnapokat","1");
-INSERT INTO teszt_view VALUES("18","Ha használsz valamilyen naptárat, akkor mit követsz vele?	","Születésnapokat","1");
-INSERT INTO teszt_view VALUES("18","Ha használsz valamilyen naptárat, akkor mit követsz vele?	","Családi eseményeket","1");
-INSERT INTO teszt_view VALUES("18","Ha használsz valamilyen naptárat, akkor mit követsz vele?	","Céges rendezvényeket","1");
-INSERT INTO teszt_view VALUES("18","Ha használsz valamilyen naptárat, akkor mit követsz vele?	","Baráti programokat","1");
-INSERT INTO teszt_view VALUES("18","Ha használsz valamilyen naptárat, akkor mit követsz vele?	","Hétköznapi teendőket","1");
-INSERT INTO teszt_view VALUES("18","Ha használsz valamilyen naptárat, akkor mit követsz vele?	","Kiadásaid rendszerességét","1");
-INSERT INTO teszt_view VALUES("18","Ha használsz valamilyen naptárat, akkor mit követsz vele?	","Vagyonod alakulását","1");
-INSERT INTO teszt_view VALUES("18","Ha használsz valamilyen naptárat, akkor mit követsz vele?	","Névnapokat, ünnepnapokat","1");
-INSERT INTO teszt_view VALUES("18","Ha használsz valamilyen naptárat, akkor mit követsz vele?	","Születésnapokat","1");
-INSERT INTO teszt_view VALUES("18","Ha használsz valamilyen naptárat, akkor mit követsz vele?	","Névnapokat, ünnepnapokat","1");
-INSERT INTO teszt_view VALUES("18","Ha használsz valamilyen naptárat, akkor mit követsz vele?	","Születésnapokat","1");
-INSERT INTO teszt_view VALUES("18","Ha használsz valamilyen naptárat, akkor mit követsz vele?	","Családi eseményeket","1");
-INSERT INTO teszt_view VALUES("18","Ha használsz valamilyen naptárat, akkor mit követsz vele?	","Baráti programokat","1");
-INSERT INTO teszt_view VALUES("18","Ha használsz valamilyen naptárat, akkor mit követsz vele?	","Kiadásaid rendszerességét","1");
-INSERT INTO teszt_view VALUES("18","Ha használsz valamilyen naptárat, akkor mit követsz vele?	","Vagyonod alakulását","1");
-INSERT INTO teszt_view VALUES("18","Ha használsz valamilyen naptárat, akkor mit követsz vele?	","Névnapokat, ünnepnapokat","1");
-INSERT INTO teszt_view VALUES("18","Ha használsz valamilyen naptárat, akkor mit követsz vele?	","Születésnapokat","1");
-INSERT INTO teszt_view VALUES("18","Ha használsz valamilyen naptárat, akkor mit követsz vele?	","Családi eseményeket","1");
-INSERT INTO teszt_view VALUES("18","Ha használsz valamilyen naptárat, akkor mit követsz vele?	","Céges rendezvényeket","1");
-INSERT INTO teszt_view VALUES("18","Ha használsz valamilyen naptárat, akkor mit követsz vele?	","Érdeklődési körödbe tartozó rendezvényeket","1");
-INSERT INTO teszt_view VALUES("18","Ha használsz valamilyen naptárat, akkor mit követsz vele?	","Baráti programokat","1");
-INSERT INTO teszt_view VALUES("18","Ha használsz valamilyen naptárat, akkor mit követsz vele?	","Hétköznapi teendőket","1");
-INSERT INTO teszt_view VALUES("18","Ha használsz valamilyen naptárat, akkor mit követsz vele?	","Kiadásaid rendszerességét","1");
-INSERT INTO teszt_view VALUES("18","Ha használsz valamilyen naptárat, akkor mit követsz vele?	","Családi eseményeket","1");
-INSERT INTO teszt_view VALUES("18","Ha használsz valamilyen naptárat, akkor mit követsz vele?	","Céges rendezvényeket","1");
-INSERT INTO teszt_view VALUES("18","Ha használsz valamilyen naptárat, akkor mit követsz vele?	","Érdeklődési körödbe tartozó rendezvényeket","1");
-INSERT INTO teszt_view VALUES("18","Ha használsz valamilyen naptárat, akkor mit követsz vele?	","Baráti programokat","1");
-INSERT INTO teszt_view VALUES("18","Ha használsz valamilyen naptárat, akkor mit követsz vele?	","Hétköznapi teendőket","1");
-INSERT INTO teszt_view VALUES("18","Ha használsz valamilyen naptárat, akkor mit követsz vele?	","Hétköznapi teendőket","1");
-INSERT INTO teszt_view VALUES("18","Ha használsz valamilyen naptárat, akkor mit követsz vele?	","Névnapokat, ünnepnapokat","1");
-INSERT INTO teszt_view VALUES("18","Ha használsz valamilyen naptárat, akkor mit követsz vele?	","Születésnapokat","1");
-INSERT INTO teszt_view VALUES("18","Ha használsz valamilyen naptárat, akkor mit követsz vele?	","Családi eseményeket","1");
-INSERT INTO teszt_view VALUES("18","Ha használsz valamilyen naptárat, akkor mit követsz vele?	","Baráti programokat","1");
-INSERT INTO teszt_view VALUES("18","Ha használsz valamilyen naptárat, akkor mit követsz vele?	","Hétköznapi teendőket","1");
-INSERT INTO teszt_view VALUES("18","Ha használsz valamilyen naptárat, akkor mit követsz vele?	","Születésnapokat","1");
-INSERT INTO teszt_view VALUES("18","Ha használsz valamilyen naptárat, akkor mit követsz vele?	","Érdeklődési körödbe tartozó rendezvényeket","1");
-INSERT INTO teszt_view VALUES("18","Ha használsz valamilyen naptárat, akkor mit követsz vele?	","Vagyonod alakulását","1");
-INSERT INTO teszt_view VALUES("18","Ha használsz valamilyen naptárat, akkor mit követsz vele?	","Névnapokat, ünnepnapokat","1");
-INSERT INTO teszt_view VALUES("18","Ha használsz valamilyen naptárat, akkor mit követsz vele?	","Születésnapokat","1");
-INSERT INTO teszt_view VALUES("18","Ha használsz valamilyen naptárat, akkor mit követsz vele?	","Családi eseményeket","1");
-INSERT INTO teszt_view VALUES("18","Ha használsz valamilyen naptárat, akkor mit követsz vele?	","Baráti programokat","1");
-INSERT INTO teszt_view VALUES("18","Ha használsz valamilyen naptárat, akkor mit követsz vele?	","Hétköznapi teendőket","1");
-INSERT INTO teszt_view VALUES("18","Ha használsz valamilyen naptárat, akkor mit követsz vele?	","Névnapokat, ünnepnapokat","1");
-INSERT INTO teszt_view VALUES("18","Ha használsz valamilyen naptárat, akkor mit követsz vele?	","Születésnapokat","1");
-INSERT INTO teszt_view VALUES("18","Ha használsz valamilyen naptárat, akkor mit követsz vele?	","Hétköznapi teendőket","1");
-INSERT INTO teszt_view VALUES("18","Ha használsz valamilyen naptárat, akkor mit követsz vele?	","Névnapokat, ünnepnapokat","1");
-INSERT INTO teszt_view VALUES("18","Ha használsz valamilyen naptárat, akkor mit követsz vele?	","Születésnapokat","1");
-INSERT INTO teszt_view VALUES("18","Ha használsz valamilyen naptárat, akkor mit követsz vele?	","Családi eseményeket","1");
-INSERT INTO teszt_view VALUES("18","Ha használsz valamilyen naptárat, akkor mit követsz vele?	","Céges rendezvényeket","1");
-INSERT INTO teszt_view VALUES("18","Ha használsz valamilyen naptárat, akkor mit követsz vele?	","Baráti programokat","1");
-INSERT INTO teszt_view VALUES("18","Ha használsz valamilyen naptárat, akkor mit követsz vele?	","Hétköznapi teendőket","1");
-INSERT INTO teszt_view VALUES("18","Ha használsz valamilyen naptárat, akkor mit követsz vele?	","Kiadásaid rendszerességét","1");
-INSERT INTO teszt_view VALUES("18","Ha használsz valamilyen naptárat, akkor mit követsz vele?	","Névnapokat, ünnepnapokat","1");
-INSERT INTO teszt_view VALUES("18","Ha használsz valamilyen naptárat, akkor mit követsz vele?	","Születésnapokat","1");
-INSERT INTO teszt_view VALUES("18","Ha használsz valamilyen naptárat, akkor mit követsz vele?	","Családi eseményeket","1");
-INSERT INTO teszt_view VALUES("18","Ha használsz valamilyen naptárat, akkor mit követsz vele?	","Céges rendezvényeket","1");
-INSERT INTO teszt_view VALUES("18","Ha használsz valamilyen naptárat, akkor mit követsz vele?	","Baráti programokat","1");
-INSERT INTO teszt_view VALUES("18","Ha használsz valamilyen naptárat, akkor mit követsz vele?	","Hétköznapi teendőket","1");
-INSERT INTO teszt_view VALUES("18","Ha használsz valamilyen naptárat, akkor mit követsz vele?	","Kiadásaid rendszerességét","1");
-INSERT INTO teszt_view VALUES("18","Ha használsz valamilyen naptárat, akkor mit követsz vele?	","Névnapokat, ünnepnapokat","1");
-INSERT INTO teszt_view VALUES("18","Ha használsz valamilyen naptárat, akkor mit követsz vele?	","Születésnapokat","1");
-INSERT INTO teszt_view VALUES("18","Ha használsz valamilyen naptárat, akkor mit követsz vele?	","Családi eseményeket","1");
-INSERT INTO teszt_view VALUES("18","Ha használsz valamilyen naptárat, akkor mit követsz vele?	","Céges rendezvényeket","1");
-INSERT INTO teszt_view VALUES("18","Ha használsz valamilyen naptárat, akkor mit követsz vele?	","Baráti programokat","1");
-INSERT INTO teszt_view VALUES("18","Ha használsz valamilyen naptárat, akkor mit követsz vele?	","Vagyonod alakulását","1");
-INSERT INTO teszt_view VALUES("18","Ha használsz valamilyen naptárat, akkor mit követsz vele?	","egyértelműen első számú","1");
-INSERT INTO teszt_view VALUES("18","Ha használsz valamilyen naptárat, akkor mit követsz vele?	","Névnapokat, ünnepnapokat","1");
-INSERT INTO teszt_view VALUES("18","Ha használsz valamilyen naptárat, akkor mit követsz vele?	","Születésnapokat","1");
-INSERT INTO teszt_view VALUES("18","Ha használsz valamilyen naptárat, akkor mit követsz vele?	","Családi eseményeket","1");
-INSERT INTO teszt_view VALUES("18","Ha használsz valamilyen naptárat, akkor mit követsz vele?	","Céges rendezvényeket","1");
-INSERT INTO teszt_view VALUES("18","Ha használsz valamilyen naptárat, akkor mit követsz vele?	","Baráti programokat","1");
-INSERT INTO teszt_view VALUES("18","Ha használsz valamilyen naptárat, akkor mit követsz vele?	","Vagyonod alakulását","1");
-INSERT INTO teszt_view VALUES("18","Ha használsz valamilyen naptárat, akkor mit követsz vele?	","egyértelműen első számú","1");
-INSERT INTO teszt_view VALUES("18","Ha használsz valamilyen naptárat, akkor mit követsz vele?	","Névnapokat, ünnepnapokat","1");
-INSERT INTO teszt_view VALUES("18","Ha használsz valamilyen naptárat, akkor mit követsz vele?	","Születésnapokat","1");
-INSERT INTO teszt_view VALUES("18","Ha használsz valamilyen naptárat, akkor mit követsz vele?	","Családi eseményeket","1");
-INSERT INTO teszt_view VALUES("18","Ha használsz valamilyen naptárat, akkor mit követsz vele?	","Céges rendezvényeket","1");
-INSERT INTO teszt_view VALUES("18","Ha használsz valamilyen naptárat, akkor mit követsz vele?	","Baráti programokat","1");
-INSERT INTO teszt_view VALUES("18","Ha használsz valamilyen naptárat, akkor mit követsz vele?	","Vagyonod alakulását","1");
-INSERT INTO teszt_view VALUES("18","Ha használsz valamilyen naptárat, akkor mit követsz vele?	","egyértelműen első számú","1");
-INSERT INTO teszt_view VALUES("18","Ha használsz valamilyen naptárat, akkor mit követsz vele?	","Névnapokat, ünnepnapokat","1");
-INSERT INTO teszt_view VALUES("18","Ha használsz valamilyen naptárat, akkor mit követsz vele?	","Hétköznapi teendőket","1");
-INSERT INTO teszt_view VALUES("18","Ha használsz valamilyen naptárat, akkor mit követsz vele?	","egyértelműen első számú","1");
-INSERT INTO teszt_view VALUES("18","Ha használsz valamilyen naptárat, akkor mit követsz vele?	","Születésnapokat","1");
-INSERT INTO teszt_view VALUES("18","Ha használsz valamilyen naptárat, akkor mit követsz vele?	","Névnapokat, ünnepnapokat","1");
-INSERT INTO teszt_view VALUES("18","Ha használsz valamilyen naptárat, akkor mit követsz vele?	","Születésnapokat","1");
-INSERT INTO teszt_view VALUES("18","Ha használsz valamilyen naptárat, akkor mit követsz vele?	","Érdeklődési körödbe tartozó rendezvényeket","1");
-INSERT INTO teszt_view VALUES("18","Ha használsz valamilyen naptárat, akkor mit követsz vele?	","Névnapokat, ünnepnapokat","1");
-INSERT INTO teszt_view VALUES("18","Ha használsz valamilyen naptárat, akkor mit követsz vele?	","Születésnapokat","1");
-INSERT INTO teszt_view VALUES("18","Ha használsz valamilyen naptárat, akkor mit követsz vele?	","Névnapokat, ünnepnapokat","1");
-INSERT INTO teszt_view VALUES("18","Ha használsz valamilyen naptárat, akkor mit követsz vele?	","Születésnapokat","1");
-INSERT INTO teszt_view VALUES("18","Ha használsz valamilyen naptárat, akkor mit követsz vele?	","Céges rendezvényeket","1");
-INSERT INTO teszt_view VALUES("18","Ha használsz valamilyen naptárat, akkor mit követsz vele?	","Baráti programokat","1");
-INSERT INTO teszt_view VALUES("18","Ha használsz valamilyen naptárat, akkor mit követsz vele?	","Hétköznapi teendőket","1");
-INSERT INTO teszt_view VALUES("18","Ha használsz valamilyen naptárat, akkor mit követsz vele?	","Névnapokat, ünnepnapokat","1");
-INSERT INTO teszt_view VALUES("18","Ha használsz valamilyen naptárat, akkor mit követsz vele?	","Születésnapokat","1");
-INSERT INTO teszt_view VALUES("18","Ha használsz valamilyen naptárat, akkor mit követsz vele?	","Családi eseményeket","1");
-INSERT INTO teszt_view VALUES("18","Ha használsz valamilyen naptárat, akkor mit követsz vele?	","Céges rendezvényeket","1");
-INSERT INTO teszt_view VALUES("18","Ha használsz valamilyen naptárat, akkor mit követsz vele?	","Érdeklődési körödbe tartozó rendezvényeket","1");
-INSERT INTO teszt_view VALUES("18","Ha használsz valamilyen naptárat, akkor mit követsz vele?	","Baráti programokat","1");
-INSERT INTO teszt_view VALUES("18","Ha használsz valamilyen naptárat, akkor mit követsz vele?	","Hétköznapi teendőket","1");
-INSERT INTO teszt_view VALUES("18","Ha használsz valamilyen naptárat, akkor mit követsz vele?	","egyértelműen első számú","1");
-INSERT INTO teszt_view VALUES("18","Ha használsz valamilyen naptárat, akkor mit követsz vele?	","Névnapokat, ünnepnapokat","1");
-INSERT INTO teszt_view VALUES("18","Ha használsz valamilyen naptárat, akkor mit követsz vele?	","Születésnapokat","1");
-INSERT INTO teszt_view VALUES("18","Ha használsz valamilyen naptárat, akkor mit követsz vele?	","Érdeklődési körödbe tartozó rendezvényeket","1");
-INSERT INTO teszt_view VALUES("18","Ha használsz valamilyen naptárat, akkor mit követsz vele?	","Névnapokat, ünnepnapokat","1");
-INSERT INTO teszt_view VALUES("18","Ha használsz valamilyen naptárat, akkor mit követsz vele?	","Születésnapokat","1");
-INSERT INTO teszt_view VALUES("18","Ha használsz valamilyen naptárat, akkor mit követsz vele?	","Családi eseményeket","1");
-INSERT INTO teszt_view VALUES("18","Ha használsz valamilyen naptárat, akkor mit követsz vele?	","Céges rendezvényeket","1");
-INSERT INTO teszt_view VALUES("18","Ha használsz valamilyen naptárat, akkor mit követsz vele?	","Érdeklődési körödbe tartozó rendezvényeket","1");
-INSERT INTO teszt_view VALUES("18","Ha használsz valamilyen naptárat, akkor mit követsz vele?	","Baráti programokat","1");
-INSERT INTO teszt_view VALUES("18","Ha használsz valamilyen naptárat, akkor mit követsz vele?	","Hétköznapi teendőket","1");
-INSERT INTO teszt_view VALUES("18","Ha használsz valamilyen naptárat, akkor mit követsz vele?	","Névnapokat, ünnepnapokat","1");
-INSERT INTO teszt_view VALUES("18","Ha használsz valamilyen naptárat, akkor mit követsz vele?	","Születésnapokat","1");
-INSERT INTO teszt_view VALUES("18","Ha használsz valamilyen naptárat, akkor mit követsz vele?	","Családi eseményeket","1");
-INSERT INTO teszt_view VALUES("18","Ha használsz valamilyen naptárat, akkor mit követsz vele?	","Céges rendezvényeket","1");
-INSERT INTO teszt_view VALUES("18","Ha használsz valamilyen naptárat, akkor mit követsz vele?	","Érdeklődési körödbe tartozó rendezvényeket","1");
-INSERT INTO teszt_view VALUES("18","Ha használsz valamilyen naptárat, akkor mit követsz vele?	","Baráti programokat","1");
-INSERT INTO teszt_view VALUES("18","Ha használsz valamilyen naptárat, akkor mit követsz vele?	","Hétköznapi teendőket","1");
-INSERT INTO teszt_view VALUES("18","Ha használsz valamilyen naptárat, akkor mit követsz vele?	","egyértelműen első számú","1");
-INSERT INTO teszt_view VALUES("18","Ha használsz valamilyen naptárat, akkor mit követsz vele?	","Névnapokat, ünnepnapokat","1");
-INSERT INTO teszt_view VALUES("18","Ha használsz valamilyen naptárat, akkor mit követsz vele?	","Születésnapokat","1");
-INSERT INTO teszt_view VALUES("18","Ha használsz valamilyen naptárat, akkor mit követsz vele?	","Családi eseményeket","1");
-INSERT INTO teszt_view VALUES("18","Ha használsz valamilyen naptárat, akkor mit követsz vele?	","Hétköznapi teendőket","1");
-INSERT INTO teszt_view VALUES("18","Ha használsz valamilyen naptárat, akkor mit követsz vele?	","Névnapokat, ünnepnapokat","1");
-INSERT INTO teszt_view VALUES("18","Ha használsz valamilyen naptárat, akkor mit követsz vele?	","Születésnapokat","1");
-INSERT INTO teszt_view VALUES("18","Ha használsz valamilyen naptárat, akkor mit követsz vele?	","Hétköznapi teendőket","1");
-INSERT INTO teszt_view VALUES("18","Ha használsz valamilyen naptárat, akkor mit követsz vele?	","Születésnapokat","1");
-INSERT INTO teszt_view VALUES("18","Ha használsz valamilyen naptárat, akkor mit követsz vele?	","Céges rendezvényeket","1");
-INSERT INTO teszt_view VALUES("18","Ha használsz valamilyen naptárat, akkor mit követsz vele?	","Érdeklődési körödbe tartozó rendezvényeket","1");
-INSERT INTO teszt_view VALUES("18","Ha használsz valamilyen naptárat, akkor mit követsz vele?	","Baráti programokat","1");
-INSERT INTO teszt_view VALUES("18","Ha használsz valamilyen naptárat, akkor mit követsz vele?	","Hétköznapi teendőket","1");
-INSERT INTO teszt_view VALUES("18","Ha használsz valamilyen naptárat, akkor mit követsz vele?	","Névnapokat, ünnepnapokat","1");
-INSERT INTO teszt_view VALUES("18","Ha használsz valamilyen naptárat, akkor mit követsz vele?	","Születésnapokat","1");
-INSERT INTO teszt_view VALUES("18","Ha használsz valamilyen naptárat, akkor mit követsz vele?	","Hétköznapi teendőket","1");
-INSERT INTO teszt_view VALUES("18","Ha használsz valamilyen naptárat, akkor mit követsz vele?	","Családi eseményeket","1");
-INSERT INTO teszt_view VALUES("18","Ha használsz valamilyen naptárat, akkor mit követsz vele?	","Névnapokat, ünnepnapokat","1");
-INSERT INTO teszt_view VALUES("18","Ha használsz valamilyen naptárat, akkor mit követsz vele?	","Születésnapokat","1");
-INSERT INTO teszt_view VALUES("18","Ha használsz valamilyen naptárat, akkor mit követsz vele?	","Családi eseményeket","1");
-INSERT INTO teszt_view VALUES("18","Ha használsz valamilyen naptárat, akkor mit követsz vele?	","Céges rendezvényeket","1");
-INSERT INTO teszt_view VALUES("18","Ha használsz valamilyen naptárat, akkor mit követsz vele?	","Érdeklődési körödbe tartozó rendezvényeket","1");
-INSERT INTO teszt_view VALUES("18","Ha használsz valamilyen naptárat, akkor mit követsz vele?	","Baráti programokat","1");
-INSERT INTO teszt_view VALUES("18","Ha használsz valamilyen naptárat, akkor mit követsz vele?	","Hétköznapi teendőket","1");
-INSERT INTO teszt_view VALUES("18","Ha használsz valamilyen naptárat, akkor mit követsz vele?	","Családi eseményeket","1");
-INSERT INTO teszt_view VALUES("18","Ha használsz valamilyen naptárat, akkor mit követsz vele?	","Névnapokat, ünnepnapokat","1");
-INSERT INTO teszt_view VALUES("18","Ha használsz valamilyen naptárat, akkor mit követsz vele?	","Születésnapokat","1");
-INSERT INTO teszt_view VALUES("18","Ha használsz valamilyen naptárat, akkor mit követsz vele?	","Családi eseményeket","1");
-INSERT INTO teszt_view VALUES("18","Ha használsz valamilyen naptárat, akkor mit követsz vele?	","Névnapokat, ünnepnapokat","1");
-INSERT INTO teszt_view VALUES("18","Ha használsz valamilyen naptárat, akkor mit követsz vele?	","Születésnapokat","1");
-INSERT INTO teszt_view VALUES("18","Ha használsz valamilyen naptárat, akkor mit követsz vele?	","Családi eseményeket","1");
-INSERT INTO teszt_view VALUES("18","Ha használsz valamilyen naptárat, akkor mit követsz vele?	","Baráti programokat","1");
-INSERT INTO teszt_view VALUES("18","Ha használsz valamilyen naptárat, akkor mit követsz vele?	","Névnapokat, ünnepnapokat","1");
-INSERT INTO teszt_view VALUES("18","Ha használsz valamilyen naptárat, akkor mit követsz vele?	","Születésnapokat","1");
-INSERT INTO teszt_view VALUES("18","Ha használsz valamilyen naptárat, akkor mit követsz vele?	","Családi eseményeket","1");
-INSERT INTO teszt_view VALUES("18","Ha használsz valamilyen naptárat, akkor mit követsz vele?	","Céges rendezvényeket","1");
-INSERT INTO teszt_view VALUES("18","Ha használsz valamilyen naptárat, akkor mit követsz vele?	","Érdeklődési körödbe tartozó rendezvényeket","1");
-INSERT INTO teszt_view VALUES("18","Ha használsz valamilyen naptárat, akkor mit követsz vele?	","Baráti programokat","1");
-INSERT INTO teszt_view VALUES("18","Ha használsz valamilyen naptárat, akkor mit követsz vele?	","Névnapokat, ünnepnapokat","1");
-INSERT INTO teszt_view VALUES("18","Ha használsz valamilyen naptárat, akkor mit követsz vele?	","Születésnapokat","1");
-INSERT INTO teszt_view VALUES("18","Ha használsz valamilyen naptárat, akkor mit követsz vele?	","Családi eseményeket","1");
-INSERT INTO teszt_view VALUES("18","Ha használsz valamilyen naptárat, akkor mit követsz vele?	","Baráti programokat","1");
-INSERT INTO teszt_view VALUES("18","Ha használsz valamilyen naptárat, akkor mit követsz vele?	","Születésnapokat","1");
-INSERT INTO teszt_view VALUES("18","Ha használsz valamilyen naptárat, akkor mit követsz vele?	","Családi eseményeket","1");
-INSERT INTO teszt_view VALUES("18","Ha használsz valamilyen naptárat, akkor mit követsz vele?	","Névnapokat, ünnepnapokat","1");
-INSERT INTO teszt_view VALUES("18","Ha használsz valamilyen naptárat, akkor mit követsz vele?	","Születésnapokat","1");
-INSERT INTO teszt_view VALUES("18","Ha használsz valamilyen naptárat, akkor mit követsz vele?	","Családi eseményeket","1");
-INSERT INTO teszt_view VALUES("18","Ha használsz valamilyen naptárat, akkor mit követsz vele?	","Névnapokat, ünnepnapokat","1");
-INSERT INTO teszt_view VALUES("18","Ha használsz valamilyen naptárat, akkor mit követsz vele?	","Születésnapokat","1");
-INSERT INTO teszt_view VALUES("18","Ha használsz valamilyen naptárat, akkor mit követsz vele?	","Családi eseményeket","1");
-INSERT INTO teszt_view VALUES("18","Ha használsz valamilyen naptárat, akkor mit követsz vele?	","Érdeklődési körödbe tartozó rendezvényeket","1");
-INSERT INTO teszt_view VALUES("18","Ha használsz valamilyen naptárat, akkor mit követsz vele?	","Baráti programokat","1");
-INSERT INTO teszt_view VALUES("18","Ha használsz valamilyen naptárat, akkor mit követsz vele?	","Hétköznapi teendőket","1");
-INSERT INTO teszt_view VALUES("18","Ha használsz valamilyen naptárat, akkor mit követsz vele?	","Kiadásaid rendszerességét","1");
-INSERT INTO teszt_view VALUES("18","Ha használsz valamilyen naptárat, akkor mit követsz vele?	","Vagyonod alakulását","1");
-INSERT INTO teszt_view VALUES("18","Ha használsz valamilyen naptárat, akkor mit követsz vele?	","egyértelműen első számú","1");
-INSERT INTO teszt_view VALUES("18","Ha használsz valamilyen naptárat, akkor mit követsz vele?	","Névnapokat, ünnepnapokat","1");
-INSERT INTO teszt_view VALUES("18","Ha használsz valamilyen naptárat, akkor mit követsz vele?	","Születésnapokat","1");
-INSERT INTO teszt_view VALUES("18","Ha használsz valamilyen naptárat, akkor mit követsz vele?	","Baráti programokat","1");
-INSERT INTO teszt_view VALUES("18","Ha használsz valamilyen naptárat, akkor mit követsz vele?	","Névnapokat, ünnepnapokat","1");
-INSERT INTO teszt_view VALUES("18","Ha használsz valamilyen naptárat, akkor mit követsz vele?	","Születésnapokat","1");
-INSERT INTO teszt_view VALUES("18","Ha használsz valamilyen naptárat, akkor mit követsz vele?	","Családi eseményeket","1");
-INSERT INTO teszt_view VALUES("18","Ha használsz valamilyen naptárat, akkor mit követsz vele?	","Érdeklődési körödbe tartozó rendezvényeket","1");
-INSERT INTO teszt_view VALUES("18","Ha használsz valamilyen naptárat, akkor mit követsz vele?	","Baráti programokat","1");
-INSERT INTO teszt_view VALUES("18","Ha használsz valamilyen naptárat, akkor mit követsz vele?	","Születésnapokat","1");
-INSERT INTO teszt_view VALUES("18","Ha használsz valamilyen naptárat, akkor mit követsz vele?	","Hétköznapi teendőket","1");
-INSERT INTO teszt_view VALUES("18","Ha használsz valamilyen naptárat, akkor mit követsz vele?	","egyértelműen első számú","1");
-INSERT INTO teszt_view VALUES("18","Ha használsz valamilyen naptárat, akkor mit követsz vele?	","Névnapokat, ünnepnapokat","1");
-INSERT INTO teszt_view VALUES("18","Ha használsz valamilyen naptárat, akkor mit követsz vele?	","Névnapokat, ünnepnapokat","1");
-INSERT INTO teszt_view VALUES("18","Ha használsz valamilyen naptárat, akkor mit követsz vele?	","Születésnapokat","1");
-INSERT INTO teszt_view VALUES("18","Ha használsz valamilyen naptárat, akkor mit követsz vele?	","Családi eseményeket","1");
-INSERT INTO teszt_view VALUES("18","Ha használsz valamilyen naptárat, akkor mit követsz vele?	","Hétköznapi teendőket","1");
-INSERT INTO teszt_view VALUES("18","Ha használsz valamilyen naptárat, akkor mit követsz vele?	","Névnapokat, ünnepnapokat","1");
-INSERT INTO teszt_view VALUES("18","Ha használsz valamilyen naptárat, akkor mit követsz vele?	","Születésnapokat","1");
-INSERT INTO teszt_view VALUES("18","Ha használsz valamilyen naptárat, akkor mit követsz vele?	","Családi eseményeket","1");
-INSERT INTO teszt_view VALUES("18","Ha használsz valamilyen naptárat, akkor mit követsz vele?	","Névnapokat, ünnepnapokat","1");
-INSERT INTO teszt_view VALUES("18","Ha használsz valamilyen naptárat, akkor mit követsz vele?	","Születésnapokat","1");
-INSERT INTO teszt_view VALUES("18","Ha használsz valamilyen naptárat, akkor mit követsz vele?	","Hétköznapi teendőket","1");
-INSERT INTO teszt_view VALUES("18","Ha használsz valamilyen naptárat, akkor mit követsz vele?	","Névnapokat, ünnepnapokat","1");
-INSERT INTO teszt_view VALUES("18","Ha használsz valamilyen naptárat, akkor mit követsz vele?	","Születésnapokat","1");
-INSERT INTO teszt_view VALUES("18","Ha használsz valamilyen naptárat, akkor mit követsz vele?	","Érdeklődési körödbe tartozó rendezvényeket","1");
-INSERT INTO teszt_view VALUES("18","Ha használsz valamilyen naptárat, akkor mit követsz vele?	","Születésnapokat","1");
-INSERT INTO teszt_view VALUES("18","Ha használsz valamilyen naptárat, akkor mit követsz vele?	","Hétköznapi teendőket","1");
-INSERT INTO teszt_view VALUES("18","Ha használsz valamilyen naptárat, akkor mit követsz vele?	","egyértelműen első számú","1");
-INSERT INTO teszt_view VALUES("18","Ha használsz valamilyen naptárat, akkor mit követsz vele?	","Születésnapokat","1");
-INSERT INTO teszt_view VALUES("18","Ha használsz valamilyen naptárat, akkor mit követsz vele?	","Családi eseményeket","1");
-INSERT INTO teszt_view VALUES("18","Ha használsz valamilyen naptárat, akkor mit követsz vele?	","Hétköznapi teendőket","1");
-INSERT INTO teszt_view VALUES("18","Ha használsz valamilyen naptárat, akkor mit követsz vele?	","Kiadásaid rendszerességét","1");
-INSERT INTO teszt_view VALUES("18","Ha használsz valamilyen naptárat, akkor mit követsz vele?	","Névnapokat, ünnepnapokat","1");
-INSERT INTO teszt_view VALUES("18","Ha használsz valamilyen naptárat, akkor mit követsz vele?	","Születésnapokat","1");
-INSERT INTO teszt_view VALUES("18","Ha használsz valamilyen naptárat, akkor mit követsz vele?	","Érdeklődési körödbe tartozó rendezvényeket","1");
-INSERT INTO teszt_view VALUES("18","Ha használsz valamilyen naptárat, akkor mit követsz vele?	","Baráti programokat","1");
-INSERT INTO teszt_view VALUES("18","Ha használsz valamilyen naptárat, akkor mit követsz vele?	","Hétköznapi teendőket","1");
-INSERT INTO teszt_view VALUES("18","Ha használsz valamilyen naptárat, akkor mit követsz vele?	","Névnapokat, ünnepnapokat","1");
-INSERT INTO teszt_view VALUES("18","Ha használsz valamilyen naptárat, akkor mit követsz vele?	","Születésnapokat","1");
-INSERT INTO teszt_view VALUES("18","Ha használsz valamilyen naptárat, akkor mit követsz vele?	","Névnapokat, ünnepnapokat","1");
-INSERT INTO teszt_view VALUES("18","Ha használsz valamilyen naptárat, akkor mit követsz vele?	","Születésnapokat","1");
-INSERT INTO teszt_view VALUES("18","Ha használsz valamilyen naptárat, akkor mit követsz vele?	","Családi eseményeket","1");
-INSERT INTO teszt_view VALUES("18","Ha használsz valamilyen naptárat, akkor mit követsz vele?	","Hétköznapi teendőket","1");
-INSERT INTO teszt_view VALUES("18","Ha használsz valamilyen naptárat, akkor mit követsz vele?	","Névnapokat, ünnepnapokat","1");
-INSERT INTO teszt_view VALUES("18","Ha használsz valamilyen naptárat, akkor mit követsz vele?	","Születésnapokat","1");
-INSERT INTO teszt_view VALUES("18","Ha használsz valamilyen naptárat, akkor mit követsz vele?	","Családi eseményeket","1");
-INSERT INTO teszt_view VALUES("18","Ha használsz valamilyen naptárat, akkor mit követsz vele?	","Érdeklődési körödbe tartozó rendezvényeket","1");
-INSERT INTO teszt_view VALUES("18","Ha használsz valamilyen naptárat, akkor mit követsz vele?	","Baráti programokat","1");
-INSERT INTO teszt_view VALUES("18","Ha használsz valamilyen naptárat, akkor mit követsz vele?	","Hétköznapi teendőket","1");
-INSERT INTO teszt_view VALUES("18","Ha használsz valamilyen naptárat, akkor mit követsz vele?	","Névnapokat, ünnepnapokat","1");
-INSERT INTO teszt_view VALUES("18","Ha használsz valamilyen naptárat, akkor mit követsz vele?	","Születésnapokat","1");
-INSERT INTO teszt_view VALUES("18","Ha használsz valamilyen naptárat, akkor mit követsz vele?	","Családi eseményeket","1");
-INSERT INTO teszt_view VALUES("18","Ha használsz valamilyen naptárat, akkor mit követsz vele?	","Céges rendezvényeket","1");
-INSERT INTO teszt_view VALUES("18","Ha használsz valamilyen naptárat, akkor mit követsz vele?	","Baráti programokat","1");
-INSERT INTO teszt_view VALUES("18","Ha használsz valamilyen naptárat, akkor mit követsz vele?	","Névnapokat, ünnepnapokat","1");
-INSERT INTO teszt_view VALUES("18","Ha használsz valamilyen naptárat, akkor mit követsz vele?	","Születésnapokat","1");
-INSERT INTO teszt_view VALUES("18","Ha használsz valamilyen naptárat, akkor mit követsz vele?	","Családi eseményeket","1");
-INSERT INTO teszt_view VALUES("18","Ha használsz valamilyen naptárat, akkor mit követsz vele?	","Névnapokat, ünnepnapokat","1");
-INSERT INTO teszt_view VALUES("18","Ha használsz valamilyen naptárat, akkor mit követsz vele?	","Születésnapokat","1");
-INSERT INTO teszt_view VALUES("18","Ha használsz valamilyen naptárat, akkor mit követsz vele?	","Családi eseményeket","1");
-INSERT INTO teszt_view VALUES("18","Ha használsz valamilyen naptárat, akkor mit követsz vele?	","Érdeklődési körödbe tartozó rendezvényeket","1");
-INSERT INTO teszt_view VALUES("18","Ha használsz valamilyen naptárat, akkor mit követsz vele?	","Baráti programokat","1");
-INSERT INTO teszt_view VALUES("18","Ha használsz valamilyen naptárat, akkor mit követsz vele?	","Hétköznapi teendőket","1");
-INSERT INTO teszt_view VALUES("18","Ha használsz valamilyen naptárat, akkor mit követsz vele?	","egyértelműen első számú","1");
-INSERT INTO teszt_view VALUES("18","Ha használsz valamilyen naptárat, akkor mit követsz vele?	","Névnapokat, ünnepnapokat","1");
-INSERT INTO teszt_view VALUES("18","Ha használsz valamilyen naptárat, akkor mit követsz vele?	","Születésnapokat","1");
-INSERT INTO teszt_view VALUES("18","Ha használsz valamilyen naptárat, akkor mit követsz vele?	","Családi eseményeket","1");
-INSERT INTO teszt_view VALUES("18","Ha használsz valamilyen naptárat, akkor mit követsz vele?	","Érdeklődési körödbe tartozó rendezvényeket","1");
-INSERT INTO teszt_view VALUES("18","Ha használsz valamilyen naptárat, akkor mit követsz vele?	","Baráti programokat","1");
-INSERT INTO teszt_view VALUES("18","Ha használsz valamilyen naptárat, akkor mit követsz vele?	","Családi eseményeket","1");
-INSERT INTO teszt_view VALUES("18","Ha használsz valamilyen naptárat, akkor mit követsz vele?	","Névnapokat, ünnepnapokat","1");
-INSERT INTO teszt_view VALUES("18","Ha használsz valamilyen naptárat, akkor mit követsz vele?	","Születésnapokat","1");
-INSERT INTO teszt_view VALUES("18","Ha használsz valamilyen naptárat, akkor mit követsz vele?	","Érdeklődési körödbe tartozó rendezvényeket","1");
-INSERT INTO teszt_view VALUES("18","Ha használsz valamilyen naptárat, akkor mit követsz vele?	","Baráti programokat","1");
-INSERT INTO teszt_view VALUES("18","Ha használsz valamilyen naptárat, akkor mit követsz vele?	","Hétköznapi teendőket","1");
-INSERT INTO teszt_view VALUES("18","Ha használsz valamilyen naptárat, akkor mit követsz vele?	","Vagyonod alakulását","1");
-INSERT INTO teszt_view VALUES("18","Ha használsz valamilyen naptárat, akkor mit követsz vele?	","Hétköznapi teendőket","1");
-INSERT INTO teszt_view VALUES("18","Ha használsz valamilyen naptárat, akkor mit követsz vele?	","Névnapokat, ünnepnapokat","1");
-INSERT INTO teszt_view VALUES("18","Ha használsz valamilyen naptárat, akkor mit követsz vele?	","Születésnapokat","1");
-INSERT INTO teszt_view VALUES("18","Ha használsz valamilyen naptárat, akkor mit követsz vele?	","Családi eseményeket","1");
-INSERT INTO teszt_view VALUES("18","Ha használsz valamilyen naptárat, akkor mit követsz vele?	","Érdeklődési körödbe tartozó rendezvényeket","1");
-INSERT INTO teszt_view VALUES("18","Ha használsz valamilyen naptárat, akkor mit követsz vele?	","Baráti programokat","1");
-INSERT INTO teszt_view VALUES("18","Ha használsz valamilyen naptárat, akkor mit követsz vele?	","Hétköznapi teendőket","1");
-INSERT INTO teszt_view VALUES("18","Ha használsz valamilyen naptárat, akkor mit követsz vele?	","Kiadásaid rendszerességét","1");
-INSERT INTO teszt_view VALUES("18","Ha használsz valamilyen naptárat, akkor mit követsz vele?	","Vagyonod alakulását","1");
-INSERT INTO teszt_view VALUES("18","Ha használsz valamilyen naptárat, akkor mit követsz vele?	","Névnapokat, ünnepnapokat","1");
-INSERT INTO teszt_view VALUES("18","Ha használsz valamilyen naptárat, akkor mit követsz vele?	","Születésnapokat","1");
-INSERT INTO teszt_view VALUES("18","Ha használsz valamilyen naptárat, akkor mit követsz vele?	","Hétköznapi teendőket","1");
-INSERT INTO teszt_view VALUES("18","Ha használsz valamilyen naptárat, akkor mit követsz vele?	","Hétköznapi teendőket","1");
-INSERT INTO teszt_view VALUES("18","Ha használsz valamilyen naptárat, akkor mit követsz vele?	","Névnapokat, ünnepnapokat","1");
-INSERT INTO teszt_view VALUES("18","Ha használsz valamilyen naptárat, akkor mit követsz vele?	","Születésnapokat","1");
-INSERT INTO teszt_view VALUES("18","Ha használsz valamilyen naptárat, akkor mit követsz vele?	","Érdeklődési körödbe tartozó rendezvényeket","1");
-INSERT INTO teszt_view VALUES("18","Ha használsz valamilyen naptárat, akkor mit követsz vele?	","Hétköznapi teendőket","1");
-INSERT INTO teszt_view VALUES("18","Ha használsz valamilyen naptárat, akkor mit követsz vele?	","Vagyonod alakulását","1");
-INSERT INTO teszt_view VALUES("18","Ha használsz valamilyen naptárat, akkor mit követsz vele?	","Névnapokat, ünnepnapokat","1");
-INSERT INTO teszt_view VALUES("18","Ha használsz valamilyen naptárat, akkor mit követsz vele?	","Születésnapokat","1");
-INSERT INTO teszt_view VALUES("18","Ha használsz valamilyen naptárat, akkor mit követsz vele?	","Családi eseményeket","1");
-INSERT INTO teszt_view VALUES("18","Ha használsz valamilyen naptárat, akkor mit követsz vele?	","Érdeklődési körödbe tartozó rendezvényeket","1");
-INSERT INTO teszt_view VALUES("18","Ha használsz valamilyen naptárat, akkor mit követsz vele?	","Baráti programokat","1");
-INSERT INTO teszt_view VALUES("18","Ha használsz valamilyen naptárat, akkor mit követsz vele?	","Hétköznapi teendőket","1");
-INSERT INTO teszt_view VALUES("18","Ha használsz valamilyen naptárat, akkor mit követsz vele?	","egyértelműen első számú","1");
-INSERT INTO teszt_view VALUES("18","Ha használsz valamilyen naptárat, akkor mit követsz vele?	","Névnapokat, ünnepnapokat","1");
-INSERT INTO teszt_view VALUES("18","Ha használsz valamilyen naptárat, akkor mit követsz vele?	","Születésnapokat","1");
-INSERT INTO teszt_view VALUES("18","Ha használsz valamilyen naptárat, akkor mit követsz vele?	","Családi eseményeket","1");
-INSERT INTO teszt_view VALUES("18","Ha használsz valamilyen naptárat, akkor mit követsz vele?	","Baráti programokat","1");
-INSERT INTO teszt_view VALUES("18","Ha használsz valamilyen naptárat, akkor mit követsz vele?	","Családi eseményeket","1");
-INSERT INTO teszt_view VALUES("18","Ha használsz valamilyen naptárat, akkor mit követsz vele?	","Érdeklődési körödbe tartozó rendezvényeket","1");
-INSERT INTO teszt_view VALUES("18","Ha használsz valamilyen naptárat, akkor mit követsz vele?	","Hétköznapi teendőket","1");
-INSERT INTO teszt_view VALUES("18","Ha használsz valamilyen naptárat, akkor mit követsz vele?	","egyértelműen első számú","1");
-INSERT INTO teszt_view VALUES("18","Ha használsz valamilyen naptárat, akkor mit követsz vele?	","Születésnapokat","1");
-INSERT INTO teszt_view VALUES("18","Ha használsz valamilyen naptárat, akkor mit követsz vele?	","Érdeklődési körödbe tartozó rendezvényeket","1");
-INSERT INTO teszt_view VALUES("18","Ha használsz valamilyen naptárat, akkor mit követsz vele?	","Hétköznapi teendőket","1");
-INSERT INTO teszt_view VALUES("19","Ön szerint a társkereső oldalak mennyire szokványosak a barát/barátnő szerzés szempontjából. ","egyértelműen első számú","1");
-INSERT INTO teszt_view VALUES("19","Ön szerint a társkereső oldalak mennyire szokványosak a barát/barátnő szerzés szempontjából. ","egyértelműen első számú","1");
-INSERT INTO teszt_view VALUES("20","Jelen van valamelyik társkereső oldalon?","igen, aktívan","1");
-INSERT INTO teszt_view VALUES("20","Jelen van valamelyik társkereső oldalon?","igen, de nem használom","1");
-INSERT INTO teszt_view VALUES("21","Ha önnek kéne összeállítani egy társkereső oldalt az alábbiakból melyeket tenné bele.","valósidejű chat","1");
-INSERT INTO teszt_view VALUES("21","Ha önnek kéne összeállítani egy társkereső oldalt az alábbiakból melyeket tenné bele.","virtuális virág, ajándék küldő gombok","1");
-INSERT INTO teszt_view VALUES("21","Ha önnek kéne összeállítani egy társkereső oldalt az alábbiakból melyeket tenné bele.","szimpatikusnak jelölés de a másik fél csak akkor lássa, ha ő is szimpatikusnak jelöl","1");
-INSERT INTO teszt_view VALUES("21","Ha önnek kéne összeállítani egy társkereső oldalt az alábbiakból melyeket tenné bele.","naptár megtekintése, hol találkozhatunk","1");
-INSERT INTO teszt_view VALUES("22","Mi az amit, legjobban hiányol a társkereső oldalakon?","","1");
-INSERT INTO teszt_view VALUES("22","Mi az amit, legjobban hiányol a társkereső oldalakon?","","1");
-INSERT INTO teszt_view VALUES("23","Mire vágysz?","gyors ismerkedés, minél hamarabb randi","1");
-INSERT INTO teszt_view VALUES("23","Mire vágysz?","gyors ismerkedés, minél hamarabb randi","1");
-INSERT INTO teszt_view VALUES("30","Ön a végzettségének megfelelő munkahelyen dolgozik?","Igen","1");
-INSERT INTO teszt_view VALUES("30","Ön a végzettségének megfelelő munkahelyen dolgozik?","Igen","1");
-INSERT INTO teszt_view VALUES("31","Amivel most szeretnél foglalkozni az közel áll a jelenlegi munnkádhoz?","Nem","1");
-INSERT INTO teszt_view VALUES("31","Amivel most szeretnél foglalkozni az közel áll a jelenlegi munnkádhoz?","Nem","1");
-INSERT INTO teszt_view VALUES("32","Jelenlegi munkahelyed hol van?","Városban","1");
-INSERT INTO teszt_view VALUES("33","Melyik városban élnél legszívesebben?","Debrecen","1");
-INSERT INTO teszt_view VALUES("33","Melyik városban élnél legszívesebben?","Győr","1");
-INSERT INTO teszt_view VALUES("34","Milyen típusú munkát végeznél szívesen?","Munkahelyi szellemi munkát","1");
-INSERT INTO teszt_view VALUES("34","Milyen típusú munkát végeznél szívesen?","Távmunkát, Otthon végezhető munkát","1");
-INSERT INTO teszt_view VALUES("38","Mi a véleménye az okos telefonokról?","","1");
-INSERT INTO teszt_view VALUES("38","Mi a véleménye az okos telefonokról?","","1");
-INSERT INTO teszt_view VALUES("38","Mi a véleménye az okos telefonokról?","","1");
-INSERT INTO teszt_view VALUES("39","Mi az amitől tart az okos telefonok tekintetében?","Lehallgatástól","1");
-INSERT INTO teszt_view VALUES("39","Mi az amitől tart az okos telefonok tekintetében?","Sugárzás veszélytől","1");
-INSERT INTO teszt_view VALUES("39","Mi az amitől tart az okos telefonok tekintetében?","Sugárzás veszélytől","1");
-INSERT INTO teszt_view VALUES("40","Melyik mobil szimpatikusabb Önnek?","i Phone 6","1");
-INSERT INTO teszt_view VALUES("40","Melyik mobil szimpatikusabb Önnek?","i Phone 6","1");
-INSERT INTO teszt_view VALUES("40","Melyik mobil szimpatikusabb Önnek?","Samsung Galaxy S IV.","1");
-INSERT INTO teszt_view VALUES("41","Osztályozd a munkahelyi pihenés lehetőségeit 1-től 5-ig.","Kávézás","5");
-INSERT INTO teszt_view VALUES("41","Osztályozd a munkahelyi pihenés lehetőségeit 1-től 5-ig.","Étkezés","4");
-INSERT INTO teszt_view VALUES("41","Osztályozd a munkahelyi pihenés lehetőségeit 1-től 5-ig.","Séta","3");
-INSERT INTO teszt_view VALUES("41","Osztályozd a munkahelyi pihenés lehetőségeit 1-től 5-ig.","Játékterem","1");
-INSERT INTO teszt_view VALUES("41","Osztályozd a munkahelyi pihenés lehetőségeit 1-től 5-ig.","Kávézás","1");
-INSERT INTO teszt_view VALUES("41","Osztályozd a munkahelyi pihenés lehetőségeit 1-től 5-ig.","Étkezés","2");
-INSERT INTO teszt_view VALUES("41","Osztályozd a munkahelyi pihenés lehetőségeit 1-től 5-ig.","Séta","2");
-INSERT INTO teszt_view VALUES("41","Osztályozd a munkahelyi pihenés lehetőségeit 1-től 5-ig.","Játékterem","1");
+INSERT INTO szoveg VALUES("34","11","","","0","2","de","","0","ujkerdes.php","ujkerdes");
+INSERT INTO szoveg VALUES("35","11","","","0","2","en","","0","ujkerdes.php","ujkerdes");
+INSERT INTO szoveg VALUES("36","15","Kitöltők email címei","","0","2","hu","","0","kerdoiv_kitoltoemail.php","kitoltok");
+INSERT INTO szoveg VALUES("37","15","Kitöltők email címei","","0","2","en","","0","kerdoiv_kitoltoemail.php","kitoltok");
+INSERT INTO szoveg VALUES("38","15","Kitöltők email címei","","0","2","de","","0","kerdoiv_kitoltoemail.php","kitoltok");
+INSERT INTO szoveg VALUES("39","16","Profil","","0","2","hu","","0","profil.php","kitoltok");
+INSERT INTO szoveg VALUES("40","16","Profil","","0","2","en","","0","profil.php","kitoltok");
+INSERT INTO szoveg VALUES("41","16","Profil","","0","2","de","","0","profil.php","kitoltok");
+INSERT INTO szoveg VALUES("42","20","Nyilvános kérdőívek","","0","1","hu","","0","nyilvanos.php","nyilvanos");
+INSERT INTO szoveg VALUES("43","20","Nyilvános kérdőívek","","0","1","en","","0","nyilvanos.php","nyilvanos");
+INSERT INTO szoveg VALUES("44","20","Nyilvános kérdőívek","","0","1","de","","0","nyilvanos.php","nyilvanos");
+INSERT INTO szoveg VALUES("45","21","Fizetés","","0","2","hu","","0","fizetes.php","fizetes");
+INSERT INTO szoveg VALUES("46","21","Fizetés","","0","2","en","","0","fizetes.php","fizetes");
+INSERT INTO szoveg VALUES("47","21","Fizetés","","0","2","de","","0","fizetes.php","fizetes");
 
 
 
 DROP TABLE users;
 
 CREATE TABLE `users` (
-  `id` int(11) NOT NULL auto_increment,
-  `nick` varchar(40) collate utf8_unicode_ci NOT NULL,
-  `password` varchar(100) collate utf8_unicode_ci default NULL,
-  `email` varchar(100) collate utf8_unicode_ci default NULL,
-  `authority` varchar(1) collate utf8_unicode_ci NOT NULL,
-  `status` varchar(1) collate utf8_unicode_ci NOT NULL default '1',
-  PRIMARY KEY  (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `nick` varchar(40) COLLATE utf8_unicode_ci NOT NULL,
+  `password` varchar(100) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `email` varchar(100) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `authority` varchar(1) COLLATE utf8_unicode_ci NOT NULL,
+  `status` varchar(1) COLLATE utf8_unicode_ci NOT NULL DEFAULT '1',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 INSERT INTO users VALUES("1","teszt","6c90aa3760658846a86a263a4e92630e","tamasbuczko@gmail.com","1","1");
 INSERT INTO users VALUES("2","teszt1","fe282d20bc8dcc12647088d0fe0ca7d7","molnarzoli82@gmail.com","3","0");
 INSERT INTO users VALUES("3","","d41d8cd98f00b204e9800998ecf8427e","","","0");
 INSERT INTO users VALUES("4","teszt2","e970707c584b0c4574564ad239301c01","","3","0");
 INSERT INTO users VALUES("5","Buczkó Tamás","a4094997585517ef239386c45f0b0fa5","tamasbuczko@gmail.com","3","0");
+INSERT INTO users VALUES("6","zeodin","a4094997585517ef239386c45f0b0fa5","zeodin@vipmail.hu","5","0");
 
 
 
 DROP TABLE valaszadasok;
 
 CREATE TABLE `valaszadasok` (
-  `sorszam` int(11) NOT NULL auto_increment,
-  `kerdoiv_sorszam` int(11) default NULL,
-  `kerdes_sorszam` int(11) default NULL,
-  `valasz_sorszam` int(11) default NULL,
-  `ertek` varchar(250) default NULL,
-  `szoveg` text character set utf8 collate utf8_unicode_ci,
-  `kitolto_sorszam` int(11) default NULL,
-  PRIMARY KEY  (`sorszam`),
+  `sorszam` int(11) NOT NULL AUTO_INCREMENT,
+  `kerdoiv_sorszam` int(11) DEFAULT NULL,
+  `kerdes_sorszam` int(11) DEFAULT NULL,
+  `valasz_sorszam` int(11) DEFAULT NULL,
+  `ertek` varchar(250) DEFAULT NULL,
+  `szoveg` text CHARACTER SET utf8 COLLATE utf8_unicode_ci,
+  `kitolto_sorszam` int(11) DEFAULT NULL,
+  PRIMARY KEY (`sorszam`),
   KEY `kerdes_sorszam` (`kerdes_sorszam`),
   KEY `valasz_sorszam` (`valasz_sorszam`),
   KEY `kerdoiv_sorszam` (`kerdoiv_sorszam`)
@@ -12672,7 +8835,7 @@ INSERT INTO valaszadasok VALUES("843","1","1","1","1","","37");
 INSERT INTO valaszadasok VALUES("844","1","11","51","1","","37");
 INSERT INTO valaszadasok VALUES("845","1","12","53","1","","37");
 INSERT INTO valaszadasok VALUES("846","1","17","75","1","","37");
-INSERT INTO valaszadasok VALUES("847","1","13","0","1","Értelmes embereket :) Felesleges idétlenségek helyett, normálisabb párbeszédeket
+INSERT INTO valaszadasok VALUES("847","1","13","0","1","Értelmes embereket :) Felesleges idétlenségek helyett, normálisabb párbeszédeket
 ","37");
 INSERT INTO valaszadasok VALUES("848","1","2","7","1","","37");
 INSERT INTO valaszadasok VALUES("849","1","3","10","1","","37");
@@ -13369,7 +9532,7 @@ INSERT INTO valaszadasok VALUES("1539","1","1","1","1","","54");
 INSERT INTO valaszadasok VALUES("1540","1","11","52","1","","54");
 INSERT INTO valaszadasok VALUES("1541","1","12","54","1","","54");
 INSERT INTO valaszadasok VALUES("1542","1","17","76","1","","54");
-INSERT INTO valaszadasok VALUES("1543","1","13","0","1","Social Networks are great especially for marketing and advert.
+INSERT INTO valaszadasok VALUES("1543","1","13","0","1","Social Networks are great especially for marketing and advert.
 The only thing missing is lack of privacy that goes with it.","54");
 INSERT INTO valaszadasok VALUES("1544","1","2","7","1","","54");
 INSERT INTO valaszadasok VALUES("1545","1","3","9","1","","54");
@@ -14385,7 +10548,7 @@ INSERT INTO valaszadasok VALUES("2554","1","1","1","1","","81");
 INSERT INTO valaszadasok VALUES("2555","1","11","51","1","","81");
 INSERT INTO valaszadasok VALUES("2556","1","12","53","1","","81");
 INSERT INTO valaszadasok VALUES("2557","1","17","76","1","","81");
-INSERT INTO valaszadasok VALUES("2558","1","13","0","1","Tulajdonképp minden meg van ami érdekel!
+INSERT INTO valaszadasok VALUES("2558","1","13","0","1","Tulajdonképp minden meg van ami érdekel!
 Csak azt nem értem miért nem látom minden ismerősöm bejegyzését a közösségi oldalon!","81");
 INSERT INTO valaszadasok VALUES("2559","1","2","7","1","","81");
 INSERT INTO valaszadasok VALUES("2560","1","3","9","1","","81");
@@ -14681,7 +10844,7 @@ INSERT INTO valaszadasok VALUES("2849","1","1","1","1","","89");
 INSERT INTO valaszadasok VALUES("2850","1","11","51","1","","89");
 INSERT INTO valaszadasok VALUES("2851","1","12","53","1","","89");
 INSERT INTO valaszadasok VALUES("2852","1","17","75","1","","89");
-INSERT INTO valaszadasok VALUES("2853","1","13","0","1","semmit
+INSERT INTO valaszadasok VALUES("2853","1","13","0","1","semmit
 ","89");
 INSERT INTO valaszadasok VALUES("2854","1","2","7","1","","89");
 INSERT INTO valaszadasok VALUES("2855","1","3","10","1","","89");
@@ -15923,162 +12086,165 @@ INSERT INTO valaszadasok VALUES("4087","2","23","104","1","","128");
 DROP TABLE valaszok;
 
 CREATE TABLE `valaszok` (
-  `sorszam` int(11) NOT NULL auto_increment,
-  `kerdoiv_sorszam` int(11) default NULL,
-  `kerdes_valasz` int(11) default NULL,
-  `valasz_hu` varchar(250) character set utf8 collate utf8_unicode_ci default NULL,
-  `valasz_en` varchar(250) character set utf8 collate utf8_unicode_ci default NULL,
-  `valasz_de` varchar(250) character set utf8 collate utf8_unicode_ci default NULL,
-  `kep_file` varchar(250) character set utf8 collate utf8_unicode_ci default NULL,
-  `video_embed` text character set utf8 collate utf8_unicode_ci,
-  `sorrend` int(11) default NULL,
-  `status` varchar(1) default NULL,
-  PRIMARY KEY  (`sorszam`)
-) ENGINE=InnoDB AUTO_INCREMENT=157 DEFAULT CHARSET=latin1;
+  `sorszam` int(11) NOT NULL AUTO_INCREMENT,
+  `kerdoiv_sorszam` int(11) DEFAULT NULL,
+  `kerdes_valasz` int(11) DEFAULT NULL,
+  `valasz_hu` varchar(250) CHARACTER SET utf8 COLLATE utf8_unicode_ci DEFAULT NULL,
+  `valasz_en` varchar(250) CHARACTER SET utf8 COLLATE utf8_unicode_ci DEFAULT NULL,
+  `valasz_de` varchar(250) CHARACTER SET utf8 COLLATE utf8_unicode_ci DEFAULT NULL,
+  `kep_file` varchar(250) CHARACTER SET utf8 COLLATE utf8_unicode_ci DEFAULT NULL,
+  `video_embed` text CHARACTER SET utf8 COLLATE utf8_unicode_ci,
+  `sorrend` int(11) DEFAULT NULL,
+  `status` varchar(1) DEFAULT NULL,
+  `kapcs_szoveg` varchar(1) DEFAULT '1',
+  `kapcs_kep` varchar(1) DEFAULT '0',
+  `kapcs_video` varchar(1) DEFAULT '0',
+  PRIMARY KEY (`sorszam`)
+) ENGINE=InnoDB AUTO_INCREMENT=159 DEFAULT CHARSET=latin1;
 
-INSERT INTO valaszok VALUES("1","1","1","igen","yes","ja","","","1","1");
-INSERT INTO valaszok VALUES("2","1","1","nem","no","nein","","","2","1");
-INSERT INTO valaszok VALUES("3","1","2","igen, van folyamatosan frissített listám","yes, I have a continuously updated list ","ja, ich habe eine ständig aktualisierte Liste","","","1","1");
-INSERT INTO valaszok VALUES("4","1","2","igen, de csak nagyobb esemény idején pl. esküvő, karácsony","yes, but I have only at bigger family occasions e.g. wedding, Christmas","ja, aber nur bei Großveranstaltungen wie Hochzeit, Weihnachten","","","2","1");
-INSERT INTO valaszok VALUES("5","1","2","igen, van listám, de csak saját céljaim rendezésére","yes, I have a list but it is just for arranging my own goals","ja, ich habe eine Liste, aber nur für die Organisation meiner eigenen Ziele","","","3","1");
-INSERT INTO valaszok VALUES("6","1","2","nem, de van olyan ismerősöm, aki használ","no, but I have a friend who has it","nein, aber ich habe Bekannte, die so eine Liste benutzen","","","4","1");
-INSERT INTO valaszok VALUES("7","1","2","nem és egy ismerősömről se tudok, hogy használna ","no and I do not know anybody who uses any kind of list ","nein und ich kenne niemanden, der so eine Liste benutzt ","","","5","1");
-INSERT INTO valaszok VALUES("8","1","3","Nem nézem az árakat csak a minőséget.","I do not care prices, I am looking for quality. ","Ich sehe nicht die Preise, sondern nur die Qualität.","","","1","1");
-INSERT INTO valaszok VALUES("9","1","3","A minőséget tartom szem előtt, de azonos minőség esetén megnézem melyik az olcsóbb.","I prefer quality, but when the product have same quality, I buy the cheaper one. ","Qualität ist für mich vorrangig, aber bei gleicher Qualität, kaufe ich das günstigere Produkt","","","2","1");
-INSERT INTO valaszok VALUES("10","1","3","Az ár/érték arány szerint döntök.","I decide using principle of value for money. ","Ich entscheide mich nach Preis-/ Leistungsverhältnis.","","","3","1");
-INSERT INTO valaszok VALUES("11","1","3","Kizárólag a legolcsóbb termékeket vásárolom meg.","I buy only the cheapest products.","Ich kaufe ausschließlich die billigsten Produkte.","","","4","1");
-INSERT INTO valaszok VALUES("12","1","4","Turkáló","Rummage sale","Second-hand","","","1","1");
-INSERT INTO valaszok VALUES("13","1","4","Üzlet","Shop","Geschäft","","","2","1");
-INSERT INTO valaszok VALUES("14","1","4","Piac","Market","Markt","","","3","1");
-INSERT INTO valaszok VALUES("15","1","4","Áruház","Department store","Einkaufszentrum","","","4","1");
-INSERT INTO valaszok VALUES("16","1","4","Webáruház","Webshop","Online","","","5","1");
-INSERT INTO valaszok VALUES("17","1","4","Online pláza","Online mall","Online Einkaufszentrum","","","6","1");
-INSERT INTO valaszok VALUES("18","1","5","Műszaki cikkeket","Technical items","Technische Geräte","","","1","1");
-INSERT INTO valaszok VALUES("19","1","5","Ruházati cikkeket","Clothes","Kleider","","","2","1");
-INSERT INTO valaszok VALUES("20","1","5","Konyhai kiegészítőket","Kitchen accessories ","Küchen-Zubehör","","","3","1");
-INSERT INTO valaszok VALUES("21","1","5","Háztartási eszközöket","Household appliances ","Haushaltsgeräte","","","4","1");
-INSERT INTO valaszok VALUES("22","1","5","Élelmiszert","Food ","Lebensmittel","","","5","1");
-INSERT INTO valaszok VALUES("23","1","5","Italt","Beverage","Getränke","","","6","1");
-INSERT INTO valaszok VALUES("24","1","5","Könyveket","Books","Buch","","","7","1");
-INSERT INTO valaszok VALUES("25","1","5","Szoftvereket","Softwares","Software","","","8","1");
-INSERT INTO valaszok VALUES("26","1","5","Sport felszerelést","Sports equipment","Sportausrüstung","","","9","1");
-INSERT INTO valaszok VALUES("27","1","5","Vonat, repülő stb. jegyeket","Tickets for train, flight etc.","Fahrkarte (Zug, Flugzeug, etc.)","","","10","1");
-INSERT INTO valaszok VALUES("28","1","5","Koncert, disco, rendezvény stb. jegyeket","Tickets for concert, disco, program etc.","Eintrittskarte - Konzert ,  Tanzveranstaltung, Veranstaltungen, etc.","","","11","1");
-INSERT INTO valaszok VALUES("29","1","5","Utazást","Travel","Reise","","","12","1");
-INSERT INTO valaszok VALUES("30","1","5","Biztonságtechnikai eszközöket","Security devices","Sicherheitseinrichtungen ","","","13","1");
-INSERT INTO valaszok VALUES("31","1","5","Előfizetést valamire","Subscription","Abonnement","","","14","1");
-INSERT INTO valaszok VALUES("32","1","6","Ismerőstől, akinek van már ilyen","From friends who has already had one like this","Von Bekannten, die bereits einen solchen Produkt haben","","","1","1");
-INSERT INTO valaszok VALUES("33","1","6","Üzletek eladóitól, ahol árulják","From salesmen","Von Verkäufern, wo das Produkt verkauft wird.","","","2","1");
-INSERT INTO valaszok VALUES("34","1","6","Fórumokról, többek véleményét megnézem","From forums to know more opinion","Durch Einträge in den Foren, ich sehe mir Bewertungen von mehreren Personen an","","","3","1");
-INSERT INTO valaszok VALUES("35","1","6","Interneten rákeresek a termékleírásokra és megnézem a hozzászólásokat","I am googling on Internet for description of the product and read the comments","Ich suche Produktbeschreibungen im Internet und sehe mir die Kommentare an.","","","4","1");
-INSERT INTO valaszok VALUES("36","1","7","Gratulálnék neki és még inkább meg akarnám szerezni","I would congratulate to him/her and I would want to get it more eagerly ","Ich beglückwünsche sie/ihn und will mir das Produkt vielmehr anschaffen.","","","1","1");
-INSERT INTO valaszok VALUES("37","1","7","Meg akarnám szerezni, de már egy jobb, újabb, drágább változatban","I would want to get it but in a better, newer, more expensive version. ","Ich möchte es mir weiterhin anschaffen, jedoch in einer besseren, neueren, teureren Version ","","","2","1");
-INSERT INTO valaszok VALUES("38","1","7","Irigykednék rá, de már nem érdekelne a termék, szolgáltatás","I would be jealous but I would not have intent to get it.","Ich wäre neidisch und das Produkt, bzw. Dienstleistung würde mich nicht mehr interessieren","","","3","1");
-INSERT INTO valaszok VALUES("39","1","8","Büszkén elmondanám mindenkinek ","I would tell to everyone proudly. 	","Ich würde  es allen erzählen 	","","","1","1");
-INSERT INTO valaszok VALUES("40","1","8","Csak közelebbi ismerőseimnek dicsekednék el vele","I would tell only to my close friends. ","Ich würde es meinen näheren Bekannten erzählen","","","2","1");
-INSERT INTO valaszok VALUES("41","1","8","Csak annak mondanám el, akit érdekel","I would tell to those who cares. l","Ich würde es nur denjenigen erzählen, die sich dafür interessieren","","","3","1");
-INSERT INTO valaszok VALUES("42","1","8","Eltitkolnám","I would dessemble","Ich würde geheim halten","","","4","1");
-INSERT INTO valaszok VALUES("43","1","9","Bíztatnám, hogy jó ötlet","I would encourage him/her that it is a good idea","Ich würde ihr/ihm zureden, dass es eine gute Idee ist","","","1","1");
-INSERT INTO valaszok VALUES("44","1","9","Én is meg akarnám venni","I would want to buy, too","Ich würde es auch kaufen wollen","","","2","1");
-INSERT INTO valaszok VALUES("45","1","9","Jobbat ajánlanék neki","I would offer a better one","Ich würde ihr/ihm ein besseres Produkt empfehlen","","","3","1");
-INSERT INTO valaszok VALUES("46","1","9","Nem érdekelne","I would not care	","Es würde mich nicht interessieren		","","","4","1");
-INSERT INTO valaszok VALUES("47","1","10","Igen, mindenkivel","Yes, I would tell everyone.","Ja, alle ","","","1","1");
-INSERT INTO valaszok VALUES("48","1","10","Igen, de csak azokkal, akikre tudom, hogy számítok is","Yes  but only those who will pay it probably","Ja, aber nur diejenige, auf die ich mich verlassen kann","","","2","1");
-INSERT INTO valaszok VALUES("49","1","10","Nem, de adnék barátomnak pénzt bele. ","No but I would give some money for him/her ","Nein, aber ich würde Geld einbringen. ","","","3","1");
-INSERT INTO valaszok VALUES("50","1","10","Nem, inkább olcsóbb ajándékot néznék","No, I would look for a cheaper one","Nein, ich würde eher ein günstigeres Geschenk suchen","","","4","1");
-INSERT INTO valaszok VALUES("51","1","11","igen","yes","ja","","","1","1");
-INSERT INTO valaszok VALUES("52","1","11","nem","no","nein","","","2","1");
-INSERT INTO valaszok VALUES("53","1","12","igen","yes","ja","","","1","1");
-INSERT INTO valaszok VALUES("54","1","12","nem","no","nein","","","2","1");
-INSERT INTO valaszok VALUES("55","1","13","Véleményem:","My opinion:","Meine Meinung: ","","","1","1");
-INSERT INTO valaszok VALUES("56","1","14","A termékre leadott értékelések összesített eredménye","Total reviews given to the product ","Das Gesamtergebnis der Bewertungen bezüglich des Produkts","","","1","1");
-INSERT INTO valaszok VALUES("57","1","14","A termékhez fűződő hozzászólások","Comments relating to the product ","Beiträge zum Produkt ","","","2","1");
-INSERT INTO valaszok VALUES("58","1","14","Hányan akarják megszerezni","How many people want to get it","Wie viele Menschen wollen es sich anschaffen","","","3","1");
-INSERT INTO valaszok VALUES("59","1","14","Hány embernek van már meg","How many people have already had it","Wie viele Menschen haben es bereits","","","4","1");
-INSERT INTO valaszok VALUES("60","1","14","Ismerőseim közül hányan tartják jó ötletnek","How many friends think it is a good idea to obtain","Wie viele meiner Bekannten es als eine gute Idee finden","","","5","1");
-INSERT INTO valaszok VALUES("61","1","14","Ha látom, hogy költségvetésemet ez hogy alakítja","If I see how it influences my budget ","Wenn ich sehe, wie das mein Budget ändert","","","6","1");
-INSERT INTO valaszok VALUES("62","1","14","Ha tudom, hogy költségvetésembe mikorra tudom beütemezni","If I see when I can get it considering my budget","Wenn ich weiß, wann ich es in mein Budget einplanen kann","","","7","1");
-INSERT INTO valaszok VALUES("63","1","15","Ha jobb a minősége és több funkciót tartalmaz","the product which has better quality and more functions. ","Wenn die Qualität besser ist und mehr Funktionen hat","","","1","1");
-INSERT INTO valaszok VALUES("64","1","15","Ha olcsóbb, még ha kevesebbet is tud vagy kicsit rosszabb a minősége","the cheaper one though it has less function or lower quality","Wenn es günstiger ist, auch wenn es weniger Funktion hat oder die Qualität schlechter ist.","","","2","1");
-INSERT INTO valaszok VALUES("65","1","15","Ha ugyanaz az árkategória jobb minőségben","the better quality if it has the same price","Wenn es die gleiche Preiskategorie in besserer Qualität ist","","","3","1");
-INSERT INTO valaszok VALUES("66","1","15","Ha ugyanaz a minőségkategória olcsóbb áron","the cheaper one if it has same quality","Wenn die gleiche Qualitätskategorie günstiger ist.","","","4","1");
-INSERT INTO valaszok VALUES("67","1","16","Ismerőseim csoportosítása pl. család, kollégák, barátok stb.","I can create groups for my acquaintances (family, friends, etc.) ","Die Gruppierung meiner Bekannten, wie zum Beispiel Familie, Kollegen, beste Freunde, Trainingspartner, etc.","","","1","1");
-INSERT INTO valaszok VALUES("68","1","16","Ismerősök keresése, róluk információ szerzés","Searching for old friends, searching for information of them","Suche nach Freunden, Informationsanschaffung über sie","","","2","1");
-INSERT INTO valaszok VALUES("69","1","16","Kapcsolattartás ismerősök között","Keeping contact ","Kontaktpflege mit den Bekannten","","","3","1");
-INSERT INTO valaszok VALUES("70","1","16","Üzenőfal, napi aktivitás mutatása","Message board, showing daily activity","Pinnwand, tägliche Aktivitäten","","","4","1");
-INSERT INTO valaszok VALUES("71","1","16","Alkalmazások","Applications  ","Anwendungen  ","","","5","1");
-INSERT INTO valaszok VALUES("72","1","16","Like funkció","„Like” function","Like Funktion","","","6","1");
-INSERT INTO valaszok VALUES("73","1","16","Mindenhez hozzá lehet szólni","I can comment everything ","Ich kann überall mitreden","","","7","1");
-INSERT INTO valaszok VALUES("74","1","16","Chat funkció","Chat function","Chat Funktion","","","8","1");
-INSERT INTO valaszok VALUES("75","1","17","igen","yes","ja","","","1","1");
-INSERT INTO valaszok VALUES("76","1","17","nem","no","nein","","","2","1");
-INSERT INTO valaszok VALUES("77","1","18","Névnapokat, ünnepnapokat","Holidays","Namenstage, Feiertage","","","1","1");
-INSERT INTO valaszok VALUES("78","1","18","Születésnapokat","Birthdays","Geburtstage","","","2","1");
-INSERT INTO valaszok VALUES("79","1","18","Családi eseményeket","Family occasions","Familienereignisse","","","3","1");
-INSERT INTO valaszok VALUES("80","1","18","Céges rendezvényeket","Company occasions","Firmenveranstaltungen ","","","4","1");
-INSERT INTO valaszok VALUES("81","1","18","Érdeklődési körödbe tartozó rendezvényeket","Events interested in","Veranstaltungen von Interesse ","","","5","1");
-INSERT INTO valaszok VALUES("82","1","18","Baráti programokat","Friends’ programs","Programme mit Freunden","","","6","1");
-INSERT INTO valaszok VALUES("83","1","18","Hétköznapi teendőket","Everday tasks","Alltägliche Aufgaben","","","7","1");
-INSERT INTO valaszok VALUES("84","1","18","Kiadásaid rendszerességét","Regularity of my expenditure","Regelmäßige Ausgaben","","","8","1");
-INSERT INTO valaszok VALUES("85","1","18","Vagyonod alakulását","Developing my fortune","Vermögensverlauf","","","9","1");
-INSERT INTO valaszok VALUES("86","2","19","egyértelműen első számú","","","yhnj.jpg","","1","1");
-INSERT INTO valaszok VALUES("87","2","19","nem kiugróbb, mint a többi módszer","","","yhnjsyue.jpg","","3","1");
-INSERT INTO valaszok VALUES("88","2","19","elmarad a többitől","","","yhnjsyuer4a8.jpg","","2","1");
-INSERT INTO valaszok VALUES("89","2","20","igen, aktívan","","","","","1","1");
-INSERT INTO valaszok VALUES("90","2","20","igen, de nem használom","","","","","2","1");
-INSERT INTO valaszok VALUES("91","2","20","nem, de voltam","","","","","3","1");
-INSERT INTO valaszok VALUES("92","2","20","nem, nem is voltam","","","","","4","1");
-INSERT INTO valaszok VALUES("93","2","21","ismerős keresés","","","","","1","1");
-INSERT INTO valaszok VALUES("94","2","21","üzenet küldés","","","","","2","1");
-INSERT INTO valaszok VALUES("95","2","21","valósidejű chat","","","","","3","1");
-INSERT INTO valaszok VALUES("96","2","21","részletes bemutatkozási profil","","","","","4","1");
-INSERT INTO valaszok VALUES("97","2","21","virtuális virág, ajándék küldő gombok","","","","","5","1");
-INSERT INTO valaszok VALUES("98","2","21","szimpatikusnak jelölés és a másik fél lássa","","","","","6","1");
-INSERT INTO valaszok VALUES("99","2","21","szimpatikusnak jelölés de a másik fél csak akkor lássa, ha ő is szimpatikusnak jelöl","","","","","7","1");
-INSERT INTO valaszok VALUES("100","2","21","fényképalbum feltölthetőség","","","","","8","1");
-INSERT INTO valaszok VALUES("101","2","21","képnézegető","","","","","9","1");
-INSERT INTO valaszok VALUES("102","2","21","naptár megtekintése, hol találkozhatunk","","","","","10","1");
-INSERT INTO valaszok VALUES("103","2","22","szövegmező","","","","","1","1");
-INSERT INTO valaszok VALUES("104","2","23","gyors ismerkedés, minél hamarabb randi","","","","","1","1");
-INSERT INTO valaszok VALUES("105","2","23","lassú ismerkedés, alaposabb megismerkedés után randi","","","","","2","1");
-INSERT INTO valaszok VALUES("111","3","25","első","","","","https://www.youtube.com/watch?v=9w5toxxJARA","105","1");
-INSERT INTO valaszok VALUES("112","3","25","második","","","","https://www.youtube.com/watch?v=PKKIFU17WOo","111","1");
-INSERT INTO valaszok VALUES("113","4","28","nem","","","","","112","1");
-INSERT INTO valaszok VALUES("117","5","30","Igen","","","","","116","1");
-INSERT INTO valaszok VALUES("118","5","30","Nem","","","","","117","1");
-INSERT INTO valaszok VALUES("119","5","31","Igen","","","","","118","1");
-INSERT INTO valaszok VALUES("120","5","31","Nem","","","","","119","1");
-INSERT INTO valaszok VALUES("121","5","32","Faluban","","","","","120","1");
-INSERT INTO valaszok VALUES("122","5","32","Városban","","","","","121","1");
-INSERT INTO valaszok VALUES("123","5","32","Nagyvárosban","","","","","122","1");
-INSERT INTO valaszok VALUES("124","5","33","Budapest","","","","","123","1");
-INSERT INTO valaszok VALUES("125","5","33","Miskolc","","","","","124","1");
-INSERT INTO valaszok VALUES("126","5","33","Debrecen","","","","","125","1");
-INSERT INTO valaszok VALUES("127","5","33","Győr","","","","","126","1");
-INSERT INTO valaszok VALUES("128","5","33","Pécs","","","","","127","1");
-INSERT INTO valaszok VALUES("129","5","33","Szeged","","","","","128","1");
-INSERT INTO valaszok VALUES("130","5","34","Távmunkát, Otthon végezhető munkát","","","","","129","1");
-INSERT INTO valaszok VALUES("131","5","34","Munkahelyi fizikai munkát","","","","","130","1");
-INSERT INTO valaszok VALUES("132","5","34","Munkahelyi szellemi munkát","","","","","131","1");
-INSERT INTO valaszok VALUES("133","5","34","Kiküldetéses utazással járó munkát","","","","","132","1");
-INSERT INTO valaszok VALUES("134","5","35","","","","","","133","1");
-INSERT INTO valaszok VALUES("135","5","35","","","","","","134","1");
-INSERT INTO valaszok VALUES("136","5","35","","","","","","135","1");
-INSERT INTO valaszok VALUES("137","4","28","igen","","","","","136","1");
-INSERT INTO valaszok VALUES("143","6","39","Lehallgatástól","","","","","142","1");
-INSERT INTO valaszok VALUES("144","6","39","Sugárzás veszélytől","","","","","143","1");
-INSERT INTO valaszok VALUES("145","6","39","Elveszítésétől","","","","","144","1");
-INSERT INTO valaszok VALUES("146","6","39","Bankszámla lehúzástól","","","","","145","1");
-INSERT INTO valaszok VALUES("147","6","40","i Phone 6","","","","","146","1");
-INSERT INTO valaszok VALUES("148","6","40","Samsung Galaxy S IV.","","","","","147","1");
-INSERT INTO valaszok VALUES("149","5","41","Kávézás","","","","","148","1");
-INSERT INTO valaszok VALUES("150","5","41","Dohányzás","","","","","149","1");
-INSERT INTO valaszok VALUES("151","5","41","Étkezés","","","","","150","1");
-INSERT INTO valaszok VALUES("152","5","41","Séta","","","","","151","1");
-INSERT INTO valaszok VALUES("153","5","41","Játékterem","","","","","152","1");
-INSERT INTO valaszok VALUES("154","2","19","próba","","","","","4","1");
-INSERT INTO valaszok VALUES("155","0","46","","","","","","1","1");
-INSERT INTO valaszok VALUES("156","0","46","","","","","","155","1");
+INSERT INTO valaszok VALUES("1","1","1","igen","yes","ja","","","1","1","0","0","0");
+INSERT INTO valaszok VALUES("2","1","1","nem","no","nein","","","2","1","0","0","0");
+INSERT INTO valaszok VALUES("3","1","2","igen, van folyamatosan frissített listám","yes, I have a continuously updated list ","ja, ich habe eine ständig aktualisierte Liste","","","1","1","0","0","0");
+INSERT INTO valaszok VALUES("4","1","2","igen, de csak nagyobb esemény idején pl. esküvő, karácsony","yes, but I have only at bigger family occasions e.g. wedding, Christmas","ja, aber nur bei Großveranstaltungen wie Hochzeit, Weihnachten","","","2","1","0","0","0");
+INSERT INTO valaszok VALUES("5","1","2","igen, van listám, de csak saját céljaim rendezésére","yes, I have a list but it is just for arranging my own goals","ja, ich habe eine Liste, aber nur für die Organisation meiner eigenen Ziele","","","3","1","0","0","0");
+INSERT INTO valaszok VALUES("6","1","2","nem, de van olyan ismerősöm, aki használ","no, but I have a friend who has it","nein, aber ich habe Bekannte, die so eine Liste benutzen","","","4","1","0","0","0");
+INSERT INTO valaszok VALUES("7","1","2","nem és egy ismerősömről se tudok, hogy használna ","no and I do not know anybody who uses any kind of list ","nein und ich kenne niemanden, der so eine Liste benutzt ","","","5","1","0","0","0");
+INSERT INTO valaszok VALUES("8","1","3","Nem nézem az árakat csak a minőséget.","I do not care prices, I am looking for quality. ","Ich sehe nicht die Preise, sondern nur die Qualität.","","","1","1","0","0","0");
+INSERT INTO valaszok VALUES("9","1","3","A minőséget tartom szem előtt, de azonos minőség esetén megnézem melyik az olcsóbb.","I prefer quality, but when the product have same quality, I buy the cheaper one. ","Qualität ist für mich vorrangig, aber bei gleicher Qualität, kaufe ich das günstigere Produkt","","","2","1","0","0","0");
+INSERT INTO valaszok VALUES("10","1","3","Az ár/érték arány szerint döntök.","I decide using principle of value for money. ","Ich entscheide mich nach Preis-/ Leistungsverhältnis.","","","3","1","0","0","0");
+INSERT INTO valaszok VALUES("11","1","3","Kizárólag a legolcsóbb termékeket vásárolom meg.","I buy only the cheapest products.","Ich kaufe ausschließlich die billigsten Produkte.","","","4","1","0","0","0");
+INSERT INTO valaszok VALUES("12","1","4","Turkáló","Rummage sale","Second-hand","","","1","1","0","0","0");
+INSERT INTO valaszok VALUES("13","1","4","Üzlet","Shop","Geschäft","","","2","1","0","0","0");
+INSERT INTO valaszok VALUES("14","1","4","Piac","Market","Markt","","","3","1","0","0","0");
+INSERT INTO valaszok VALUES("15","1","4","Áruház","Department store","Einkaufszentrum","","","4","1","0","0","0");
+INSERT INTO valaszok VALUES("16","1","4","Webáruház","Webshop","Online","","","5","1","0","0","0");
+INSERT INTO valaszok VALUES("17","1","4","Online pláza","Online mall","Online Einkaufszentrum","","","6","1","0","0","0");
+INSERT INTO valaszok VALUES("18","1","5","Műszaki cikkeket","Technical items","Technische Geräte","","","1","1","0","0","0");
+INSERT INTO valaszok VALUES("19","1","5","Ruházati cikkeket","Clothes","Kleider","","","2","1","0","0","0");
+INSERT INTO valaszok VALUES("20","1","5","Konyhai kiegészítőket","Kitchen accessories ","Küchen-Zubehör","","","3","1","0","0","0");
+INSERT INTO valaszok VALUES("21","1","5","Háztartási eszközöket","Household appliances ","Haushaltsgeräte","","","4","1","0","0","0");
+INSERT INTO valaszok VALUES("22","1","5","Élelmiszert","Food ","Lebensmittel","","","5","1","0","0","0");
+INSERT INTO valaszok VALUES("23","1","5","Italt","Beverage","Getränke","","","6","1","0","0","0");
+INSERT INTO valaszok VALUES("24","1","5","Könyveket","Books","Buch","","","7","1","0","0","0");
+INSERT INTO valaszok VALUES("25","1","5","Szoftvereket","Softwares","Software","","","8","1","0","0","0");
+INSERT INTO valaszok VALUES("26","1","5","Sport felszerelést","Sports equipment","Sportausrüstung","","","9","1","0","0","0");
+INSERT INTO valaszok VALUES("27","1","5","Vonat, repülő stb. jegyeket","Tickets for train, flight etc.","Fahrkarte (Zug, Flugzeug, etc.)","","","10","1","0","0","0");
+INSERT INTO valaszok VALUES("28","1","5","Koncert, disco, rendezvény stb. jegyeket","Tickets for concert, disco, program etc.","Eintrittskarte - Konzert ,  Tanzveranstaltung, Veranstaltungen, etc.","","","11","1","0","0","0");
+INSERT INTO valaszok VALUES("29","1","5","Utazást","Travel","Reise","","","12","1","0","0","0");
+INSERT INTO valaszok VALUES("30","1","5","Biztonságtechnikai eszközöket","Security devices","Sicherheitseinrichtungen ","","","13","1","0","0","0");
+INSERT INTO valaszok VALUES("31","1","5","Előfizetést valamire","Subscription","Abonnement","","","14","1","0","0","0");
+INSERT INTO valaszok VALUES("32","1","6","Ismerőstől, akinek van már ilyen","From friends who has already had one like this","Von Bekannten, die bereits einen solchen Produkt haben","","","1","1","0","0","0");
+INSERT INTO valaszok VALUES("33","1","6","Üzletek eladóitól, ahol árulják","From salesmen","Von Verkäufern, wo das Produkt verkauft wird.","","","2","1","0","0","0");
+INSERT INTO valaszok VALUES("34","1","6","Fórumokról, többek véleményét megnézem","From forums to know more opinion","Durch Einträge in den Foren, ich sehe mir Bewertungen von mehreren Personen an","","","3","1","0","0","0");
+INSERT INTO valaszok VALUES("35","1","6","Interneten rákeresek a termékleírásokra és megnézem a hozzászólásokat","I am googling on Internet for description of the product and read the comments","Ich suche Produktbeschreibungen im Internet und sehe mir die Kommentare an.","","","4","1","0","0","0");
+INSERT INTO valaszok VALUES("36","1","7","Gratulálnék neki és még inkább meg akarnám szerezni","I would congratulate to him/her and I would want to get it more eagerly ","Ich beglückwünsche sie/ihn und will mir das Produkt vielmehr anschaffen.","","","1","1","0","0","0");
+INSERT INTO valaszok VALUES("37","1","7","Meg akarnám szerezni, de már egy jobb, újabb, drágább változatban","I would want to get it but in a better, newer, more expensive version. ","Ich möchte es mir weiterhin anschaffen, jedoch in einer besseren, neueren, teureren Version ","","","2","1","0","0","0");
+INSERT INTO valaszok VALUES("38","1","7","Irigykednék rá, de már nem érdekelne a termék, szolgáltatás","I would be jealous but I would not have intent to get it.","Ich wäre neidisch und das Produkt, bzw. Dienstleistung würde mich nicht mehr interessieren","","","3","1","0","0","0");
+INSERT INTO valaszok VALUES("39","1","8","Büszkén elmondanám mindenkinek ","I would tell to everyone proudly. 	","Ich würde  es allen erzählen 	","","","1","1","0","0","0");
+INSERT INTO valaszok VALUES("40","1","8","Csak közelebbi ismerőseimnek dicsekednék el vele","I would tell only to my close friends. ","Ich würde es meinen näheren Bekannten erzählen","","","2","1","0","0","0");
+INSERT INTO valaszok VALUES("41","1","8","Csak annak mondanám el, akit érdekel","I would tell to those who cares. l","Ich würde es nur denjenigen erzählen, die sich dafür interessieren","","","3","1","0","0","0");
+INSERT INTO valaszok VALUES("42","1","8","Eltitkolnám","I would dessemble","Ich würde geheim halten","","","4","1","0","0","0");
+INSERT INTO valaszok VALUES("43","1","9","Bíztatnám, hogy jó ötlet","I would encourage him/her that it is a good idea","Ich würde ihr/ihm zureden, dass es eine gute Idee ist","","","1","1","0","0","0");
+INSERT INTO valaszok VALUES("44","1","9","Én is meg akarnám venni","I would want to buy, too","Ich würde es auch kaufen wollen","","","2","1","0","0","0");
+INSERT INTO valaszok VALUES("45","1","9","Jobbat ajánlanék neki","I would offer a better one","Ich würde ihr/ihm ein besseres Produkt empfehlen","","","3","1","0","0","0");
+INSERT INTO valaszok VALUES("46","1","9","Nem érdekelne","I would not care	","Es würde mich nicht interessieren		","","","4","1","0","0","0");
+INSERT INTO valaszok VALUES("47","1","10","Igen, mindenkivel","Yes, I would tell everyone.","Ja, alle ","","","1","1","0","0","0");
+INSERT INTO valaszok VALUES("48","1","10","Igen, de csak azokkal, akikre tudom, hogy számítok is","Yes  but only those who will pay it probably","Ja, aber nur diejenige, auf die ich mich verlassen kann","","","2","1","0","0","0");
+INSERT INTO valaszok VALUES("49","1","10","Nem, de adnék barátomnak pénzt bele. ","No but I would give some money for him/her ","Nein, aber ich würde Geld einbringen. ","","","3","1","0","0","0");
+INSERT INTO valaszok VALUES("50","1","10","Nem, inkább olcsóbb ajándékot néznék","No, I would look for a cheaper one","Nein, ich würde eher ein günstigeres Geschenk suchen","","","4","1","0","0","0");
+INSERT INTO valaszok VALUES("51","1","11","igen","yes","ja","","","1","1","0","0","0");
+INSERT INTO valaszok VALUES("52","1","11","nem","no","nein","","","2","1","0","0","0");
+INSERT INTO valaszok VALUES("53","1","12","igen","yes","ja","","","1","1","0","0","0");
+INSERT INTO valaszok VALUES("54","1","12","nem","no","nein","","","2","1","0","0","0");
+INSERT INTO valaszok VALUES("55","1","13","Véleményem:","My opinion:","Meine Meinung: ","","","1","1","0","0","0");
+INSERT INTO valaszok VALUES("56","1","14","A termékre leadott értékelések összesített eredménye","Total reviews given to the product ","Das Gesamtergebnis der Bewertungen bezüglich des Produkts","","","1","1","0","0","0");
+INSERT INTO valaszok VALUES("57","1","14","A termékhez fűződő hozzászólások","Comments relating to the product ","Beiträge zum Produkt ","","","2","1","0","0","0");
+INSERT INTO valaszok VALUES("58","1","14","Hányan akarják megszerezni","How many people want to get it","Wie viele Menschen wollen es sich anschaffen","","","3","1","0","0","0");
+INSERT INTO valaszok VALUES("59","1","14","Hány embernek van már meg","How many people have already had it","Wie viele Menschen haben es bereits","","","4","1","0","0","0");
+INSERT INTO valaszok VALUES("60","1","14","Ismerőseim közül hányan tartják jó ötletnek","How many friends think it is a good idea to obtain","Wie viele meiner Bekannten es als eine gute Idee finden","","","5","1","0","0","0");
+INSERT INTO valaszok VALUES("61","1","14","Ha látom, hogy költségvetésemet ez hogy alakítja","If I see how it influences my budget ","Wenn ich sehe, wie das mein Budget ändert","","","6","1","0","0","0");
+INSERT INTO valaszok VALUES("62","1","14","Ha tudom, hogy költségvetésembe mikorra tudom beütemezni","If I see when I can get it considering my budget","Wenn ich weiß, wann ich es in mein Budget einplanen kann","","","7","1","0","0","0");
+INSERT INTO valaszok VALUES("63","1","15","Ha jobb a minősége és több funkciót tartalmaz","the product which has better quality and more functions. ","Wenn die Qualität besser ist und mehr Funktionen hat","","","1","1","0","0","0");
+INSERT INTO valaszok VALUES("64","1","15","Ha olcsóbb, még ha kevesebbet is tud vagy kicsit rosszabb a minősége","the cheaper one though it has less function or lower quality","Wenn es günstiger ist, auch wenn es weniger Funktion hat oder die Qualität schlechter ist.","","","2","1","0","0","0");
+INSERT INTO valaszok VALUES("65","1","15","Ha ugyanaz az árkategória jobb minőségben","the better quality if it has the same price","Wenn es die gleiche Preiskategorie in besserer Qualität ist","","","3","1","0","0","0");
+INSERT INTO valaszok VALUES("66","1","15","Ha ugyanaz a minőségkategória olcsóbb áron","the cheaper one if it has same quality","Wenn die gleiche Qualitätskategorie günstiger ist.","","","4","1","0","0","0");
+INSERT INTO valaszok VALUES("67","1","16","Ismerőseim csoportosítása pl. család, kollégák, barátok stb.","I can create groups for my acquaintances (family, friends, etc.) ","Die Gruppierung meiner Bekannten, wie zum Beispiel Familie, Kollegen, beste Freunde, Trainingspartner, etc.","","","1","1","0","0","0");
+INSERT INTO valaszok VALUES("68","1","16","Ismerősök keresése, róluk információ szerzés","Searching for old friends, searching for information of them","Suche nach Freunden, Informationsanschaffung über sie","","","2","1","0","0","0");
+INSERT INTO valaszok VALUES("69","1","16","Kapcsolattartás ismerősök között","Keeping contact ","Kontaktpflege mit den Bekannten","","","3","1","0","0","0");
+INSERT INTO valaszok VALUES("70","1","16","Üzenőfal, napi aktivitás mutatása","Message board, showing daily activity","Pinnwand, tägliche Aktivitäten","","","4","1","0","0","0");
+INSERT INTO valaszok VALUES("71","1","16","Alkalmazások","Applications  ","Anwendungen  ","","","5","1","0","0","0");
+INSERT INTO valaszok VALUES("72","1","16","Like funkció","„Like” function","Like Funktion","","","6","1","0","0","0");
+INSERT INTO valaszok VALUES("73","1","16","Mindenhez hozzá lehet szólni","I can comment everything ","Ich kann überall mitreden","","","7","1","0","0","0");
+INSERT INTO valaszok VALUES("74","1","16","Chat funkció","Chat function","Chat Funktion","","","8","1","0","0","0");
+INSERT INTO valaszok VALUES("75","1","17","igen","yes","ja","","","1","1","0","0","0");
+INSERT INTO valaszok VALUES("76","1","17","nem","no","nein","","","2","1","0","0","0");
+INSERT INTO valaszok VALUES("77","1","18","Névnapokat, ünnepnapokat","Holidays","Namenstage, Feiertage","","","1","1","0","0","0");
+INSERT INTO valaszok VALUES("78","1","18","Születésnapokat","Birthdays","Geburtstage","","","2","1","0","0","0");
+INSERT INTO valaszok VALUES("79","1","18","Családi eseményeket","Family occasions","Familienereignisse","","","3","1","0","0","0");
+INSERT INTO valaszok VALUES("80","1","18","Céges rendezvényeket","Company occasions","Firmenveranstaltungen ","","","4","1","0","0","0");
+INSERT INTO valaszok VALUES("81","1","18","Érdeklődési körödbe tartozó rendezvényeket","Events interested in","Veranstaltungen von Interesse ","","","5","1","0","0","0");
+INSERT INTO valaszok VALUES("82","1","18","Baráti programokat","Friends’ programs","Programme mit Freunden","","","6","1","0","0","0");
+INSERT INTO valaszok VALUES("83","1","18","Hétköznapi teendőket","Everday tasks","Alltägliche Aufgaben","","","7","1","0","0","0");
+INSERT INTO valaszok VALUES("84","1","18","Kiadásaid rendszerességét","Regularity of my expenditure","Regelmäßige Ausgaben","","","8","1","0","0","0");
+INSERT INTO valaszok VALUES("85","1","18","Vagyonod alakulását","Developing my fortune","Vermögensverlauf","","","9","1","0","0","0");
+INSERT INTO valaszok VALUES("86","2","19","egyértelműen első számú","","","yhnj.jpg","","1","1","0","0","0");
+INSERT INTO valaszok VALUES("87","2","19","nem kiugróbb, mint a többi módszer","","","yhnjsyue.jpg","","3","1","0","0","0");
+INSERT INTO valaszok VALUES("88","2","19","elmarad a többitől","","","yhnjsyuer4a8.jpg","","2","1","0","0","0");
+INSERT INTO valaszok VALUES("89","2","20","igen, aktívan","","","","","1","1","0","0","0");
+INSERT INTO valaszok VALUES("90","2","20","igen, de nem használom","","","","","2","1","0","0","0");
+INSERT INTO valaszok VALUES("91","2","20","nem, de voltam","","","","","3","1","0","0","0");
+INSERT INTO valaszok VALUES("92","2","20","nem, nem is voltam","","","","","4","1","0","0","0");
+INSERT INTO valaszok VALUES("93","2","21","ismerős keresés","","","","","1","1","0","0","0");
+INSERT INTO valaszok VALUES("94","2","21","üzenet küldés","","","","","2","1","0","0","0");
+INSERT INTO valaszok VALUES("95","2","21","valósidejű chat","","","","","3","1","0","0","0");
+INSERT INTO valaszok VALUES("96","2","21","részletes bemutatkozási profil","","","","","4","1","0","0","0");
+INSERT INTO valaszok VALUES("97","2","21","virtuális virág, ajándék küldő gombok","","","","","5","1","0","0","0");
+INSERT INTO valaszok VALUES("98","2","21","szimpatikusnak jelölés és a másik fél lássa","","","","","6","1","0","0","0");
+INSERT INTO valaszok VALUES("99","2","21","szimpatikusnak jelölés de a másik fél csak akkor lássa, ha ő is szimpatikusnak jelöl","","","","","7","1","0","0","0");
+INSERT INTO valaszok VALUES("100","2","21","fényképalbum feltölthetőség","","","","","8","1","0","0","0");
+INSERT INTO valaszok VALUES("101","2","21","képnézegető","","","","","9","1","0","0","0");
+INSERT INTO valaszok VALUES("102","2","21","naptár megtekintése, hol találkozhatunk","","","","","10","1","0","0","0");
+INSERT INTO valaszok VALUES("103","2","22","szövegmező","","","","","1","1","0","0","0");
+INSERT INTO valaszok VALUES("104","2","23","gyors ismerkedés, minél hamarabb randi","","","","","1","1","0","0","0");
+INSERT INTO valaszok VALUES("105","2","23","lassú ismerkedés, alaposabb megismerkedés után randi","","","","","2","1","0","0","0");
+INSERT INTO valaszok VALUES("111","3","25","első","","","","https://www.youtube.com/watch?v=9w5toxxJARA","105","1","0","0","0");
+INSERT INTO valaszok VALUES("112","3","25","második","","","","https://www.youtube.com/watch?v=PKKIFU17WOo","111","1","0","0","0");
+INSERT INTO valaszok VALUES("113","4","28","nem","","","","","112","1","0","0","0");
+INSERT INTO valaszok VALUES("117","5","30","Igen","","","","","116","1","0","0","0");
+INSERT INTO valaszok VALUES("118","5","30","Nem","","","","","117","1","0","0","0");
+INSERT INTO valaszok VALUES("119","5","31","Igen","","","","","118","1","0","0","0");
+INSERT INTO valaszok VALUES("120","5","31","Nem","","","","","119","1","0","0","0");
+INSERT INTO valaszok VALUES("121","5","32","Faluban","","","","","120","1","0","0","0");
+INSERT INTO valaszok VALUES("122","5","32","Városban","","","","","121","1","0","0","0");
+INSERT INTO valaszok VALUES("123","5","32","Nagyvárosban","","","","","122","1","0","0","0");
+INSERT INTO valaszok VALUES("124","5","33","Budapest","","","","","123","1","0","0","0");
+INSERT INTO valaszok VALUES("125","5","33","Miskolc","","","","","124","1","0","0","0");
+INSERT INTO valaszok VALUES("126","5","33","Debrecen","","","","","125","1","0","0","0");
+INSERT INTO valaszok VALUES("127","5","33","Győr","","","","","126","1","0","0","0");
+INSERT INTO valaszok VALUES("128","5","33","Pécs","","","","","127","1","0","0","0");
+INSERT INTO valaszok VALUES("129","5","33","Szeged","","","","","128","1","0","0","0");
+INSERT INTO valaszok VALUES("130","5","34","Távmunkát, Otthon végezhető munkát","","","","","129","1","0","0","0");
+INSERT INTO valaszok VALUES("131","5","34","Munkahelyi fizikai munkát","","","","","130","1","0","0","0");
+INSERT INTO valaszok VALUES("132","5","34","Munkahelyi szellemi munkát","","","","","131","1","0","0","0");
+INSERT INTO valaszok VALUES("133","5","34","Kiküldetéses utazással járó munkát","","","","","132","1","0","0","0");
+INSERT INTO valaszok VALUES("134","5","35","","","","","","133","1","0","0","0");
+INSERT INTO valaszok VALUES("135","5","35","","","","","","134","1","0","0","0");
+INSERT INTO valaszok VALUES("136","5","35","","","","","","135","1","0","0","0");
+INSERT INTO valaszok VALUES("137","4","28","igen","","","","","136","1","0","0","0");
+INSERT INTO valaszok VALUES("143","6","39","Lehallgatástól","","","","","142","1","0","0","0");
+INSERT INTO valaszok VALUES("144","6","39","Sugárzás veszélytől","","","","","143","1","0","0","0");
+INSERT INTO valaszok VALUES("145","6","39","Elveszítésétől","","","","","144","1","0","0","0");
+INSERT INTO valaszok VALUES("146","6","39","Bankszámla lehúzástól","","","","","145","1","0","0","0");
+INSERT INTO valaszok VALUES("147","6","40","i Phone 6","","","","","146","1","0","0","0");
+INSERT INTO valaszok VALUES("148","6","40","Samsung Galaxy S IV.","","","","","147","1","0","0","0");
+INSERT INTO valaszok VALUES("149","5","41","Kávézás","","","","","148","1","0","0","0");
+INSERT INTO valaszok VALUES("150","5","41","Dohányzás","","","","","149","1","0","0","0");
+INSERT INTO valaszok VALUES("151","5","41","Étkezés","","","","","150","1","0","0","0");
+INSERT INTO valaszok VALUES("152","5","41","Séta","","","","","151","1","0","0","0");
+INSERT INTO valaszok VALUES("153","5","41","Játékterem","","","","","152","1","0","0","0");
+INSERT INTO valaszok VALUES("154","2","19","próba","","","","","4","1","0","0","0");
+INSERT INTO valaszok VALUES("155","0","46","","","","","","1","1","0","0","0");
+INSERT INTO valaszok VALUES("156","0","46","","","","","","155","1","0","0","0");
 
 
 
