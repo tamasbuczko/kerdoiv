@@ -194,10 +194,15 @@ if (($_REQUEST[mentes]) OR ($_REQUEST[pluszvalasz])){
 }
 
 if ($_REQUEST[pluszvalasz]){
+    $result = mysql_query("SELECT MAX(sorrend) FROM valaszok WHERE kerdes_valasz = $kerdes_sorszam");
+    $x = mysql_fetch_row($result);
+    $sorrend_uj = $x[0];
+    $sorrend_uj++;
+    
    $kerdoiv_sorszam = $_REQUEST[kerdoiv_sorszam];
    $sql = "INSERT INTO valaszok (kerdoiv_sorszam, kerdes_valasz, status, sorrend)
 		   VALUES
-		   ('$kerdoiv_sorszam', '$kerdes_sorszam', '1', '$utolsovalaszsorszam')";
+		   ('$kerdoiv_sorszam', '$kerdes_sorszam', '1', '$sorrend_uj')";
    mysql_query($sql);
    header("Location: ?p=ujkerdes&id=".$_REQUEST[id]);
 }
