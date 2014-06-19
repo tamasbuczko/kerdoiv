@@ -17,6 +17,7 @@ while ($next_element = mysql_fetch_array($result)){
    $kerdoiv_cim=$next_elementc['cim_'.$_SESSION[lang]];
    $kerdoiv_leiras=$next_elementc['leiras_'.$_SESSION[lang]];
    $nyelv = 0;
+   #$nyelv_db = 0;
    $zaszlo_hu = '';
    $zaszlo_en = '';
    $zaszlo_de = '';
@@ -33,12 +34,12 @@ while ($next_element = mysql_fetch_array($result)){
 	   $zaszlo_de = '<img src="graphics/nemet_zaszlo.png" alt="'.$lang[nemet].'" />';
    }
    
-   if ($nyelv_db > 1){
+   #if ($nyelv_db > 1){
 	  $nyelv_fejlec = '<th>'.$lang['nyelvek'].'</th>';
 	  $zaszlok = $zaszlo_en.$zaszlo_de.$zaszlo_hu;
-   } else {
-	  $zaszlok = '';
-   }
+   #} else {
+	#  $zaszlok = '';
+   #}
    
     $nyelv = 'cim_'.$_SESSION[lang];
     $cim = $next_element[$nyelv];
