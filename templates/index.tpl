@@ -46,6 +46,10 @@
 			<a href="?" id="logo_footer"></a>
 			<div>{$menu}</div>
 		 </div>
+{if $smarty.request.b == 'y'}
+		 <a name="end"></a>
+		 <script type="text/javascript">scrollToAnchor('end');</script>
+{/if}
 	  </div>	
 	  <div id="popup">
 		 <div class="q_box">
