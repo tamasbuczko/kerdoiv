@@ -2,6 +2,11 @@ function lapvege(){
     $('body').scrollTo('#end');
 }
 
+function scrollToAnchor(aid){
+    var aTag = $("a[name='"+ aid +"']");
+    $('html,body').animate({scrollTop: aTag.offset().top},1000);
+}
+
 function divdisp_on(id){
     if (document.getElementById(id) != null){
       document.getElementById(id).style.display = 'block';
