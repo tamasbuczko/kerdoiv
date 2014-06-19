@@ -423,6 +423,7 @@ $smarty->assign('check_radio', $check_radio);
 $smarty->assign('check_select', $check_select);
 $smarty->assign('check_checkbox', $check_checkbox);
 $smarty->assign('check_text', $check_text);
+$smarty->assign('check_textarea', $check_textarea);
 $smarty->assign('check_ranking', $check_ranking);
 $smarty->assign('id', $_REQUEST[id]);
 $smarty->assign('kerdes_hux', $kerdes_hux);
