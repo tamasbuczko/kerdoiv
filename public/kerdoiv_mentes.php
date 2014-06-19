@@ -4,10 +4,14 @@
    $sql = "INSERT INTO kitoltok (email, neme, eletkora, lakhely, foglalkozas, nyelv) 
            VALUES ('$email', '$_REQUEST[neme]', '$_REQUEST[eletkora]', '$_REQUEST[lakhely]', '$foglalkozas', '$_SESSION[lang]')";
    mysql_query($sql); //futtatás
-
-   $sql = mysql_query("SELECT MAX(sorszam) FROM kitoltok");
-   $a = mysql_fetch_row($sql);
-   $kitolto_sorszama = $a[0];
+   
+   if ($_SESSION[qa_user_id]){
+       $kitolto_sorszama = $_SESSION[qa_user_id];
+   } else {
+       $sql = mysql_query("SELECT MAX(sorszam) FROM kitoltok");
+        $a = mysql_fetch_row($sql);
+        $kitolto_sorszama = $a[0];
+   }
    
    if ($valaszok_data_checkbox){ //tömb létezésének vizsgálata (volt e ilyen típusú kérdés)
         foreach ($valaszok_data_checkbox as $key => $value){
