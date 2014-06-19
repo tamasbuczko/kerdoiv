@@ -8,13 +8,13 @@
     
     <label>{$lang['választható csomagok']}:</label>
     <div>
-        <input type="radio" name="csomag" value="3" checked="checked" /><label>{$lang['ingyenes']}</label>
+        <input type="radio" name="csomag" value="1" checked="checked" /><label>{$lang['ingyenes']}</label>
     </div>
     <div>
-        <input type="radio" name="csomag" value="4" /><label>{$lang['ezüst csomag']}</label>
+        <input type="radio" name="csomag" value="2" /><label>{$lang['ezüst csomag']}</label>
     </div>
     <div>
-        <input type="radio" name="csomag" value="5" /><label>{$lang['arany csomag']}</label>
+        <input type="radio" name="csomag" value="3" /><label>{$lang['arany csomag']}</label>
     </div>
     <input name="send" type="submit" value="{$lang['regisztráció']}" /> 
 </form>
