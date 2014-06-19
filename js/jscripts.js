@@ -1,3 +1,7 @@
+function lapvege(){
+    $('body').scrollTo('#end');
+}
+
 function divdisp_on(id){
     if (document.getElementById(id) != null){
       document.getElementById(id).style.display = 'block';

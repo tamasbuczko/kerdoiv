@@ -45,30 +45,23 @@ if ($_REQUEST[ujkerdes]){
     $ujkerdes_sorszam++;
     
    if ($_REQUEST[ujkerdes] == 'x'){
-       $result = mysql_query("SELECT MAX(sorrend) FROM kerdesek;");
-        $a = mysql_fetch_row($result);
-        $ujkerdes_sorrend = $a[0];
-        $ujkerdes_sorrend++;
+        if ($_REQUEST[kszam]){
+            $result = mysql_query("SELECT sorrend FROM kerdesek WHERE sorszam =$_REQUEST[kszam]");
+            $a = mysql_fetch_row($result);
+            $ujkerdes_sorrend = $a[0]-1;
+        } else {
+            $result = mysql_query("SELECT MAX(sorrend) FROM kerdesek;");
+            $a = mysql_fetch_row($result);
+            $ujkerdes_sorrend = $a[0];
+            $ujkerdes_sorrend++;
+        }
        
        $sql = "INSERT INTO kerdesek (sorszam, kerdoiv_sorszam, kerdes_hu, status, sorrend, tipus)
                VALUES
                ('$ujkerdes_sorszam', '$_REQUEST[kerdoiv]', 'Új kérdés', '1', '$ujkerdes_sorrend', 'radio')";
         mysql_query($sql);
         header("Location: ?p=ujkerdes&id=".$ujkerdes_sorszam);
-   } else {
-
-        $result = mysql_query("SELECT sorrend FROM kerdesek WHERE sorszam =$_REQUEST[ujkerdes]");
-        $a = mysql_fetch_row($result);
-        $uj_sorrend = $a[0]-1;
-
-
-        
-        $sql = "INSERT INTO kerdesek (sorszam, kerdoiv_sorszam, kerdes_hu, status, sorrend)
-                        VALUES
-                        ('$ujkerdes_sorszam', '$kerdoiv_sorszam', 'Új kérdés', '1', '$uj_sorrend')";
-        mysql_query($sql);
-        header("Location: ?p=ujkerdes&id=".$ujkerdes_sorszam);
-   }
+   } 
 }
 
 if (($_REQUEST[mentes]) OR ($_REQUEST[pluszvalasz])){
@@ -204,7 +197,7 @@ if ($_REQUEST[pluszvalasz]){
 		   VALUES
 		   ('$kerdoiv_sorszam', '$kerdes_sorszam', '1', '$sorrend_uj')";
    mysql_query($sql);
-   header("Location: ?p=ujkerdes&id=".$_REQUEST[id]);
+   header("Location: ?p=ujkerdes&b=y&id=".$_REQUEST[id]);
 }
 
 if ($_REQUEST[id]){
