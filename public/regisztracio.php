@@ -66,7 +66,7 @@ if ($_REQUEST[send]){
 		#mail($to, $subject, $message, $headers);
 		mail($to2x, $subject, $message, $headers);
 		 
-		 header("Location: index.php");
+		 header("Location: index.php?reg=1");
 	  }
 	} else {
 	   
