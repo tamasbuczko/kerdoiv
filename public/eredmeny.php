@@ -260,9 +260,10 @@ while ($next_element = mysql_fetch_array($result)){
         $szures_kiegeszites
 		$szures_kiegeszites2
         ORDER BY k.sorszam");
-
+		$text_db = 0;
         while ($eredmenyek = mysql_fetch_array($result2)){
-            $eredmeny_lista .= $eredmenyek[3].'<br />';
+		   $text_db++;
+            $eredmeny_lista .= $text_db . '. ' . $eredmenyek[3].'<br />';
         }
     }
     
