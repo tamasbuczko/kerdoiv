@@ -140,21 +140,21 @@ if (($_REQUEST[mentes]) OR ($_REQUEST[pluszvalasz])){
 		}
 		
 		$valasz_x_hu = 'valasz_hu_'.$i;
-        if ($_REQUEST[$valasz_x_hu]){
+        if (isset($_REQUEST[$valasz_x_hu])){
             $valasz_ertek_hu = $_REQUEST[$valasz_x_hu];
             $sql = "UPDATE valaszok SET valasz_hu = '$valasz_ertek_hu' WHERE sorszam = $i";
             mysql_query($sql);
         }
         
         $valasz_x_en = 'valasz_en_'.$i;
-        if ($_REQUEST[$valasz_x_en]){
+        if (isset($_REQUEST[$valasz_x_en])){
             $valasz_ertek_en = $_REQUEST[$valasz_x_en];
             $sql = "UPDATE valaszok SET valasz_en = '$valasz_ertek_en' WHERE sorszam = $i";
             mysql_query($sql);
         }
         
         $valasz_x_de = 'valasz_de_'.$i;
-        if ($_REQUEST[$valasz_x_de]){
+        if (isset($_REQUEST[$valasz_x_de])){
             $valasz_ertek_de = $_REQUEST[$valasz_x_de];
             $sql = "UPDATE valaszok SET valasz_de = '$valasz_ertek_de' WHERE sorszam = $i";
             mysql_query($sql);
