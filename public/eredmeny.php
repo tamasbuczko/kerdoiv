@@ -66,40 +66,99 @@ while ($next_element = mysql_fetch_array($result)){
         . '</a>';
 }
 
-$szemelyes_szuresek = '<div class="doboz"><h4>'.$lang['Szűrés a kitöltői adatokra'].':</h4>'
-        . '<div style="width: 710px;">'
+
+$resultx = mysql_query ("SELECT email, neme, kora, orszag, varos, foglalkozas, vegzettseg, jovedelem, csaladiallapot FROM kerdoiv_szemelyesadat WHERE kerdoiv_sorszam = '$kerdoiv_sorszam'");
+$next_elementx = mysql_fetch_array ($resultx);
+$kapcs_szur_nemek = $next_elementx[neme];
+$kapcs_szur_eletkor = $next_elementx[kora];
+$kapcs_szur_csaladiallapot = $next_elementx[csaladiallapot];
+$kapcs_szur_foglalkozasok = $next_elementx[foglalkozas];
+$kapcs_szur_vegzettseg = $next_elementx[vegzettseg];
+$kapcs_szur_jovedelmek = $next_elementx[jovedelem];
+$kapcs_szur_orszag = $next_elementx[orszag];
+
+$szures_darab = 0;
+
+if ($kapcs_szur_nemek == '1'){
+$szures_darab++;
+$nemek_szuresdoboz = ''
         . '<label id="neme_kapcs" class="kitoltoi_adatok">'.$lang['neme'].':</label>'
         . '<div id="neme_doboz" class="szemelyes_szures">'
         . $nemek_szureslista
-        . '</div>'
+        . '</div>';
+}
+
+if ($kapcs_szur_eletkor == '1'){
+$szures_darab++;
+$eletkor_szuresdoboz = ''		
         . '<label id="eletkor_kapcs" class="kitoltoi_adatok">'.$lang['életkor'].':</label>'
 	. '<div id="eletkor_doboz" class="szemelyes_szures">'
         . $eletkor_szureslista
-        . '</div>'
+        . '</div>';
+}
+
+if ($kapcs_szur_csaladiallapot == '1'){
+$szures_darab++;
+$csaladiallapot_szuresdoboz = ''
         . '<label id="csaladiallapot_kapcs" class="kitoltoi_adatok">'.$lang['családi állapot'].':</label>'
         . '<div id="csaladiallapot_doboz" class="szemelyes_szures">'
         . $csaladiallapot_szureslista 
-        . '</div>'
+        . '</div>';
+}
+
+if ($kapcs_szur_foglalkozasok == '1'){
+$szures_darab++;
+$foglalkozasok_szuresdoboz = ''	
         . '<label id="foglalkozas_kapcs" class="kitoltoi_adatok">'.$lang['foglalkozás'].':</label>'
         . '<div id="foglalkozas_doboz" class="szemelyes_szures">'
         . $foglalkozasok_szureslista 
-        . '</div>'
+        . '</div>';
+}
+
+if ($kapcs_szur_vegzettseg == '1'){
+$szures_darab++;
+$vegzettseg_szuresdoboz = ''	
         . '<label id="vegzettseg_kapcs" class="kitoltoi_adatok">'.$lang['végzettség'].':</label>'
         . '<div id="vegzettseg_doboz" class="szemelyes_szures">'
         . $vegzettseg_szureslista 
-        . '</div>'
+        . '</div>';
+}
+
+if ($kapcs_szur_jovedelmek == '1'){
+$szures_darab++;
+$jovedelmek_szuresdoboz = ''	
         . '<label id="jovedelme_kapcs" class="kitoltoi_adatok">'.$lang['jövedelem'].':</label>'
         . '<div id="jovedelme_doboz" class="szemelyes_szures">'
         . $jovedelmek_szureslista 
-        . '</div>'
+        . '</div>';
+}
+
+if ($kapcs_szur_orszag == '1'){
+$szures_darab++;
+$orszag_szuresdoboz = ''	
         . '<label id="orszag_kapcs" class="kitoltoi_adatok">'.$lang['ország'].':</label>'
         . '<div id="orszag_doboz" class="szemelyes_szures">'
         . $orszag_szureslista 
         . '</div>'
-        . '</div>'
-        . '<br style="clear: both;" />'
-        .'</div>';
+        ;
+}
 
+if ($szures_darab > 0){
+$szemelyes_szuresek = ''
+		. '<div class="doboz">'
+		. '<h4>'.$lang['Szűrés a kitöltői adatokra'].':</h4>'
+        . '<div style="width: 710px;">'
+		. $nemek_szuresdoboz
+		. $eletkor_szuresdoboz
+		. $csaladiallapot_szuresdoboz
+		. $foglalkozasok_szuresdoboz
+		. $vegzettseg_szuresdoboz
+		. $jovedelmek_szuresdoboz
+		. $orszag_szuresdoboz
+		. '</div>'
+        . '<br style="clear: both;" />'
+        . '</div>';
+}
 
 $kerdes_darab = 0;
 
