@@ -7,45 +7,50 @@ $result = mysql_query("SELECT id, nev_hu, nev_en, nev_de FROM dat_csaladiallapot
 while ($next_element = mysql_fetch_array($result)){
     $csaladiallapot_szureslista .=  
           '<p>'.$next_element['nev_'.$_SESSION[lang]].'</p>'
-        . '<a href="?p=eredmeny&kerdoiv='.$kerdoiv_sorszam.'&k2=csaladiallapot&v2='.$eredmenyek[6].'">'
+        . '<a href="?p=eredmeny&kerdoiv='.$kerdoiv_sorszam.'&k2=csaladiallapot&v2='.$next_element[id].'">'
         . '<img src="graphics/filter.png" alt="" />'
         . '</a>';
+    $tomb['csaladiallapot'][$next_element[id]] = $next_element['nev_'.$_SESSION[lang]];
 }
 
 $result = mysql_query("SELECT id, nev_hu, nev_en, nev_de FROM dat_foglalkozasok");
 while ($next_element = mysql_fetch_array($result)){
     $foglalkozasok_szureslista .=  
           '<p>'.$next_element['nev_'.$_SESSION[lang]].'</p>'
-        . '<a href="?p=eredmeny&kerdoiv='.$kerdoiv_sorszam.'&k2=foglalkozas&v2='.$eredmenyek[6].'">'
+        . '<a href="?p=eredmeny&kerdoiv='.$kerdoiv_sorszam.'&k2=foglalkozas&v2='.$next_element[id].'">'
         . '<img src="graphics/filter.png" alt="" />'
         . '</a>';
+    $tomb['foglalkozas'][$next_element[id]] = $next_element['nev_'.$_SESSION[lang]];
 }
 
 $result = mysql_query("SELECT id, nev_hu, nev_en, nev_de FROM dat_vegzettseg");
 while ($next_element = mysql_fetch_array($result)){
     $vegzettseg_szureslista .=  
           '<p>'.$next_element['nev_'.$_SESSION[lang]].'</p>'
-        . '<a href="?p=eredmeny&kerdoiv='.$kerdoiv_sorszam.'&k2=vegzettseg&v2='.$eredmenyek[6].'">'
+        . '<a href="?p=eredmeny&kerdoiv='.$kerdoiv_sorszam.'&k2=vegzettseg&v2='.$next_element[id].'">'
         . '<img src="graphics/filter.png" alt="" />'
         . '</a>';
+    $tomb['vegzettseg'][$next_element[id]] = $next_element['nev_'.$_SESSION[lang]];
 }
 
 $result = mysql_query("SELECT country_id, short_name FROM dat_orszag");
 while ($next_element = mysql_fetch_array($result)){
     $orszag_szureslista .=  
           '<p>'.$next_element[short_name].'</p>'
-        . '<a href="?p=eredmeny&kerdoiv='.$kerdoiv_sorszam.'&k2=orszag&v2='.$eredmenyek[6].'">'
+        . '<a href="?p=eredmeny&kerdoiv='.$kerdoiv_sorszam.'&k2=lakhely&v2='.$next_element[country_id].'">'
         . '<img src="graphics/filter.png" alt="" />'
         . '</a>';
+    $tomb['lakhely'][$next_element[country_id]] = $next_element['short_name'];
 }
 
 $result = mysql_query("SELECT id, nev_hu, nev_en, nev_de FROM dat_jovedelmek");
 while ($next_element = mysql_fetch_array($result)){
     $jovedelmek_szureslista .=  
           '<p>'.$next_element['nev_'.$_SESSION[lang]].'</p>'
-        . '<a href="?p=eredmeny&kerdoiv='.$kerdoiv_sorszam.'&k2=jovedelem&v2='.$eredmenyek[6].'">'
+        . '<a href="?p=eredmeny&kerdoiv='.$kerdoiv_sorszam.'&k2=jovedelem&v2='.$next_element[id].'">'
         . '<img src="graphics/filter.png" alt="" />'
         . '</a>';
+    $tomb['jovedelem'][$next_element[id]] = $next_element['nev_'.$_SESSION[lang]];
 }
 
 $result = mysql_query("SELECT id, nev_hu, nev_en, nev_de FROM dat_nemek");
@@ -55,6 +60,7 @@ while ($next_element = mysql_fetch_array($result)){
         . '<a href="?p=eredmeny&kerdoiv='.$kerdoiv_sorszam.'&k2=neme&v2='.$next_element[id].'">'
         . '<img src="graphics/filter.png" alt="" />'
         . '</a>';
+    $tomb['neme'][$next_element[id]] = $next_element['nev_'.$_SESSION[lang]];
 }
 
 $result = mysql_query("SELECT id, nev_hu, nev_en, nev_de FROM dat_eletkor");
@@ -64,6 +70,7 @@ while ($next_element = mysql_fetch_array($result)){
         . '<a href="?p=eredmeny&kerdoiv='.$kerdoiv_sorszam.'&k2=eletkora&v2='.$next_element[id].'">'
         . '<img src="graphics/filter.png" alt="" />'
         . '</a>';
+    $tomb['eletkora'][$next_element[id]] = $next_element['nev_'.$_SESSION[lang]];
 }
 
 
@@ -185,7 +192,10 @@ if (($_REQUEST[k2]) AND ($_REQUEST[v2])){
 
 if ($_SESSION['szures2']){
           foreach ($_SESSION['szures2'] as $key => $value) {
-			 $szures_lista2 .= '<br />Kérdés: '. $_SESSION['szures2'][$key]['kerdes'];
+              $szures_id = $_SESSION['szures2'][$key]['valasz'];
+              $szures_tipusa = $_SESSION['szures2'][$key]['kerdes'];
+                $szures_lista2 .= '<br />Kérdés: '. $_SESSION['szures2'][$key]['kerdes'] . ' ('.$tomb[$szures_tipusa][$szures_id].')';
+                // beolvasni a $_SESSION['szures2'][$sorszam_szures2]['valasz']-hoz tartozó rekordot
 	  }  
 }
 
@@ -200,7 +210,7 @@ while ($next_element = mysql_fetch_array($result)){
     #$szures_kieg_valasz = $_REQUEST[v];
 	$szures_kiegeszites = '';
     
-	if ($_SESSION['szures']){
+	if ($_SESSION['szures']){  //konkrét kérdésre szűrünk
 	  foreach ($_SESSION['szures'] as $key => $value) {
 		 if ($_SESSION['szures'][$key]['kerdes'] == $sorszam_kerdes){
 			 $szures_lista .= '<br />Kérdés: '. $next_element['kerdes_'.$_SESSION[lang]];
@@ -218,7 +228,7 @@ while ($next_element = mysql_fetch_array($result)){
 	  }
 	}
         
-        if ($_SESSION['szures2']){
+        if ($_SESSION['szures2']){  // személyes adatra szűrünk
 	  foreach ($_SESSION['szures2'] as $key => $value) {
 		$szures_kieg_kerdes = $_SESSION['szures2'][$key]['kerdes'];
 		$szures_kieg_valasz	= $_SESSION['szures2'][$key]['valasz'];
