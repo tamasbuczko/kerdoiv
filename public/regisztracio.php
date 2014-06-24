@@ -26,6 +26,13 @@ if ($_REQUEST[send]){
 		 $hiba_uzenetek[$hiba] = 'A megadott email címmel már történt regisztráció!';
 	  }
 	  if ($hiba == 0){
+		 
+		 $chars="abcdefhjkmnpqrstuxy345789";
+		 $aktivalo_link="";
+		 for ($i=0;$i<11;$i++){
+			 $rand=rand(0,strlen($chars)-1);
+			 $aktivalo_link.=$chars[$rand];
+		 }
               
 		 $result = mysql_query("SELECT MAX(id) FROM users");
 		 $row = mysql_fetch_array($result); 
@@ -33,9 +40,9 @@ if ($_REQUEST[send]){
 		 $max_id++;
 		 $md_jelszo = md5($x_jelszo);	
 		 $sql = "INSERT INTO users 
-		 (id, nick, password, email, authority, status)
+		 (id, nick, password, email, authority, status, aktivalo_link)
 		 VALUES
-		 ('$max_id', '$x_azonosito', '$md_jelszo', '$x_email', '$x_csomag', '0')";
+		 ('$max_id', '$x_azonosito', '$md_jelszo', '$x_email', '$x_csomag', '0', '$aktivalo_link')";
 		 mysql_query($sql);
 		 $_SESSION[popup_tartalom] = 'Sikeres regisztráció!';
 		 
@@ -46,6 +53,8 @@ if ($_REQUEST[send]){
 					Az Ön azonosítója: ' . $x_azonosito .'<br/>
 					Az Ön jelszava: ' . $_REQUEST[jelszo] . '<br/><br/>
 					
+					Az alábbi linkre kattintva, vagy azt böngészőjébe másolva tudja aktiválni regisztrációját:<br />
+					http://questionaction.com/?p=aktivalas&link='.aktivalo_link.'
 					
 					Amennyiben kérdése van kérjük írjon az info@questionaction.com címre.<br/><br/>
 					
