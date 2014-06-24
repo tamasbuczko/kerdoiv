@@ -29,7 +29,7 @@ if ($_REQUEST[send]){
 		 
 		 $chars="abcdefhjkmnpqrstuxy345789";
 		 $aktivalo_link="";
-		 for ($i=0;$i<11;$i++){
+		 for ($i=0;$i<10;$i++){
 			 $rand=rand(0,strlen($chars)-1);
 			 $aktivalo_link.=$chars[$rand];
 		 }
@@ -54,7 +54,7 @@ if ($_REQUEST[send]){
 					Az Ön jelszava: ' . $_REQUEST[jelszo] . '<br/><br/>
 					
 					Az alábbi linkre kattintva, vagy azt böngészőjébe másolva tudja aktiválni regisztrációját:<br />
-					http://questionaction.com/?p=aktivalas&link='.aktivalo_link.'
+					<a href="http://questionaction.com/?p=aktivalas&link='.$aktivalo_link.'">http://questionaction.com/?p=aktivalas&link='.$aktivalo_link.'</a><br /><br />
 					
 					Amennyiben kérdése van kérjük írjon az info@questionaction.com címre.<br/><br/>
 					

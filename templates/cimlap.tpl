@@ -7,7 +7,7 @@
 	<a href="?p=nyilvanos" class="nyilvanos_link">{$lang['További nyilvános kérdőívek']}...</a>
 </div>
 
-<form action="" name="login" method="post" class="login">
+<form action="index.php" name="login" method="post" class="login">
   <h2>{$lang['bejelentkezés']}</h2>
   <label>{$lang['azonosító']}:</label><input type="text" name="azonosito" value="" />
   <label>{$lang['jelszó']}:</label><input type="password" name="jelszo" value="" />
