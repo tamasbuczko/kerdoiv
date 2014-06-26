@@ -35,7 +35,7 @@
 		 foreach ($valaszok_data_textarea as $key => $value){
 			if ($valaszok_data_textarea[$key][textarea]){
 			   $szoveg_x = $valaszok_data_textarea[$key][textarea];
-			   $sql = "INSERT INTO valaszadasok (kerdoiv_sorszam, kerdes_sorszam, valasz_sorszam, ertek, szoveg, kitolto_sorszam) 
+			   $sql = "INSERT INTO valaszadasok (kerdoiv_sorszam, kerdes_sorszam, valasz_sorszam, ertek, szoveg, kitolto_sorszam, regisztralt_kitolto) 
 					   VALUES ('$kerdoiv_sorszam', '$key', '', '1', '$szoveg_x', '$kitolto_sorszama', '$_SESSION[qa_user_id]')";
 				 mysql_query($sql);
 			}
@@ -46,7 +46,7 @@
 		 foreach ($valaszok_data_text as $key => $value){
 			if ($valaszok_data_text[$key][text]){
 			   $szoveg_x = $valaszok_data_text[$key][text];
-			   $sql = "INSERT INTO valaszadasok (kerdoiv_sorszam, kerdes_sorszam, valasz_sorszam, ertek, szoveg, kitolto_sorszam) 
+			   $sql = "INSERT INTO valaszadasok (kerdoiv_sorszam, kerdes_sorszam, valasz_sorszam, ertek, szoveg, kitolto_sorszam, regisztralt_kitolto) 
 					   VALUES ('$kerdoiv_sorszam', '$key', '', '1', '$szoveg_x', '$kitolto_sorszama', '$_SESSION[qa_user_id]')";
 				 mysql_query($sql);
 			}
