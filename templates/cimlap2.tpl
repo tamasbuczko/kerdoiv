@@ -6,7 +6,7 @@
 	<a href="?p=nyilvanos" class="nyilvanos_link">{$lang['További nyilvános kérdőívek']}...</a>
 	
 </div>
-<div id="nyilvanos_kerdoivek" style="border: none; padding-left: 20px; width: 380px;">
+<div id="nyilvanos_kerdoivek" style="border: none; padding-left: 20px; width: 380px; border-left: 3px solid #ececec;" >
    <div>
     <h2>{$lang['Követett nyilvános kérdőívek']}</h2>
     {$kitoltott_kerdoivek}
