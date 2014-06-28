@@ -1,3 +1,10 @@
+function kerdes_sorrend_ment(id){
+   //document.getElementById('form_survey').action = '?p=kerdoiv&mod=1&kerdoiv=11&sorrend=1';
+   document.getElementById('form_survey').action = '';
+   document.getElementById('sorrendezes').value = id;
+   document.forms["form_survey"].submit();
+}
+
 function lapvege(){
     $('body').scrollTo('#end');
 }
