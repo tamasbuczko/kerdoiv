@@ -58,7 +58,7 @@ if ($_REQUEST[ujkerdes]){
        
        $sql = "INSERT INTO kerdesek (sorszam, kerdoiv_sorszam, kerdes_hu, status, sorrend, tipus)
                VALUES
-               ('$ujkerdes_sorszam', '$_REQUEST[kerdoiv]', 'Új kérdés', '1', '$ujkerdes_sorrend', 'radio')";
+               ('$ujkerdes_sorszam', '$_REQUEST[kerdoiv]', ' ', '1', '$ujkerdes_sorrend', 'radio')";
         mysql_query($sql);
         header("Location: ?p=ujkerdes&id=".$ujkerdes_sorszam);
    } 

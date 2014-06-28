@@ -1,6 +1,6 @@
 <form name="keres" method="post" />
-   <label>Keresés:</label><input name="keres" type="text" value="{$keres}" />
-   <input name="submit" type="submit" value="keresés" />
+   <label>{$lang["Keresés"]}:</label><input name="keres" type="text" value="{$keres}" />
+   <input name="submit" type="submit" value="{$lang["Keresés"]}" />
 {if $smarty.request.keres}
    {$talalatszam}
 {/if}
