@@ -1,3 +1,7 @@
+function kepfigyel(){
+   //alert('ok');
+}
+
 function kerdes_sorrend_ment(id){
    //document.getElementById('form_survey').action = '?p=kerdoiv&mod=1&kerdoiv=11&sorrend=1';
    document.getElementById('form_survey').action = '';
