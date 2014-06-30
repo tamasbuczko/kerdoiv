@@ -1,5 +1,5 @@
-function kepfigyel(){
-   //alert('ok');
+function kepfigyel(id){
+   document.getElementById(id).style.display = 'block';
 }
 
 function kerdes_sorrend_ment(id){
@@ -7,6 +7,11 @@ function kerdes_sorrend_ment(id){
    document.getElementById('form_survey').action = '';
    document.getElementById('sorrendezes').value = id;
    document.forms["form_survey"].submit();
+}
+
+function uj_kerdes(){
+    document.getElementById('ujkerdesxxx').value = '1';
+    document.getElementById('mentes').click();
 }
 
 function lapvege(){

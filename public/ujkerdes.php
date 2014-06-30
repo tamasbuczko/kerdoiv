@@ -1,4 +1,5 @@
 <?php
+
 require_once ('public/jogosultsag_ujkerdes.php');
 
 //válasz törlése
@@ -58,7 +59,7 @@ if ($_REQUEST[ujkerdes]){
        
        $sql = "INSERT INTO kerdesek (sorszam, kerdoiv_sorszam, kerdes_hu, status, sorrend, tipus)
                VALUES
-               ('$ujkerdes_sorszam', '$_REQUEST[kerdoiv]', ' ', '1', '$ujkerdes_sorrend', 'radio')";
+               ('$ujkerdes_sorszam', '$_REQUEST[kerdoiv]', '', '1', '$ujkerdes_sorrend', 'radio')";
         mysql_query($sql);
         header("Location: ?p=ujkerdes&id=".$ujkerdes_sorszam);
    } 
@@ -183,7 +184,12 @@ if (($_REQUEST[mentes]) OR ($_REQUEST[pluszvalasz])){
 			
 			
 		 }
-    
+   
+       
+      if ($_REQUEST[ujkerdesxxx] == '1'){
+        header("Location: ?p=ujkerdes&kerdoiv=$_REQUEST[kerdoiv_sorszam]&ujkerdes=x");
+        }           
+                 
 }
 
 if ($_REQUEST[pluszvalasz]){
@@ -360,8 +366,9 @@ if ($_REQUEST[id]){
 				. $kep
 				. '<div style="width: 300px; float: right;">'
 				. '<div class="valasz_tipus_kapcs"><label>Kép megjelenítése a válaszhoz</label><input type="checkbox" name="kep_be_'.$next_elementv[sorszam].'" '.$kapcs_kep.'/></div>'
-				. '<input name="valasz_kep_'.$next_elementv[sorszam].'" type="file" title="kép feltöltése a válaszhoz" size="30" accept="image/*" class="valasz_keptolt" /><br style="clear: both;" />'
+				. '<input name="valasz_kep_'.$next_elementv[sorszam].'" type="file" title="kép feltöltése a válaszhoz" size="30" accept="image/*" class="valasz_keptolt" onchange="kepfigyel(\'valasz_kep_uzenet_'.$next_elementv[sorszam].'\')" /><br style="clear: both;" />'
 				. '<div class="valasz_tipus_kapcs">'
+                                . '<div class="mentes_uzenet" style="margin-left: 60px;" id="valasz_kep_uzenet_'.$next_elementv[sorszam].'">A kép feltöltéséhez mentés szükséges!</div>'
 				. '<label>Kép törlése</label>'
 				. '<img src="graphics/icon_del.png" class="icon_del" alt="a kép törlése" title="a kép törlése" onclick="megerosites_x('.$next_elementv[sorszam].', \'valasz_kep\', \''.$_REQUEST[id].'\')" />'
 				. '</div>'
