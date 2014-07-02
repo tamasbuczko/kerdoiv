@@ -26,17 +26,17 @@ if ($sorsol_db > 1){
 
 if ($nyertesek){
    $nyertesek = ''
-		. '<div>'
+		. '<div id="nyertesek">'
 		. '<h2>A '.$tobbes.':</h2>'
 		. $nyertesek
-		. '<br /><br />'
+                . '<br />'
 		. '</div>';
 }
 
 $form = '<form action="" method="post">'
-		. '<label>Hány nyertest akarsz sorsolni?</label><br />'
-		. '<input type="text" name="sorsol_db" value="" style="width: 50px;" /><br />'
-		. '<input type="submit" value="Sorsolás" />'
+		. '<label>Hány nyertest akarsz sorsolni?</label>'
+		. '<input type="text" name="sorsol_db" value="" style="width: 50px; margin-left:10px;" /><br />'
+		. '<input type="submit" value="Sorsolás" style="margin-bottom:10px;">'
 		. '</form>';
 
 $tartalom = $form . $nyertesek . $list;
