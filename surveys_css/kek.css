@@ -1,0 +1,20 @@
+.survey_question, #survey_intro_div{
+   background-color: #238fe2 !important;
+   color: #fefefe;
+}
+
+#survey_intro h1{
+   color: #366547;
+}
+
+.survey_answers label{
+   color: #366547;
+}
+
+.szemelyes label{
+   color: #366547;
+}
+
+#frame {
+   
+}
