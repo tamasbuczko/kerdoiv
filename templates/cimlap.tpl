@@ -13,4 +13,5 @@
   <label>{$lang['jelszó']}:</label><input type="password" name="jelszo" value="" />
   <input name="send" type="submit" value="{$lang['bejelentkezés']}" />
   <a href="?p=regisztracio">{$lang['regisztráció']}</a>
+  <a href="?p=elfelejtett">Elfelejtett jelszó...</a>
 </form>
