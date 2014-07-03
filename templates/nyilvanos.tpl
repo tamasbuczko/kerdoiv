@@ -16,7 +16,8 @@
         {$objektum->leiras}
     </p>
         {$objektum->keszito}<br />        
-        Kitöltők száma: {$objektum->kitoltok_szama}
+        Kitöltők száma: {$objektum->kitoltok_szama}<br />
+        Követők száma: {$objektum->kovetok_szama} 
 {/section}
 </div>
 <div class="nyilvanos_kerdoivek">
