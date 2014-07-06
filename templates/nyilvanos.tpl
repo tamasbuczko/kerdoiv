@@ -9,15 +9,16 @@
 <div id="nyilvanos_lista">
 {section name=obj loop=$obj_array}{* ez egy komment *}
 {assign var=objektum value=$obj_array[obj]}
+    <img src="graphics/nincs_kep.png" alt="" />    
     <h3><a href="?p=kerdoiv&amp;kerdoiv={$objektum->sorszam}">
         {$objektum->cim}
     </a></h3>
     <p>
         {$objektum->leiras}
-    </p>
-        {$objektum->keszito}<br />        
-        Kitöltők száma: {$objektum->kitoltok_szama}<br />
-        Követők száma: {$objektum->kovetok_szama} 
+    </p>    
+    <span>Létrehozó:{$objektum->keszito}</span>        
+    <span>Kitöltők száma: {$objektum->kitoltok_szama} </span>
+    <span>Követők száma: {$objektum->kovetok_szama} </span>
 {/section}
 </div>
 <div class="nyilvanos_kerdoivek">
