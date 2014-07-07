@@ -10,7 +10,7 @@
 {section name=obj loop=$obj_array}{* ez egy komment *}
 {assign var=objektum value=$obj_array[obj]}
 <div style="display: block; clear: both;">
-    <img src="graphics/nincs_kep.png" alt="" />    
+    <div id="nyilvanos_lista_kep"><img src="graphics/nincs_kep.png" alt="" /></div>    
     <div id="nyilvanos_lista_1">
     <h3><a href="?p=kerdoiv&amp;kerdoiv={$objektum->sorszam}">
         {$objektum->cim}
