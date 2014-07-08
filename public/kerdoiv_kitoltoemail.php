@@ -33,7 +33,7 @@ if ($nyertesek){
 		. '</div>';
 }
 
-$form = '<form action="" method="post">'
+$form = '<form action="" id="sorsol" method="post">'
 		. '<label>Hány nyertest akarsz sorsolni?</label>'
 		. '<input type="text" name="sorsol_db" value="" style="width: 50px; margin-left:10px;" /><br />'
 		. '<input type="submit" value="Sorsolás" style="margin-bottom:10px;">'
