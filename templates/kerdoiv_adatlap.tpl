@@ -25,7 +25,7 @@
     <tr>{$nyilvanos}</tr>
     <tr>{$kerdesek_szama}</tr>
     <tr>{$valaszadok_szama}</tr>
-	<tr>{$valaszadok_szama_emailes}</tr>
+    <tr>{$valaszadok_szama_emailes}</tr>
     <tr>{$created_date}</tr>
     <tr>{$activated_date}</tr>
     {$expire_date}

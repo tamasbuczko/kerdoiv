@@ -45,7 +45,7 @@ $valaszadok_szama = '<td>A kitöltők száma: </td><td>'.mysql_num_rows($result2
 $result2 = mysql_query("SELECT va.sorszam FROM valaszadasok AS va LEFT JOIN kitoltok AS k ON va.kitolto_sorszam = k.sorszam WHERE va.kerdoiv_sorszam = $kerdoiv_sorszam AND k.email != '' GROUP BY va.kitolto_sorszam");
 $kitoltok_email = mysql_num_rows($result2);
 if ($kitoltok_email > 0){
-   $kitoltok_link = ' <a href="?p=kitoltok&amp;kerdoiv='.$kerdoiv_sorszam.'">listázás</a>';
+   $kitoltok_link = ' <a href="?p=kitoltok&amp;kerdoiv='.$kerdoiv_sorszam.'">Listázás</a>';
 }
 $valaszadok_szama_emailes = '<td>A kitöltők száma (e-mail):</td><td>'.$kitoltok_email.$kitoltok_link.'</td>';
     
