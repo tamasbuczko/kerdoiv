@@ -1,11 +1,18 @@
 <?php
 if ($_REQUEST[id]){
-   $result = mysql_query("UPDATE kerdoivek SET status = '$_REQUEST[status]' WHERE sorszam = $_REQUEST[id]");
+    $datum = date("Y-m-d");
+   if ($_REQUEST[status] == '1'){
+       $datum_szur = ", aktivalas = '$datum'";
+   }
+   if ($_REQUEST[status] == '0'){
+       $datum_szur = ", lejarat = '$datum'";
+   }
+   $result = mysql_query("UPDATE kerdoivek SET status = '$_REQUEST[status]' $datum_szur WHERE sorszam = $_REQUEST[id]");
    mysql_query($result);
    header("Location: ?p=7");
 }
 
-$result = mysql_query ("SELECT sorszam, cim_hu, cim_en, cim_de, status FROM kerdoivek WHERE user_id = '$_SESSION[qa_user_id]' ");
+$result = mysql_query ("SELECT sorszam, cim_hu, cim_en, cim_de, status FROM kerdoivek WHERE user_id = '$_SESSION[qa_user_id]' ORDER BY sorszam DESC");
 $db_kerdoivek = 0;
 while ($next_element = mysql_fetch_array($result)){
    $db_kerdoivek++;

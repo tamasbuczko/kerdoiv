@@ -23,9 +23,13 @@
     </p>    
     <table>
         <tr><th>Létrehozó: </th><th>Dátum: </th><th>Kitöltők száma: </th><th>Követők száma: </th><th></th></tr>    
-        <tr><th>{$objektum->keszito}</th><th>{$objektum->letrehozas_datuma}</th><th>{$objektum->kitoltok_szama}</th><th>{$objektum->kovetok_szama}</th><th></th></tr>    
+        <tr><th>{$objektum->keszito}</th><th>{$objektum->aktivalas_datuma}</th><th>{$objektum->kitoltok_szama}</th><th>{$objektum->kovetok_szama}</th><th></th></tr>    
     </table>
+{if $objektum->ajandek == '1'}
     <img src="graphics/ajandek_ikon.png" alt="" />
+{else}
+    <img src="graphics/ajandek_ikon_nincs.png" alt="" />
+{/if}
     </div>
 </div>
 {/section}
