@@ -6,7 +6,7 @@
 {/if}
 </form>
 <div id="nyilvanos_lista_info">
-    <span>A Nyilvános kérdőívek segítenek a piackutatásban és közvélemény kutatásban. A keresett kérdőív és eredménye követhetővé válik annak a bejelentkezett felhasználónak aki kitölti azt korrekt módon.</span>
+    <span>{$lang["A Nyilvános kérdőívek segítenek a piackutatásban és közvélemény kutatásban. A keresett kérdőív és eredménye követhetővé válik annak a bejelentkezett felhasználónak aki kitölti azt korrekt módon."]}</span>
 </div>
 <br />
 <div id="nyilvanos_lista">
@@ -22,7 +22,7 @@
         {$objektum->leiras}
     </p>    
     <table>
-        <tr><th>Létrehozó: </th><th>Dátum: </th><th>Kitöltők száma: </th><th>Követők száma: </th><th></th></tr>    
+        <tr><th>{$lang["Létrehozó"]}: </th><th>{$lang["Dátum"]}: </th><th>{$lang["Kitöltők száma"]}: </th><th>{$lang["Követők száma"]}: </th><th></th></tr>    
         <tr><th>{$objektum->keszito}</th><th>{$objektum->aktivalas_datuma}</th><th>{$objektum->kitoltok_szama}</th><th>{$objektum->kovetok_szama}</th><th></th></tr>    
     </table>
 {if $objektum->ajandek == '1'}

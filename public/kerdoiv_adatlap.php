@@ -58,7 +58,8 @@ $activated_date = '<td>Az aktiválás dátuma:</td><td>'.$kerdoiv_aktivalas.'</t
 
 //lejárat dátuma
 if (!$kerdoiv_lejarat){ $kerdoiv_lejarat = 'határozatlan';}
-$expire_date = '<tr><td>Az előfizetés lejárati dátuma:</td><td>korlátlan</td></tr><tr><td>Kérdőív lejárati dátuma:</td><td>'.$kerdoiv_lejarat.'</td></tr>';
+$expire_date = '<tr><td>Kérdőív lejárati dátuma:</td><td>'.$kerdoiv_lejarat.'</td></tr>'
+        .'<tr><td>Az előfizetés lejárati dátuma:</td><td>korlátlan</td></tr>';
 
 //nyilvánosság
 if ($kerdoiv_nyilvanos == '0'){ $nyilvanos = 'nem';}
