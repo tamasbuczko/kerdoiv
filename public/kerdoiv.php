@@ -8,14 +8,17 @@ if ($_REQUEST[pub] == '2'){
 }
 
 if (!is_numeric($_REQUEST[kerdoiv])){
-   $result = mysql_query ("SELECT sorszam, user_id, hirdetessel FROM kerdoivek WHERE status = '1' AND hivatkozas = '$_REQUEST[kerdoiv]' ");
+   $result = mysql_query ("SELECT sorszam, user_id, hirdetessel, hu, en, de FROM kerdoivek WHERE status = '1' AND hivatkozas = '$_REQUEST[kerdoiv]' ");
 } else {
-   $result = mysql_query ("SELECT sorszam, user_id, hirdetessel FROM kerdoivek WHERE status = '1' AND sorszam = '$_REQUEST[kerdoiv]' ");
+   $result = mysql_query ("SELECT sorszam, user_id, hirdetessel, hu, en, de FROM kerdoivek WHERE status = '1' AND sorszam = '$_REQUEST[kerdoiv]' ");
 }
    $a = mysql_fetch_array($result);
    if ($a[0]){
     $_REQUEST[kerdoiv] = $a[0];
-   } 
+   }
+   
+   $kerdoiv_nyelv_bekapcs = $a[$_SESSION[lang]];  //1 az értéke, ha az aktuális nyelven be van kapcsolva a kérdőív
+   
    
    $kerdoiv_hirdetessel = $a[2];
 
@@ -42,9 +45,11 @@ if ($jogosult){
    $kerdes_darab = 0;
    $figyelmeztetes = 0;
 
+   
+   if ($kerdoiv_nyelv_bekapcs == '1'){
    require_once('public/kerdoiv_generator.php');
-
    require_once('public/kerdoiv_figyelmeztetesek.php');
+   }
 
    if (($_REQUEST[submit]) AND ($hiba == '0')){
 	   $mentes_gomb = '<div id="mentes_gomb">'.$lang[mentes].'</div>';
