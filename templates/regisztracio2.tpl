@@ -1,3 +1,22 @@
+<form action="" name="register" method="post" class="login">
+   <h2>{$lang['Csomag váltás']}</h2>
+   <br style="clear: both;" />
+   <label>{$lang['Csomag lejárati határideje']}:</label><input type="text" name="lejarat" readonly="readonly" value="{$lang['korlátlan']}" />
+   <br style="clear: both;" />
+   <br style="clear: both;" />    
+   <label>{$lang['Jelenlegi csomag']}:</label><br style="clear: both;" />          
+    <div>
+        <input type="radio" name="csomag_mod" value="1" {if $user->jog == '1'}checked="checked"{/if}><label>{$lang['ingyenes']}</label>
+    </div>
+    <div>
+        <input type="radio" name="csomag_mod" value="2" {if $user->jog == '2'}checked="checked"{/if}><label>{$lang['ezüst csomag']}</label>
+    </div>
+    <div>
+        <input type="radio" name="csomag_mod" value="3" {if $user->jog == '3'}checked="checked"{/if}><label>{$lang['arany csomag']}</label>
+    </div>
+    <input type="submit" name="submit" value="{$lang['Elküldés']}"/>
+</form>
+
 <table class="csomagok">
     <tr><th>{$lang['csomagok']}</th><th>{$lang['ingyenes']}</th><th>{$lang['ezüst']}</th><th>{$lang['arany']}</th></tr>
     <tr><td>{$lang['Havidíj']}</td><td>{$lang['ingyenes']}</td><td>{$lang['2.000 Ft']}</td><td>{$lang['6.000 Ft']}</td></tr>

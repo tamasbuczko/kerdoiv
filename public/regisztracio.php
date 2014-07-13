@@ -1,5 +1,11 @@
 <?php
 
+if ($_REQUEST[submit]){
+   $query = mysql_query("UPDATE users SET authority='$_REQUEST[csomag_mod]' WHERE id = '$_SESSION[qa_user_id]'");
+   mysql_query($query);
+   $user->jog = $_REQUEST[csomag_mod]; //tesztidő után törölni
+}
+
 $hiba= 0;
 //új regisztrált rögzítése
 if ($_REQUEST[send]){
@@ -106,6 +112,7 @@ $oldal = new html_blokk;
 $smarty->assign('lang', $lang);
 $smarty->assign('tartalom', $tartalom);
 $smarty->assign('figy_uzenet', $figy_uzenet);
+$smarty->assign('user', $user);
 
 if ($_SESSION["sessfelhasznalo"]){
     $tartalom = $smarty->fetch('templates/regisztracio2.tpl');
