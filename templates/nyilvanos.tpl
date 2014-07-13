@@ -1,6 +1,7 @@
-<form name="keres" method="post" action="?p=nyilvanos" />
+<form action="?p=nyilvanos" name="keres" method="get" />
    <label>{$lang["Keresés"]}:</label><input name="keres" type="text" value="{$keres}" />
    <input name="submit" type="submit" value="{$lang["Keresés"]}" />
+   <input type="hidden" name="p" value="nyilvanos" />
 {if $smarty.request.keres}
    {$talalatszam}
 {/if}

@@ -3,7 +3,7 @@ if ($_REQUEST[kerdoiv]){
    $result = mysql_query ("SELECT sorszam, status, nyilvanos, user_id FROM kerdoivek WHERE sorszam = '$_REQUEST[kerdoiv]' ");
    $a = mysql_fetch_array($result);
 } else {
-   $a[user_id] = $_SESSION[qa_user_id];
+   $a[user_id] = $_SESSION[qa_user_id]; //???
 }
 
 //be van-e lépve user és szerkeszteni akar
@@ -50,5 +50,15 @@ if (($_SESSION[qa_user_id])AND($_REQUEST[p]=='ujkerdoiv')){
 if (($_SESSION[qa_user_id])AND($_REQUEST[p]=='kerdoiv_adatlap')){
    if ($_SESSION[qa_user_id] == $a[user_id]){
 	  $jogosult = 1;
+   }
+}
+
+if (($_REQUEST[kerdoiv]) AND ($_REQUEST[p] == 'eredmeny')){
+   $result = mysql_query ("SELECT sorszam, status, nyilvanos, user_id FROM kerdoivek WHERE sorszam = '$_REQUEST[kerdoiv]' ");
+   $a = mysql_fetch_array($result);
+   if (($a[user_id] != $_SESSION['qa_user_id']) AND ($a[nyilvanos] == '0')){
+       unset($jogosult);
+       // utólagos nyilvános kikapcsnál a listában megjelenik, de nem tudja megnézni
+       // és csak azok lássák, akik kitöltötték
    }
 }

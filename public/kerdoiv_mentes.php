@@ -1,4 +1,6 @@
 <?php
+    
+
    $foglalkozas = rtrim($foglalkozas);
    $foglalkozas = ltrim($foglalkozas);
    $sql = "INSERT INTO kitoltok (email, neme, eletkora, lakhely, foglalkozas, nyelv, vegzettseg, jovedelem, csaladiallapot) 
