@@ -974,7 +974,7 @@ CREATE TABLE `log` (
   `host` varchar(150) CHARACTER SET latin2 COLLATE latin2_hungarian_ci DEFAULT NULL,
   `ip` varchar(30) DEFAULT NULL,
   PRIMARY KEY (`sorszam`)
-) ENGINE=InnoDB AUTO_INCREMENT=14268 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=14437 DEFAULT CHARSET=latin1;
 
 INSERT INTO log VALUES("1","2014-04-11 21:11:35","0","/kerdoiv/","Futás indul...","Mozilla/5.0 (Windows NT 6.0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/34.0.1847.116 Safari/537.36","","::1");
 INSERT INTO log VALUES("2","2014-04-12 09:17:09","0","/kerdoiv/?db_load=on","Futás indul...","Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/29.0.1547.76 Safari/537.36","","127.0.0.1");
@@ -15243,6 +15243,175 @@ INSERT INTO log VALUES("14264","2014-07-13 21:51:40","0","/index.php","Futás in
 INSERT INTO log VALUES("14265","2014-07-13 21:51:54","0","/index.php?","Futás indul...","Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/35.0.1916.153 Safari/537.36","","79.121.65.167");
 INSERT INTO log VALUES("14266","2014-07-13 21:53:15","0","/?db_save=1","Futás indul...","Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/35.0.1916.153 Safari/537.36","","79.121.65.167");
 INSERT INTO log VALUES("14267","2014-07-13 22:10:38","0","/","Futás indul...","Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/35.0.1916.153 Safari/537.36","","79.121.65.167");
+INSERT INTO log VALUES("14268","2014-07-13 22:10:45","0","/?db_save=1","Futás indul...","Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/35.0.1916.153 Safari/537.36","","79.121.65.167");
+INSERT INTO log VALUES("14269","2014-07-13 22:11:37","0","/","Futás indul...","Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/35.0.1916.153 Safari/537.36","","79.121.65.167");
+INSERT INTO log VALUES("14270","2014-07-13 22:20:22","0","/","Futás indul...","Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/35.0.1916.153 Safari/537.36","","79.121.65.167");
+INSERT INTO log VALUES("14271","2014-07-13 22:20:32","0","/?","Futás indul...","Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/35.0.1916.153 Safari/537.36","","79.121.65.167");
+INSERT INTO log VALUES("14272","2014-07-14 09:18:18","0","/?","Futás indul...","Mozilla/5.0 (Windows NT 6.0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/35.0.1916.153 Safari/537.36","","94.21.64.236");
+INSERT INTO log VALUES("14273","2014-07-14 09:18:19","0","/?","Futás indul...","Mozilla/5.0 (Windows NT 6.0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/35.0.1916.153 Safari/537.36","","94.21.64.236");
+INSERT INTO log VALUES("14274","2014-07-14 09:18:27","0","/?p=kerdoiv&kerdoiv=17","Futás indul...","Mozilla/5.0 (Windows NT 6.0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/35.0.1916.153 Safari/537.36","","94.21.64.236");
+INSERT INTO log VALUES("14275","2014-07-14 09:18:33","0","/?p=kerdoiv&kerdoiv=17&pub=1","Futás indul...","Mozilla/5.0 (Windows NT 6.0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/35.0.1916.153 Safari/537.36","","94.21.64.236");
+INSERT INTO log VALUES("14276","2014-07-14 09:19:38","0","/?p=kerdoiv&kerdoiv=15&pub=1","Futás indul...","Mozilla/5.0 (Windows NT 6.0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/35.0.1916.153 Safari/537.36","","94.21.64.236");
+INSERT INTO log VALUES("14277","2014-07-14 09:20:07","0","/?p=kerdoiv&kerdoiv=14&pub=1","Futás indul...","Mozilla/5.0 (Windows NT 6.0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/35.0.1916.153 Safari/537.36","","94.21.64.236");
+INSERT INTO log VALUES("14278","2014-07-14 09:20:10","0","/?p=kerdoiv&kerdoiv=13&pub=1","Futás indul...","Mozilla/5.0 (Windows NT 6.0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/35.0.1916.153 Safari/537.36","","94.21.64.236");
+INSERT INTO log VALUES("14279","2014-07-14 09:20:10","0","/?p=kerdoiv&kerdoiv=14&pub=1","Futás indul...","Mediapartners-Google","","66.249.92.253");
+INSERT INTO log VALUES("14280","2014-07-14 09:20:13","0","/?p=kerdoiv&kerdoiv=12&pub=1","Futás indul...","Mozilla/5.0 (Windows NT 6.0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/35.0.1916.153 Safari/537.36","","94.21.64.236");
+INSERT INTO log VALUES("14281","2014-07-14 09:20:15","0","/?p=kerdoiv&kerdoiv=12&pub=1","Futás indul...","Mediapartners-Google","","66.249.92.34");
+INSERT INTO log VALUES("14282","2014-07-14 09:20:17","0","/?p=kerdoiv&kerdoiv=11&pub=1","Futás indul...","Mozilla/5.0 (Windows NT 6.0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/35.0.1916.153 Safari/537.36","","94.21.64.236");
+INSERT INTO log VALUES("14283","2014-07-14 09:27:23","0","/","Futás indul...","Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/29.0.1547.76 Safari/537.36","","91.82.203.178");
+INSERT INTO log VALUES("14284","2014-07-14 09:27:35","0","/?p=nyilvanos","Futás indul...","Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/29.0.1547.76 Safari/537.36","","91.82.203.178");
+INSERT INTO log VALUES("14285","2014-07-14 09:30:40","0","/?p=nyilvanos","Futás indul...","Livelapbot/0.1","","37.187.178.116");
+INSERT INTO log VALUES("14286","2014-07-14 09:30:41","0","/?p=nyilvanos","Futás indul...","Twitterbot/1.0","","199.16.156.124");
+INSERT INTO log VALUES("14287","2014-07-14 09:30:41","0","/?p=nyilvanos","Futás indul...","Twitterbot/1.0","","199.16.156.126");
+INSERT INTO log VALUES("14288","2014-07-14 09:30:41","0","/?p=nyilvanos","Futás indul...","Livelapbot/0.1","","37.187.178.116");
+INSERT INTO log VALUES("14289","2014-07-14 09:30:41","0","/?p=nyilvanos","Futás indul...","Mozilla/5.0 ()","","74.112.131.241");
+INSERT INTO log VALUES("14290","2014-07-14 09:30:41","0","/?p=nyilvanos","Futás indul...","Mozilla/5.0 (compatible; Yahoo! Slurp; http://help.yahoo.com/help/us/ysearch/slurp)","","74.6.254.119");
+INSERT INTO log VALUES("14291","2014-07-14 09:30:42","0","/?p=nyilvanos","Futás indul...","Mozilla/5.0 (compatible; Yahoo! Slurp; http://help.yahoo.com/help/us/ysearch/slurp)","","74.6.254.119");
+INSERT INTO log VALUES("14292","2014-07-14 09:30:42","0","/?p=nyilvanos","Futás indul...","Google-HTTP-Java-Client/1.17.0-rc (gzip)","","184.169.203.101");
+INSERT INTO log VALUES("14293","2014-07-14 09:30:42","0","/?p=nyilvanos","Futás indul...","Google-HTTP-Java-Client/1.17.0-rc (gzip)","","184.169.203.101");
+INSERT INTO log VALUES("14294","2014-07-14 09:30:43","0","/?p=nyilvanos","Futás indul...","Google-HTTP-Java-Client/1.17.0-rc (gzip)","","184.169.203.101");
+INSERT INTO log VALUES("14295","2014-07-14 09:30:43","0","/?p=nyilvanos","Futás indul...","Google-HTTP-Java-Client/1.17.0-rc (gzip)","","184.169.203.101");
+INSERT INTO log VALUES("14296","2014-07-14 09:30:43","0","/?p=nyilvanos","Futás indul...","Mozilla/5.0 ()","","74.112.131.242");
+INSERT INTO log VALUES("14297","2014-07-14 09:30:43","0","/?p=nyilvanos","Futás indul...","Mozilla/5.0 (compatible; Yahoo! Slurp; http://help.yahoo.com/help/us/ysearch/slurp)","","74.6.254.119");
+INSERT INTO log VALUES("14298","2014-07-14 09:30:46","0","/?p=nyilvanos","Futás indul...","Mozilla/5.0 (compatible; Yahoo! Slurp; http://help.yahoo.com/help/us/ysearch/slurp)","","74.6.254.119");
+INSERT INTO log VALUES("14299","2014-07-14 09:30:49","0","/?p=nyilvanos","Futás indul...","Mozilla/5.0 ()","","74.112.131.243");
+INSERT INTO log VALUES("14300","2014-07-14 09:30:50","0","/?p=nyilvanos","Futás indul...","Mozilla/5.0 (compatible; MSIE 10.0; Windows NT 6.1; Trident/6.0)","","65.52.244.38");
+INSERT INTO log VALUES("14301","2014-07-14 09:30:50","0","/?p=nyilvanos","Futás indul...","Mozilla/5.0 (compatible; Yahoo! Slurp; http://help.yahoo.com/help/us/ysearch/slurp)","","74.6.254.119");
+INSERT INTO log VALUES("14302","2014-07-14 09:30:53","0","/?p=nyilvanos","Futás indul...","kraken/0.6.0","","54.196.27.117");
+INSERT INTO log VALUES("14303","2014-07-14 09:30:53","0","/?p=nyilvanos","Futás indul...","kraken/0.6.0","","54.204.195.63");
+INSERT INTO log VALUES("14304","2014-07-14 09:30:59","0","/?p=nyilvanos","Futás indul...","Mozilla/5.0 (compatible; Yahoo! Slurp; http://help.yahoo.com/help/us/ysearch/slurp)","","74.6.254.119");
+INSERT INTO log VALUES("14305","2014-07-14 09:32:20","0","/?p=nyilvanos","Futás indul...","Mozilla/5.0 (compatible; Kraken/0.1; http://linkfluence.net/; bot@linkfluence.net)","","94.23.27.155");
+INSERT INTO log VALUES("14306","2014-07-14 09:32:57","0","/?p=nyilvanos","Futás indul...","Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/29.0.1547.76 Safari/537.36","","91.82.203.178");
+INSERT INTO log VALUES("14307","2014-07-14 09:35:25","0","/","Futás indul...","Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/29.0.1547.76 Safari/537.36","","91.82.203.178");
+INSERT INTO log VALUES("14308","2014-07-14 09:35:27","0","/?p=kerdoiv&kerdoiv=7","Futás indul...","Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/29.0.1547.76 Safari/537.36","","91.82.203.178");
+INSERT INTO log VALUES("14309","2014-07-14 09:37:43","0","/?p=nyilvanos","Futás indul...","Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/29.0.1547.76 Safari/537.36","","91.82.203.178");
+INSERT INTO log VALUES("14310","2014-07-14 09:37:45","0","/?","Futás indul...","Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/29.0.1547.76 Safari/537.36","","91.82.203.178");
+INSERT INTO log VALUES("14311","2014-07-14 09:37:48","0","/?p=kerdoiv&kerdoiv=7","Futás indul...","Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/29.0.1547.76 Safari/537.36","","91.82.203.178");
+INSERT INTO log VALUES("14312","2014-07-14 09:46:43","0","/?p=kerdoiv&kerdoiv=11&pub=1","Futás indul...","Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/35.0.1916.153 Safari/537.36","","85.238.91.82");
+INSERT INTO log VALUES("14313","2014-07-14 09:47:02","0","/?p=kerdoiv&kerdoiv=17&pub=1","Futás indul...","Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/35.0.1916.153 Safari/537.36","","85.238.91.82");
+INSERT INTO log VALUES("14314","2014-07-14 09:47:07","0","/?p=kerdoiv&kerdoiv=15&pub=1","Futás indul...","Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/35.0.1916.153 Safari/537.36","","85.238.91.82");
+INSERT INTO log VALUES("14315","2014-07-14 09:57:43","0","/?p=nyilvanos","Futás indul...","Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/29.0.1547.76 Safari/537.36","","91.82.203.178");
+INSERT INTO log VALUES("14316","2014-07-14 10:05:01","0","/","Futás indul...","Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/29.0.1547.76 Safari/537.36","","91.82.203.178");
+INSERT INTO log VALUES("14317","2014-07-14 10:05:08","0","/?p=nyilvanos","Futás indul...","Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/29.0.1547.76 Safari/537.36","","91.82.203.178");
+INSERT INTO log VALUES("14318","2014-07-14 10:22:36","0","/?","Futás indul...","Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/29.0.1547.76 Safari/537.36","","91.82.203.178");
+INSERT INTO log VALUES("14319","2014-07-14 10:26:52","0","/?p=kerdoiv&kerdoiv=11","Futás indul...","Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)","","66.249.78.160");
+INSERT INTO log VALUES("14320","2014-07-14 10:47:13","0","/?p=nyilvanos","Futás indul...","Mozilla/5.0 (compatible; Yahoo! Slurp; http://help.yahoo.com/help/us/ysearch/slurp)","","74.6.254.119");
+INSERT INTO log VALUES("14321","2014-07-14 11:38:23","0","/?p=kerdoiv&kerdoiv=17","Futás indul...","Opera/9.80 (Android; Opera Mini/7.5.35613/35.3312; U; hu) Presto/2.8.119 Version/11.10","","82.145.211.75");
+INSERT INTO log VALUES("14322","2014-07-14 11:38:51","0","/?p=kerdoiv&kerdoiv=17","Futás indul...","Opera/9.80 (Android; Opera Mini/7.5.35613/35.3312; U; hu) Presto/2.8.119 Version/11.10","","82.145.211.75");
+INSERT INTO log VALUES("14323","2014-07-14 12:24:33","0","/?p=regisztracio","Futás indul...","Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)","","66.249.78.160");
+INSERT INTO log VALUES("14324","2014-07-14 12:42:28","0","/?p=kerdoiv&kerdoiv=16","Futás indul...","Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)","","66.249.78.160");
+INSERT INTO log VALUES("14325","2014-07-14 12:44:12","0","/?p=nyilvanos","Futás indul...","Mozilla/5.0 (compatible; Yahoo! Slurp; http://help.yahoo.com/help/us/ysearch/slurp)","","74.6.254.119");
+INSERT INTO log VALUES("14326","2014-07-14 13:36:38","0","/","Futás indul...","Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/29.0.1547.76 Safari/537.36","","91.82.203.178");
+INSERT INTO log VALUES("14327","2014-07-14 13:36:42","0","/?p=nyilvanos","Futás indul...","Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/29.0.1547.76 Safari/537.36","","91.82.203.178");
+INSERT INTO log VALUES("14328","2014-07-14 13:37:50","0","/","Futás indul...","Mozilla/4.0 (compatible; MSIE 8.0; Windows NT 5.1; Trident/4.0; BTRS100021; SIMBAR={D5FBBC25-C983-45D3-8152-CF144D93BEEB}; .NET CLR 2.0.50727; .NET CL","","91.82.203.178");
+INSERT INTO log VALUES("14329","2014-07-14 13:39:28","0","/?p=nyilvanos","Futás indul...","Mozilla/4.0 (compatible; MSIE 8.0; Windows NT 5.1; Trident/4.0; BTRS100021; SIMBAR={D5FBBC25-C983-45D3-8152-CF144D93BEEB}; .NET CLR 2.0.50727; .NET CL","","91.82.203.178");
+INSERT INTO log VALUES("14330","2014-07-14 13:40:59","0","/?","Futás indul...","Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/29.0.1547.76 Safari/537.36","","91.82.203.178");
+INSERT INTO log VALUES("14331","2014-07-14 13:47:04","0","/?p=nyilvanos","Futás indul...","Mozilla/5.0 (compatible; Yahoo! Slurp; http://help.yahoo.com/help/us/ysearch/slurp)","","74.6.254.119");
+INSERT INTO log VALUES("14332","2014-07-14 14:34:45","0","/?p=kerdoiv&kerdoiv=17","Futás indul...","Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)","","66.249.64.238");
+INSERT INTO log VALUES("14333","2014-07-14 16:30:04","0","/?p=nyilvanos","Futás indul...","Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)","","66.249.64.28");
+INSERT INTO log VALUES("14334","2014-07-14 18:23:53","0","/?p=kerdoiv&kerdoiv=18","Futás indul...","Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)","","66.249.64.238");
+INSERT INTO log VALUES("14335","2014-07-14 18:41:46","0","/","Futás indul...","Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/35.0.1916.153 Safari/537.36","","79.121.65.167");
+INSERT INTO log VALUES("14336","2014-07-14 18:45:11","0","/","Futás indul...","Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/35.0.1916.153 Safari/537.36","","79.121.65.167");
+INSERT INTO log VALUES("14337","2014-07-14 18:45:14","0","/?p=nyilvanos","Futás indul...","Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/35.0.1916.153 Safari/537.36","","79.121.65.167");
+INSERT INTO log VALUES("14338","2014-07-14 18:45:23","0","/?","Futás indul...","Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/35.0.1916.153 Safari/537.36","","79.121.65.167");
+INSERT INTO log VALUES("14339","2014-07-14 18:45:41","0","/?","Futás indul...","Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/35.0.1916.153 Safari/537.36","","79.121.65.167");
+INSERT INTO log VALUES("14340","2014-07-14 19:23:19","0","/","Futás indul...","Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/35.0.1916.153 Safari/537.36","","79.121.65.167");
+INSERT INTO log VALUES("14341","2014-07-14 19:49:21","0","/","Futás indul...","Mozilla/5.0 (Windows NT 6.1; rv:6.0) Gecko/20110814 Firefox/6.0 Google favicon","","66.249.81.90");
+INSERT INTO log VALUES("14342","2014-07-14 20:41:11","0","/?p=kerdoiv&kerdoiv=17","Futás indul...","Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)","","66.249.64.243");
+INSERT INTO log VALUES("14343","2014-07-14 22:50:07","0","/","Futás indul...","wsr-agent/1.0","","173.255.248.62");
+INSERT INTO log VALUES("14344","2014-07-15 04:04:49","0","/?p=kerdoiv&kerdoiv=17","Futás indul...","Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)","","66.249.64.243");
+INSERT INTO log VALUES("14345","2014-07-15 04:24:17","0","/?p=nyilvanos","Futás indul...","Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)","","66.249.64.28");
+INSERT INTO log VALUES("14346","2014-07-15 05:34:02","0","/?p=kerdoiv&kerdoiv=6","Futás indul...","Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)","","66.249.64.238");
+INSERT INTO log VALUES("14347","2014-07-15 06:20:57","0","/?p=1","Futás indul...","Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)","","66.249.64.28");
+INSERT INTO log VALUES("14348","2014-07-15 07:38:52","0","/","Futás indul...","Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/29.0.1547.76 Safari/537.36","","91.82.203.178");
+INSERT INTO log VALUES("14349","2014-07-15 07:38:56","0","/?p=nyilvanos","Futás indul...","Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/29.0.1547.76 Safari/537.36","","91.82.203.178");
+INSERT INTO log VALUES("14350","2014-07-15 07:41:24","0","/?p=nyilvanos","Futás indul...","Twitterbot/1.0","","199.16.156.125");
+INSERT INTO log VALUES("14351","2014-07-15 07:41:24","0","/?p=nyilvanos","Futás indul...","Twitterbot/1.0","","199.16.156.125");
+INSERT INTO log VALUES("14352","2014-07-15 07:41:24","0","/?p=nyilvanos","Futás indul...","Mozilla/5.0 (compatible; TweetmemeBot/3.0; +http://tweetmeme.com/)","","185.20.4.198");
+INSERT INTO log VALUES("14353","2014-07-15 07:41:25","0","/?p=nyilvanos","Futás indul...","Mozilla/5.0 (compatible; MSIE 10.0; Windows NT 6.1; Trident/6.0)","","65.52.244.38");
+INSERT INTO log VALUES("14354","2014-07-15 07:41:25","0","/?p=nyilvanos","Futás indul...","Livelapbot/0.1","","37.187.247.232");
+INSERT INTO log VALUES("14355","2014-07-15 07:41:26","0","/?p=nyilvanos","Futás indul...","Google-HTTP-Java-Client/1.17.0-rc (gzip)","","184.169.203.101");
+INSERT INTO log VALUES("14356","2014-07-15 07:41:26","0","/?p=nyilvanos","Futás indul...","Google-HTTP-Java-Client/1.17.0-rc (gzip)","","184.169.203.101");
+INSERT INTO log VALUES("14357","2014-07-15 07:41:26","0","/?p=nyilvanos","Futás indul...","Mozilla/5.0 ()","","74.112.131.244");
+INSERT INTO log VALUES("14358","2014-07-15 07:41:36","0","/?p=nyilvanos","Futás indul...","Mozilla/5.0 ()","","74.112.131.246");
+INSERT INTO log VALUES("14359","2014-07-15 08:47:42","0","/?p=kerdoiv&kerdoiv=15","Futás indul...","Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)","","66.249.64.28");
+INSERT INTO log VALUES("14360","2014-07-15 09:46:42","0","/","Futás indul...","Mozilla/5.0 (compatible; YandexBot/3.0; +http://yandex.com/bots)","","95.108.158.244");
+INSERT INTO log VALUES("14361","2014-07-15 09:46:52","0","/","Futás indul...","Mozilla/5.0 (compatible; YandexBot/3.0; +http://yandex.com/bots)","","95.108.158.244");
+INSERT INTO log VALUES("14362","2014-07-15 10:45:50","0","/?p=kerdoiv&kerdoiv=11","Futás indul...","Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)","","66.249.64.238");
+INSERT INTO log VALUES("14363","2014-07-15 11:40:21","0","/","Futás indul...","Mozilla/5.0 (Windows; U; Windows NT 5.1; en; rv:1.9.0.13) Gecko/2009073022 Firefox/3.5.2 (.NET CLR 3.5.30729) SurveyBot/2.3 (DomainTools)","","64.246.165.200");
+INSERT INTO log VALUES("14364","2014-07-15 13:22:20","0","/?p=elfelejtett","Futás indul...","Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)","","66.249.64.28");
+INSERT INTO log VALUES("14365","2014-07-15 15:43:51","0","/","Futás indul...","Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/35.0.1916.153 Safari/537.36","","79.121.65.167");
+INSERT INTO log VALUES("14366","2014-07-15 15:44:04","0","/","Futás indul...","Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/36.0.1985.103 Safari/537.36 OPR/23.0.1522.43 (Edition Next)","","92.249.230.81");
+INSERT INTO log VALUES("14367","2014-07-15 15:45:15","0","/?p=kerdoiv&kerdoiv=7","Futás indul...","Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/36.0.1985.103 Safari/537.36 OPR/23.0.1522.43 (Edition Next)","","92.249.230.81");
+INSERT INTO log VALUES("14368","2014-07-15 15:45:18","0","/","Futás indul...","Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/36.0.1985.103 Safari/537.36 OPR/23.0.1522.43 (Edition Next)","","92.249.230.81");
+INSERT INTO log VALUES("14369","2014-07-15 15:45:40","0","/?p=kerdoiv&kerdoiv=7","Futás indul...","Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/36.0.1985.103 Safari/537.36 OPR/23.0.1522.43 (Edition Next)","","92.249.230.81");
+INSERT INTO log VALUES("14370","2014-07-15 15:45:46","0","/","Futás indul...","Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/36.0.1985.103 Safari/537.36 OPR/23.0.1522.43 (Edition Next)","","92.249.230.81");
+INSERT INTO log VALUES("14371","2014-07-15 15:45:50","0","/?p=kerdoiv&kerdoiv=18","Futás indul...","Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/36.0.1985.103 Safari/537.36 OPR/23.0.1522.43 (Edition Next)","","92.249.230.81");
+INSERT INTO log VALUES("14372","2014-07-15 15:45:52","0","/","Futás indul...","Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/36.0.1985.103 Safari/537.36 OPR/23.0.1522.43 (Edition Next)","","92.249.230.81");
+INSERT INTO log VALUES("14373","2014-07-15 15:45:54","0","/?p=kerdoiv&kerdoiv=17","Futás indul...","Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/36.0.1985.103 Safari/537.36 OPR/23.0.1522.43 (Edition Next)","","92.249.230.81");
+INSERT INTO log VALUES("14374","2014-07-15 15:46:41","0","/?","Futás indul...","Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/36.0.1985.103 Safari/537.36 OPR/23.0.1522.43 (Edition Next)","","92.249.230.81");
+INSERT INTO log VALUES("14375","2014-07-15 15:46:50","0","/?","Futás indul...","Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/36.0.1985.103 Safari/537.36 OPR/23.0.1522.43 (Edition Next)","","92.249.230.81");
+INSERT INTO log VALUES("14376","2014-07-15 15:47:11","0","/?p=5","Futás indul...","Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/36.0.1985.103 Safari/537.36 OPR/23.0.1522.43 (Edition Next)","","92.249.230.81");
+INSERT INTO log VALUES("14377","2014-07-15 15:48:48","0","/?p=5","Futás indul...","Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/36.0.1985.103 Safari/537.36 OPR/23.0.1522.43 (Edition Next)","","92.249.230.81");
+INSERT INTO log VALUES("14378","2014-07-15 15:49:10","0","/?p=5","Futás indul...","Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/36.0.1985.103 Safari/537.36 OPR/23.0.1522.43 (Edition Next)","","92.249.230.81");
+INSERT INTO log VALUES("14379","2014-07-15 15:49:17","0","/?p=5","Futás indul...","Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/36.0.1985.103 Safari/537.36 OPR/23.0.1522.43 (Edition Next)","","92.249.230.81");
+INSERT INTO log VALUES("14380","2014-07-15 15:49:23","0","/?p=5","Futás indul...","Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/36.0.1985.103 Safari/537.36 OPR/23.0.1522.43 (Edition Next)","","92.249.230.81");
+INSERT INTO log VALUES("14381","2014-07-15 15:49:24","0","/?p=6","Futás indul...","Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/36.0.1985.103 Safari/537.36 OPR/23.0.1522.43 (Edition Next)","","92.249.230.81");
+INSERT INTO log VALUES("14382","2014-07-15 15:49:27","0","/?p=1","Futás indul...","Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/36.0.1985.103 Safari/537.36 OPR/23.0.1522.43 (Edition Next)","","92.249.230.81");
+INSERT INTO log VALUES("14383","2014-07-15 15:49:31","0","/?p=5","Futás indul...","Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/36.0.1985.103 Safari/537.36 OPR/23.0.1522.43 (Edition Next)","","92.249.230.81");
+INSERT INTO log VALUES("14384","2014-07-15 15:49:36","0","/?p=6","Futás indul...","Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/36.0.1985.103 Safari/537.36 OPR/23.0.1522.43 (Edition Next)","","92.249.230.81");
+INSERT INTO log VALUES("14385","2014-07-15 15:49:39","0","/?lang=de&p=6","Futás indul...","Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/36.0.1985.103 Safari/537.36 OPR/23.0.1522.43 (Edition Next)","","92.249.230.81");
+INSERT INTO log VALUES("14386","2014-07-15 15:49:40","0","/?p=6","Futás indul...","Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/36.0.1985.103 Safari/537.36 OPR/23.0.1522.43 (Edition Next)","","92.249.230.81");
+INSERT INTO log VALUES("14387","2014-07-15 15:49:41","0","/?lang=en&p=6","Futás indul...","Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/36.0.1985.103 Safari/537.36 OPR/23.0.1522.43 (Edition Next)","","92.249.230.81");
+INSERT INTO log VALUES("14388","2014-07-15 15:49:41","0","/?p=6","Futás indul...","Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/36.0.1985.103 Safari/537.36 OPR/23.0.1522.43 (Edition Next)","","92.249.230.81");
+INSERT INTO log VALUES("14389","2014-07-15 15:49:43","0","/?lang=hu&p=6","Futás indul...","Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/36.0.1985.103 Safari/537.36 OPR/23.0.1522.43 (Edition Next)","","92.249.230.81");
+INSERT INTO log VALUES("14390","2014-07-15 15:49:44","0","/?p=6","Futás indul...","Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/36.0.1985.103 Safari/537.36 OPR/23.0.1522.43 (Edition Next)","","92.249.230.81");
+INSERT INTO log VALUES("14391","2014-07-15 15:49:49","0","/?p=5","Futás indul...","Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/36.0.1985.103 Safari/537.36 OPR/23.0.1522.43 (Edition Next)","","92.249.230.81");
+INSERT INTO log VALUES("14392","2014-07-15 15:49:51","0","/?","Futás indul...","Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/36.0.1985.103 Safari/537.36 OPR/23.0.1522.43 (Edition Next)","","92.249.230.81");
+INSERT INTO log VALUES("14393","2014-07-15 15:50:05","0","/","Futás indul...","Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/36.0.1985.103 Safari/537.36 OPR/23.0.1522.43 (Edition Next)","","92.249.230.81");
+INSERT INTO log VALUES("14394","2014-07-15 15:50:29","0","/?p=kerdoiv&kerdoiv=17","Futás indul...","Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/36.0.1985.103 Safari/537.36 OPR/23.0.1522.43 (Edition Next)","","92.249.230.81");
+INSERT INTO log VALUES("14395","2014-07-15 15:50:33","0","/?","Futás indul...","Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/36.0.1985.103 Safari/537.36 OPR/23.0.1522.43 (Edition Next)","","92.249.230.81");
+INSERT INTO log VALUES("14396","2014-07-15 15:51:05","0","/?lang=en&","Futás indul...","Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/36.0.1985.103 Safari/537.36 OPR/23.0.1522.43 (Edition Next)","","92.249.230.81");
+INSERT INTO log VALUES("14397","2014-07-15 15:51:06","0","/?","Futás indul...","Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/36.0.1985.103 Safari/537.36 OPR/23.0.1522.43 (Edition Next)","","92.249.230.81");
+INSERT INTO log VALUES("14398","2014-07-15 15:51:09","0","/?lang=de&","Futás indul...","Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/36.0.1985.103 Safari/537.36 OPR/23.0.1522.43 (Edition Next)","","92.249.230.81");
+INSERT INTO log VALUES("14399","2014-07-15 15:51:10","0","/?","Futás indul...","Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/36.0.1985.103 Safari/537.36 OPR/23.0.1522.43 (Edition Next)","","92.249.230.81");
+INSERT INTO log VALUES("14400","2014-07-15 15:51:11","0","/?lang=en&","Futás indul...","Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/35.0.1916.153 Safari/537.36","","79.121.65.167");
+INSERT INTO log VALUES("14401","2014-07-15 15:51:12","0","/?","Futás indul...","Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/35.0.1916.153 Safari/537.36","","79.121.65.167");
+INSERT INTO log VALUES("14402","2014-07-15 15:51:13","0","/?p=6","Futás indul...","Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/36.0.1985.103 Safari/537.36 OPR/23.0.1522.43 (Edition Next)","","92.249.230.81");
+INSERT INTO log VALUES("14403","2014-07-15 15:51:15","0","/?p=5","Futás indul...","Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/36.0.1985.103 Safari/537.36 OPR/23.0.1522.43 (Edition Next)","","92.249.230.81");
+INSERT INTO log VALUES("14404","2014-07-15 15:51:18","0","/?lang=en&p=5","Futás indul...","Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/36.0.1985.103 Safari/537.36 OPR/23.0.1522.43 (Edition Next)","","92.249.230.81");
+INSERT INTO log VALUES("14405","2014-07-15 15:51:18","0","/?lang=hu&","Futás indul...","Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/35.0.1916.153 Safari/537.36","","79.121.65.167");
+INSERT INTO log VALUES("14406","2014-07-15 15:51:19","0","/?p=5","Futás indul...","Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/36.0.1985.103 Safari/537.36 OPR/23.0.1522.43 (Edition Next)","","92.249.230.81");
+INSERT INTO log VALUES("14407","2014-07-15 15:51:19","0","/?","Futás indul...","Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/35.0.1916.153 Safari/537.36","","79.121.65.167");
+INSERT INTO log VALUES("14408","2014-07-15 15:51:22","0","/?lang=de&p=5","Futás indul...","Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/36.0.1985.103 Safari/537.36 OPR/23.0.1522.43 (Edition Next)","","92.249.230.81");
+INSERT INTO log VALUES("14409","2014-07-15 15:51:22","0","/?p=5","Futás indul...","Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/36.0.1985.103 Safari/537.36 OPR/23.0.1522.43 (Edition Next)","","92.249.230.81");
+INSERT INTO log VALUES("14410","2014-07-15 15:51:22","0","/?p=5","Futás indul...","Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/35.0.1916.153 Safari/537.36","","79.121.65.167");
+INSERT INTO log VALUES("14411","2014-07-15 15:51:24","0","/?lang=en&p=5","Futás indul...","Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/36.0.1985.103 Safari/537.36 OPR/23.0.1522.43 (Edition Next)","","92.249.230.81");
+INSERT INTO log VALUES("14412","2014-07-15 15:51:25","0","/?p=5","Futás indul...","Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/36.0.1985.103 Safari/537.36 OPR/23.0.1522.43 (Edition Next)","","92.249.230.81");
+INSERT INTO log VALUES("14413","2014-07-15 15:51:25","0","/?lang=hu&p=5","Futás indul...","Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/36.0.1985.103 Safari/537.36 OPR/23.0.1522.43 (Edition Next)","","92.249.230.81");
+INSERT INTO log VALUES("14414","2014-07-15 15:51:26","0","/?p=5","Futás indul...","Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/36.0.1985.103 Safari/537.36 OPR/23.0.1522.43 (Edition Next)","","92.249.230.81");
+INSERT INTO log VALUES("14415","2014-07-15 15:51:27","0","/?","Futás indul...","Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/35.0.1916.153 Safari/537.36","","79.121.65.167");
+INSERT INTO log VALUES("14416","2014-07-15 15:51:41","0","/?p=5","Futás indul...","Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/36.0.1985.103 Safari/537.36 OPR/23.0.1522.43 (Edition Next)","","92.249.230.81");
+INSERT INTO log VALUES("14417","2014-07-15 15:51:41","0","/index.php?reg=1","Futás indul...","Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/36.0.1985.103 Safari/537.36 OPR/23.0.1522.43 (Edition Next)","","92.249.230.81");
+INSERT INTO log VALUES("14418","2014-07-15 15:52:40","0","/index.php","Futás indul...","Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/36.0.1985.103 Safari/537.36 OPR/23.0.1522.43 (Edition Next)","","92.249.230.81");
+INSERT INTO log VALUES("14419","2014-07-15 15:52:44","0","/?p=aktivalas&link=4y49tmumdy","Futás indul...","Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/36.0.1985.103 Safari/537.36 OPR/23.0.1522.43 (Edition Next)","","92.249.230.81");
+INSERT INTO log VALUES("14420","2014-07-15 15:52:51","0","/index.php","Futás indul...","Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/36.0.1985.103 Safari/537.36 OPR/23.0.1522.43 (Edition Next)","","92.249.230.81");
+INSERT INTO log VALUES("14421","2014-07-15 15:52:57","0","/index.php?p=7","Futás indul...","Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/36.0.1985.103 Safari/537.36 OPR/23.0.1522.43 (Edition Next)","","92.249.230.81");
+INSERT INTO log VALUES("14422","2014-07-15 15:53:00","0","/index.php?p=ujkerdoiv","Futás indul...","Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/36.0.1985.103 Safari/537.36 OPR/23.0.1522.43 (Edition Next)","","92.249.230.81");
+INSERT INTO log VALUES("14423","2014-07-15 15:54:41","0","/index.php","Futás indul...","Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/35.0.1916.153 Safari/537.36","","79.121.65.167");
+INSERT INTO log VALUES("14424","2014-07-15 15:55:21","0","/?p=kerdoiv&kerdoiv=7","Futás indul...","Mozilla/5.0 (iPhone; CPU iPhone OS 6_0 like Mac OS X) AppleWebKit/536.26 (KHTML, like Gecko) Version/6.0 Mobile/10A5376e Safari/8536.25 (compatible; G","","66.249.78.152");
+INSERT INTO log VALUES("14425","2014-07-15 15:55:44","0","/index.php?p=5","Futás indul...","Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/36.0.1985.103 Safari/537.36 OPR/23.0.1522.43 (Edition Next)","","92.249.230.81");
+INSERT INTO log VALUES("14426","2014-07-15 15:55:48","0","/index.php?p=6","Futás indul...","Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/36.0.1985.103 Safari/537.36 OPR/23.0.1522.43 (Edition Next)","","92.249.230.81");
+INSERT INTO log VALUES("14427","2014-07-15 16:00:10","0","/index.php?p=5","Futás indul...","Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/36.0.1985.103 Safari/537.36 OPR/23.0.1522.43 (Edition Next)","","92.249.230.81");
+INSERT INTO log VALUES("14428","2014-07-15 16:09:28","0","/?","Futás indul...","Mozilla/5.0 (Windows NT 6.0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/35.0.1916.153 Safari/537.36","","94.21.213.180");
+INSERT INTO log VALUES("14429","2014-07-15 16:09:33","0","/?db_save=on","Futás indul...","Mozilla/5.0 (Windows NT 6.0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/35.0.1916.153 Safari/537.36","","94.21.213.180");
+INSERT INTO log VALUES("14430","2014-07-15 16:16:46","0","/?db_save=on","Futás indul...","Mozilla/5.0 (Windows NT 6.0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/35.0.1916.153 Safari/537.36","","94.21.213.180");
+INSERT INTO log VALUES("14431","2014-07-15 17:24:11","0","/?db_save=on","Futás indul...","Mozilla/5.0 (Windows NT 6.0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/35.0.1916.153 Safari/537.36","","94.21.213.180");
+INSERT INTO log VALUES("14432","2014-07-15 18:07:36","0","/index.php?logout=1","Futás indul...","Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/35.0.1916.153 Safari/537.36","","79.121.65.167");
+INSERT INTO log VALUES("14433","2014-07-15 18:07:37","0","/index.php","Futás indul...","Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/35.0.1916.153 Safari/537.36","","79.121.65.167");
+INSERT INTO log VALUES("14434","2014-07-15 19:58:35","0","/?p=5","Futás indul...","Mozilla/5.0 (iPhone; CPU iPhone OS 6_0 like Mac OS X) AppleWebKit/536.26 (KHTML, like Gecko) Version/6.0 Mobile/10A5376e Safari/8536.25 (compatible; G","","66.249.78.159");
+INSERT INTO log VALUES("14435","2014-07-15 20:34:36","0","/?p=kerdoiv&kerdoiv=6","Futás indul...","Mozilla/5.0 (iPhone; CPU iPhone OS 6_0 like Mac OS X) AppleWebKit/536.26 (KHTML, like Gecko) Version/6.0 Mobile/10A5376e Safari/8536.25 (compatible; G","","66.249.78.166");
+INSERT INTO log VALUES("14436","2014-07-15 20:39:36","0","/","Futás indul...","Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/35.0.1916.153 Safari/537.36","","79.121.65.167");
 
 
 
@@ -15556,7 +15725,7 @@ CREATE TABLE `users` (
   `status` varchar(1) COLLATE utf8_unicode_ci NOT NULL DEFAULT '1',
   `aktivalo_link` varchar(10) COLLATE utf8_unicode_ci DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=19 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=20 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 INSERT INTO users VALUES("1","teszt","6c90aa3760658846a86a263a4e92630e","tamasbuczko@gmail.com","3","1","");
 INSERT INTO users VALUES("2","teszt1","fe282d20bc8dcc12647088d0fe0ca7d7","molnarzoli82@gmail.com","3","0","");
@@ -15576,6 +15745,7 @@ INSERT INTO users VALUES("15","info","758aadb10074dc883b3d61a66a8c8b6e","info@he
 INSERT INTO users VALUES("16","ceginfo","758aadb10074dc883b3d61a66a8c8b6e","ceginfo@hegesztesportal.hu","4","0","");
 INSERT INTO users VALUES("17","oemese","0bf67d5bed65d20d67487313e938eab2","oemese9@gmail.com","3","0","");
 INSERT INTO users VALUES("18","grobi81","7d5725942934f89a68325b177c5bf17e","grobi81@freemail.hu","3","0","");
+INSERT INTO users VALUES("19","Majtika","e10adc3949ba59abbe56e057f20f883e","debreczenidavid@nii.hu","1","0","");
 
 
 
@@ -24943,6 +25113,19 @@ INSERT INTO valaszok VALUES("429","21","146","ok3","","","","","3","1","1","0","
 INSERT INTO valaszok VALUES("430","21","146","","","","","","1","1","1","0","0");
 INSERT INTO valaszok VALUES("431","21","146","","","","","","4","1","1","0","0");
 INSERT INTO valaszok VALUES("432","21","146","","","","","","5","1","1","0","0");
+
+
+
+DROP TABLE zartkoru_kitoltok;
+
+CREATE TABLE `zartkoru_kitoltok` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `kerdoiv` int(11) DEFAULT NULL,
+  `email` varchar(150) DEFAULT NULL,
+  `status` varchar(1) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
 
 
 

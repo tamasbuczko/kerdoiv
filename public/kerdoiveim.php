@@ -16,7 +16,9 @@ $result = mysql_query ("SELECT k.sorszam, k.cim_hu, k.cim_en, k.cim_de, k.status
 		  LEFT JOIN kerdoiv_hozzaferes AS h ON k.sorszam = h.kerdoiv
 		  WHERE k.user_id = '$_SESSION[qa_user_id]' OR h.user = '$_SESSION[qa_user_id]' ORDER BY k.sorszam DESC");
 $db_kerdoivek = 0;
+$sorszamok = array();
 while ($next_element = mysql_fetch_array($result)){
+   if (!in_array($next_element[sorszam], $sorszamok)){ //csak akkor fut, ha nincs benne az aktuális sorszám a tömbben
    $db_kerdoivek++;
    $result2 = mysql_query("SELECT sorszam FROM valaszadasok WHERE kerdoiv_sorszam = $next_element[sorszam] GROUP BY kitolto_sorszam");
    $valaszadok_szama = mysql_num_rows($result2);
@@ -44,7 +46,7 @@ while ($next_element = mysql_fetch_array($result)){
    }
    
    if ($next_element[user] == $_SESSION[qa_user_id]){
-	  $megosztott = 'megosztott';
+	  $megosztott = '<img src="graphics/megosztott.png" alt="megosztott kérdőív" title="megosztott kérdőív" style="width: 50px; margin: 5px 0px -8px 0px;" />';
    } else {
 	  $megosztott = '';
    }
@@ -80,6 +82,8 @@ while ($next_element = mysql_fetch_array($result)){
 			. '<td>'.$valaszadok_szama.'</td>'
 			. '<td class="kis_zaszlo">'.$zaszlok.'</td>'
 			. '</tr>';
+   }
+   $sorszamok[] = $next_element[sorszam];
 }
 
 if ($db_kerdoivek == 0){
