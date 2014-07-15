@@ -36,6 +36,10 @@ function divdisp_off(id){
 }
 
 function megerosites_x(torolszam, formnev, kerdes) {
+    if (formnev == "ujadminok") {
+		var answer = confirm ("Ön az ADMINISZTRÁTOR TÖRLÉSÉT választotta.\n Biztosan törölni szeretné?");
+		if (answer) { window.location="?p=ujkerdoiv&admintorles="+torolszam+"&id="+kerdes;}
+	}
 	if (formnev == "valasz") {
 		var answer = confirm ("A VÁLASZ TÖRLÉSÉT választotta.\n Biztosan törölni szeretné?");
 		if (answer) { window.location="?p=ujkerdes&id="+kerdes+"&torles="+torolszam;}

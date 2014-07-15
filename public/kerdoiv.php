@@ -1,7 +1,7 @@
 <?php
-if ($_REQUEST[pub] == '1'){
+#if ($_REQUEST[pub] == '1'){
     $_SESSION[pub] = '1';
-}
+#}
 
 if ($_REQUEST[pub] == '2'){
     unset($_SESSION[pub]);

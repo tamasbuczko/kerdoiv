@@ -1,6 +1,8 @@
 <?php
 if ($_REQUEST[kerdoiv]){
-   $result = mysql_query ("SELECT sorszam, status, nyilvanos, user_id FROM kerdoivek WHERE sorszam = '$_REQUEST[kerdoiv]' ");
+   $result = mysql_query ("SELECT k.sorszam, k.status, k.nyilvanos, k.user_id, h.user FROM kerdoivek AS k
+						   LEFT JOIN kerdoiv_hozzaferes AS h ON k.sorszam = h.kerdoiv
+						   WHERE k.sorszam = '$_REQUEST[kerdoiv]' ");
    $a = mysql_fetch_array($result);
 } else {
    $a[user_id] = $_SESSION[qa_user_id]; //???
@@ -18,7 +20,7 @@ if ((!$_SESSION[qa_user_id])AND(!$_REQUEST[mod])){
 
 //be van-e lépve user és szerkeszteni akar
 if (($_SESSION[qa_user_id])AND($_REQUEST[mod])){
-   if ($_SESSION[qa_user_id] == $a[user_id]){
+   if (($_SESSION[qa_user_id] == $a[user_id])OR ($_SESSION[qa_user_id] == $a[user])){
 	  $jogosult = 1;
    } else {
 	  $tartalom = 'Nincs jogosultsága a kérdőív szerkesztéséhez!';
@@ -36,19 +38,19 @@ if (($_SESSION[qa_user_id])AND(!$_REQUEST[mod])AND($_REQUEST[p]!='ujkerdes')AND(
 }
 
 if (($_SESSION[qa_user_id])AND($_REQUEST[p]=='ujkerdes')){
-   if ($_SESSION[qa_user_id] == $a[user_id]){
+   if (($_SESSION[qa_user_id] == $a[user_id]) OR ($_SESSION[qa_user_id] == $a[user])){
 	  $jogosult = 1;
    }
 }
 
 if (($_SESSION[qa_user_id])AND($_REQUEST[p]=='ujkerdoiv')){
-   if ($_SESSION[qa_user_id] == $a[user_id]){
+   if (($_SESSION[qa_user_id] == $a[user_id]) OR ($_SESSION[qa_user_id] == $a[user])){
 	  $jogosult = 1;
    }
 }
 
 if (($_SESSION[qa_user_id])AND($_REQUEST[p]=='kerdoiv_adatlap')){
-   if ($_SESSION[qa_user_id] == $a[user_id]){
+   if (($_SESSION[qa_user_id] == $a[user_id]) OR ($_SESSION[qa_user_id] == $a[user])){
 	  $jogosult = 1;
    }
 }

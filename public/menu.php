@@ -12,7 +12,7 @@ $menu = $menu_obj->html_code;
 $vissza_linkx = $_SERVER['HTTP_REFERER'];
 $vissza_linkx = explode('?', $vissza_linkx);
 
-if (($_REQUEST[p] == 'kerdoiv') AND ($_SESSION[pub] == '1') AND ($_REQUEST[mod] !='1')){
+if (($_REQUEST[p] == 'kerdoiv') AND ($_SESSION[pub] == '1') AND ($_REQUEST[mod] !='1')AND ($_SESSION[qa_user_id])){
     $vissza = '<a href="?'.$vissza_linkx[1].'" class="visszax">vissza</a>';
 }
 

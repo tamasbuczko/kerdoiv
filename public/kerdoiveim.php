@@ -12,7 +12,9 @@ if ($_REQUEST[id]){
    header("Location: ?p=7");
 }
 
-$result = mysql_query ("SELECT sorszam, cim_hu, cim_en, cim_de, status FROM kerdoivek WHERE user_id = '$_SESSION[qa_user_id]' ORDER BY sorszam DESC");
+$result = mysql_query ("SELECT k.sorszam, k.cim_hu, k.cim_en, k.cim_de, k.status, h.user FROM kerdoivek AS k
+		  LEFT JOIN kerdoiv_hozzaferes AS h ON k.sorszam = h.kerdoiv
+		  WHERE k.user_id = '$_SESSION[qa_user_id]' OR h.user = '$_SESSION[qa_user_id]' ORDER BY k.sorszam DESC");
 $db_kerdoivek = 0;
 while ($next_element = mysql_fetch_array($result)){
    $db_kerdoivek++;
@@ -41,6 +43,12 @@ while ($next_element = mysql_fetch_array($result)){
 	   $zaszlo_de = '<img src="graphics/nemet_zaszlo.png" alt="'.$lang[nemet].'" />';
    }
    
+   if ($next_element[user] == $_SESSION[qa_user_id]){
+	  $megosztott = 'megosztott';
+   } else {
+	  $megosztott = '';
+   }
+   
    #if ($nyelv_db > 1){
 	  $nyelv_fejlec = '<th>'.$lang['nyelvek'].'</th>';
 	  $zaszlok = $zaszlo_en.$zaszlo_de.$zaszlo_hu;
@@ -64,7 +72,7 @@ while ($next_element = mysql_fetch_array($result)){
 	}
 	
     $lista_kerdoiveim .= '<tr>'
-			. '<td><a href="?p=kerdoiv_adatlap&kerdoiv='.$next_element[sorszam].'">'.$cim.'</a></td>'
+			. '<td><a href="?p=kerdoiv_adatlap&kerdoiv='.$next_element[sorszam].'">'.$cim.$megosztott.'</a></td>'
 			. '<td><a href="?p=eredmeny&kerdoiv='.$next_element[sorszam].'"><img src="graphics/icon_graph.png" alt="eredmények" /></a></td>'
 			. '<td><a href="?p=kerdoiv&kerdoiv='.$next_element[sorszam].'"><img src="graphics/icon_checked.png" alt="kitöltés" /></a></td>'
 			. '<td><a href="?p=kerdoiv&amp;mod=1&amp;kerdoiv='.$next_element[sorszam].'"><img src="graphics/icon_edit.gif" alt="módosítás" /></a></td>'
