@@ -7,10 +7,14 @@ if ($_REQUEST[pub] == '2'){
     unset($_SESSION[pub]);
 }
 
+if (!$_REQUEST[mod]){
+   $csak_aktiv = "AND status = '1'";
+}
+
 if (!is_numeric($_REQUEST[kerdoiv])){
-   $result = mysql_query ("SELECT sorszam, user_id, hirdetessel, hu, en, de FROM kerdoivek WHERE status = '1' AND hivatkozas = '$_REQUEST[kerdoiv]' ");
+   $result = mysql_query ("SELECT sorszam, user_id, hirdetessel, hu, en, de FROM kerdoivek WHERE sorszam <> '' $csak_aktiv AND hivatkozas = '$_REQUEST[kerdoiv]' ");
 } else {
-   $result = mysql_query ("SELECT sorszam, user_id, hirdetessel, hu, en, de FROM kerdoivek WHERE status = '1' AND sorszam = '$_REQUEST[kerdoiv]' ");
+   $result = mysql_query ("SELECT sorszam, user_id, hirdetessel, hu, en, de FROM kerdoivek WHERE sorszam <> '' $csak_aktiv AND sorszam = '$_REQUEST[kerdoiv]' ");
 }
    $a = mysql_fetch_array($result);
    if ($a[0]){
