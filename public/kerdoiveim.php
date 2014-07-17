@@ -12,7 +12,7 @@ if ($_REQUEST[id]){
    header("Location: ?p=7");
 }
 
-$result = mysql_query ("SELECT k.sorszam, k.cim_hu, k.cim_en, k.cim_de, k.status, h.user FROM kerdoivek AS k
+$result = mysql_query ("SELECT k.sorszam, k.cim_hu, k.cim_en, k.cim_de, k.status, h.user, k.zart FROM kerdoivek AS k
 		  LEFT JOIN kerdoiv_hozzaferes AS h ON k.sorszam = h.kerdoiv
 		  WHERE k.user_id = '$_SESSION[qa_user_id]' OR h.user = '$_SESSION[qa_user_id]' ORDER BY k.sorszam DESC");
 $db_kerdoivek = 0;
@@ -27,6 +27,7 @@ while ($next_element = mysql_fetch_array($result)){
    $next_elementc = mysql_fetch_array ($resultc);
    $kerdoiv_cim=$next_elementc['cim_'.$_SESSION[lang]];
    $kerdoiv_leiras=$next_elementc['leiras_'.$_SESSION[lang]];
+   
    $nyelv = 0;
    #$nyelv_db = 0;
    $zaszlo_hu = '';
@@ -49,6 +50,12 @@ while ($next_element = mysql_fetch_array($result)){
 	  $megosztott = '<img src="graphics/megosztott.png" alt="megosztott kérdőív" title="megosztott kérdőív" style="width: 50px; margin: 5px 0px -8px 0px;" />';
    } else {
 	  $megosztott = '';
+   }
+   
+   if ($next_element['zart'] == '1'){
+	  $kerdoiv_zart = '<img src="graphics/lock.png" alt="zárt kérdőív" title="zárt kérdőív" class="zart_ikon" />';
+   } else {
+	  $kerdoiv_zart = '';
    }
    
    #if ($nyelv_db > 1){
@@ -74,7 +81,7 @@ while ($next_element = mysql_fetch_array($result)){
 	}
 	
     $lista_kerdoiveim .= '<tr>'
-			. '<td><a href="?p=kerdoiv_adatlap&kerdoiv='.$next_element[sorszam].'">'.$cim.$megosztott.'</a></td>'
+			. '<td><a href="?p=kerdoiv_adatlap&kerdoiv='.$next_element[sorszam].'">'.$cim.$megosztott.$kerdoiv_zart.'</a></td>'
 			. '<td><a href="?p=eredmeny&kerdoiv='.$next_element[sorszam].'"><img src="graphics/icon_graph.png" alt="eredmények" /></a></td>'
 			. '<td><a href="?p=kerdoiv&kerdoiv='.$next_element[sorszam].'"><img src="graphics/icon_checked.png" alt="kitöltés" /></a></td>'
 			. '<td><a href="?p=kerdoiv&amp;mod=1&amp;kerdoiv='.$next_element[sorszam].'"><img src="graphics/icon_edit.gif" alt="módosítás" /></a></td>'
