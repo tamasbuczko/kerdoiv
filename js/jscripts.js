@@ -121,6 +121,16 @@ function megerosites_x(torolszam, formnev, kerdes) {
      //}
  }
  
+ function div_switch(){
+     if (document.getElementById('email_beker_blokk').style.display == 'block'){
+         document.getElementById('email_beker_blokk').style.display = 'none';
+         document.getElementById('zart_emailek_blokk').style.display = 'block';
+     } else {
+         document.getElementById('email_beker_blokk').style.display = 'block';
+         document.getElementById('zart_emailek_blokk').style.display = 'none';
+     }
+ }
+ 
  function display_switch(id, id2){
      //document.getElementById('neme_doboz').style.display = 'none';
      //document.getElementById('eletkor_doboz').style.display = 'none';

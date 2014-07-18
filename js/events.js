@@ -1,3 +1,14 @@
+if (document.getElementById("email_beker_blokk") != null){
+    
+    if (document.getElementById('tipus_nyilt').checked == true){
+        document.getElementById('email_beker_blokk').style.display = 'block';
+        document.getElementById('zart_emailek_blokk').style.display = 'none';
+    }
+    
+    document.getElementById("tipus_nyilt").addEventListener("change", function(){div_switch()}, true);
+    document.getElementById("tipus_zart").addEventListener("change", function(){div_switch()}, true);
+}
+
 if (document.getElementById("neme_kapcs") != null){
     document.getElementById("neme_kapcs").addEventListener("click", function(){display_switch('neme_doboz', this.id)}, true);
     document.getElementById("eletkor_kapcs").addEventListener("click", function(){display_switch('eletkor_doboz', this.id)}, true);
