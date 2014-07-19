@@ -62,7 +62,8 @@ if ($jogosult){
    if (($_REQUEST[submit]) AND ($hiba == '0') AND ($_REQUEST[b] == '1')){ //biztosan ment, megnyomta a mentés gombot
 	  unset($figy_uzenet);
 	  require_once('public/kerdoiv_mentes.php');
-	  header("Location: index.php?ok=1");
+         //én itt átadnám a kitöltött kérdőív sorszámát vagy valamely egyedi azonosítóját, és kiírnám a főoldalon ilyenkor, hogy köszi a kitöltést. I-frames beágyazás enélkül elég butuska lenne.
+          header("Location: index.php?ok=1");
    }
 
    if ($_REQUEST[ok] == 1){
