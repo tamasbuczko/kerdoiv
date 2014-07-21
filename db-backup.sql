@@ -992,7 +992,7 @@ CREATE TABLE `log` (
   `host` varchar(150) CHARACTER SET latin2 COLLATE latin2_hungarian_ci DEFAULT NULL,
   `ip` varchar(30) DEFAULT NULL,
   PRIMARY KEY (`sorszam`)
-) ENGINE=InnoDB AUTO_INCREMENT=14857 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=14868 DEFAULT CHARSET=latin1;
 
 INSERT INTO log VALUES("1","2014-04-11 21:11:35","0","/kerdoiv/","Futás indul...","Mozilla/5.0 (Windows NT 6.0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/34.0.1847.116 Safari/537.36","","::1");
 INSERT INTO log VALUES("2","2014-04-12 09:17:09","0","/kerdoiv/?db_load=on","Futás indul...","Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/29.0.1547.76 Safari/537.36","","127.0.0.1");
@@ -15850,6 +15850,17 @@ INSERT INTO log VALUES("14853","2014-07-18 20:00:29","0","/index.php?p=7","Futá
 INSERT INTO log VALUES("14854","2014-07-18 20:00:31","0","/index.php?p=7","Futás indul...","Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/35.0.1916.153 Safari/537.36","","79.121.65.167");
 INSERT INTO log VALUES("14855","2014-07-18 20:00:37","0","/index.php?p=eredmeny&kerdoiv=17","Futás indul...","Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/35.0.1916.153 Safari/537.36","","79.121.65.167");
 INSERT INTO log VALUES("14856","2014-07-18 20:17:25","0","/","Futás indul...","Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/35.0.1916.153 Safari/537.36","","79.121.65.167");
+INSERT INTO log VALUES("14857","2014-07-18 20:17:33","0","/?db_save=1","Futás indul...","Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/35.0.1916.153 Safari/537.36","","79.121.65.167");
+INSERT INTO log VALUES("14858","2014-07-18 20:36:52","0","/","Futás indul...","Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/35.0.1916.153 Safari/537.36","","79.121.65.167");
+INSERT INTO log VALUES("14859","2014-07-18 20:36:55","0","/?p=7","Futás indul...","Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/35.0.1916.153 Safari/537.36","","79.121.65.167");
+INSERT INTO log VALUES("14860","2014-07-18 20:36:58","0","/?p=kerdoiv&mod=1&kerdoiv=17","Futás indul...","Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/35.0.1916.153 Safari/537.36","","79.121.65.167");
+INSERT INTO log VALUES("14861","2014-07-18 20:37:03","0","/?p=ujkerdoiv&id=17","Futás indul...","Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/35.0.1916.153 Safari/537.36","","79.121.65.167");
+INSERT INTO log VALUES("14862","2014-07-18 20:37:14","0","/?p=ujkerdoiv&id=17","Futás indul...","Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/35.0.1916.153 Safari/537.36","","79.121.65.167");
+INSERT INTO log VALUES("14863","2014-07-18 20:37:40","0","/?","Futás indul...","Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/35.0.1916.153 Safari/537.36","","79.121.65.167");
+INSERT INTO log VALUES("14864","2014-07-18 20:47:41","0","/?p=kerdoiv&kerdoiv=7","Futás indul...","Mozilla/5.0 (compatible; bingbot/2.0; +http://www.bing.com/bingbot.htm)","","157.55.39.217");
+INSERT INTO log VALUES("14865","2014-07-18 21:10:37","0","/?p=5","Futás indul...","Mozilla/5.0 (compatible; bingbot/2.0; +http://www.bing.com/bingbot.htm)","","207.46.13.28");
+INSERT INTO log VALUES("14866","2014-07-18 21:12:04","0","/","Futás indul...","Mozilla/5.0 (Windows NT 5.1; rv:21.0) Gecko/20100101 Firefox/28.0","","162.244.33.8");
+INSERT INTO log VALUES("14867","2014-07-18 21:48:47","0","/?","Futás indul...","Mozilla/5.0 (Windows NT 6.0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/36.0.1985.125 Safari/537.36","","94.21.117.203");
 
 
 
