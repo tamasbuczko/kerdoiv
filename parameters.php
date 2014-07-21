@@ -1,7 +1,7 @@
 <?php
 define("LOCALHOST_DB_NAME", "kerdoiv");
-define("LOCALHOST_DB_USER", "kerdoiv");
-define("LOCALHOST_DB_PASSWORD", "1qay1qay");
+define("LOCALHOST_DB_USER", "root");
+define("LOCALHOST_DB_PASSWORD", "");
 
 define("DOMAIN_DB_NAME", "hegeszte_qa");
 define("DOMAIN_DB_USER", "hegeszte_kerdoiv");
