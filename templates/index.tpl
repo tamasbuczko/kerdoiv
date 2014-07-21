@@ -11,9 +11,6 @@
    <link rel="stylesheet" type="text/css" href="gridster.css" />
    <link rel="stylesheet" type="text/css" href="csempe.css" />
    <link type="text/css" rel="stylesheet" href="slider/css/rhinoslider-1.05.css" />
-{if $smarty.request.i}
-   <link rel="stylesheet" type="text/css" href="iframe.css" />
-{/if}
 {if $head_game}
    {$head_game}
 {/if}
