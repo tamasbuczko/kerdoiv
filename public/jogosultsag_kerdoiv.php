@@ -27,9 +27,20 @@ if (($_SESSION[qa_user_id])AND($_REQUEST[mod])){
    }
 }
 
+
+//adatlap másolása
+//be van-e lépve a user és másolni akar
+if (($_SESSION[qa_user_id])AND($_REQUEST[masol])){
+   if (($_SESSION[qa_user_id] == $a[user_id])OR ($_SESSION[qa_user_id] == $a[user])){
+	  $jogosult = 1;
+   } else {
+	  $tartalom = 'Nincs jogosultsága a kérdőív szerkesztéséhez!';
+   }
+}
+
 //be van-e lépve user és a kérdőív típusa a kérdés
 //status (1-bárki, 2-, 3-), nyilvanos
-if (($_SESSION[qa_user_id])AND(!$_REQUEST[mod])AND($_REQUEST[p]!='ujkerdes')AND($_REQUEST[p]!='ujkerdoiv') AND ($_REQUEST[p]!='kerdoiv_adatlap')){
+if (($_SESSION[qa_user_id])AND(!$_REQUEST[mod])AND(!$_REQUEST[masol])AND($_REQUEST[p]!='ujkerdes')AND($_REQUEST[p]!='ujkerdoiv') AND ($_REQUEST[p]!='kerdoiv_adatlap')){
    if ($a[status] == '1'){
 	  $jogosult = 1;
    } else {
