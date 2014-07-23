@@ -18,7 +18,7 @@
         NULL ,  'kerdőív másolás',  'copy questionnaire',  'Kopieren Fragebogen',  '',  'kérdőíveim'
         );
         *}
-        <a href="?p=kerdoiv&masol=1&kerdoiv={$kerdoiv_sorszam}" alt="Kérdőív másolás" >{$lang['kerdőív másolás']}</a>
+        <a href="?p=kerdoiv&masol=1&kerdoiv={$kerdoiv_sorszam}" alt="Kérdőív másolás" >{$lang['kérdőív másolás']}</a>
         <a href="?p=kerdoiv&kerdoiv={$kerdoiv_sorszam}" alt="kitöltés" >{$lang['kitöltés nézet']}</a>
     </div> 
     <div id="lepteto">

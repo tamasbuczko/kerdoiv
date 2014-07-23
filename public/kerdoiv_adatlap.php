@@ -14,7 +14,7 @@ $kerdoiv_lejarat=$next_elementc['lejarat'];
 $kerdoiv_nyilvanos=$next_elementc['nyilvanos'];
 $kerdoiv_hivatkozas=$next_elementc['hivatkozas'];
 
-$elerhetoseg = '<td>Kérdőíved elérhetősége:</td><td style="word-break: keep-all;">www.questionaction.com/?p=kerdoiv&kerdoiv='.$kerdoiv_hivatkozas.'&pub=1</td>';
+$elerhetoseg = '<td>Kérdőíved elérhetősége:</td><td style="word-break: keep-all;">www.questionaction.com/?p=kerdoiv&kerdoiv='.$kerdoiv_hivatkozas.'</td>';
 
 //nyelvek száma
 $nyelv = 0;
