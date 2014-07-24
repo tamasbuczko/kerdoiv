@@ -26,6 +26,10 @@
 {if $user_nick}
 		 {$user_nick}
 {/if}
+{if !$smarty.session.qa_user_id} 
+    
+<div id="teszt"><a href="?p=5">Teszt Üzem! - Próbáld ki nyugodtan...</a></div>
+{/if}
 		 <a href="?lang=en{$url_param}"><img src="graphics/angol_zaszlo_k.png" alt="" />en</a>
 		 <a href="?lang=de{$url_param}"><img src="graphics/nemet_zaszlo_k.png" alt="" />de</a>
 		 <a href="?lang=hu{$url_param}"><img src="graphics/magyar_zaszlo_k.png" alt="" />hu</a>
