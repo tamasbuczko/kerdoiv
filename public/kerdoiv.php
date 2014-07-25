@@ -11,6 +11,10 @@ if (!$_REQUEST[mod]){
    $csak_aktiv = "AND status = '1'";
 }
 
+if ($_SESSION[qa_user_id]){
+   $csak_aktiv = "";
+}
+
 if (!is_numeric($_REQUEST[kerdoiv])){
    $result = mysql_query ("SELECT sorszam, user_id, hirdetessel, hu, en, de FROM kerdoivek WHERE sorszam <> '' $csak_aktiv AND hivatkozas = '$_REQUEST[kerdoiv]' ");
 } else {
@@ -47,6 +51,7 @@ if (($_REQUEST[p]=="kerdoiv") AND ($_REQUEST[kerdoiv]) AND (!$_REQUEST[mod])){
 require_once ('public/jogosultsag_kerdoiv.php');
 
 if ($jogosult){
+   $tartalom = '';
    require_once('public/kerdoiv_hiba.php');
    require_once('public/kerdoiv_fejlec.php');
 
@@ -55,8 +60,8 @@ if ($jogosult){
 
    
    if ($kerdoiv_nyelv_bekapcs == '1'){
-   require_once('public/kerdoiv_generator.php');
-   require_once('public/kerdoiv_figyelmeztetesek.php');
+	  require_once('public/kerdoiv_generator.php');
+	  require_once('public/kerdoiv_figyelmeztetesek.php');
    }
 
    if (($_REQUEST[submit]) AND ($hiba == '0')){
