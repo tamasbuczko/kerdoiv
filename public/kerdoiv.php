@@ -40,6 +40,10 @@ if ((($kerdoiv_authority == '2') OR ($kerdoiv_authority == '3')) AND ($_SESSION[
     $nincs_menu = 'on'; //kikapcsolja a menüt
 }
 
+if (($_REQUEST[p]=="kerdoiv") AND ($_REQUEST[kerdoiv]) AND (!$_REQUEST[mod])){
+    $kerdoivnezet = 'on'; //690 szélesre állítja az összes kérdőívet
+}
+
 require_once ('public/jogosultsag_kerdoiv.php');
 
 if ($jogosult){
