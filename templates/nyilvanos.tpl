@@ -27,9 +27,9 @@
         <tr><th>{$objektum->keszito}</th><th>{$objektum->aktivalas_datuma}</th><th>{$objektum->kitoltok_szama}</th><th>{$objektum->kovetok_szama}</th><th></th></tr>    
     </table>
 {if $objektum->ajandek == '1'}
-    <img src="graphics/ajandek_ikon.png" alt="" title='Van ajándéksorsolás'/>
+    <img src="graphics/ajandek_ikon.png" alt="" title="{$szotar->fordit('Van ajándéksorsolás')}"/>
 {else}
-    <img src="graphics/ajandek_ikon_nincs.png" alt="" title='Nincs ajándéksorsolás'/>
+    <img src="graphics/ajandek_ikon_nincs.png" alt="" title="{$szotar->fordit('Nincs ajándéksorsolás')}"/>
 {/if}
     </div>
 </div>
