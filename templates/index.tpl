@@ -17,6 +17,18 @@
 {if $head_game}
    {$head_game}
 {/if}
+{if $smarty.request.i}
+<style>
+    #frame{
+    transform:scale({$kerdoiv_obj->iframe_arany},{$kerdoiv_obj->iframe_arany});
+    transform-origin: left top;
+    -ms-transform:scale({$kerdoiv_obj->iframe_arany},{$kerdoiv_obj->iframe_arany});
+    -ms-transform-origin: left top;
+    -webkit-transform:scale({$kerdoiv_obj->iframe_arany},{$kerdoiv_obj->iframe_arany});
+    -webkit-transform-origin: left top;
+    }
+</style>
+{/if}
 </head>
    <body{$body_onload}>
 {if $css_valaszto}
