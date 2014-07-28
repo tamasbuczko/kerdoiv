@@ -4,5 +4,6 @@ body{
 
 #frame{
     margin: 0px;
+    margin-left:-40px;
     float: left;
 }
