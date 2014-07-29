@@ -2,8 +2,12 @@ body{
     background-color: transparent;
 }
 
-#frame{
+#iframe{
     margin: 0px;
-    margin-left:-40px;
     float: left;
+    margin-left: -40px;
+}
+
+#user_box{
+   display: none; 
 }

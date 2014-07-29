@@ -1,13 +1,13 @@
 <form action="?p=nyilvanos" name="keres" method="get" />
-   <label>{$lang["Keresés"]}:</label><input name="keres" type="text" value="{$keres}" />
-   <input name="submit" type="submit" value="{$lang["Keresés"]}" />
+   <label>{$szotar->fordit('Keresés')}:</label><input name="keres" type="text" value="{$keres}" />
+   <input name="submit" type="submit" value="{$szotar->fordit('Keresés')}" />
    <input type="hidden" name="p" value="nyilvanos" />
 {if $smarty.request.keres}
    {$talalatszam}
 {/if}
 </form>
 <div id="nyilvanos_lista_info">
-    <span>{$lang["A Nyilvános kérdőívek segítenek a piackutatásban és közvélemény kutatásban. A keresett kérdőív és eredménye követhetővé válik annak a bejelentkezett felhasználónak aki kitölti azt korrekt módon."]}</span>
+    <span>{$szotar->fordit('A Nyilvános kérdőívek segítenek a piackutatásban és közvélemény kutatásban. A keresett kérdőív és eredménye követhetővé válik annak a bejelentkezett felhasználónak aki kitölti azt korrekt módon.')}</span>
 </div>
 <br />
 <div id="nyilvanos_lista">
@@ -23,7 +23,7 @@
         {$objektum->leiras}
     </p>    
     <table>
-        <tr><th>{$lang["Létrehozó"]}: </th><th>{$lang["Dátum"]}: </th><th>{$lang["Kitöltők száma"]}: </th><th>{$lang["Követők száma"]}: </th><th></th></tr>    
+        <tr><th>{$szotar->fordit('Létrehozó')}: </th><th>{$szotar->fordit('Dátum')}: </th><th>{$szotar->fordit('Kitöltők száma')}: </th><th>{$szotar->fordit('Követők száma')}: </th><th></th></tr>    
         <tr><th>{$objektum->keszito}</th><th>{$objektum->aktivalas_datuma}</th><th>{$objektum->kitoltok_szama}</th><th>{$objektum->kovetok_szama}</th><th></th></tr>    
     </table>
 {if $objektum->ajandek == '1'}

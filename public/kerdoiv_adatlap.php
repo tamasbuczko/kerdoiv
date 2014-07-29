@@ -20,15 +20,15 @@ $elerhetoseg = '<td>Kérdőíved elérhetősége:</td><td style="word-break: kee
 $nyelv = 0;
 if ($next_elementc[hu] == 1){
     $nyelv_db++;
-    $zaszlo_hu = '<span id="magyar_zaszlo"><img src="graphics/magyar_zaszlo.png" alt="'.$lang[magyar].'" />'.$lang[magyar].'</span>';
+    $zaszlo_hu = '<span id="magyar_zaszlo"><img src="graphics/magyar_zaszlo.png" alt="'.$szotar->fordit('magyar').'" />'.$szotar->fordit('magyar').'</span>';
 }
 if ($next_elementc[en] == 1){
     $nyelv_db++;
-    $zaszlo_en = '<span id="angol_zaszlo"><img src="graphics/angol_zaszlo.png" alt="'.$lang[angol].'" />'.$lang[angol].'</span>';
+    $zaszlo_en = '<span id="angol_zaszlo"><img src="graphics/angol_zaszlo.png" alt="'.$szotar->fordit('angol').'" />'.$szotar->fordit('angol').'</span>';
 }
 if ($next_elementc[de] == 1){
     $nyelv_db++;
-    $zaszlo_de = '<span id="nemet_zaszlo"><img src="graphics/nemet_zaszlo.png" alt="'.$lang[nemet].'" />'.$lang[nemet].'</span>';
+    $zaszlo_de = '<span id="nemet_zaszlo"><img src="graphics/nemet_zaszlo.png" alt="'.$szotar->fordit('nemet').'" />'.$szotar->fordit('nemet').'</span>';
 }
 $zaszlok = 'Kérdőív fordításai ('.$nyelv_db.'): <div id="adatlap_zaszlok">'. $zaszlo_en . $zaszlo_de.$zaszlo_hu.'</div>';
 
@@ -47,7 +47,7 @@ $kitoltok_email = mysql_num_rows($result2);
 if ($kitoltok_email > 0){
    $kitoltok_link = ' <a href="?p=kitoltok&amp;kerdoiv='.$kerdoiv_sorszam.'">Listázás</a>';
 }
-$valaszadok_szama_emailes = '<td>A kitöltők száma (e-mail):</td><td>'.$kitoltok_email.$kitoltok_link.'</td>';
+$valaszadok_szama_emailes = '<td>'.$szotar->fordit('A kitöltők száma (e-mail)').':</td><td>'.$kitoltok_email.$kitoltok_link.'</td>';
     
 //létrehozás dátuma
 $created_date = '<td>A létrehozás dátuma:</td><td>'.$kerdoiv_kelt.'</td>';
@@ -86,7 +86,7 @@ $nyilvanos = '<td>A kérdőív eredményei nyilvánosak:</td><td>'.$nyilvanos.'<
     if ($_REQUEST[kerdoiv] == $kerdoivekx[1]){$elozo_kerdoiv = end($kerdoivekx);}
 
 
-$smarty->assign('lang', $lang);
+$smarty->assign('szotar', $szotar);
 $smarty->assign('elerhetoseg', $elerhetoseg);
 $smarty->assign('kerdoiv_cim',$kerdoiv_cim);
 $smarty->assign('kerdoiv_leiras',$kerdoiv_leiras);

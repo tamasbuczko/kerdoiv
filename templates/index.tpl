@@ -19,7 +19,7 @@
 {/if}
 {if $smarty.request.i}
 <style>
-    #frame{
+    #iframe{
     transform:scale({$kerdoiv_obj->iframe_arany},{$kerdoiv_obj->iframe_arany});
     transform-origin: left top;
     -ms-transform:scale({$kerdoiv_obj->iframe_arany},{$kerdoiv_obj->iframe_arany});
@@ -34,9 +34,17 @@
 {if $css_valaszto}
    {$css_valaszto}    
 {/if}
+<div id="iframe">  
 	  <div id="langs"{if (($reklammentes) OR ($kerdoivnezet))} style="width: 690px;"{/if}>
-{if $user_nick}
-		 {$user_nick}
+{if $smarty.session.qa_user_id}
+	<div id="user_box">
+            {$szotar->fordit('Bejelentkezve')}:
+            <a href="?p=profil" alt="profil" title="profil">{$smarty.session.sessfelhasznalo}</a>
+            <a href="?logout=1">{$szotar->fordit('Kijelentkezés')}</a>
+{if ($smarty.request.p == 'kerdoiv') AND (!$smarty.request.mod)}
+            <a href="?{$page->vissza_link}" class="visszax">vissza</a>
+{/if}
+        </div>
 {/if}
 {if !$smarty.session.qa_user_id} 
     
@@ -47,7 +55,7 @@
 		 <a href="?lang=hu{$url_param}"><img src="graphics/magyar_zaszlo_k.png" alt="" />hu</a>
 	  </div>
 	  <div id="frame"{if (($reklammentes) OR ($kerdoivnezet))} style="width: 690px;"{/if}>
-		 <div id="head"{if $head_off}{$head_off}{/if}>
+		 <div id="head"{if $head_off}{$head_off}{/if}>        
 			<div id="head_menu">
 			   <a href="?" id="logo"></a>
 			   <div id="menu">
@@ -69,7 +77,8 @@
 		 <a name="end"></a>
 		 <script type="text/javascript">scrollToAnchor('end');</script>
 {/if}
-	  </div>	
+	  </div>
+</div>          
 	  <div id="popup">
 		 <div class="q_box">
 			{$popup_tartalom}
