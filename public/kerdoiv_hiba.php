@@ -1,5 +1,6 @@
 <?php
 $hiba = 0;
+
 if ($_REQUEST[submit]){ //űrlap elküldésének vizsgálata(személyes adatok)
     $email = mysql_real_escape_string($_REQUEST[email]);
     $foglalkozas = mysql_real_escape_string($_REQUEST[foglalkozas]);

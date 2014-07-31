@@ -37,10 +37,6 @@ $kerdoiv_authority = $b[0]; // a kérdőív készítőjének csomagja
 
 if ((($kerdoiv_authority == '2') OR ($kerdoiv_authority == '3')) AND ($_SESSION[pub] == '1') AND (!$_REQUEST[mod])){
     $csak_kerdoiv = 'on'; //kikapcsolja a menüt
-    $reklammentes = 'on';
-}
-
-if ((($kerdoiv_authority == '2') OR ($kerdoiv_authority == '3')) AND ($_SESSION[pub] == '1') AND (!$_REQUEST[mod])){
     $nincs_menu = 'on'; //kikapcsolja a menüt
 }
 
@@ -62,10 +58,6 @@ if ($jogosult){
    if ($kerdoiv_nyelv_bekapcs == '1'){
 	  require_once('public/kerdoiv_generator.php');
 	  require_once('public/kerdoiv_figyelmeztetesek.php');
-   }
-
-   if (($_REQUEST[submit]) AND ($hiba == '0')){
-	   $mentes_gomb = '<div id="mentes_gomb">'.$lang[mentes].'</div>';
    }
 
    if (($_REQUEST[submit]) AND ($hiba == '0') AND ($_REQUEST[b] == '1')){ //biztosan ment, megnyomta a mentés gombot

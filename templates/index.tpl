@@ -1,13 +1,15 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="{$session_lang}" lang="{$session_lang}">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="{$smarty.session.lang}" lang="{$smarty.session.lang}">
 <head>
    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-   <title>Kérdőív</title>
+   <title>Kérdőív{$page->alcim}</title>
    <script type="text/javascript" src="js/jquery.1.7.1.min.js"></script>
    <script type="text/javascript" src="js/jscripts.js"></script>
    <script type="text/javascript" src="js/ganalytics.js"></script>
    <link rel="stylesheet" type="text/css" href="style.css" />
-   <link rel="stylesheet" type="text/css" href="{$css}" />
+{if $kerdoiv_obj->css}
+   <link rel="stylesheet" type="text/css" href="surveys_css/{$kerdoiv_obj->css}" />
+{/if}
    <link rel="stylesheet" type="text/css" href="gridster.css" />
    <link rel="stylesheet" type="text/css" href="csempe.css" />
    <link type="text/css" rel="stylesheet" href="slider/css/rhinoslider-1.05.css" />
@@ -31,11 +33,8 @@
 {/if}
 </head>
    <body{$body_onload}>
-{if $css_valaszto}
-   {$css_valaszto}    
-{/if}
 <div id="iframe">  
-	  <div id="langs"{if (($reklammentes) OR ($kerdoivnezet))} style="width: 690px;"{/if}>
+	  <div id="langs"{if (($kerdoiv_obj->reklammentes) OR ($kerdoivnezet))} style="width: 690px;"{/if}>
 {if $smarty.session.qa_user_id}
 	<div id="user_box">
             {$szotar->fordit('Bejelentkezve')}:
@@ -54,7 +53,7 @@
 		 <a href="?lang=de{$url_param}"><img src="graphics/nemet_zaszlo_k.png" alt="" />de</a>
 		 <a href="?lang=hu{$url_param}"><img src="graphics/magyar_zaszlo_k.png" alt="" />hu</a>
 	  </div>
-	  <div id="frame"{if (($reklammentes) OR ($kerdoivnezet))} style="width: 690px;"{/if}>
+	  <div id="frame"{if (($kerdoiv_obj->reklammentes) OR ($kerdoivnezet))} style="width: 690px;"{/if}>
 		 <div id="head"{if $head_off}{$head_off}{/if}>        
 			<div id="head_menu">
 			   <a href="?" id="logo"></a>
@@ -69,7 +68,7 @@
 			{$tartalom}
 		 </div>
 		 <div id="footer">
-			<p> © 2014 questionaction.com - {$lang['Használati és adatvédelmi szabályok']}</p> 
+			<p> © 2014 questionaction.com - {$szotar->fordit('Használati és adatvédelmi szabályok')}</p> 
 			<a href="?" id="logo_footer"></a>
 			<div>{$menu}</div>
 		 </div>
@@ -85,7 +84,9 @@
 			{$hibauzenet}
 			{$figy_uzenet}
 			<div id="rendben_gomb">Vissza</div>
-			{$mentes_gomb}
+{if ($smarty.request.submit) AND ($kerdoiv_obj->hiba < 1)}
+			<div id="mentes_gomb">{$szotar->fordit('Mentés')}</div>
+{/if}
 		 </div>
 	  </div>
 	<script type="text/javascript" src="js/events.js"></script>
