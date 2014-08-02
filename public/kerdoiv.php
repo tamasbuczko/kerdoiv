@@ -26,9 +26,6 @@ if (!is_numeric($_REQUEST[kerdoiv])){
    }
    
    $kerdoiv_nyelv_bekapcs = $a[$_SESSION[lang]];  //1 az értéke, ha az aktuális nyelven be van kapcsolva a kérdőív
-   
-   
-   $kerdoiv_hirdetessel = $a[2];
 
 
 $result2 = mysql_query ("SELECT authority FROM users WHERE id = '$a[1]'");
@@ -40,10 +37,6 @@ if ((($kerdoiv_authority == '2') OR ($kerdoiv_authority == '3')) AND ($_SESSION[
     $nincs_menu = 'on'; //kikapcsolja a menüt
 }
 
-if (($_REQUEST[p]=="kerdoiv") AND ($_REQUEST[kerdoiv]) AND (!$_REQUEST[mod])){
-    $kerdoivnezet = 'on'; //690 szélesre állítja az összes kérdőívet
-}
-
 require_once ('public/jogosultsag_kerdoiv.php');
 
 if ($jogosult){
@@ -53,7 +46,6 @@ if ($jogosult){
 
    $kerdes_darab = 0;
    $figyelmeztetes = 0;
-
    
    if ($kerdoiv_nyelv_bekapcs == '1'){
 	  require_once('public/kerdoiv_generator.php');

@@ -32,9 +32,9 @@
 </style>
 {/if}
 </head>
-   <body{$body_onload}>
+   <body {if ($hibauzenet) OR ($figy_uzenet)}{if !$smarty.request.lang}onload="divdisp_on('popup');{/if}{/if}">
 <div id="iframe">  
-	  <div id="langs"{if (($kerdoiv_obj->reklammentes) OR ($kerdoivnezet))} style="width: 690px;"{/if}>
+	  <div id="langs"{if ($page->kerdoivnezet)} style="width: 690px;"{/if}>
 {if $smarty.session.qa_user_id}
 	<div id="user_box">
             {$szotar->fordit('Bejelentkezve')}:
@@ -53,7 +53,7 @@
 		 <a href="?lang=de{$url_param}"><img src="graphics/nemet_zaszlo_k.png" alt="" />de</a>
 		 <a href="?lang=hu{$url_param}"><img src="graphics/magyar_zaszlo_k.png" alt="" />hu</a>
 	  </div>
-	  <div id="frame"{if (($kerdoiv_obj->reklammentes) OR ($kerdoivnezet))} style="width: 690px;"{/if}>
+	  <div id="frame"{if ($page->kerdoivnezet)} style="width: 690px;"{/if}>
 		 <div id="head"{if $head_off}{$head_off}{/if}>        
 			<div id="head_menu">
 			   <a href="?" id="logo"></a>
