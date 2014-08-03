@@ -35,6 +35,7 @@
    <body {if ($hibauzenet) OR ($figy_uzenet)}{if !$smarty.request.lang}onload="divdisp_on('popup');{/if}{/if}">
 <div id="iframe">  
 	  <div id="langs"{if ($page->kerdoivnezet)} style="width: 690px;"{/if}>
+<a href="?"><img style="float:left; width:18px; margin: 2px 10px -2px 0px;" src="graphics/home.png" alt="" /></a>
 {if $smarty.session.qa_user_id}
 	<div id="user_box">
             {$szotar->fordit('Bejelentkezve')}:

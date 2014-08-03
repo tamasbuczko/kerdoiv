@@ -11,5 +11,5 @@
     <h2>{$lang['Követett nyilvános kérdőívek']}</h2>
     {$kitoltott_kerdoivek}
    </div>
-	<a href="?p=kitoltott" class="nyilvanos_link">{$lang['További követett kérdőívek']}...</a>
+	<a href="?p=kovetett" class="nyilvanos_link">{$lang['További követett kérdőívek']}...</a>
 </div>
