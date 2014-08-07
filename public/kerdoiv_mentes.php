@@ -1,5 +1,10 @@
 <?php
     
+//kitöltési napló készítése
+$most=date("Y-m-d H:i:s");
+$kitoltesinaplosql="INSERT INTO `kitoltesi_naplo` (`sorszam`, `idopont`, `kerdoiv`, `regisztralt_kitolto`, `egyeb_kitolto`) VALUE (NULL, '".$most."', '".$kerdoiv_sorszam."', '".$_SESSION[qa_user_id]."', '".$_COOKIE[qasession]."')";
+mysql_query($kitoltesinaplosql);
+
 
    $foglalkozas = rtrim($foglalkozas);
    $foglalkozas = ltrim($foglalkozas);
