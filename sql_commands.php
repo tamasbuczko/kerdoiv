@@ -43,7 +43,7 @@ $result = mysql_query("SELECT COUNT( * )
 		       WHERE `table_name` =  'kerdoivek'");
 $sql = mysql_num_rows($result);
 
-if ($sql < 24) {
+if ($sql < 29) {
     $result = "ALTER TABLE `kerdoivek` ADD `egyszerkitoltheto` BOOLEAN NOT NULL DEFAULT FALSE AFTER  `nyilvanos`";
     mysql_query($result);
 }

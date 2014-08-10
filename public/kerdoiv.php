@@ -33,7 +33,7 @@ $result2 = mysql_query("SELECT authority FROM users WHERE id = '$a[1]'");
 $b = mysql_fetch_array($result2);
 $kerdoiv_authority = $b[0]; // a kérdőív készítőjének csomagja
 
-if ((($kerdoiv_authority == '2') OR ( $kerdoiv_authority == '3')) AND ( $_SESSION[pub] == '1') AND ( !$_REQUEST[mod])) {
+if ((($kerdoiv_authority == '2') OR ( $kerdoiv_authority == '3')) AND ( !$_REQUEST[mod])) {
     $csak_kerdoiv = 'on'; //kikapcsolja a menüt
     $nincs_menu = 'on'; //kikapcsolja a menüt
 }

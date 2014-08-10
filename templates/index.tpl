@@ -55,7 +55,7 @@
 		 <a href="?lang=hu{$url_param}"><img src="graphics/magyar_zaszlo_k.png" alt="" />hu</a>
 	  </div>
 	  <div id="frame"{if ($page->kerdoivnezet)} style="width: 690px;"{/if}>
-		 <div id="head"{if $head_off}{$head_off}{/if}>        
+		 <div id="head"{if $page->cimlap == '0'} class="head_kicsi{if $kerdoiv_obj->csak_kerdoiv == 'on'} head_nincs{/if}"{/if}>        
 			<div id="head_menu">
 			   <a href="?" id="logo"></a>
 			   <div id="menu">
