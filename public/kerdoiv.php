@@ -28,17 +28,10 @@ if ($a[0]) {
 
 $kerdoiv_nyelv_bekapcs = $a[$_SESSION[lang]];  //1 az értéke, ha az aktuális nyelven be van kapcsolva a kérdőív
 
+$kerdoiv_obj = new kerdoiv;  // át kell térni a használatára, jelenleg csak az iframe használja
+$kerdoiv_obj->load($_REQUEST[kerdoiv]);
 
-$result2 = mysql_query("SELECT authority FROM users WHERE id = '$a[1]'");
-$b = mysql_fetch_array($result2);
-$kerdoiv_authority = $b[0]; // a kérdőív készítőjének csomagja
-
-if ((($kerdoiv_authority == '2') OR ( $kerdoiv_authority == '3')) AND ( !$_REQUEST[mod])) {
-    $csak_kerdoiv = 'on'; //kikapcsolja a menüt
-    $nincs_menu = 'on'; //kikapcsolja a menüt
-}
-
-require_once ('public/jogosultsag_kerdoiv.php');
+require_once ('public/jogosultsag_kerdoiv.php');  //objektum miatt még átnézni
 
 if ($jogosult) {
     $tartalom = '';
@@ -53,7 +46,7 @@ if ($jogosult) {
         require_once('public/kerdoiv_figyelmeztetesek.php');
     }
 
-    if (($_REQUEST[submit]) AND ( $hiba == '0') AND ( $_REQUEST[b] == '1')) { //biztosan ment, megnyomta a mentés gombot
+    if (($_REQUEST[submit]) AND ( $kerdoiv_obj->hiba == '0') AND ( $_REQUEST[b] == '1')) { //biztosan ment, megnyomta a mentés gombot
         unset($figy_uzenet);
         require_once('public/kerdoiv_mentes.php');
         //én itt átadnám a kitöltött kérdőív sorszámát vagy valamely egyedi azonosítóját, és kiírnám a főoldalon ilyenkor, hogy köszi a kitöltést. I-frames beágyazás enélkül elég butuska lenne.

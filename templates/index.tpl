@@ -92,4 +92,7 @@
 	  </div>
 	<script type="text/javascript" src="js/events.js"></script>
     </body>
+    <!--<div id="help">
+         <a href="?"><img src="graphics/assistant.jpg" alt="" /></a>            
+    </div>-->             
 </html>
