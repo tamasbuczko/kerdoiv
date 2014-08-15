@@ -35,6 +35,7 @@ require_once ('public/jogosultsag_kerdoiv.php');  //objektum miatt még átnézn
 
 if ($jogosult) {
     $tartalom = '';
+
     require_once('public/kerdoiv_hiba.php');
     require_once('public/kerdoiv_fejlec.php');
 
@@ -42,16 +43,23 @@ if ($jogosult) {
     $figyelmeztetes = 0;
 
     if ($kerdoiv_nyelv_bekapcs == '1') {
+
         require_once('public/kerdoiv_generator.php');
         require_once('public/kerdoiv_figyelmeztetesek.php');
     }
 
+
     if (($_REQUEST[submit]) AND ( $kerdoiv_obj->hiba == '0') AND ( $_REQUEST[b] == '1')) { //biztosan ment, megnyomta a mentés gombot
         unset($figy_uzenet);
         require_once('public/kerdoiv_mentes.php');
-        //én itt átadnám a kitöltött kérdőív sorszámát vagy valamely egyedi azonosítóját, és kiírnám a főoldalon ilyenkor, hogy köszi a kitöltést. I-frames beágyazás enélkül elég butuska lenne.
-        header("Location: index.php?ok=1&kerdes=" . $kerdoiv_sorszam);
+        if ($_REQUEST[i] != 1) {
+            //én itt átadnám a kitöltött kérdőív sorszámát vagy valamely egyedi azonosítóját, és kiírnám a főoldalon ilyenkor, hogy köszi a kitöltést. I-frames beágyazás enélkül elég butuska lenne.
+            header("Location: index.php?ok=1&kerdes=" . $kerdoiv_sorszam);
+        } else {
+            header("Location: index.php?p=kerdoiv&kerdoiv=7&i=1&ok=1");
+        }
     }
+
 
     if ($_REQUEST[ok] == 1) {
         $kerdes_blokk = '<div id="koszonjuk">' . $lang['koszonjuk_valaszaid'] . '</div>';

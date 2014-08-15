@@ -11,3 +11,15 @@ body{
 #user_box{
    display: none; 
 }
+
+#homegomb {
+    display: none;
+}
+
+#footer {
+    display: none;
+}
+
+.a2a_dd {
+    display: none;
+}
