@@ -1,6 +1,4 @@
 <?php
-$adat_off = 'display: none;'; //személyes adatlap kikapcsolása
-
 require_once ('public/jogosultsag_kerdoiv.php');
 if ($jogosult){
     include('public/kerdoiv_fejlec.php');

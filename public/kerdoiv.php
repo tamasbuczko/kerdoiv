@@ -1,8 +1,5 @@
 <?php
-
-#if ($_REQUEST[pub] == '1'){
 $_SESSION[pub] = '1';
-#}
 
 if ($_REQUEST[pub] == '2') {
     unset($_SESSION[pub]);
@@ -43,11 +40,9 @@ if ($jogosult) {
     $figyelmeztetes = 0;
 
     if ($kerdoiv_nyelv_bekapcs == '1') {
-
         require_once('public/kerdoiv_generator.php');
         require_once('public/kerdoiv_figyelmeztetesek.php');
     }
-
 
     if (($_REQUEST[submit]) AND ( $kerdoiv_obj->hiba == '0') AND ( $_REQUEST[b] == '1')) { //biztosan ment, megnyomta a mentés gombot
         unset($figy_uzenet);
@@ -60,10 +55,8 @@ if ($jogosult) {
         }
     }
 
-
     if ($_REQUEST[ok] == 1) {
-        $kerdes_blokk = '<div id="koszonjuk">' . $lang['koszonjuk_valaszaid'] . '</div>';
-        $adat_off = 'display: none;'; //személyes adatlap kikapcsolása
+        $kerdes_blokk = '<div id="koszonjuk">' . $lang['koszonjuk_valaszaid'] . '</div>'; // használjuk valahol???
     }
 }
 

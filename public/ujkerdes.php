@@ -51,7 +51,7 @@ if ($_REQUEST[ujkerdes]){
             $a = mysql_fetch_row($result);
             $ujkerdes_sorrend = $a[0]-1;
         } else {
-            $result = mysql_query("SELECT MAX(sorrend) FROM kerdesek;");
+            $result = mysql_query("SELECT MAX(sorrend) FROM kerdesek WHERE kerdoiv_sorszam = $kerdoiv_sorszam;");
             $a = mysql_fetch_row($result);
             $ujkerdes_sorrend = $a[0];
             $ujkerdes_sorrend++;

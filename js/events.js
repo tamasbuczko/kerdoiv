@@ -9,15 +9,29 @@ if (document.getElementById("email_beker_blokk") != null){
     document.getElementById("tipus_zart").addEventListener("change", function(){div_switch()}, true);
 }
 
+
 if (document.getElementById("neme_kapcs") != null){
     document.getElementById("neme_kapcs").addEventListener("click", function(){display_switch('neme_doboz', this.id)}, true);
+}
+if (document.getElementById("eletkor_kapcs") != null){
     document.getElementById("eletkor_kapcs").addEventListener("click", function(){display_switch('eletkor_doboz', this.id)}, true);
+}
+if (document.getElementById("csaladiallapot_kapcs") != null){
     document.getElementById("csaladiallapot_kapcs").addEventListener("click", function(){display_switch('csaladiallapot_doboz', this.id)}, true);
+}
+if (document.getElementById("foglalkozas_kapcs") != null){
     document.getElementById("foglalkozas_kapcs").addEventListener("click", function(){display_switch('foglalkozas_doboz', this.id)}, true);
+}
+if (document.getElementById("vegzettseg_kapcs") != null){
     document.getElementById("vegzettseg_kapcs").addEventListener("click", function(){display_switch('vegzettseg_doboz', this.id)}, true);
+}
+if (document.getElementById("jovedelme_kapcs") != null){
     document.getElementById("jovedelme_kapcs").addEventListener("click", function(){display_switch('jovedelme_doboz', this.id)}, true);
+}
+if (document.getElementById("orszag_kapcs") != null){
     document.getElementById("orszag_kapcs").addEventListener("click", function(){display_switch('orszag_doboz', this.id)}, true);
 }
+
 
 if (document.getElementById("rendben_gomb") != null){
    document.getElementById("rendben_gomb").addEventListener("click", function(){divdisp_off('popup')}, true);

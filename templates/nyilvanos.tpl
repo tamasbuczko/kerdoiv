@@ -35,8 +35,5 @@
 </div>
 {/section}
 </div>
-<div class="nyilvanos_kerdoivek">
-    {$nyilvanos_kerdoivek}    
-</div>
 <br />
 {$navsav}
