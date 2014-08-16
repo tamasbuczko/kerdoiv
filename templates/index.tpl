@@ -48,7 +48,7 @@
 {/if}
 {if !$smarty.session.qa_user_id} 
     
-<div id="teszt" {if $smarty.request.kerdoiv} style="display: none;"{/if}><a href="?p=5">Teszt Üzem! - Próbáld ki nyugodtan...</a></div>
+<div id="teszt" {if $smarty.request.kerdoiv} style="display: none;"{/if}><a href="?p=5">{$szotar->fordit('Teszt Üzem! - Próbáld ki nyugodtan')}...</a></div>
 {/if}
 		 <a href="?lang=en{$url_param}"><img src="graphics/angol_zaszlo_k.png" alt="" />en</a>
 		 <a href="?lang=de{$url_param}"><img src="graphics/nemet_zaszlo_k.png" alt="" />de</a>
