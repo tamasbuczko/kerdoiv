@@ -18,3 +18,14 @@
 #frame {
    
 }
+
+#elkuld input{    
+    background-color: #fff;
+    border-color: #b032da;
+}
+
+#elkuld input:hover{
+    background-color:#b032da;
+    border-color: #eee;
+    color: #fff;
+}

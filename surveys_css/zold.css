@@ -23,3 +23,14 @@
    background-color: #749929 !important;
    color: #eee;
 }
+
+#elkuld input{    
+    background-color: #fff;
+    border-color: #749929;
+}
+
+#elkuld input:hover{
+    background-color:#749929;
+    border-color: #eee;
+    color: #fff;
+}

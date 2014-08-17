@@ -1,18 +1,18 @@
 .survey_question, #survey_intro_div{
-   background-color: #9f3f31 !important;
-   color: #f4eecb;
+   background-color: #ffa70d !important;
+   color: #fefefe;
 }
 
 #survey_intro h1{
-   color: #9f3f31;
+   color: #366547;
 }
 
 .survey_answers label{
-   color: #866547;
+   color: #366547;
 }
 
 .szemelyes label{
-   color: #866547;
+   color: #366547;
 }
 
 #frame {
@@ -21,11 +21,11 @@
 
 #elkuld input{    
     background-color: #fff;
-    border-color: #9f3f31;
+    border-color: #ffa70d;
 }
 
 #elkuld input:hover{
-    background-color:#9f3f31;
+    background-color:#ffa70d;
     border-color: #eee;
     color: #fff;
 }
