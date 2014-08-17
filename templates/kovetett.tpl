@@ -6,8 +6,8 @@
    {$talalatszam}
 {/if}
 </form>
-<div id="nyilvanos_lista_info">
-    <span>{$szotar->fordit('A Nyilvános kérdőívek segítenek a piackutatásban és közvélemény kutatásban. A keresett kérdőív és eredménye követhetővé válik annak a bejelentkezett felhasználónak aki kitölti azt korrekt módon.')}</span>
+<div id="kovetett_lista_info">
+    <span>{$szotar->fordit('Itt követheted nyomon azoknak a Nyilvános kérdőíveknek az eredményeit, amelyeket bejelentkezve, korrekt módon töltöttél ki.')}</span>
 </div>
 <br />
 <div id="nyilvanos_lista">
