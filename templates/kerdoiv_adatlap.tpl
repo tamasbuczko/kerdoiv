@@ -18,7 +18,9 @@
         NULL ,  'kerdőív másolás',  'copy questionnaire',  'Kopieren Fragebogen',  '',  'kérdőíveim'
         );
         *}
+        {if $kerdoiv_obj->keszito_id == $smarty.session.qa_user_id}
         <a href="?p=kerdoiv&masol=1&kerdoiv={$kerdoiv_sorszam}" alt="Kérdőív másolás" >{$szotar->fordit('kérdőív másolás')}</a>
+        {/if}
         <a href="?p=kerdoiv&kerdoiv={$kerdoiv_sorszam}" alt="kitöltés" >{$szotar->fordit('kitöltés nézet')}</a>
     </div> 
     <div id="lepteto">
