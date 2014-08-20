@@ -14,8 +14,8 @@ $result = "SELECT DISTINCT va.kerdoiv_sorszam, ki.sorszam, ki.cim_hu, ki.cim_de,
         ON va.kitolto_sorszam = k.sorszam
         LEFT JOIN kerdoivek AS ki
         ON va.kerdoiv_sorszam = ki.sorszam
-        WHERE va.regisztralt_kitolto = '$_SESSION[qa_user_id]'
-        OR k.email = '$_SESSION[sessfelhasznaloemail]' $nyelv_szur $keres_szur";
+        WHERE (va.regisztralt_kitolto = '$_SESSION[qa_user_id]'
+        OR k.email = '$_SESSION[sessfelhasznaloemail]') $nyelv_szur $keres_szur";
 
 $navsav = new navsav();
 $navsav->create_navsav($result, $_REQUEST['lap'], 5, $kiemeltx, $_REQUEST[kategoriaszures]);
