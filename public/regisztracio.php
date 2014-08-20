@@ -110,6 +110,7 @@ $array = array( 'tartalom'       => $tartalom,
 $oldal = new html_blokk;
 
 $smarty->assign('lang', $lang);
+$smarty->assign('szotar', $szotar);
 $smarty->assign('tartalom', $tartalom);
 $smarty->assign('figy_uzenet', $figy_uzenet);
 $smarty->assign('user', $user);

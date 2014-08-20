@@ -1,4 +1,6 @@
 <?php
+$kerdoiv_obj = new kerdoiv;  // át kell térni a használatára, jelenleg csak az iframe használja
+$kerdoiv_obj->load($_REQUEST[kerdoiv]);
 require_once ('public/jogosultsag_kerdoiv.php');
 if ($jogosult){
     include('public/kerdoiv_fejlec.php');
@@ -351,7 +353,7 @@ if ($jogosult){
 
     }
 } else {
-    $szuresek_lista = 'Nincs jogosultságod az eredmények megtekintéséhez!';
+    $szuresek_lista = 'Nincs jogosultságod az eredmények megtekintéséhez!<br />'.$kerdoiv_obj->jogosultsag_uzenet;
 }
 $tartalom = $kerdoiv_fejlec.$szuresek_lista.$szemelyes_szuresek.$kerdes_blokk;
 ?>

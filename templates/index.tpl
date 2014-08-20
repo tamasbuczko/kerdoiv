@@ -50,9 +50,17 @@
     
 <div id="teszt" {if $smarty.request.kerdoiv} style="display: none;"{/if}><a href="?p=5">{$szotar->fordit('Teszt Üzem! - Próbáld ki nyugodtan')}...</a></div>
 {/if}
-		 <a href="?lang=en{$url_param}"><img src="graphics/angol_zaszlo_k.png" alt="" />en</a>
-		 <a href="?lang=de{$url_param}"><img src="graphics/nemet_zaszlo_k.png" alt="" />de</a>
-		 <a href="?lang=hu{$url_param}"><img src="graphics/magyar_zaszlo_k.png" alt="" />hu</a>
+{if ((!$kerdoiv_obj) OR ($kerdoiv_obj->nyelvszam > 1))}
+{if $kerdoiv_obj->en != '0'}
+                 <a href="?lang=en{$url_param}"><img src="graphics/angol_zaszlo_k.png" alt="" />en</a>
+{/if}
+{if $kerdoiv_obj->de != '0'}
+                 <a href="?lang=de{$url_param}"><img src="graphics/nemet_zaszlo_k.png" alt="" />de</a>
+{/if}
+{if $kerdoiv_obj->hu != '0'}
+                 <a href="?lang=hu{$url_param}"><img src="graphics/magyar_zaszlo_k.png" alt="" />hu</a>
+{/if}
+{/if}
 	  </div>
 	  <div id="frame"{if ($page->kerdoivnezet)} style="width: 690px;"{/if}>
 		 <div id="head"{if $page->cimlap == '0'} class="head_kicsi{if ($kerdoiv_obj->csak_kerdoiv == 'on') AND ($smarty.request.p != ujkerdoiv)} head_nincs{/if}"{/if}>        

@@ -16,7 +16,7 @@
 <div style="display: block; clear: both;">
     <div id="nyilvanos_lista_kep"><img src="graphics/nincs_kep.png" alt="" /></div>    
     <div id="nyilvanos_lista_1">
-    <h3><a href="?p=kerdoiv&amp;kerdoiv={$objektum->sorszam}">
+    <h3><a href="?p=eredmeny&amp;kerdoiv={$objektum->sorszam}">
         {$objektum->cim}
     </a></h3>
     <p>

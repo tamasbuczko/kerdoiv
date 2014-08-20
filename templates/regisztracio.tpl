@@ -1,5 +1,5 @@
 <!--<img src="graphics/QA_logo.png" alt="questionaction" id="csomagajanlatok" />-->
-<label style="margin-left: 5px;">A tesztidőszak alatt regisztrálók számára, minden csomag ingyenes decemberig.</label>
+<label style="margin-left: 5px;">{$szotar->fordit('A tesztidőszak alatt regisztrálók számára, minden csomag ingyenes, decemberig.')}</label>
 
 <form action="" name="register" method="post" class="login">
     <h2>{$lang['regisztráció']}</h2>

@@ -75,6 +75,11 @@ if (($_REQUEST[kerdoiv]) AND ( $_REQUEST[p] == 'eredmeny')) {
         // utólagos nyilvános kikapcsnál a listában megjelenik, de nem tudja megnézni
         // és csak azok lássák, akik kitöltötték
     }
+    if (($kerdoiv_obj->keszito_id != $_SESSION[qa_user_id]) AND ($kerdoiv_obj->nyilvanos == '0')){
+        unset($jogosult);
+        $kerdoiv_obj->jogosultsag_uzenet = 'A kérdőív eredményei már nem nyilvánosak!';
+    }
+    
 }
 
 
