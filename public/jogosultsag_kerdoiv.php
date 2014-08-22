@@ -82,6 +82,9 @@ if (($_REQUEST[kerdoiv]) AND ( $_REQUEST[p] == 'eredmeny')) {
     
 }
 
+if (($kerdoiv_obj->keszito_id == $_SESSION[qa_user_id])){
+   $jogosult = 1;	
+}
 
 //eldöntés, hogy kell e vizsgálni kitöltést
 $egyszerkitoltheto = mysql_fetch_assoc(mysql_query("SELECT `egyszerkitoltheto` FROM `kerdoivek` WHERE `sorszam`='" . $_REQUEST[kerdoiv] . "'"));
