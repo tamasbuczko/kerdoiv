@@ -13,21 +13,6 @@ if ($_SESSION[qa_user_id]) {
     $csak_aktiv = "";
 }
 
-if (!is_numeric($_REQUEST[kerdoiv])) {
-    $result = mysql_query("SELECT sorszam, user_id, hirdetessel, hu, en, de FROM kerdoivek WHERE sorszam <> '' $csak_aktiv AND hivatkozas = '$_REQUEST[kerdoiv]' ");
-} else {
-    $result = mysql_query("SELECT sorszam, user_id, hirdetessel, hu, en, de FROM kerdoivek WHERE sorszam <> '' $csak_aktiv AND sorszam = '$_REQUEST[kerdoiv]' ");
-}
-$a = mysql_fetch_array($result);
-if ($a[0]) {
-    $_REQUEST[kerdoiv] = $a[0];
-}
-
-$kerdoiv_nyelv_bekapcs = $a[$_SESSION[lang]];  //1 az értéke, ha az aktuális nyelven be van kapcsolva a kérdőív
-
-$kerdoiv_obj = new kerdoiv;  // át kell térni a használatára, jelenleg csak az iframe használja
-$kerdoiv_obj->load($_REQUEST[kerdoiv]);
-
 require_once ('public/jogosultsag_kerdoiv.php');  //objektum miatt még átnézni
 
 if ($jogosult) {
