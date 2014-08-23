@@ -218,6 +218,9 @@ if ($_REQUEST[id]){
 	$video_kerdes = $a[6];
     $urlap_cim = 'Kérdés módosítása';
     
+    $kerdoiv_obj = new kerdoiv;
+    $kerdoiv_obj->load($kerdoiv_sorszam);
+    
     if ($kep_file){
         $kep_kerdes = '<div class="admin_kep">'
                 . '<img src="kerdes_kepek/'.$kep_file.'" alt="" />'
@@ -384,6 +387,12 @@ if ($_REQUEST[id]){
 		   $options .= '<option value="'.$i.'"'.$valasz_jel.'>'.$i.'</option>';
 		}
 		
+                if ($kerdoiv_obj->authority != '1'){
+                    $kep_kapcs = ' onclick="valasz_ful(\'k\', '.$next_elementv[sorszam].');"';
+                } else {
+                    $kep_kapcs = ' onmouseover="sugo(\'8\', this.id)"';
+                }
+                
 		$valaszok2 .= ''
 				. '<div class="valasz_blokk">'
 				  . '<div class="a_v_fulek" style="width: 40px !important;">'
@@ -394,7 +403,7 @@ if ($_REQUEST[id]){
 				  . '<div id="a_vf_sz_'.$next_elementv[sorszam].'" class="a_v_fulek" onclick="valasz_ful(\'sz\', '.$next_elementv[sorszam].');">'
                                         . 'Szöveg'
                                   . '</div>'
-				  . '<div id="a_vf_k_'.$next_elementv[sorszam].'" class="a_v_fulek" onclick="valasz_ful(\'k\', '.$next_elementv[sorszam].');">'
+				  . '<div id="a_vf_k_'.$next_elementv[sorszam].'" class="a_v_fulek"'.$kep_kapcs.'>'
                                         . 'Kép'
                                   . '</div>'
 				  . '<div id="a_vf_v_'.$next_elementv[sorszam].'" class="a_v_fulek" onclick="valasz_ful(\'v\', '.$next_elementv[sorszam].');">'
@@ -420,6 +429,8 @@ if ($_REQUEST[id]){
     }
 }
 
+$smarty->assign('szotar', $szotar);
+$smarty->assign('kerdoiv_obj', $kerdoiv_obj);
 $smarty->assign('kerdoiv_sorszam', $kerdoiv_sorszam);
 $smarty->assign('urlap_cim', $urlap_cim);
 $smarty->assign('valaszok', $valaszok);

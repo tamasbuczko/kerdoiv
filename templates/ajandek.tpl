@@ -1,8 +1,6 @@
-<form action="?p=nyilvanos" name="keres" method="get" />
+<form action="?p=ajandek" name="keres" method="get" />
    <label>{$szotar->fordit('Keresés')}:</label><input name="keres" type="text" value="{$keres}" />
    <input name="submit" type="submit" value="{$szotar->fordit('Keresés')}" /><br style="clear: both;" />
-   <label>{$szotar->fordit('Van ajándéksorsolás')}</label>
-   <input type="checkbox" name="ajandek"{if $smarty.request.ajandek} checked="checked"{/if} />
    <input type="hidden" name="p" value="nyilvanos" />
 {if $smarty.request.keres}
    {$talalatszam}
