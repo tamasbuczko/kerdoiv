@@ -4,7 +4,7 @@
     {$nyilvanos_kerdoivek}
 
    </div>
-	<a href="?p=nyilvanos" class="nyilvanos_link">{$lang['További nyilvános kérdőívek']}...</a>
+	<a href="?p=nyilvanos" class="nyilvanos_link">{$szotar->fordit('További publikus kérdőívek')}...</a>
 </div>
 
 <form action="index.php" name="login" method="post" class="login">

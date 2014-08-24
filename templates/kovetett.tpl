@@ -7,7 +7,7 @@
 {/if}
 </form>
 <div id="kovetett_lista_info">
-    <span>{$szotar->fordit('Itt követheted nyomon azoknak a Nyilvános kérdőíveknek az eredményeit, amelyeket bejelentkezve, korrekt módon töltöttél ki.')}</span>
+    <span>{$szotar->fordit('Itt követheted nyomon azoknak a publikus kérdőíveknek az eredményeit, amelyeket bejelentkezve, korrekt módon töltöttél ki.')}</span>
 </div>
 <br />
 <div id="nyilvanos_lista">

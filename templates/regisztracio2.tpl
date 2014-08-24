@@ -21,7 +21,7 @@
     <tr><th>{$lang['csomagok']}</th><th>{$lang['ingyenes']}</th><th>{$lang['ezüst']}</th><th>{$lang['arany']}</th></tr>
     <tr><td>{$lang['Havidíj']}</td><td>{$lang['ingyenes']}</td><td>{$lang['2.000 Ft']}</td><td>{$lang['6.000 Ft']}</td></tr>
     <tr><td>{$lang['Kedvezményes éves díj']}</td><td>{$lang['ingyenes']}</td><td>{$lang['20.000 Ft']}</td><td>{$lang['60.000 Ft']}</td></tr>
-    <tr><td>{$lang['Nyílt körű és nyilvános kérdőívek']}</td><td>{$lang['van']}</td><td>{$lang['van']}</td><td>{$lang['van']}</td></tr>
+    <tr><td>{$lang['Nyílt körű és publikus kérdőívek']}</td><td>{$lang['van']}</td><td>{$lang['van']}</td><td>{$lang['van']}</td></tr>
     <tr><td>{$lang['Személyes kérdőívek']}</td><td>{$lang['nincs']}</td><td>{$lang['van']}</td><td>{$lang['van']}</td></tr>
     <tr><td>{$lang['Kérdőívek maximális száma']}</td><td>{$lang['korlátlan']}</td><td>{$lang['korlátlan']}</td><td>{$lang['korlátlan']}</td></tr>
     <tr><td>{$lang['Futó kérdőívek maximális száma']}</td><td>{1}</td><td>{50}</td><td>{$lang['korlátlan']}</td></tr>
