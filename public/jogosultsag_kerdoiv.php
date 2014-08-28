@@ -122,4 +122,25 @@ if ($egyszerkitoltheto[egyszerkitoltheto] == '1') {
     }
 }
 
+if (($kerdoiv_obj->authority == '1') AND ($_REQUEST[i])){
+    $tartalom = 'A kérdőív beágyazásához nincs jogosultsága!<br />'
+            . '<a href="http://questionaction.com/?p=csomagok" target="_blank">Csomagváltási lehetőség</a>';
+    unset($jogosult);
+    $kerdoiv_obj->csak_kerdoiv = 'on';
+}
 
+if ($_SESSION[qa_user_id]){
+    $result = mysql_query("SELECT sorszam FROM kitoltesi_naplo WHERE regisztralt_kitolto = '$_SESSION[qa_user_id]' AND kerdoiv = '$kerdoiv_obj->sorszam'");
+    $kitoltotte = mysql_fetch_array($result);
+    if (($kitoltotte[0]) AND ($kerdoiv_obj->nyilvanos == '1')){
+        $jogosult_eredmeny = 1;
+    }
+    
+    if (in_array($_SESSION[qa_user_id], $kerdoiv_obj->megosztott_admin)){
+        $jogosult_eredmeny = 1;
+    }
+    
+    if ($kerdoiv_obj->keszito_id == $_SESSION[qa_user_id]){
+        $jogosult_eredmeny = 1;
+    }
+}

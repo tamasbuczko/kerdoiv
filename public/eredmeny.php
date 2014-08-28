@@ -1,6 +1,6 @@
 <?php
 require_once ('public/jogosultsag_kerdoiv.php');
-if ($jogosult){
+if ($jogosult_eredmeny){
     include('public/kerdoiv_fejlec.php');
 
     $result = mysql_query("SELECT id, nev_hu, nev_en, nev_de FROM dat_csaladiallapot");
