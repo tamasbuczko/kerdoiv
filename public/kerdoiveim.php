@@ -114,7 +114,7 @@ $oldal = new html_blokk;
                 'kitoltottek'       => $lang[kitoltottek],
                 'nyelvek' => $lang[nyelvek],
                 'figy_uzenet'   => $figy_uzenet);*/
-
+$smarty->assign('szotar', $szotar);
 $smarty->assign('lang', $lang);
 $smarty->assign('nyelv_fejlec',$nyelv_fejlec);
 $smarty->assign('lista_kerdoiveim',$lista_kerdoiveim);

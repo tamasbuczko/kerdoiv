@@ -42,7 +42,7 @@ if ($_SESSION["lang"] == 'hu'){
 	$lang[kapcsolat] = 'Kapcsolat';
 	$lang[az_on_email_cime] = 'Az Ön e-mail címe';
 	$lang[uzenet] = 'Üzenet';
-	$lang[uj_nyilvanos_kerdoivek] = 'Legfrissebb nyilvános kérdőívek';
+	$lang[uj_nyilvanos_kerdoivek] = 'Legfrissebb publikus kérdőívek';
         
         
         $lang[aszf] = 'Használati és adatvédelmi szabályok';

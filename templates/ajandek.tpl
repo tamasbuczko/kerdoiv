@@ -7,7 +7,7 @@
 {/if}
 </form>
 <div id="nyilvanos_lista_info">
-    <span>{$szotar->fordit('A Nyilvános kérdőívek segítenek a piackutatásban és közvélemény kutatásban. A keresett kérdőív és eredménye követhetővé válik annak a bejelentkezett felhasználónak aki kitölti azt korrekt módon.')}</span>
+    <span>{$szotar->fordit('Itt találod azokat a kérdőíveket, felméréseket, amelyek kitöltésével ajándékot nyerhetsz. Meg kell adnod az e-mail címed, amely bekerül egy virtuális kalapba, ahonnan sorsolnak.')}</span>
 </div>
 <br />
 <div id="nyilvanos_lista">

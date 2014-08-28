@@ -16,7 +16,7 @@ if ($_REQUEST[submit]){
        $uzenet = 'Jelszavadat sikeresen megváltoztattad!';
    }
 }
-
+$smarty->assign('szotar', $szotar);
 $smarty->assign('lang', $lang);
 $smarty->assign('user', $user);
 $smarty->assign('uzenet', $uzenet);

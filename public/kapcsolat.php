@@ -23,4 +23,5 @@ if ($_REQUEST[uzenet]){
 }
 
 $smarty->assign('lang', $lang);
+$smarty->assign('szotar', $szotar);
 $tartalom = $smarty->fetch('templates/kapcsolat.tpl');

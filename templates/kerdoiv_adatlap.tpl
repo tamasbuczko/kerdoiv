@@ -1,4 +1,4 @@
-<h1>Kérdőív adatlap</h1>
+<h1>{$szotar->fordit('Kérdőív adatlap')}</h1>
 
 <div id="control_box">
     <h3>{$szotar->fordit('Vezérlőpult')}</h3>

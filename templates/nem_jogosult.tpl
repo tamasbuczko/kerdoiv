@@ -1,1 +1,1 @@
-Nem jogosult a kérdés szerkesztéséhez!
+{$szotar->fordit('Nem jogosult a kérdés szerkesztéséhez!')}
