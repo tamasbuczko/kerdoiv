@@ -6,7 +6,7 @@
    <script type="text/javascript" src="js/jquery.1.7.1.min.js"></script>
    <script type="text/javascript" src="js/jscripts.js"></script>
    <script type="text/javascript" src="js/ganalytics.js"></script>
-   <link rel="stylesheet" type="text/css" href="style.css" />
+   <link rel="stylesheet" type="text/css" href="style.css?v=2" />
 {if $kerdoiv_obj->css}
    <link rel="stylesheet" type="text/css" href="surveys_css/{$kerdoiv_obj->css}" />
 {/if}
