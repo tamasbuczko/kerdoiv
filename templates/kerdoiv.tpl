@@ -1,4 +1,9 @@
-{$kerdoiv_fejlec}        
+{$kerdoiv_fejlec}
+		 <div id="survey">
+           <form action="?" name="form_survey" id="form_survey" method="post">
+                <input type="hidden" name="kerdoiv" id="kerdoiv" value="{$smarty.request.kerdoiv}" />
+                    <input type="hidden" name="p" id="p" value="{$smarty.request.p}" />
+                    {$szemelyes_adatok}
 {if ((($kerdoiv_obj->hirdetessel == '1') AND (!$_REQUEST[mod])) OR (($kerdoiv_obj->reklammentes != 'on')AND (!$_REQUEST[mod])))}
 <div class="google_hirdetes">
 {literal}
@@ -26,18 +31,42 @@
 </div>
 {/if}
         <div style="float: left; background-color: #fff;">
-			<ul id="slider2">
-			   {$kerdes_blokk}
-			</ul>	   
-			{$uj_kerdes_gomb}
+            <ul id="slider2">
+               {$kerdes_blokk}
+            </ul>	
+{if $smarty.request.mod}
+			<a href="?p=ujkerdes&amp;kerdoiv={$smarty.request.kerdoiv}&ujkerdes=x" class="zold_gomb" style="float: left; clear:both;">
+                            {$szotar->fordit('új kérdés rögzítése')}
+                        </a>
+{/if}
 			<br />
-			{$kerdoiv_also}
-			{$email_es_elkuldes_blokk}
-		</div>
+{if ($kerdoiv_obj->zaras) AND (!$smarty.request.mod)}
+			<div id="survey_zaras">{$kerdoiv_obj->zaras}</div>
+{/if}
+			<div{if $smarty.request.p == 'eredmeny'} style="display: none;"{/if}>   
+{if (($kerdoiv_obj->email == '1') OR ($kerdoiv_obj->email == '2')) AND (!$smarty.request.mod)}                            
+                            <div class="szemelyes">
+                                <label>E-mail:</label>
+                                <input type="text" name="email" value="{$smarty.request.email}" />
+                            </div>
+{/if}                            
+                            <input type=hidden name="i" value="{$smarty.request.i}"/>
+{if !$smarty.request.mod}
+                            <div id="elkuld">
+                                <input type="submit" name="submit" value="{$szotar->fordit('Elküldés')}"/>
+                            </div>
+{/if}
+                        </div>
+	</div>
 		<input type="hidden" name="sorrendezes" id="sorrendezes" value="" />
 		</form>
                 </div>
-{$slider_script}
+<!--
+<script type="text/javascript" src="slider/js/rhinoslider-1.05.min.js"></script>
+<script type="text/javascript" src="slider/js/mousewheel.js"></script>
+<script type="text/javascript" src="slider/js/easing.js"></script>
+<script type="text/javascript" src="slider/parameters2.js"></script>
+-->                
 <br style="clear: both;"/>
 <a class="a2a_dd" href="http://www.addtoany.com/share_save?linkurl=www.questionaction.com/?p=kerdoiv&kerdoiv={$smarty.request.kerdoiv};linkname=QuestionAction.com">
    <img src="http://static.addtoany.com/buttons/share_save_171_16.png" width="171" height="16" border="0" alt="Share"/>

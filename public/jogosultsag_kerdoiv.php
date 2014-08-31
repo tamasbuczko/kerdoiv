@@ -136,8 +136,10 @@ if ($_SESSION[qa_user_id]){
         $jogosult_eredmeny = 1;
     }
     
+    if ($kerdoiv_obj->megosztott_admin){
     if (in_array($_SESSION[qa_user_id], $kerdoiv_obj->megosztott_admin)){
         $jogosult_eredmeny = 1;
+    }
     }
     
     if ($kerdoiv_obj->keszito_id == $_SESSION[qa_user_id]){

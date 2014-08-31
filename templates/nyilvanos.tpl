@@ -16,7 +16,13 @@
 {section name=obj loop=$obj_array}{* ez egy komment *}
 {assign var=objektum value=$obj_array[obj]}
 <div style="display: block; clear: both;">
-    <div id="nyilvanos_lista_kep"><img src="graphics/nincs_kep.png" alt="" /></div>    
+    <div id="nyilvanos_lista_kep">
+{if !$objektum->kereso_kep}
+        <img src="graphics/nincs_kep.png" alt="" />
+{else}
+        <img src="fejlec_kepek/{$objektum->kereso_kep}" alt="" />
+{/if}
+    </div>    
     <div id="nyilvanos_lista_1">
     <h3><a href="?p=kerdoiv&amp;kerdoiv={$objektum->sorszam}">
         {$objektum->cim}

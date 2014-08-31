@@ -50,7 +50,6 @@ if ($_REQUEST[submit]){ //űrlap elküldésének vizsgálata(személyes adatok)
     }
         
     $request_foglalkozas_value = $_REQUEST[foglalkozas];
-    $request_email_value = $_REQUEST[email];
 }
 
 if ($kerdoiv_obj->hiba > 0){

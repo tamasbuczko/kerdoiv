@@ -56,16 +56,16 @@
    <select name="lang" id="nyelvkapcs">
 				  <option value="">{$szotar->fordit('Válasszon nyelvet!')}</option>
 {if $kerdoiv_obj->en != '0'}
-				  <option value="en">en</option>
+				  <option value="en">english</option>
                  <!--<a href="?lang=en{$url_param}"><img src="graphics/angol_zaszlo_k.png" alt="" />en</a>-->
 {/if}
 {if $kerdoiv_obj->de != '0'}
                  <!--<a href="?lang=de{$url_param}"><img src="graphics/nemet_zaszlo_k.png" alt="" />de</a>-->
-				  <option value="de">de</option>
+				  <option value="de">deutsch</option>
 {/if}
 {if $kerdoiv_obj->hu != '0'}
                  <!--<a href="?lang=hu{$url_param}"><img src="graphics/magyar_zaszlo_k.png" alt="" />hu</a>-->
-				  <option value="hu">hu</option>
+				  <option value="hu">magyar</option>
 {/if}
    </select>
    <input type="submit" name="submit" />

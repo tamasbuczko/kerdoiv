@@ -45,4 +45,10 @@ if ($jogosult) {
     }
 }
 
-$tartalom .= $kerdes_blokk;
+$smarty->assign('szotar', $szotar);
+$smarty->assign('kerdoiv_obj', $kerdoiv_obj);
+$smarty->assign('szemelyes_adatok', $szemelyes_adatok);
+$smarty->assign('kerdes_blokk', $kerdes_blokk);
+$smarty->assign('kerdoiv_fejlec', $kerdoiv_fejlec);
+
+$tartalom .= $smarty->fetch('templates/kerdoiv.tpl');
