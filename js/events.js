@@ -37,6 +37,10 @@ if (document.getElementById("rendben_gomb") != null){
    document.getElementById("rendben_gomb").addEventListener("click", function(){divdisp_off('popup')}, true);
 }
 
+if (document.getElementById("nyelvkapcs") != null){
+   document.getElementById("nyelvkapcs").addEventListener("change", function(){document.nyelv.submit.click();}, true);
+}
+
 if (document.getElementById("mentes_gomb") != null){
    document.getElementById("mentes_gomb").addEventListener("click", function(){
        document.form_survey.action = '?b=1';

@@ -47,19 +47,29 @@
         </div>
 {/if}
 {if !$smarty.session.qa_user_id} 
-    
-<div id="teszt" {if $smarty.request.kerdoiv} style="display: none;"{/if}><a href="?p=5">{$szotar->fordit('Teszt Üzem! - Próbáld ki nyugodtan')}...</a></div>
+<div id="teszt" {if $smarty.request.kerdoiv} style="display: none;"{/if}>
+   <a href="?p=5">{$szotar->fordit('Teszt Üzem! - Próbáld ki nyugodtan')}...</a>
+</div>
 {/if}
 {if ((!$kerdoiv_obj) OR ($kerdoiv_obj->nyelvszam > 1))}
+   <form action="" method="post" name="nyelv" id="nyelv">
+   <select name="lang" id="nyelvkapcs">
+				  <option value="">{$szotar->fordit('Válasszon nyelvet!')}</option>
 {if $kerdoiv_obj->en != '0'}
-                 <a href="?lang=en{$url_param}"><img src="graphics/angol_zaszlo_k.png" alt="" />en</a>
+				  <option value="en">en</option>
+                 <!--<a href="?lang=en{$url_param}"><img src="graphics/angol_zaszlo_k.png" alt="" />en</a>-->
 {/if}
 {if $kerdoiv_obj->de != '0'}
-                 <a href="?lang=de{$url_param}"><img src="graphics/nemet_zaszlo_k.png" alt="" />de</a>
+                 <!--<a href="?lang=de{$url_param}"><img src="graphics/nemet_zaszlo_k.png" alt="" />de</a>-->
+				  <option value="de">de</option>
 {/if}
 {if $kerdoiv_obj->hu != '0'}
-                 <a href="?lang=hu{$url_param}"><img src="graphics/magyar_zaszlo_k.png" alt="" />hu</a>
+                 <!--<a href="?lang=hu{$url_param}"><img src="graphics/magyar_zaszlo_k.png" alt="" />hu</a>-->
+				  <option value="hu">hu</option>
 {/if}
+   </select>
+   <input type="submit" name="submit" />
+   </form>
 {/if}
 	  </div>
 	  <div id="frame"{if ($page->kerdoivnezet)} style="width: 690px;"{/if}>
