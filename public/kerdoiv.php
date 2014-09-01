@@ -43,12 +43,13 @@ if ($jogosult) {
     if ($_REQUEST[ok] == 1) {
         $kerdes_blokk = '<div id="koszonjuk">' . $lang['koszonjuk_valaszaid'] . '</div>'; // használjuk valahol???
     }
+	
+	$smarty->assign('szotar', $szotar);
+	$smarty->assign('kerdoiv_obj', $kerdoiv_obj);
+	$smarty->assign('szemelyes_adatok', $szemelyes_adatok);
+	$smarty->assign('kerdes_blokk', $kerdes_blokk);
+	$smarty->assign('kerdoiv_fejlec', $kerdoiv_fejlec);
+
+	$tartalom .= $smarty->fetch('templates/kerdoiv.tpl');
 }
 
-$smarty->assign('szotar', $szotar);
-$smarty->assign('kerdoiv_obj', $kerdoiv_obj);
-$smarty->assign('szemelyes_adatok', $szemelyes_adatok);
-$smarty->assign('kerdes_blokk', $kerdes_blokk);
-$smarty->assign('kerdoiv_fejlec', $kerdoiv_fejlec);
-
-$tartalom .= $smarty->fetch('templates/kerdoiv.tpl');
