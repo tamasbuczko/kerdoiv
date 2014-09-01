@@ -4,7 +4,8 @@
                 <input type="hidden" name="kerdoiv" id="kerdoiv" value="{$smarty.request.kerdoiv}" />
                     <input type="hidden" name="p" id="p" value="{$smarty.request.p}" />
                     {$szemelyes_adatok}
-{if ((($kerdoiv_obj->hirdetessel == '1') AND (!$_REQUEST[mod])) OR (($kerdoiv_obj->reklammentes != 'on')AND (!$_REQUEST[mod])))}
+{if (($kerdoiv_obj->hirdetessel == '1') AND (!$smarty.request.mod)) OR ($kerdoiv_obj->reklammentes != 'on')}
+{if (!$smarty.request.mod)}
 <div class="google_hirdetes">
 {literal}
 		<div>
@@ -29,6 +30,7 @@
 		</div>
 {/literal}
 </div>
+{/if}
 {/if}
         <div style="float: left; background-color: #fff;">
             <ul id="slider2">
