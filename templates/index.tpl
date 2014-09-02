@@ -35,7 +35,7 @@
    <body {if ($hibauzenet) OR ($figy_uzenet)}{if !$smarty.request.lang}onload="divdisp_on('popup');{/if}{/if}">
 <div id="iframe">  
 	  <div id="langs"{if ($page->kerdoivnezet)} style="width: 690px;"{/if}>
-<a href="?"><img style="float:left; width:18px; margin: 2px 10px -2px 0px;" src="graphics/home.png" id="homegomb" alt="" /></a>
+            <a href="?" id="home"></a>
 {if $smarty.session.qa_user_id}
 	<div id="user_box">
             {$szotar->fordit('Bejelentkezve')}:
@@ -73,7 +73,7 @@
 {/if}
 	  </div>
 	  <div id="frame"{if ($page->kerdoivnezet)} style="width: 690px;"{/if}>
-		 <div id="head"{if $page->cimlap == '0'} class="head_kicsi{if ($kerdoiv_obj->csak_kerdoiv == 'on') AND ($smarty.request.p != ujkerdoiv)} head_nincs{/if}"{/if}>        
+		 <div id="head"{if $page->cimlap == '0'} class="head_kicsi{if ($kerdoiv_obj->csak_kerdoiv == 'on') AND ($smarty.request.p == 'kerdoiv')} head_nincs{/if}"{/if}>        
 			<div id="head_menu">
 			   <a href="?" id="logo"></a>
 			   <div id="menu">
