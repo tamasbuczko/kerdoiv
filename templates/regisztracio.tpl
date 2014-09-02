@@ -1,5 +1,5 @@
 <!--<img src="graphics/QA_logo.png" alt="questionaction" id="csomagajanlatok" />-->
-<label style="margin-left: 5px;">{$szotar->fordit('Ha most regisztrálsz szeptember 7-ig és teszteled az oldalt, 1 éves előfizetést kapsz ajándékba!')}</label>
+<label style="margin-left: 5px;">{$szotar->fordit('Ha regisztrálsz akár arany csomagba is szeptember 7-ig és teszteled az oldalt, 1 éves előfizetést kapsz ajándékba!')}</label>
 <!--<label style="margin-left: 5px;">{$szotar->fordit('A tesztidőszak alatt regisztrálók számára, minden csomag ingyenes, decemberig.')}</label>-->
 
 <form action="" name="register" method="post" class="login">
