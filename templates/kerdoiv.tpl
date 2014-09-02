@@ -34,7 +34,31 @@
 {/if}
         <div style="float: left; background-color: #fff;">
             <ul id="slider2">
-               {$kerdes_blokk}
+               
+               {foreach from=$kerdes_blokk_tomb key=sorszam_kerdes item=kerdes}
+                <li>
+                    <div class="survey_block">
+                        <div class="survey_question">
+                        <span>
+                            {$kerdes.kerdes_sorrend} {$kerdes.kerdes}
+                        </span>
+{if (($smarty.request.mod) AND ($smarty.session.qa_user_id))}
+                            <div>
+				<a href="#" title="kérdés törlése" onclick="megerosites_x({$sorszam_kerdes}, 'kerdes', '{$kerdoiv_obj->sorszam}')" ></a>
+				<a href="?p=ujkerdes&amp;id={$sorszam_kerdes}" title="kérdés módosítása"></a>
+				<a href="?p=ujkerdes&amp;kerdoiv={$kerdoiv_obj->sorszam}&ujkerdes=x&kszam={$sorszam_kerdes}" title="új kérdés beszúrása"></a>
+                            </div>
+{/if}
+                        </div>
+                        <div class="survey_answers">
+                            {$kerdes.kerdes_kep}
+                            {$kerdes.kerdes_video}
+                            {$kerdes.valaszok}
+                            <br style="clear:both" />
+                        </div>
+                    </div>
+                </li>
+                {/foreach}
             </ul>	
 {if $smarty.request.mod}
 			<a href="?p=ujkerdes&amp;kerdoiv={$smarty.request.kerdoiv}&ujkerdes=x" class="zold_gomb" style="float: left; clear:both;">
