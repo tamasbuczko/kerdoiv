@@ -1,4 +1,14 @@
-{$kerdoiv_fejlec}
+{$kerdoiv_headline}
+   <div id="intro">
+	  <div id="survey_intro">
+		 <h1>{$kerdoiv_obj->cim}</h1>
+		 {$fejlec_szerk}
+		 <div id="survey_intro_div">
+		 {$kerdoiv_obj->leiras}
+		 </div>
+		 {$control_box}
+	  </div>			
+   </div>
 		 <div id="survey">
            <form action="?" name="form_survey" id="form_survey" method="post">
                 <input type="hidden" name="kerdoiv" id="kerdoiv" value="{$smarty.request.kerdoiv}" />
