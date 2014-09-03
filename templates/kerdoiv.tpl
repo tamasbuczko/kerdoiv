@@ -39,21 +39,62 @@
                 <li>
                     <div class="survey_block">
                         <div class="survey_question">
-                        <span>
-                            {$kerdes.kerdes_sorrend} {$kerdes.kerdes}
-                        </span>
+						   <span>
+{if $smarty.request.mod}
+							  <select name="kerdes_sorrend_{$sorszam_kerdes}" id="kerdes_sorrend_{$sorszam_kerdes}" onchange="kerdes_sorrend_ment(this.id)">
+								 {$kerdes.sorrend_x}
+							  </select>
+{else}
+							  {$kerdes.kerdes_darab}.
+{/if}
+{if $kerdes.kerdes_sorrend}
+							   {$kerdes.kerdes_sorrend}
+{/if}
+							   {$kerdes.kerdes}
+						   </span>
 {if (($smarty.request.mod) AND ($smarty.session.qa_user_id))}
-                            <div>
-				<a href="#" title="kérdés törlése" onclick="megerosites_x({$sorszam_kerdes}, 'kerdes', '{$kerdoiv_obj->sorszam}')" ></a>
-				<a href="?p=ujkerdes&amp;id={$sorszam_kerdes}" title="kérdés módosítása"></a>
-				<a href="?p=ujkerdes&amp;kerdoiv={$kerdoiv_obj->sorszam}&ujkerdes=x&kszam={$sorszam_kerdes}" title="új kérdés beszúrása"></a>
-                            </div>
+						   <div>
+							  <a href="#" title="kérdés törlése" onclick="megerosites_x({$sorszam_kerdes}, 'kerdes', '{$kerdoiv_obj->sorszam}')" ></a>
+							  <a href="?p=ujkerdes&amp;id={$sorszam_kerdes}" title="kérdés módosítása"></a>
+							  <a href="?p=ujkerdes&amp;kerdoiv={$kerdoiv_obj->sorszam}&ujkerdes=x&kszam={$sorszam_kerdes}" title="új kérdés beszúrása"></a>
+						   </div>
 {/if}
                         </div>
                         <div class="survey_answers">
-                            {$kerdes.kerdes_kep}
-                            {$kerdes.kerdes_video}
+{if $kerdes.kerdes_kep}
+							<img src="kerdes_kepek/{$kerdes.kerdes_kep}" class="question_img" alt="" />
+{/if}
+{if $kerdes.kerdes_video}
+{if $kerdes.kerdes_video_tipus == 'youtube'}
+                            <iframe src="//www.youtube.com/embed/{$kerdes.kerdes_video}" class="kerdes_video" width="560" height="315" frameborder="0" allowfullscreen></iframe>
+{/if}
+{if $kerdes.kerdes_video_tipus == 'vimeo'}
+							<iframe src="//player.vimeo.com/video/{$kerdes.kerdes_video}" class="kerdes_video" width="500" height="281" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+{/if}
+						    <br style="clear:both;" />
+{/if}
+{if $kerdes.kerdes_tipus == 'ranking'}
+							<div class="ranking">
+							  <span>1</span><span>2</span><span>3</span><span>4</span><span>5</span>
+							</div>
                             {$kerdes.valaszok}
+{/if}
+{if $kerdes.kerdes_tipus == 'textarea'}
+						    <textarea cols="1" rows="1" name="textarea_{$sorszam_kerdes}">{$kerdes.valaszok}</textarea>
+{/if}
+{if $kerdes.kerdes_tipus == 'text'}
+						    <input type="text" name="text_{$sorszam_kerdes}" value="{$kerdes.valaszok}" />
+                            
+{/if}
+{if $kerdes.kerdes_tipus == 'select'}
+						    <select name="select_{$sorszam_kerdes}">
+							  <option value="0">---</option>
+							  {$kerdes.valaszok}
+						    </select>
+{/if}
+{if $kerdes.kerdes_tipus == 'radio'}
+                            {$kerdes.valaszok}
+{/if}
                             <br style="clear:both" />
                         </div>
                     </div>
