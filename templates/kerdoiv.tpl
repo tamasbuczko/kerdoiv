@@ -1,4 +1,8 @@
-{$kerdoiv_headline}
+{if $kerdoiv_fejlec_kep}
+   <div id="headline">
+	  <img src="fejlec_kepek/{$kerdoiv_fejlec_kep}" id="headline_img" alt="" />
+   </div>
+{/if}
    <div id="intro">
 	  <div id="survey_intro">
 		 <h1>{$kerdoiv_obj->cim}</h1>
@@ -9,14 +13,14 @@
 		 {$control_box}
 	  </div>			
    </div>
-		 <div id="survey">
-           <form action="?" name="form_survey" id="form_survey" method="post">
-                <input type="hidden" name="kerdoiv" id="kerdoiv" value="{$smarty.request.kerdoiv}" />
-                    <input type="hidden" name="p" id="p" value="{$smarty.request.p}" />
-                    {$szemelyes_adatok}
+   <div id="survey">
+      <form action="?" name="form_survey" id="form_survey" method="post">
+         <input type="hidden" name="kerdoiv" id="kerdoiv" value="{$smarty.request.kerdoiv}" />
+         <input type="hidden" name="p" id="p" value="{$smarty.request.p}" />
+         {$szemelyes_adatok}
 {if (($kerdoiv_obj->hirdetessel == '1') AND (!$smarty.request.mod)) OR ($kerdoiv_obj->reklammentes != 'on')}
 {if (!$smarty.request.mod)}
-<div class="google_hirdetes">
+   <div class="google_hirdetes">
 {literal}
 		<div>
 		 <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
@@ -39,7 +43,7 @@
 		 <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
 		</div>
 {/literal}
-</div>
+   </div>
 {/if}
 {/if}
         <div style="float: left; background-color: #fff;">

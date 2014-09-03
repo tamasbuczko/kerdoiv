@@ -44,7 +44,7 @@ if ($jogosult) {
         $kerdes_blokk = '<div id="koszonjuk">' . $lang['koszonjuk_valaszaid'] . '</div>'; // használjuk valahol???
     }
 	
-	$smarty->assign('kerdoiv_headline', $kerdoiv_headline);
+	$smarty->assign('kerdoiv_fejlec_kep', $kerdoiv_fejlec_kep);
 	$smarty->assign('fejlec_szerk', $fejlec_szerk);
 	$smarty->assign('control_box', $control_box);
 	
