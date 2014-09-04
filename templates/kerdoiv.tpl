@@ -1,4 +1,4 @@
-{if $kerdoiv_fejlec_kep}
+{if $kerdoiv_obj->fejlec_kep}
    <div id="headline">
 	  <img src="fejlec_kepek/{$kerdoiv_fejlec_kep}" id="headline_img" alt="" />
    </div>
@@ -6,11 +6,24 @@
    <div id="intro">
 	  <div id="survey_intro">
 		 <h1>{$kerdoiv_obj->cim}</h1>
-		 {$fejlec_szerk}
+{if (($smarty.request.mod) AND ($smarty.session.qa_user_id))}
+		 <a href="?p=ujkerdoiv&amp;id={$kerdoiv_obj->sorszam}" class="modosito_gomb" title="kérdőív módosítása"></a>
+{/if}
 		 <div id="survey_intro_div">
 		 {$kerdoiv_obj->leiras}
 		 </div>
-		 {$control_box}
+{if (($smarty.request.mod) AND ($smarty.session.qa_user_id))}
+		 <div id="control_box">
+			<h3>{$szotar->fordit('vezérlőpult')}</h3>
+			<br />
+			<a href="?p=ujkerdes&amp;kerdoiv={$kerdoiv_obj->sorszam}&ujkerdes=x" class="zold_gomb" style="float: left;">{$szotar->fordit('új kérdés rögzítése')}</a>                            
+			<a href="?p=kerdoiv_adatlap&kerdoiv={$kerdoiv_obj->sorszam}" class="sarga_gomb" style="float: left; margin-bottom: 20px;">{$szotar->fordit('Kérdőív adatlap')}</a>
+			<a href="?p=ujkerdoiv&amp;id={$kerdoiv_obj->sorszam}" class="zold_gomb" style="float: left;">{$szotar->fordit('kérdőív módosítása')}</a>
+			<br /><br />
+			<a href="?p=kerdoiveim" class="back" />{$szotar->fordit('vissza')}</a>
+		 </div>
+		 <script type="text/javascript">control_box();</script>
+{/if}
 	  </div>			
    </div>
    <div id="survey">

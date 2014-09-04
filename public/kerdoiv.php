@@ -1,9 +1,9 @@
 <?php
-$_SESSION[pub] = '1';
+#$_SESSION[pub] = '1';
 
-if ($_REQUEST[pub] == '2') {
-    unset($_SESSION[pub]);
-}
+#if ($_REQUEST[pub] == '2') {
+#    unset($_SESSION[pub]);
+#}
 
 if (!$_REQUEST[mod]) {
     $csak_aktiv = "AND status = '1'";
@@ -16,7 +16,7 @@ if ($_SESSION[qa_user_id]) {
 require_once ('public/jogosultsag_kerdoiv.php');  //objektum miatt még átnézni
 
 if ($jogosult) {
-    $tartalom = '';
+    unset($tartalom);
 
     require_once('public/kerdoiv_hiba.php');
     require_once('public/kerdoiv_fejlec.php');
@@ -44,10 +44,6 @@ if ($jogosult) {
         $kerdes_blokk = '<div id="koszonjuk">' . $lang['koszonjuk_valaszaid'] . '</div>'; // használjuk valahol???
     }
 	
-	$smarty->assign('kerdoiv_fejlec_kep', $kerdoiv_fejlec_kep);
-	$smarty->assign('fejlec_szerk', $fejlec_szerk);
-	$smarty->assign('control_box', $control_box);
-	
 	$smarty->assign('szotar', $szotar);
 	$smarty->assign('kerdoiv_obj', $kerdoiv_obj);
 	$smarty->assign('szemelyes_adatok', $szemelyes_adatok);
@@ -55,4 +51,3 @@ if ($jogosult) {
 
 	$tartalom .= $smarty->fetch('templates/kerdoiv.tpl');
 }
-
