@@ -19,7 +19,19 @@ if ($jogosult) {
     unset($tartalom);
 
     require_once('public/kerdoiv_hiba.php');
-    require_once('public/kerdoiv_fejlec.php');
+    
+    if ($_REQUEST[kerdoiv]) {
+        $kerdoiv_sorszam = $_REQUEST[kerdoiv];
+        //kezelni, ha nincs a kért sorszámú kérdőív
+    } else {
+        $kerdoiv_sorszam = 1;
+    }
+    
+    require_once('public/kerdoiv_masol.php');
+    
+    If (!$kerdoiv_obj->cim) {
+        $tartalom = '<div id="koszonjuk">Nincs ilyen kérdőív!</div>';
+    }
 
     $kerdes_darab = 0;
     $figyelmeztetes = 0;
@@ -47,7 +59,7 @@ if ($jogosult) {
 	$smarty->assign('szotar', $szotar);
 	$smarty->assign('kerdoiv_obj', $kerdoiv_obj);
 	$smarty->assign('szemelyes_adatok', $szemelyes_adatok);
-    $smarty->assign('kerdes_blokk_tomb', $kerdes_blokk_tomb);
+        $smarty->assign('kerdes_blokk_tomb', $kerdes_blokk_tomb);
 
 	$tartalom .= $smarty->fetch('templates/kerdoiv.tpl');
 }

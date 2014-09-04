@@ -1,7 +1,7 @@
 <?php
 require_once ('public/jogosultsag_kerdoiv.php');
 if ($jogosult_eredmeny){
-    include('public/kerdoiv_fejlec.php');
+    #include('public/kerdoiv_fejlec.php');
 
     $result = mysql_query("SELECT id, nev_hu, nev_en, nev_de FROM dat_csaladiallapot");
     while ($next_element = mysql_fetch_array($result)){
@@ -73,7 +73,7 @@ if ($jogosult_eredmeny){
         $tomb['eletkora'][$next_element[id]] = $next_element['nev_'.$_SESSION[lang]];
     }
 
-
+    //objektum miatt kikapcsolható
     $resultx = mysql_query ("SELECT email, neme, kora, orszag, varos, foglalkozas, vegzettseg, jovedelem, csaladiallapot FROM kerdoiv_szemelyesadat WHERE kerdoiv_sorszam = '$kerdoiv_sorszam'");
     $next_elementx = mysql_fetch_array ($resultx);
     $kapcs_szur_nemek = $next_elementx[neme];
@@ -86,6 +86,7 @@ if ($jogosult_eredmeny){
 
     $szures_darab = 0;
 
+    //objektumra átírni a vizsgálatokat
     if ($kapcs_szur_nemek == '1'){
     $szures_darab++;
     $nemek_szuresdoboz = ''
@@ -199,6 +200,8 @@ if ($jogosult_eredmeny){
               }  
     }
 
+    
+    //tényleges eredmény számolás kezdete
     $result = mysql_query("SELECT sorszam, kerdes_hu, kerdes_en, kerdes_de, tipus, sorrend FROM kerdesek WHERE status = '1' AND kerdoiv_sorszam = '$kerdoiv_sorszam' ORDER BY sorrend");
     while ($next_element = mysql_fetch_array($result)){
 

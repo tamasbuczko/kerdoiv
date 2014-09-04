@@ -1,6 +1,6 @@
 {if $kerdoiv_obj->fejlec_kep}
    <div id="headline">
-	  <img src="fejlec_kepek/{$kerdoiv_fejlec_kep}" id="headline_img" alt="" />
+	  <img src="fejlec_kepek/{$kerdoiv_obj->fejlec_kep}" id="headline_img" alt="" />
    </div>
 {/if}
    <div id="intro">
@@ -30,7 +30,87 @@
       <form action="?" name="form_survey" id="form_survey" method="post">
          <input type="hidden" name="kerdoiv" id="kerdoiv" value="{$smarty.request.kerdoiv}" />
          <input type="hidden" name="p" id="p" value="{$smarty.request.p}" />
-         {$szemelyes_adatok}
+         {*$szemelyes_adatok*}
+{if $smarty.request.p != 'eredmeny'}
+<div class="szemelyes">
+{if $kerdoiv_obj->szemelyes_adat_tipusok['neme']}
+    <label class="kitoltoi_adatok">{$szotar->fordit('neme')}:</label>
+    <select name="neme">
+        <option value="x">---</option>
+{foreach from=$kerdoiv_obj->szemelyes_adat_tipusok['neme'] item="sor"}
+        <option value="{$sor.id}" {if $smarty.request.neme == $sor.id}selected="selected"{/if}>{$sor.nev}</option>
+{/foreach}
+    </select>
+    <br />
+{/if}
+
+{if $kerdoiv_obj->szemelyes_adat_tipusok['kora']}
+    <label class="kitoltoi_adatok">{$szotar->fordit('életkor')}:</label>
+    <select name="eletkora">
+        <option value="x">---</option>
+{foreach from=$kerdoiv_obj->szemelyes_adat_tipusok['kora'] item="sor"}
+        <option value="{$sor.id}" {if $smarty.request.eletkora == $sor.id}selected="selected"{/if}>{$sor.nev}</option>
+{/foreach}
+    </select>
+    <br />
+{/if}
+
+{if $kerdoiv_obj->szemelyes_adat_tipusok['foglalkozas']}
+    <label class="kitoltoi_adatok">{$szotar->fordit('foglalkozás')}:</label>
+    <select name="foglalkozas">
+        <option value="x">---</option>
+{foreach from=$kerdoiv_obj->szemelyes_adat_tipusok['foglalkozas'] item="sor"}
+        <option value="{$sor.id}" {if $smarty.request.foglalkozas == $sor.id}selected="selected"{/if}>{$sor.nev}</option>
+{/foreach}
+    </select>
+    <br />
+{/if}
+
+{if $kerdoiv_obj->szemelyes_adat_tipusok['orszag']}
+    <label class="kitoltoi_adatok">{$szotar->fordit('ország')}:</label>
+    <select name="lakhely">
+        <option value="x">---</option>
+{foreach from=$kerdoiv_obj->szemelyes_adat_tipusok['orszag'] item="sor"}
+        <option value="{$sor.id}" {if $smarty.request.lakhely == $sor.id}selected="selected"{/if}>{$sor.nev}</option>
+{/foreach}
+    </select>
+    <br />
+{/if}
+
+{if $kerdoiv_obj->szemelyes_adat_tipusok['csaladiallapot']}
+    <label class="kitoltoi_adatok">{$szotar->fordit('családi állapot')}:</label>
+    <select name="csaladiallapot">
+        <option value="x">---</option>
+{foreach from=$kerdoiv_obj->szemelyes_adat_tipusok['csaladiallapot'] item="sor"}
+        <option value="{$sor.id}" {if $smarty.request.csaladiallapot == $sor.id}selected="selected"{/if}>{$sor.nev}</option>
+{/foreach}
+    </select>
+    <br />
+{/if}
+
+{if $kerdoiv_obj->szemelyes_adat_tipusok['jovedelem']}
+    <label class="kitoltoi_adatok">{$szotar->fordit('jövedelem')}:</label>
+    <select name="jovedelmek">
+        <option value="x">---</option>
+{foreach from=$kerdoiv_obj->szemelyes_adat_tipusok['jovedelem'] item="sor"}
+        <option value="{$sor.id}" {if $smarty.request.jovedelmek == $sor.id}selected="selected"{/if}>{$sor.nev}</option>
+{/foreach}
+    </select>
+    <br />
+{/if}
+
+{if $kerdoiv_obj->szemelyes_adat_tipusok['vegzettseg']}
+    <label class="kitoltoi_adatok">{$szotar->fordit('végzettség')}:</label>
+    <select name="vegzettseg">
+        <option value="x">---</option>
+{foreach from=$kerdoiv_obj->szemelyes_adat_tipusok['vegzettseg'] item="sor"}
+        <option value="{$sor.id}" {if $smarty.request.vegzettseg == $sor.id}selected="selected"{/if}>{$sor.nev}</option>
+{/foreach}
+    </select>
+    <br />
+{/if}
+</div>
+{/if}
 {if (($kerdoiv_obj->hirdetessel == '1') AND (!$smarty.request.mod)) OR ($kerdoiv_obj->reklammentes != 'on')}
 {if (!$smarty.request.mod)}
    <div class="google_hirdetes">
@@ -68,7 +148,7 @@
                         <div class="survey_question">
 						   <span>
 {if $smarty.request.mod}
-							  <select name="kerdes_sorrend_{$sorszam_kerdes}" id="kerdes_sorrend_{$sorszam_kerdes}" onchange="kerdes_sorrend_ment(this.id)">
+							  <select name="kerdes_sorrend_{$sorszam_kerdes}" id="kerdes_sorrend_{$sorszam_kerdes}" onchange="kerdes_sorrend_ment(this.id);">
 								 {$kerdes.sorrend_x}
 							  </select>
 {else}
@@ -81,7 +161,7 @@
 						   </span>
 {if (($smarty.request.mod) AND ($smarty.session.qa_user_id))}
 						   <div>
-							  <a href="#" title="kérdés törlése" onclick="megerosites_x({$sorszam_kerdes}, 'kerdes', '{$kerdoiv_obj->sorszam}')" ></a>
+							  <a href="#" title="kérdés törlése" onclick="megerosites_x({$sorszam_kerdes}, 'kerdes', '{$kerdoiv_obj->sorszam}');"></a>
 							  <a href="?p=ujkerdes&amp;id={$sorszam_kerdes}" title="kérdés módosítása"></a>
 							  <a href="?p=ujkerdes&amp;kerdoiv={$kerdoiv_obj->sorszam}&ujkerdes=x&kszam={$sorszam_kerdes}" title="új kérdés beszúrása"></a>
 						   </div>
@@ -96,7 +176,7 @@
                             <iframe src="//www.youtube.com/embed/{$kerdes.kerdes_video}" class="kerdes_video" width="560" height="315" frameborder="0" allowfullscreen></iframe>
 {/if}
 {if $kerdes.kerdes_video_tipus == 'vimeo'}
-							<iframe src="//player.vimeo.com/video/{$kerdes.kerdes_video}" class="kerdes_video" width="500" height="281" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+                            <iframe src="//player.vimeo.com/video/{$kerdes.kerdes_video}" class="kerdes_video" width="500" height="281" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
 {/if}
 						    <br style="clear:both;" />
 {/if}
@@ -119,7 +199,7 @@
 							  {$kerdes.valaszok}
 						    </select>
 {/if}
-{if $kerdes.kerdes_tipus == 'radio'}
+{if ($kerdes.kerdes_tipus == 'radio') OR ($kerdes.kerdes_tipus == 'checkbox')}
                             {$kerdes.valaszok}
 {/if}
                             <br style="clear:both" />

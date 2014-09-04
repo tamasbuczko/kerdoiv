@@ -35,7 +35,9 @@
    <body {if ($hibauzenet) OR ($figy_uzenet)}{if !$smarty.request.lang}onload="divdisp_on('popup');{/if}{/if}">
 <div id="iframe">  
 	  <div id="langs"{if ($page->kerdoivnezet)} style="width: 690px;"{/if}>
+{if !$smarty.request.i}
             <a href="?" id="home"></a>
+{/if}
 {if $smarty.session.qa_user_id}
 	<div id="user_box">
             {$szotar->fordit('Bejelentkezve')}:
@@ -73,7 +75,8 @@
 {/if}
 	  </div>
 	  <div id="frame"{if ($page->kerdoivnezet)} style="width: 690px;"{/if}>
-		 <div id="head"{if $page->cimlap == '0'} class="head_kicsi{if ($kerdoiv_obj->csak_kerdoiv == 'on') AND ($smarty.request.p == 'kerdoiv')} head_nincs{/if}"{/if}>        
+{if !$smarty.request.i}
+              <div id="head"{if $page->cimlap == '0'} class="head_kicsi{if ($kerdoiv_obj->csak_kerdoiv == 'on') AND ($smarty.request.p == 'kerdoiv')} head_nincs{/if}"{/if}>        
 			<div id="head_menu">
 			   <a href="?" id="logo"></a>
 			   <div id="menu">
@@ -82,7 +85,8 @@
 			</div>
 			{$slider}
             <p>survey, questionaire, form, exam, test, quize</p>
-		 </div>
+              </div>
+{/if}
 		 <div id="content">
 			{$tartalom}
 		 </div>
