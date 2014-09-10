@@ -59,7 +59,7 @@ if ($jogosult) {
 	$smarty->assign('szotar', $szotar);
 	$smarty->assign('kerdoiv_obj', $kerdoiv_obj);
 	$smarty->assign('szemelyes_adatok', $szemelyes_adatok);
-        $smarty->assign('kerdes_blokk_tomb', $kerdes_blokk_tomb);
+    $smarty->assign('kerdes_blokk_tomb', $kerdes_blokk_tomb);
 
 	$tartalom .= $smarty->fetch('templates/kerdoiv.tpl');
 }

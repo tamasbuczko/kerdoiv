@@ -26,11 +26,19 @@
 {/if}
 	  </div>			
    </div>
+{if $szuresek_lista}
+   {$szuresek_lista}
+{/if}
+{if $szemelyes_szuresek}
+   {$szemelyes_szuresek}
+{/if}
+{if $kerdes_blokk}
+   {$kerdes_blokk}
+{/if}
    <div id="survey">
       <form action="?" name="form_survey" id="form_survey" method="post">
          <input type="hidden" name="kerdoiv" id="kerdoiv" value="{$smarty.request.kerdoiv}" />
-         <input type="hidden" name="p" id="p" value="{$smarty.request.p}" />
-         {*$szemelyes_adatok*}
+         <input type="hidden" name="p" id="p" value="{$smarty.request.p}" />		 
 {if $smarty.request.p != 'eredmeny'}
 <div class="szemelyes">
 {if $kerdoiv_obj->szemelyes_adat_tipusok['neme']}

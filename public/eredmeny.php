@@ -1,5 +1,6 @@
 <?php
 require_once ('public/jogosultsag_kerdoiv.php');
+$kerdoiv_sorszam = $kerdoiv_obj->sorszam;
 if ($jogosult_eredmeny){
     #include('public/kerdoiv_fejlec.php');
 
@@ -357,4 +358,12 @@ if ($jogosult_eredmeny){
     $szuresek_lista = 'Nincs jogosultságod az eredmények megtekintéséhez!<br />'.$kerdoiv_obj->jogosultsag_uzenet;
 }
 $tartalom = $kerdoiv_fejlec.$szuresek_lista.$szemelyes_szuresek.$kerdes_blokk;
-?>
+
+	$smarty->assign('szotar', $szotar);
+	$smarty->assign('kerdoiv_obj', $kerdoiv_obj);
+	$smarty->assign('szuresek_lista', $szuresek_lista);
+	$smarty->assign('szemelyes_szuresek', $szemelyes_szuresek);
+	$smarty->assign('kerdes_blokk', $kerdes_blokk);
+    #$smarty->assign('kerdes_blokk_tomb', $kerdes_blokk_tomb);
+
+	$tartalom = $smarty->fetch('templates/kerdoiv.tpl');
