@@ -37,6 +37,9 @@ if ($jogosult) {
     $figyelmeztetes = 0;
 
     if ($kerdoiv_nyelv_bekapcs == '1') {
+	   if ($_REQUEST[er] == '1'){
+		require_once('public/eredmeny.php');
+	   }
         require_once('public/kerdoiv_generator.php');
         require_once('public/kerdoiv_figyelmeztetesek.php');
     }
@@ -59,6 +62,7 @@ if ($jogosult) {
 	$smarty->assign('szotar', $szotar);
 	$smarty->assign('kerdoiv_obj', $kerdoiv_obj);
 	$smarty->assign('szemelyes_adatok', $szemelyes_adatok);
+	#$smarty->assign('eredmenyek_tomb', $eredmenyek_tomb);
     $smarty->assign('kerdes_blokk_tomb', $kerdes_blokk_tomb);
 
 	$tartalom .= $smarty->fetch('templates/kerdoiv.tpl');

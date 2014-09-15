@@ -96,6 +96,11 @@ if ($jogosult_eredmeny){
 				if ($_SESSION[lang] == 'hu'){ $valasz_szoveg = $eredmenyek[2];}
 			    if ($_SESSION[lang] == 'en'){ $valasz_szoveg = $eredmenyek[4];}
 			    if ($_SESSION[lang] == 'de'){ $valasz_szoveg = $eredmenyek[5];}
+				
+				$valasz_sorszam = $eredmenyek[6];
+				$eredmenyek_tomb[$valasz_sorszam]['valasz_sorszam'] = $valasz_sorszam;
+				$eredmenyek_tomb[$valasz_sorszam]['valasz_szavazatszam'] = $eredmenyek[3];
+				
                 $eredmeny_lista .= '
 				   <div class="valasz szoveg">
 					 '.$valasz_szoveg.' ('.$eredmenyek[3].' db)
@@ -188,10 +193,13 @@ if ($jogosult_eredmeny){
     $szuresek_lista = 'Nincs jogosultságod az eredmények megtekintéséhez!<br />'.$kerdoiv_obj->jogosultsag_uzenet;
 }
 
+if (!$_REQUEST[er] == 1){
 $smarty->assign('szotar', $szotar);
 $smarty->assign('kerdoiv_obj', $kerdoiv_obj);
 $smarty->assign('szuresek_lista', $szuresek_lista);
 $smarty->assign('kerdes_blokk', $kerdes_blokk);
-#$smarty->assign('kerdes_blokk_tomb', $kerdes_blokk_tomb);
-
+$smarty->assign('eredmenyek_tomb', $eredmenyek);
+unset($kerdes_blokk);
+$smarty->assign('kerdes_blokk_tomb', $kerdes_blokk_tomb);
 $tartalom = $smarty->fetch('templates/kerdoiv.tpl');
+}
