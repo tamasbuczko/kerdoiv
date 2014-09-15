@@ -198,7 +198,7 @@ $smarty->assign('szotar', $szotar);
 $smarty->assign('kerdoiv_obj', $kerdoiv_obj);
 $smarty->assign('szuresek_lista', $szuresek_lista);
 $smarty->assign('kerdes_blokk', $kerdes_blokk);
-$smarty->assign('eredmenyek_tomb', $eredmenyek);
+$smarty->assign('eredmenyek_tomb', $eredmenyek_tomb);
 unset($kerdes_blokk);
 $smarty->assign('kerdes_blokk_tomb', $kerdes_blokk_tomb);
 $tartalom = $smarty->fetch('templates/kerdoiv.tpl');

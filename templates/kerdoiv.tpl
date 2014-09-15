@@ -41,10 +41,10 @@
 	  <div style="width: 710px;">
 		 
 {if ($kerdoiv_obj->szemelyes_adat_tipusok['neme'])}
-		 <label id="neme_kapcs" class="kitoltoi_adatok">{$szotar->fordit('neme')}:</label>
+         <label id="neme_kapcs" class="kitoltoi_adatok">{$szotar->fordit('neme')}:</label>
          <div id="neme_doboz" class="szemelyes_szures">
 {foreach from=$kerdoiv_obj->szemelyes_adat_tipusok['neme'] item="sor"}
-			<p>{$sor.nev}</p>
+	 <p>{$sor.nev}</p>
             <a href="?p=eredmeny&kerdoiv={$kerdoiv_obj->sorszam}&k2=neme&v2={$sor.id}">
             <img src="graphics/filter.png" alt="" />
             </a>
@@ -245,7 +245,7 @@
         <div style="float: left; background-color: #fff;">
             <ul id="slider2">
                
-               {foreach from=$kerdes_blokk_tomb key=sorszam_kerdes item=kerdes}
+{foreach from=$kerdes_blokk_tomb key=sorszam_kerdes item=kerdes}
                 <li>
                     <div class="survey_block">
                         <div class="survey_question">
@@ -309,7 +309,7 @@
                         </div>
                     </div>
                 </li>
-                {/foreach}
+{/foreach}
             </ul>	
 {if $smarty.request.mod}
 			<a href="?p=ujkerdes&amp;kerdoiv={$smarty.request.kerdoiv}&ujkerdes=x" class="zold_gomb" style="float: left; clear:both;">
