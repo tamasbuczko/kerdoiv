@@ -245,7 +245,7 @@
         <div style="float: left; background-color: #fff;">
             <ul id="slider2">
                
-{foreach from=$kerdes_blokk_tomb key=sorszam_kerdes item=kerdes}
+{foreach from=$kerdes_blokk_tomb key=sorszam_kerdes item=kerdes name=outer}
                 <li>
                     <div class="survey_block">
                         <div class="survey_question">
@@ -287,23 +287,97 @@
 							<div class="ranking">
 							  <span>1</span><span>2</span><span>3</span><span>4</span><span>5</span>
 							</div>
-                            {$kerdes.valaszok}
+{foreach from=$valasz_blokk_tomb key=sorszamx_valasz item=valaszx}
+{if $valaszx.valasz_kerdese == $sorszam_kerdes}
+{assign var=xxx value="radio_{$sorszam_kerdes}"}
+{assign var=aaa value="{$valaszx.valasz_sorszam}"}
+{if $valaszx.valasz_fajta == 'szoveges'}
+						   <label class="ranking_text">{$valaszx.valasz_szoveg}</label>
+						   <div style="float: left;">
+							  {$valaszx.valasz_ertekek}
+						   </div>
+{/if}
+{/if}
+{/foreach}
 {/if}
 {if $kerdes.kerdes_tipus == 'textarea'}
-						    <textarea cols="1" rows="1" name="textarea_{$sorszam_kerdes}">{$kerdes.valaszok}</textarea>
+{assign var=xxx value="textarea_{$sorszam_kerdes}"}
+						    <textarea cols="1" rows="1" name="textarea_{$sorszam_kerdes}">{$smarty.request.$xxx}</textarea>
 {/if}
 {if $kerdes.kerdes_tipus == 'text'}
-						    <input type="text" name="text_{$sorszam_kerdes}" value="{$kerdes.valaszok}" />
-                            
+{assign var=xxx value="text_{$sorszam_kerdes}"}
+						    <input type="text" name="text_{$sorszam_kerdes}" value="{$smarty.request.$xxx}" />
 {/if}
 {if $kerdes.kerdes_tipus == 'select'}
 						    <select name="select_{$sorszam_kerdes}">
 							  <option value="0">---</option>
-							  {$kerdes.valaszok}
+{foreach from=$valasz_blokk_tomb key=sorszamx_valasz item=valaszx}
+{if $valaszx.valasz_kerdese == $sorszam_kerdes}
+{assign var=xxx value="select_{$sorszam_kerdes}"}
+							  <option value="{$valaszx.valasz_sorszam}" {if $smarty.request.$xxx == $valaszx.valasz_sorszam}selected="selected"{/if}>{$valaszx.valasz_szoveg}</option>
+{/if}
+{/foreach}
 						    </select>
 {/if}
-{if ($kerdes.kerdes_tipus == 'radio') OR ($kerdes.kerdes_tipus == 'checkbox')}
-                            {$kerdes.valaszok}
+{if $kerdes.kerdes_tipus == 'radio'}
+{foreach from=$valasz_blokk_tomb key=sorszamx_valasz item=valaszx}
+{if $valaszx.valasz_kerdese == $sorszam_kerdes}
+{assign var=xxx value="radio_{$sorszam_kerdes}"}
+{assign var=aaa value="{$valaszx.valasz_sorszam}"}
+{if $valaszx.valasz_fajta == 'szoveges'}
+							<input type="radio" name="radio_{$sorszam_kerdes}" {if $smarty.request.$xxx == $valaszx.valasz_sorszam}checked="checked" {/if}value="{$valaszx.valasz_sorszam}" />
+							<label>{$valaszx.valasz_szoveg} {$eredmenyek_tomb.$aaa.valasz_szavazatszam}</label>
+{/if}
+{if $valaszx.valasz_fajta == 'kepes'}
+						   <div class="answer_img">
+						   <input type="radio" name="radio_{$sorszam_kerdes}" {if $smarty.request.$xxx == $valaszx.valasz_sorszam}checked="checked" {/if}value="{$valaszx.valasz_sorszam}" />
+						   <div class="answer_img_frame">
+						   <img src="valasz_kepek/{$valaszx.valasz_kep}">
+						   <label>{$valaszx.valasz_szoveg}</label>
+						   </div>
+						   </div>
+{/if}   
+{if $valaszx.valasz_fajta == 'videos'}
+						   <div class="answer_img">
+							  <input type="radio" name="radio_{$sorszam_kerdes}" {if $smarty.request.$xxx == $valaszx.valasz_sorszam}checked="checked" {/if}value="{$valaszx.valasz_sorszam}" />
+							  <div class="answer_img_frame">
+								 {$valaszx.valasz_video}
+							  <label>{$valaszx.valasz_szoveg}</label>
+							  </div>
+						   </div>
+{/if}
+{/if}
+{/foreach}
+{/if}
+{if $kerdes.kerdes_tipus == 'checkbox'}
+{foreach from=$valasz_blokk_tomb key=sorszamx_valasz item=valaszx}
+{if $valaszx.valasz_kerdese == $sorszam_kerdes}
+{assign var=xxx value="checkbox_{$valaszx.valasz_sorszam}"}
+{assign var=aaa value="{$valaszx.valasz_sorszam}"}
+{if $valaszx.valasz_fajta == 'szoveges'}
+						   <input type="checkbox" name="checkbox_{$sorszam_valasz}" {if $smarty.request.$xxx == $valaszx.valasz_sorszam}checked="checked"{/if}/>
+						   <label>{$valaszx.valasz_szoveg}</label>
+{/if}
+{if $valaszx.valasz_fajta == 'kepes'}
+						   <div class="answer_img">
+							  <input type="checkbox" name="checkbox_{$sorszam_valasz}" {if $smarty.request.$xxx == $valaszx.valasz_sorszam}checked="checked"{/if}/>
+							  <div class="answer_img_frame">
+								 <img src="valasz_kepek/{$valaszx.valasz_kep}">
+								 <label>{$valaszx.valasz_szoveg}</label>
+							  </div>
+						   </div>
+{/if}
+{if $valaszx.valasz_fajta == 'videos'}
+						   <div class="answer_img">
+						   <input type="checkbox" name="checkbox_{$valaszx.valasz_sorszam}" {if $smarty.request.$xxx == 'on'}checked="checked"{/if}/>
+						   <div class="answer_img_frame">
+						   {$valaszx.valasz_video}
+						   <label>{$valaszx.valasz_szoveg}</label>
+						   </div>
+						   </div>
+{/if}
+{/if}
+{/foreach}					   
 {/if}
                             <br style="clear:both" />
                         </div>
