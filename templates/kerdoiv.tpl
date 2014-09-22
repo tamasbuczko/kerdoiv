@@ -379,7 +379,22 @@
 {/if}
 						   <div class="answer_img_frame">
 						   <img src="valasz_kepek/{$valaszx.valasz_kep}">
-						   <label>{$valaszx.valasz_szoveg} {$eredmenyek_tomb.$aaa.valasz_szavazatszam}</label>
+						   <label>
+							  {$valaszx.valasz_szoveg}
+{if $smarty.request.er == 1}
+							   <br />
+							   <div class="grafv">
+									   <div class="graf" style="width: {$eredmenyek_tomb.$aaa.valasz_szavazatarany}px"></div>
+							   </div>({$eredmenyek_tomb.$aaa.valasz_szavazatszam} db)
+							   <div class="filter">
+								 <a href="?p=eredmeny&kerdoiv={$kerdoiv_sorszam}&k={$sorszam_kerdes}&v={$eredmenyek_tomb.$aaa.valasz_szavazatszam}">
+									<img src="graphics/filter.png" alt="" />
+								 </a>
+							   </div>
+							   <br />
+							   
+{/if}
+						   </label>
 						   </div>
 						   </div>
 {/if}   
@@ -390,7 +405,22 @@
 {/if}
 							  <div class="answer_img_frame">
 								 {$valaszx.valasz_video}
-							  <label>{$valaszx.valasz_szoveg} {$eredmenyek_tomb.$aaa.valasz_szavazatszam}</label>
+							  <label>
+								 {$valaszx.valasz_szoveg}
+{if $smarty.request.er == 1}
+							   <br />
+							   <div class="grafv">
+									   <div class="graf" style="width: {$eredmenyek_tomb.$aaa.valasz_szavazatarany}px"></div>
+							   </div>({$eredmenyek_tomb.$aaa.valasz_szavazatszam} db)
+							   <div class="filter">
+								 <a href="?p=eredmeny&kerdoiv={$kerdoiv_sorszam}&k={$sorszam_kerdes}&v={$eredmenyek_tomb.$aaa.valasz_szavazatszam}">
+									<img src="graphics/filter.png" alt="" />
+								 </a>
+							   </div>
+							   <br />
+							   
+{/if}
+							  </label>
 							  </div>
 						   </div>
 {/if}
@@ -429,7 +459,21 @@
 {/if}
 							  <div class="answer_img_frame">
 								 <img src="valasz_kepek/{$valaszx.valasz_kep}">
-								 <label>{$valaszx.valasz_szoveg} {$eredmenyek_tomb.$aaa.valasz_szavazatszam}</label>
+								 <label>
+									{$valaszx.valasz_szoveg}
+{if $smarty.request.er == 1}
+							  <br />
+							   <div class="grafv">
+									   <div class="graf" style="width: {$eredmenyek_tomb.$aaa.valasz_szavazatarany}px"></div>
+							   </div>({$eredmenyek_tomb.$aaa.valasz_szavazatszam} db)
+							   <div class="filter">
+								 <a href="?p=eredmeny&kerdoiv={$kerdoiv_sorszam}&k={$sorszam_kerdes}&v={$eredmenyek_tomb.$aaa.valasz_szavazatszam}">
+									<img src="graphics/filter.png" alt="" />
+								 </a>
+							   </div>
+							   <br />
+{/if}
+								 </label>
 							  </div>
 						   </div>
 {/if}
@@ -440,7 +484,21 @@
 {/if}
 						   <div class="answer_img_frame">
 						   {$valaszx.valasz_video}
-						   <label>{$valaszx.valasz_szoveg} {$eredmenyek_tomb.$aaa.valasz_szavazatszam}</label>
+						   <label>
+							  {$valaszx.valasz_szoveg}
+{if $smarty.request.er == 1}
+							  <br />
+							   <div class="grafv">
+									   <div class="graf" style="width: {$eredmenyek_tomb.$aaa.valasz_szavazatarany}px"></div>
+							   </div>({$eredmenyek_tomb.$aaa.valasz_szavazatszam} db)
+							   <div class="filter">
+								 <a href="?p=eredmeny&kerdoiv={$kerdoiv_sorszam}&k={$sorszam_kerdes}&v={$eredmenyek_tomb.$aaa.valasz_szavazatszam}">
+									<img src="graphics/filter.png" alt="" />
+								 </a>
+							   </div>
+							   <br />
+{/if}
+						   </label>
 						   </div>
 						   </div>
 {/if}

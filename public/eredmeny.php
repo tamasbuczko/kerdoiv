@@ -88,15 +88,16 @@ if ($jogosult_eredmeny){
             #először szűrjük le azokat a kitöltőket akik egy adott kérdésre adott választ adtak
             #(SELECT kitolto_sorszam FROM valaszadasok WHERE kerdes_sorszam = '1' AND valasz_sorszam = '1')
             while ($eredmenyek = mysql_fetch_array($result2)){
-                $eredmenyarany = $eredmenyek[3] / $valaszadok_szama;
+			   $szavazat_darabszam = $eredmenyek[3];
+                $eredmenyarany = $szavazat_darabszam / $valaszadok_szama;
                 $eredmenyarany = $eredmenyarany*300;
 				if ($_SESSION[lang] == 'hu'){ $valasz_szoveg = $eredmenyek[2];}
 			    if ($_SESSION[lang] == 'en'){ $valasz_szoveg = $eredmenyek[4];}
 			    if ($_SESSION[lang] == 'de'){ $valasz_szoveg = $eredmenyek[5];}
 				$valasz_sorszam = $eredmenyek[6];
 				$eredmenyek_tomb[$valasz_sorszam]['valasz_sorszam'] = $valasz_sorszam;
-				$eredmenyek_tomb[$valasz_sorszam]['valasz_szavazatszam'] = $eredmenyek[3];
-				$eredmenyek_tomb[$valasz_sorszam]['valasz_szavazatszam_f'] = '('.$eredmenyek[3].' db)';
+				$eredmenyek_tomb[$valasz_sorszam]['valasz_szavazatszam'] = $szavazat_darabszam;
+				$eredmenyek_tomb[$valasz_sorszam]['valasz_szavazatszam_f'] = '('.$szavazat_darabszam.' db)';
 				$eredmenyek_tomb[$valasz_sorszam]['valasz_szavazatarany'] = $eredmenyarany;
                 if ($_SESSION['szures']){
                    foreach ($_SESSION['szures'] as $key => $value) {

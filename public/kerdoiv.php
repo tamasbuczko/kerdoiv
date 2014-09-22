@@ -59,6 +59,14 @@ if ($jogosult) {
         $kerdes_blokk = '<div id="koszonjuk">' . $lang['koszonjuk_valaszaid'] . '</div>'; // használjuk valahol???
     }
 	
+	foreach ($valasz_blokk_tomb as $key => $value){
+	   $xx = $valasz_blokk_tomb[$key][valasz_sorszam];
+	   if (!$eredmenyek_tomb[$xx]['valasz_szavazatszam']){
+		  $eredmenyek_tomb[$xx]['valasz_szavazatszam'] = 0;
+		  $eredmenyek_tomb[$xx]['valasz_szavazatarany'] = 0;
+	   }
+	}
+	
 	$smarty->assign('szotar', $szotar);
 	$smarty->assign('kerdoiv_obj', $kerdoiv_obj);
 	$smarty->assign('szemelyes_adatok', $szemelyes_adatok);
