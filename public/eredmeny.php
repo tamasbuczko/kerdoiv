@@ -25,12 +25,12 @@ if ($jogosult_eredmeny){
     }
 
     if ($_SESSION['szures2']){
-              foreach ($_SESSION['szures2'] as $key => $value) {
-                  $szures_id = $_SESSION['szures2'][$key]['valasz'];
-                  $szures_tipusa = $_SESSION['szures2'][$key]['kerdes'];
-				  if ($szures_tipusa == 'eletkora'){$szures_tipusa = 'kora';}
-                  $szures_lista2 .= '<br />Kérdés: '. $_SESSION['szures2'][$key]['kerdes'] . ' ('.$kerdoiv_obj->szemelyes_adat_tipusok[$szures_tipusa][$szures_id]['nev'].')';
-              }  
+       foreach ($_SESSION['szures2'] as $key => $value) {
+          $szures_id = $_SESSION['szures2'][$key]['valasz'];
+          $szures_tipusa = $_SESSION['szures2'][$key]['kerdes'];
+		  if ($szures_tipusa == 'eletkora'){$szures_tipusa = 'kora';}
+          $szures_lista2 .= '<br />Kérdés: '. $_SESSION['szures2'][$key]['kerdes'] . ' ('.$kerdoiv_obj->szemelyes_adat_tipusok[$szures_tipusa][$szures_id]['nev'].')';
+       }  
     }
     
     //tényleges eredmény számolás kezdete
@@ -42,39 +42,37 @@ if ($jogosult_eredmeny){
         $szures_kiegeszites = '';
 
         if ($_SESSION['szures']){  //konkrét kérdésre szűrünk
-              foreach ($_SESSION['szures'] as $key => $value) {
-                     if ($_SESSION['szures'][$key]['kerdes'] == $sorszam_kerdes){
-                             $szures_lista .= '<br />Kérdés: '. $next_element['kerdes_'.$_SESSION[lang]];
-                     }
+           foreach ($_SESSION['szures'] as $key => $value) {
+              if ($_SESSION['szures'][$key]['kerdes'] == $sorszam_kerdes){
+                 $szures_lista .= '<br />Kérdés: '. $next_element['kerdes_'.$_SESSION[lang]];
               }
+           }
         }
 
         if ($_SESSION['szures']){
-              foreach ($_SESSION['szures'] as $key => $value) {
-                    $szures_kieg_kerdes = $_SESSION['szures'][$key]['kerdes'];
-                    $szures_kieg_valasz	= $_SESSION['szures'][$key]['valasz'];	
-                    $szures_kiegeszites .= "
+           foreach ($_SESSION['szures'] as $key => $value) {
+             $szures_kieg_kerdes = $_SESSION['szures'][$key]['kerdes'];
+             $szures_kieg_valasz = $_SESSION['szures'][$key]['valasz'];	
+             $szures_kiegeszites .= "
                     AND va.kitolto_sorszam
                     IN (SELECT kitolto_sorszam FROM valaszadasok WHERE kerdes_sorszam = $szures_kieg_kerdes AND valasz_sorszam = $szures_kieg_valasz)";
-              }
-            }
+           }
+        }
 
-            if ($_SESSION['szures2']){  // személyes adatra szűrünk
-              foreach ($_SESSION['szures2'] as $key => $value) {
-                    $szures_kieg_kerdes = $_SESSION['szures2'][$key]['kerdes'];
-                    $szures_kieg_valasz	= $_SESSION['szures2'][$key]['valasz'];
-                    $szures_kiegeszites2 .= "
-                        AND va.kitolto_sorszam
-                        IN (SELECT sorszam FROM kitoltok WHERE $szures_kieg_kerdes = '$szures_kieg_valasz')";
-              }
-            }
-
+        if ($_SESSION['szures2']){  // személyes adatra szűrünk
+           foreach ($_SESSION['szures2'] as $key => $value) {
+              $szures_kieg_kerdes = $_SESSION['szures2'][$key]['kerdes'];
+              $szures_kieg_valasz	= $_SESSION['szures2'][$key]['valasz'];
+              $szures_kiegeszites2 .= "
+               AND va.kitolto_sorszam
+               IN (SELECT sorszam FROM kitoltok WHERE $szures_kieg_kerdes = '$szures_kieg_valasz')";
+           }
+        }
 //            if ($_SESSION['szures']){
 //              foreach ($_SESSION['szures'] as $key => $value) {  
 //                     $x = $_SESSION['szures'][$key]['kerdes'];
 //              }
 //            }
-
         if (($kerdes_tipus == 'radio') OR ($kerdes_tipus == 'select') OR ($kerdes_tipus == 'checkbox')){
             $result2 = mysql_query("SELECT sorszam FROM valaszadasok WHERE kerdes_sorszam = $sorszam_kerdes");
             $valaszadok_szama = mysql_num_rows($result2);
@@ -87,7 +85,6 @@ if ($jogosult_eredmeny){
             $szures_kiegeszites2
             GROUP BY valasz_hu
             ORDER BY COUNT(*) DESC");
-
             #először szűrjük le azokat a kitöltőket akik egy adott kérdésre adott választ adtak
             #(SELECT kitolto_sorszam FROM valaszadasok WHERE kerdes_sorszam = '1' AND valasz_sorszam = '1')
             while ($eredmenyek = mysql_fetch_array($result2)){
@@ -96,36 +93,20 @@ if ($jogosult_eredmeny){
 				if ($_SESSION[lang] == 'hu'){ $valasz_szoveg = $eredmenyek[2];}
 			    if ($_SESSION[lang] == 'en'){ $valasz_szoveg = $eredmenyek[4];}
 			    if ($_SESSION[lang] == 'de'){ $valasz_szoveg = $eredmenyek[5];}
-				
 				$valasz_sorszam = $eredmenyek[6];
 				$eredmenyek_tomb[$valasz_sorszam]['valasz_sorszam'] = $valasz_sorszam;
 				$eredmenyek_tomb[$valasz_sorszam]['valasz_szavazatszam'] = $eredmenyek[3];
-				
-                $eredmeny_lista .= '
-				   <div class="valasz szoveg">
-					 '.$valasz_szoveg.' ('.$eredmenyek[3].' db)
-				   </div>
-				   <div class="grafv">
-                           <div class="graf" style="width: '.$eredmenyarany.'px"></div>
-				   </div>
-                   <div class="filter">
-					 <a href="?p=eredmeny&kerdoiv='.$kerdoiv_sorszam.'&k='.$sorszam_kerdes.'&v='.$eredmenyek[6].'">
-						<img src="graphics/filter.png" alt="" />
-					 </a>
-				   </div>
-				   <br />';
-
-                   if ($_SESSION['szures']){
-                       foreach ($_SESSION['szures'] as $key => $value) {
-                           if ($_SESSION['szures'][$key]['valasz'] == $eredmenyek[6]){
-                               $szures_lista .= '<br />Válasz: '. $valasz_szoveg;
-                           }
+				$eredmenyek_tomb[$valasz_sorszam]['valasz_szavazatszam_f'] = '('.$eredmenyek[3].' db)';
+				$eredmenyek_tomb[$valasz_sorszam]['valasz_szavazatarany'] = $eredmenyarany;
+                if ($_SESSION['szures']){
+                   foreach ($_SESSION['szures'] as $key => $value) {
+                       if ($_SESSION['szures'][$key]['valasz'] == $eredmenyek[6]){
+                           $szures_lista .= '<br />Válasz: '. $valasz_szoveg;
                        }
                    }
-
                 }
+            }
         }
-
         if ($kerdes_tipus == 'ranking'){
             $result2 = mysql_query("SELECT sorszam, valasz_hu, valasz_en, valasz_de FROM valaszok WHERE kerdes_valasz = $sorszam_kerdes");
             $sor = 0;
@@ -142,15 +123,15 @@ if ($jogosult_eredmeny){
 					 $szavazatszam = 0;
 				  }
 				  if ($valaszadok_szama > 0){
-				  $eredmenyarany = $szavazatszam / $valaszadok_szama;
-				  $eredmenyarany = $eredmenyarany*30;
+					 $eredmenyarany = $szavazatszam / $valaszadok_szama;
+					 $eredmenyarany = $eredmenyarany*30;
 				  }
 				  $sor_adat .= '<td>'.$szavazatszam.'<div class="graf2v"><div class="graf2" style="width: '.$eredmenyarany.'px"></div></div></td>';
 				  $abszolut = $abszolut + ($i*$szavazatszam);
                  }
 				  if ($valaszadok_szama > 0){
-				  $atlag = $abszolut / $valaszadok_szama;
-				  $atlag = round($atlag, 1);
+					 $atlag = $abszolut / $valaszadok_szama;
+					 $atlag = round($atlag, 1);
 				  }
 				  $eredmeny_lista .= '<tr><td>'.$eredmenyek[valasz_.$_SESSION[lang]].'</td>'.$sor_adat.'<td>'.$atlag.'</td></tr>';
             }
@@ -171,20 +152,24 @@ if ($jogosult_eredmeny){
             $szures_kiegeszites2
             ORDER BY k.sorszam");
             $text_db = 0;
+			unset($eredmenyek_tomb[$valasz_sorszam]['valasz_szavazatszam_f']);
             while ($eredmenyek = mysql_fetch_array($result2)){
                 $text_db++;
-                $eredmeny_lista .= $text_db . '. ' . $eredmenyek[3].'<br />';
+                #$eredmeny_lista .= $text_db . '. ' . $eredmenyek[3].'<br />';
+				$valasz_sorszam = $eredmenyek[6];
+				$eredmenyek_tomb[$valasz_sorszam]['valasz_sorszam'] = $valasz_sorszam;
+				$eredmenyek_tomb[$valasz_sorszam]['valasz_szavazatszam'] = $eredmenyek[3];
+				$eredmenyek_tomb[$valasz_sorszam]['valasz_szavazatszam_f'] .= $eredmenyek[3].' <br />';
             }
         }
-
-        $kerdes_blokk .= '<div class="survey_block">
-                            <div class="survey_question">'.$kerdes_darab.'. '.$next_element['kerdes_'.$_SESSION[lang]] .'</div>
-                            <div class="survey_answers">
-                                '.$eredmeny_lista.'
-                                <br style="clear:both" />
-                            </div>
-                        </div>';
-        unset($eredmeny_lista);
+//        $kerdes_blokk .= '<div class="survey_block">
+//                            <div class="survey_question">'.$kerdes_darab.'. '.$next_element['kerdes_'.$_SESSION[lang]] .'</div>
+//                            <div class="survey_answers">
+//                                '.$eredmeny_lista.'
+//                                <br style="clear:both" />
+//                            </div>
+//                        </div>';
+        #unset($eredmeny_lista);
     } 
     if (($szures_kiegeszites) OR ($szures_kiegeszites2)){
         $szuresek_lista = $szures_lista.$szures_lista2;
@@ -194,12 +179,12 @@ if ($jogosult_eredmeny){
 }
 
 if (!$_REQUEST[er] == 1){
-$smarty->assign('szotar', $szotar);
-$smarty->assign('kerdoiv_obj', $kerdoiv_obj);
-$smarty->assign('szuresek_lista', $szuresek_lista);
-$smarty->assign('kerdes_blokk', $kerdes_blokk);
-$smarty->assign('eredmenyek_tomb', $eredmenyek_tomb);
-unset($kerdes_blokk);
-$smarty->assign('kerdes_blokk_tomb', $kerdes_blokk_tomb);
-$tartalom = $smarty->fetch('templates/kerdoiv.tpl');
+   $smarty->assign('szotar', $szotar);
+   $smarty->assign('kerdoiv_obj', $kerdoiv_obj);
+   $smarty->assign('szuresek_lista', $szuresek_lista);
+   $smarty->assign('kerdes_blokk', $kerdes_blokk);
+   $smarty->assign('eredmenyek_tomb', $eredmenyek_tomb);
+   unset($kerdes_blokk);
+   $smarty->assign('kerdes_blokk_tomb', $kerdes_blokk_tomb);
+   $tartalom = $smarty->fetch('templates/kerdoiv.tpl');
 }
