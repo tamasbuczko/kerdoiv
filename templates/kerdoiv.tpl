@@ -336,7 +336,7 @@
 									   <div class="graf" style="width: {$eredmenyek_tomb.$aaa.valasz_szavazatarany}px"></div>
 							   </div>({$eredmenyek_tomb.$aaa.valasz_szavazatszam} db)
 							   <div class="filter">
-								 <a href="?p=kerdoiv&kerdoiv={$kerdoiv_sorszam}&k={$sorszam_kerdes}&v={$eredmenyek_tomb.$aaa.valasz_szavazatszam}&er=1">
+								 <a href="?p=kerdoiv&kerdoiv={$kerdoiv_obj->sorszam}&k={$sorszam_kerdes}&v={$valaszx.valasz_sorszam}&er=1">
 									<img src="graphics/filter.png" alt="" />
 								 </a>
 							   </div>
@@ -363,7 +363,7 @@
 									   <div class="graf" style="width: {$eredmenyek_tomb.$aaa.valasz_szavazatarany}px"></div>
 							   </div>({$eredmenyek_tomb.$aaa.valasz_szavazatszam} db)
 							   <div class="filter">
-								 <a href="?p=kerdoiv&kerdoiv={$kerdoiv_sorszam}&k={$sorszam_kerdes}&v={$eredmenyek_tomb.$aaa.valasz_szavazatszam}&er=1">
+								 <a href="?p=kerdoiv&kerdoiv={$kerdoiv_obj->sorszam}&k={$sorszam_kerdes}&v={$valaszx.valasz_sorszam}&er=1">
 									<img src="graphics/filter.png" alt="" />
 								 </a>
 							   </div>
@@ -387,7 +387,7 @@
 									   <div class="graf" style="width: {$eredmenyek_tomb.$aaa.valasz_szavazatarany}px"></div>
 							   </div>({$eredmenyek_tomb.$aaa.valasz_szavazatszam} db)
 							   <div class="filter">
-								 <a href="?p=kerdoiv&kerdoiv={$kerdoiv_sorszam}&k={$sorszam_kerdes}&v={$eredmenyek_tomb.$aaa.valasz_szavazatszam}&er=1">
+								 <a href="?p=kerdoiv&kerdoiv={$kerdoiv_obj->sorszam}&k={$sorszam_kerdes}&v={$valaszx.valasz_sorszam}&er=1">
 									<img src="graphics/filter.png" alt="" />
 								 </a>
 							   </div>
@@ -413,7 +413,7 @@
 									   <div class="graf" style="width: {$eredmenyek_tomb.$aaa.valasz_szavazatarany}px"></div>
 							   </div>({$eredmenyek_tomb.$aaa.valasz_szavazatszam} db)
 							   <div class="filter">
-								 <a href="?p=kerdoiv&kerdoiv={$kerdoiv_sorszam}&k={$sorszam_kerdes}&v={$eredmenyek_tomb.$aaa.valasz_szavazatszam}&er=1">
+								 <a href="?p=kerdoiv&kerdoiv={$kerdoiv_obj->sorszam}&k={$sorszam_kerdes}&v={$valaszx.valasz_sorszam}&er=1">
 									<img src="graphics/filter.png" alt="" />
 								 </a>
 							   </div>
@@ -444,7 +444,7 @@
 									   <div class="graf" style="width: {$eredmenyek_tomb.$aaa.valasz_szavazatarany}px"></div>
 							   </div>({$eredmenyek_tomb.$aaa.valasz_szavazatszam} db)
 							   <div class="filter">
-								 <a href="?p=kerdoiv&kerdoiv={$kerdoiv_sorszam}&k={$sorszam_kerdes}&v={$eredmenyek_tomb.$aaa.valasz_szavazatszam}&er=1">
+								 <a href="?p=kerdoiv&kerdoiv={$kerdoiv_obj->sorszam}&k={$sorszam_kerdes}&v={$valaszx.valasz_sorszam}&er=1">
 									<img src="graphics/filter.png" alt="" />
 								 </a>
 							   </div>
@@ -467,7 +467,7 @@
 									   <div class="graf" style="width: {$eredmenyek_tomb.$aaa.valasz_szavazatarany}px"></div>
 							   </div>({$eredmenyek_tomb.$aaa.valasz_szavazatszam} db)
 							   <div class="filter">
-								 <a href="?p=kerdoiv&kerdoiv={$kerdoiv_sorszam}&k={$sorszam_kerdes}&v={$eredmenyek_tomb.$aaa.valasz_szavazatszam}&er=1">
+								 <a href="?p=kerdoiv&kerdoiv={$kerdoiv_obj->sorszam}&k={$sorszam_kerdes}&v={$valaszx.valasz_sorszam}&er=1">
 									<img src="graphics/filter.png" alt="" />
 								 </a>
 							   </div>
@@ -492,7 +492,7 @@
 									   <div class="graf" style="width: {$eredmenyek_tomb.$aaa.valasz_szavazatarany}px"></div>
 							   </div>({$eredmenyek_tomb.$aaa.valasz_szavazatszam} db)
 							   <div class="filter">
-								 <a href="?p=kerdoiv&kerdoiv={$kerdoiv_sorszam}&k={$sorszam_kerdes}&v={$eredmenyek_tomb.$aaa.valasz_szavazatszam}&er=1">
+								 <a href="?p=kerdoiv&kerdoiv={$kerdoiv_obj->sorszam}&k={$sorszam_kerdes}&v={$valaszx.valasz_sorszam}&er=1">
 									<img src="graphics/filter.png" alt="" />
 								 </a>
 							   </div>
@@ -518,7 +518,9 @@
 {/if}
 			<br />
 {if ($kerdoiv_obj->zaras) AND (!$smarty.request.mod)}
+{if ($smarty.request.er != '1')}
 			<div id="survey_zaras">{$kerdoiv_obj->zaras}</div>
+{/if}		
 {/if}
 			<div{if $smarty.request.er == '1'} style="display: none;"{/if}>   
 {if (($kerdoiv_obj->email == '1') OR ($kerdoiv_obj->email == '2')) AND (!$smarty.request.mod)}                            
