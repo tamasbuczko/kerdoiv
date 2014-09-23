@@ -32,10 +32,10 @@
 	  <h4>Szűrésre jelölt válaszok:</h4>
 	  {$szuresek_lista}
 	  <br />
-	  <a href="?p=eredmeny&kerdoiv={$kerdoiv_obj->sorszam}&szurki=1">szűrés kikapcsolása</a>
+	  <a href="?p=kerdoiv&kerdoiv={$kerdoiv_obj->sorszam}&szurki=1&er=1">szűrés kikapcsolása</a>
    </div><br style="clear: both;" />
 {/if}
-{if ((($kerdoiv_obj->szemelyes_adat_tipusok) AND ($smarty.request.p == 'eredmeny')) OR ($smarty.request.er == 1))}
+{if ((($kerdoiv_obj->szemelyes_adat_tipusok) AND ($smarty.request.er == '1')) OR ($smarty.request.er == 1))}
    <div class="doboz">
 	  <h4>{$szotar->fordit('Szűrés a kitöltői adatokra')}:</h4>
 	  <div style="width: 710px;">
@@ -45,7 +45,7 @@
          <div id="neme_doboz" class="szemelyes_szures">
 {foreach from=$kerdoiv_obj->szemelyes_adat_tipusok['neme'] item="sor"}
 	 <p>{$sor.nev}</p>
-            <a href="?p=eredmeny&kerdoiv={$kerdoiv_obj->sorszam}&k2=neme&v2={$sor.id}">
+            <a href="?p=kerdoiv&kerdoiv={$kerdoiv_obj->sorszam}&k2=neme&v2={$sor.id}&er=1">
             <img src="graphics/filter.png" alt="" />
             </a>
 {/foreach}
@@ -57,7 +57,7 @@
          <div id="eletkor_doboz" class="szemelyes_szures">
 {foreach from=$kerdoiv_obj->szemelyes_adat_tipusok['kora'] item="sor"}
 			<p>{$sor.nev}</p>
-            <a href="?p=eredmeny&kerdoiv={$kerdoiv_obj->sorszam}&k2=eletkora&v2={$sor.id}">
+            <a href="?p=kerdoiv&kerdoiv={$kerdoiv_obj->sorszam}&k2=eletkora&v2={$sor.id}&er=1">
             <img src="graphics/filter.png" alt="" />
             </a>
 {/foreach}
@@ -69,7 +69,7 @@
          <div id="csaladiallapot_doboz" class="szemelyes_szures">
 {foreach from=$kerdoiv_obj->szemelyes_adat_tipusok['csaladiallapot'] item="sor"}
 			<p>{$sor.nev}</p>
-            <a href="?p=eredmeny&kerdoiv={$kerdoiv_obj->sorszam}&k2=csaladiallapot&v2={$sor.id}">
+            <a href="?p=kerdoiv&kerdoiv={$kerdoiv_obj->sorszam}&k2=csaladiallapot&v2={$sor.id}&er=1">
             <img src="graphics/filter.png" alt="" />
             </a>
 {/foreach}
@@ -81,7 +81,7 @@
          <div id="foglalkozas_doboz" class="szemelyes_szures">
 {foreach from=$kerdoiv_obj->szemelyes_adat_tipusok['foglalkozas'] item="sor"}
 			<p>{$sor.nev}</p>
-            <a href="?p=eredmeny&kerdoiv={$kerdoiv_obj->sorszam}&k2=foglalkozas&v2={$sor.id}">
+            <a href="?p=kerdoiv&kerdoiv={$kerdoiv_obj->sorszam}&k2=foglalkozas&v2={$sor.id}&er=1">
             <img src="graphics/filter.png" alt="" />
             </a>
 {/foreach}
@@ -93,7 +93,7 @@
          <div id="vegzettseg_doboz" class="szemelyes_szures">
 {foreach from=$kerdoiv_obj->szemelyes_adat_tipusok['vegzettseg'] item="sor"}
 			<p>{$sor.nev}</p>
-			<a href="?p=eredmeny&kerdoiv={$kerdoiv_obj->sorszam}&k2=vegzettseg&v2={$sor.id}">
+			<a href="?p=kerdoiv&kerdoiv={$kerdoiv_obj->sorszam}&k2=vegzettseg&v2={$sor.id}&er=1">
 			<img src="graphics/filter.png" alt="" />
 			</a>
 {/foreach}
@@ -105,7 +105,7 @@
          <div id="jovedelme_doboz" class="szemelyes_szures">
 {foreach from=$kerdoiv_obj->szemelyes_adat_tipusok['jovedelem'] item="sor"}
 			<p>{$sor.nev}</p>
-            <a href="?p=eredmeny&kerdoiv={$kerdoiv_obj->sorszam}&k2=jovedelem&v2={$sor.id}">
+            <a href="?p=kerdoiv&kerdoiv={$kerdoiv_obj->sorszam}&k2=jovedelem&v2={$sor.id}&er=1">
             <img src="graphics/filter.png" alt="" />
             </a>
 {/foreach}
@@ -117,7 +117,7 @@
 		 <div id="orszag_doboz" class="szemelyes_szures">
 {foreach from=$kerdoiv_obj->szemelyes_adat_tipusok['orszag'] item="sor"}
 			<p>{$sor.nev}</p>
-            <a href="?p=eredmeny&kerdoiv={$kerdoiv_obj->sorszam}&k2=lakhely&v2={$sor.id}">
+            <a href="?p=kerdoiv&kerdoiv={$kerdoiv_obj->sorszam}&k2=lakhely&v2={$sor.id}&er=1">
             <img src="graphics/filter.png" alt="" />
             </a>
 {/foreach}	
@@ -134,7 +134,7 @@
       <form action="?" name="form_survey" id="form_survey" method="post">
          <input type="hidden" name="kerdoiv" id="kerdoiv" value="{$smarty.request.kerdoiv}" />
          <input type="hidden" name="p" id="p" value="{$smarty.request.p}" />		 
-{if ($smarty.request.p != 'eredmeny')}
+{if ($smarty.request.er != '1')}
 {if $smarty.request.er != '1'} 
 <div class="szemelyes">
 {if $kerdoiv_obj->szemelyes_adat_tipusok['neme']}
@@ -336,7 +336,7 @@
 									   <div class="graf" style="width: {$eredmenyek_tomb.$aaa.valasz_szavazatarany}px"></div>
 							   </div>({$eredmenyek_tomb.$aaa.valasz_szavazatszam} db)
 							   <div class="filter">
-								 <a href="?p=eredmeny&kerdoiv={$kerdoiv_sorszam}&k={$sorszam_kerdes}&v={$eredmenyek_tomb.$aaa.valasz_szavazatszam}">
+								 <a href="?p=kerdoiv&kerdoiv={$kerdoiv_sorszam}&k={$sorszam_kerdes}&v={$eredmenyek_tomb.$aaa.valasz_szavazatszam}&er=1">
 									<img src="graphics/filter.png" alt="" />
 								 </a>
 							   </div>
@@ -363,7 +363,7 @@
 									   <div class="graf" style="width: {$eredmenyek_tomb.$aaa.valasz_szavazatarany}px"></div>
 							   </div>({$eredmenyek_tomb.$aaa.valasz_szavazatszam} db)
 							   <div class="filter">
-								 <a href="?p=eredmeny&kerdoiv={$kerdoiv_sorszam}&k={$sorszam_kerdes}&v={$eredmenyek_tomb.$aaa.valasz_szavazatszam}">
+								 <a href="?p=kerdoiv&kerdoiv={$kerdoiv_sorszam}&k={$sorszam_kerdes}&v={$eredmenyek_tomb.$aaa.valasz_szavazatszam}&er=1">
 									<img src="graphics/filter.png" alt="" />
 								 </a>
 							   </div>
@@ -387,7 +387,7 @@
 									   <div class="graf" style="width: {$eredmenyek_tomb.$aaa.valasz_szavazatarany}px"></div>
 							   </div>({$eredmenyek_tomb.$aaa.valasz_szavazatszam} db)
 							   <div class="filter">
-								 <a href="?p=eredmeny&kerdoiv={$kerdoiv_sorszam}&k={$sorszam_kerdes}&v={$eredmenyek_tomb.$aaa.valasz_szavazatszam}">
+								 <a href="?p=kerdoiv&kerdoiv={$kerdoiv_sorszam}&k={$sorszam_kerdes}&v={$eredmenyek_tomb.$aaa.valasz_szavazatszam}&er=1">
 									<img src="graphics/filter.png" alt="" />
 								 </a>
 							   </div>
@@ -413,7 +413,7 @@
 									   <div class="graf" style="width: {$eredmenyek_tomb.$aaa.valasz_szavazatarany}px"></div>
 							   </div>({$eredmenyek_tomb.$aaa.valasz_szavazatszam} db)
 							   <div class="filter">
-								 <a href="?p=eredmeny&kerdoiv={$kerdoiv_sorszam}&k={$sorszam_kerdes}&v={$eredmenyek_tomb.$aaa.valasz_szavazatszam}">
+								 <a href="?p=kerdoiv&kerdoiv={$kerdoiv_sorszam}&k={$sorszam_kerdes}&v={$eredmenyek_tomb.$aaa.valasz_szavazatszam}&er=1">
 									<img src="graphics/filter.png" alt="" />
 								 </a>
 							   </div>
@@ -444,7 +444,7 @@
 									   <div class="graf" style="width: {$eredmenyek_tomb.$aaa.valasz_szavazatarany}px"></div>
 							   </div>({$eredmenyek_tomb.$aaa.valasz_szavazatszam} db)
 							   <div class="filter">
-								 <a href="?p=eredmeny&kerdoiv={$kerdoiv_sorszam}&k={$sorszam_kerdes}&v={$eredmenyek_tomb.$aaa.valasz_szavazatszam}">
+								 <a href="?p=kerdoiv&kerdoiv={$kerdoiv_sorszam}&k={$sorszam_kerdes}&v={$eredmenyek_tomb.$aaa.valasz_szavazatszam}&er=1">
 									<img src="graphics/filter.png" alt="" />
 								 </a>
 							   </div>
@@ -467,7 +467,7 @@
 									   <div class="graf" style="width: {$eredmenyek_tomb.$aaa.valasz_szavazatarany}px"></div>
 							   </div>({$eredmenyek_tomb.$aaa.valasz_szavazatszam} db)
 							   <div class="filter">
-								 <a href="?p=eredmeny&kerdoiv={$kerdoiv_sorszam}&k={$sorszam_kerdes}&v={$eredmenyek_tomb.$aaa.valasz_szavazatszam}">
+								 <a href="?p=kerdoiv&kerdoiv={$kerdoiv_sorszam}&k={$sorszam_kerdes}&v={$eredmenyek_tomb.$aaa.valasz_szavazatszam}&er=1">
 									<img src="graphics/filter.png" alt="" />
 								 </a>
 							   </div>
@@ -492,7 +492,7 @@
 									   <div class="graf" style="width: {$eredmenyek_tomb.$aaa.valasz_szavazatarany}px"></div>
 							   </div>({$eredmenyek_tomb.$aaa.valasz_szavazatszam} db)
 							   <div class="filter">
-								 <a href="?p=eredmeny&kerdoiv={$kerdoiv_sorszam}&k={$sorszam_kerdes}&v={$eredmenyek_tomb.$aaa.valasz_szavazatszam}">
+								 <a href="?p=kerdoiv&kerdoiv={$kerdoiv_sorszam}&k={$sorszam_kerdes}&v={$eredmenyek_tomb.$aaa.valasz_szavazatszam}&er=1">
 									<img src="graphics/filter.png" alt="" />
 								 </a>
 							   </div>
@@ -520,7 +520,7 @@
 {if ($kerdoiv_obj->zaras) AND (!$smarty.request.mod)}
 			<div id="survey_zaras">{$kerdoiv_obj->zaras}</div>
 {/if}
-			<div{if $smarty.request.p == 'eredmeny'} style="display: none;"{/if}>   
+			<div{if $smarty.request.er == '1'} style="display: none;"{/if}>   
 {if (($kerdoiv_obj->email == '1') OR ($kerdoiv_obj->email == '2')) AND (!$smarty.request.mod)}                            
                             <div class="szemelyes">
                                 <label>E-mail:</label>

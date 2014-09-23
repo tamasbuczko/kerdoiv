@@ -22,7 +22,7 @@
 {/if} 
     </div>    
     <div id="nyilvanos_lista_1">
-    <h3><a href="?p=eredmeny&amp;kerdoiv={$objektum->sorszam}">
+    <h3><a href="?p=kerdoiv&amp;kerdoiv={$objektum->sorszam}&er=1">
         {$objektum->cim}
     </a></h3>
     <p>

@@ -82,7 +82,7 @@ while ($next_element = mysql_fetch_array($result)){
 	
     $lista_kerdoiveim .= '<tr>'
 			. '<td><a href="?p=kerdoiv_adatlap&kerdoiv='.$next_element[sorszam].'">'.$cim.$megosztott.$kerdoiv_zart.'</a></td>'
-			. '<td><a href="?p=eredmeny&kerdoiv='.$next_element[sorszam].'"><img src="graphics/icon_graph.png" alt="eredmények" /></a></td>'
+			. '<td><a href="?p=kerdoiv&kerdoiv='.$next_element[sorszam].'&er=1"><img src="graphics/icon_graph.png" alt="eredmények" /></a></td>'
 			. '<td><a href="?p=kerdoiv&kerdoiv='.$next_element[sorszam].'"><img src="graphics/icon_checked.png" alt="kitöltés" /></a></td>'
 			. '<td><a href="?p=kerdoiv&amp;mod=1&amp;kerdoiv='.$next_element[sorszam].'"><img src="graphics/icon_edit.gif" alt="módosítás" /></a></td>'
 			. '<td>'.$status.'</td>'
@@ -98,22 +98,8 @@ if ($db_kerdoivek == 0){
    $uzenet = '<div style="width: 100%; text-align: center; margin: 70px 0px 90px 0px;">Jelenleg még nincs saját kérdőíve!</div>';
 }
 
-
 $oldal = new html_blokk;
 
-/*$array = array( 'lista_kerdoiveim'       => $lista_kerdoiveim,
-		'nyelv_fejlec'       => $nyelv_fejlec,
-                'uj_kerdoiv_rogzitese'=> $lang[uj_kerdoiv_rogzitese], 
-                'cim'       => $lang[cim],
-                'eredmenyek'       => $lang[eredmenyek],
-                'kitoltes'       => $lang[kitoltes],
-                'modositas'       => $lang[modositas],
-                'aktiv'       => $lang[aktiv],
-		'display_none' => $display_none,
-		'uzenet' => $uzenet,
-                'kitoltottek'       => $lang[kitoltottek],
-                'nyelvek' => $lang[nyelvek],
-                'figy_uzenet'   => $figy_uzenet);*/
 $smarty->assign('szotar', $szotar);
 $smarty->assign('lang', $lang);
 $smarty->assign('nyelv_fejlec',$nyelv_fejlec);
@@ -123,8 +109,3 @@ $smarty->assign('uzenet',$uzenet);
 $smarty->assign('figy_uzenet',$figy_uzenet);
                 
 $tartalom = $smarty->fetch('templates/kerdoiveim.tpl');
-
-//$oldal->load_template_file("templates/kerdoiveim.html",$array);
-
-//$tartalom = $oldal->html_code;
-?>

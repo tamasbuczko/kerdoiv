@@ -67,7 +67,7 @@ if (($_SESSION[qa_user_id])AND ( $_REQUEST[p] == 'kerdoiv_adatlap')) {
     }
 }
 
-if (($_REQUEST[kerdoiv]) AND ( $_REQUEST[p] == 'eredmeny')) {
+if (($_REQUEST[kerdoiv]) AND ( $_REQUEST[er] == '1')) {
     $result = mysql_query("SELECT sorszam, status, nyilvanos, user_id FROM kerdoivek WHERE sorszam = '$_REQUEST[kerdoiv]' ");
     $a = mysql_fetch_array($result);
     if (($a[user_id] != $_SESSION['qa_user_id']) AND ( $a[nyilvanos] == '0')) {
