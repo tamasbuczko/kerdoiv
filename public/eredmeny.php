@@ -141,6 +141,8 @@ if ($jogosult_eredmeny){
             . '<tr><td></td><td>1</td><td>2</td><td>3</td><td>4</td><td>5</td><td>Átlag</td></tr>'
             . $eredmeny_lista
             . '</table>';
+			$kerdes_blokk_tomb[$sorszam_kerdes]['eredmeny_doboz'] = $eredmeny_lista;
+			unset($eredmeny_lista);
         }
 
         if (($kerdes_tipus == 'text') OR ($kerdes_tipus == 'textarea')){

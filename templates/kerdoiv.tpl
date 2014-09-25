@@ -286,17 +286,25 @@
 						    <br style="clear:both;" />
 {/if}
 {if $kerdes.kerdes_tipus == 'ranking'}
+{if !$kerdes.eredmeny_doboz}
 							<div class="ranking">
 							  <span>1</span><span>2</span><span>3</span><span>4</span><span>5</span>
 							</div>
+{/if}
 {foreach from=$valasz_blokk_tomb key=sorszamx_valasz item=valaszx}
 {if $valaszx.valasz_kerdese == $sorszam_kerdes}
 {assign var=xxx value="radio_{$sorszam_kerdes}"}
 {assign var=aaa value="{$valaszx.valasz_sorszam}"}
 {if $valaszx.valasz_fajta == 'szoveges'}
+{if !$kerdes.eredmeny_doboz}
 						   <label class="ranking_text">{$valaszx.valasz_szoveg}</label>
+{/if}
 						   <div style="float: left;">
+{if !$kerdes.eredmeny_doboz}
 							  {$valaszx.valasz_ertekek}
+{else}
+							  {$kerdes.eredmeny_doboz}{break}
+{/if}
 						   </div>
 {/if}
 {/if}
