@@ -163,7 +163,9 @@ if ($jogosult_eredmeny){
 				$eredmenyek_tomb[$valasz_sorszam]['valasz_sorszam'] = $valasz_sorszam;
 				$eredmenyek_tomb[$valasz_sorszam]['valasz_szavazatszam'] = $eredmenyek[3];
 				$eredmenyek_tomb[$valasz_sorszam]['valasz_szavazatszam_f'] .= $eredmenyek[3].' <br />';
+				$xxxx .= $eredmenyek[3].' <br />';
             }
+			$kerdes_blokk_tomb[$sorszam_kerdes]['eredmeny_doboz'] = $xxxx;
         }
 //        $kerdes_blokk .= '<div class="survey_block">
 //                            <div class="survey_question">'.$kerdes_darab.'. '.$next_element['kerdes_'.$_SESSION[lang]] .'</div>

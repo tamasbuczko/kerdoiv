@@ -67,6 +67,8 @@ if ($jogosult) {
 	   }
 	}
 	
+	ksort($kerdes_blokk_tomb);
+	
 	$smarty->assign('szotar', $szotar);
 	$smarty->assign('kerdoiv_obj', $kerdoiv_obj);
 	$smarty->assign('szemelyes_adatok', $szemelyes_adatok);

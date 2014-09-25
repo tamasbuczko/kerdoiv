@@ -312,9 +312,10 @@
 {/if}
 {if $kerdes.kerdes_tipus == 'textarea'}
 {assign var=xxx value="textarea_{$sorszam_kerdes}"}
-						    <textarea cols="1" rows="1" name="textarea_{$sorszam_kerdes}">{$smarty.request.$xxx}</textarea>
-{if $smarty.request.er == 1}
-							{$eredmenyek_tomb.$aaa.valasz_szavazatszam_f}
+{if $smarty.request.er != 1}
+							<textarea cols="1" rows="1" name="textarea_{$sorszam_kerdes}">{$smarty.request.$xxx}</textarea>
+{else}
+							{$kerdes.eredmeny_doboz}
 {/if}
 {/if}
 {if $kerdes.kerdes_tipus == 'text'}
