@@ -67,6 +67,7 @@ if ($jogosult) {
 	   }
 	}
 	
+        //a kérdéseket sorbarendezi, de a sorszámuk szerint!!! HIBA
 	ksort($kerdes_blokk_tomb);
 	
 	$smarty->assign('szotar', $szotar);

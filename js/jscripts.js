@@ -3,9 +3,10 @@ function kepfigyel(id){
 }
 
 function kerdes_sorrend_ment(id){
+    //pl id: kerdes_sorrend_55
    //document.getElementById('form_survey').action = '?p=kerdoiv&mod=1&kerdoiv=11&sorrend=1';
    document.getElementById('form_survey').action = '';
-   document.getElementById('sorrendezes').value = id;
+   document.getElementById('sorrendezes').value = id; //egy rejtett mezőbe írjuk az id-t
    document.forms["form_survey"].submit();
 }
 
