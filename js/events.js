@@ -51,7 +51,7 @@ if (document.getElementById("mentes_gomb") != null){
 if (document.getElementById("magyar_zaszlo") != null){
    document.getElementById("magyar_zaszlo").addEventListener("click", function(){
        if (document.getElementById("p").value == 'eredmeny'){
-           window.top.location.href = "?p=eredmeny&lang=hu&kerdoiv="+document.getElementById("kerdoiv").value;
+           window.top.location.href = "?er=1&lang=hu&kerdoiv="+document.getElementById("kerdoiv").value;
        } else {
             document.form_survey.action = '?lang=hu';
 	   document.form_survey.submit.click();
@@ -62,7 +62,7 @@ if (document.getElementById("magyar_zaszlo") != null){
 if (document.getElementById("angol_zaszlo") != null){
    document.getElementById("angol_zaszlo").addEventListener("click", function(){
        if (document.getElementById("p").value == 'eredmeny'){
-           window.top.location.href = "?p=eredmeny&lang=en&kerdoiv="+document.getElementById("kerdoiv").value;
+           window.top.location.href = "?er=1&lang=en&kerdoiv="+document.getElementById("kerdoiv").value;
        } else {
            document.form_survey.action = '?lang=en';
 	   document.form_survey.submit.click();
@@ -73,7 +73,7 @@ if (document.getElementById("angol_zaszlo") != null){
 if (document.getElementById("nemet_zaszlo") != null){
    document.getElementById("nemet_zaszlo").addEventListener("click", function(){
        if (document.getElementById("p").value == 'eredmeny'){
-           window.top.location.href = "?p=eredmeny&lang=de&kerdoiv="+document.getElementById("kerdoiv").value;
+           window.top.location.href = "?er=1&lang=de&kerdoiv="+document.getElementById("kerdoiv").value;
        } else {
             document.form_survey.action = '?lang=de';
 	   document.form_survey.submit.click();

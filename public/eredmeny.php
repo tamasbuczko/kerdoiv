@@ -3,7 +3,7 @@ require_once ('public/jogosultsag_kerdoiv.php');
 $kerdoiv_sorszam = $kerdoiv_obj->sorszam;
 $kerdes_darab = 0;
 if ($jogosult_eredmeny){
-    if ($_REQUEST[szurki]){
+    if ($_REQUEST[szurki]){	   
        unset($_SESSION['szures']);
        unset($_SESSION['szures2']);
     }
