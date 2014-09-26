@@ -68,11 +68,7 @@ if ($jogosult_eredmeny){
                IN (SELECT sorszam FROM kitoltok WHERE $szures_kieg_kerdes = '$szures_kieg_valasz')";
            }
         }
-//            if ($_SESSION['szures']){
-//              foreach ($_SESSION['szures'] as $key => $value) {  
-//                     $x = $_SESSION['szures'][$key]['kerdes'];
-//              }
-//            }
+
         if (($kerdes_tipus == 'radio') OR ($kerdes_tipus == 'select') OR ($kerdes_tipus == 'checkbox')){
             $result2 = mysql_query("SELECT sorszam FROM valaszadasok WHERE kerdes_sorszam = $sorszam_kerdes");
             $valaszadok_szama = mysql_num_rows($result2);
@@ -158,23 +154,14 @@ if ($jogosult_eredmeny){
 			unset($eredmenyek_tomb[$valasz_sorszam]['valasz_szavazatszam_f']);
             while ($eredmenyek = mysql_fetch_array($result2)){
                 $text_db++;
-                #$eredmeny_lista .= $text_db . '. ' . $eredmenyek[3].'<br />';
 				$valasz_sorszam = $eredmenyek[6];
 				$eredmenyek_tomb[$valasz_sorszam]['valasz_sorszam'] = $valasz_sorszam;
 				$eredmenyek_tomb[$valasz_sorszam]['valasz_szavazatszam'] = $eredmenyek[3];
 				$eredmenyek_tomb[$valasz_sorszam]['valasz_szavazatszam_f'] .= $eredmenyek[3].' <br />';
-				$xxxx .= $eredmenyek[3].' <br />';
+				$xxxx .= $text_db.'. '.$eredmenyek[3].' <br />';
             }
 			$kerdes_blokk_tomb[$sorszam_kerdes]['eredmeny_doboz'] = $xxxx;
         }
-//        $kerdes_blokk .= '<div class="survey_block">
-//                            <div class="survey_question">'.$kerdes_darab.'. '.$next_element['kerdes_'.$_SESSION[lang]] .'</div>
-//                            <div class="survey_answers">
-//                                '.$eredmeny_lista.'
-//                                <br style="clear:both" />
-//                            </div>
-//                        </div>';
-        #unset($eredmeny_lista);
     } 
     if (($szures_kiegeszites) OR ($szures_kiegeszites2)){
         $szuresek_lista = $szures_lista.$szures_lista2;
