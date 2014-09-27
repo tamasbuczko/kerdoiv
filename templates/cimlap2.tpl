@@ -7,7 +7,7 @@
 	<a href="?p=ajandek" class="banner_ajandek">{$szotar->fordit('Kérdőívek ajándéksorsolással')}<img src="graphics/ajandek_ikon_k.png" alt="" /></a>
 	
 </div>
-<div id="nyilvanos_kerdoivek" style="border: none; padding-left: 20px; width: 380px; border-left: 3px solid #ececec;" >
+<div id="nyilvanos_kerdoivek" style="border: none; padding-left: 20px; width: 380px;" >
    <div>
     <h2>{$szotar->fordit('Követett publikus kérdőívek')}</h2>
     {$kitoltott_kerdoivek}
