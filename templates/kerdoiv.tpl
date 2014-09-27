@@ -304,7 +304,11 @@
 {/if}
 {if $kerdes.kerdes_tipus == 'text'}
 {assign var=xxx value="text_{$sorszam_kerdes}"}
+{if $smarty.request.er != 1}
 						    <input type="text" name="text_{$sorszam_kerdes}" value="{$smarty.request.$xxx}" />
+{else}
+							{$kerdes.eredmeny_doboz}
+{/if}
 {/if}
 {if $kerdes.kerdes_tipus == 'select'}
 {if $smarty.request.er != 1}
