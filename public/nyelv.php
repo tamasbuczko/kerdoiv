@@ -3,10 +3,10 @@
 if ($_REQUEST['lang'] != ''){
 	$_SESSION["lang"] = $_REQUEST[lang];
 } else {
-	if ($_SESSION["lang"] == ''){
-		$_SESSION["lang"] = 'hu';
-	}
-}
+            if ($_SESSION["lang"] == ''){
+                $_SESSION["lang"] = substr($_SERVER['HTTP_ACCEPT_LANGUAGE'], 0, 2);
+           }
+        } 
 
 $result = mysql_query("SELECT hu, en, de, ro FROM szotar");
 while ($next_element = mysql_fetch_array($result)){
