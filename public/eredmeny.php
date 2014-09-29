@@ -161,6 +161,7 @@ if ($jogosult_eredmeny){
 				$xxxx .= '<div class="text_field">'.$text_db.'. '.$eredmenyek[3].'</div> <br />';
             }
 			$kerdes_blokk_tomb[$sorszam_kerdes]['eredmeny_doboz'] = '<div class="scroll">'.$xxxx.'</div>';
+			unset($xxxx);
         }
     } 
     if (($szures_kiegeszites) OR ($szures_kiegeszites2)){
