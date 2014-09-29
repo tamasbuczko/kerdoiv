@@ -271,24 +271,54 @@
 {/if}
 {if $kerdes.kerdes_tipus == 'ranking'}
 {if !$kerdes.eredmeny_doboz}
-							<div class="ranking">
-								<span>1</span><span>2</span><span>3</span><span>4</span><span>5</span>
-							</div>
+							
 {/if}
+{assign var=szamlalo value=0}
 {foreach from=$valasz_blokk_tomb key=sorszamx_valasz item=valaszx}
+
 {if $valaszx.valasz_kerdese == $sorszam_kerdes}
 {assign var=xxx value="radio_{$sorszam_kerdes}"}
 {assign var=aaa value="{$valaszx.valasz_sorszam}"}
-{if $valaszx.valasz_fajta == 'szoveges'}
+{if ($valaszx.valasz_fajta == 'szoveges')}
 {if !$kerdes.eredmeny_doboz}
+{assign var=$szamlalo value=$szamlalo++}
+{if $szamlalo < 2}
+						   <div class="ranking">
+								<span>1</span><span>2</span><span>3</span><span>4</span><span>5</span>
+							</div>
+{/if}
 							<label class="ranking_text">{$valaszx.valasz_szoveg}</label>
 {/if}
 							<div style="float: left;">
 {if !$kerdes.eredmeny_doboz}
+   
 								{$valaszx.valasz_ertekek}
 {else}
 								{$kerdes.eredmeny_doboz}{break}
 {/if}
+							</div>
+{/if}
+{if ($valaszx.valasz_fajta == 'kepes')}
+{if !$kerdes.eredmeny_doboz}
+							<label class="ranking_text">{$valaszx.valasz_szoveg}</label>
+{/if}
+							<div style="float: left;">
+							   
+{if !$kerdes.eredmeny_doboz}
+   <div class="answer_img">
+								  <div class="answer_img_frame">
+								 <img src="valasz_kepek/{$valaszx.valasz_kep}">
+								 </div>
+								<div class="ranking">
+									<span>1</span><span>2</span><span>3</span><span>4</span><span>5</span>
+								</div>
+								 <div style="float: right; margin-right: 6px;">
+								{$valaszx.valasz_ertekek}
+								</div>
+{else}
+								{$kerdes.eredmeny_doboz}{break}
+{/if}
+							  </div>
 							</div>
 {/if}
 {/if}
