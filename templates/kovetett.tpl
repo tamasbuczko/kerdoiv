@@ -1,7 +1,7 @@
-<form action="?p=nyilvanos" name="keres" method="get" />
+<form action="?p=kovetett" name="keres" method="get" />
    <label>{$szotar->fordit('Keresés')}:</label><input name="keres" type="text" value="{$keres}" />
    <input name="submit" type="submit" value="{$szotar->fordit('Keresés')}" />
-   <input type="hidden" name="p" value="nyilvanos" />
+   <input type="hidden" name="p" value="kovetett" />
 {if $smarty.request.keres}
    {$talalatszam}
 {/if}
