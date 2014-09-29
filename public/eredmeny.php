@@ -158,9 +158,9 @@ if ($jogosult_eredmeny){
 				$eredmenyek_tomb[$valasz_sorszam]['valasz_sorszam'] = $valasz_sorszam;
 				$eredmenyek_tomb[$valasz_sorszam]['valasz_szavazatszam'] = $eredmenyek[3];
 				$eredmenyek_tomb[$valasz_sorszam]['valasz_szavazatszam_f'] .= $eredmenyek[3].' <br />';
-				$xxxx .= $text_db.'. '.$eredmenyek[3].' <br />';
+				$xxxx .= '<div class="text_field">'.$text_db.'. '.$eredmenyek[3].'</div> <br />';
             }
-			$kerdes_blokk_tomb[$sorszam_kerdes]['eredmeny_doboz'] = $xxxx;
+			$kerdes_blokk_tomb[$sorszam_kerdes]['eredmeny_doboz'] = '<div class="scroll">'.$xxxx.'</div>';
         }
     } 
     if (($szures_kiegeszites) OR ($szures_kiegeszites2)){

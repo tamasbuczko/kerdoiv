@@ -7,10 +7,10 @@ require_once('smarty.php');
 if ($_REQUEST['lang'] != ''){
 	$_SESSION["lang"] = $_REQUEST[lang];
 } else {
-	if ($_SESSION["lang"] == ''){
-		$_SESSION["lang"] = 'hu';
-	}
-}
+            if ($_SESSION["lang"] == ''){
+                $_SESSION["lang"] = substr($_SERVER['HTTP_ACCEPT_LANGUAGE'], 0, 2);
+           }
+        }  
 
 if ($_REQUEST['profil'] != ''){
 	$_SESSION["profil"] = $_REQUEST[profil];
