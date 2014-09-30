@@ -58,7 +58,7 @@ if ($jogosult) {
     if ($_REQUEST[ok] == 1) {
         $kerdes_blokk = '<div id="koszonjuk">' . $lang['koszonjuk_valaszaid'] . '</div>'; // használjuk valahol???
     }
-	
+	if ($valasz_blokk_tomb){
 	foreach ($valasz_blokk_tomb as $key => $value){
 	   $xx = $valasz_blokk_tomb[$key][valasz_sorszam];
 	   if (!$eredmenyek_tomb[$xx]['valasz_szavazatszam']){
@@ -66,6 +66,7 @@ if ($jogosult) {
 		  $eredmenyek_tomb[$xx]['valasz_szavazatarany'] = 0;
 	   }
 	}
+        }
 	
         //a kérdéseket sorbarendezi, de a sorszámuk szerint!!! HIBA
 	ksort($kerdes_blokk_tomb);
