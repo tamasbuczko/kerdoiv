@@ -49,7 +49,17 @@ if ($_REQUEST[ujkerdes]){
         if ($_REQUEST[kszam]){
             $result = mysql_query("SELECT sorrend FROM kerdesek WHERE sorszam =$_REQUEST[kszam]");
             $a = mysql_fetch_row($result);
-            $ujkerdes_sorrend = $a[0]-1;
+            $ujkerdes_sorrend = $a[0];
+            
+            $result = mysql_query("SELECT sorrend, sorszam FROM kerdesek WHERE kerdoiv_sorszam = '$kerdoiv_sorszam' AND sorrend >= '$ujkerdes_sorrend'");
+            while ($row = mysql_fetch_array($result)){ 
+                 $uj_sorrend = $row[sorrend];
+                 $uj_sorrend++;
+                 $sql2 = "UPDATE kerdesek SET sorrend = '$uj_sorrend' WHERE sorszam = $row[sorszam]";
+                 mysql_query($sql2);  
+            }
+            
+            
         } else {
             $result = mysql_query("SELECT MAX(sorrend) FROM kerdesek WHERE kerdoiv_sorszam = $kerdoiv_sorszam;");
             $a = mysql_fetch_row($result);

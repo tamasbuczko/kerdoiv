@@ -1,21 +1,25 @@
 <?php
 
-$i = 0;
-$result = mysql_query("SELECT kerdoiv_sorszam, sorrend FROM kerdesek ORDER BY kerdoiv_sorszam, sorrend");
-while ($row = mysql_fetch_assoc($result)){
-   $i++;
-   $sorrend_tomb[$i][kerdoiv_sorszam] = $row[kerdoiv_sorszam];
-   $sorrend_tomb[$i][sorrend] = $row[sorrend];
-}
+if ($_REQUEST[sorrendbeallitas] == '1'){
+    $i = 0;
+    $result = mysql_query("SELECT kerdoiv_sorszam, sorrend, sorszam FROM kerdesek ORDER BY kerdoiv_sorszam, sorrend");
+    while ($row = mysql_fetch_assoc($result)){
+       $i++;
+       $sorrend_tomb[$i][kerdoiv_sorszam] = $row[kerdoiv_sorszam];
+       $sorrend_tomb[$i][sorrend] = $row[sorrend];
+       $sorrend_tomb[$i][kerdes_sorszam] = $row[sorszam];
+    }
 
-foreach ($sorrend_tomb as $key=>$value){
-   if ($regi_kerdoiv != $value[kerdoiv_sorszam]){
-	  $i = 0;
-   }
-   $i++;
-   $sql = "UPDATE kerdesek SET sorrend = '$i' WHERE kerdoiv_sorszam = $value[kerdoiv_sorszam] AND sorrend = $value[sorrend]";
-   mysql_query($sql);
-   $regi_kerdoiv = $value[kerdoiv_sorszam];
+    $i = 0;
+    foreach ($sorrend_tomb as $key=>$value){
+       if ($regi_kerdoiv != $value[kerdoiv_sorszam]){
+              $i = 0;
+       }
+       $i++;
+       $sql = "UPDATE kerdesek SET sorrend = '$i' WHERE kerdoiv_sorszam = $value[kerdoiv_sorszam] AND sorszam = $value[kerdes_sorszam]";
+       mysql_query($sql);
+       $regi_kerdoiv = $value[kerdoiv_sorszam];
+    }
 }
 
 
