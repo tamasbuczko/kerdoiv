@@ -103,6 +103,7 @@ $smarty->assign('kovetkezo_kerdoiv',$kovetkezo_kerdoiv);
 $smarty->assign('hanyadik_kerdoiv',$hanyadik_kerdoiv);
 $smarty->assign('osszes_kerdoiv',$osszes_kerdoiv);
 $smarty->assign('kerdoiv_sorszam',$kerdoiv_sorszam);
+$smarty->assign('kerdoiv_obj',$kerdoiv_obj);
 $smarty->assign('elozo_kerdoiv',$elozo_kerdoiv);
 
 
