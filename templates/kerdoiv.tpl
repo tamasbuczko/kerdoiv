@@ -1,3 +1,7 @@
+{if $smarty.request.i == '1' AND $smarty.request.ok == '1'}
+{*<p>{$szotar->fordit('Köszönjük, hogy kitöltötte a kérdőívet')}</p>*}
+{/if}
+
 {if $kerdoiv_obj->fejlec_kep}
    <div id="headline">
 	  <img src="fejlec_kepek/{$kerdoiv_obj->fejlec_kep}" id="headline_img" alt="" />
