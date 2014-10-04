@@ -6,13 +6,13 @@
    <label>{$szotar->fordit('Új jelszó megerősítése')}:</label><input type="password" name="jelszo2_mod" value="" />
    <br style="clear: both;" />{$uzenet}<br style="clear: both;" />
    <label>{$szotar->fordit('Jelenlegi csomag')}:</label><br style="clear: both;" />
-   <label>{$szotar->fordit('Ingyenes')}</label><input type="radio" name="csomag_mod" value="1" {if $user->jog == '1'}checked="checked"{/if}>
-   <label>{$szotar->fordit('Ezüst')}</label><input type="radio" name="csomag_mod" value="2" {if $user->jog == '2'}checked="checked"{/if}>
-   <label>{$szotar->fordit('Arany')}</label><input type="radio" name="csomag_mod" value="3" {if $user->jog == '3'}checked="checked"{/if}>
+   <label>{$szotar->fordit('Ingyenes')}</label><input type="radio" name="csomag_mod" value="1" {if $user->jog == '1'}checked="checked"{/if} />
+   <label>{$szotar->fordit('Ezüst')}</label><input type="radio" name="csomag_mod" value="2" {if $user->jog == '2'}checked="checked"{/if} />
+   <label>{$szotar->fordit('Arany')}</label><input type="radio" name="csomag_mod" value="3" {if $user->jog == '3'}checked="checked"{/if} />
    <br style="clear: both;" />
    <br style="clear: both;" />
    <label>{$szotar->fordit('Csomag lejárati határideje')}:</label><input type="text" name="lejarat" readonly="readonly" value="korlátlan" />
    <br style="clear: both;" />
    <br style="clear: both;" />
-   <input type="submit" name="submit" />
+   <input type="submit" name="submit_profil" />
 </form>

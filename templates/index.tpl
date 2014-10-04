@@ -41,7 +41,7 @@
 {if $smarty.session.qa_user_id}
 	<div id="user_box">
             {$szotar->fordit('Bejelentkezve')}:
-            <a href="?p=profil" alt="profil" title="profil">{$smarty.session.sessfelhasznalo}</a>
+            <a href="?p=profil" title="profil">{$smarty.session.sessfelhasznalo}</a>
             <a href="?logout=1">{$szotar->fordit('Kijelentkezés')}</a>
 {if ($smarty.request.p == 'kerdoiv') AND (!$smarty.request.mod)}
             <a href="?{$page->vissza_link}" class="visszax">vissza</a>
