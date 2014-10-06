@@ -32,7 +32,7 @@
 </style>
 {/if}
 </head>
-   <body {if ($hibauzenet) OR ($figy_uzenet)}{if !$smarty.request.lang}onload="divdisp_on('popup');{/if}{/if}">
+   <body {if ($hibauzenet) OR ($figy_uzenet) OR (($kerdoiv_obj->felnott=='1') AND ($smarty.session.felnott != '1'))}{if !$smarty.request.lang}onload="divdisp_on('popup');{/if}{/if}">
 <div id="iframe">  
 	  <div id="langs"{if ($page->kerdoivnezet)} style="width: 690px;"{/if}>
 {if !$smarty.request.i}
@@ -103,12 +103,25 @@
 </div>          
 	  <div id="popup">
 		 <div class="q_box">
+
 			{$popup_tartalom}
 			{$hibauzenet}
 			{$figy_uzenet}
-			<div id="rendben_gomb">Vissza</div>
+{if ($kerdoiv_obj->felnott=='1')AND ($smarty.session.felnott == '1')}
+                    <div id="rendben_gomb">Vissza</div>
+{/if}
+{if ($kerdoiv_obj->felnott!='1')}
+                    <div id="rendben_gomb">Vissza</div>
+{/if}
 {if ($smarty.request.submit) AND ($kerdoiv_obj->hiba < 1)}
-			<div id="mentes_gomb">{$szotar->fordit('Mentés')}</div>
+                    <div id="mentes_gomb">{$szotar->fordit('Mentés')}</div>
+{/if}
+{if ($kerdoiv_obj->felnott=='1')}
+{if $smarty.session.felnott != '1'}
+                    Csak 18 éven felülieknek!
+                    <a href="?p=kerdoiv&kerdoiv={$kerdoiv_obj->sorszam}&f=1">Elmúltam 18</a>
+                    <a href="?">Nem vagyok még 18</a>
+{/if}                    
 {/if}
 		 </div>
 	  </div>

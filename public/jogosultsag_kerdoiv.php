@@ -78,6 +78,7 @@ if (($_REQUEST[kerdoiv]) AND ( $_REQUEST[er] == '1')) {
     if (($kerdoiv_obj->keszito_id != $_SESSION[qa_user_id]) AND ($kerdoiv_obj->nyilvanos == '0')){
         unset($jogosult);
         $kerdoiv_obj->jogosultsag_uzenet = 'A kérdőív eredményei már nem nyilvánosak!';
+        $tartalom = 'A kérdőív eredményei már nem nyilvánosak!';
     }
     
 }

@@ -14,7 +14,7 @@
     <div>
         <input type="radio" name="csomag_mod" value="3" {if $user->jog == '3'}checked="checked"{/if}><label>{$szotar->fordit('arany csomag')}</label>
     </div>
-    <input type="submit" name="submit" value="{$szotar->fordit('Elküldés')}"/>
+    <input type="submit" name="submit_reg" value="{$szotar->fordit('Elküldés')}"/>
 </form>
 
 <table class="csomagok">

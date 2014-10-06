@@ -1,9 +1,10 @@
 <?php
 
-if ($_REQUEST[submit]){
+if ($_REQUEST[submit_reg]){
    $query = mysql_query("UPDATE users SET authority='$_REQUEST[csomag_mod]' WHERE id = '$_SESSION[qa_user_id]'");
    mysql_query($query);
-   $user->jog = $_REQUEST[csomag_mod]; //tesztidő után törölni
+   $user->login();
+   //$user->jog = $_REQUEST[csomag_mod]; //tesztidő után törölni
 }
 
 $hiba= 0;

@@ -46,6 +46,7 @@ if ($jogosult) {
 
     if (($_REQUEST[submit]) AND ( $kerdoiv_obj->hiba == '0') AND ( $_REQUEST[b] == '1')) { //biztosan ment, megnyomta a mentés gombot
         unset($figy_uzenet);
+        unset($_SESSION[felnott]);
         require_once('public/kerdoiv_mentes.php');
         if ($_REQUEST[i] != 1) {
             //én itt átadnám a kitöltött kérdőív sorszámát vagy valamely egyedi azonosítóját, és kiírnám a főoldalon ilyenkor, hogy köszi a kitöltést. I-frames beágyazás enélkül elég butuska lenne.
