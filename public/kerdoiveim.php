@@ -95,7 +95,7 @@ while ($next_element = mysql_fetch_array($result)){
 
 if ($db_kerdoivek == 0){
    $display_none = ' style="display: none;"';
-   $uzenet = '<div style="width: 100%; text-align: center; margin: 70px 0px 90px 0px;">Jelenleg még nincs saját kérdőíve!</div>';
+   $uzenet = '<div style="width: 100%; text-align: center; margin: 70px 0px 90px 0px;">'.$szotar->fordit('Jelenleg még nincs saját kérdőíve!').'</div>';
 }
 
 $oldal = new html_blokk;

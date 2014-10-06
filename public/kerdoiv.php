@@ -78,6 +78,9 @@ if ($jogosult) {
 	$smarty->assign('szuresek_lista', $szuresek_lista);
     $smarty->assign('kerdes_blokk_tomb', $uj_kerdes_blokk_tomb);
 	$smarty->assign('valasz_blokk_tomb', $valasz_blokk_tomb);
-
-	$tartalom .= $smarty->fetch('templates/kerdoiv.tpl');
+        if (($_REQUEST[i] == '1') AND ($_REQUEST[ok] == '1')){
+            $tartalom .= '<div class="koszonom">' . $szotar->fordit('Köszönjük, hogy kitöltötte a kérdőívet') . '</div>';
+        } else {
+            $tartalom .= $smarty->fetch('templates/kerdoiv.tpl');
+        }
 }

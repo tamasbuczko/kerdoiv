@@ -21,3 +21,4 @@ $smarty->assign('lang', $lang);
 $smarty->assign('user', $user);
 $smarty->assign('uzenet', $uzenet);
 $tartalom = $smarty->fetch('templates/profil.tpl').$fizetes_form;
+

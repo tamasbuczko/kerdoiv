@@ -48,6 +48,12 @@ if ($_REQUEST[submit]){ //űrlap elküldésének vizsgálata(személyes adatok)
         $kerdoiv_obj->hiba++;
         $hiba_uzenetek[$kerdoiv_obj->hiba] = lang('Nem adtad meg a jövedelmed!', $lang);
     }
+    
+    if ((!$_REQUEST[email]) AND (!$_REQUEST[ok])){
+        if ($kerdoiv_obj->email == '2'){
+            $kerdoiv_obj->hiba++;
+        }
+    }
         
     $request_foglalkozas_value = $_REQUEST[foglalkozas];
 }
