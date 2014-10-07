@@ -118,11 +118,9 @@
 {/if}
 {if ($kerdoiv_obj->felnott=='1')}
 {if $smarty.session.felnott != '1'}
-                    <div class="felnott" >
-                        <p>{$szotar->fordit('Elmúltál már 18 éves?')}</p>
+                    <label>{$szotar->fordit('Elmúltál már 18 éves?')}</label>
                     <a href="?p=kerdoiv&kerdoiv={$kerdoiv_obj->sorszam}&f=1">{$szotar->fordit('Elmúltam 18')}</a>
                     <a href="?">{$szotar->fordit('Nem vagyok még 18')}</a>
-                    </div>
 {/if}                    
 {/if}
 		 </div>
