@@ -109,6 +109,10 @@ if (($_REQUEST[mentes]) OR ($_REQUEST[pluszvalasz])){
     $resultxx = mysql_query("SELECT MAX(sorszam) FROM valaszok ");
     $b = mysql_fetch_row($resultxx);
     $utolsovalaszsorszam = $b[0];
+	
+	$sql_del = "DELETE FROM helyes_valaszok WHERE kerdes_id = '$kerdes_sorszam'";
+	mysql_query($sql_del);
+	
     for ($i = 0; $i <= $utolsovalaszsorszam; $i++){
 	   
 	   $xx = 'valasz_sorrend_c_'.$i;
@@ -126,6 +130,7 @@ if (($_REQUEST[mentes]) OR ($_REQUEST[pluszvalasz])){
 		$szoveg_be_x = 'szoveg_be_'.$i;
 		$kep_be_x = 'kep_be_'.$i;
 		$video_be_x = 'video_be_'.$i;
+		$helyes_valasz_x = 'helyes_valasz_'.$i;
 		
 		if ($_REQUEST[$szoveg_be_x] == 'on'){
 		   $szoveg_be_x = '1';}
@@ -143,6 +148,11 @@ if (($_REQUEST[mentes]) OR ($_REQUEST[pluszvalasz])){
 		   $video_be_x = '1';}
 		else {
 		   $video_be_x = '0';
+		}
+		
+		if ($_REQUEST[$helyes_valasz_x] == 'on'){
+			$sql_insert = "INSERT INTO helyes_valaszok (kerdes_id, valasz_id) VALUES ('$kerdes_sorszam', '$i')";
+			mysql_query($sql_insert);
 		}
 		
 		if ($_REQUEST[$xx]){
@@ -311,10 +321,23 @@ if ($_REQUEST[id]){
    
    $sorrendszam = 0;
    
-    $resultx = mysql_query("SELECT sorszam, kerdes_valasz, valasz_hu, valasz_en, valasz_de, kep_file, video_embed, sorrend, kapcs_szoveg, kapcs_kep, kapcs_video FROM valaszok WHERE status = '1' AND kerdes_valasz = '$_REQUEST[id]' ORDER BY sorrend");
+    $resultx = mysql_query("SELECT v.sorszam, v.kerdes_valasz, v.valasz_hu, v.valasz_en, v.valasz_de, v.kep_file, v.video_embed, v.sorrend, v.kapcs_szoveg, v.kapcs_kep, v.kapcs_video, hv.valasz_id
+							  FROM valaszok AS v
+							  LEFT JOIN helyes_valaszok AS hv
+							  ON v.sorszam = hv.valasz_id
+							  WHERE v.status = '1' AND v.kerdes_valasz = '$_REQUEST[id]'
+							  ORDER BY v.sorrend");
     while ($next_elementv = mysql_fetch_array($resultx)){
 	   $sorrendszam++;
         #$valaszok .= '<input type="text" name="valasz_'.$next_elementv[sorszam].'" value="'.$next_elementv[valasz_hu].'" /><img src="graphics/icon_del.png" class="icon_del" alt="törlés" onclick="megerosites_x('.$next_elementv[sorszam].', \'valasz\', \''.$_REQUEST[id].'\')" />';
+	   
+	   if ($next_elementv[valasz_id]){
+		  echo 'ok';
+		  $kapcs_helyes = 'checked="checked"';
+	   } else {
+		  $kapcs_helyes = '';
+	   }
+	   
 	   if ($next_elementv[kapcs_szoveg] == '1'){
 		  $kapcs_szoveg = 'checked="checked"';
 	   } else {
@@ -418,8 +441,11 @@ if ($_REQUEST[id]){
                                   . '</div>'
 				  . '<div id="a_vf_v_'.$next_elementv[sorszam].'" class="a_v_fulek" onclick="valasz_ful(\'v\', '.$next_elementv[sorszam].');">'
                                         . 'Videó'
+                                  . '</div>
+				<div class="a_v_fulek" style="width: 30px !important; margin-left: 14px !important;">'
+                                        . '<input type="checkbox" name="helyes_valasz_'.$next_elementv[sorszam].'" '.$kapcs_helyes.'class="icon_del" style="position: relative; float: right; width: 16px; margin: 4px 6px 0 0; z-index: 10;" />'
                                   . '</div>'
-				  . '<div class="a_v_fulek" style="width: 30px !important; margin-left: 124px !important;">'
+				  . '<div class="a_v_fulek" style="width: 30px !important; margin-left: 74px !important;">'
                                         . '<img src="graphics/icon_del.png" class="icon_del" style="position: relative; float: right; width: 16px; margin: 2px 6px 0 0; z-index: 10;" alt="a válasz törlése" title="a válasz törlése" onclick="megerosites_x('.$next_elementv[sorszam].', \'valasz\', \''.$_REQUEST[id].'\')" />'
                                   . '</div>'
                                   . ''
