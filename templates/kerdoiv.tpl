@@ -388,11 +388,15 @@
 {/if}
 							<label>
 							   {$valaszx.valasz_szoveg}
+
 {if $smarty.request.er == 1}
 							   <br />
 							   <div class="grafv">
 									   <div class="graf" style="width: {$eredmenyek_tomb.$aaa.valasz_szavazatarany}px"></div>
 							   </div>({$eredmenyek_tomb.$aaa.valasz_szavazatszam} db)
+{if $eredmenyek_tomb.$aaa.helyes == 1}
+						   <span>helyes válasz</span>
+{/if}
 							   <div class="filter">
 								 <a href="?p=kerdoiv&kerdoiv={$kerdoiv_obj->sorszam}&k={$sorszam_kerdes}&v={$valaszx.valasz_sorszam}&er=1">
 									<img src="graphics/filter.png" alt="" />
@@ -471,6 +475,9 @@
 							   <div class="grafv">
 									   <div class="graf" style="width: {$eredmenyek_tomb.$aaa.valasz_szavazatarany}px"></div>
 							   </div>({$eredmenyek_tomb.$aaa.valasz_szavazatszam} db)
+{if $eredmenyek_tomb.$aaa.helyes == 1}
+						   <span>helyes válasz</span>
+{/if}
 							   <div class="filter">
 								 <a href="?p=kerdoiv&kerdoiv={$kerdoiv_obj->sorszam}&k={$sorszam_kerdes}&v={$valaszx.valasz_sorszam}&er=1">
 									<img src="graphics/filter.png" alt="" />

@@ -72,10 +72,11 @@ if ($jogosult_eredmeny){
         if (($kerdes_tipus == 'radio') OR ($kerdes_tipus == 'select') OR ($kerdes_tipus == 'checkbox')){
             $result2 = mysql_query("SELECT sorszam FROM valaszadasok WHERE kerdes_sorszam = $sorszam_kerdes");
             $valaszadok_szama = mysql_num_rows($result2);
-            $result2 = mysql_query("SELECT k.sorszam, k.kerdes_hu, v.valasz_hu, COUNT(*), v.valasz_en, v.valasz_de, va.valasz_sorszam
+            $result2 = mysql_query("SELECT k.sorszam, k.kerdes_hu, v.valasz_hu, COUNT(*), v.valasz_en, v.valasz_de, va.valasz_sorszam, hv.valasz_id AS helyes
             FROM valaszadasok AS va
             LEFT JOIN valaszok AS v ON va.valasz_sorszam = v.sorszam
             LEFT JOIN kerdesek AS k ON va.kerdes_sorszam = k.sorszam
+			LEFT JOIN helyes_valaszok AS hv ON v.sorszam = hv.valasz_id
             WHERE k.sorszam = $sorszam_kerdes
             $szures_kiegeszites
             $szures_kiegeszites2
@@ -91,6 +92,10 @@ if ($jogosult_eredmeny){
 			    if ($_SESSION[lang] == 'en'){ $valasz_szoveg = $eredmenyek[4];}
 			    if ($_SESSION[lang] == 'de'){ $valasz_szoveg = $eredmenyek[5];}
 				$valasz_sorszam = $eredmenyek[6];
+				if ($eredmenyek[7]){
+				  $valasz_blokk_tomb[$valasz_sorszam]['helyes'] = '1';
+				  $eredmenyek_tomb[$valasz_sorszam]['helyes'] = '1';
+				}
 				$eredmenyek_tomb[$valasz_sorszam]['valasz_sorszam'] = $valasz_sorszam;
 				$eredmenyek_tomb[$valasz_sorszam]['valasz_szavazatszam'] = $szavazat_darabszam;
 				$eredmenyek_tomb[$valasz_sorszam]['valasz_szavazatszam_f'] = '('.$szavazat_darabszam.' db)';
