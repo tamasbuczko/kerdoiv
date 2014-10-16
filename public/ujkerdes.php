@@ -425,6 +425,14 @@ if ($_REQUEST[id]){
                 } else {
                     $kep_kapcs = ' onmouseover="sugo(\'8\', this.id)"';
                 }
+				
+		if ($kerdoiv_obj->teszt == '1'){
+		   $helyes_valasz_ful = '<div class="a_v_fulek" style="width: 30px !important; margin-left: 14px !important; margin-right: -48px !important;">'
+                                        . '<input type="checkbox" name="helyes_valasz_'.$next_elementv[sorszam].'" '.$kapcs_helyes.'class="icon_del" style="position: relative; float: right; width: 16px; margin: 4px 6px 0 0; z-index: 10;" />'
+                                  . '</div>';
+		} else {
+		   $helyes_valasz_ful = '';
+		}
                 
 		$valaszok2 .= ''
 				. '<div class="valasz_blokk">'
@@ -441,11 +449,8 @@ if ($_REQUEST[id]){
                                   . '</div>'
 				  . '<div id="a_vf_v_'.$next_elementv[sorszam].'" class="a_v_fulek" onclick="valasz_ful(\'v\', '.$next_elementv[sorszam].');">'
                                         . 'Videó'
-                                  . '</div>
-				<div class="a_v_fulek" style="width: 30px !important; margin-left: 14px !important;">'
-                                        . '<input type="checkbox" name="helyes_valasz_'.$next_elementv[sorszam].'" '.$kapcs_helyes.'class="icon_del" style="position: relative; float: right; width: 16px; margin: 4px 6px 0 0; z-index: 10;" />'
                                   . '</div>'
-				  . '<div class="a_v_fulek" style="width: 30px !important; margin-left: 74px !important;">'
+				  . $helyes_valasz_ful. '<div class="a_v_fulek" style="width: 30px !important; margin-left: 120px !important;">'
                                         . '<img src="graphics/icon_del.png" class="icon_del" style="position: relative; float: right; width: 16px; margin: 2px 6px 0 0; z-index: 10;" alt="a válasz törlése" title="a válasz törlése" onclick="megerosites_x('.$next_elementv[sorszam].', \'valasz\', \''.$_REQUEST[id].'\')" />'
                                   . '</div>'
                                   . ''
