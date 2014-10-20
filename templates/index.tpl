@@ -32,7 +32,7 @@
 </style>
 {/if}
 </head>
-   <body {if ($hibauzenet) OR ($figy_uzenet) OR (($kerdoiv_obj->felnott=='1') AND ($smarty.session.felnott != '1'))}{if !$smarty.request.lang}onload="divdisp_on('popup');{/if}{/if}">
+   <body {if ($hibauzenet) OR ($figy_uzenet) OR (($kerdoiv_obj->felnott=='1') AND ($smarty.session.felnott != '1') AND ($smarty.request.mod != '1') AND ($smarty.request.p != 'ujkerdoiv'))}{if !$smarty.request.lang}onload="divdisp_on('popup');{/if}{/if}">
 <div id="iframe">  
 	  <div id="langs"{if ($page->kerdoivnezet)} style="width: 690px;"{/if}>
 {if !$smarty.request.i}
