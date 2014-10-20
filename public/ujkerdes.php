@@ -332,7 +332,6 @@ if ($_REQUEST[id]){
         #$valaszok .= '<input type="text" name="valasz_'.$next_elementv[sorszam].'" value="'.$next_elementv[valasz_hu].'" /><img src="graphics/icon_del.png" class="icon_del" alt="törlés" onclick="megerosites_x('.$next_elementv[sorszam].', \'valasz\', \''.$_REQUEST[id].'\')" />';
 	   
 	   if ($next_elementv[valasz_id]){
-		  echo 'ok';
 		  $kapcs_helyes = 'checked="checked"';
 	   } else {
 		  $kapcs_helyes = '';
