@@ -1,3 +1,7 @@
+function nincslejarat(){
+   document.getElementById('lejarat_datum').value = '0000-00-00';
+}
+
 function kepfigyel(id){
    document.getElementById(id).style.display = 'block';
 }
