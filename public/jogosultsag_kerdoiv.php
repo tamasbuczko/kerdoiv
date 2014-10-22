@@ -80,6 +80,10 @@ if (($_REQUEST[kerdoiv]) AND ( $_REQUEST[er] == '1')) {
         $kerdoiv_obj->jogosultsag_uzenet = 'A kérdőív eredményei már nem nyilvánosak!';
         $tartalom = 'A kérdőív eredményei már nem nyilvánosak!';
     }
+	
+	if (in_array($_SESSION[qa_user_id], $kerdoiv_obj->megosztott_admin)){
+	   $jogosult = 1;
+	}
     
 }
 
