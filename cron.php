@@ -15,6 +15,7 @@ $log->write('x', 'CRON indul...');
 
 $mainap = date("Y-m-d");
 
+//kérdőívek aktiválása
 $result = mysql_query("SELECT sorszam, lejarat, aktivalas, status, cim_hu FROM kerdoivek WHERE status = '0' AND aktivalas <= '$mainap' AND aktivalas != '0000-00-00' AND lejarat >= '$mainap'");
 while ($a = mysql_fetch_array($result)){
     if ($a['sorszam']){
@@ -26,6 +27,7 @@ while ($a = mysql_fetch_array($result)){
     }
 }
 
+//kérdőívek deaktiválása
 $result = mysql_query("SELECT sorszam, aktivalas, lejarat, status, cim_hu FROM kerdoivek WHERE status = '1' AND lejarat <= '$mainap' AND lejarat != '0000-00-00'");
 while ($a = mysql_fetch_array($result)){
     if ($a['sorszam']){
@@ -36,3 +38,10 @@ while ($a = mysql_fetch_array($result)){
         mysql_query($sql2);
     }
 }
+
+//csomagok deaktiválása
+#a fizetesek adattáblát vizsgálni?
+#felvinni egy lejárat mezőt a fizetések táblába és azt vizsgálni, hogy nem kisebb e a $mainap-nál
+#ha kisebb, akkor a users táblában a status átállítani ingyenesre (0?)
+
+//egyéb adatbázistakarítási műveletek
