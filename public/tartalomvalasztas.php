@@ -13,6 +13,8 @@ if ($_REQUEST[kerdoiv]){
 
    $kerdoiv_nyelv_bekapcs = $a[$_SESSION[lang]];  //1 az értéke, ha az aktuális nyelven be van kapcsolva a kérdőív
 
+   #$kerdoiv_nyelv_bekapcs = 1;
+   
    $kerdoiv_obj = new kerdoiv;  // át kell térni a használatára, jelenleg csak az iframe használja
    $kerdoiv_obj->load($_REQUEST[kerdoiv]);
 }
