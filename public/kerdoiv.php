@@ -40,8 +40,15 @@ if ($jogosult) {
 	   if ($_REQUEST[er] == '1'){
 		require_once('public/eredmeny.php');
 	   }
-        require_once('public/kerdoiv_generator.php');
+	   if ($_REQUEST[er] == '1'){
+		  if ($jogosult_eredmeny){
+			require_once('public/kerdoiv_generator.php');
+		  }
+	   }else{
+		  require_once('public/kerdoiv_generator.php');
+	   }
         require_once('public/kerdoiv_figyelmeztetesek.php');
+	  
     }
 
     if (($_REQUEST[submit]) AND ( $kerdoiv_obj->hiba == '0') AND ( $_REQUEST[b] == '1')) { //biztosan ment, megnyomta a mentés gombot
@@ -76,8 +83,11 @@ if ($jogosult) {
 	$smarty->assign('kerdoiv_obj', $kerdoiv_obj);
 	$smarty->assign('szemelyes_adatok', $szemelyes_adatok);
 	$smarty->assign('eredmenyek_tomb', $eredmenyek_tomb);
-	$smarty->assign('szuresek_lista', $szuresek_lista);
+	if ($jogosult_eredmeny){
+	  $smarty->assign('szuresek_lista', $szuresek_lista);
+	}
     $smarty->assign('kerdes_blokk_tomb', $uj_kerdes_blokk_tomb);
+	$smarty->assign('jogosult_eredmeny', $jogosult_eredmeny);
 	$smarty->assign('valasz_blokk_tomb', $valasz_blokk_tomb);
         if (($_REQUEST[i] == '1') AND ($_REQUEST[ok] == '1')){
             $tartalom .= '<div class="koszonom">' . $szotar->fordit('Köszönjük, hogy kitöltötte a kérdőívet') . '</div>';

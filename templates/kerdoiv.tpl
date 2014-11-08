@@ -39,7 +39,7 @@
 	  <a href="?p=kerdoiv&kerdoiv={$kerdoiv_obj->sorszam}&szurki=1&er=1">szűrés kikapcsolása</a>
    </div><br style="clear: both;" />
 {/if}
-{if ($kerdoiv_obj->szemelyes_adat_tipusok) AND ($smarty.request.er == 1)}
+{if ($kerdoiv_obj->szemelyes_adat_tipusok) AND ($smarty.request.er == 1) AND ($jogosult_eredmeny)}
 <div class="doboz">
 	<h4>{$szotar->fordit('Szűrés a kitöltői adatokra')}:</h4>
 	<div style="width: 710px;">
