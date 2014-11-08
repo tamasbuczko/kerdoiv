@@ -153,3 +153,7 @@ if ($_SESSION[qa_user_id]){
         $jogosult_eredmeny = 1;
     }
 }
+
+if (in_array($_SESSION[qa_user_id], $kerdoiv_obj->megosztott_admin)){
+	   $jogosult = 1;
+}
