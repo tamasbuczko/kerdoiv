@@ -44,7 +44,7 @@
             <a href="?p=profil" title="profil">{$smarty.session.sessfelhasznalo}</a>
             <a href="?logout=1">{$szotar->fordit('Kijelentkezés')}</a>
 {if ($smarty.request.p == 'kerdoiv') AND (!$smarty.request.mod)}
-            <a href="?{$page->vissza_link}" class="visszax">vissza</a>
+            <a href="?{$page->vissza_link}" class="visszax">{$szotar->fordit('vissza')}</a>
 {/if}
         </div>
 {/if}
@@ -103,15 +103,14 @@
 </div>          
 	  <div id="popup">
 		 <div class="q_box">
-
 			{$popup_tartalom}
 			{$hibauzenet}
 			{$figy_uzenet}
 {if ($kerdoiv_obj->felnott=='1')AND ($smarty.session.felnott == '1')}
-                    <div id="rendben_gomb">Vissza</div>
+                    <div id="rendben_gomb">{$szotar->fordit('vissza')}</div>
 {/if}
 {if ($kerdoiv_obj->felnott!='1')}
-                    <div id="rendben_gomb">Vissza</div>
+                    <div id="rendben_gomb">{$szotar->fordit('vissza')}</div>
 {/if}
 {if ($smarty.request.submit) AND ($kerdoiv_obj->hiba < 1)}
                     <div id="mentes_gomb">{$szotar->fordit('Mentés')}</div>
