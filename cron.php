@@ -41,7 +41,15 @@ while ($a = mysql_fetch_array($result)){
 
 //csomagok deaktiválása
 #a fizetesek adattáblát vizsgálni?
-#felvinni egy lejárat mezőt a fizetések táblába és azt vizsgálni, hogy nem kisebb e a $mainap-nál
-#ha kisebb, akkor a users táblában a status átállítani ingyenesre (0?)
+$result = mysql_query("SELECT id, user_id, status_aktualis FROM fizetesek WHERE (status_aktualis = '2' OR status_aktualis = '3') AND lejarat < '$mainap' AND lejarat != '0000-00-00'");
+while ($a = mysql_fetch_array($result)){
+   if ($a['id']){
+	  $sql = "UPDATE fizetesek SET status_aktualis = '1' WHERE id = '$a[id]'";
+      mysql_query($sql);
+	  $esemeny = 'CSOMAG LEJÁRAT - User: '. $a['user_id'] .', régi csomag:'. $a['status_aktualis']. ', új csomag: 1';
+	  $sql2 = "INSERT INTO cron_log (esemeny) VALUES ('$esemeny')";
+      mysql_query($sql2);
+   }
+}
 
 //egyéb adatbázistakarítási műveletek
