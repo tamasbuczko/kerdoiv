@@ -80,7 +80,7 @@ if ($_REQUEST[send]){
 			'Reply-To: '.$s_from.'' . "\r\n" .
 			'X-Mailer: PHP/' . phpversion();
 		#mail($to, $subject, $message, $headers);
-		mail($to2x, $subject, $message, $headers);
+		mail($to2x, '=?utf-8?B?'.base64_encode($subject).'?=', $message, $headers);
 		 
 		 header("Location: index.php?reg=1");
 	  }

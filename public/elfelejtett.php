@@ -44,7 +44,7 @@ if ($_REQUEST[send]){
 		$query = "UPDATE users SET password = '$uj_jelszo_md5' WHERE email = '$email'";
 		mysql_query($query);
 		
-		mail($to2x, $subject, $message, $headers);
+		mail($to2x, '=?utf-8?B?'.base64_encode($subject).'?=', $message, $headers);
 		$_SESSION[messagetodiv] = '<p>Figyelem!</p><ul><li>Új jelszavad elküldtük a megadott email címre!</li></ul>';
    } else {
 	  $_SESSION[messagetodiv] = '<p>Figyelem!</p><ul><li>Nincs ilyen regisztrált e-mail cím!</li></ul>';
