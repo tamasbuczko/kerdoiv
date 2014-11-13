@@ -47,5 +47,7 @@
         {$expire_date}
         <tr>{$elerhetoseg}</tr>
     </table>
+	<br style="clear: both;"/>
+	{$forum}
 </div>
 

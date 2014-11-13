@@ -85,6 +85,7 @@ $nyilvanos = '<td>A kérdőív eredményei nyilvánosak:</td><td>'.$nyilvanos.'<
     if ($_REQUEST[kerdoiv] == end($kerdoivekx)){$kovetkezo_kerdoiv = $kerdoivekx[1];}
     if ($_REQUEST[kerdoiv] == $kerdoivekx[1]){$elozo_kerdoiv = end($kerdoivekx);}
 
+require_once ('public/forum.php');
 
 $smarty->assign('szotar', $szotar);
 $smarty->assign('elerhetoseg', $elerhetoseg);
@@ -104,6 +105,7 @@ $smarty->assign('hanyadik_kerdoiv',$hanyadik_kerdoiv);
 $smarty->assign('osszes_kerdoiv',$osszes_kerdoiv);
 $smarty->assign('kerdoiv_sorszam',$kerdoiv_sorszam);
 $smarty->assign('kerdoiv_obj',$kerdoiv_obj);
+$smarty->assign('forum',$forum);
 $smarty->assign('elozo_kerdoiv',$elozo_kerdoiv);
 
 
