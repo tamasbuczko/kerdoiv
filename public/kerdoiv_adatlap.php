@@ -1,6 +1,13 @@
 <?php
 require_once ('public/jogosultsag_adatlap.php');
 
+if (!$_REQUEST[no]){ //fórum újrakuldésnél ne törölje
+    
+    $sql = "DELETE FROM forum_figyeles WHERE user_id = '$user->sorszam' AND kerdoiv_id = '$_REQUEST[kerdoiv]'";
+    
+    mysql_query($sql);
+}
+
 $kerdoiv_sorszam = $_REQUEST[kerdoiv];
 $user_id = $_SESSION["qa_user_id"];
 

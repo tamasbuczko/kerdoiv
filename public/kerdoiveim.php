@@ -23,6 +23,15 @@ while ($next_element = mysql_fetch_array($result)){
    $result2 = mysql_query("SELECT sorszam FROM valaszadasok WHERE kerdoiv_sorszam = $next_element[sorszam] GROUP BY kitolto_sorszam");
    $valaszadok_szama = mysql_num_rows($result2);
    
+   $result33 = mysql_query("SELECT id FROM forum_figyeles WHERE kerdoiv_id = '$next_element[sorszam]' AND user_id = '$user->sorszam'");
+   $ujuzenet = mysql_fetch_array($result33);
+   
+   if ($ujuzenet[0]){
+       $ujuzenet_ikon = '<img src="graphics/level.png" alt="'.$szotar->fordit('Új üzenet érkezett').'" />';
+   } else {
+       $ujuzenet_ikon = '';
+   }
+   
    $resultc = mysql_query ("SELECT cim_hu, cim_en, cim_de, leiras_hu, leiras_en, leiras_de, hu, en, de FROM kerdoivek WHERE sorszam = '$next_element[sorszam]' ");
    $next_elementc = mysql_fetch_array ($resultc);
    $kerdoiv_cim=$next_elementc['cim_'.$_SESSION[lang]];
@@ -81,7 +90,7 @@ while ($next_element = mysql_fetch_array($result)){
 	}
 	
     $lista_kerdoiveim .= '<tr>'
-			. '<td><a href="?p=kerdoiv_adatlap&kerdoiv='.$next_element[sorszam].'">'.$cim.$megosztott.$kerdoiv_zart.'</a></td>'
+			. '<td><a href="?p=kerdoiv_adatlap&kerdoiv='.$next_element[sorszam].'">'.$cim.$megosztott.$kerdoiv_zart.$ujuzenet_ikon.'</a></td>'
 			. '<td><a href="?p=kerdoiv&kerdoiv='.$next_element[sorszam].'&er=1"><img src="graphics/icon_graph.png" alt="eredmények" /></a></td>'
 			. '<td><a href="?p=kerdoiv&kerdoiv='.$next_element[sorszam].'"><img src="graphics/icon_checked.png" alt="kitöltés" /></a></td>'
 			. '<td><a href="?p=kerdoiv&amp;mod=1&amp;kerdoiv='.$next_element[sorszam].'"><img src="graphics/icon_edit.gif" alt="módosítás" /></a></td>'

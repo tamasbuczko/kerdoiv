@@ -5,7 +5,21 @@ if (($_REQUEST['submit']) AND ($_REQUEST[uj_hozzaszolas])){
    $sql = "INSERT INTO forum (nev, szoveg, idopont, forumszam) VALUES
 		   ('$user->nev', '$_REQUEST[uj_hozzaszolas]', '$idopont', '$almenu')";
    mysql_query($sql);
-   header("Location: ?p=kerdoiv_adatlap&kerdoiv=$almenu");
+   
+   foreach ($kerdoiv_obj->megosztott_admin as $key=>$value){
+       if ($user->sorszam != $value){
+        $sql = "INSERT INTO forum_figyeles (kerdoiv_id, user_id) VALUES
+                        ('$almenu', '$value')";
+        mysql_query($sql);
+       }
+   }
+   
+   if ($user->sorszam != $kerdoiv_obj->keszito_id){
+       $sql = "INSERT INTO forum_figyeles (kerdoiv_id, user_id) VALUES
+                        ('$almenu', '$kerdoiv_obj->keszito_id')";
+        mysql_query($sql);
+   }
+   header("Location: ?p=kerdoiv_adatlap&kerdoiv=$almenu&no=1");
 }
 $result = mysql_query("SELECT sorszam, nev, szoveg, valaszszam, idopont, forumszam, status FROM forum WHERE forumszam = '$kerdoiv_obj->sorszam' ORDER BY idopont DESC");
 while ($row = mysql_fetch_array($result)){
