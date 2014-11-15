@@ -27,7 +27,7 @@ while ($next_element = mysql_fetch_array($result)){
    $ujuzenet = mysql_fetch_array($result33);
    
    if ($ujuzenet[0]){
-       $ujuzenet_ikon = '<img src="graphics/level.png" alt="'.$szotar->fordit('Új üzenet érkezett').'" />';
+       $ujuzenet_ikon = '<img src="graphics/level.png" alt="'.$szotar->fordit('Új üzenet érkezett').'"  style="margin: 5px 0px -8px 0px; width:25px;"/>';
    } else {
        $ujuzenet_ikon = '';
    }
