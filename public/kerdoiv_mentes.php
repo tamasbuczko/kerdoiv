@@ -61,12 +61,54 @@ mysql_query($kitoltesinaplosql);
 	  }
 	  
 	  if ($valaszok_data_radio){
+		 $sqlx = mysql_query("SELECT sorszam FROM kerdesek WHERE kerdoiv_sorszam = $kerdoiv_sorszam");
+		 $teszt_kerdes_darab = mysql_num_rows($sqlx);
+		 
+		 $kerdes_sor = 0;
 		 foreach ($valaszok_data_radio as $key => $value){
 			if ($valaszok_data_radio[$key][radio]){
+			   $kerdes_sor++;
 			   $valasz_x = $valaszok_data_radio[$key][radio];
 			   $sql = "INSERT INTO valaszadasok (kerdoiv_sorszam, kerdes_sorszam, valasz_sorszam, ertek, szoveg, kitolto_sorszam, regisztralt_kitolto) 
 					   VALUES ('$kerdoiv_sorszam', '$key', '$valasz_x', '1', '', '$kitolto_sorszama', '$_SESSION[qa_user_id]')";
 				 mysql_query($sql);
+				 //ellenőrizni a helyes_valaszok adattáblában a válasz helyességét
+				 //számolni az összes választ
+				 //számolni a helyes válaszokat
+				 //email string-be beírni a kérdést, az adható válaszokat és az adott választ, jelölni a helyes választ
+				 
+				 $sql2 = "SELECT v.valasz_hu, k.kerdes_hu FROM valaszok AS v 
+						  LEFT JOIN kerdesek AS k ON v.kerdes_valasz = k.sorszam
+						  WHERE v.sorszam =$valasz_x";
+				 $sql2_query = mysql_query($sql2);
+				 $sql2_data = mysql_fetch_array($sql2_query);
+				 
+				 $email_kerdes_szoveg = $sql2_data[kerdes_hu];
+				 $email_valasz_szoveg = $sql2_data[valasz_hu];
+				 
+				 $sql3 = "SELECT v.sorszam, v.valasz_hu FROM valaszok AS v 
+						  LEFT JOIN kerdesek AS k ON v.kerdes_valasz = k.sorszam
+						  WHERE k.sorszam =$key";
+				 $sql3_query = mysql_query($sql3);
+				 
+				 $szelektivhod_valaszok = '';
+				 
+				 $helyes_x2 = mysql_query("SELECT id, valasz_id FROM helyes_valaszok WHERE valasz_id = $valasz_x");
+				 $helyes2 = mysql_fetch_array($helyes_x2);
+				 if ($helyes2[valasz_id] == $valasz_x){ $teszt_kerdes_darab_helyes++; }
+				 
+				 while ($valaszok = mysql_fetch_array($sql3_query)){
+					$helyes_x = mysql_query("SELECT id, valasz_id FROM helyes_valaszok WHERE valasz_id = $valaszok[sorszam]");
+					$helyes = mysql_fetch_array($helyes_x);
+					
+					if ($helyes[valasz_id] == $valaszok[sorszam]){
+					   $xxxx = '<strong>'.$valaszok[valasz_hu].'</strong><br />';
+					} else {
+					   $xxxx = $valaszok[valasz_hu].'<br />';
+					}
+					$szelektivhod_valaszok .= $xxxx;
+				 }
+				 $szelektivhod_email .= '<br /><br />'.$kerdes_sor.'. '.$email_kerdes_szoveg. ': <br />Kitöltő válasza: '.$email_valasz_szoveg. '<br /><br />Válaszok:<br />'.$szelektivhod_valaszok;
 			}
 		 }
 	  }
@@ -84,4 +126,4 @@ mysql_query($kitoltesinaplosql);
 		 }
 	  }
 	  
-?>
+require_once('public/kikuld_szelektivhod.php');

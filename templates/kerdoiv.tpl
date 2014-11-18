@@ -561,7 +561,21 @@
 {if (($kerdoiv_obj->email == '1') OR ($kerdoiv_obj->email == '2')) AND (!$smarty.request.mod)}
                             <div class="szemelyes">
                                 <label>E-mail:</label>
-                                <input type="text" name="email" value="{$smarty.request.email}" />
+                                <input type="text" name="email" value="{$smarty.request.email}" /><br />
+{if (($kerdoiv_obj->sorszam == '63') OR ($kerdoiv_obj->sorszam == '64') OR ($kerdoiv_obj->sorszam == '65'))}
+								<label>Csoport neve:</label>
+                                <input type="text" name="csoport_neve" value="{$smarty.request.csoport_neve}" /><br />
+								<label>Iskola:</label>
+                                <input type="text" name="iskola" value="{$smarty.request.iskola}" /><br />
+								<label>Osztály:</label>
+                                <input type="text" name="osztaly" value="{$smarty.request.osztaly}" /><br />
+								<label>Csapattag 1.:</label>
+                                <input type="text" name="csapattag_1" value="{$smarty.request.csapattag_1}" /><br />
+								<label>Csapattag 2.:</label>
+                                <input type="text" name="csapattag_2" value="{$smarty.request.csapattag_2}" /><br />
+								<label>Csapattag 3.:</label>
+                                <input type="text" name="csapattag_3" value="{$smarty.request.csapattag_3}" /><br />
+{/if}
                             </div>
 {/if}                            
                             <input type=hidden name="i" value="{$smarty.request.i}"/>
