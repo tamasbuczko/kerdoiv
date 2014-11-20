@@ -108,7 +108,7 @@ mysql_query($kitoltesinaplosql);
 					}
 					$szelektivhod_valaszok .= $xxxx;
 				 }
-				 $szelektivhod_email .= '<br /><br />'.$kerdes_sor.'. '.$email_kerdes_szoveg. ': <br />Kitöltő válasza: '.$email_valasz_szoveg. '<br /><br />Válaszok:<br />'.$szelektivhod_valaszok;
+				 $szelektivhod_email .= '<br /><br />'.$kerdes_sor.'. '.$email_kerdes_szoveg. ': <br /><strong>Kitöltő válasza: '.$email_valasz_szoveg. '</strong><br /><br />Válaszok:<br />'.$szelektivhod_valaszok;
 			}
 		 }
 	  }

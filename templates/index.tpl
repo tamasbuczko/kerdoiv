@@ -102,7 +102,7 @@
 	  </div>
 </div>          
 	  <div id="popup">
-		 <div class="q_box">
+		 <div class="q_box"{if $smarty.request.i == '1'} style="margin-top: 3700px;"{/if}>
 			{$popup_tartalom}
 			{$hibauzenet}
 			{$figy_uzenet}
