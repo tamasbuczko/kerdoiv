@@ -9,6 +9,8 @@
 {/if}
    <div id="intro">
 	  <div id="survey_intro">
+{if (($kerdoiv_obj->sorszam == '63') OR ($kerdoiv_obj->sorszam == '64') OR ($kerdoiv_obj->sorszam == '65'))}
+{else}
 		 <h1>{$kerdoiv_obj->cim}</h1>
 {if (($smarty.request.mod) AND ($smarty.session.qa_user_id))}
 		 <a href="?p=ujkerdoiv&amp;id={$kerdoiv_obj->sorszam}" class="modosito_gomb" title="kérdőív módosítása"></a>
@@ -16,6 +18,7 @@
 		 <div id="survey_intro_div">
 		 {$kerdoiv_obj->leiras}
 		 </div>
+{/if}
 {if (($smarty.request.mod) AND ($smarty.session.qa_user_id))}
 		 <div id="control_box">
 			<h3>{$szotar->fordit('vezérlőpult')}</h3>
@@ -127,7 +130,11 @@
 {if $kerdes_blokk}
    {$kerdes_blokk}
 {/if}
+{if (($kerdoiv_obj->sorszam == '63') OR ($kerdoiv_obj->sorszam == '64') OR ($kerdoiv_obj->sorszam == '65'))}
+<div id="survey" style="margin-top: -20px;">
+{else}
 <div id="survey">
+{/if}
 	<form action="?" name="form_survey" id="form_survey" method="post">
 		<input type="hidden" name="kerdoiv" id="kerdoiv" value="{$smarty.request.kerdoiv}" />
 		<input type="hidden" name="p" id="p" value="{$smarty.request.p}" />		 
