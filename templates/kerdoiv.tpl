@@ -311,19 +311,19 @@
 {/if}
 {if ($valaszx.valasz_fajta == 'kepes')}
 {if !$kerdes.eredmeny_doboz}
-							<label class="ranking_text">{$valaszx.valasz_szoveg}</label>
+							<label class="ranking_text" style="width: 570px; margin-left: 192px !important; margin-bottom: -15px;">{$valaszx.valasz_szoveg}</label>
 {/if}
 							<div style="float: left;">
 							   
 {if !$kerdes.eredmeny_doboz}
-   <div class="answer_img">
-								  <div class="answer_img_frame">
-								 <img src="valasz_kepek/{$valaszx.valasz_kep}">
+   <div class="answer_img" style="position:relative; text-align:left;">
+								  <div class="answer_img_frame" style="width: 490px; margin-left: 130px;">
+								 <img src="valasz_kepek/{$valaszx.valasz_kep}" style="margin-left: 50px;">
 								 </div>
-								<div class="ranking">
+								<div class="ranking" style="position:absolute; top:35%; margin-left:20px;">
 									<span>1</span><span>2</span><span>3</span><span>4</span><span>5</span>
 								</div>
-								 <div style="float: right; margin-right: 6px;">
+								 <div style="position:absolute; top:40%; margin-left:21px;">
 								{$valaszx.valasz_ertekek}
 								</div>
 {else}
@@ -416,7 +416,7 @@
 {if $valaszx.valasz_fajta == 'kepes'}
 						   <div class="answer_img">
 {if $smarty.request.er != 1}
-						   <input type="radio" name="radio_{$sorszam_kerdes}" {if $smarty.request.$xxx == $valaszx.valasz_sorszam}checked="checked" {/if}value="{$valaszx.valasz_sorszam}" />
+						   <input type="radio" name="radio_{$sorszam_kerdes}" {if $smarty.request.$xxx == $valaszx.valasz_sorszam}checked="checked" {/if}value="{$valaszx.valasz_sorszam}" style="margin-top: 100px !important; margin-left: 50px !important;"/>
 {/if}
 						   <div class="answer_img_frame">
 						   <img src="valasz_kepek/{$valaszx.valasz_kep}">
@@ -441,7 +441,7 @@
 {if $valaszx.valasz_fajta == 'videos'}
 						   <div class="answer_img">
 {if $smarty.request.er != 1}
-							  <input type="radio" name="radio_{$sorszam_kerdes}" {if $smarty.request.$xxx == $valaszx.valasz_sorszam}checked="checked" {/if}value="{$valaszx.valasz_sorszam}" />
+							  <input type="radio" name="radio_{$sorszam_kerdes}" {if $smarty.request.$xxx == $valaszx.valasz_sorszam}checked="checked" {/if}value="{$valaszx.valasz_sorszam}" style="margin-top: 100px !important; margin-left: 50px !important;"/>
 {/if}
 							  <div class="answer_img_frame">
 								 {$valaszx.valasz_video}
@@ -497,7 +497,7 @@
 {if $valaszx.valasz_fajta == 'kepes'}
 						   <div class="answer_img">
 {if $smarty.request.er != 1}
-							  <input type="checkbox" name="checkbox_{$valaszx.valasz_sorszam}" {if $smarty.request.$xxx == 'on'}checked="checked"{/if}/>
+							  <input type="checkbox" name="checkbox_{$valaszx.valasz_sorszam}" {if $smarty.request.$xxx == 'on'}checked="checked"{/if} style="margin-top: 100px !important; margin-left: 50px !important;"/>
 {/if}
 							  <div class="answer_img_frame">
 								 <img src="valasz_kepek/{$valaszx.valasz_kep}">
@@ -522,7 +522,7 @@
 {if $valaszx.valasz_fajta == 'videos'}
 						   <div class="answer_img">
 {if $smarty.request.er != 1}
-						   <input type="checkbox" name="checkbox_{$valaszx.valasz_sorszam}" {if $smarty.request.$xxx == 'on'}checked="checked"{/if}/>
+						   <input type="checkbox" name="checkbox_{$valaszx.valasz_sorszam}" {if $smarty.request.$xxx == 'on'}checked="checked"{/if} style="margin-top: 100px !important; margin-left: 50px !important;"/>
 {/if}
 						   <div class="answer_img_frame">
 						   {$valaszx.valasz_video}
