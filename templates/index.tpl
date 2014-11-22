@@ -49,9 +49,9 @@
         </div>
 {/if}
 {if !$smarty.session.qa_user_id} 
-<div id="teszt" {if $smarty.request.kerdoiv} style="display: none;"{/if}>
+<!--<div id="teszt" {if $smarty.request.kerdoiv} style="display: none;"{/if}>
    <a href="?p=5">{$szotar->fordit('Teszt Üzem! - Próbáld ki nyugodtan')}...</a>
-</div>
+</div>-->
 {/if}
 {if ((!$kerdoiv_obj) OR ($kerdoiv_obj->nyelvszam > 1))}
    <form action="" method="post" name="nyelv" id="nyelv">
