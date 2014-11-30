@@ -1,3 +1,12 @@
+function reg_doboz_kapcs(csomag){
+    if (document.getElementById('reg_doboz_sor').style.display == 'block'){
+        document.getElementById('reg_doboz_sor').style.display = 'none';
+    } else {
+        document.getElementById('csomag_'+csomag).checked = true;
+        document.getElementById('reg_doboz_sor').style.display = 'block';
+    }
+}
+
 function nincslejarat(){
    document.getElementById('lejarat_datum').value = '0000-00-00';
 }

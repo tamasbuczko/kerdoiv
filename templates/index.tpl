@@ -6,9 +6,17 @@
    <script type="text/javascript" src="js/jquery.1.7.1.min.js"></script>
    <script type="text/javascript" src="js/jscripts.js"></script>
    <script type="text/javascript" src="js/ganalytics.js"></script>
+{if $smarty.request.p == '40'}
+   <script type="text/javascript" src="jtable/scripts/jquery-ui-1.8.16.custom.min.js" charset="UTF-8"></script>
+   <script type="text/javascript" src="jtable/scripts/jtable/jquery.jtable.js" charset="UTF-8"></script>
+{/if}
    <link rel="stylesheet" type="text/css" href="style.css?v=2" />
 {if $kerdoiv_obj->css}
    <link rel="stylesheet" type="text/css" href="surveys_css/{$kerdoiv_obj->css}" />
+{/if}
+{if $smarty.request.p == '40'}
+   <link href="jtable/themes/redmond/jquery-ui-1.8.16.custom.css" rel="stylesheet" type="text/css" charset="UTF-8" />
+   <link href="jtable/scripts/jtable/themes/lightcolor/blue/jtable.css" rel="stylesheet" type="text/css" charset="UTF-8" />
 {/if}
    <link rel="stylesheet" type="text/css" href="gridster.css" />
    <link rel="stylesheet" type="text/css" href="csempe.css" />

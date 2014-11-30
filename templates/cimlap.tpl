@@ -1,6 +1,7 @@
 <div id="nyilvanos_kerdoivek">
    <div>                  
     <h2>{$szotar->fordit('Legfrissebb publikus kérdőívek')}</h2>
+    <p>Ha kitöltöd a publikus kérdőíveket belépve, akkor megnézheted az eredményeket!</p>
     {$nyilvanos_kerdoivek}
    </div>
 	<a href="?p=nyilvanos" class="nyilvanos_link">{$szotar->fordit('További publikus kérdőívek')}...</a>

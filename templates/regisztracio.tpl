@@ -1,7 +1,7 @@
 <!--<img src="graphics/QA_logo.png" alt="questionaction" id="csomagajanlatok" />-->
 
 <label class="ingyenes">{$szotar->fordit('Minden csomag ingyenes 2014 december 31-ig.')}</label>
-
+<!--
 <form action="" name="register" method="post" class="login">
     <h2>{$szotar->fordit('regisztráció')}</h2>
     <label>{$szotar->fordit('azonosító')}:</label><input type="text" name="reg_azonosito" value="" />
@@ -21,9 +21,33 @@
     </div>
     <input name="send" type="submit" value="{$szotar->fordit('regisztráció')}" /> 
 </form>
-
+-->
 <table class="csomagok">
     <tr><th>{$szotar->fordit('csomagok')}</th><th>{$szotar->fordit('ingyenes')}</th><th>{$szotar->fordit('ezüst')}</th><th>{$szotar->fordit('arany')}</th></tr>
+    <tr><td></td><td><span id="gomb_ingyen_reg">{$szotar->fordit('regisztrálok')}<span></td><td><span id="gomb_ezust_reg">{$szotar->fordit('regisztrálok')}</span></td><td><span id="gomb_arany_reg">{$szotar->fordit('regisztrálok')}</span></td></tr>
+    <tr>
+        <td colspan="4" style="padding: 0px; border: 0px;">
+        <form action="" name="register" method="post" class="login" id="reg_doboz_sor" style="display: none;">
+    <h2>{$szotar->fordit('regisztráció')}</h2>
+    <label>{$szotar->fordit('azonosító')}:</label><input type="text" name="reg_azonosito" value="" />
+    <label>{$szotar->fordit('e-mail')}:</label><input type="text" name="email" value="" />
+    <label>{$szotar->fordit('jelszó')}:</label><input type="password" name="jelszo" value="" />
+    <label>{$szotar->fordit('jelszó mégegyszer')}:</label><input type="password" name="jelszo2" value="" />
+    
+    <label>{$szotar->fordit('választható csomagok')}:</label>
+    <div>
+        <input type="radio" name="csomag" id="csomag_1" value="1" checked="checked" /><label>{$szotar->fordit('ingyenes')}</label>
+    </div>
+    <div>
+        <input type="radio" name="csomag" id="csomag_2" value="2" /><label>{$szotar->fordit('ezüst csomag')}</label>
+    </div>
+    <div>
+        <input type="radio" name="csomag" id="csomag_3" value="3" /><label>{$szotar->fordit('arany csomag')}</label>
+    </div>
+    <input name="send" type="submit" value="{$szotar->fordit('regisztráció')}" /> 
+</form>
+        </td>
+    </tr>
     <tr><td>{$szotar->fordit('Havidíj')}</td><td>{$szotar->fordit('ingyenes')}</td><td>{$szotar->fordit('2.000 Ft')}</td><td>{$szotar->fordit('6.000 Ft')}</td></tr>
     <tr><td>{$szotar->fordit('Kedvezményes éves díj')}</td><td>{$szotar->fordit('ingyenes')}</td><td>{$szotar->fordit('20.000 Ft')}</td><td>{$szotar->fordit('60.000 Ft')}</td></tr>
     <tr><td>{$szotar->fordit('Nyílt körű és publikus kérdőívek')}</td><td>{$szotar->fordit('van')}</td><td>{$szotar->fordit('van')}</td><td>{$szotar->fordit('van')}</td></tr>

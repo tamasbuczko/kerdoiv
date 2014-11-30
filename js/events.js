@@ -9,6 +9,11 @@ if (document.getElementById("email_beker_blokk") != null){
     document.getElementById("tipus_zart").addEventListener("change", function(){div_switch()}, true);
 }
 
+if (document.getElementById("gomb_ingyen_reg") != null){
+   document.getElementById("gomb_ingyen_reg").addEventListener("click", function(){reg_doboz_kapcs('1')}, true); 
+   document.getElementById("gomb_ezust_reg").addEventListener("click", function(){reg_doboz_kapcs('2')}, true); 
+   document.getElementById("gomb_arany_reg").addEventListener("click", function(){reg_doboz_kapcs('3')}, true); 
+}
 
 if (document.getElementById("neme_kapcs") != null){
     document.getElementById("neme_kapcs").addEventListener("click", function(){display_switch('neme_doboz', this.id)}, true);
