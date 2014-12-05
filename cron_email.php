@@ -15,6 +15,7 @@ $result = mysql_query("SELECT sorszam, email, felhasznalo, kerdoivszam, cimzette
 while ($next_element = mysql_fetch_array($result)){
 	$kerdoivszam = $next_element['kerdoivszam'];
 	$cimzettek = $next_element['cimzettek'];
+	$cimzett = $next_element['email'];
 
         $kerdoiv_obj = new kerdoiv;
         $kerdoiv_obj->load($next_element[kerdoivszam]);
@@ -22,7 +23,7 @@ while ($next_element = mysql_fetch_array($result)){
         $subject = 'kérdőív kitöltés';
 
 		 $felhasznalo_azonosito = $next_element[felhasznalo];
-		 $felhasznalo_email = $level_cimzett;
+		 $felhasznalo_email = $cimzett;
 
 		if (is_numeric($felhasznalo_azonosito)) {$felhasznalo_azonosito = 'Partnerünk'; }
 			
@@ -60,7 +61,7 @@ while ($next_element = mysql_fetch_array($result)){
 
     include('email_html.php');
 
-    mail($level_cimzett, $subject, $message, $headers);
+    mail($felhasznalo_email, $subject, $message, $headers);
     $sql = "UPDATE email_temp SET statusz='2', elkuldve='$idopont' WHERE sorszam='$next_element[sorszam]'";
     mysql_query($sql);
 }
