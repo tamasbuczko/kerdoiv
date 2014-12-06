@@ -17,13 +17,27 @@ while ($next_element = mysql_fetch_array($result)){
 	$cimzettek = $next_element['cimzettek'];
 	$cimzett = $next_element['email'];
 
+        $chars="abcdefhjkmnpqrstuxy345789";
+	$uj_jelszo="";
+        $uj_link="";
+	for ($i=0;$i<6;$i++){
+		$rand=rand(0,strlen($chars)-1);
+		$uj_jelszo.=$chars[$rand];
+	}
+        for ($i=0;$i<20;$i++){
+		$rand=rand(0,strlen($chars)-1);
+		$uj_link.=$chars[$rand];
+	}
+	$sql = "UPDATE zart_emailek SET jelszo='$uj_jelszo', link='$uj_link' WHERE email='$next_element[email]'";
+        mysql_query($sql);
+        
         $kerdoiv_obj = new kerdoiv;
         $kerdoiv_obj->load($next_element[kerdoivszam]);
 	   
         $subject = 'kérdőív kitöltés';
 
-		 $felhasznalo_azonosito = $next_element[felhasznalo];
-		 $felhasznalo_email = $cimzett;
+	$felhasznalo_azonosito = $next_element[felhasznalo];
+	$felhasznalo_email = $cimzett;
 
 		if (is_numeric($felhasznalo_azonosito)) {$felhasznalo_azonosito = 'Partnerünk'; }
 			
@@ -39,11 +53,16 @@ while ($next_element = mysql_fetch_array($result)){
           </div>
           <div style="float: left; width: 460px; font-size: 12px; min-height: 615px; color: #3c1d11; padding-top: 20px; padding-left: 17px; padding-bottom: 30px;">
               Kedves '.$felhasznalo_azonosito.'!<br /><br />
-					<p style="color: #3c1d11;">Ön a hegesztesportal.hu hírlevelét olvassa.</p>
-					<p style="color: #3c1d11; font-weight: bold; margin-bottom: 2px;">Regisztrált e-mail címe:</p>
-					'.$felhasznalo_email.'
-					<br /><br />
+              <p style="color: #3c1d11;">Ön a hegesztesportal.hu hírlevelét olvassa.</p>
+              <p style="color: #3c1d11; font-weight: bold; margin-bottom: 2px;">Regisztrált e-mail címe:</p>
+               '.$felhasznalo_email.'
+		<br /><br />
               '.$kerdoiv_obj->cim.'
+              <p style="color: #3c1d11; font-weight: bold; margin-bottom: 2px;">Jelszó:</p>
+              '.$uj_jelszo.'
+              <p style="color: #3c1d11; font-weight: bold; margin-bottom: 2px;">A kérdőív elérhetősége:</p>
+              <a href="http://questionaction.com/index.php?p=kerdoiv&kerdoiv='.$kerdoivszam.'&link='.$uj_link.'">http://questionaction.com/index.php?p=kerdoiv&kerdoiv='.$kerdoivszam.'&link='.$uj_link.'</a>
+
               <br style="clear: both;" />
                <p style="color: #3c1d11;">
               Üdvözlettel,<br />

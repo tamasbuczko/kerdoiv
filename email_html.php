@@ -31,7 +31,7 @@ $headers .= "\nMIME-Version: 1.0\n" .
 " boundary=\"{$mime_boundary}\"";
 
 $message = "\n\n--{$mime_boundary}\n" .
-"Content-Type: text/html; charset=\"iso-8859-2\"\n" .
+"Content-Type: text/html; charset=\"utf-8\"\n" .
 "Content-Transfer-Encoding: 7bit\n\n" .
 $html."\r\n";
 

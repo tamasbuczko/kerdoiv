@@ -11,6 +11,14 @@ if ($_REQUEST[zart_email_kuldes]){
     }
     $sql = "UPDATE zart_emailek SET status = '2' WHERE status = '1' AND kerdoiv = '$kerdoiv_obj->sorszam'";
     mysql_query($sql);
+    if ($_REQUEST[jelszo_generalas] == 'on'){
+        $sql2 = "UPDATE kerdoivek SET zart_jelszo = '1' WHERE sorszam = '$kerdoiv_obj->sorszam'";
+        $kerdoiv_obj->zart_jelszo = 1;
+    } else {
+        $sql2 = "UPDATE kerdoivek SET zart_jelszo = '0' WHERE sorszam = '$kerdoiv_obj->sorszam'";
+        $kerdoiv_obj->zart_jelszo = 0;
+    }
+    mysql_query($sql2);
 }
 
 if ($_REQUEST[submit]){

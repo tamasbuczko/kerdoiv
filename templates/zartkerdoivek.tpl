@@ -9,5 +9,6 @@
 <script type="text/javascript" src="jtable/dat_zartkerdoivek.js"></script>
 
 <form action="" method="post">
+    <label>Jelszó szükséges:</label><input type="checkbox" name="jelszo_generalas" {if $kerdoiv_obj->zart_jelszo == '1'}checked="checked"{/if} />
     <input type="submit" name="zart_email_kuldes" value="Kiküldés" />
 </form>
