@@ -1,4 +1,5 @@
 <?php
+session_start();
 //néhány rendszerállandó beállítása
 require_once('parameters.php');
 
@@ -16,6 +17,11 @@ while ($next_element = mysql_fetch_array($result)){
 	$kerdoivszam = $next_element['kerdoivszam'];
 	$cimzettek = $next_element['cimzettek'];
 	$cimzett = $next_element['email'];
+	
+	$result2 = mysql_query("SELECT nev, cegnev FROM zart_emailek WHERE email='$cimzett'");	
+	$next_elementxx = mysql_fetch_array($result2);
+	$felhasznalo = $next_elementxx['nev'];
+	$cegnev = $next_elementxx['cegnev'];
 
         $chars="abcdefhjkmnpqrstuxy345789";
 	$uj_jelszo="";
@@ -48,30 +54,32 @@ while ($next_element = mysql_fetch_array($result)){
       <body style="background-color: #9cb0b0; padding-top: 20px; padding-bottom: 20px; margin-bottom: 20px; padding-left: 20px; color: #686868; font-family: Arial;">
       <div style="display: block; min-height: 624px; width: 680px; background-color: #ffffff;">
           <div style="width: 158px; padding: 10px; float: left; background-color: #0f4eb8; color: #fefefe; min-height: 605px; border-right: 2px solid #0f4eb8;">
-              <img src="cid:123456789" style="margin:0px; padding: 0px;">
-              <p style="right-margin: 10px;">Hegesztésportál</p>
           </div>
           <div style="float: left; width: 460px; font-size: 12px; min-height: 615px; color: #3c1d11; padding-top: 20px; padding-left: 17px; padding-bottom: 30px;">
-              Kedves '.$felhasznalo_azonosito.'!<br /><br />
-              <p style="color: #3c1d11;">Ön a hegesztesportal.hu hírlevelét olvassa.</p>
-              <p style="color: #3c1d11; font-weight: bold; margin-bottom: 2px;">Regisztrált e-mail címe:</p>
-               '.$felhasznalo_email.'
-		<br /><br />
-              '.$kerdoiv_obj->cim.'
+              Tisztelt '.$felhasznalo.'!<br /><br />
+              <p style="color: #3c1d11;">A (kiküldő cég) nevében felkérem, hogy az Önök ('.$cegnev.') számára összeállított felmérő lapot, legyenek szívesek kitölteni az online felületen!</p>
+			  <p style="color: #3c1d11; font-weight: bold;">A felmérés címe:<br />'.$kerdoiv_obj->cim.'</p>
+			   <p style="color: #3c1d11; font-weight: bold;">
+			   Az alábbi egyedi linken található a felmérés:<br />
+			   <a href="http://questionaction.com/index.php?p=kerdoiv&kerdoiv='.$kerdoivszam.'&link='.$uj_link.'">http://questionaction.com/index.php?p=kerdoiv&kerdoiv='.$kerdoivszam.'&link='.$uj_link.'</a>
+			   </p>
               <p style="color: #3c1d11; font-weight: bold; margin-bottom: 2px;">Jelszó:</p>
               '.$uj_jelszo.'
-              <p style="color: #3c1d11; font-weight: bold; margin-bottom: 2px;">A kérdőív elérhetősége:</p>
-              <a href="http://questionaction.com/index.php?p=kerdoiv&kerdoiv='.$kerdoivszam.'&link='.$uj_link.'">http://questionaction.com/index.php?p=kerdoiv&kerdoiv='.$kerdoivszam.'&link='.$uj_link.'</a>
-
+			   <p style="color: #3c1d11;font-weight: bold;">
+				  Kérem, hogy a kitöltést a következő dátumig legyen szíves elvégezni:<br />
+				  '.$kerdoiv_obj->lejarat_datuma.'
+			   </p>
+			   <p style="color: #3c1d11;">
+				  '.$kerdoiv_obj->zart_email_szoveg.'
+			   </p>
               <br style="clear: both;" />
-               <p style="color: #3c1d11;">
-              Üdvözlettel,<br />
-              a hegesztesportal.hu csapata
+              <p style="color: #3c1d11;">
+              Köszönettel:<br />
+              '.$kerdoiv_obj->keszito.'<br />
+			  '.$kerdoiv_obj->email.'<br />
+			  (kiküldő cégneve)<br />
               </p>
               <br style="clear: both;" />
-              <p style="margin-top: 40px; font-size: 9px;">
-              Ezt a levelet a hegesztesportal.hu weboldal küldte. Amennyiben nem kíván több hasonló tartalmú levelet kapni, kérjük írjon az info@hegesztesportal.hu címre, vagy a felhasználói profiljában törölje hírlevél igényét!
-              </p>
           </div>
       </div>
       <br style="clear: both;" />

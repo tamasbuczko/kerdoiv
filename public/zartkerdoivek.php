@@ -9,7 +9,7 @@ if ($_REQUEST[zart_email_kuldes]){
         $sql = "INSERT INTO email_temp (email, felhasznalo, kerdoivszam, kelt, statusz) VALUES ('$row[email]', '', '$kerdoiv_obj->sorszam', '$idopont', '1')";
         mysql_query($sql);
     }
-    $sql = "UPDATE zart_emailek SET status = '2' WHERE status = '1' AND kerdoiv = '$kerdoiv_obj->sorszam'";
+    $sql = "UPDATE zart_emailek SET status = '2', zart_email_szoveg='$_REQUEST[email_szoveg]' WHERE status = '1' AND kerdoiv = '$kerdoiv_obj->sorszam'";
     mysql_query($sql);
     if ($_REQUEST[jelszo_generalas] == 'on'){
         $sql2 = "UPDATE kerdoivek SET zart_jelszo = '1' WHERE sorszam = '$kerdoiv_obj->sorszam'";
