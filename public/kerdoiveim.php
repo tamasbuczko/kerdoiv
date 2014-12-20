@@ -62,7 +62,7 @@ while ($next_element = mysql_fetch_array($result)){
    }
    
    if ($next_element['zart'] == '1'){
-	  $kerdoiv_zart = '<img src="graphics/lock.png" alt="zárt kérdőív" title="zárt kérdőív" class="zart_ikon" />';
+	  $kerdoiv_zart = '<a href="?p=40&kerdoiv='.$next_element[sorszam].'" style="width: 12px; float: right;"><img src="graphics/lock.png" alt="zárt kérdőív" title="zárt kérdőív" class="zart_ikon" /></a>';
    } else {
 	  $kerdoiv_zart = '';
    }
@@ -90,7 +90,7 @@ while ($next_element = mysql_fetch_array($result)){
 	}
 	
     $lista_kerdoiveim .= '<tr>'
-			. '<td><a href="?p=kerdoiv_adatlap&kerdoiv='.$next_element[sorszam].'">'.$cim.$megosztott.$kerdoiv_zart.$ujuzenet_ikon.'</a></td>'
+			. '<td><a href="?p=kerdoiv_adatlap&kerdoiv='.$next_element[sorszam].'">'.$cim.$megosztott.$ujuzenet_ikon.'</a>'.$kerdoiv_zart.'</td>'
 			. '<td><a href="?p=kerdoiv&kerdoiv='.$next_element[sorszam].'&er=1"><img src="graphics/icon_graph.png" alt="eredmények" /></a></td>'
 			. '<td><a href="?p=kerdoiv&kerdoiv='.$next_element[sorszam].'"><img src="graphics/icon_checked.png" alt="kitöltés" /></a></td>'
 			. '<td><a href="?p=kerdoiv&amp;mod=1&amp;kerdoiv='.$next_element[sorszam].'"><img src="graphics/icon_edit.gif" alt="módosítás" /></a></td>'

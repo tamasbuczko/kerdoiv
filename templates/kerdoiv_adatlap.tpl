@@ -4,6 +4,9 @@
     <h3>{$szotar->fordit('Vezérlőpult')}</h3>
     <div class="adatlap_pult">
         <a href="?p=eredmeny&kerdoiv={$kerdoiv_sorszam}" alt="eredmények" >{$szotar->fordit('eredmények')}</a>
+{if $kerdoiv_obj->zart == '1'}
+        <a href="?p=40&kerdoiv={$kerdoiv_sorszam}" alt="zárt rendszer" >{$szotar->fordit('zárt rendszer')}</a>
+{/if}
         <a href="?p=kerdoiv&mod=1&kerdoiv={$kerdoiv_sorszam}" alt="módosítás" >{$szotar->fordit('módosítás')}</a>
         {* 
         INSERT INTO  `kerdoiv`.`szotar` (
