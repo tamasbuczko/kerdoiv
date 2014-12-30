@@ -44,7 +44,10 @@ if (($_SESSION[qa_user_id])AND ( $_REQUEST[masol])) {
 if (($_SESSION[qa_user_id])AND ( !$_REQUEST[mod])AND ( !$_REQUEST[masol])AND ( $_REQUEST[p] != 'ujkerdes')AND ( $_REQUEST[p] != 'ujkerdoiv') AND ( $_REQUEST[p] != 'kerdoiv_adatlap')) {
     if ($a[status] == '1') {
         $jogosult = 1;
-    } else {
+    } else if (($a[status] == '0') AND ($kerdoiv_obj->keszito_id != $_SESSION[qa_user_id]) AND ($kerdoiv_obj->nyilvanos == '1')){
+        $tartalom = 'A kérdőív már nem aktív, így sajnos nem hozzáférhető az eredmények oldala. Ha érdekli az eredmény vegye fel a kapcsolatot velünk!';
+    }    
+    else {
         $tartalom = 'Nincs jogosultsága a kérdőív kitöltéséhez!';
     }
 }
