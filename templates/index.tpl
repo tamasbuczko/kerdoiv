@@ -1,7 +1,13 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="{$smarty.session.lang}" lang="{$smarty.session.lang}">
-<head>
-   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<head>   
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta property="og:title" content="{$kerdoiv_obj->cim}" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="http://www.questionaction.com/?p=kerdoiv&kerdoiv={$kerdoiv_obj->sorszam}" />
+    <meta property="og:image" content="fejlec_kepek/{$kerdoiv_obj->fejlec_kep}" />
+    <meta property="og:description" content="{$kerdoiv_obj->leiras}" />   
+    
    <title>QuestionAction{$page->alcim}</title>
    <script type="text/javascript" src="js/jquery.1.7.1.min.js"></script>
    <script type="text/javascript" src="js/jscripts.js"></script>
@@ -133,6 +139,14 @@
 		 </div>
 	  </div>
 	<script type="text/javascript" src="js/events.js"></script>
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/hu_HU/sdk.js#xfbml=1&version=v2.0";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
     </body>
     <!--<div id="help">
          <a href="?"><img src="graphics/assistant.jpg" alt="" /></a>            

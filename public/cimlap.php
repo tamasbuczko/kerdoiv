@@ -36,9 +36,13 @@ $smarty->assign('kitoltott_kerdoivek', $kitoltott_kerdoivek);
 $smarty->assign('figy_uzenet', $figy_uzenet);
 $smarty->assign('lang', $lang);
 $smarty->assign('szotar', $szotar);
+$smarty->assign('kerdoiv_obj', $kerdoiv_obj);
+
 
 if ($_SESSION["sessfelhasznalo"]){
     $tartalom = $smarty->fetch('templates/cimlap2.tpl');
-} else {
+} else if ($_REQUEST[thanks_share]){
+    $tartalom = $smarty->fetch('templates/cimlap3.tpl');
+    } else {
     $tartalom = $smarty->fetch('templates/cimlap.tpl');
 }

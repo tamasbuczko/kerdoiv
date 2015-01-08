@@ -13,6 +13,7 @@ if (document.getElementById("gomb_ingyen_reg") != null){
    document.getElementById("gomb_ingyen_reg").addEventListener("click", function(){reg_doboz_kapcs('1')}, true); 
    document.getElementById("gomb_ezust_reg").addEventListener("click", function(){reg_doboz_kapcs('2')}, true); 
    document.getElementById("gomb_arany_reg").addEventListener("click", function(){reg_doboz_kapcs('3')}, true); 
+   document.getElementById("gomb_platina_reg").addEventListener("click", function(){reg_doboz_kapcs('4')}, true);
 }
 
 if (document.getElementById("neme_kapcs") != null){
