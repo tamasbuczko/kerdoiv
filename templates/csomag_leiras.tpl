@@ -2,41 +2,41 @@
 
 <div class="csomag_dobozok">
     
-    <div id="free">
-        <a href="?p=41&package=1" ><img src="graphics/click.png" alt="" /></a>
+{if $smarty.request.package == 1}    
+    <div id="free" >        
         <h1>{$szotar->fordit('Ingyenes csomag')}</h1>
         <h3>{$szotar->fordit('0 Ft / Hónap ')}</h3>
         <p>{$szotar->fordit(' Diákoknak, magánszemélyeknek és vállalkozást tervezőknek.')}</p>
         <p>{$szotar->fordit(' Ingyenes, kötöttségek nélkül kipróbálható.')} </p>
     </div>
-    <div id="silver">
-        <a href="?p=41&package=2" ><img src="graphics/click.png" alt="" /></a>        <h1>{$szotar->fordit(' Ezüst csomag')}</h1>
+{/if}
+{if $smarty.request.package == 2} 
+    <div id="silver" >
+        <h1>{$szotar->fordit(' Ezüst csomag')}</h1>
         <h3>{$szotar->fordit(' 2.000 Ft / Hónap')}</h3>
         <p>{$szotar->fordit(' Magánszemélyek, oktatók és vállalkozók számára ajánljuk.')}</p>
         <p>{$szotar->fordit('  Kérdőívek készítésére, kiértékelésére szakdolgozatokhoz, közvélemény és piackutatáshoz.')}</p>
     </div>
-    <div id="gold">
-        <a href="?p=41&package=3" ><img src="graphics/click.png" alt="" /></a>
+{/if}
+{if $smarty.request.package == 3} 
+    <div id="gold" >
         <h1>{$szotar->fordit(' Arany csomag')}</h1>
         <h3>{$szotar->fordit('6.000 Ft / Hónap ')}</h3>
         <p>{$szotar->fordit('Vállalkozások, cégek számára ajánljuk. ')}</p>
         <p> {$szotar->fordit(' Ideális összeállítás a cégek számára, akik egy helyen szeretnék tudni vevői, beszállítói felméréseit és értékelésüket.')}</p>
-    </div>
-    <div id="platinum">
-        <a href="?p=41&package=4" ><img src="graphics/click.png" alt="" /></a>
+    </div>    
+{/if}
+{if $smarty.request.package == 4} 
+    <div id="platinum" >
         <h1>{$szotar->fordit(' Platina csomag')}</h1>
         <h3>{$szotar->fordit(' 36.000 Ft / Hónap')}</h3>
         <p>{$szotar->fordit(' Cégek és nagyvállalatok számára ajánljuk, akik csak a megbízást szeretnék kiadni.')}</p>
         <p> {$szotar->fordit(' Egyedi igények kielégítése, folyamatos támogatás és kapcsolattartás. Megbízásra minden részletet mi biztosítunk, dolgozunk ki.')}</p>
     </div>
-    
-</div>
-    
-    
+{/if}    
 
-<div class="kiemelt">{$szotar->fordit('Legnépszerűbb')}</div>
-<!--
-<form action="" name="register" method="post" class="login">
+
+<form action="" name="register" method="post" class="login" style="background-color: rgba(234, 234, 232, 0.7); margin-right: 20px;">
     <h2>{$szotar->fordit('regisztráció')}</h2>
     <label>{$szotar->fordit('azonosító')}:</label><input type="text" name="reg_azonosito" value="" />
     <label>{$szotar->fordit('e-mail')}:</label><input type="text" name="email" value="" />
@@ -53,9 +53,30 @@
     <div>
         <input type="radio" name="csomag" value="3" /><label>{$szotar->fordit('arany csomag')}</label>
     </div>
-    <input name="send" type="submit" value="{$szotar->fordit('regisztráció')}" /> 
+     <div>
+        <input type="radio" name="csomag" value="4" /><label>{$szotar->fordit('platina csomag')}</label>
+    </div>
+    <input name="send" type="submit" value="{$szotar->fordit('regisztráció')}" style="margin-top: 5px; width: 300px;"/> 
 </form>
--->
+</div>
+
+<div>
+    <p>Ide írjuk le a részletes bemutatását az adott csomagnak. Ide érkeznek majd a kiküldött e-mail-ből a látogatók!</p>    
+</div>    
+    
+{if $smarty.request.package == 1}
+    <div class="kiemelt" style="width: 163px; left: 213px; background-color: #8CFA80; border-bottom: 2px solid #009222;"></div>
+{/if}      
+{if $smarty.request.package == 2}
+    <div class="kiemelt" style="width: 161px; left: 378px; background-color: rgba(208, 229, 245, 1); border-bottom: 2px solid #A1C3DB;"></div>
+{/if}     
+{if $smarty.request.package == 3}
+    <div class="kiemelt"></div>
+{/if}  
+{if $smarty.request.package == 4}
+    <div class="kiemelt" style="width: 147px; left: 689px; background-color: #999; border-bottom: 2px solid #777777;"></div>
+{/if}    
+
 <table class="csomagok">
     <tr><th>{$szotar->fordit('csomagok')}</th><th>{$szotar->fordit('ingyenes')}</th><th>{$szotar->fordit('ezüst')}</th><th>{$szotar->fordit('arany')}</th><th>{$szotar->fordit('platina')}</th></tr>
     <tr><td>{$szotar->fordit('Havidíj')}</td><td>{$szotar->fordit('ingyenes')}</td><td>{$szotar->fordit('2.000 Ft')}</td><td>{$szotar->fordit('6.000 Ft')}</td><td>{$szotar->fordit('36.000 Ft')}</td></tr>
@@ -72,31 +93,7 @@
         <td>{$szotar->fordit('Kérdőívek készítésére, kiértékelésére szakdolgozatokhoz, közvélemény és piackutatáshoz.')}</td>
         <td>{$szotar->fordit('Ideális összeállítás a cégek számára, akik egy helyen szeretnék tudni vevői, beszállítói felméréseit és értékelésüket.')}</td>
         <td>{$szotar->fordit('Egyedi igények kielégítése, folyamatos támogatás és kapcsolattartás. Megbízásra minden részletet mi biztosítunk, dolgozunk ki.')}</td>
-    </tr>
-    <tr style="cursor:pointer;"><td>{$szotar->fordit('regisztráció / Előfizetés')}</td><td><span  id="gomb_ingyen_reg">{$szotar->fordit('Regisztrálok')}<span></td><td><span id="gomb_ezust_reg">{$szotar->fordit('Előfizetek')}</span></td><td><span id="gomb_arany_reg">{$szotar->fordit('Előfizetek')}</span></td><td><span id="gomb_platina_reg">{$szotar->fordit('Előfizetek')}</span></td></tr>
-    <tr>
-        <td colspan="5" style="padding: 0px; border: 0px;">
-        <form action="" name="register" method="post" class="login" id="reg_doboz_sor" style="display: none;">
-    <h2>{$szotar->fordit('regisztráció')}</h2>
-    <label>{$szotar->fordit('azonosító')}:</label><input type="text" name="reg_azonosito" value="" />
-    <label>{$szotar->fordit('e-mail')}:</label><input type="text" name="email" value="" />
-    <label>{$szotar->fordit('jelszó')}:</label><input type="password" name="jelszo" value="" />
-    <label>{$szotar->fordit('jelszó mégegyszer')}:</label><input type="password" name="jelszo2" value="" />
-    
-    <label>{$szotar->fordit('választható csomagok')}:</label>
-    <div>
-        <input type="radio" name="csomag" id="csomag_1" value="1" checked="checked" /><label>{$szotar->fordit('ingyenes')}</label>
-    </div>
-    <div>
-        <input type="radio" name="csomag" id="csomag_2" value="2" /><label>{$szotar->fordit('ezüst csomag')}</label>
-    </div>
-    <div>
-        <input type="radio" name="csomag" id="csomag_3" value="3" /><label>{$szotar->fordit('arany csomag')}</label>
-    </div>
-    <input name="send" type="submit" value="{$szotar->fordit('regisztráció')}" /> 
-</form>
-        </td>
-    </tr>
+    </tr>    
     <tr><td>{$szotar->fordit('Nyílt körű és publikus kérdőívek')}</td><td>{$szotar->fordit('van')}</td><td>{$szotar->fordit('van')}</td><td>{$szotar->fordit('van')}</td><td>{$szotar->fordit('van')}</td></tr>
     <tr><td>{$szotar->fordit('Személyes kérdőívek')}</td><td>{$szotar->fordit('nincs')}</td><td>{$szotar->fordit('van')}</td><td>{$szotar->fordit('van')}</td><td>{$szotar->fordit('van')}</td></tr>
     <tr><td>{$szotar->fordit('Kérdőívek maximális száma')}</td><td>{$szotar->fordit('korlátlan')}</td><td>{$szotar->fordit('korlátlan')}</td><td>{$szotar->fordit('korlátlan')}</td><td>{$szotar->fordit('korlátlan')}</td></tr>
