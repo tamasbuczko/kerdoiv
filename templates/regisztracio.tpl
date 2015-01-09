@@ -1,6 +1,41 @@
 <!--<img src="graphics/QA_logo.png" alt="questionaction" id="csomagajanlatok" />-->
 
-<label class="ingyenes">{$szotar->fordit('Minden csomag ingyenes 2015 január 31-ig.')}</label>
+<div class="csomag_dobozok">
+    
+    <div id="free">
+        <img src="graphics/click.png" alt="" />
+        <h1>{$szotar->fordit('Ingyenes csomag')}</h1>
+        <h3>{$szotar->fordit('0 Ft / Hónap ')}</h3>
+        <p>{$szotar->fordit(' Diákoknak, magánszemélyeknek és vállalkozást tervezőknek.')}</p>
+        <p>{$szotar->fordit(' Ingyenes, kötöttségek nélkül kipróbálható.')} </p>
+    </div>
+    <div id="silver">
+        <img src="graphics/click.png" alt="" />
+        <h1>{$szotar->fordit(' Ezüst csomag')}</h1>
+        <h3>{$szotar->fordit(' 2.000 Ft / Hónap')}</h3>
+        <p>{$szotar->fordit(' Magánszemélyek, oktatók és vállalkozók számára ajánljuk.')}</p>
+        <p>{$szotar->fordit('  Kérdőívek készítésére, kiértékelésére szakdolgozatokhoz, közvélemény és piackutatáshoz.')}</p>
+    </div>
+    <div id="gold">
+        <img src="graphics/click.png" alt="" />
+        <h1>{$szotar->fordit(' Arany csomag')}</h1>
+        <h3>{$szotar->fordit('6.000 Ft / Hónap ')}</h3>
+        <p>{$szotar->fordit('Vállalkozások, cégek számára ajánljuk. ')}</p>
+        <p> {$szotar->fordit(' Ideális összeállítás a cégek számára, akik egy helyen szeretnék tudni vevői, beszállítói felméréseit és értékelésüket.')}</p>
+    </div>
+    <div id="platinum">
+        <img src="graphics/click.png" alt="" />
+        <h1>{$szotar->fordit(' Platina csomag')}</h1>
+        <h3>{$szotar->fordit(' 36.000 Ft / Hónap')}</h3>
+        <p>{$szotar->fordit(' Cégek és nagyvállalatok számára ajánljuk, akik csak a megbízást szeretnék kiadni.')}</p>
+        <p> {$szotar->fordit(' Egyedi igények kielégítése, folyamatos támogatás és kapcsolattartás. Megbízásra minden részletet mi biztosítunk, dolgozunk ki.')}</p>
+    </div>
+    
+</div>
+    
+    
+
+<div class="kiemelt">{$szotar->fordit('Legnépszerűbb')}</div>
 <!--
 <form action="" name="register" method="post" class="login">
     <h2>{$szotar->fordit('regisztráció')}</h2>
@@ -23,11 +58,13 @@
 </form>
 -->
 <table class="csomagok">
-    <tr><th>{$szotar->fordit('csomagok')}</th><th>{$szotar->fordit('ingyenes ->')}</th><th>{$szotar->fordit('ezüst ->')}</th><th>*{$szotar->fordit('arany ->')}</th><th>{$szotar->fordit('platina ->')}</th></tr>
+    <tr><th>{$szotar->fordit('csomagok')}</th><th>{$szotar->fordit('ingyenes')}</th><th>{$szotar->fordit('ezüst')}</th><th>{$szotar->fordit('arany')}</th><th>{$szotar->fordit('platina')}</th></tr>
+    <tr><td>{$szotar->fordit('Havidíj')}</td><td>{$szotar->fordit('ingyenes')}</td><td>{$szotar->fordit('2.000 Ft')}</td><td>{$szotar->fordit('6.000 Ft')}</td><td>{$szotar->fordit('36.000 Ft')}</td></tr>
+    <tr><td>{$szotar->fordit('Kedvezményes éves díj')}</td><td>{$szotar->fordit('ingyenes')}</td><td>{$szotar->fordit('20.000 Ft')}</td><td>{$szotar->fordit('60.000 Ft')}</td><td>{$szotar->fordit('360.000 Ft')}</td></tr>
     
     <tr><td>{$szotar->fordit('Kinek ajánljuk?')}</td>
         <td>{$szotar->fordit('Diákoknak, magánszemélyeknek és vállalkozást tervezőknek.')}</td>
-        <td>{$szotar->fordit('Magánszemélyek, oktatóknak, és vállalkozók számára ajánljuk.')}</td>
+        <td>{$szotar->fordit('Magánszemélyek, oktatók és vállalkozók számára ajánljuk.')}</td>
         <td>{$szotar->fordit('Vállalkozások, cégek számára ajánljuk.')}</td>
         <td>{$szotar->fordit('Cégek és nagyvállalatok számára ajánljuk, akik csak a megbízást szeretnék kiadni.')}</td>
     </tr>
@@ -37,9 +74,7 @@
         <td>{$szotar->fordit('Ideális összeállítás a cégek számára, akik egy helyen szeretnék tudni vevői, beszállítói felméréseit és értékelésüket.')}</td>
         <td>{$szotar->fordit('Egyedi igények kielégítése, folyamatos támogatás és kapcsolattartás. Megbízásra minden részletet mi biztosítunk, dolgozunk ki.')}</td>
     </tr>
-    <tr><td>{$szotar->fordit('Havidíj')}</td><td>{$szotar->fordit('ingyenes')}</td><td>{$szotar->fordit('2.000 Ft')}</td><td>{$szotar->fordit('6.000 Ft')}</td><td>{$szotar->fordit('36.000 Ft')}</td></tr>
-    <tr><td>{$szotar->fordit('Kedvezményes éves díj')}</td><td>{$szotar->fordit('ingyenes')}</td><td>{$szotar->fordit('20.000 Ft')}</td><td>{$szotar->fordit('60.000 Ft')}</td><td>{$szotar->fordit('360.000 Ft')}</td></tr>
-    <tr style="cursor:pointer;"><td>{$szotar->fordit('regisztráció / Előfizetés')}</td><td><span  id="gomb_ingyen_reg">{$szotar->fordit('regisztrálok')}<span></td><td><span id="gomb_ezust_reg">{$szotar->fordit('regisztrálok')}</span></td><td><span id="gomb_arany_reg">{$szotar->fordit('regisztrálok')}</span></td><td><span id="gomb_platina_reg">{$szotar->fordit('regisztrálok')}</span></td></tr>
+    <tr style="cursor:pointer;"><td>{$szotar->fordit('regisztráció / Előfizetés')}</td><td><span  id="gomb_ingyen_reg">{$szotar->fordit('Regisztrálok')}<span></td><td><span id="gomb_ezust_reg">{$szotar->fordit('Előfizetek')}</span></td><td><span id="gomb_arany_reg">{$szotar->fordit('Előfizetek')}</span></td><td><span id="gomb_platina_reg">{$szotar->fordit('Előfizetek')}</span></td></tr>
     <tr>
         <td colspan="5" style="padding: 0px; border: 0px;">
         <form action="" name="register" method="post" class="login" id="reg_doboz_sor" style="display: none;">
@@ -63,9 +98,6 @@
 </form>
         </td>
     </tr>
-    <tr><td><span  id="csomag_reszletek" style="cursor:pointer;">{$szotar->fordit('részletek')}</span></td></tr>
-</table>
-<table class="csomagok" >
     <tr><td>{$szotar->fordit('Nyílt körű és publikus kérdőívek')}</td><td>{$szotar->fordit('van')}</td><td>{$szotar->fordit('van')}</td><td>{$szotar->fordit('van')}</td><td>{$szotar->fordit('van')}</td></tr>
     <tr><td>{$szotar->fordit('Személyes kérdőívek')}</td><td>{$szotar->fordit('nincs')}</td><td>{$szotar->fordit('van')}</td><td>{$szotar->fordit('van')}</td><td>{$szotar->fordit('van')}</td></tr>
     <tr><td>{$szotar->fordit('Kérdőívek maximális száma')}</td><td>{$szotar->fordit('korlátlan')}</td><td>{$szotar->fordit('korlátlan')}</td><td>{$szotar->fordit('korlátlan')}</td><td>{$szotar->fordit('korlátlan')}</td></tr>
