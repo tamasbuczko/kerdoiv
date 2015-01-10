@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.14, created on 2015-01-10 10:13:21
+<?php /* Smarty version Smarty-3.1.14, created on 2015-01-10 17:43:27
          compiled from "templates\ajax_csomagdobozok.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:3197054b0ed319651e4-95034011%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'c4d017026e29fe65f03378382a4970ba7cc9d814' => 
     array (
       0 => 'templates\\ajax_csomagdobozok.tpl',
-      1 => 1420880937,
+      1 => 1420908204,
       2 => 'file',
     ),
   ),
@@ -15,15 +15,16 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   'function' => 
   array (
   ),
+  'version' => 'Smarty-3.1.14',
+  'unifunc' => 'content_54b0ed319c2df7_57269019',
   'variables' => 
   array (
+    'user' => 0,
     'szotar' => 0,
   ),
   'has_nocache_code' => false,
-  'version' => 'Smarty-3.1.14',
-  'unifunc' => 'content_54b0ed319c2df7_57269019',
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_54b0ed319c2df7_57269019')) {function content_54b0ed319c2df7_57269019($_smarty_tpl) {?><?php if ($_REQUEST['package']==1){?>    
+<?php if ($_valid && !is_callable('content_54b0ed319c2df7_57269019')) {function content_54b0ed319c2df7_57269019($_smarty_tpl) {?><?php if ($_REQUEST['package']==1||$_smarty_tpl->tpl_vars['user']->value->jog=='1'){?>    
     <div id="free" >        
         <h1><?php echo $_smarty_tpl->tpl_vars['szotar']->value->fordit('Ingyenes csomag');?>
 </h1>
@@ -35,7 +36,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
  </p>
     </div>
 <?php }?>
-<?php if ($_REQUEST['package']==2){?> 
+<?php if ($_REQUEST['package']==2||$_smarty_tpl->tpl_vars['user']->value->jog=='2'){?> 
     <div id="silver" >
         <h1><?php echo $_smarty_tpl->tpl_vars['szotar']->value->fordit(' Ezüst csomag');?>
 </h1>
@@ -47,7 +48,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 </p>
     </div>
 <?php }?>
-<?php if ($_REQUEST['package']==3){?> 
+<?php if ($_REQUEST['package']==3||$_smarty_tpl->tpl_vars['user']->value->jog=='3'){?> 
     <div id="gold" >
         <h1><?php echo $_smarty_tpl->tpl_vars['szotar']->value->fordit(' Arany csomag');?>
 </h1>
@@ -59,7 +60,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 </p>
     </div>    
 <?php }?>
-<?php if ($_REQUEST['package']==4){?> 
+<?php if ($_REQUEST['package']==4||$_smarty_tpl->tpl_vars['user']->value->jog=='4'){?> 
     <div id="platinum" >
         <h1><?php echo $_smarty_tpl->tpl_vars['szotar']->value->fordit(' Platina csomag');?>
 </h1>

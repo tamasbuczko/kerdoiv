@@ -9,6 +9,7 @@
    <label>{$szotar->fordit('Ingyenes')}</label><input type="radio" name="csomag_mod" value="1" {if $user->jog == '1'}checked="checked"{/if} />
    <label>{$szotar->fordit('Ezüst')}</label><input type="radio" name="csomag_mod" value="2" {if $user->jog == '2'}checked="checked"{/if} />
    <label>{$szotar->fordit('Arany')}</label><input type="radio" name="csomag_mod" value="3" {if $user->jog == '3'}checked="checked"{/if} />
+   <label>{$szotar->fordit('Platina')}</label><input type="radio" name="csomag_mod" value="4" {if $user->jog == '4'}checked="checked"{/if} />
    <br style="clear: both;" />
    <br style="clear: both;" />
    <label>{$szotar->fordit('Csomag lejárati határideje')}:</label><input type="text" name="lejarat" readonly="readonly" value="korlátlan" />
