@@ -1,40 +1,11 @@
 <!--<img src="graphics/QA_logo.png" alt="questionaction" id="csomagajanlatok" />-->
 
 <div class="csomag_dobozok">
-    
-{if $smarty.request.package == 1}    
-    <div id="free" >        
-        <h1>{$szotar->fordit('Ingyenes csomag')}</h1>
-        <h3>{$szotar->fordit('0 Ft / Hónap ')}</h3>
-        <p>{$szotar->fordit(' Diákoknak, magánszemélyeknek és vállalkozást tervezőknek.')}</p>
-        <p>{$szotar->fordit(' Ingyenes, kötöttségek nélkül kipróbálható.')} </p>
+    <div id="ajax_doboz">
+        
+{include file='templates/ajax_csomagdobozok.tpl'}
+        
     </div>
-{/if}
-{if $smarty.request.package == 2} 
-    <div id="silver" >
-        <h1>{$szotar->fordit(' Ezüst csomag')}</h1>
-        <h3>{$szotar->fordit(' 2.000 Ft / Hónap')}</h3>
-        <p>{$szotar->fordit(' Magánszemélyek, oktatók és vállalkozók számára ajánljuk.')}</p>
-        <p>{$szotar->fordit('  Kérdőívek készítésére, kiértékelésére szakdolgozatokhoz, közvélemény és piackutatáshoz.')}</p>
-    </div>
-{/if}
-{if $smarty.request.package == 3} 
-    <div id="gold" >
-        <h1>{$szotar->fordit(' Arany csomag')}</h1>
-        <h3>{$szotar->fordit('6.000 Ft / Hónap ')}</h3>
-        <p>{$szotar->fordit('Vállalkozások, cégek számára ajánljuk. ')}</p>
-        <p> {$szotar->fordit(' Ideális összeállítás a cégek számára, akik egy helyen szeretnék tudni vevői, beszállítói felméréseit és értékelésüket.')}</p>
-    </div>    
-{/if}
-{if $smarty.request.package == 4} 
-    <div id="platinum" >
-        <h1>{$szotar->fordit(' Platina csomag')}</h1>
-        <h3>{$szotar->fordit(' 36.000 Ft / Hónap')}</h3>
-        <p>{$szotar->fordit(' Cégek és nagyvállalatok számára ajánljuk, akik csak a megbízást szeretnék kiadni.')}</p>
-        <p> {$szotar->fordit(' Egyedi igények kielégítése, folyamatos támogatás és kapcsolattartás. Megbízásra minden részletet mi biztosítunk, dolgozunk ki.')}</p>
-    </div>
-{/if}    
-
 
 <form action="" name="register" method="post" class="login" style="background-color: rgba(234, 234, 232, 0.7); margin-right: 20px;">
     <h2>{$szotar->fordit('regisztráció')}</h2>
@@ -45,16 +16,16 @@
     
     <label>{$szotar->fordit('választható csomagok')}:</label>
     <div>
-        <input type="radio" name="csomag" value="1" checked="checked" /><label>{$szotar->fordit('ingyenes')}</label>
+        <input type="radio" name="csomag" value="1" {if $smarty.request.package == 1}checked="checked" {/if} onclick="ajax_csomagvalto(1)" /><label>{$szotar->fordit('ingyenes')}</label>
     </div>
     <div>
-        <input type="radio" name="csomag" value="2" /><label>{$szotar->fordit('ezüst csomag')}</label>
+        <input type="radio" name="csomag" value="2" {if $smarty.request.package == 2}checked="checked" {/if} onclick="ajax_csomagvalto(2)" /><label>{$szotar->fordit('ezüst csomag')}</label>
     </div>
     <div>
-        <input type="radio" name="csomag" value="3" /><label>{$szotar->fordit('arany csomag')}</label>
+        <input type="radio" name="csomag" value="3" {if $smarty.request.package == 3}checked="checked" {/if} onclick="ajax_csomagvalto(3)" /><label>{$szotar->fordit('arany csomag')}</label>
     </div>
      <div>
-        <input type="radio" name="csomag" value="4" /><label>{$szotar->fordit('platina csomag')}</label>
+        <input type="radio" name="csomag" value="4" {if $smarty.request.package == 4}checked="checked" {/if} onclick="ajax_csomagvalto(4)" /><label>{$szotar->fordit('platina csomag')}</label>
     </div>
     <input name="send" type="submit" value="{$szotar->fordit('regisztráció')}" style="margin-top: 5px; width: 300px;"/> 
 </form>
@@ -63,19 +34,10 @@
 <div>
     <p>Ide írjuk le a részletes bemutatását az adott csomagnak. Ide érkeznek majd a kiküldött e-mail-ből a látogatók!</p>    
 </div>    
-    
-{if $smarty.request.package == 1}
-    <div class="kiemelt" style="width: 163px; left: 213px; background-color: #8CFA80; border-bottom: 2px solid #009222;"></div>
-{/if}      
-{if $smarty.request.package == 2}
-    <div class="kiemelt" style="width: 161px; left: 378px; background-color: rgba(208, 229, 245, 1); border-bottom: 2px solid #A1C3DB;"></div>
-{/if}     
-{if $smarty.request.package == 3}
-    <div class="kiemelt"></div>
-{/if}  
-{if $smarty.request.package == 4}
-    <div class="kiemelt" style="width: 147px; left: 689px; background-color: #999; border-bottom: 2px solid #777777;"></div>
-{/if}    
+
+<div id="ajax_doboz2">
+{include 'templates/ajax_csomagdobozok2.tpl'}
+</div>
 
 <table class="csomagok">
     <tr><th>{$szotar->fordit('csomagok')}</th><th>{$szotar->fordit('ingyenes')}</th><th>{$szotar->fordit('ezüst')}</th><th>{$szotar->fordit('arany')}</th><th>{$szotar->fordit('platina')}</th></tr>

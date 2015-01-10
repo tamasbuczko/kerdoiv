@@ -2,33 +2,34 @@
 
 <div class="csomag_dobozok">
     
-    <div id="free">
-        <a href="?p=41&package=1" ><img src="graphics/click.png" alt="" /></a>
+    <a href="?p=41&package=1" id="free">
+        <img src="graphics/click.png" alt="" />
         <h1>{$szotar->fordit('Ingyenes csomag')}</h1>
         <h3>{$szotar->fordit('0 Ft / Hónap ')}</h3>
         <p>{$szotar->fordit(' Diákoknak, magánszemélyeknek és vállalkozást tervezőknek.')}</p>
         <p>{$szotar->fordit(' Ingyenes, kötöttségek nélkül kipróbálható.')} </p>
-    </div>
-    <div id="silver">
-        <a href="?p=41&package=2" ><img src="graphics/click.png" alt="" /></a>        <h1>{$szotar->fordit(' Ezüst csomag')}</h1>
+    </a>
+    <a href="?p=41&package=2" id="silver">
+        <img src="graphics/click.png" alt="" />
+        <h1>{$szotar->fordit(' Ezüst csomag')}</h1>
         <h3>{$szotar->fordit(' 2.000 Ft / Hónap')}</h3>
         <p>{$szotar->fordit(' Magánszemélyek, oktatók és vállalkozók számára ajánljuk.')}</p>
         <p>{$szotar->fordit('  Kérdőívek készítésére, kiértékelésére szakdolgozatokhoz, közvélemény és piackutatáshoz.')}</p>
-    </div>
-    <div id="gold">
-        <a href="?p=41&package=3" ><img src="graphics/click.png" alt="" /></a>
+    </a>
+    <a href="?p=41&package=3" id="gold">
+        <img src="graphics/click.png" alt="" />
         <h1>{$szotar->fordit(' Arany csomag')}</h1>
         <h3>{$szotar->fordit('6.000 Ft / Hónap ')}</h3>
         <p>{$szotar->fordit('Vállalkozások, cégek számára ajánljuk. ')}</p>
         <p> {$szotar->fordit(' Ideális összeállítás a cégek számára, akik egy helyen szeretnék tudni vevői, beszállítói felméréseit és értékelésüket.')}</p>
-    </div>
-    <div id="platinum">
-        <a href="?p=41&package=4" ><img src="graphics/click.png" alt="" /></a>
+    </a>
+    <a href="?p=41&package=4" id="platinum">
+        <img src="graphics/click.png" alt="" />
         <h1>{$szotar->fordit(' Platina csomag')}</h1>
         <h3>{$szotar->fordit(' 36.000 Ft / Hónap')}</h3>
         <p>{$szotar->fordit(' Cégek és nagyvállalatok számára ajánljuk, akik csak a megbízást szeretnék kiadni.')}</p>
         <p> {$szotar->fordit(' Egyedi igények kielégítése, folyamatos támogatás és kapcsolattartás. Megbízásra minden részletet mi biztosítunk, dolgozunk ki.')}</p>
-    </div>
+    </a>
     
 </div>
     

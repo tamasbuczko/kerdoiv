@@ -1,3 +1,24 @@
+function ajax_csomagvalto(package){
+    if (package=="") {
+	document.getElementById("ajax_doboz").innerHTML="";
+	return;
+    }
+    if (window.XMLHttpRequest){// code for IE7+, Firefox, Chrome, Opera, Safari
+	xmlhttp=new XMLHttpRequest();
+    } else {// code for IE6, IE5
+	xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+    }
+    xmlhttp.onreadystatechange=function(){
+        if (xmlhttp.readyState==4 && xmlhttp.status==200){
+            data = xmlhttp.responseText.split ( "xxx" );
+            document.getElementById("ajax_doboz").innerHTML=data[0];
+            document.getElementById("ajax_doboz2").innerHTML=data[1];
+	}
+    }
+    xmlhttp.open("GET","ajax_csomagvalto.php?package="+package,true);
+    xmlhttp.send();
+}
+
 function reg_doboz_kapcs(csomag){
     if (document.getElementById('reg_doboz_sor').style.display == 'block'){
         document.getElementById('reg_doboz_sor').style.display = 'none';

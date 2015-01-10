@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.14, created on 2015-01-09 16:32:07
+<?php /* Smarty version Smarty-3.1.14, created on 2015-01-10 11:31:53
          compiled from "templates\csomag_leiras.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:1548954afdf5358d757-03656990%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '01ee5e480f551b6c354c1531651e0c3025a1d9ba' => 
     array (
       0 => 'templates\\csomag_leiras.tpl',
-      1 => 1420817524,
+      1 => 1420885889,
       2 => 'file',
     ),
   ),
@@ -26,56 +26,12 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 <?php if ($_valid && !is_callable('content_54afdf536be290_05249597')) {function content_54afdf536be290_05249597($_smarty_tpl) {?><!--<img src="graphics/QA_logo.png" alt="questionaction" id="csomagajanlatok" />-->
 
 <div class="csomag_dobozok">
-    
-<?php if ($_REQUEST['package']==1){?>    
-    <div id="free" >        
-        <h1><?php echo $_smarty_tpl->tpl_vars['szotar']->value->fordit('Ingyenes csomag');?>
-</h1>
-        <h3><?php echo $_smarty_tpl->tpl_vars['szotar']->value->fordit('0 Ft / Hónap ');?>
-</h3>
-        <p><?php echo $_smarty_tpl->tpl_vars['szotar']->value->fordit(' Diákoknak, magánszemélyeknek és vállalkozást tervezőknek.');?>
-</p>
-        <p><?php echo $_smarty_tpl->tpl_vars['szotar']->value->fordit(' Ingyenes, kötöttségek nélkül kipróbálható.');?>
- </p>
-    </div>
-<?php }?>
-<?php if ($_REQUEST['package']==2){?> 
-    <div id="silver" >
-        <h1><?php echo $_smarty_tpl->tpl_vars['szotar']->value->fordit(' Ezüst csomag');?>
-</h1>
-        <h3><?php echo $_smarty_tpl->tpl_vars['szotar']->value->fordit(' 2.000 Ft / Hónap');?>
-</h3>
-        <p><?php echo $_smarty_tpl->tpl_vars['szotar']->value->fordit(' Magánszemélyek, oktatók és vállalkozók számára ajánljuk.');?>
-</p>
-        <p><?php echo $_smarty_tpl->tpl_vars['szotar']->value->fordit('  Kérdőívek készítésére, kiértékelésére szakdolgozatokhoz, közvélemény és piackutatáshoz.');?>
-</p>
-    </div>
-<?php }?>
-<?php if ($_REQUEST['package']==3){?> 
-    <div id="gold" >
-        <h1><?php echo $_smarty_tpl->tpl_vars['szotar']->value->fordit(' Arany csomag');?>
-</h1>
-        <h3><?php echo $_smarty_tpl->tpl_vars['szotar']->value->fordit('6.000 Ft / Hónap ');?>
-</h3>
-        <p><?php echo $_smarty_tpl->tpl_vars['szotar']->value->fordit('Vállalkozások, cégek számára ajánljuk. ');?>
-</p>
-        <p> <?php echo $_smarty_tpl->tpl_vars['szotar']->value->fordit(' Ideális összeállítás a cégek számára, akik egy helyen szeretnék tudni vevői, beszállítói felméréseit és értékelésüket.');?>
-</p>
-    </div>    
-<?php }?>
-<?php if ($_REQUEST['package']==4){?> 
-    <div id="platinum" >
-        <h1><?php echo $_smarty_tpl->tpl_vars['szotar']->value->fordit(' Platina csomag');?>
-</h1>
-        <h3><?php echo $_smarty_tpl->tpl_vars['szotar']->value->fordit(' 36.000 Ft / Hónap');?>
-</h3>
-        <p><?php echo $_smarty_tpl->tpl_vars['szotar']->value->fordit(' Cégek és nagyvállalatok számára ajánljuk, akik csak a megbízást szeretnék kiadni.');?>
-</p>
-        <p> <?php echo $_smarty_tpl->tpl_vars['szotar']->value->fordit(' Egyedi igények kielégítése, folyamatos támogatás és kapcsolattartás. Megbízásra minden részletet mi biztosítunk, dolgozunk ki.');?>
-</p>
-    </div>
-<?php }?>    
+    <div id="ajax_doboz">
+        
+<?php echo $_smarty_tpl->getSubTemplate ('templates/ajax_csomagdobozok.tpl', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
 
+        
+    </div>
 
 <form action="" name="register" method="post" class="login" style="background-color: rgba(234, 234, 232, 0.7); margin-right: 20px;">
     <h2><?php echo $_smarty_tpl->tpl_vars['szotar']->value->fordit('regisztráció');?>
@@ -92,19 +48,19 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     <label><?php echo $_smarty_tpl->tpl_vars['szotar']->value->fordit('választható csomagok');?>
 :</label>
     <div>
-        <input type="radio" name="csomag" value="1" checked="checked" /><label><?php echo $_smarty_tpl->tpl_vars['szotar']->value->fordit('ingyenes');?>
+        <input type="radio" name="csomag" value="1" <?php if ($_REQUEST['package']==1){?>checked="checked" <?php }?> onclick="ajax_csomagvalto(1)" /><label><?php echo $_smarty_tpl->tpl_vars['szotar']->value->fordit('ingyenes');?>
 </label>
     </div>
     <div>
-        <input type="radio" name="csomag" value="2" /><label><?php echo $_smarty_tpl->tpl_vars['szotar']->value->fordit('ezüst csomag');?>
+        <input type="radio" name="csomag" value="2" <?php if ($_REQUEST['package']==2){?>checked="checked" <?php }?> onclick="ajax_csomagvalto(2)" /><label><?php echo $_smarty_tpl->tpl_vars['szotar']->value->fordit('ezüst csomag');?>
 </label>
     </div>
     <div>
-        <input type="radio" name="csomag" value="3" /><label><?php echo $_smarty_tpl->tpl_vars['szotar']->value->fordit('arany csomag');?>
+        <input type="radio" name="csomag" value="3" <?php if ($_REQUEST['package']==3){?>checked="checked" <?php }?> onclick="ajax_csomagvalto(3)" /><label><?php echo $_smarty_tpl->tpl_vars['szotar']->value->fordit('arany csomag');?>
 </label>
     </div>
      <div>
-        <input type="radio" name="csomag" value="4" /><label><?php echo $_smarty_tpl->tpl_vars['szotar']->value->fordit('platina csomag');?>
+        <input type="radio" name="csomag" value="4" <?php if ($_REQUEST['package']==4){?>checked="checked" <?php }?> onclick="ajax_csomagvalto(4)" /><label><?php echo $_smarty_tpl->tpl_vars['szotar']->value->fordit('platina csomag');?>
 </label>
     </div>
     <input name="send" type="submit" value="<?php echo $_smarty_tpl->tpl_vars['szotar']->value->fordit('regisztráció');?>
@@ -115,19 +71,11 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 <div>
     <p>Ide írjuk le a részletes bemutatását az adott csomagnak. Ide érkeznek majd a kiküldött e-mail-ből a látogatók!</p>    
 </div>    
-    
-<?php if ($_REQUEST['package']==1){?>
-    <div class="kiemelt" style="width: 163px; left: 213px; background-color: #8CFA80; border-bottom: 2px solid #009222;"></div>
-<?php }?>      
-<?php if ($_REQUEST['package']==2){?>
-    <div class="kiemelt" style="width: 161px; left: 378px; background-color: rgba(208, 229, 245, 1); border-bottom: 2px solid #A1C3DB;"></div>
-<?php }?>     
-<?php if ($_REQUEST['package']==3){?>
-    <div class="kiemelt"></div>
-<?php }?>  
-<?php if ($_REQUEST['package']==4){?>
-    <div class="kiemelt" style="width: 147px; left: 689px; background-color: #999; border-bottom: 2px solid #777777;"></div>
-<?php }?>    
+
+<div id="ajax_doboz2">
+<?php echo $_smarty_tpl->getSubTemplate ('templates/ajax_csomagdobozok2.tpl', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
+
+</div>
 
 <table class="csomagok">
     <tr><th><?php echo $_smarty_tpl->tpl_vars['szotar']->value->fordit('csomagok');?>
