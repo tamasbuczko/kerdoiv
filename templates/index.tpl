@@ -10,11 +10,12 @@
     <meta property="og:url" content="http://www.questionaction.com/?p=kerdoiv&kerdoiv={$kerdoiv_obj->sorszam}" />
     <meta property="og:image" content="fejlec_kepek/{$kerdoiv_obj->fejlec_kep}" />
     <meta property="og:description" content="{$kerdoiv_obj->leiras}" />  
-    
+   
    <script type="text/javascript" src="js/jquery.1.7.1.min.js"></script>
    <script type="text/javascript" src="js/jscripts.js"></script>
    <script type="text/javascript" src="js/ganalytics.js"></script>
 {if $smarty.request.p == '40'}
+   <script type="text/javascript" src="tinymce/jscripts/tiny_mce/tiny_mce.js"></script>
    <script type="text/javascript" src="jtable/scripts/jquery-ui-1.8.16.custom.min.js" charset="UTF-8"></script>
    <script type="text/javascript" src="jtable/scripts/jtable/jquery.jtable.js" charset="UTF-8"></script>
 {/if}

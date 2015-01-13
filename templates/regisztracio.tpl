@@ -74,7 +74,8 @@
         <td>{$szotar->fordit('Ideális összeállítás a cégek számára, akik egy helyen szeretnék tudni vevői, beszállítói felméréseit és értékelésüket.')}</td>
         <td>{$szotar->fordit('Egyedi igények kielégítése, folyamatos támogatás és kapcsolattartás. Megbízásra minden részletet mi biztosítunk, dolgozunk ki.')}</td>
     </tr>
-    <tr style="cursor:pointer;"><td>{$szotar->fordit('regisztráció / Előfizetés')}</td><td><span  id="gomb_ingyen_reg">{$szotar->fordit('Regisztrálok')}<span></td><td><span id="gomb_ezust_reg">{$szotar->fordit('Előfizetek')}</span></td><td><span id="gomb_arany_reg">{$szotar->fordit('Előfizetek')}</span></td><td><span id="gomb_platina_reg">{$szotar->fordit('Előfizetek')}</span></td></tr>
+    <!--<tr style="cursor:pointer;"><td>{$szotar->fordit('regisztráció / Előfizetés')}</td><td><span  id="gomb_ingyen_reg">{$szotar->fordit('Regisztrálok')}<span></td><td><span id="gomb_ezust_reg">{$szotar->fordit('Előfizetek')}</span></td><td><span id="gomb_arany_reg">{$szotar->fordit('Előfizetek')}</span></td><td><span id="gomb_platina_reg">{$szotar->fordit('Előfizetek')}</span></td></tr>
+    -->
     <tr>
         <td colspan="5" style="padding: 0px; border: 0px;">
         <form action="" name="register" method="post" class="login" id="reg_doboz_sor" style="display: none;">

@@ -45,6 +45,15 @@ while ($next_element = mysql_fetch_array($result)){
 	$felhasznalo_azonosito = $next_element[felhasznalo];
 	$felhasznalo_email = $cimzett;
 
+        $array = array('kerdoiv_cim' => $kerdoiv_obj->cim,
+			'alcim' => $alcim,
+			'style_korrekcio2' => $style_korrekcio2);
+	 
+        $sablon_html = new email_blokk;
+        $sablon_html->load_template($kerdoiv_obj->zart_email_szoveg,$array);
+        $email_sablon = $sablon_html->html_code;
+        
+        
 		if (is_numeric($felhasznalo_azonosito)) {$felhasznalo_azonosito = 'Partnerünk'; }
 			
 		$hirlevel_szoveg = str_replace('\"', '"', $hirlevel_szoveg);
@@ -56,29 +65,7 @@ while ($next_element = mysql_fetch_array($result)){
           <div style="width: 158px; padding: 10px; float: left; background-color: #0f4eb8; color: #fefefe; min-height: 605px; border-right: 2px solid #0f4eb8;">
           </div>
           <div style="float: left; width: 460px; font-size: 12px; min-height: 615px; color: #3c1d11; padding-top: 20px; padding-left: 17px; padding-bottom: 30px;">
-              Tisztelt '.$felhasznalo.'!<br /><br />
-              <p style="color: #3c1d11;">A (kiküldő cég) nevében felkérem, hogy az Önök ('.$cegnev.') számára összeállított felmérő lapot, legyenek szívesek kitölteni az online felületen!</p>
-			  <p style="color: #3c1d11; font-weight: bold;">A felmérés címe:<br />'.$kerdoiv_obj->cim.'</p>
-			   <p style="color: #3c1d11; font-weight: bold;">
-			   Az alábbi egyedi linken található a felmérés:<br />
-			   <a href="http://questionaction.com/index.php?p=kerdoiv&kerdoiv='.$kerdoivszam.'&link='.$uj_link.'">http://questionaction.com/index.php?p=kerdoiv&kerdoiv='.$kerdoivszam.'&link='.$uj_link.'</a>
-			   </p>
-              <p style="color: #3c1d11; font-weight: bold; margin-bottom: 2px;">Jelszó:</p>
-              '.$uj_jelszo.'
-			   <p style="color: #3c1d11;font-weight: bold;">
-				  Kérem, hogy a kitöltést a következő dátumig legyen szíves elvégezni:<br />
-				  '.$kerdoiv_obj->lejarat_datuma.'
-			   </p>
-			   <p style="color: #3c1d11;">
-				  '.$kerdoiv_obj->zart_email_szoveg.'
-			   </p>
-              <br style="clear: both;" />
-              <p style="color: #3c1d11;">
-              Köszönettel:<br />
-              '.$kerdoiv_obj->keszito.'<br />
-			  '.$kerdoiv_obj->email.'<br />
-			  (kiküldő cégneve)<br />
-              </p>
+              '.$email_sablon.'
               <br style="clear: both;" />
           </div>
       </div>

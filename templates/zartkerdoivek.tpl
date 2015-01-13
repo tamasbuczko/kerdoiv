@@ -4,6 +4,8 @@
     <input type="submit" name="submit" value="mentés" style="display: block;" />
 </form>
 
+<script type="text/javascript" src="tinymce/tinymce_mod.js"></script>
+    
 <div id="PersonTableContainer" style="width: 830px; margin: 20px auto 20px auto;"></div>
 <script>var kerdoiv = {$kerdoiv_obj->sorszam};</script>
 <script type="text/javascript" src="jtable/dat_zartkerdoivek.js"></script>

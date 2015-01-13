@@ -22,6 +22,9 @@ if ($_REQUEST[kerdoiv]){
 $cikk = new cikkszoveg();
 
 if ($_REQUEST[p]){
+    //if (file_exists('public/'.$_REQUEST[p].'.php')){
+    //  require_once ('public/'.$_REQUEST[p]);
+    //}
     $cikk->mysql_read($_REQUEST[p], $_SESSION['lang']);
 } else {
     $cikk->mysql_read(2, $_SESSION['lang']);
