@@ -22,7 +22,7 @@ fclose($file);
 $data2 = chunk_split(base64_encode($data2));
 $data = chunk_split(base64_encode($data));
 
-$headers = "From: hegesztesportal.hu <info@hegesztesportal.hu>";
+$headers = "From: questionaction.com <info@questionaction.com>";
 
 
  // Add the headers for a file attachment

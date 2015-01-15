@@ -14,6 +14,7 @@ $idopont = date("Y-m-d H:i:s");
 
 $result = mysql_query("SELECT sorszam, email, felhasznalo, kerdoivszam, cimzettek FROM email_temp WHERE statusz='1' ORDER BY sorszam LIMIT 50");	
 while ($next_element = mysql_fetch_array($result)){
+   unset($array);
 	$kerdoivszam = $next_element['kerdoivszam'];
 	$cimzettek = $next_element['cimzettek'];
 	$cimzett = $next_element['email'];
@@ -46,7 +47,7 @@ while ($next_element = mysql_fetch_array($result)){
 	$felhasznalo_email = $cimzett;
 
         $array = array('kerdoiv_cim' => $kerdoiv_obj->cim,
-			'alcim' => $alcim,
+			'cegnev' => 'próba cégnév',
 			'style_korrekcio2' => $style_korrekcio2);
 	 
         $sablon_html = new email_blokk;
