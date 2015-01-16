@@ -118,6 +118,6 @@ $smarty->assign('elozo_kerdoiv',$elozo_kerdoiv);
 
 $oldal = new html_blokk;
 
-if (($jogosult) AND ($_SESSION[qa_user_id])){
+if ($jogosult){
     $tartalom = $smarty->fetch('templates/kerdoiv_adatlap.tpl');
 }
