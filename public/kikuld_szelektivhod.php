@@ -1,5 +1,5 @@
 <?php
-if (($kerdoiv_obj->sorszam == '63') OR ($kerdoiv_obj->sorszam == '64') OR ($kerdoiv_obj->sorszam == '65')){
+if (($kerdoiv_obj->sorszam == '63') OR ($kerdoiv_obj->sorszam == '64') OR ($kerdoiv_obj->sorszam == '65') OR ($kerdoiv_obj->sorszam == '68') OR ($kerdoiv_obj->sorszam == '69') OR ($kerdoiv_obj->sorszam == '70')){
 $message_bevezeto = '
    Kérdőív: '.$kerdoiv_obj->cim.'<br /><br />
    Email: '.$_REQUEST[email].'<br />
