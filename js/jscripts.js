@@ -1,3 +1,38 @@
+function ajax_sablonvalto(sablon, kerdoiv){
+    if (sablon=="") {
+	document.getElementById("email_szoveg").innerHTML="";
+	return;
+    }
+    if (window.XMLHttpRequest){// code for IE7+, Firefox, Chrome, Opera, Safari
+	xmlhttp=new XMLHttpRequest();
+    } else {// code for IE6, IE5
+	xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+    }
+    xmlhttp.onreadystatechange=function(){
+        if (xmlhttp.readyState==4 && xmlhttp.status==200){
+            tinyMCE.get('email_szoveg').getBody().innerHTML = xmlhttp.responseText;
+            document.getElementById('sablongomb_1').style.color = 'black';
+            document.getElementById('sablongomb_2').style.color = 'black';
+            document.getElementById('sablongomb_3').style.color = 'black';
+            document.getElementById('sablongomb_1000').style.color = 'black';
+            if (sablon == '1'){
+                document.getElementById('sablongomb_1').style.color = 'red';
+            }
+            if (sablon == '2'){
+                document.getElementById('sablongomb_2').style.color = 'red';
+            }
+            if (sablon == '3'){
+                document.getElementById('sablongomb_3').style.color = 'red';
+            }
+            if (sablon == '1000'){
+                document.getElementById('sablongomb_1000').style.color = 'red';
+            }
+	}
+    }
+    xmlhttp.open("GET","ajax_sablonvalto.php?sablon="+sablon+"&kerdoiv="+kerdoiv,true);
+    xmlhttp.send();
+}
+
 function ajax_csomagvalto(package){
     if (package=="") {
 	document.getElementById("ajax_doboz").innerHTML="";

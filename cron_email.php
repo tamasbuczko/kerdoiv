@@ -48,6 +48,8 @@ while ($next_element = mysql_fetch_array($result)){
 
         $array = array('kerdoiv_cim' => $kerdoiv_obj->cim,
 			'cegnev' => 'próba cégnév',
+                        'kikuldo_ceg' => 'próba cégnév',
+                        'kerdoiv_link' => 'próba cégnév',
 			'style_korrekcio2' => $style_korrekcio2);
 	 
         $sablon_html = new email_blokk;
