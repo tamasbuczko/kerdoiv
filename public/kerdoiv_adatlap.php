@@ -120,4 +120,6 @@ $oldal = new html_blokk;
 
 if (($jogosult) AND ($_SESSION[qa_user_id])){
     $tartalom = $smarty->fetch('templates/kerdoiv_adatlap.tpl');
-}  
+}  else {
+    $tartalom = "Az adatlap megtekintéséhez nincs jogosultsága!";
+}

@@ -78,10 +78,19 @@ if (($_REQUEST[kerdoiv]) AND ( $_REQUEST[er] == '1')) {
         // utólagos nyilvános kikapcsnál a listában megjelenik, de nem tudja megnézni
         // és csak azok lássák, akik kitöltötték
     }
-    if (($kerdoiv_obj->keszito_id != $_SESSION[qa_user_id]) AND ($kerdoiv_obj->nyilvanos == '0')){
+    if (($kerdoiv_obj->keszito_id != $_SESSION[qa_user_id]) AND ($kerdoiv_obj->nyilvanos == '0') AND ($_SESSION[qa_user_id])){
         unset($jogosult);
         $kerdoiv_obj->jogosultsag_uzenet = 'A kérdőív eredményei már nem nyilvánosak!';
         $tartalom = 'A kérdőív eredményei már nem nyilvánosak!';
+    }
+     if (($kerdoiv_obj->nyilvanos == '0') AND (!$_SESSION[qa_user_id])){
+        unset($jogosult);
+        $kerdoiv_obj->jogosultsag_uzenet = 'A kérdőív eredményei nem nyilvánosak mert a kérdőív nem publikus!';
+        $tartalom = 'A kérdőív eredményei nem nyilvánosak mert a kérdőív nem publikus!';
+    }
+    if ($kerdoiv_obj->nyilvanos == '1'){
+        $jogosult = 1;
+        $jogosult_eredmeny = 1;
     }
 	
 	if (in_array($_SESSION[qa_user_id], $kerdoiv_obj->megosztott_admin)){
