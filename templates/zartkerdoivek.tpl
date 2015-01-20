@@ -3,9 +3,23 @@
     {$sablongombok}
 </div>
 <form action="" method="post">
-    <textarea name="email_szoveg" id="email_szoveg" style="width: 500px; height: 80px;">{$kerdoiv_obj->zart_email_szoveg}</textarea>
+    <textarea name="email_szoveg" id="email_szoveg" style="width: 500px; height: 80px; float: left;">{$kerdoiv_obj->zart_email_szoveg}</textarea>
+    <div id="sablon_ikonok">
+        <span>cegnev</span>
+        <span>kerdoiv_link</span>
+        <span>kerdoiv_link</span>
+        <span>kerdoiv_link</span>
+        <span>kerdoiv_link</span>
+        <span>kerdoiv_link</span>
+        <span>kerdoiv_link</span>
+        <span>kerdoiv_link</span>
+        <span>kerdoiv_link</span>
+        <span>kerdoiv_link</span>
+    </div>
     <input type="submit" name="submit" value="mentés" style="display: block;" />
+    <a href="elonezet.php?kerdoiv={$kerdoiv_obj->sorszam}" target="_blank">előnézet</a>
 </form>
+
 
 <script type="text/javascript" src="tinymce/tinymce_mod.js"></script>
     

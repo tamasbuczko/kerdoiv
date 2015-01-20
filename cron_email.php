@@ -11,8 +11,11 @@ $adatkapcsolatx = new data_connect;
 $adatkapcsolatx->connect();
 
 $idopont = date("Y-m-d H:i:s");
-
-$result = mysql_query("SELECT sorszam, email, felhasznalo, kerdoivszam, cimzettek FROM email_temp WHERE statusz='1' ORDER BY sorszam LIMIT 50");	
+if ($elonezet != 'ok'){
+    $result = mysql_query("SELECT sorszam, email, felhasznalo, kerdoivszam, cimzettek FROM email_temp WHERE statusz='1' ORDER BY sorszam LIMIT 50");	
+} else {
+    $result = mysql_query("SELECT sorszam, email, felhasznalo, kerdoivszam, cimzettek FROM email_temp WHERE kerdoivszam='$_REQUEST[kerdoiv]' ORDER BY sorszam LIMIT 1");	
+}    
 while ($next_element = mysql_fetch_array($result)){
    unset($array);
 	$kerdoivszam = $next_element['kerdoivszam'];
@@ -35,8 +38,11 @@ while ($next_element = mysql_fetch_array($result)){
 		$rand=rand(0,strlen($chars)-1);
 		$uj_link.=$chars[$rand];
 	}
-	$sql = "UPDATE zart_emailek SET jelszo='$uj_jelszo', link='$uj_link' WHERE email='$next_element[email]'";
-        mysql_query($sql);
+        
+        if ($elonezet != 'ok'){
+            $sql = "UPDATE zart_emailek SET jelszo='$uj_jelszo', link='$uj_link' WHERE email='$next_element[email]'";
+            mysql_query($sql);
+        }
         
         $kerdoiv_obj = new kerdoiv;
         $kerdoiv_obj->load($next_element[kerdoivszam]);
@@ -45,11 +51,13 @@ while ($next_element = mysql_fetch_array($result)){
 
 	$felhasznalo_azonosito = $next_element[felhasznalo];
 	$felhasznalo_email = $cimzett;
+        
+        $kerdoiv_link = '<a href="?p=kerdoiv&id='.$kerdoiv_obj->sorszam.'">Kérdőív link</a>';
 
         $array = array('kerdoiv_cim' => $kerdoiv_obj->cim,
-			'cegnev' => 'próba cégnév',
+			'cegnev' => $cegnev,
                         'kikuldo_ceg' => 'próba cégnév',
-                        'kerdoiv_link' => 'próba cégnév',
+                        'kerdoiv_link' => $kerdoiv_link,
 			'style_korrekcio2' => $style_korrekcio2);
 	 
         $sablon_html = new email_blokk;
@@ -77,9 +85,10 @@ while ($next_element = mysql_fetch_array($result)){
       </html>';
 
     include('email_html.php');
-
-    mail($felhasznalo_email, $subject, $message, $headers);
-    $sql = "UPDATE email_temp SET statusz='2', elkuldve='$idopont' WHERE sorszam='$next_element[sorszam]'";
-    mysql_query($sql);
+    if ($elonezet != 'ok'){
+        mail($felhasznalo_email, $subject, $message, $headers);
+        $sql = "UPDATE email_temp SET statusz='2', elkuldve='$idopont' WHERE sorszam='$next_element[sorszam]'";
+        mysql_query($sql);
+    }
 }
 ?>
