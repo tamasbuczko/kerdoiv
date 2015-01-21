@@ -39,7 +39,7 @@ $form = '<form action="" id="sorsol" method="post">'
 		. '<input type="submit" value="Sorsolás" style="margin-bottom:10px;">'
 		. '</form>';
 
-if ($_SESSION[qa_user_id] == $kerdoiv_obj->keszito){
+if ($_SESSION[qa_user_id] == $kerdoiv_obj->keszito_id){
     $tartalom = $form . $nyertesek . $list;
 }  else {
     $tartalom = "Az lista megtekintéséhez nincs jogosultsága!";
