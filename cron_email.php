@@ -55,16 +55,9 @@ while ($next_element = mysql_fetch_array($result)){
         $kerdoiv_link = '<a href="?p=kerdoiv&id='.$kerdoiv_obj->sorszam.'">Kérdőív link</a>';
 
         $array = array('kerdoiv_cim' => $kerdoiv_obj->cim,
-			'cimzett_cegneve' => $cegnev,
-                        'cimzett_neve' => $cimzett,   
-                        'kikuldo_cegnev' => $kikuldo_cegnev,
-                        'kikuldo_neve' => $kikuldo_neve,
+			'cegnev' => $cegnev,
+                        'kikuldo_ceg' => 'próba cégnév',
                         'kerdoiv_link' => $kerdoiv_link,
-                        'kikuldo_email' => $kikuldo_email,
-                        'jelszo' => $jelszo,
-                        'hatarido' => $hatarido,
-                        'kikuldo_cime' => $kikuldo_cime,
-                        'kikuldo_telefon' => $kikuldo_telefon,                        
 			'style_korrekcio2' => $style_korrekcio2);
 	 
         $sablon_html = new email_blokk;
