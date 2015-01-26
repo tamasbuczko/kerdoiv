@@ -9,22 +9,24 @@ require_once('class/class.php');
 //kapcsolat létrehozása az adatbázis szerverrel (class.php)
 $adatkapcsolatx = new data_connect;
 $adatkapcsolatx->connect();
-
+$kerdoivszam = $_REQUEST[kerdoiv];
 $idopont = date("Y-m-d H:i:s");
 if ($elonezet != 'ok'){
     $result = mysql_query("SELECT sorszam, email, felhasznalo, kerdoivszam, cimzettek FROM email_temp WHERE statusz='1' ORDER BY sorszam LIMIT 50");	
 } else {
-    $result = mysql_query("SELECT sorszam, email, felhasznalo, kerdoivszam, cimzettek FROM email_temp WHERE kerdoivszam='$_REQUEST[kerdoiv]' ORDER BY sorszam LIMIT 1");	
+    $result = mysql_query("SELECT id, email, nev, kerdoiv, cegnev FROM zart_emailek WHERE kerdoiv='$kerdoivszam' ORDER BY id LIMIT 1");	
 }    
 while ($next_element = mysql_fetch_array($result)){
    unset($array);
-	$kerdoivszam = $next_element['kerdoivszam'];
+	if ($next_element['kerdoivszam']){
+            $kerdoivszam = $next_element['kerdoivszam'];
+        }
 	$cimzettek = $next_element['cimzettek'];
 	$cimzett = $next_element['email'];
 	
-	$result2 = mysql_query("SELECT nev, cegnev FROM zart_emailek WHERE email='$cimzett'");	
+	$result2 = mysql_query("SELECT nev, cegnev FROM zart_emailek WHERE email='$cimzett' AND kerdoiv='$kerdoivszam'");	
 	$next_elementxx = mysql_fetch_array($result2);
-	$felhasznalo = $next_elementxx['nev'];
+	$cimzett_neve = $next_elementxx['nev'];
 	$cegnev = $next_elementxx['cegnev'];
 
         $chars="abcdefhjkmnpqrstuxy345789";
@@ -45,7 +47,7 @@ while ($next_element = mysql_fetch_array($result)){
         }
         
         $kerdoiv_obj = new kerdoiv;
-        $kerdoiv_obj->load($next_element[kerdoivszam]);
+        $kerdoiv_obj->load($kerdoivszam);
 	   
         $subject = 'kérdőív kitöltés';
 
@@ -55,8 +57,9 @@ while ($next_element = mysql_fetch_array($result)){
         $kerdoiv_link = '<a href="?p=kerdoiv&id='.$kerdoiv_obj->sorszam.'">Kérdőív link</a>';
 
         $array = array('kerdoiv_cim' => $kerdoiv_obj->cim,
-			'cimzett_cegneve' => $cegnev,
-                        'cimzett_neve' => $cimzett,   
+			'cegnev' => $cegnev,
+                        'cimzett_neve' => $cimzett_neve,   
+                        'cimzett_email' => $cimzett,
                         'kikuldo_cegnev' => $kikuldo_cegnev,
                         'kikuldo_neve' => $kikuldo_neve,
                         'kerdoiv_link' => $kerdoiv_link,
@@ -92,6 +95,7 @@ while ($next_element = mysql_fetch_array($result)){
       </html>';
 
     include('email_html.php');
+    
     if ($elonezet != 'ok'){
         mail($felhasznalo_email, $subject, $message, $headers);
         $sql = "UPDATE email_temp SET statusz='2', elkuldve='$idopont' WHERE sorszam='$next_element[sorszam]'";

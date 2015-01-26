@@ -2,6 +2,11 @@
 require_once ('public/jogosultsag_kerdoiv.php');
 $kerdoiv_sorszam = $kerdoiv_obj->sorszam;
 $kerdes_darab = 0;
+
+if ($_REQUEST[kitolto]){
+    $kitoltore_szures = "AND va.kitolto_sorszam = '$_REQUEST[kitolto]'";
+}
+
 if ($jogosult_eredmeny){
     if ($_REQUEST[szurki]){	   
        unset($_SESSION['szures']);
@@ -80,6 +85,7 @@ if ($jogosult_eredmeny){
             WHERE k.sorszam = $sorszam_kerdes
             $szures_kiegeszites
             $szures_kiegeszites2
+            $kitoltore_szures
             GROUP BY valasz_hu
             ORDER BY COUNT(*) DESC");
             #először szűrjük le azokat a kitöltőket akik egy adott kérdésre adott választ adtak
@@ -154,6 +160,7 @@ if ($jogosult_eredmeny){
             WHERE k.sorszam = $sorszam_kerdes
             $szures_kiegeszites
             $szures_kiegeszites2
+            $kitoltore_szures
             ORDER BY k.sorszam");
             $text_db = 0;
 			unset($eredmenyek_tomb[$valasz_sorszam]['valasz_szavazatszam_f']);

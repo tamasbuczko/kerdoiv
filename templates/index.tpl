@@ -11,6 +11,9 @@
     <meta property="og:image" content="fejlec_kepek/{$kerdoiv_obj->fejlec_kep}" />
     <meta property="og:description" content="{$kerdoiv_obj->leiras}" />  
    
+    <meta name="robots" content="index, follow" />
+    <meta name="keywords" content="kérdőív, piackutatás, közvélemény kutatás, vevői megelégedettség, beszállítói kérdőív, kérdőív készítés, felmérés" />
+        
    <script type="text/javascript" src="js/jquery.1.7.1.min.js"></script>
    <script type="text/javascript" src="js/jscripts.js"></script>
    <script type="text/javascript" src="js/ganalytics.js"></script>

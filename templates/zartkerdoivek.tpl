@@ -5,16 +5,16 @@
 <form action="" method="post">
     <textarea name="email_szoveg" id="email_szoveg" style="width: 500px; height: 80px; float: left;">{$kerdoiv_obj->zart_email_szoveg}</textarea>
     <div id="sablon_ikonok">
-        <span>cegnev</span>
-        <span>kerdoiv_link</span>
-        <span>kerdoiv_link</span>
-        <span>kerdoiv_link</span>
-        <span>kerdoiv_link</span>
-        <span>kerdoiv_link</span>
-        <span>kerdoiv_link</span>
-        <span>kerdoiv_link</span>
-        <span>kerdoiv_link</span>
-        <span>kerdoiv_link</span>
+        <span onclick="insertYourContent('cegnev')">cégnév</span>
+        <span onclick="insertYourContent('cimzett_neve')">címzett neve</span>
+        <span onclick="insertYourContent('kerdoiv_link')">kérdőív linkje</span>
+        <span onclick="insertYourContent('cimzett_email')">címzett email címe</span>
+        <span onclick="insertYourContent('kikuldo_cegnev')">kiküldő cégnév</span>
+        <span onclick="insertYourContent('kerdoiv_cim')">kérdőív cím</span>
+        <span onclick="insertYourContent('jelszo')">jelszó</span>
+        <span onclick="insertYourContent('hatarido')">határidő</span>
+        <span onclick="insertYourContent('kikuldo_cime')">kiküldő címe</span>
+        <span onclick="insertYourContent('kikuldo_telefon')">kiküldő telefon</span>
     </div>
     <input type="submit" name="submit" value="mentés" style="display: block;" />
     <a href="elonezet.php?kerdoiv={$kerdoiv_obj->sorszam}" target="_blank">előnézet</a>

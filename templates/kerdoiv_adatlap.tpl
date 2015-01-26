@@ -25,6 +25,8 @@
         <a href="?p=kerdoiv&masol=1&kerdoiv={$kerdoiv_sorszam}" alt="Kérdőív másolás" >{$szotar->fordit('kérdőív másolás')}</a>
         {/if}
         <a href="?p=kerdoiv&kerdoiv={$kerdoiv_sorszam}" alt="kitöltés" >{$szotar->fordit('kitöltés nézet')}</a>
+{if $kerdoiv_obj->authority >= 3}        <a href="?p=kitoltok_valaszai&kerdoiv={$kerdoiv_sorszam}" alt="kitöltők válaszai" >{$szotar->fordit('kitöltők válaszai')}</a>
+{/if}
     </div> 
     <div id="lepteto">
         <a href="?p=kerdoiv_adatlap&kerdoiv={$elozo_kerdoiv}" /></a>

@@ -86,3 +86,7 @@ if (document.getElementById("nemet_zaszlo") != null){
        }
    }, true);
 }
+
+function insertYourContent(szoveg){
+    tinyMCE.activeEditor.execCommand('mceInsertContent', false, '{'+szoveg+'}');
+}
