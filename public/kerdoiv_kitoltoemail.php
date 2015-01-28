@@ -42,6 +42,6 @@ $form = '<form action="" id="sorsol" method="post">'
 if ($_SESSION[qa_user_id] == $kerdoiv_obj->keszito_id){
     $tartalom = $form . $nyertesek . $list;
 }  else {
-    $tartalom = "Az lista megtekintéséhez nincs jogosultsága!";
+    $tartalom = "A lista megtekintéséhez nincs jogosultsága!";
 }
 
