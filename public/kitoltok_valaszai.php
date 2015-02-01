@@ -3,16 +3,20 @@ if ($_SESSION[qa_user_id] == $kerdoiv_obj->keszito_id){
 
 $kerdoiv= $_REQUEST[kerdoiv];
 $status = 1;
-if ($_REQUEST[masol]){ //Kell egy ellenőrzés, hogy csak egyszer lehessen ezt az adatbázisba másolni!!!!!!!!!!!!!!!!!!!!!!!
+if ($_REQUEST[masol]){ 
     $result2 = mysql_query("SELECT DISTINCT va.kitolto_sorszam, k.email FROM valaszadasok AS va
                        LEFT JOIN kitoltok AS k ON va.kitolto_sorszam = k.sorszam
                        WHERE va.kerdoiv_sorszam = '$kerdoiv' AND k.email != ''");
 while ($row = mysql_fetch_array($result2)){
     $email_cim = $row[email];
 
+    $result4 = mysql_query("SELECT email, kerdoiv FROM zart_emailek WHERE (email = '$email_cim' AND kerdoiv = '$_REQUEST[kerdoiv_szam]')");
+    $talalat = mysql_fetch_array($result4); 
+    if (!$talalat[0]){      //ellenőrz, hogy van e már ilyen e-mail. Ha nincs csak akkor írja be az adatbáisba.
     $sql = "INSERT INTO zart_emailek (email, kerdoiv, status) 
            VALUES ('$email_cim', '$_REQUEST[kerdoiv_szam]', '$status')";
     mysql_query($sql); //futtatás   
+    }
 }
 }
 
