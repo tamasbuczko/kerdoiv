@@ -15,6 +15,12 @@ if ($_SESSION[qa_user_id]) {
 
 require_once ('public/jogosultsag_kerdoiv.php');  //objektum miatt még átnézni
 
+if ($_REQUEST[l]){
+    $result = mysql_query("SELECT email FROM zart_emailek WHERE link = '$_REQUEST[l]'");
+    $row = mysql_fetch_array($result);
+    $_REQUEST[email] = $row[email];
+}
+
 if ($jogosult) {
     unset($tartalom);
 

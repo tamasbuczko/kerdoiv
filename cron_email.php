@@ -54,7 +54,7 @@ while ($next_element = mysql_fetch_array($result)){
 	$felhasznalo_azonosito = $next_element[felhasznalo];
 	$felhasznalo_email = $cimzett;
         
-        $kerdoiv_link = '<a href="http://www.questionaction.com/?p=kerdoiv&kerdoiv='.$kerdoiv_obj->sorszam.'">www.questionaction.com/?p=kerdoiv&kerdoiv='.$kerdoiv_obj->sorszam.'</a>';
+        $kerdoiv_link = '<a href="http://www.questionaction.com/?p=kerdoiv&kerdoiv='.$kerdoiv_obj->sorszam.'&l='.$uj_link.'">www.questionaction.com/?p=kerdoiv&kerdoiv='.$kerdoiv_obj->sorszam.'</a>';
 
         $array = array('kerdoiv_cim' => $kerdoiv_obj->cim,
 			'cegnev' => $cegnev,
