@@ -594,6 +594,7 @@
                         </div>
 	</div>
 		<input type="hidden" name="sorrendezes" id="sorrendezes" value="" />
+                <input type="hidden" name="l" value="{$smarty.request.l}" />
 		</form>
                 </div>
 <br style="clear: both;"/>

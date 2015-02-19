@@ -18,8 +18,21 @@ try
 	if($_GET["action"] == "list")
 	{
 		//Get records from database
-		$result = mysql_query("SELECT * FROM $data_table WHERE kerdoiv = $_GET[kerdoiv];");
+            $result = mysql_query("SELECT * FROM $data_table WHERE kerdoiv = $_GET[kerdoiv];");
+            
+//		$result = mysql_query("SELECT DISTINCT ze.id, k.sorszam AS sorszam, ze.nev, ze.cegnev, ze.email, ze.link, ze.status,
+//                           ze.jelszo, ze.kerdoiv FROM zart_emailek AS ze
+//			   INNER JOIN valaszadasok AS va ON ze.kerdoiv = va.kerdoiv_sorszam
+//                           LEFT JOIN kitoltok AS k ON ze.email = k.email
+//			   WHERE ze.kerdoiv = $_GET[kerdoiv]");
 		
+//                $result = mysql_query("SELECT DISTINCT va.kitolto_sorszam AS sorszam, k.email, ze.id, ze.nev,
+//                           ze.cegnev, ze.email, ze.link, ze.status, ze.jelszo, ze.kerdoiv
+//                       FROM valaszadasok AS va
+//                       LEFT JOIN kitoltok AS k ON va.kitolto_sorszam = k.sorszam
+//                       LEFT JOIN zart_emailek AS ze ON ze.kerdoiv = va.kerdoiv_sorszam
+//                       WHERE va.kerdoiv_sorszam = $_GET[kerdoiv];");
+                
 		//Add all records to an array
 		$rows = array();
 		while($row = mysql_fetch_array($result))

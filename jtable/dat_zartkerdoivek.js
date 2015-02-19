@@ -40,6 +40,14 @@ $(document).ready(function () {
                     title: 'Jelszó',
                     width: '20%',
                     list: false
+                },
+                eredmeny: {
+                    title: 'Eredmény',
+                    display: function (data) {
+                        var $link = $('<a href="?p=kerdoiv&kerdoiv='+data.record.kerdoiv+'&er=1&kitolto='+data.record.sorszam+'">a link</a>');
+                        $link.click(function(){ /* do something on click */ });
+                        return $link;
+                    }
                 }
             }
         });
