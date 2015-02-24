@@ -42,11 +42,13 @@ $(document).ready(function () {
                     list: false
                 },
                 eredmeny: {
-                    title: 'Eredmény',
+                    title: '',
                     display: function (data) {
-                        var $link = $('<a href="?p=kerdoiv&kerdoiv='+data.record.kerdoiv+'&er=1&kitolto='+data.record.sorszam+'">a link</a>');
-                        $link.click(function(){ /* do something on click */ });
-                        return $link;
+                        if (data.record.kitolto_sorszam){
+                            var $link = $('<a href="?p=kerdoiv&kerdoiv='+data.record.kerdoiv+'&er=1&kitolto='+data.record.kitolto_sorszam+'" title="Eredmény"><img src="graphics/icon_graph_k.png" alt="" /></a>');
+                            $link.click(function(){ /* do something on click */ });
+                            return $link;
+                        }
                     }
                 }
             }

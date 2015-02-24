@@ -131,7 +131,7 @@ if ($_REQUEST[l]) {
     $result = mysql_query("SELECT id, link FROM zart_emailek WHERE link='$_REQUEST[l]' AND kerdoiv = $kerdoiv_sorszam");
     $row = mysql_fetch_array($result);
     if ($row[id]){
-        $sql = "UPDATE zart_emailek SET status = '3' WHERE id = $row[id]";
+        $sql = "UPDATE zart_emailek SET status = '3', kitolto_sorszam = '$kitolto_sorszama' WHERE id = $row[id]";
         mysql_query($sql);
     }
 }
