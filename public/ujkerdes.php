@@ -159,7 +159,13 @@ if (($_REQUEST[mentes]) OR ($_REQUEST[pluszvalasz])){
 		 $sql = "UPDATE valaszok SET kapcs_szoveg = '$szoveg_be_x', kapcs_kep = '$kep_be_x', kapcs_video = '$video_be_x' WHERE sorszam = $i";
 		 mysql_query($sql);
 		}
-		
+	
+        $pontszam_x = 'pontszam_'.$i;
+        if (isset($_REQUEST[$pontszam_x])){
+            $sql = "UPDATE valaszok SET pontszam = '$_REQUEST[$pontszam_x]' WHERE sorszam = $i";
+            mysql_query($sql);
+        }
+                
 		$valasz_x_hu = 'valasz_hu_'.$i;
         if (isset($_REQUEST[$valasz_x_hu])){
             $valasz_ertek_hu = $_REQUEST[$valasz_x_hu];
@@ -321,7 +327,7 @@ if ($_REQUEST[id]){
    
    $sorrendszam = 0;
    
-    $resultx = mysql_query("SELECT v.sorszam, v.kerdes_valasz, v.valasz_hu, v.valasz_en, v.valasz_de, v.kep_file, v.video_embed, v.sorrend, v.kapcs_szoveg, v.kapcs_kep, v.kapcs_video, hv.valasz_id
+    $resultx = mysql_query("SELECT v.sorszam, v.kerdes_valasz, v.valasz_hu, v.valasz_en, v.valasz_de, v.kep_file, v.video_embed, v.sorrend, v.kapcs_szoveg, v.kapcs_kep, v.kapcs_video, hv.valasz_id, v.pontszam
 							  FROM valaszok AS v
 							  LEFT JOIN helyes_valaszok AS hv
 							  ON v.sorszam = hv.valasz_id
@@ -354,9 +360,17 @@ if ($_REQUEST[id]){
 	   } else {
 		  $kapcs_video = '';
 	   }
+           
+           if ($kerdoiv_obj->pontozas == '1'){
+            $pont_blokk = '<label style="float: left !important;">Pontszám: </label>
+               <input type="text" name="pontszam_'.$next_elementv[sorszam].'" value="'.$next_elementv[pontszam].'" style="width: 40px; float: left !important;" />';
+           }
        
-	   $valaszok2_szoveg .= '<div class="valasz_tipus_kapcs"><label>Szöveg megjelenítése a válaszhoz</label><input type="checkbox" name="szoveg_be_'.$next_elementv[sorszam].'" '.$kapcs_szoveg.'/></div>';
-	   
+	   $valaszok2_szoveg .= '<div class="valasz_tipus_kapcs">
+                    '.$pont_blokk.'
+                   <label>Szöveg megjelenítése a válaszhoz</label><input type="checkbox" name="szoveg_be_' . $next_elementv[sorszam] . '" ' . $kapcs_szoveg . '/>
+                </div>';
+
         if ($en == 1){
             $valaszok2_szoveg .= '<input type="text" name="valasz_en_'.$next_elementv[sorszam].'" id="valasz_en_'.$next_elementv[sorszam].'" value="'.$next_elementv[valasz_en].'" class="en_k" />';
         }

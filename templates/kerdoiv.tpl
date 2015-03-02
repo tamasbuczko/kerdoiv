@@ -372,7 +372,7 @@
 							   <br />
 							   <div class="grafv">
 									   <div class="graf" style="width: {$eredmenyek_tomb.$aaa.valasz_szavazatarany}px"></div>
-							   </div>({$eredmenyek_tomb.$aaa.valasz_szavazatszam} db)
+							   </div>({$eredmenyek_tomb.$aaa.valasz_szavazatszam} db) {if $eredmenyek_tomb.$aaa.valasz_pontszam} - {$eredmenyek_tomb.$aaa.valasz_pontszam} pont{/if}
 							   <div class="filter">
 								 <a href="?p=kerdoiv&kerdoiv={$kerdoiv_obj->sorszam}&k={$sorszam_kerdes}&v={$valaszx.valasz_sorszam}&er=1">
 									<img src="graphics/filter.png" alt="" />
@@ -400,7 +400,7 @@
 							   <br />
 							   <div class="grafv">
 									   <div class="graf" style="width: {$eredmenyek_tomb.$aaa.valasz_szavazatarany}px"></div>
-							   </div>({$eredmenyek_tomb.$aaa.valasz_szavazatszam} db)
+							   </div>({$eredmenyek_tomb.$aaa.valasz_szavazatszam} db) {if $eredmenyek_tomb.$aaa.valasz_pontszam} - {$eredmenyek_tomb.$aaa.valasz_pontszam} pont{/if}
 {if $eredmenyek_tomb.$aaa.helyes == 1}
 						   <span>helyes válasz</span>
 {/if}
@@ -426,7 +426,7 @@
 							   <br />
 							   <div class="grafv">
 									   <div class="graf" style="width: {$eredmenyek_tomb.$aaa.valasz_szavazatarany}px"></div>
-							   </div>({$eredmenyek_tomb.$aaa.valasz_szavazatszam} db)
+							   </div>({$eredmenyek_tomb.$aaa.valasz_szavazatszam} db) {if $eredmenyek_tomb.$aaa.valasz_pontszam} - {$eredmenyek_tomb.$aaa.valasz_pontszam} pont{/if}
 							   <div class="filter">
 								 <a href="?p=kerdoiv&kerdoiv={$kerdoiv_obj->sorszam}&k={$sorszam_kerdes}&v={$valaszx.valasz_sorszam}&er=1">
 									<img src="graphics/filter.png" alt="" />
@@ -451,7 +451,7 @@
 							   <br />
 							   <div class="grafv">
 									   <div class="graf" style="width: {$eredmenyek_tomb.$aaa.valasz_szavazatarany}px"></div>
-							   </div>({$eredmenyek_tomb.$aaa.valasz_szavazatszam} db)
+							   </div>({$eredmenyek_tomb.$aaa.valasz_szavazatszam} db) {if $eredmenyek_tomb.$aaa.valasz_pontszam} - {$eredmenyek_tomb.$aaa.valasz_pontszam} pont{/if}
 							   <div class="filter">
 								 <a href="?p=kerdoiv&kerdoiv={$kerdoiv_obj->sorszam}&k={$sorszam_kerdes}&v={$valaszx.valasz_sorszam}&er=1">
 									<img src="graphics/filter.png" alt="" />
@@ -481,7 +481,7 @@
 							  <br />
 							   <div class="grafv">
 									   <div class="graf" style="width: {$eredmenyek_tomb.$aaa.valasz_szavazatarany}px"></div>
-							   </div>({$eredmenyek_tomb.$aaa.valasz_szavazatszam} db)
+							   </div>({$eredmenyek_tomb.$aaa.valasz_szavazatszam} db) {if $eredmenyek_tomb.$aaa.valasz_pontszam} - {$eredmenyek_tomb.$aaa.valasz_pontszam} pont{/if}
 {if $eredmenyek_tomb.$aaa.helyes == 1}
 						   <span>helyes válasz</span>
 {/if}
@@ -507,7 +507,7 @@
 							  <br />
 							   <div class="grafv">
 									   <div class="graf" style="width: {$eredmenyek_tomb.$aaa.valasz_szavazatarany}px"></div>
-							   </div>({$eredmenyek_tomb.$aaa.valasz_szavazatszam} db)
+							   </div>({$eredmenyek_tomb.$aaa.valasz_szavazatszam} db) {if $eredmenyek_tomb.$aaa.valasz_pontszam} - {$eredmenyek_tomb.$aaa.valasz_pontszam} pont{/if}
 							   <div class="filter">
 								 <a href="?p=kerdoiv&kerdoiv={$kerdoiv_obj->sorszam}&k={$sorszam_kerdes}&v={$valaszx.valasz_sorszam}&er=1">
 									<img src="graphics/filter.png" alt="" />
@@ -532,7 +532,7 @@
 							  <br />
 							   <div class="grafv">
 									   <div class="graf" style="width: {$eredmenyek_tomb.$aaa.valasz_szavazatarany}px"></div>
-							   </div>({$eredmenyek_tomb.$aaa.valasz_szavazatszam} db)
+							   </div>({$eredmenyek_tomb.$aaa.valasz_szavazatszam} db){if $eredmenyek_tomb.$aaa.valasz_pontszam} - {$eredmenyek_tomb.$aaa.valasz_pontszam} pont{/if}
 							   <div class="filter">
 								 <a href="?p=kerdoiv&kerdoiv={$kerdoiv_obj->sorszam}&k={$sorszam_kerdes}&v={$valaszx.valasz_sorszam}&er=1">
 									<img src="graphics/filter.png" alt="" />
@@ -552,7 +552,9 @@
                     </div>
                 </li>
 {/foreach}
-            </ul>	
+            </ul>
+{$osszpontszam}
+            
 {if $smarty.request.mod}
 			<a href="?p=ujkerdes&amp;kerdoiv={$smarty.request.kerdoiv}&ujkerdes=x" class="zold_gomb" style="float: left; clear:both;">
                             {$szotar->fordit('új kérdés rögzítése')}
@@ -585,29 +587,29 @@
 {/if}
                             </div>
 {/if}                            
-                            <input type=hidden name="i" value="{$smarty.request.i}"/>
+<input type=hidden name="i" value="{$smarty.request.i}"/>
 {if !$smarty.request.mod}
-                            <div id="elkuld">
-                                <input type="submit" name="submit" value="{$szotar->fordit('Elküldés')}"/>
-                            </div>
+    <div id="elkuld">
+        <input type="submit" name="submit" value="{$szotar->fordit('Elküldés')}"/>
+    </div>
 {/if}
                         </div>
-	</div>
-		<input type="hidden" name="sorrendezes" id="sorrendezes" value="" />
-                <input type="hidden" name="l" value="{$smarty.request.l}" />
-		</form>
                 </div>
+                <input type="hidden" name="sorrendezes" id="sorrendezes" value="" />
+                <input type="hidden" name="l" value="{$smarty.request.l}" />
+        </form>
+</div>
 <br style="clear: both;"/>
 <a class="a2a_dd" href="http://www.addtoany.com/share_save?linkurl=www.questionaction.com/?p=kerdoiv&kerdoiv={$smarty.request.kerdoiv};linkname=QuestionAction.com">
-   <img src="http://static.addtoany.com/buttons/share_save_171_16.png" width="171" height="16" border="0" alt="Share"/>
+    <img src="http://static.addtoany.com/buttons/share_save_171_16.png" width="171" height="16" border="0" alt="Share"/>
 </a>
 {literal}
-<script type="text/javascript">
-   var a2a_config = a2a_config || {};
-   a2a_config.linkname = "Questionaction.com";
-   a2a_config.prioritize = ["facebook", "google_plus", "twitter", "linkedin", "reddit", "tumblr", "orkut"];
-{/literal}
-   a2a_config.linkurl = "www.Questionaction.com/?p=kerdoiv&kerdoiv={$smarty.request.kerdoiv}";
-   a2a_config.num_services = 6;
+    <script type="text/javascript">
+       var a2a_config = a2a_config || {};
+       a2a_config.linkname = "Questionaction.com";
+       a2a_config.prioritize = ["facebook", "google_plus", "twitter", "linkedin", "reddit", "tumblr", "orkut"];
+    {/literal}
+       a2a_config.linkurl = "www.Questionaction.com/?p=kerdoiv&kerdoiv={$smarty.request.kerdoiv}";
+       a2a_config.num_services = 6;
 </script>
 <script type="text/javascript" src="http://static.addtoany.com/menu/page.js"></script>

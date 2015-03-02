@@ -77,7 +77,7 @@ if ($jogosult_eredmeny){
         if (($kerdes_tipus == 'radio') OR ($kerdes_tipus == 'select') OR ($kerdes_tipus == 'checkbox')){
             $result2 = mysql_query("SELECT sorszam FROM valaszadasok WHERE kerdes_sorszam = $sorszam_kerdes");
             $valaszadok_szama = mysql_num_rows($result2);
-            $result2 = mysql_query("SELECT k.sorszam, k.kerdes_hu, v.valasz_hu, COUNT(*), v.valasz_en, v.valasz_de, va.valasz_sorszam, hv.valasz_id AS helyes
+            $result2 = mysql_query("SELECT k.sorszam, k.kerdes_hu, v.valasz_hu, COUNT(*), v.valasz_en, v.valasz_de, va.valasz_sorszam, hv.valasz_id AS helyes, v.pontszam
             FROM valaszadasok AS va
             LEFT JOIN valaszok AS v ON va.valasz_sorszam = v.sorszam
             LEFT JOIN kerdesek AS k ON va.kerdes_sorszam = k.sorszam
@@ -97,12 +97,15 @@ if ($jogosult_eredmeny){
 				if ($_SESSION[lang] == 'hu'){ $valasz_szoveg = $eredmenyek[2];}
 			    if ($_SESSION[lang] == 'en'){ $valasz_szoveg = $eredmenyek[4];}
 			    if ($_SESSION[lang] == 'de'){ $valasz_szoveg = $eredmenyek[5];}
+                                $pontszam = $eredmenyek[8];
+                                $osszpontszam = $osszpontszam + $pontszam;
 				$valasz_sorszam = $eredmenyek[6];
 				if ($eredmenyek[7]){
 				  $valasz_blokk_tomb[$valasz_sorszam]['helyes'] = '1';
 				  $eredmenyek_tomb[$valasz_sorszam]['helyes'] = '1';
 				}
 				$eredmenyek_tomb[$valasz_sorszam]['valasz_sorszam'] = $valasz_sorszam;
+                                $eredmenyek_tomb[$valasz_sorszam]['valasz_pontszam'] = $pontszam;
 				$eredmenyek_tomb[$valasz_sorszam]['valasz_szavazatszam'] = $szavazat_darabszam;
 				$eredmenyek_tomb[$valasz_sorszam]['valasz_szavazatszam_f'] = '('.$szavazat_darabszam.' db)';
 				$eredmenyek_tomb[$valasz_sorszam]['valasz_szavazatarany'] = $eredmenyarany;
@@ -189,6 +192,7 @@ if (!$_REQUEST[er] == 1){
    $smarty->assign('szuresek_lista', $szuresek_lista);
    $smarty->assign('kerdes_blokk', $kerdes_blokk);
    $smarty->assign('eredmenyek_tomb', $eredmenyek_tomb);
+   $smarty->assign('osszpontszam', $osszpontszam);
    unset($kerdes_blokk);
    $smarty->assign('kerdes_blokk_tomb', $kerdes_blokk_tomb);
    $tartalom = $smarty->fetch('templates/kerdoiv.tpl');
