@@ -17,7 +17,7 @@
    <script type="text/javascript" src="js/jquery.1.7.1.min.js"></script>
    <script type="text/javascript" src="js/jscripts.js"></script>
    <script type="text/javascript" src="js/ganalytics.js"></script>
-{if $smarty.request.p == '40'}
+{if (($smarty.request.p == '40') OR ($smarty.request.p == 'ujkerdoiv'))}
    <script type="text/javascript" src="tinymce/jscripts/tiny_mce/tiny_mce.js"></script>
    <script type="text/javascript" src="jtable/scripts/jquery-ui-1.8.16.custom.min.js" charset="UTF-8"></script>
    <script type="text/javascript" src="jtable/scripts/jtable/jquery.jtable.js" charset="UTF-8"></script>
@@ -26,7 +26,7 @@
 {if $kerdoiv_obj->css}
    <link rel="stylesheet" type="text/css" href="surveys_css/{$kerdoiv_obj->css}" />
 {/if}
-{if $smarty.request.p == '40'}
+{if (($smarty.request.p == '40') OR ($smarty.request.p == 'ujkerdoiv'))}
    <link href="jtable/themes/redmond/jquery-ui-1.8.16.custom.css" rel="stylesheet" type="text/css" charset="UTF-8" />
    <link href="jtable/scripts/jtable/themes/lightcolor/blue/jtable.css" rel="stylesheet" type="text/css" charset="UTF-8" />
 {/if}

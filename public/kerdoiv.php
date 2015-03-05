@@ -84,15 +84,16 @@ if ($jogosult) {
 	
         //a kérdéseket sorbarendezi, de a sorszámuk szerint!!! HIBA
 	ksort($kerdes_blokk_tomb);
-	
+        
 	$smarty->assign('szotar', $szotar);
 	$smarty->assign('kerdoiv_obj', $kerdoiv_obj);
 	$smarty->assign('szemelyes_adatok', $szemelyes_adatok);
 	$smarty->assign('eredmenyek_tomb', $eredmenyek_tomb);
 	if ($jogosult_eredmeny){
 	  $smarty->assign('szuresek_lista', $szuresek_lista);
+          $smarty->assign('osszpontszam', $osszpontszam);
 	}
-    $smarty->assign('kerdes_blokk_tomb', $uj_kerdes_blokk_tomb);
+        $smarty->assign('kerdes_blokk_tomb', $uj_kerdes_blokk_tomb);
 	$smarty->assign('jogosult_eredmeny', $jogosult_eredmeny);
 	$smarty->assign('valasz_blokk_tomb', $valasz_blokk_tomb);
         if (($_REQUEST[i] == '1') AND ($_REQUEST[ok] == '1')){

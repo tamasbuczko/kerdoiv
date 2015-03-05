@@ -1,4 +1,21 @@
 <?php
+function pontszam($kerdoiv_sorszam, $kitolto_sorszam){
+    //pontszámok kiszámolása és mentése
+    $result = mysql_query("SELECT v.pontszam FROM valaszadasok AS va
+        LEFT JOIN valaszok AS v ON va.valasz_sorszam = v.sorszam
+        WHERE va.kerdoiv_sorszam = $kerdoiv_sorszam AND va.kitolto_sorszam = $kitolto_sorszam");
+    while ($row = mysql_fetch_array($result)){
+        $osszpontszam += $row[pontszam];
+    }
+    return $osszpontszam;
+}
+
+function pontkategoria($kerdoiv_sorszam, $osszpontszam){
+    $result = mysql_query("SELECT kategorianev FROM pont_kategoriak WHERE kerdoiv = $kerdoiv_sorszam AND tol <= $osszpontszam AND ig >= $osszpontszam");
+    $v = mysql_fetch_array($result);
+    return $v[kategorianev];
+}
+
 function backup_tables($tables = '*'){
 	  //get all of the tables
 	  if($tables == '*'){

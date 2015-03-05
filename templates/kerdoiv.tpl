@@ -553,7 +553,9 @@
                 </li>
 {/foreach}
             </ul>
-{$osszpontszam}
+{if $osszpontszam}
+{$szotar->fordit('A kérdőívre kapott pontszám')}: {$osszpontszam}
+{/if}
             
 {if $smarty.request.mod}
 			<a href="?p=ujkerdes&amp;kerdoiv={$smarty.request.kerdoiv}&ujkerdes=x" class="zold_gomb" style="float: left; clear:both;">

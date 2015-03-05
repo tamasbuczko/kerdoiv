@@ -26,7 +26,9 @@ $result = mysql_query("SELECT DISTINCT va.kitolto_sorszam, k.email FROM valaszad
                        WHERE va.kerdoiv_sorszam = '$kerdoiv'");
 while ($row = mysql_fetch_array($result)){
     $sorok++;
-    $lista .= '<a href="?p=kerdoiv&kerdoiv='.$kerdoiv.'&er=1&kitolto='.$row[kitolto_sorszam].'">'.$sorok.'. '.$row[email].'</a><br />';
+    $osszpontszam = pontszam($kerdoiv, $row[kitolto_sorszam]);
+    $pontkategoria = pontkategoria($kerdoiv, $osszpontszam);
+    $lista .= '<a href="?p=kerdoiv&kerdoiv='.$kerdoiv.'&er=1&kitolto='.$row[kitolto_sorszam].'">'.$sorok.'. '.$row[email].'</a>('.$osszpontszam.' - '.$pontkategoria.')<br />';
 }
 
 $result3 = mysql_query("SELECT sorszam, cim_hu, cim_de, cim_en FROM kerdoivek WHERE user_id = $_SESSION[qa_user_id]");

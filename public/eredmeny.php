@@ -186,13 +186,14 @@ if ($jogosult_eredmeny){
     $szuresek_lista = 'Nincs jogosultságod az eredmények megtekintéséhez!<br />'.$kerdoiv_obj->jogosultsag_uzenet;
 }
 
+    $osszpontszam = pontszam($kerdoiv_obj->sorszam, $_REQUEST[kitolto]);
+
 if (!$_REQUEST[er] == 1){
    $smarty->assign('szotar', $szotar);
    $smarty->assign('kerdoiv_obj', $kerdoiv_obj);
    $smarty->assign('szuresek_lista', $szuresek_lista);
    $smarty->assign('kerdes_blokk', $kerdes_blokk);
    $smarty->assign('eredmenyek_tomb', $eredmenyek_tomb);
-   $smarty->assign('osszpontszam', $osszpontszam);
    unset($kerdes_blokk);
    $smarty->assign('kerdes_blokk_tomb', $kerdes_blokk_tomb);
    $tartalom = $smarty->fetch('templates/kerdoiv.tpl');
