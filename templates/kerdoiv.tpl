@@ -9,7 +9,7 @@
 {/if}
    <div id="intro">
 	  <div id="survey_intro">
-{if (($kerdoiv_obj->sorszam == '63') OR ($kerdoiv_obj->sorszam == '64') OR ($kerdoiv_obj->sorszam == '65') OR ($kerdoiv_obj->sorszam == '68') OR ($kerdoiv_obj->sorszam == '69') OR ($kerdoiv_obj->sorszam == '70') OR ($kerdoiv_obj->sorszam == '75') OR ($kerdoiv_obj->sorszam == '76') OR ($kerdoiv_obj->sorszam == '77'))}
+{if (($kerdoiv_obj->sorszam == '63') OR ($kerdoiv_obj->sorszam == '64') OR ($kerdoiv_obj->sorszam == '65') OR ($kerdoiv_obj->sorszam == '68') OR ($kerdoiv_obj->sorszam == '69') OR ($kerdoiv_obj->sorszam == '70') OR ($kerdoiv_obj->sorszam == '75') OR ($kerdoiv_obj->sorszam == '76') OR ($kerdoiv_obj->sorszam == '77') OR ($kerdoiv_obj->sorszam == '81') OR ($kerdoiv_obj->sorszam == '82') OR ($kerdoiv_obj->sorszam == '83'))}
 {else}
 		 <h1>{$kerdoiv_obj->cim}</h1>
 {if (($smarty.request.mod) AND ($smarty.session.qa_user_id))}
@@ -130,7 +130,7 @@
 {if $kerdes_blokk}
    {$kerdes_blokk}
 {/if}
-{if (($kerdoiv_obj->sorszam == '63') OR ($kerdoiv_obj->sorszam == '64') OR ($kerdoiv_obj->sorszam == '65') OR ($kerdoiv_obj->sorszam == '68') OR ($kerdoiv_obj->sorszam == '69') OR ($kerdoiv_obj->sorszam == '70') OR ($kerdoiv_obj->sorszam == '75') OR ($kerdoiv_obj->sorszam == '76') OR ($kerdoiv_obj->sorszam == '77'))}
+{if (($kerdoiv_obj->sorszam == '63') OR ($kerdoiv_obj->sorszam == '64') OR ($kerdoiv_obj->sorszam == '65') OR ($kerdoiv_obj->sorszam == '68') OR ($kerdoiv_obj->sorszam == '69') OR ($kerdoiv_obj->sorszam == '70') OR ($kerdoiv_obj->sorszam == '75') OR ($kerdoiv_obj->sorszam == '76') OR ($kerdoiv_obj->sorszam == '77') OR ($kerdoiv_obj->sorszam == '81') OR ($kerdoiv_obj->sorszam == '82') OR ($kerdoiv_obj->sorszam == '83'))}
 <div id="survey" style="margin-top: -20px;">
 {else}
 <div id="survey">
@@ -573,7 +573,7 @@
                             <div class="szemelyes" {if ($smarty.request.l)}style="display: none;"{/if}>
                                 <label>E-mail:</label>
                                 <input type="text" name="email" value="{$smarty.request.email}" /><br />
-{if (($kerdoiv_obj->sorszam == '63') OR ($kerdoiv_obj->sorszam == '64') OR ($kerdoiv_obj->sorszam == '65') OR ($kerdoiv_obj->sorszam == '68') OR ($kerdoiv_obj->sorszam == '69') OR ($kerdoiv_obj->sorszam == '70') OR ($kerdoiv_obj->sorszam == '75') OR ($kerdoiv_obj->sorszam == '76') OR ($kerdoiv_obj->sorszam == '77'))}
+{if (($kerdoiv_obj->sorszam == '63') OR ($kerdoiv_obj->sorszam == '64') OR ($kerdoiv_obj->sorszam == '65') OR ($kerdoiv_obj->sorszam == '68') OR ($kerdoiv_obj->sorszam == '69') OR ($kerdoiv_obj->sorszam == '70') OR ($kerdoiv_obj->sorszam == '75') OR ($kerdoiv_obj->sorszam == '76') OR ($kerdoiv_obj->sorszam == '77') OR ($kerdoiv_obj->sorszam == '81') OR ($kerdoiv_obj->sorszam == '82') OR ($kerdoiv_obj->sorszam == '83'))}
 								<label>Csoport neve:</label>
                                 <input type="text" name="csoport_neve" value="{$smarty.request.csoport_neve}" /><br />
 								<label>Iskola:</label>
