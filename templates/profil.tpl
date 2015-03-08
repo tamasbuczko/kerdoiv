@@ -15,5 +15,10 @@
    <label>{$szotar->fordit('Csomag lejárati határideje')}:</label><input type="text" name="lejarat" readonly="readonly" value="korlátlan" />
    <br style="clear: both;" />
    <br style="clear: both;" />
+   <label>{$szotar->fordit('Számlázási adatok')}:</label><br style="clear: both;" />
+   <label>{$szotar->fordit('Cégnév')}:</label><input type="text" name="cegnev_mod" value="{$user->cegnev}" />
+   <label>{$szotar->fordit('Cím')}:</label><input type="text" name="cegcim_mod" value="{$user->cegcim}" />
+   <br style="clear: both;" />
+   <br style="clear: both;" />
    <input type="submit" name="submit_profil" />
 </form>
