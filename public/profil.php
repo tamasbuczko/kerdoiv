@@ -17,9 +17,21 @@ if ($_REQUEST[submit_profil]){
        $uzenet = 'Jelszavadat sikeresen megváltoztattad!';
    }
 }
+
+$result = mysql_query("SELECT idopont, lejarat, osszeg, status_fizetett FROM fizetesek WHERE user_id = '$_SESSION[qa_user_id]'");
+$sorszam = 1;
+while ($row = mysql_fetch_array($result)){
+    $fizetesek[$sorszam][idopont] =  substr($row[idopont], 0,-9);
+    $fizetesek[$sorszam][lejarat] = $row[lejarat];
+    $fizetesek[$sorszam][osszeg] = $row[osszeg];
+    $fizetesek[$sorszam][status_fizetett] = $row[status_fizetett];
+    $sorszam++;
+}
+
 $smarty->assign('szotar', $szotar);
 $smarty->assign('lang', $lang);
 $smarty->assign('user', $user);
 $smarty->assign('uzenet', $uzenet);
+$smarty->assign('fizetesek', $fizetesek);
 $tartalom = $smarty->fetch('templates/profil.tpl').$fizetes_form;
 

@@ -71,6 +71,11 @@ if ($_REQUEST[ujkerdes]){
                VALUES
                ('$ujkerdes_sorszam', '$_REQUEST[kerdoiv]', '', '1', '$ujkerdes_sorrend', 'radio')";
         mysql_query($sql);
+        
+        $sql = "INSERT INTO valaszok (kerdoiv_sorszam, kerdes_valasz, status, sorrend)
+		   VALUES
+		   ('$kerdoiv_sorszam', '$ujkerdes_sorszam', '1', '1')";
+        mysql_query($sql);
         header("Location: ?p=ujkerdes&id=".$ujkerdes_sorszam);
    } 
 }
