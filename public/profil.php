@@ -1,7 +1,7 @@
 <?php
 
 if ($_REQUEST[submit_profil]){
-   $query = mysql_query("UPDATE users SET email='$_REQUEST[email_mod]', authority='$_REQUEST[csomag_mod]', cegnev='$_REQUEST[cegnev_mod]', cegcim='$_REQUEST[cegcim_mod]' WHERE id = '$_SESSION[qa_user_id]'");
+   $query = mysql_query("UPDATE users SET email='$_REQUEST[email_mod]', authority='$_REQUEST[csomag_mod]', cegnev='$_REQUEST[cegnev_mod]', cegcim='$_REQUEST[cegcim_mod]', kapcsnev='$_REQUEST[nev_mod]', telefon='$_REQUEST[telefon_mod]', cegemail='$_REQUEST[cegemail_mod]' WHERE id = '$_SESSION[qa_user_id]'");
    mysql_query($query);
    $user->email = $_REQUEST[email_mod];
    $user->login();
@@ -18,13 +18,15 @@ if ($_REQUEST[submit_profil]){
    }
 }
 
-$result = mysql_query("SELECT idopont, lejarat, osszeg, status_fizetett FROM fizetesek WHERE user_id = '$_SESSION[qa_user_id]'");
+$result = mysql_query("SELECT idopont, lejarat, osszeg, csomag, status_fizetett FROM fizetesek WHERE user_id = '$_SESSION[qa_user_id]'");
 $sorszam = 1;
 while ($row = mysql_fetch_array($result)){
+    $fizetesek[$sorszam][sorszam] = $sorszam;
     $fizetesek[$sorszam][idopont] =  substr($row[idopont], 0,-9);
-    $fizetesek[$sorszam][lejarat] = $row[lejarat];
+    $fizetesek[$sorszam][lejarat] = $row[lejarat];     
     $fizetesek[$sorszam][osszeg] = $row[osszeg];
     $fizetesek[$sorszam][status_fizetett] = $row[status_fizetett];
+    $fizetesek[$sorszam][csomag] = $row[csomag];  
     $sorszam++;
 }
 
@@ -33,5 +35,6 @@ $smarty->assign('lang', $lang);
 $smarty->assign('user', $user);
 $smarty->assign('uzenet', $uzenet);
 $smarty->assign('fizetesek', $fizetesek);
+$smarty->assign('sorszam', $sorszam);
 $tartalom = $smarty->fetch('templates/profil.tpl').$fizetes_form;
 

@@ -15,27 +15,49 @@
    <label>{$szotar->fordit('Csomag lejárati határideje')}:</label><input type="text" name="lejarat" readonly="readonly" value="korlátlan" />
    <br style="clear: both;" />
    <br style="clear: both;" />
-   <label>{$szotar->fordit('Számlázási adatok')}:</label><br style="clear: both;" />
-   <label>{$szotar->fordit('Cégnév')}:</label><input type="text" name="cegnev_mod" value="{$user->cegnev}" />
-   <label>{$szotar->fordit('Cím')}:</label><input type="text" name="cegcim_mod" value="{$user->cegcim}" />
+   <div class="egyeb_adatok">
+       <label style="width:365px;">{$szotar->fordit('Egyéb adatok (pl. számlázáshoz, zárt rendszerhez)')}:</label><br/>
+   </div>
+   <div class="lenyilo_adatok" id="egyebadat">
+   <label>{$szotar->fordit('Név')}:</label><br style="clear: both;" /><input type="text" name="nev_mod" value="{$user->kapcsnev}"/>
+   <label>{$szotar->fordit('Cégnév')}:</label><input type="text" name="cegnev_mod" value="{$user->cegnev}"/>
+   <label>{$szotar->fordit('Cím')}:</label><input type="text" name="cegcim_mod" value="{$user->cegcim}"/>
+   <label>{$szotar->fordit('Telefon')}:</label><input type="text" name="telefon_mod" value="{$user->telefon}"/>
+   <label>{$szotar->fordit('E-mail')}:</label><input type="text" name="cegemail_mod" value="{$user->cegemail}"/>
+   </div>
    <br style="clear: both;" />
    <br style="clear: both;" />
-   <input type="submit" name="submit_profil" />
+   <input type="submit" name="submit_profil" value="Mentés"/>
 </form>
-<div style="float: left;">
-    <table style="border: 1px solid #aaa;">
-        <tr><th>időszak</th><th>csomag</th><th>díj</th><th>állapot</th></tr>
+ 
+{if $sorszam > 1}   
+<div class = "fizetesek">
+    <table>
+        <tr><th></th><th>időszak</th><th>csomag</th><th>díj</th><th>állapot</th></tr>
 {foreach from=$fizetesek item="sor" name="fizetesek"}
         <tr>
+            <td>{$sor.sorszam}.</td>
             <td>{$sor.idopont} - {$sor.lejarat}</td>
-            <td>csomag</td><td>{$sor.osszeg}</td>
+{if $sor.csomag == 1}
+            <td>{$szotar->fordit('Ingyenes')}</td>
+{/if}    
+{if $sor.csomag == 2}
+            <td>{$szotar->fordit('Ezüst')}</td>
+{/if}  
+{if $sor.csomag == 3}
+            <td>{$szotar->fordit('Arany')}</td>
+{/if}  
+{if $sor.csomag == 4}
+            <td>{$szotar->fordit('Platina')}</td>
+{/if}              
+            <td>{$sor.osszeg}</td>
             <td>
 {if $sor.status_fizetett == '1'}
                 fizetve
 {/if}
 {if $sor.status_fizetett == '0'}
 
-    <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+    <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top" style="position: relative; top: 2px; left: 2px;">
         <input type="hidden" name="cmd" value="_s-xclick">
         <input type="hidden" name="hosted_button_id" value="UVWY57GYV3HCL">
         <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_buynow_SM.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
@@ -49,3 +71,4 @@
 {/foreach}
     </table>
 </div>
+{/if}
