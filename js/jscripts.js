@@ -1,3 +1,11 @@
+function divdisp_onxx(id){
+	if (document.getElementById(id).style.display == 'none'){
+		document.getElementById(id).style.display = 'block';}
+	else {
+		document.getElementById(id).style.display = 'none';}
+}
+
+
 function ajax_sablonvalto(sablon, kerdoiv){
     if (sablon=="") {
 	document.getElementById("email_szoveg").innerHTML="";

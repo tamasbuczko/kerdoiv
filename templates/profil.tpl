@@ -16,9 +16,9 @@
    <br style="clear: both;" />
    <br style="clear: both;" />
    <div class="egyeb_adatok">
-       <label style="width:365px;">{$szotar->fordit('Egyéb adatok (pl. számlázáshoz, zárt rendszerhez)')}:</label><br/>
+       <label style="width:365px;" onclick="divdisp_onxx('egyebadat')">{$szotar->fordit('Egyéb adatok (pl. számlázáshoz, zárt rendszerhez)')}:</label><br/>
    </div>
-   <div class="lenyilo_adatok" id="egyebadat">
+   <div class="lenyilo_adatok" id="egyebadat" style="display: none;">
    <label>{$szotar->fordit('Név')}:</label><br style="clear: both;" /><input type="text" name="nev_mod" value="{$user->kapcsnev}"/>
    <label>{$szotar->fordit('Cégnév')}:</label><input type="text" name="cegnev_mod" value="{$user->cegnev}"/>
    <label>{$szotar->fordit('Cím')}:</label><input type="text" name="cegcim_mod" value="{$user->cegcim}"/>
