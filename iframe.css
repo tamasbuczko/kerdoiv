@@ -8,6 +8,10 @@ body{
     margin-left: -40px;
 }
 
+#fejlec{
+    display: none;
+}
+
 #user_box{
    display: none; 
 }
