@@ -54,8 +54,8 @@
 </head>
    <body {if ($hibauzenet) OR ($figy_uzenet) OR (($kerdoiv_obj->felnott=='1') AND ($smarty.session.felnott != '1') AND ($smarty.request.mod != '1') AND ($smarty.request.p != 'ujkerdoiv') AND ($smarty.request.p != 'ujkerdes') AND ($smarty.request.p != 'kerdoiv_adatlap'))}{if !$smarty.request.lang}onload="divdisp_on('popup');{/if}{/if}">
 <div id="iframe">  
-    <div    {if ($smarty.request.p AND $smarty.session.qa_user_id)}id="fejlec"{/if}>
-	  <div id="langs"{if ($page->kerdoivnezet)} style="width: 690px;"{/if} {if ($smarty.request.p AND $smarty.session.qa_user_id)}style="border-bottom: 1px solid #999;"{/if}>
+    <div id="fejlec">
+	  <div id="langs"{if ($page->kerdoivnezet)} style="width: 690px;"{/if}>
 {if !$smarty.request.i}
             <a href="?" id="home"></a>
 {/if}
@@ -96,7 +96,7 @@
 {/if}
 	  </div>
           </div>
-	  <div id="frame"{if ($page->kerdoivnezet)} style="width: 690px;"{/if} {if ($smarty.request.p AND $smarty.session.qa_user_id)} style="margin: 25px auto 10px auto; border-top: none;"{/if}>
+	  <div id="frame"{if ($page->kerdoivnezet)} style="width: 690px;"{/if}>
 {if !$smarty.request.i}
               <div id="head"{if $page->cimlap == '0'} class="head_kicsi{if ($kerdoiv_obj->csak_kerdoiv == 'on') AND ($smarty.request.p == 'kerdoiv')} head_nincs{/if}"{/if}>        
 			<div id="head_menu">
