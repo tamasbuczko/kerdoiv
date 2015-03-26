@@ -18,17 +18,28 @@ if ($_REQUEST[submit_profil]){
    }
 }
 
-$result = mysql_query("SELECT idopont, lejarat, osszeg, csomag, status_fizetett FROM fizetesek WHERE user_id = '$_SESSION[qa_user_id]'");
+$result = mysql_query("SELECT id,idopont, lejarat, osszeg, csomag, status_fizetett FROM fizetesek WHERE user_id = '$_SESSION[qa_user_id]'");
 $sorszam = 1;
 while ($row = mysql_fetch_array($result)){
     $fizetesek[$sorszam][sorszam] = $sorszam;
+    $fizetesek[$sorszam][id] = $row[id];     
     $fizetesek[$sorszam][idopont] =  substr($row[idopont], 0,-9);
     $fizetesek[$sorszam][lejarat] = $row[lejarat];     
     $fizetesek[$sorszam][osszeg] = $row[osszeg];
     $fizetesek[$sorszam][status_fizetett] = $row[status_fizetett];
     $fizetesek[$sorszam][csomag] = $row[csomag];  
+    
+    //paypal fizetéshez adatok 
+    //https://developer.paypal.com/docs/classic/paypal-payments-standard/integration-guide/formbasics/
+    if ($row[status_fizetett] == '0'){
+        $_SESSION[paypal_fizetes_id] = $row[id];
+    }
+    
     $sorszam++;
 }
+
+
+
 
 $smarty->assign('szotar', $szotar);
 $smarty->assign('lang', $lang);
