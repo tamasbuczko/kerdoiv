@@ -51,6 +51,16 @@ if ($_REQUEST[send]){
 		 VALUES
 		 ('$max_id', '$x_azonosito', '$md_jelszo', '$x_email', '$x_csomag', '0', '$aktivalo_link')";
 		 mysql_query($sql);
+                 
+                 $sql = mysql_query("SELECT ar_ft_ho FROM dat_csomagarak WHERE id = $x_csomag");
+                 $adat = mysql_fetch_array($sql);
+                 $mainap = date('Y-m-d');
+                 $mahoz_egy_honapra = date('Y-m-d', strtotime('+1 month'));
+                 
+                 $result2 = "INSERT INTO fizetesek (user_id, osszeg, idopont, lejarat, csomag, status_aktualis, status_fizetett) VALUES "
+                . "('$max_id', '$adat[ar_ft_ho]', '$mainap', '$mahoz_egy_honapra', '$x_csomag', '$x_csomag', '0')";
+                mysql_query($result2);
+                 
 		 $_SESSION[popup_tartalom] = 'Sikeres regisztráció!';
 		 
 		 $message_bevezeto = 'Kedves Látogató!<br/><br/>

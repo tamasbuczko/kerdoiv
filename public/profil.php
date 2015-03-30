@@ -16,6 +16,12 @@ if ($_REQUEST[submit_profil]){
        $query = mysql_query("UPDATE users SET password='$uj_jelszo' WHERE id = '$_SESSION[qa_user_id]'");
        $uzenet = 'Jelszavadat sikeresen megváltoztattad!';
    }
+   
+   //megnézni, hogy megváltozott e a csomag típusa,
+   //ha igen, akkor fizetesek táblát is módosítani
+   
+   //p=5-ről (csomagok) is ide irányítani a form-ot
+   
 }
 
 $result = mysql_query("SELECT id,idopont, lejarat, osszeg, csomag, status_fizetett FROM fizetesek WHERE user_id = '$_SESSION[qa_user_id]'");
