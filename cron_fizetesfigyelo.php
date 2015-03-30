@@ -10,6 +10,10 @@ require_once('class/class.php');
 $adatkapcsolatx = new data_connect;
 $adatkapcsolatx->connect();
 
+//logolás bekapcsolása
+$log = new log_db;
+$log->write('x', 'CRON indul... (fizetésfigyelő)');
+
 //minden nap éjjel lefut
 
 //ha a felhasználó fizetős csomagban van és fizetve van az aktuális időszaka, akkor létrehozza a következő
