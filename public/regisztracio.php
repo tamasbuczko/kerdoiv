@@ -3,7 +3,14 @@
 if ($_REQUEST[submit_reg]){
    $query = mysql_query("UPDATE users SET authority='$_REQUEST[csomag_mod]' WHERE id = '$_SESSION[qa_user_id]'");
    mysql_query($query);
+   
+   //fizetések táblában a csomagot átírni
+   //két irány: lehet kifizetett csomagja a felhasználónak és fizetetlen
+   //ha fizetetlen csomagja van, akkor a csomagja határidejeivel nem történik semmi csak a fizetendő összeg változik
+   //kisebb csomagra váltásnál a jelenlegi csomagja után jön létre az új csomag
+   
    $user->login();
+   header("Location: index.php?p=profil");
    //$user->jog = $_REQUEST[csomag_mod]; //tesztidő után törölni
 }
 

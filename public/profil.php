@@ -44,9 +44,6 @@ while ($row = mysql_fetch_array($result)){
     $sorszam++;
 }
 
-
-
-
 $smarty->assign('szotar', $szotar);
 $smarty->assign('lang', $lang);
 $smarty->assign('user', $user);

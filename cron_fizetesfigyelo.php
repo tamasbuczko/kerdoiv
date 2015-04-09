@@ -24,20 +24,51 @@ $honap_utolso_napja = date('Y-m-d', strtotime('last day of this month'));
 $kov_honap_elso_nap = date('Y-m-d', strtotime('first day of next month'));
 $kov_honap_utolso_nap = date('Y-m-d', strtotime('last day of next month'));
 
-if ($mainap = $honap_utolso_napja){
+
 $result = mysql_query("SELECT u.id, u.authority, dcs.ar_ft_ho, dcs.ar_eur_ho, dcs.ar_usd_ho FROM users AS u "
         . "LEFT JOIN dat_csomagarak AS dcs ON u.authority = dcs.id "
         . "WHERE u.authority > 1");
+    //végigmegy az összes felhasználón, aki fizetős csomagban van
     while ($row = mysql_fetch_array($result)){
-        $result2 = "INSERT INTO fizetesek (user_id, osszeg, idopont, lejarat, csomag, status_aktualis, status_fizetett) VALUES "
-                . "('$row[id]', '$row[ar_ft_ho]', '$kov_honap_elso_nap', '$kov_honap_utolso_nap', '$row[authority]', '$row[authority]', '0')";
-        mysql_query($result2);
         
-        // email értesítés kiküldése (adattáblába jegyezni és utolóag kiküldeni)
+        //a felhasználó utolsó fizetett csomagja mikor jár le
+        $result3 = mysql_query("SELECT lejarat, idopont FROM fizetesek WHERE user_id = $row[id] AND status_fizetett = '1' ORDER BY lejarat DESC");
+        $row3 = mysql_fetch_array($result3);
+        
+        //ha van nem fizetett csomag, akkor nem jön létre új fizetendő csomag
+        $result4 = mysql_query("SELECT lejarat, idopont FROM fizetesek WHERE user_id = $row[id] AND status_fizetett = '0'");
+        $row4 = mysql_fetch_array($result4);
+        
+        $lejaratnal_ot_nappal_elobb = date('Y-m-d', strtotime('-5 days', strtotime($row3[lejarat])));
+        $lejarat_megegy_nap = date('Y-m-d', strtotime('+1 days', strtotime($row3[lejarat])));
+        
+        if (($lejaratnal_ot_nappal_elobb == $mainap) AND (!$row4[lejarat])){
+            
+            $mahoz_egy_honapra = date('Y-m-d', strtotime('+1 month', strtotime($lejarat_megegy_nap)));
+            $result2 = "INSERT INTO fizetesek (user_id, osszeg, idopont, lejarat, csomag, status_aktualis, status_fizetett) VALUES "
+                    . "('$row[id]', '$row[ar_ft_ho]', '$lejarat_megegy_nap', '$mahoz_egy_honapra', '$row[authority]', '$row[authority]', '0')";
+            mysql_query($result2);
+            
+            // email értesítés kiküldése (adattáblába jegyezni és utolóag kiküldeni)
+        }
+        
+        //értesítés fizetési kötelezettségről
+        $idopont_utan_egynappal = date('Y-m-d', strtotime('+1 days', strtotime($row4[idopont])));
+        if ($idopont_utan_egynappal == $mainap){
+            
+        }
+        
+        //fizetetlen csomagú felhasználó, akinek 5 napja él a csomagja
+        $idopont_utan_otnappal = date('Y-m-d', strtotime('+5 days', strtotime($row4[idopont])));
+        if ($lejaratnal_ot_nappal_elobb == $mainap){
+            //user táblában lekapcsolni a jogosultságát
+        }
+        
+        
         // email típusokról adattábla
         
     }
-}
+
 
 //egy értesítést küld a lejárat előtt 5 nappal a hosszabbítási lehetőségről
 

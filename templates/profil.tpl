@@ -34,6 +34,7 @@
 <div class = "fizetesek">
     <table>
         <tr><th></th><th>időszak</th><th>csomag</th><th>díj</th><th>állapot</th></tr>
+{assign var=szamlalo value=0}
 {foreach from=$fizetesek item="sor" name="fizetesek"}
         <tr>
             <td>{$sor.sorszam}.</td>
@@ -56,17 +57,18 @@
                 fizetve
 {/if}
 {if $sor.status_fizetett == '0'}
-
+{if $szamlalo == 0} {* csak egy fizetés gomb jelenhet meg *}
+{assign var=szamlalo value=$szamlalo+1}
     <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top" style="position: relative; top: 2px; left: 2px;">
         <input type="hidden" name="cmd" value="_s-xclick">
 {if $sor.csomag == 2}
         <input type="hidden" name="hosted_button_id" value="UVWY57GYV3HCL">
 {/if}    
 {if $sor.csomag == 3}
-        <input type="hidden" name="hosted_button_id" value="UVWY57GYV3HCL">
+        <input type="hidden" name="hosted_button_id" value="LKKDSDPPYEPC8">
 {/if}
 {if $sor.csomag == 4}
-        <input type="hidden" name="hosted_button_id" value="UVWY57GYV3HCL">
+        <input type="hidden" name="hosted_button_id" value="WZFT5K4H8WHZS">
 {/if}
 <!--
         <input type="hidden" name="item_name" value="{$sor.csomag}">
@@ -76,8 +78,7 @@
         <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_buynow_SM.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
         <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
     </form>
-
-    
+{/if}
 {/if}
             </td>
         </tr>
