@@ -9,13 +9,17 @@ require_once('class/class.php');
 //kapcsolat létrehozása az adatbázis szerverrel (class.php)
 $adatkapcsolatx = new data_connect;
 $adatkapcsolatx->connect();
+
 $kerdoivszam = $_REQUEST[kerdoiv];
 $idopont = date("Y-m-d H:i:s");
+
 if ($elonezet != 'ok'){
     $result = mysql_query("SELECT sorszam, email, felhasznalo, kerdoivszam, cimzettek FROM email_temp WHERE statusz='1' ORDER BY sorszam LIMIT 50");	
 } else {
     $result = mysql_query("SELECT id, email, nev, kerdoiv, cegnev FROM zart_emailek WHERE kerdoiv='$kerdoivszam' ORDER BY id LIMIT 1");	
-}    
+}
+
+//zárt kérdőív email értesítéseinek kiküldése
 while ($next_element = mysql_fetch_array($result)){
    unset($array);
 	if ($next_element['kerdoivszam']){
@@ -102,4 +106,41 @@ while ($next_element = mysql_fetch_array($result)){
         mysql_query($sql);
     }
 }
-?>
+
+
+
+//fizetésfigyelő emailjeinek kiküldése
+$result = mysql_query("SELECT id, email, tipus FROM email_figyelo WHERE status='1' ORDER BY id LIMIT 50");	
+while ($next_element = mysql_fetch_array($result)){
+
+   $resultx = mysql_query("SELECT szoveg FROM email_fajtak WHERE id='$next_element[tipus]'");
+   $e = mysql_fetch_array($resultx);
+   
+    $array = array('cimzett_neve' => $cimzett_neve,   
+                    'cimzett_email' => $cimzett);
+	 
+    $sablon_html = new email_blokk;
+    $sablon_html->load_template($e[szoveg],$array);
+    $email_sablon = $sablon_html->html_code;
+   
+   	$html ='
+	  <html>
+      <body style="background-color: #9cb0b0; padding-top: 20px; padding-bottom: 20px; margin-bottom: 20px; padding-left: 20px; color: #686868; font-family: Arial;">
+      <div style="display: block; min-height: 624px; width: 680px; background-color: #ffffff;">
+          <div style="width: 158px; padding: 10px; float: left; background-color: #0f4eb8; color: #fefefe; min-height: 605px; border-right: 2px solid #0f4eb8;">
+          </div>
+          <div style="float: left; width: 460px; font-size: 12px; min-height: 615px; color: #3c1d11; padding-top: 20px; padding-left: 17px; padding-bottom: 30px;">
+              '.$email_sablon.'
+              <br style="clear: both;" />
+          </div>
+      </div>
+      <br style="clear: both;" />
+      </body>
+      </html>';
+
+    include('email_html.php');
+   
+   mail($felhasznalo_email, $subject, $message, $headers);
+   $sql = "UPDATE email_figyelo SET statusz='2', elkuldve='$idopont' WHERE id='$next_element[id]'";
+   mysql_query($sql);
+}
