@@ -49,15 +49,15 @@ $result = mysql_query("SELECT u.id, u.authority, u.email, dcs.ar_ft_ho, dcs.ar_e
                     . "('$row[id]', '$row[ar_ft_ho]', '$lejarat_megegy_nap', '$mahoz_egy_honapra', '$row[authority]', '$row[authority]', '0')";
             mysql_query($result2);
 			
-			// email értesítés kiküldése (adattáblába jegyezni és utolóag kiküldeni)
-			$result22 = "INSERT INTO email_figyelo (email, status, tipus) VALUES 
+            // email értesítés kiküldése (adattáblába jegyezni és utolóag kiküldeni)
+            $result22 = "INSERT INTO email_figyelo (email, status, tipus) VALUES 
 						   ('$row[email]', '1', '1')";
-			mysql_query($result22);
+            mysql_query($result22);
         }
         
         //értesítés fizetési kötelezettségről
         $idopont_utan_egynappal = date('Y-m-d', strtotime('+1 days', strtotime($row4[idopont])));
-        if ($idopont_utan_egynappal == $mainap){
+        if (($idopont_utan_egynappal == $mainap) AND ($row4[lejarat])){
             
 		    $result22 = "INSERT INTO email_figyelo (email, status, tipus) VALUES 
 						   ('$row[email]', '1', '2')";
@@ -66,12 +66,12 @@ $result = mysql_query("SELECT u.id, u.authority, u.email, dcs.ar_ft_ho, dcs.ar_e
         
         //fizetetlen csomagú felhasználó, akinek 5 napja él a csomagja
         $idopont_utan_otnappal = date('Y-m-d', strtotime('+5 days', strtotime($row4[idopont])));
-        if ($lejaratnal_ot_nappal_elobb == $mainap){
+        if ($idopont_utan_otnappal == $mainap){
             //user táblában lekapcsolni a jogosultságát
 		   
-		   $result22 = "INSERT INTO email_figyelo (email, status, tipus) VALUES 
+            $result22 = "INSERT INTO email_figyelo (email, status, tipus) VALUES 
 						   ('$row[email]', '1', '3')";
-			mysql_query($result22);
+            mysql_query($result22);
         }
         
     }

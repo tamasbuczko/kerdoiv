@@ -116,8 +116,8 @@ while ($next_element = mysql_fetch_array($result)){
    $resultx = mysql_query("SELECT szoveg FROM email_fajtak WHERE id='$next_element[tipus]'");
    $e = mysql_fetch_array($resultx);
    
-    $array = array('cimzett_neve' => $cimzett_neve,   
-                    'cimzett_email' => $cimzett);
+    $array = array('felhasznalonev' => $felhasznalonev,   
+                    'csomag_nev' => $csomag_nev);
 	 
     $sablon_html = new email_blokk;
     $sablon_html->load_template($e[szoveg],$array);
@@ -139,8 +139,12 @@ while ($next_element = mysql_fetch_array($result)){
       </html>';
 
     include('email_html.php');
-   
-   mail($felhasznalo_email, $subject, $message, $headers);
-   $sql = "UPDATE email_figyelo SET statusz='2', elkuldve='$idopont' WHERE id='$next_element[id]'";
+    
+    $log = new log_db;
+    $log->write('x', 'Értesítő e-mail kiküldés: '.$next_element[email]);
+    
+   //kommentezni, amíg nincs tesztelve
+   //mail($felhasznalo_email, $subject, $message, $headers);
+   $sql = "UPDATE email_figyelo SET status='2', elkuldve='$idopont' WHERE id='$next_element[id]'";
    mysql_query($sql);
 }
