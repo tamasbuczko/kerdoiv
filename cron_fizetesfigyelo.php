@@ -67,11 +67,25 @@ $result = mysql_query("SELECT u.id, u.authority, u.email, dcs.ar_ft_ho, dcs.ar_e
         //fizetetlen csomagú felhasználó, akinek 5 napja él a csomagja
         $idopont_utan_otnappal = date('Y-m-d', strtotime('+5 days', strtotime($row4[idopont])));
         if ($idopont_utan_otnappal == $mainap){
-            //user táblában lekapcsolni a jogosultságát
-		   
+            //user és fizetesek táblában lekapcsolni a jogosultságát
+            $query = "UPDATE users SET authority='1' WHERE id = '$row[id]'";
+            #mysql_query($query);
+            
+            $query = mysql_query("SELECT MAX(id) AS id FROM fizetesek WHERE user_id = $row[id]");
+            $b = mysql_fetch_array($query);
+            
+            //9-es érték a fizetetlen
+            $query = "UPDATE fizetesek SET status_fizetett = '9' WHERE id = '$b[id]'";
+            #mysql_query($query);
+            
+            $query = "INSERT INTO fizetesek (user_id, osszeg, idopont, lejarat, csomag, status_aktualis, status_fizetett) VALUES "
+                    . "('$row[id]', '0', '$mainap', '$mahoz_egy_honapra', '1', '1', '1')";
+            #mysql_query($query);
+            
             $result22 = "INSERT INTO email_figyelo (email, status, tipus) VALUES 
 						   ('$row[email]', '1', '3')";
             mysql_query($result22);
+            $log->write('x', 'Nem fizető ügyfél ingyenesre váltása, ügyfél id: '.$row[id]);
         }
         
     }

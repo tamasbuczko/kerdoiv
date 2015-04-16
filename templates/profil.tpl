@@ -12,9 +12,11 @@
    <label>{$szotar->fordit('Platina')}</label><input type="radio" name="csomag_mod" value="4" {if $user->jog == '4'}checked="checked"{/if} />
    <br style="clear: both;" />
    <br style="clear: both;" />
+   <!--
    <label>{$szotar->fordit('Csomag lejárati határideje')}:</label><input type="text" name="lejarat" readonly="readonly" value="korlátlan" />
    <br style="clear: both;" />
    <br style="clear: both;" />
+   -->
    <div class="egyeb_adatok">
        <label style="width:365px;" onclick="divdisp_onxx('egyebadat')">{$szotar->fordit('Egyéb adatok (pl. számlázáshoz, zárt rendszerhez)')}:</label><br/>
    </div>
@@ -38,7 +40,7 @@
 {foreach from=$fizetesek item="sor" name="fizetesek"}
         <tr>
             <td>{$sor.sorszam}.</td>
-            <td>{$sor.idopont} - {$sor.lejarat}</td>
+            <td>{$sor.idopont} - {if $sor.csomag != '1'}{$sor.lejarat}{/if}</td>
 {if $sor.csomag == 1}
             <td>{$szotar->fordit('Ingyenes')}</td>
 {/if}    
@@ -57,6 +59,7 @@
                 fizetve
 {/if}
 {if $sor.status_fizetett == '0'}
+{if $sor.csomag != '1'}
 {if $szamlalo == 0} {* csak egy fizetés gomb jelenhet meg *}
 {assign var=szamlalo value=$szamlalo+1}
     <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top" style="position: relative; top: 2px; left: 2px;">
@@ -80,9 +83,15 @@
     </form>
 {/if}
 {/if}
+{/if}
             </td>
         </tr>
 {/foreach}
     </table>
+{if $szamlalo == 1}
+    <div>
+        Még nem fizetett. A fizetési határidőig {$x_idopont}. nap van hátra.
+    </div>
+{/if}
 </div>
 {/if}

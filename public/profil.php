@@ -1,8 +1,23 @@
 <?php
 
 if ($_REQUEST[submit_profil]){
-   $query = mysql_query("UPDATE users SET email='$_REQUEST[email_mod]', authority='$_REQUEST[csomag_mod]', cegnev='$_REQUEST[cegnev_mod]', cegcim='$_REQUEST[cegcim_mod]', kapcsnev='$_REQUEST[nev_mod]', telefon='$_REQUEST[telefon_mod]', cegemail='$_REQUEST[cegemail_mod]' WHERE id = '$_SESSION[qa_user_id]'");
+   $query = "UPDATE users SET email='$_REQUEST[email_mod]', authority='$_REQUEST[csomag_mod]', cegnev='$_REQUEST[cegnev_mod]', cegcim='$_REQUEST[cegcim_mod]', kapcsnev='$_REQUEST[nev_mod]', telefon='$_REQUEST[telefon_mod]', cegemail='$_REQUEST[cegemail_mod]' WHERE id = '$_SESSION[qa_user_id]'";
    mysql_query($query);
+   
+   //fizetési előirányzat módosítása
+   $query = mysql_query("SELECT ar_ft_ho FROM dat_csomagarak WHERE id = $_REQUEST[csomag_mod]");
+   $a = mysql_fetch_array($query);
+   
+   $query = mysql_query("SELECT MAX(id) AS id FROM fizetesek WHERE user_id = $_SESSION[qa_user_id]");
+   $b = mysql_fetch_array($query);
+   
+   $mainap = date('Y-m-d');
+   $mahoz_egy_honapra = date('Y-m-d', strtotime('+1 month', strtotime($mainap)));
+   
+   $query = "UPDATE fizetesek SET csomag='$_REQUEST[csomag_mod]', osszeg='$a[ar_ft_ho]', idopont='$mainap', lejarat='$mahoz_egy_honapra' WHERE id = '$b[id]'";
+   mysql_query($query);
+   
+   
    $user->email = $_REQUEST[email_mod];
    $user->login();
    //$user->jog = $_REQUEST[csomag_mod]; //tesztidő után törölni
@@ -40,15 +55,20 @@ while ($row = mysql_fetch_array($result)){
     if ($row[status_fizetett] == '0'){
         $_SESSION[paypal_fizetes_id] = $row[id];
     }
-    
+    $x_idopont = $fizetesek[$sorszam][idopont];
     $sorszam++;
 }
+
+$date1 = new DateTime($x_idopont);
+$date2 = new DateTime($mainap);
+
+$x_idopont = 5-($date2->diff($date1)->format("%a"));
 
 $smarty->assign('szotar', $szotar);
 $smarty->assign('lang', $lang);
 $smarty->assign('user', $user);
 $smarty->assign('uzenet', $uzenet);
 $smarty->assign('fizetesek', $fizetesek);
+$smarty->assign('x_idopont', $x_idopont);
 $smarty->assign('sorszam', $sorszam);
 $tartalom = $smarty->fetch('templates/profil.tpl').$fizetes_form;
-
