@@ -63,7 +63,7 @@ if ($jogosult) {
         require_once('public/kerdoiv_mentes.php');
         if ($_REQUEST[i] != 1) {
             //én itt átadnám a kitöltött kérdőív sorszámát vagy valamely egyedi azonosítóját, és kiírnám a főoldalon ilyenkor, hogy köszi a kitöltést. I-frames beágyazás enélkül elég butuska lenne.
-            header("Location: index.php?ok=1&thanks_share=1&kerdoiv=" . $kerdoiv_sorszam);
+            header("Location: index.php?ok=1&thanks_share=1&ksor=".$kitolto_sorszama."&kerdoiv=" . $kerdoiv_sorszam);
         } else {
             header("Location: index.php?p=kerdoiv&kerdoiv=".$kerdoiv_sorszam."&kerdes=".$kerdoiv_sorszam."&i=1&ok=1");
         }

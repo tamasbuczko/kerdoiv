@@ -1,18 +1,19 @@
 <?php
+//néhány rendszerállandó beállítása
+require_once('../parameters.php');
+
+//osztályok betöltése az objektumokhoz
+require_once('../class/class.php');
+
+//funkciók betöltése
+require_once('../functions.php');
+
+$adatkapcsolat = new data_connect;  //példányosítjuk az objektumot
+$adatkapcsolat->connect(); 
 
 try
 {
-	//Open database connection
-	$domain = $_SERVER['HTTP_HOST'];
-	if ($domain == 'localhost'){
-      $con = mysql_connect("localhost","root","");
-      mysql_select_db("kerdoiv", $con);}
-    else{
-      $con = mysql_connect("localhost","hegeszte_kerdoiv","ho1z60");
-      mysql_select_db("hegeszte_qa", $con);
-    }
-    
-    mysql_set_charset("utf8",$con);
+
     $data_table = $_GET["data_table"];
 	//Getting records (listAction)
 	if($_GET["action"] == "list")
@@ -37,8 +38,14 @@ try
 		$rows = array();
 		while($row = mysql_fetch_array($result))
 		{
-           
+                   $osszpontszam = pontszam($_GET[kerdoiv], $row[kitolto_sorszam]);
+                   $pontkategoria = pontkategoria($_GET[kerdoiv], $osszpontszam);
+                   
+                   $row[osszpontszam] = $osszpontszam;
+                   $row[pontkategoria] = $pontkategoria;
+                   
 		   $rows[] = $row;
+                   
 		}
 
 		//Return result to jTable
@@ -51,8 +58,8 @@ try
 	else if($_GET["action"] == "create")
 	{
 		//Insert record into database
-		$result = mysql_query("INSERT INTO $data_table (nev, cegnev, email, link, status, jelszo, kerdoiv) VALUES
-                        ('" . $_POST["nev"] . "', '" . $_POST["cegnev"] . "', '" . $_POST["email"] . "', '" . $_POST["link"] . "', '" . $_POST["status"] . "', '" . $_POST["jelszo"] . "', '".$_GET[kerdoiv]."');");
+		$result = mysql_query("INSERT INTO $data_table (nev, cegnev, email, link, status, jelszo, kerdoiv, szov_ertekeles) VALUES
+                        ('" . $_POST["nev"] . "', '" . $_POST["cegnev"] . "', '" . $_POST["email"] . "', '" . $_POST["link"] . "', '" . $_POST["status"] . "', '" . $_POST["jelszo"] . "', '".$_GET[kerdoiv]."', '".$_GET[szov_ertekeles]."');");
 		
 		//Get last inserted record (to return to jTable)
 		$result = mysql_query("SELECT * FROM $data_table WHERE id = LAST_INSERT_ID();");
@@ -70,7 +77,7 @@ try
 	{
 		//Update record in database
         
-		$result = mysql_query("UPDATE $data_table SET nev = '" . $_POST["nev"] . "', cegnev = '" . $_POST["cegnev"] . "', email = '" . $_POST["email"] . "', link = '" . $_POST["link"] . "', status = '" . $_POST["status"] . "', jelszo = '" . $_POST["jelszo"] . "' WHERE id = '" . $_POST["id"] . "';");
+		$result = mysql_query("UPDATE $data_table SET nev = '" . $_POST["nev"] . "', cegnev = '" . $_POST["cegnev"] . "', email = '" . $_POST["email"] . "', link = '" . $_POST["link"] . "', status = '" . $_POST["status"] . "', jelszo = '" . $_POST["jelszo"] . "', szov_ertekeles = '" . $_POST["szov_ertekeles"] . "' WHERE id = '" . $_POST["id"] . "';");
 
 		//Return result to jTable
 		$jTableResult = array();

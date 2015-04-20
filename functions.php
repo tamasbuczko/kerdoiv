@@ -13,6 +13,9 @@ function pontszam($kerdoiv_sorszam, $kitolto_sorszam){
 function pontkategoria($kerdoiv_sorszam, $osszpontszam){
     $result = mysql_query("SELECT kategorianev FROM pont_kategoriak WHERE kerdoiv = $kerdoiv_sorszam AND tol <= $osszpontszam AND ig >= $osszpontszam");
     $v = mysql_fetch_array($result);
+    if (!$v){
+        $v[kategorianev] = '<span style="color: red">-</span>';
+    }
     return $v[kategorianev];
 }
 

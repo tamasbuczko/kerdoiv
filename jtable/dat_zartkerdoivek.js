@@ -26,6 +26,17 @@ $(document).ready(function () {
                     title: 'E-mail',
                     width: '20%'
                 },
+                osszpontszam: {
+                    title: 'összpontszám',
+                    width: '20%',
+                    edit: false,
+                    list: false
+                },
+                pontkategoria: {
+                    title: 'kategória',
+                    width: '20%',
+                    edit: false
+                },
                 link: {
                     title: 'Link',
                     width: '20%',
@@ -41,8 +52,25 @@ $(document).ready(function () {
                     width: '20%',
                     list: false
                 },
+                szov_ertekeles: {
+                    title: 'Szöveges értékelés',
+                    type: 'textarea',
+                    list: false
+                },
+                szov_ertekeles_ikon: {
+                    title: '',
+                    edit: false,
+                    display: function (data) {
+                        if (data.record.szov_ertekeles){
+                            var $link2 = $('<img src="graphics/icon_graph_k.png" alt="" title="szöveges értékelés készült" />');
+                            $link2.click(function(){ /* do something on click */ });
+                            return $link2;
+                        }
+                    }
+                },
                 eredmeny: {
                     title: '',
+                    edit: false,
                     display: function (data) {
                         if (data.record.kitolto_sorszam){
                             var $link = $('<a href="?p=kerdoiv&kerdoiv='+data.record.kerdoiv+'&er=1&kitolto='+data.record.kitolto_sorszam+'" title="Eredmény"><img src="graphics/icon_graph_k.png" alt="" /></a>');
