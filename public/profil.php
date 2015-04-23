@@ -3,6 +3,7 @@
 if ($_REQUEST[submit_profil]){
    $query = "UPDATE users SET email='$_REQUEST[email_mod]', authority='$_REQUEST[csomag_mod]', cegnev='$_REQUEST[cegnev_mod]', cegcim='$_REQUEST[cegcim_mod]', kapcsnev='$_REQUEST[nev_mod]', telefon='$_REQUEST[telefon_mod]', cegemail='$_REQUEST[cegemail_mod]' WHERE id = '$_SESSION[qa_user_id]'";
    mysql_query($query);
+   //require_once('public/jog_kapcsolo.php');
    
    //fizetési előirányzat módosítása
    $query = mysql_query("SELECT ar_ft_ho FROM dat_csomagarak WHERE id = $_REQUEST[csomag_mod]");

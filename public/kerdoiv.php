@@ -38,7 +38,7 @@ if ($jogosult) {
     If (!$kerdoiv_obj->cim) {
         $tartalom = '<div id="koszonjuk">Nincs ilyen kérdőív!</div>';
     }
-
+    
     $kerdes_darab = 0;
     $figyelmeztetes = 0;
 

@@ -71,6 +71,9 @@ $result = mysql_query("SELECT u.id, u.authority, u.email, dcs.ar_ft_ho, dcs.ar_e
             $query = "UPDATE users SET authority='1' WHERE id = '$row[id]'";
             #mysql_query($query);
             
+            //jogosultságok átkapcsolása a kérdőíveken
+            //require_once('public/jog_kapcsolo.php');
+            
             $query = mysql_query("SELECT MAX(id) AS id FROM fizetesek WHERE user_id = $row[id]");
             $b = mysql_fetch_array($query);
             
