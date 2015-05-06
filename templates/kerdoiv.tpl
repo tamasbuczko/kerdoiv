@@ -43,7 +43,7 @@
    </div><br style="clear: both;" />
 {/if}
 {if ($kerdoiv_obj->szemelyes_adat_tipusok) AND ($smarty.request.er == 1) AND ($jogosult_eredmeny)}
-<div class="doboz">
+<div class="doboz"
 	<h4>{$szotar->fordit('Szűrés a kitöltői adatokra')}:</h4>
 	<div style="width: 710px;">
 {if ($kerdoiv_obj->szemelyes_adat_tipusok['neme'])}
@@ -141,6 +141,14 @@
 {if ($smarty.request.er != '1')}
 {if $smarty.request.er != '1'} 
 			<div class="szemelyes">
+{if ($kerdoiv_obj->szemelyes_adat_nev == '1')}
+		<label id="neve_kapcs" class="kitoltoi_adatok">{$szotar->fordit('neve')}:</label>
+		<input type="text" name="neve" value="{$smarty.request.neve}" /><br />
+{/if}
+{if ($kerdoiv_obj->szemelyes_adat_cegnev == '1')}
+		<label id="cegneve_kapcs" class="kitoltoi_adatok">{$szotar->fordit('cégneve')}:</label>
+		<input type="text" name="cegneve" value="{$smarty.request.cegneve}" /><br />
+{/if}
 {if $kerdoiv_obj->szemelyes_adat_tipusok['neme']}
 				<label class="kitoltoi_adatok">{$szotar->fordit('neme')}:</label>
 				<select name="neme">

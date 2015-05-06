@@ -8,8 +8,8 @@ mysql_query($kitoltesinaplosql);
 
    $foglalkozas = rtrim($foglalkozas);
    $foglalkozas = ltrim($foglalkozas);
-   $sql = "INSERT INTO kitoltok (email, neme, eletkora, lakhely, foglalkozas, nyelv, vegzettseg, jovedelem, csaladiallapot) 
-           VALUES ('$email', '$_REQUEST[neme]', '$_REQUEST[eletkora]', '$_REQUEST[lakhely]', '$foglalkozas', '$_SESSION[lang]', '$_REQUEST[vegzettseg]', '$_REQUEST[jovedelmek]', '$_REQUEST[csaladiallapot]')";
+   $sql = "INSERT INTO kitoltok (email, nev, cegnev, neme, eletkora, lakhely, foglalkozas, nyelv, vegzettseg, jovedelem, csaladiallapot) 
+           VALUES ('$email', '$_REQUEST[neve]', '$_REQUEST[cegneve]', '$_REQUEST[neme]', '$_REQUEST[eletkora]', '$_REQUEST[lakhely]', '$foglalkozas', '$_SESSION[lang]', '$_REQUEST[vegzettseg]', '$_REQUEST[jovedelmek]', '$_REQUEST[csaladiallapot]')";
    mysql_query($sql); //futtatás
    
        $sql = mysql_query("SELECT MAX(sorszam) FROM kitoltok");

@@ -72,6 +72,8 @@ $result = mysql_query("SELECT u.id, u.authority, u.email, dcs.ar_ft_ho, dcs.ar_e
             #mysql_query($query);
             
             //jogosultságok átkapcsolása a kérdőíveken
+            $_SESSION[sessfelhasznalojog] = $row[authority];
+            $user = $row[id];
             //require_once('public/jog_kapcsolo.php');
             
             $query = mysql_query("SELECT MAX(id) AS id FROM fizetesek WHERE user_id = $row[id]");
