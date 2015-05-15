@@ -18,10 +18,10 @@
             <img src="graphics/megosztott.png" alt="megosztott kérdőív" title="megosztott kérdőív" style="margin: 5px 0px -8px 0px;" />
 {/if}
 {if $objektum->ujuzenet > 0}
-            <img src="graphics/level.png" alt="{$szotar->fordit('Új üzenet érkezett')}"  style="margin: 5px 0px -8px 0px; width:25px;"/>
+            <a href="?p=kerdoiv_adatlap&kerdoiv={$objektum->sorszam}" title="{$szotar->fordit('Új üzenet érkezett')}" style="margin-top: 7px;"><img src="graphics/level.png" alt="{$szotar->fordit('Új üzenet érkezett')}"  style="margin: 5px 0px -8px 0px; width:25px;"/></a>
 {/if}
 {if $objektum->zart == '1'}
-            <a href="?p=40&kerdoiv={$objektum->sorszam}" style="width: 12px; float: right;"><img src="graphics/lock.png" alt="zárt kérdőív" title="zárt kérdőív" class="zart_ikon" /></a>
+            <a href="?p=40&kerdoiv={$objektum->sorszam}" style="width: 12px; float: right; margin-top: 7px;"><img src="graphics/lock.png" alt="zárt kérdőív" title="zárt kérdőív" class="zart_ikon" /></a>
 {/if}
         </td>
         <td>
