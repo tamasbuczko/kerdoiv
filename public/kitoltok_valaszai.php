@@ -21,6 +21,7 @@ if ($_SESSION[qa_user_id] == $kerdoiv_obj->keszito_id) {
                 mysql_query($sql); //futtatás   
             }
         }
+        // Itt kell egy felugró ablak "A másolás sikeresen megtörtént" szöveggel!
     }
 
     $sorok = 0;
