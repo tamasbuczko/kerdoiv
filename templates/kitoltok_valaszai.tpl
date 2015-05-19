@@ -6,6 +6,6 @@
     <option value="{$kerdoiv_szam}">{$kerdoiv_cim}</option>
 {/foreach}
     </select> 
-    <input type="submit" name="masol" value="E-mailek másolása a választott kérdőív zárt rendszerébe" style="margin-left: 5px; width: 350px; height: 29px;">
+    <input type="submit" name="masol" value="Kitöltők másolása a választott kérdőív zárt rendszerébe" style="margin-left: 5px; width: 350px; height: 29px;">
 </form>
 {$kitolto_lista}

@@ -12,7 +12,7 @@ if ($_SESSION[qa_user_id] == $kerdoiv_obj->keszito_id) {
             $email_cim = $row[email];
             $nev = $row[nev];
             $cegnev = $row[cegnev];
-
+            $kitolto_sorszam = $row[kitolto_sorszam];
             $result4 = mysql_query("SELECT email, kerdoiv FROM zart_emailek WHERE (email = '$email_cim' AND kerdoiv = '$_REQUEST[kerdoiv_szam]')");
             $talalat = mysql_fetch_array($result4);
             if (!$talalat[0]) {      //ellenőriz, hogy van e már ilyen e-mail. Ha nincs csak akkor írja be az adatbáisba.
@@ -46,7 +46,7 @@ if ($_SESSION[qa_user_id] == $kerdoiv_obj->keszito_id) {
         if ($nev AND $cegnev) {
             $nevek = $nev . ' - ' . $cegnev . ' - ';
         }
-        $lista .= '<a href="?p=kerdoiv&kerdoiv=' . $kerdoiv . '&er=1&kitolto=' . $row[kitolto_sorszam] . '">' . $sorok . '. ' . $nevek . $row[email] . '</a>(' . $osszpontszam . ' - ' . $pontkategoria . ')<br />';
+        $lista .= '<input type="checkbox" name="cb_'.$row[kitolto_sorszam].'" checked="checked" /><a href="?p=kerdoiv&kerdoiv=' . $kerdoiv . '&er=1&kitolto=' . $row[kitolto_sorszam] . '"> ' . $sorok . '. ' . $nevek . $row[email] . '</a>(' . $osszpontszam . ' - ' . $pontkategoria . ')<br />';
     }
 
     $result3 = mysql_query("SELECT sorszam, cim_hu, cim_de, cim_en FROM kerdoivek WHERE user_id = $_SESSION[qa_user_id]");
