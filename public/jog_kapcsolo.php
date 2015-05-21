@@ -9,11 +9,13 @@ $jogok_cron = new jogok;
 //megnézzük a user összes kérdőívét és acsomag jogaihoz kapcsoljuk a szükséges mezőket
 $result = mysql_query("SELECT * FROM kerdoivek WHERE user_id = $user");
 while ($row = mysql_fetch_array($result)){
+   
    //18-as kérdőív lehet
    $felnott_kapcs = $jogok_cron->ellenor('felnott');
    if ($felnott_kapcs != $row[felnott]){
        $status_break_kapcs = '1';
    }
+   
    //kép kérdéshez
    $kep_kerdeshez_kapcs = $jogok_cron->ellenor('kep_kerdeshez');
    $result2 = mysql_query("SELECT sorszam FROM kerdesek WHERE kerdoiv_sorszam = $row[sorszam] AND kep_file != ''");
@@ -21,18 +23,33 @@ while ($row = mysql_fetch_array($result)){
    if (($kep_kerdeshez_darab > 0) AND ($kep_kerdeshez_kapcs == '0')){
        $status_break_kapcs = '1';
    }
+   
    //reklámok bekapcsolása
    $reklam_kapcs = $jogok_cron->ellenor('reklam_kotelezo');
+   $sql = "INSERT INTO log_jogkapcsolo (kerdoiv, parameter, mirol, mire, csomagrol, csomagra) VALUES ('$row[sorszam]', 'reklam_kotelezo', '$row[hirdetessel]', '$reklam_kapcs', '$user_jog', '$_SESSION[sessfelhasznalojog]')";
+   mysql_query($sql);
+   
    //teszt (???)
    $teszt_kapcs = $jogok_cron->ellenor('teszt_tipus');
+   $sql = "INSERT INTO log_jogkapcsolo (kerdoiv, parameter, mirol, mire, csomagrol, csomagra) VALUES ('$row[sorszam]', 'teszt_tipus', '$row[teszt]', '$teszt_kapcs', '$user_jog', '$_SESSION[sessfelhasznalojog]')";
+   mysql_query($sql);
+   
    //pontozás (???)
    $pontozas_kapcs = $jogok_cron->ellenor('pontozhato');
+   $sql = "INSERT INTO log_jogkapcsolo (kerdoiv, parameter, mirol, mire, csomagrol, csomagra) VALUES ('$row[sorszam]', 'pontozhato', '$row[pontozas]', '$pontozas_kapcs', '$user_jog', '$_SESSION[sessfelhasznalojog]')";
+   mysql_query($sql);
+   
    //egyszer tölthető
    $egyszer_toltheto_kapcs = $jogok_cron->ellenor('egyszer_toltheto');
+   $sql = "INSERT INTO log_jogkapcsolo (kerdoiv, parameter, mirol, mire, csomagrol, csomagra) VALUES ('$row[sorszam]', 'egyszer_toltheto', '$row[egyszerkitoltheto]', '$egyszer_toltheto_kapcs', '$user_jog', '$_SESSION[sessfelhasznalojog]')";
+   mysql_query($sql);
+   
    //zárt kérdőív típus 
    $zart_kapcs = $jogok_cron->ellenor('zart_kerdoiv');
    if ($zart_kapcs != $row[zart]){
        $status_break_kapcs = '1';
+	      $sql = "INSERT INTO log_jogkapcsolo (kerdoiv, parameter, mirol, mire, csomagrol, csomagra) VALUES ('$row[sorszam]', 'zart_kerdoiv', '$row[zart]', '$zart_kapcs', '$user_jog', '$_SESSION[sessfelhasznalojog]')";
+		  mysql_query($sql);
    }
    
    //inaktiválás nélkül átállítható mezők
