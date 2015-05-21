@@ -110,13 +110,24 @@ while ($next_element = mysql_fetch_array($result)){
 
 
 //fizetésfigyelő emailjeinek kiküldése
-$result = mysql_query("SELECT id, email, tipus FROM email_figyelo WHERE status='1' ORDER BY id LIMIT 50");	
+$result = mysql_query("SELECT id, email, user_id, tipus FROM email_figyelo WHERE status='1' ORDER BY id LIMIT 50");	
 while ($next_element = mysql_fetch_array($result)){
-
+   $valtozas_lista = '';
    $resultx = mysql_query("SELECT szoveg FROM email_fajtak WHERE id='$next_element[tipus]'");
    $e = mysql_fetch_array($resultx);
    
+   //változások listájának generálása
+   $resulty = mysql_query("SELECT dpl.leiras_hu FROM log_jogkapcsolo AS lj 
+			LEFT JOIN dat_parameter_leiras AS dpl ON lj.parameter = dpl.parameter
+			WHERE lj.user_id = $next_element[user_id]");
+   
+   //+ kérdőívenként, + leírás hozzákapcsolással
+   while ($row5 == mysql_fetch_array($resulty)){
+	  $valtozas_lista .= $row5[leiras_hu]. '<br />';
+   }
+   
     $array = array('felhasznalonev' => $felhasznalonev,   
+					'valtozas_lista' => $valtozas_lista,   
                     'csomag_nev' => $csomag_nev);
 	 
     $sablon_html = new email_blokk;
