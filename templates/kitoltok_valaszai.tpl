@@ -7,5 +7,6 @@
 {/foreach}
     </select> 
     <input type="submit" name="masol" value="Kitöltők másolása a választott kérdőív zárt rendszerébe" style="margin-left: 5px; width: 350px; height: 29px;">
+	<br style="clear: both;" />
+	{$kitolto_lista}
 </form>
-{$kitolto_lista}

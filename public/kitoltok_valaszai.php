@@ -15,7 +15,7 @@ if ($_SESSION[qa_user_id] == $kerdoiv_obj->keszito_id) {
             $kitolto_sorszam = $row[kitolto_sorszam];
             $result4 = mysql_query("SELECT email, kerdoiv FROM zart_emailek WHERE (email = '$email_cim' AND kerdoiv = '$_REQUEST[kerdoiv_szam]')");
             $talalat = mysql_fetch_array($result4);
-            if (!$talalat[0]) {      //ellenőriz, hogy van e már ilyen e-mail. Ha nincs csak akkor írja be az adatbáisba.
+            if ((!$talalat[0]) AND ($_REQUEST['cb_'.$kitolto_sorszam] == 'on')) {      //ellenőriz, hogy van e már ilyen e-mail. Ha nincs csak akkor írja be az adatbáisba.
                 $sql = "INSERT INTO zart_emailek (email, kerdoiv, status, nev, cegnev) 
            VALUES ('$email_cim', '$_REQUEST[kerdoiv_szam]', '$status', '$nev', '$cegnev')";
                 mysql_query($sql); //futtatás   
