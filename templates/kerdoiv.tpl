@@ -396,6 +396,7 @@
 {foreach from=$valasz_blokk_tomb key=sorszamx_valasz item=valaszx}
 {if $valaszx.valasz_kerdese == $sorszam_kerdes}
 {assign var=xxx value="radio_{$sorszam_kerdes}"}
+{assign var=xxxx value="radio_{$valaszx.valasz_sorszam}_text"}
 {assign var=aaa value="{$valaszx.valasz_sorszam}"}
 {if $valaszx.valasz_fajta == 'szoveges'}
 {if $smarty.request.er != 1}
@@ -403,7 +404,9 @@
 {/if}
 							<label>
 							   {$valaszx.valasz_szoveg}
-
+{if $valaszx.valasz_szoveg == 'egyebx'}
+						    :<input type="text" name="radio_{$valaszx.valasz_sorszam}_text" value="{$smarty.request.$xxxx}" style="float: right; width: 340px;" />
+{/if}
 {if $smarty.request.er == 1}
 							   <br />
 							   <div class="grafv">

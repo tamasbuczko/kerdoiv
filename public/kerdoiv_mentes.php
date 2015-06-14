@@ -69,8 +69,9 @@ mysql_query($kitoltesinaplosql);
 			if ($valaszok_data_radio[$key][radio]){
 			   $kerdes_sor++;
 			   $valasz_x = $valaszok_data_radio[$key][radio];
+			   $valasz_radio_text = $valaszok_data_radio[$key][radio_text];
 			   $sql = "INSERT INTO valaszadasok (kerdoiv_sorszam, kerdes_sorszam, valasz_sorszam, ertek, szoveg, kitolto_sorszam, regisztralt_kitolto) 
-					   VALUES ('$kerdoiv_sorszam', '$key', '$valasz_x', '1', '', '$kitolto_sorszama', '$_SESSION[qa_user_id]')";
+					   VALUES ('$kerdoiv_sorszam', '$key', '$valasz_x', '1', '$valasz_radio_text', '$kitolto_sorszama', '$_SESSION[qa_user_id]')";
 				 mysql_query($sql);
 				 //ellenőrizni a helyes_valaszok adattáblában a válasz helyességét
 				 //számolni az összes választ
