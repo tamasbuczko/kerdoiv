@@ -13,23 +13,32 @@
    
     <meta name="robots" content="index, follow" />
     <meta name="keywords" content="kérdőív, piackutatás, közvélemény kutatás, vevői megelégedettség, beszállítói kérdőív, kérdőív készítés, felmérés" />
+	
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	
+	<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+	
+	<!-- Custom CSS -->
+	<link href="bootstrap/css/custom.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="bootstrap/font-awesome-4.1.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
    
-   <script type="text/javascript" src="js/jquery.1.7.1.min.js"></script>
    <script type="text/javascript" src="js/jscripts.js"></script>
    <script type="text/javascript" src="js/ganalytics.js"></script>
 {if (($smarty.request.p == '40') OR ($smarty.request.p == 'ujkerdoiv'))}
    <script type="text/javascript" src="tinymce/jscripts/tiny_mce/tiny_mce.js"></script>
-   <script type="text/javascript" src="jtable/scripts/jquery-ui-1.8.16.custom.min.js" charset="UTF-8"></script>
-   <script type="text/javascript" src="jtable/scripts/jtable/jquery.jtable.js" charset="UTF-8"></script>
 {/if}
+   <link href="jtable/themes/redmond/jquery-ui-1.8.16.custom.css" rel="stylesheet" type="text/css" charset="UTF-8" />
+   <script type="text/javascript" src="jtable/scripts/jquery-1.9.1.min.js" charset="UTF-8"></script>
+   <script type="text/javascript" src="jquery-ui-1.11.2/jquery-ui.min.js" charset="UTF-8"></script>
    <link rel="stylesheet" type="text/css" href="style.css?v=2" />
 {if $kerdoiv_obj->css}
    <link rel="stylesheet" type="text/css" href="surveys_css/{$kerdoiv_obj->css}" />
 {/if}
-{if (($smarty.request.p == '40') OR ($smarty.request.p == 'ujkerdoiv'))}
    <link href="jtable/themes/redmond/jquery-ui-1.8.16.custom.css" rel="stylesheet" type="text/css" charset="UTF-8" />
    <link href="jtable/scripts/jtable/themes/lightcolor/blue/jtable.css" rel="stylesheet" type="text/css" charset="UTF-8" />
-{/if}
+   <script type="text/javascript" src="jtable/scripts/jtable/jquery.jtable.js" charset="UTF-8"></script>
    <link rel="stylesheet" type="text/css" href="gridster.css" />
    <link rel="stylesheet" type="text/css" href="csempe.css" />
    <link type="text/css" rel="stylesheet" href="slider/css/rhinoslider-1.05.css" />
@@ -155,6 +164,10 @@
   js.src = "//connect.facebook.net/hu_HU/sdk.js#xfbml=1&version=v2.0";
   fjs.parentNode.insertBefore(js, fjs);
 }(document, 'script', 'facebook-jssdk'));</script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="bootstrap/js/bootstrap.min.js"></script>
+	
     </body>
     <!--<div id="help">
          <a href="?"><img src="graphics/assistant.jpg" alt="" /></a>            
