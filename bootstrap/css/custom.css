@@ -8,3 +8,9 @@
     font-weight: normal;
     font-style: normal;
 }  
+
+
+.col-centered{
+    float: none;
+    margin: 0 auto;
+}

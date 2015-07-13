@@ -40,7 +40,12 @@ $smarty->assign('kerdoiv_obj', $kerdoiv_obj);
 
 
 if ($_SESSION["sessfelhasznalo"]){
-    $tartalom = $smarty->fetch('templates/cimlap2.tpl');
+   if ($_SESSION[bs] == 'on'){
+    $tartalom = $smarty->fetch('templates/cimlap2_bs.tpl');
+   } else {
+	  $tartalom = $smarty->fetch('templates/cimlap2.tpl');
+   }
+   
 } else if ($_REQUEST[thanks_share]){
     $tartalom = $smarty->fetch('templates/cimlap3.tpl');
     } else {

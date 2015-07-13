@@ -99,6 +99,10 @@ if ($jogosult) {
         if (($_REQUEST[i] == '1') AND ($_REQUEST[ok] == '1')){
             $tartalom .= '<div class="koszonom">' . $szotar->fordit('Köszönjük, hogy kitöltötte a kérdőívet') . '</div>';
         } else {
+		   if ($_SESSION[bs] == 'on'){
+			  $tartalom .= $smarty->fetch('templates/kerdoiv_bs.tpl');
+		   } else {
             $tartalom .= $smarty->fetch('templates/kerdoiv.tpl');
+		   }
         }
 }
