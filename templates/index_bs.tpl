@@ -63,21 +63,60 @@
 </head>
    <body {if ($hibauzenet) OR ($figy_uzenet) OR (($kerdoiv_obj->felnott=='1') AND ($smarty.session.felnott != '1') AND ($smarty.request.mod != '1') AND ($smarty.request.p != 'ujkerdoiv') AND ($smarty.request.p != 'ujkerdes') AND ($smarty.request.p != 'kerdoiv_adatlap'))}{if !$smarty.request.lang}onload="divdisp_on('popup');{/if}{/if}">
 <div id="iframe">  
-    <div id="fejlec" class="col-xs-12 col-sm-12 col-md-10 col-lg-9 col-centered">
+   
+   <nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+	   <a class="navbar-brand" href="/"><img src="graphics/kicsi_logo_also.png" alt="logo" /></a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+		
+{if $smarty.session.qa_user_id}
+		 <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{$szotar->fordit('Bejelentkezve')}  <span class="caret"></span></a>
+			<ul class="dropdown-menu">
+			   <li><a href="?p=profil" title="profil">{$smarty.session.sessfelhasznalo}</a></li>
+			   <li><a href="?logout=1">{$szotar->fordit('Kijelentkezés')}</a></li>
+{if ($smarty.request.p == 'kerdoiv') AND (!$smarty.request.mod)}
+			   <li><a href="?{$page->vissza_link}" class="visszax">{$szotar->fordit('vissza')}</a></li>
+{/if}
+			</ul>
+        </li>
+{/if}
+{foreach from=$menu_obj->menupontok item="sor"}
+        <li><a href="?p={$sor.cikkszam}">{$sor.menunev}</a></li>
+{/foreach}		
+		<li role="separator" class="divider"></li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Válasszon nyelvet <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="?lang=hu">magyar</a></li>
+            <li><a href="?lang=en">angol</a></li>
+            <li><a href="?lang=de">német</a></li>
+          </ul>
+        </li>
+      </ul>
+      
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+   
+    <div id="fejlec" class="col-xs-12 col-sm-12 col-md-10 col-lg-9 col-centered" style="display: none;">
 	  <!--<div id="langs" {if ($page->kerdoivnezet)} style="width: 690px;"{/if}>-->
 {if !$smarty.request.i}
             <a href="?" id="home"></a>
 {/if}
-{if $smarty.session.qa_user_id}
-	<div id="user_box">
-            {$szotar->fordit('Bejelentkezve')}:
-            <a href="?p=profil" title="profil">{$smarty.session.sessfelhasznalo}</a>
-            <a href="?logout=1">{$szotar->fordit('Kijelentkezés')}</a>
-{if ($smarty.request.p == 'kerdoiv') AND (!$smarty.request.mod)}
-            <a href="?{$page->vissza_link}" class="visszax">{$szotar->fordit('vissza')}</a>
-{/if}
-        </div>
-{/if}
+
 {if !$smarty.session.qa_user_id} 
 <!--<div id="teszt" {if $smarty.request.kerdoiv} style="display: none;"{/if}>
    <a href="?p=5">{$szotar->fordit('Teszt Üzem! - Próbáld ki nyugodtan')}...</a>
@@ -104,17 +143,18 @@
    </form>
 {/if}
 	  </div>
+
           </div>
 	  <div id="frame"{*if ($page->kerdoivnezet)} style="width: 690px;"{/if*} class="col-xs-12 col-sm-12 col-md-10 col-lg-9 col-centered">
 {if !$smarty.request.i}
               <div id="head"{if $page->cimlap == '0'} class="head_kicsi{if ($kerdoiv_obj->csak_kerdoiv == 'on') AND ($smarty.request.p == 'kerdoiv')} head_nincs{/if}"{/if}>        
-			<div id="head_menu">
+			<div id="head_menu" style="display: none;">
 			   <a href="?" id="logo"></a>
 			   <div id="menu">
 				  {$menu}
 			   </div>
 			</div>
-			<div class="hidden-xs hidden-sm">
+			<div class="hidden-xs hidden-sm" style="padding-top: 30px;">
 			{$slider}
 			</div>
             <p>survey, questionaire, form, exam, test, quize</p>
@@ -125,9 +165,11 @@
 		 </div>
 		 <div id="footer">
 			<p> © 2014 questionaction.com - {$szotar->fordit('Használati és adatvédelmi szabályok')}</p> 
+<!--
 			<a href="?" id="logo_footer"></a>
 			<div>{$menu}</div>
-		 </div>
+-->
+		 </div>		
 {if $smarty.request.b == 'y'}
 		 <a name="end"></a>
 		 <script type="text/javascript">scrollToAnchor('end');</script>
@@ -169,6 +211,40 @@
 
     <!-- Bootstrap Core JavaScript -->
     <script src="bootstrap/js/bootstrap.min.js"></script>
+
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-2" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+	   <a class="navbar-brand" href="#"><img src="graphics/kicsi_logo_also.png" alt="logo" /></a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-2">
+      <ul class="nav navbar-nav">
+{foreach from=$menu_obj->menupontok item="sor"}
+        <li><a href="?p={$sor.cikkszam}">{$sor.menunev}</a></li>
+{/foreach}
+		<li role="separator" class="divider"></li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Válasszon nyelvet <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="#">magyar</a></li>
+            <li><a href="#">angol</a></li>
+            <li><a href="#">német</a></li>
+          </ul>
+        </li>
+      </ul>
+      
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
 	
     </body>
     <!--<div id="help">

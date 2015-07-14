@@ -277,7 +277,7 @@
 						</div>
 						<div class="survey_answers">
 {if $kerdes.kerdes_kep}
-							<img src="kerdes_kepek/{$kerdes.kerdes_kep}" class="question_img" alt="" />
+							<img src="kerdes_kepek/{$kerdes.kerdes_kep}" class="question_img col-xs-12 col-sm-12 col-md-6 col-lg-6 col-centered" alt="" />
 {/if}
 {if $kerdes.kerdes_video}
 {if $kerdes.kerdes_video_tipus == 'youtube'}
@@ -510,6 +510,7 @@
 {if $smarty.request.er != 1}
 							  <input type="checkbox" name="checkbox_{$valaszx.valasz_sorszam}" {if $smarty.request.$xxx == 'on'}checked="checked"{/if} style="margin-top: 100px !important; margin-left: 50px !important;"/>
 {/if}
+
 							  <div class="answer_img_frame">
 								 <img src="valasz_kepek/{$valaszx.valasz_kep}">
 								 <label>

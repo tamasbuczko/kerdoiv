@@ -4,8 +4,9 @@
     <p class="hidden-xs hidden-sm">Ha kitöltöd a publikus kérdőíveket belépve, akkor megnézheted az eredményeket!</p>
     {$nyilvanos_kerdoivek}
    </div>
+   <br style="clear: both;"/>
 	<a href="?p=nyilvanos" class="nyilvanos_link">{$szotar->fordit('További publikus kérdőívek')}...</a>
-	<a href="?p=ajandek" class="banner_ajandek col-xs-12 col-sm-12 col-md-6 col-lg-6">{$szotar->fordit('Kérdőívek ajándéksorsolással')}<img src="graphics/ajandek_ikon_k.png" alt="" /></a>
+	<a href="?p=ajandek" class="banner_ajandek col-xs-12 col-sm-12 col-md-10 col-lg-10">{$szotar->fordit('Kérdőívek ajándéksorsolással')}<img src="graphics/ajandek_ikon_k.png" alt="" /></a>
 </div>
 
 
