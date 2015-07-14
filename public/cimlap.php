@@ -49,5 +49,9 @@ if ($_SESSION["sessfelhasznalo"]){
 } else if ($_REQUEST[thanks_share]){
     $tartalom = $smarty->fetch('templates/cimlap3.tpl');
     } else {
-    $tartalom = $smarty->fetch('templates/cimlap.tpl');
+	if ($_SESSION[bs] == 'on'){
+	  $tartalom = $smarty->fetch('templates/cimlap_bs.tpl');
+	} else {
+	   $tartalom = $smarty->fetch('templates/cimlap.tpl');
+	}
 }

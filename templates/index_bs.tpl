@@ -64,7 +64,7 @@
    <body {if ($hibauzenet) OR ($figy_uzenet) OR (($kerdoiv_obj->felnott=='1') AND ($smarty.session.felnott != '1') AND ($smarty.request.mod != '1') AND ($smarty.request.p != 'ujkerdoiv') AND ($smarty.request.p != 'ujkerdes') AND ($smarty.request.p != 'kerdoiv_adatlap'))}{if !$smarty.request.lang}onload="divdisp_on('popup');{/if}{/if}">
 <div id="iframe">  
     <div id="fejlec" class="col-xs-12 col-sm-12 col-md-10 col-lg-9 col-centered">
-	  <div id="langs" {if ($page->kerdoivnezet)} style="width: 690px;"{/if}>
+	  <!--<div id="langs" {if ($page->kerdoivnezet)} style="width: 690px;"{/if}>-->
 {if !$smarty.request.i}
             <a href="?" id="home"></a>
 {/if}
