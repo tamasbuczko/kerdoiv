@@ -64,7 +64,7 @@
    <body {if ($hibauzenet) OR ($figy_uzenet) OR (($kerdoiv_obj->felnott=='1') AND ($smarty.session.felnott != '1') AND ($smarty.request.mod != '1') AND ($smarty.request.p != 'ujkerdoiv') AND ($smarty.request.p != 'ujkerdes') AND ($smarty.request.p != 'kerdoiv_adatlap'))}{if !$smarty.request.lang}onload="divdisp_on('popup');{/if}{/if}">
 <div id="iframe">  
    
-   <nav class="navbar navbar-default">
+   <nav class="navbar navbar-default col-xs-12 col-sm-12 col-md-10 col-lg-9 col-centered" style="padding:0;">
   <div class="container-fluid">
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
@@ -148,12 +148,6 @@
 	  <div id="frame"{*if ($page->kerdoivnezet)} style="width: 690px;"{/if*} class="col-xs-12 col-sm-12 col-md-10 col-lg-9 col-centered">
 {if !$smarty.request.i}
               <div id="head"{if $page->cimlap == '0'} class="head_kicsi{if ($kerdoiv_obj->csak_kerdoiv == 'on') AND ($smarty.request.p == 'kerdoiv')} head_nincs{/if}"{/if}>        
-			<div id="head_menu" style="display: none;">
-			   <a href="?" id="logo"></a>
-			   <div id="menu">
-				  {$menu}
-			   </div>
-			</div>
 			<div class="hidden-xs hidden-sm" style="padding-top: 30px;">
 			{$slider}
 			</div>
@@ -165,10 +159,6 @@
 		 </div>
 		 <div id="footer">
 			<p> © 2014 questionaction.com - {$szotar->fordit('Használati és adatvédelmi szabályok')}</p> 
-<!--
-			<a href="?" id="logo_footer"></a>
-			<div>{$menu}</div>
--->
 		 </div>		
 {if $smarty.request.b == 'y'}
 		 <a name="end"></a>
@@ -212,7 +202,7 @@
     <!-- Bootstrap Core JavaScript -->
     <script src="bootstrap/js/bootstrap.min.js"></script>
 
-<nav class="navbar navbar-default">
+<nav class="navbar navbar-default col-xs-12 col-sm-12 col-md-10 col-lg-9 col-centered" style="padding:0;">
   <div class="container-fluid">
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
