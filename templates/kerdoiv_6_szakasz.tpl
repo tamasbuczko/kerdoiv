@@ -24,13 +24,14 @@
 {if !$kerdes.eredmeny_doboz}
 {assign var=$szamlalo value=$szamlalo++}
 {if $szamlalo < 2}
+   <div class="ranking_text col-xs-3 col-sm-4"></div>
 						   <div class="ranking">
 								<span>1</span><span>2</span><span>3</span><span>4</span><span>5</span>
 							</div>
 {/if}
 							<label class="ranking_text col-xs-3 col-sm-4">{$valaszx.valasz_szoveg}</label>
 {/if}
-							<div style="float: left;" class="col-xs-7 col-sm-4">
+							<div style="float: left;" class="col-xs-6 col-sm-4">
 {if !$kerdes.eredmeny_doboz}
    
 								{$valaszx.valasz_ertekek}
@@ -159,7 +160,7 @@
 {if $smarty.request.er != 1}
 						   <input type="radio" name="radio_{$sorszam_kerdes}" {if $smarty.request.$xxx == $valaszx.valasz_sorszam}checked="checked" {/if}value="{$valaszx.valasz_sorszam}" style="margin-top: 100px !important; margin-left: 20px !important;"/>
 {/if}
-						   <div class="answer_img_frame col-sm-4 col-xs-4">
+						   <div class="answer_img_frame col-sm-6 col-xs-6">
 						   <img src="valasz_kepek/{$valaszx.valasz_kep}">
 						   <label>
 							  {$valaszx.valasz_szoveg}
@@ -243,7 +244,7 @@
 							  <input type="checkbox" name="checkbox_{$valaszx.valasz_sorszam}" {if $smarty.request.$xxx == 'on'}checked="checked"{/if} style="margin-top: 100px !important; margin-left: 50px !important;"/>
 {/if}
 
-							  <div class="answer_img_frame">
+							  <div class="answer_img_frame col-sm-4 col-xs-4">
 								 <img src="valasz_kepek/{$valaszx.valasz_kep}">
 								 <label>
 									{$valaszx.valasz_szoveg}

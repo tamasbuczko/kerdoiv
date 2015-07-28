@@ -11,19 +11,19 @@
 		 <input type="hidden" name="p" id="p" value="{$smarty.request.p}" />		 
 
 {include file="kerdoiv_3_szakasz.tpl"} {*kötelezően megadandó adatok*}
-{include file="kerdoiv_4_szakasz.tpl"} {*google hirdetések*}
+{*include file="kerdoiv_4_szakasz.tpl"*} {*google hirdetések*}
 
-		 <div style="float: left; background-color: #fff; width: 90%;">
-			<ul id="slider2">
+		 <div style=" background-color: #fff;" class="row-fluid offset">
+			<!--<ul id="slider2">
 {foreach from=$kerdes_blokk_tomb key=sorszam_kerdes item=kerdes name=outer}
 				  <li>
-					 <div class="survey_block">
+					 <div class="survey_block">-->
 {include file="kerdoiv_5_szakasz.tpl"} {*kérdés blokk*}
 {include file="kerdoiv_6_szakasz.tpl"} {*válasz blokk*}
-					 </div>
+					 <!--</div>
 				  </li>
 {/foreach}
-            </ul>
+            </ul>-->
 {include file="kerdoiv_7_szakasz.tpl"} {*kérdőív vége*}
 		 </div>
 		 <input type="hidden" name="sorrendezes" id="sorrendezes" value="" />

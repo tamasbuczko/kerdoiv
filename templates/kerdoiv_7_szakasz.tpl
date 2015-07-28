@@ -15,7 +15,7 @@
 {/if}
 			<div{if $smarty.request.er == '1'} style="display: none;"{/if}>
 {if (($kerdoiv_obj->email == '1') OR ($kerdoiv_obj->email == '2')) AND (!$smarty.request.mod)}
-                            <div class="szemelyes col-xs-10 col-sm-10 col-md-8 col-lg-8 col-centered" {if ($smarty.request.l)}style="display: none;"{/if}>
+                            <div class="szemelyes col-xs-11 col-sm-11 col-md-8 col-lg-8 col-centered" {if ($smarty.request.l)}style="display: none;"{/if}>
                                 <label>E-mail:</label>
                                 <input type="text" name="email" value="{$smarty.request.email}" /><br />
 {if (($kerdoiv_obj->sorszam == '63') OR ($kerdoiv_obj->sorszam == '64') OR ($kerdoiv_obj->sorszam == '65') OR ($kerdoiv_obj->sorszam == '68') OR ($kerdoiv_obj->sorszam == '69') OR ($kerdoiv_obj->sorszam == '70') OR ($kerdoiv_obj->sorszam == '75') OR ($kerdoiv_obj->sorszam == '76') OR ($kerdoiv_obj->sorszam == '77') OR ($kerdoiv_obj->sorszam == '81') OR ($kerdoiv_obj->sorszam == '82') OR ($kerdoiv_obj->sorszam == '83'))}

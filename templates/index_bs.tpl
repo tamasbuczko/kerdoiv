@@ -154,9 +154,9 @@
             <p>survey, questionaire, form, exam, test, quize</p>
               </div>
 {/if}
-		 <div id="content" class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+		 
 			{$tartalom}
-		 </div>
+		 
 		 <div id="footer">
 			<p> © 2014 questionaction.com - {$szotar->fordit('Használati és adatvédelmi szabályok')}</p> 
 		 </div>		
