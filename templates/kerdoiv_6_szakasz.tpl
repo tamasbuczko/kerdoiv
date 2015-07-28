@@ -42,20 +42,26 @@
 {/if}
 {if ($valaszx.valasz_fajta == 'kepes')}
 {if !$kerdes.eredmeny_doboz}
-							<label class="ranking_text" style="width: 570px; margin-left: 192px !important; margin-bottom: -15px;">{$valaszx.valasz_szoveg}</label>
+							<label class="ranking_text" style="min-width: 370px; margin-left: 192px !important; margin-bottom: -15px;">{$valaszx.valasz_szoveg}</label>
 {/if}
 							<div style="float: left;">
 							   
 {if !$kerdes.eredmeny_doboz}
    <div class="answer_img" style="position:relative; text-align:left;">
-								  <div class="answer_img_frame" style="width: 490px; margin-left: 130px;">
-								 <img src="valasz_kepek/{$valaszx.valasz_kep}" style="margin-left: 50px;">
+								 <div style="clear: both;">
+								  <div class="answer_img_frame" style="">
+								 <img src="valasz_kepek/{$valaszx.valasz_kep}" style="clear: both;" />
 								 </div>
-								<div class="ranking" style="position:absolute; top:35%; margin-left:20px;">
+								 </div>
+								 
+								 <div style="clear: both;">
+								 <div class="ranking" style="margin-left:20px;">
 									<span>1</span><span>2</span><span>3</span><span>4</span><span>5</span>
 								</div>
-								 <div style="position:absolute; top:40%; margin-left:21px;">
+								 
+								 <div style="margin-left:21px; clear: both;">
 								{$valaszx.valasz_ertekek}
+								</div>
 								</div>
 {else}
 								{$kerdes.eredmeny_doboz}{break}
@@ -71,7 +77,7 @@
 {if $kerdes.kerdes_tipus == 'textarea'}
 {assign var=xxx value="textarea_{$sorszam_kerdes}"}
 {if $smarty.request.er != 1}
-							<textarea cols="1" rows="1" name="textarea_{$sorszam_kerdes}">{$smarty.request.$xxx}</textarea>
+							<textarea cols="1" rows="1" name="textarea_{$sorszam_kerdes}" class="col-xs-11 col-sm-11 col-md-8 col-lg-8">{$smarty.request.$xxx}</textarea>
 {else}
 							{$kerdes.eredmeny_doboz}
 {/if}
@@ -81,7 +87,7 @@
 {if $kerdes.kerdes_tipus == 'text'}
 {assign var=xxx value="text_{$sorszam_kerdes}"}
 {if $smarty.request.er != 1}
-						    <input type="text" name="text_{$sorszam_kerdes}" value="{$smarty.request.$xxx}" />
+						    <input type="text" name="text_{$sorszam_kerdes}" value="{$smarty.request.$xxx}" class="col-xs-11 col-sm-11 col-md-8 col-lg-8" />
 {else}
 							{$kerdes.eredmeny_doboz}
 {/if}
@@ -131,9 +137,9 @@
 {assign var=aaa value="{$valaszx.valasz_sorszam}"}
 {if $valaszx.valasz_fajta == 'szoveges'}
 {if $smarty.request.er != 1}
-							<input type="radio" name="radio_{$sorszam_kerdes}" {if $smarty.request.$xxx == $valaszx.valasz_sorszam}checked="checked" {/if}value="{$valaszx.valasz_sorszam}" />
+							<input type="radio" name="radio_{$sorszam_kerdes}" {if $smarty.request.$xxx == $valaszx.valasz_sorszam}checked="checked" {/if}value="{$valaszx.valasz_sorszam}" class="col-xs-1 col-sm-1 col-md-1 col-lg-1" />
 {/if}
-							<label>
+							<label class="col-xs-9 col-sm-9 col-md-10 col-lg-10">
 							   {$valaszx.valasz_szoveg}
 {if $valaszx.valasz_szoveg == 'egyebx'}
 						    :<input type="text" name="radio_{$valaszx.valasz_sorszam}_text" value="{$smarty.request.$xxxx}" style="float: right; width: 340px;" />
