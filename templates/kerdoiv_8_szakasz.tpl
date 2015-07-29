@@ -12,3 +12,5 @@
        a2a_config.num_services = 6;
 </script>
 <script type="text/javascript" src="http://static.addtoany.com/menu/page.js"></script>
+<br style="clear: both;"/>
+<br style="clear: both;"/>

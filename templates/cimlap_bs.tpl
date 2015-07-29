@@ -1,9 +1,9 @@
 <div id="nyilvanos_kerdoivek" class="col-xs-9 col-sm-9 col-md-5 col-lg-5">
-   <div>                  
+        
     <h2>{$szotar->fordit('Legfrissebb publikus kérdőívek')}</h2>
     <p class="hidden-xs hidden-sm">Ha kitöltöd a publikus kérdőíveket belépve, akkor megnézheted az eredményeket!</p>
     {$nyilvanos_kerdoivek}
-   </div>
+   
    <br style="clear: both;"/>
 	<a href="?p=nyilvanos" class="nyilvanos_link">{$szotar->fordit('További publikus kérdőívek')}...</a>
 	<a href="?p=ajandek" class="banner_ajandek col-xs-12 col-sm-12 col-md-10 col-lg-10">{$szotar->fordit('Kérdőívek ajándéksorsolással')}<img src="graphics/ajandek_ikon_k.png" alt="" /></a>

@@ -223,9 +223,9 @@
 {assign var=aaa value="{$valaszx.valasz_sorszam}"}
 {if $valaszx.valasz_fajta == 'szoveges'}
 {if $smarty.request.er != 1}
-						   <input type="checkbox" name="checkbox_{$valaszx.valasz_sorszam}" {if $smarty.request.$xxx == 'on'}checked="checked"{/if}/>
+						   <input type="checkbox" name="checkbox_{$valaszx.valasz_sorszam}" {if $smarty.request.$xxx == 'on'}checked="checked"{/if} class="col-xs-1 col-sm-1 col-md-1 col-lg-1"/>
 {/if}
-						   <label>
+						   <label class="col-xs-9 col-sm-9 col-md-10 col-lg-10">
 							  {$valaszx.valasz_szoveg}
 {if $smarty.request.er == 1}
 							  <br />
