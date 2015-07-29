@@ -136,7 +136,12 @@ $smarty->assign('user', $user);
 if ($_SESSION["sessfelhasznalo"]){
     $tartalom = $smarty->fetch('templates/regisztracio2.tpl');
 } else {
-    $tartalom = $smarty->fetch('templates/regisztracio.tpl');
+   if ($_SESSION[bs] == 'on'){
+	  $tartalom = $smarty->fetch('templates/regisztracio_bs.tpl');
+   } else {
+	  $tartalom = $smarty->fetch('templates/regisztracio.tpl');
+   }
+   
 }
 
 /*

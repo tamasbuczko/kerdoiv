@@ -156,7 +156,7 @@
 {/if}
 		 
 			{$tartalom}
-		 
+		 <br style="clear:both;" />
 		 <div id="footer">
 			<p> © 2014 questionaction.com - {$szotar->fordit('Használati és adatvédelmi szabályok')}</p> 
 		 </div>		
