@@ -30,4 +30,8 @@ $smarty->assign('obj_array', $obj_array);
 $smarty->assign('keres', $_REQUEST[keres]);
 $smarty->assign('navsav', $navsav->lapszamsor);
 $smarty->assign('talalatszam', $talalatszam);
-$tartalom = $smarty->fetch('templates/ajandek.tpl');
+if ($_SESSION[bs] == 'on'){
+   $tartalom = $smarty->fetch('templates/ajandek_bs.tpl');
+} else {
+   $tartalom = $smarty->fetch('templates/ajandek.tpl');
+}
