@@ -36,7 +36,7 @@
     
     
 
-<div class="kiemelt">{$szotar->fordit('Legnépszerűbb')}</div>
+<!--<div class="kiemelt">{$szotar->fordit('Legnépszerűbb')}</div>-->
 <!--
 <form action="" name="register" method="post" class="login">
     <h2>{$szotar->fordit('regisztráció')}</h2>
@@ -58,8 +58,14 @@
     <input name="send" type="submit" value="{$szotar->fordit('regisztráció')}" /> 
 </form>
 -->
-<table class="csomagok">
-    <tr><th>{$szotar->fordit('csomagok')}</th><th>{$szotar->fordit('ingyenes')}</th><th>{$szotar->fordit('ezüst')}</th><th>{$szotar->fordit('arany')}</th><th>{$szotar->fordit('platina')}</th></tr>
+<table class="csomagok table">
+    <tr>
+	   <th>{$szotar->fordit('csomagok')}</th>
+	   <th>{$szotar->fordit('ingyenes')}</th>
+	   <th>{$szotar->fordit('ezüst')}</th>
+	   <th>{$szotar->fordit('arany')}<br />({$szotar->fordit('Legnépszerűbb')})</th>
+	   <th>{$szotar->fordit('platina')}</th>
+	</tr>
     <tr><td>{$szotar->fordit('Havidíj')}</td><td>{$szotar->fordit('ingyenes')}</td><td>{$szotar->fordit('2.000 Ft')}</td><td>{$szotar->fordit('6.000 Ft')}</td><td>{$szotar->fordit('36.000 Ft')}</td></tr>
     <tr><td>{$szotar->fordit('Kedvezményes éves díj')}</td><td>{$szotar->fordit('ingyenes')}</td><td>{$szotar->fordit('20.000 Ft')}</td><td>{$szotar->fordit('60.000 Ft')}</td><td>{$szotar->fordit('360.000 Ft')}</td></tr>
     

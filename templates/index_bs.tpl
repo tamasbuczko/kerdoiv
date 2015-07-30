@@ -98,11 +98,11 @@
 {/foreach}		
 		<li role="separator" class="divider"></li>
         <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Válasszon nyelvet <span class="caret"></span></a>
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{$szotar->fordit('Válasszon nyelvet!')} <span class="caret"></span></a>
           <ul class="dropdown-menu">
             <li><a href="?lang=hu">magyar</a></li>
-            <li><a href="?lang=en">angol</a></li>
-            <li><a href="?lang=de">német</a></li>
+            <li><a href="?lang=en">english</a></li>
+            <li><a href="?lang=de">deutsch</a></li>
           </ul>
         </li>
       </ul>
@@ -223,11 +223,11 @@
 {/foreach}
 		<li role="separator" class="divider"></li>
         <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Válasszon nyelvet <span class="caret"></span></a>
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{$szotar->fordit('Válasszon nyelvet!')} <span class="caret"></span></a>
           <ul class="dropdown-menu">
             <li><a href="#">magyar</a></li>
-            <li><a href="#">angol</a></li>
-            <li><a href="#">német</a></li>
+            <li><a href="#">english</a></li>
+            <li><a href="#">deutsch</a></li>
           </ul>
         </li>
       </ul>
