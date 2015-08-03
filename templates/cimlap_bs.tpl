@@ -11,7 +11,7 @@
 </div>
 
 
-<form action="index.php" name="login" method="post" class="login col-xs-9 col-sm-9 col-md-5 col-lg-5">
+<form action="index.php" name="login" method="post" class="login col-xs-9 col-sm-9 col-md-5 col-lg-5 col-centered">
   <h2>{$szotar->fordit('bejelentkezés')}</h2>
   <label>{$szotar->fordit('azonosító')}:</label><input type="text" name="azonosito" value="" />
   <label>{$szotar->fordit('jelszó')}:</label><input type="password" name="jelszo" value="" />

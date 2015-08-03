@@ -20,12 +20,11 @@ if ($_REQUEST[l]){
     $row = mysql_fetch_array($result);
     $_REQUEST[email] = $row[email];
 }
-
 if ($jogosult) {
     unset($tartalom);
 
     require_once('public/kerdoiv_hiba.php');
-    
+  
     if ($_REQUEST[kerdoiv]) {
         $kerdoiv_sorszam = $_REQUEST[kerdoiv];
         //kezelni, ha nincs a kért sorszámú kérdőív
@@ -41,7 +40,6 @@ if ($jogosult) {
     
     $kerdes_darab = 0;
     $figyelmeztetes = 0;
-
     if ($kerdoiv_nyelv_bekapcs == '1') {
 	   if ($_REQUEST[er] == '1'){
 		require_once('public/eredmeny.php');
@@ -56,7 +54,6 @@ if ($jogosult) {
         require_once('public/kerdoiv_figyelmeztetesek.php');
 	  
     }
-
     if (($_REQUEST[submit]) AND ( $kerdoiv_obj->hiba == '0') AND ( $_REQUEST[b] == '1')) { //biztosan ment, megnyomta a mentés gombot
         unset($figy_uzenet);
         unset($_SESSION[felnott]);
