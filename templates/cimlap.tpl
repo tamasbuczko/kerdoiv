@@ -1,11 +1,11 @@
-<div id="nyilvanos_kerdoivek" class="hidden-xs hidden-sm">
+<div id="nyilvanos_kerdoivek">
    <div>                  
     <h2>{$szotar->fordit('Legfrissebb publikus kérdőívek')}</h2>
     <p>Ha kitöltöd a publikus kérdőíveket belépve, akkor megnézheted az eredményeket!</p>
     {$nyilvanos_kerdoivek}
    </div>
 	<a href="?p=nyilvanos" class="nyilvanos_link">{$szotar->fordit('További publikus kérdőívek')}...</a>
-	<a href="?p=ajandek" class="banner_ajandek hidden-sm hidden-xs">{$szotar->fordit('Kérdőívek ajándéksorsolással')}<img src="graphics/ajandek_ikon_k.png" alt="" /></a>
+	<a href="?p=ajandek" class="banner_ajandek">{$szotar->fordit('Kérdőívek ajándéksorsolással')}<img src="graphics/ajandek_ikon_k.png" alt="" /></a>
 </div>
 
 
