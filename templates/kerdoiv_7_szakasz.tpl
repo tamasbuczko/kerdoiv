@@ -1,5 +1,7 @@
 {if $osszpontszam}
 {$szotar->fordit('A kérdőívre kapott pontszám')}: {$osszpontszam}
+<br style="clear:both" />
+{$szotar->fordit('Az elért kategória szint')}: {$pontkategoria}
 {/if}
             
 {if $smarty.request.mod}

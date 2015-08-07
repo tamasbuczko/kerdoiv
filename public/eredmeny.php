@@ -187,6 +187,7 @@ if ($jogosult_eredmeny){
 }
 
     $osszpontszam = pontszam($kerdoiv_obj->sorszam, $_REQUEST[kitolto]);
+    $pontkategoria = pontkategoria($kerdoiv_obj->sorszam, $osszpontszam);
 
 if (!$_REQUEST[er] == 1){
    $smarty->assign('szotar', $szotar);

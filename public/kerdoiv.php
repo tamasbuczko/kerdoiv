@@ -89,6 +89,7 @@ if ($jogosult) {
 	if ($jogosult_eredmeny){
 	  $smarty->assign('szuresek_lista', $szuresek_lista);
           $smarty->assign('osszpontszam', $osszpontszam);
+          $smarty->assign('pontkategoria', $pontkategoria);
 	}
         $smarty->assign('kerdes_blokk_tomb', $uj_kerdes_blokk_tomb);
 	$smarty->assign('jogosult_eredmeny', $jogosult_eredmeny);
